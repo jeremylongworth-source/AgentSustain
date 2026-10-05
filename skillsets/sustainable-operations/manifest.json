@@ -149,5 +149,43 @@
     "Engineering and funding review remain pending for actual implementation.",
     "Independent behavioral, routing and specialist release review remains."
   ],
-  "review_record": "docs/operations-review.md"
+  "review_record": "docs/operations-review.md",
+  "interpretation_dependencies": [
+    {
+      "name": "analyze-energy-usage",
+      "path": "skills/energy/analyze-energy-usage/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "assess-water-dependency",
+      "path": "skills/water/assess-water-dependency/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "classify-waste-streams",
+      "path": "skills/waste/classify-waste-streams/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-efficiency-opportunities",
+      "path": "skills/energy/identify-efficiency-opportunities/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-resource-efficiency-opportunities",
+      "path": "skills/resources/identify-resource-efficiency-opportunities/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-waste-reduction-opportunities",
+      "path": "skills/waste/identify-waste-reduction-opportunities/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-water-efficiency-opportunities",
+      "path": "skills/water/identify-water-efficiency-opportunities/SKILL.md",
+      "contract_version": "0.1.0"
+    }
+  ],
+  "interpretation_dependency_status": "development_pending_review"
 }

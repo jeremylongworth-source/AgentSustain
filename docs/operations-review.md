@@ -19,3 +19,5 @@ Validation evidence is recorded separately in ../evaluations/sus13-operations-va
 ## Subsequent development extension
 
 The optional action-ID/dependency contract was added after the approved snapshot. Approval above remains specific to the original composition and dependency manifest; it does not imply human review of this later extension. The extension is local development under the approved roadmap, preserves legacy replay and all implementation gates, and is documented in operations-contract.md with reproducible evidence in ../evaluations/sus13-action-sequence.json. Specialist/router/release review must include this changed contract.
+
+The subsequent interpretation_result_ids contract and seven interpretation dependency entries are also local development beyond the reviewed snapshot. Their manifest review status remains development_pending_review; the original 28 analytical dependency approval is preserved. Supporting evidence is in ../evaluations/sus13-context-composition.json. No new human approval is inferred.

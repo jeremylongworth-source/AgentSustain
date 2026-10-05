@@ -7,13 +7,14 @@ import unittest
 from pathlib import Path
 
 from scripts.contract_validation import ROOT, validate_state
-from scripts.operations_tools import RUNNERS, run_operations
+from scripts.operations_tools import INTERPRETATIONS, RUNNERS, run_operations
 from tests.test_energy import energy_fixture
 from tests.test_water import water_fixture
 from tests.test_resources import resource_fixture
 from tests.test_finance import finance_fixture
 from tests.test_finance_business_case import business_case_fixture
 from scripts.finance_tools import run_finance
+from scripts.state_proposal import propose
 
 
 def operations_fixture():
@@ -46,6 +47,39 @@ def operations_fixture():
 
 
 class OperationsTests(unittest.TestCase):
+    def test_context_composition_replays_interpretations_and_checked_plan(self):
+        capture=json.loads((ROOT/"evaluations/sus13-context-composition.json").read_text(encoding="utf-8"))
+        state=copy.deepcopy(capture["initial_state"])
+        state["evidence"].extend(capture["added_evidence"])
+        for step in capture["author_steps"]:
+            state=propose(state,step["result"],step["reason"])["state"]
+        self.assertEqual(state,capture["state"])
+        output=run_operations(state,capture["parameters"])
+        self.assertEqual(output,capture["output"])
+        self.assertEqual(output["proposal"]["state"]["review_requirements"],state["review_requirements"])
+        self.assertEqual(output["proposal"]["state"]["results"][:len(state["results"])],state["results"])
+        for candidate in output["proposal"]["state"]["opportunities"][-4:]:
+            self.assertEqual(candidate["attributes"]["assessment_coverage"],"incomplete")
+            self.assertTrue(candidate["attributes"]["interpretation_result_ids"])
+            self.assertFalse(candidate["attributes"]["implementation_authorized"])
+
+    def test_context_links_reject_unknown_duplicate_and_wrong_domain_results(self):
+        capture=json.loads((ROOT/"evaluations/sus13-context-composition.json").read_text(encoding="utf-8"))
+        for links in (["unknown"],["operations-water-interpretation"],
+                ["operations-energy-interpretation"]*2):
+            with self.subTest(links=links):
+                params=copy.deepcopy(capture["parameters"])
+                params["opportunities"][0]["interpretation_result_ids"]=links
+                output=run_operations(capture["state"],params)
+                self.assertEqual(output["result"]["status"],"blocked")
+                self.assertEqual(output["proposal"]["state"]["opportunities"],capture["state"]["opportunities"])
+        state=copy.deepcopy(capture["state"])
+        source=next(r for r in state["results"] if r["id"]=="operations-energy-interpretation")
+        source["evidence_ids"]=[]
+        output=run_operations(state,capture["parameters"])
+        self.assertEqual(output["result"]["status"],"blocked")
+        self.assertEqual(output["proposal"]["state"]["opportunities"],state["opportunities"])
+
     def test_cross_domain_action_sequence_retains_unapproved_work(self):
         state,params=operations_fixture()
         for opportunity in params["opportunities"]:
@@ -155,6 +189,9 @@ class OperationsTests(unittest.TestCase):
         self.assertEqual(manifest["status"],"approved_for_development")
         self.assertTrue((ROOT/manifest["review_record"]).is_file())
         for dependency in manifest["dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())
+        self.assertEqual({d["name"] for d in manifest["interpretation_dependencies"]},set().union(*INTERPRETATIONS.values()))
+        self.assertEqual(manifest["interpretation_dependency_status"],"development_pending_review")
+        for dependency in manifest["interpretation_dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())
 
     def test_business_case_link_requires_current_applicable_alternative(self):
         state,params=operations_fixture();case_state,case=business_case_fixture()

@@ -14,6 +14,12 @@ from .state_proposal import propose
 
 RUNNERS = {**{k:run_energy for k in ENERGY}, **{k:run_water for k in WATER},
            **{k:run_resources for k in RESOURCES}, **{k:run_finance for k in FINANCE}}
+INTERPRETATIONS = {
+    "energy":{"analyze-energy-usage","identify-efficiency-opportunities"},
+    "water":{"assess-water-dependency","identify-water-efficiency-opportunities"},
+    "waste":{"classify-waste-streams","identify-waste-reduction-opportunities"},
+    "materials":{"identify-resource-efficiency-opportunities"},
+}
 
 
 def _action_sequence(actions):
@@ -97,7 +103,8 @@ def run_operations(state, parameters):
         known = {e["id"] for e in working["evidence"]}
         known_reviews = {r["id"] for r in result["review_requirements"]}
         for opportunity in candidates:
-            if (set(opportunity) != {"id","domain","description","owner","evidence_ids","assessment_result_ids","business_case_result_id","business_case_applicability","actions","interacts_with"}
+            fields = {"id","domain","description","owner","evidence_ids","assessment_result_ids","business_case_result_id","business_case_applicability","actions","interacts_with"}
+            if (set(opportunity) not in (fields,fields|{"interpretation_result_ids"})
                     or opportunity["domain"] not in {"energy","water","waste","materials"}
                     or not isinstance(opportunity["description"],str) or not opportunity["description"].strip()
                     or (opportunity["owner"] is not None and (not isinstance(opportunity["owner"],str) or not opportunity["owner"].strip()))):
@@ -115,6 +122,15 @@ def run_operations(state, parameters):
             if not any(i in working[opportunity["domain"]] or sources[i]["skill"] in domain_skills[opportunity["domain"]] for i in assessment_ids):
                 raise ValueError("Candidate must link at least one assessment in its declared physical domain.")
             for key in assessment_ids: evidence.update(sources[key]["evidence_ids"])
+            interpretation_ids = opportunity.get("interpretation_result_ids",[])
+            if (not isinstance(interpretation_ids,list) or any(not isinstance(i,str) or i not in sources for i in interpretation_ids)
+                    or len(interpretation_ids) != len(set(interpretation_ids))):
+                raise ValueError("Interpretation links must identify known distinct common results.")
+            for key in interpretation_ids:
+                source = sources[key]
+                if source["skill"] not in INTERPRETATIONS[opportunity["domain"]] or not source["evidence_ids"]:
+                    raise ValueError("Interpretation links require sourced results from the candidate's physical domain interpretation skills.")
+                evidence.update(source["evidence_ids"])
             interactions = opportunity["interacts_with"]
             if (not isinstance(interactions,list) or any(not isinstance(i,str) for i in interactions)
                     or len(interactions) != len(set(interactions)) or not set(interactions) <= set(opportunity_ids)-{opportunity["id"]}):
@@ -166,7 +182,7 @@ def run_operations(state, parameters):
                 if gate in known_reviews: raise ValueError("Generated operational review ID conflicts with existing review history.")
                 reviews.append({"id":gate,"state":"ENGINEERING_REVIEW_REQUIRED","reason":"Validate operational applicability, service/quality, interactions and implementation design before implementation.",
                     "scope":opportunity["description"],"reviewer_role":"qualified operational reviewer","status":"open","resolution":None})
-            blocked = any(sources[i]["status"] in {"blocked","partial","invalid_input"} for i in assessment_ids)
+            blocked = any(sources[i]["status"] in {"blocked","partial","invalid_input"} for i in assessment_ids+interpretation_ids)
             if opportunity["owner"] is None: gap("Opportunity owner is unassigned: "+opportunity["id"],"ownership")
             if case_id is None: gap("Economic benefit has no linked composed business case: "+opportunity["id"],"economic_assessment")
             if blocked: gap("Linked assessment coverage is incomplete: "+opportunity["id"],"assessment_coverage")

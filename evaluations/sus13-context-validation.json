@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "da62721",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 266,
+    "duration_seconds": 103.252,
+    "status": "passed"
+  },
+  "operations_focused": {
+    "tests": 13,
+    "duration_seconds": 29.202,
+    "status": "passed"
+  },
+  "skill_validation": "passed",
+  "interpretation_dependencies": 7,
+  "capture": "sus13-context-composition.json",
+  "checks": [
+    "Four recorded author-led interpretation proposals replay",
+    "Full composed numerical request and proposal reproduce exactly",
+    "Known sourced physical-domain interpretation links required",
+    "Unknown, duplicate, wrong-domain and unsourced interpretations reject registration",
+    "Partial interpretation keeps coverage incomplete",
+    "Original result history and open review ledger preserved",
+    "Data-only action plan adds no implementation gates",
+    "Legacy captures and action dependency capture still reproduce"
+  ],
+  "limits": [
+    "Replay does not independently rerun agent reasoning or authenticate source notes",
+    "No physical saving, economic attribution, accepted ownership or implementation is established",
+    "Interpretation dependency additions remain development pending review",
+    "Broader organization and public-v1 requirements remain"
+  ],
+  "sha256": {
+    "scripts/operations_tools.py": "129852d0d0c77c80c9f380a58f66225ae66ebb4a319a6f361f26c635e3e7af11",
+    "tests/test_operations.py": "3ef82908070c4fdc52ac969371b564873070f89600f7e5728a1740e25929d2d0",
+    "skillsets/sustainable-operations/manifest.json": "6bad6b565cb425ee4497ff5fb0288bd6d343016ddd9ef803e82d69ec4b14a7d7",
+    "skillsets/sustainable-operations/SKILL.md": "e5eaaac508b7b6240b417246751fe969c5cbc355386e6828aa1d6be7be896a46",
+    "docs/operations-contract.md": "aebf3a96e19635b33004533090b0cc66e67f20e147d35e346ac5f51d31a06102",
+    "evaluations/sus13-context-composition.json": "2fb9300de686df0016652c18fc1f3d262d650676ad00028bee0fd5d0adb4cb6d"
+  }
+}
