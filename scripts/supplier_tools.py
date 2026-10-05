@@ -14,11 +14,13 @@ OPERATIONS = {"build-supplier-questionnaire":BASE}
 OPERATIONS.update({s:BASE|{"responses"} for s in (
     "evaluate-supplier-response","score-supplier-sustainability","identify-supplier-data-gaps")})
 OPERATIONS["compare-suppliers"]={"assessment_result_ids","comparison_review","result_id"}
+OPERATIONS["map-supply-chain-emissions"]={"links","mapping_review","result_id"}
 
 
 def run_suppliers(state, skill, parameters):
     validate_state(state)
-    if skill not in OPERATIONS or not isinstance(parameters,dict) or set(parameters) != OPERATIONS[skill]:
+    if skill not in OPERATIONS or not isinstance(parameters,dict) or (set(parameters) != OPERATIONS[skill]
+            and not (skill=="map-supply-chain-emissions" and set(parameters)==OPERATIONS[skill]|{"fixture_mode"})):
         raise ValueError("Supported supplier operation with exact parameters required.")
     ident=parameters["result_id"]
     if not isinstance(ident,str) or not ident.strip(): raise ValueError("Fresh result ID required.")
@@ -35,6 +37,9 @@ def run_suppliers(state, skill, parameters):
         if skill=="compare-suppliers":
             from .supplier_comparison import compare
             report=compare(state,parameters,refs)
+        elif skill=="map-supply-chain-emissions":
+            from .supplier_mapping import map_chain
+            report=map_chain(state,parameters,refs,result,gap)
         else:
             supplier=next((s for s in state["suppliers"] if s["id"]==parameters["supplier_id"]),None)
             if supplier is None or not supplier["evidence_ids"]:
@@ -125,7 +130,8 @@ def run_suppliers(state, skill, parameters):
                         report["weighted_coverage_percent"]=serialize(100*supported_weight/denominator)
                         if unknown_weight==0: report["score"]=serialize(low)
                     else: gap("All criteria are excluded; no applicable scoring denominator exists.")
-        result["diagnostics"].append({"code":"SUPPLIER_COMPARISON" if skill=="compare-suppliers" else "SUPPLIER_ASSESSMENT","message":json.dumps(report,sort_keys=True)})
+        code={"compare-suppliers":"SUPPLIER_COMPARISON","map-supply-chain-emissions":"SUPPLY_CHAIN_MAPPING"}.get(skill,"SUPPLIER_ASSESSMENT")
+        result["diagnostics"].append({"code":code,"message":json.dumps(report,sort_keys=True)})
         result["status"]="partial" if result["data_gaps"] else "completed"
     except (ValueError,TypeError,KeyError) as error:
         gap(str(error));result["status"]="blocked"

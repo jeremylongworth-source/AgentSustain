@@ -1,0 +1,9 @@
+# Selected purchase-to-category mapping
+
+Recorded 2026-10-05. The saved JSON contains complete fictional state, mapping request and checked proposal. A registered fictional material supplier and line-specific purchase reference link to 100 kg of already buyer-attributable material activity. Its supplied synthetic cradle-to-gate factor is 2 kg CO2e/kg, yielding an existing 200 kg CO2e component under category 1. Fixture mode is explicit; no real intensity or supplier assessment is asserted.
+
+Mapping re-executes the category against its recorded activity/factor policy and checks quantities, context and accepted coverage. It retains the original component and purchase metric records, applies no allocation again, emits no new numeric metrics and calculates no portfolio total. Supplier and GHG arrays are preserved. Selected coverage remains incomplete, so the map is partial; other purchases and categories are not assumed zero.
+
+Adversarial checks remove a factor, omit fixture opt-in, alter stored category/component quantities, repeat a purchase, link an emissions metric as purchase activity, change source/supplier identity or change declared allocation/buyer scope. A deliberately constructed CO2e-denominated activity reproduces under category arithmetic but is rejected as a purchase activity by the mapping guard. These reject mapping; missing-factor diagnostics remain explicit rather than turning into zero or losing provenance. The complete saved proposal replays.
+
+This author-led deterministic scenario validates checked linking, not real source authenticity, supplier relationship, lifecycle applicability or independent agent reasoning. Purchase lines must have defensible buyer allocation and nonoverlap before mapping. Corporate-footprint/product allocation, supplier engagement and organization-wide evaluation remain further work.

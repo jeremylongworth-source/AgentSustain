@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "45bfa45",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 288,
+    "duration_seconds": 108.817,
+    "status": "passed"
+  },
+  "focused_supplier_suites": {
+    "tests": 19,
+    "duration_seconds": 2.373,
+    "status": "passed"
+  },
+  "skill_validation": "map-supply-chain-emissions quick_validate.py passed",
+  "fixture": "sus14-supply-chain-mapping.json",
+  "known_answer": {
+    "purchase_activity": 100,
+    "purchase_unit": "kg",
+    "referenced_emissions": 200,
+    "emissions_unit": "kg CO2e",
+    "category": 1,
+    "new_calculated_metrics": 0,
+    "allocation_reapplied": false
+  },
+  "checks": [
+    "Full category metric/context and accepted-source reproduction",
+    "Purchase activity equals accepted category source activity",
+    "Unique link/purchase activity/reference and emissions component",
+    "Existing supplier and GHG registers unchanged",
+    "Lifecycle/allocation policy exact match without second allocation",
+    "Missing factors and omitted fixture mode retain EMISSION_FACTOR_REQUIRED",
+    "Altered component/subtotal and changed source/supplier/buyer context reject",
+    "CO2e-denominated purchase activity rejects even when category arithmetic reproduces",
+    "Complete saved mapping proposal replay",
+    "No new total or procurement authorization"
+  ],
+  "limitations": [
+    "Author-led synthetic physical-activity fixture, not real supplier attribution or independent reasoning",
+    "Identity, source fitness, allocation and coverage judgments remain supplied review",
+    "Corporate-to-product, spend and broader attribution methods remain",
+    "Risk, engagement, organization evaluation and public-v1 gates remain"
+  ],
+  "sha256": {
+    "scripts/supplier_mapping.py": "0c27be459c17d391a67935fbe5a19ff2b30269999fb9fa7d95c88f2cfcc5c77b",
+    "scripts/supplier_tools.py": "1262b382170735110dad91e81227ea063f1fc3193ff33b1ebea69c727e070915",
+    "tests/test_supplier_mapping.py": "ede50c23d0d5df6ed5ea711a8ab4390c6059e4106d8fe34ff5ab85c9bae8174f",
+    "docs/supplier-contract.md": "1e24b8a82f3fe19127ed9abad480261d0f8bb6cc84a39b6710ef82dd1aa9793d",
+    "skills/supply-chain/map-supply-chain-emissions/SKILL.md": "ac8e82b0f3433cedf55ba9ac7c78169840ecbe1d987dffacf73243832d74590b",
+    "evaluations/sus14-supply-chain-mapping.json": "919cdd25242f329f25b2d5a9562b4942e10abe726d15aba49136adc78723f4b6"
+  }
+}
