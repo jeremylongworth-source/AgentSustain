@@ -5,6 +5,16 @@ Status: APPROVED FOR CONTINUED DEVELOPMENT by the project owner on 2026-10-05 (A
 ## Latest decision
 
 - User instruction: "approve the review".
+- Reviewed revision: `b7e1fc714becf1813194240fab5bc91043c35361`.
+- Scope: the committed local development snapshot, including initial SUS-16 hazard identification, asset mapping, exposure-stock assessment and vulnerability-condition workflows and their saved validation and independent source-reading evidence.
+- Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Validation evidence: [the exposure/vulnerability validation record](../evaluations/sus16-exposure-vulnerability-validation.json) records 441 passing tests, 27 passing focused tests, skill validation and complete author/independent helper/CLI replay. These are existing implementation checks, not new tests run for this approval.
+
+This approval permits continued local roadmap development. Source-specific and scenario-specific professional decisions, broader physical/transition methods, organization evaluation and specialist/router/release gates remain open. It does not resolve result/state reviews, close SUS-16, establish v1 readiness or authorize implementation, claims, publication, push, merge, release or deployment. Uncommitted risk-scoring and adaptation work is outside this reviewed revision; subsequent changes do not inherit its scoped approval.
+
+## Previous accountability decision
+
+- User instruction: "approve the review".
 - Reviewed revision: `8e7f002aa9e10179337c2f83e2742288de67deb9`.
 - Scope: the current local development snapshot, including the subsequent SUS-15 transition, implementation-roadmap and accountability extensions and their saved validation and independent source-reading evidence.
 - Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
@@ -119,8 +129,12 @@ The source-attributed accountability contract follows the approved 681a3e6 snaps
 
 ## Subsequent physical-climate screening extension
 
+This extension is included in the b7e1fc7 continued-development approval; its outstanding review requirements remain applicable.
+
 The initial physical hazard and asset-mapping contract follows the approved 8e7f002 snapshot under continued roadmap authorization. It does not inherit that revision's scoped approval. Later specialist/router/release review must include source licensing/applicability, observation versus projection contexts, scenario and horizon compatibility, CRS/axis ordering, spatial resolution, future operation assumptions, external dependencies and preservation of old reviews. Evidence is in [the physical-screening capture](../evaluations/sus16-physical-screening.json). Source candidates and bounding-box overlap do not establish site exposure, vulnerability, damage, safety, attribution or climate-model validation. Broader physical/transition risk methods and independent organization evaluation remain open; this does not close SUS-16 or establish v1 readiness.
 
 ## Subsequent exposure/vulnerability extension
+
+This extension is included in the b7e1fc7 continued-development approval; its outstanding review requirements remain applicable.
 
 The exposure-stock and vulnerability-condition methods follow 8e7f002 under continued roadmap authorization and require later specialist/router/release review of population/service comparability, quantity source-period/scenario fitness, historical stock proxies, channel non-additivity, rubric fitness, causal condition evidence, demonstrated versus planned capacity and full-horizon applicability. Evidence is in [the exposure/vulnerability capture](../evaluations/sus16-exposure-vulnerability.json). Conditional source shares and criterion candidates do not establish probability, loss, future presence/capacity, risk reduction, safety or professional approval. Source-specific reviews and broader organization evaluation remain open; this extension does not inherit scoped approval or close SUS-16.
