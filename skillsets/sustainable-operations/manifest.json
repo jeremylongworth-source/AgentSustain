@@ -187,5 +187,53 @@
       "contract_version": "0.1.0"
     }
   ],
-  "interpretation_dependency_status": "development_pending_review"
+  "interpretation_dependency_status": "development_pending_review",
+  "carbon_dependencies": [
+    {
+      "name": "build-ghg-inventory",
+      "path": "skills/carbon/build-ghg-inventory/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-co2e",
+      "path": "skills/carbon/calculate-co2e/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-location-based-scope-2",
+      "path": "skills/carbon/calculate-location-based-scope-2/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-market-based-scope-2",
+      "path": "skills/carbon/calculate-market-based-scope-2/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-scope-1",
+      "path": "skills/carbon/calculate-scope-1/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-scope-3-category",
+      "path": "skills/carbon/calculate-scope-3-category/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "classify-scope-3-emissions",
+      "path": "skills/carbon/classify-scope-3-emissions/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "compare-ghg-inventories",
+      "path": "skills/carbon/compare-ghg-inventories/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-emission-hotspots",
+      "path": "skills/carbon/identify-emission-hotspots/SKILL.md",
+      "contract_version": "0.1.0"
+    }
+  ],
+  "carbon_dependency_status": "development_pending_review"
 }

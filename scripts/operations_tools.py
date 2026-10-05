@@ -9,11 +9,31 @@ from .water_tools import OPERATIONS as WATER, run_water
 from .resource_tools import OPERATIONS as RESOURCES, run_resources
 from .finance_tools import OPERATIONS as FINANCE, run_finance
 from .finance_projects import _basis, _review
+from .ghg_foundation import calculate_result
+from .scope_accounting import METHODS as SCOPE_METHODS, compose_scope
+from .run_scope3 import OPERATIONS as INVENTORY_OPERATIONS
 from .state_proposal import propose
 
 
+CARBON_PARAMETERS = {
+    "calculate-co2e":{"activity_id","factor_id","policy","result_id"},
+    **{k:{"sources","components","coverage_review","result_id"} for k in SCOPE_METHODS},
+    **{k:required for k,(_,required) in INVENTORY_OPERATIONS.items()},
+}
+
+
+def _run_carbon(state, skill, parameters):
+    required = CARBON_PARAMETERS[skill]
+    if not required <= set(parameters) or set(parameters)-required-{"fixture_mode"}:
+        raise ValueError("Exact carbon helper parameters and optional explicit fixture_mode required.")
+    if skill == "calculate-co2e": return calculate_result(state,**parameters)
+    if skill in SCOPE_METHODS: return compose_scope(state,skill,**parameters)
+    return INVENTORY_OPERATIONS[skill][0](state,**parameters)
+
+
 RUNNERS = {**{k:run_energy for k in ENERGY}, **{k:run_water for k in WATER},
-           **{k:run_resources for k in RESOURCES}, **{k:run_finance for k in FINANCE}}
+           **{k:run_resources for k in RESOURCES}, **{k:run_finance for k in FINANCE},
+           **{k:_run_carbon for k in CARBON_PARAMETERS}}
 INTERPRETATIONS = {
     "energy":{"analyze-energy-usage","identify-efficiency-opportunities"},
     "water":{"assess-water-dependency","identify-water-efficiency-opportunities"},

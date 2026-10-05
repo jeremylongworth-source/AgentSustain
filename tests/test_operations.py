@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 from scripts.contract_validation import ROOT, validate_state
-from scripts.operations_tools import INTERPRETATIONS, RUNNERS, run_operations
+from scripts.operations_tools import CARBON_PARAMETERS, INTERPRETATIONS, RUNNERS, run_operations
 from tests.test_energy import energy_fixture
 from tests.test_water import water_fixture
 from tests.test_resources import resource_fixture
@@ -15,6 +15,7 @@ from tests.test_finance import finance_fixture
 from tests.test_finance_business_case import business_case_fixture
 from scripts.finance_tools import run_finance
 from scripts.state_proposal import propose
+from tests.test_scope_accounting import scope_fixture
 
 
 def operations_fixture():
@@ -46,7 +47,61 @@ def operations_fixture():
     validate_state(state);return state,{"steps":steps,"opportunities":opportunities,"planning_review":review,"result_id":"operations"}
 
 
+def carbon_operations_fixture():
+    state,params=operations_fixture();carbon,sources,components,coverage=scope_fixture()
+    known={e["id"] for e in state["evidence"]}
+    state["evidence"].extend(copy.deepcopy(e) for e in carbon["evidence"] if e["id"] not in known)
+    state["emission_factors"]=copy.deepcopy(carbon["emission_factors"])
+    policy=copy.deepcopy(components[0]["policy"])
+    component=copy.deepcopy(components[0]);component["metric_id"]="operations-co2e-metric"
+    screening=[{"category":i,"status":"unknown","evidence_ids":["ev-001"],
+        "rationale":"Fictional operations example lacks category applicability evidence; not assumed zero."} for i in range(1,16)]
+    review={"confirmed":True,"evidence_ids":["ev-001"],"rationale":"Selected first electricity feed only; direct emissions and other feed/category coverage remain missing.","gwp_basis":coverage["gwp_basis"]}
+    steps=[{"skill":"calculate-co2e","parameters":{"activity_id":"metric-001","factor_id":component["factor_id"],"policy":policy,"result_id":"operations-co2e","fixture_mode":True}},
+        {"skill":"calculate-location-based-scope-2","parameters":{"sources":sources,"components":[component],"coverage_review":coverage,"result_id":"operations-location","fixture_mode":True}},
+        {"skill":"build-ghg-inventory","parameters":{"scope1_result_id":None,"scope2_result_id":"operations-location","scope3_result_ids":[],"category_screening":screening,"coverage_review":review,"result_id":"operations-inventory","fixture_mode":True}},
+        {"skill":"identify-emission-hotspots","parameters":{"inventory_id":"operations-inventory","level":"scope","coverage_review":{"confirmed":True,"inventory_id":"operations-inventory","level":"scope","evidence_ids":["ev-001"],"rationale":"Selected nonoverlapping account contributions only."},"result_id":"operations-emission-hotspots","fixture_mode":True}}]
+    params["steps"]=params["steps"]+steps
+    params["opportunities"][0]["assessment_result_ids"] += [s["parameters"]["result_id"] for s in steps]
+    return state,params
+
+
 class OperationsTests(unittest.TestCase):
+    def test_carbon_inventory_and_hotspots_compose_with_physical_assessment(self):
+        state,params=carbon_operations_fixture();saved=copy.deepcopy(state)
+        output=run_operations(state,params);candidate=output["proposal"]["state"]
+        results={r["id"]:r for r in candidate["results"]}
+        for ident in ("operations-co2e","operations-location","operations-inventory"):
+            self.assertEqual(results[ident]["metrics"][0]["value"],500)
+            self.assertEqual(results[ident]["metrics"][0]["unit"],"kg CO2e")
+        self.assertEqual(results["operations-inventory"]["status"],"partial")
+        self.assertEqual(results["operations-emission-hotspots"]["metrics"][0]["value"],500)
+        self.assertEqual(results["ops-energy"]["metrics"][0]["value"],1500)
+        self.assertEqual(state,saved);self.assertEqual(candidate["revision"],state["revision"]+1)
+        self.assertEqual(output["result"]["metrics"],[])
+        self.assertFalse(candidate["opportunities"][-4]["attributes"]["implementation_authorized"])
+
+    def test_carbon_missing_factor_and_fixture_default_remain_blocked(self):
+        for mode in ("missing","ordinary"):
+            with self.subTest(mode=mode):
+                state,params=carbon_operations_fixture()
+                if mode=="missing":params["steps"][-4]["parameters"]["factor_id"]="missing"
+                else:
+                    for step in params["steps"][-4:]:step["parameters"].pop("fixture_mode")
+                output=run_operations(state,params)
+                self.assertEqual(output["result"]["status"],"partial")
+                self.assertIn("EMISSION_FACTOR_REQUIRED",{d["code"] for d in output["result"]["diagnostics"]})
+                results={r["id"]:r for r in output["proposal"]["state"]["results"]}
+                self.assertEqual(results["operations-co2e"]["status"],"blocked")
+                self.assertEqual(results["operations-co2e"]["metrics"],[])
+                self.assertEqual(results["operations-inventory"]["metrics"],[])
+                self.assertEqual(results["ops-energy"]["metrics"][0]["value"],1500)
+
+    def test_carbon_adapter_rejects_extra_or_missing_parameters(self):
+        for change in (lambda p:p.update(invent_factor=True),lambda p:p.pop("policy")):
+            state,params=carbon_operations_fixture();change(params["steps"][-4]["parameters"])
+            with self.assertRaises(ValueError):run_operations(state,params)
+
     def test_context_composition_replays_interpretations_and_checked_plan(self):
         capture=json.loads((ROOT/"evaluations/sus13-context-composition.json").read_text(encoding="utf-8"))
         state=copy.deepcopy(capture["initial_state"])
@@ -177,6 +232,8 @@ class OperationsTests(unittest.TestCase):
         self.assertEqual(run_operations(independent["request"]["state"],independent["request"]["parameters"]),independent["output"])
         sequence=json.loads((ROOT/"evaluations/sus13-action-sequence.json").read_text(encoding="utf-8"))
         self.assertEqual(run_operations(sequence["state"],sequence["parameters"]),sequence["output"])
+        carbon=json.loads((ROOT/"evaluations/sus13-carbon-composition.json").read_text(encoding="utf-8"))
+        self.assertEqual(run_operations(carbon["state"],carbon["parameters"]),carbon["output"])
         request={"contract_version":"0.1.0","skill":"sustainable-operations","state":capture["state"],"parameters":capture["parameters"]}
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/"request.json";path.write_text(json.dumps(request),encoding="utf-8")
@@ -185,7 +242,10 @@ class OperationsTests(unittest.TestCase):
 
     def test_manifest_dependencies_resolve_to_allowlisted_skills(self):
         manifest=json.loads((ROOT/"skillsets/sustainable-operations/manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual({d["name"] for d in manifest["dependencies"]},set(RUNNERS))
+        self.assertEqual({d["name"] for d in manifest["dependencies"]+manifest["carbon_dependencies"]},set(RUNNERS))
+        self.assertEqual({d["name"] for d in manifest["carbon_dependencies"]},set(CARBON_PARAMETERS))
+        self.assertEqual(manifest["carbon_dependency_status"],"development_pending_review")
+        for dependency in manifest["carbon_dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())
         self.assertEqual(manifest["status"],"approved_for_development")
         self.assertTrue((ROOT/manifest["review_record"]).is_file())
         for dependency in manifest["dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())

@@ -1,0 +1,9 @@
+# Operations with a selected carbon inventory
+
+Recorded 2026-10-05. The complete JSON request executes five physical/economic assessments followed by CO2e, location-based Scope 2, selected inventory and scope-level emission hotspots, returning one checked batch proposal. All data and the 0.5 kg CO2e/kWh factor are fictional; each carbon step explicitly enables fixture mode. No real factor or inventory is asserted.
+
+The energy baseline contains 1,000 kWh plus a distinct 0.5 MWh feed, totaling 1,500 kWh. Only the first feed has the supplied synthetic factor review: 1,000 kWh × 0.5 kg CO2e/kWh = 500 kg CO2e. Location-based Scope 2 and the selected inventory retain that 500 kg subtotal. Direct emissions, the other feed and all 15 unknown Scope 3 categories are missing coverage; they are not zero or not applicable. The 100% scope hotspot share uses only the selected 500 kg denominator and does not describe a complete facility footprint or avoided emissions.
+
+The energy candidate retains fresh physical and carbon assessment links. No new numerical portfolio or candidate saving is created, financial benefits remain unlinked, proposed implementation stays unauthorized and review/gap history is preserved. Tests remove a factor or omit fixture opt-in and confirm blocked carbon calculations plus propagated EMISSION_FACTOR_REQUIRED while the independent 1,500 kWh physical baseline still succeeds. Exact extra/missing parameters are rejected. The full saved proposal is replayed by regression.
+
+This deterministic fictional composition establishes integration and evidence-preservation behavior, not real-source authenticity, independent agent reasoning, a complete organization inventory, investment priority, verified reduction or v1 readiness. Carbon dependency additions remain development pending review.

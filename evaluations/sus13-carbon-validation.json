@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "fc67fca",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 269,
+    "duration_seconds": 109.22,
+    "status": "passed"
+  },
+  "focused_operations": {
+    "tests": 16,
+    "duration_seconds": 33.53,
+    "status": "passed"
+  },
+  "skill_validation": "passed",
+  "analytical_helpers": 37,
+  "new_carbon_helpers": 9,
+  "capture": "sus13-carbon-composition.json",
+  "checks": [
+    "Fictional explicit-factor CO2e and selected location account: 500 kg CO2e",
+    "Partial selected inventory and emissions hotspot: 500 kg CO2e",
+    "Separate physical baseline: 1500 kWh",
+    "Missing factor and default real-use mode reject synthetic factors",
+    "EMISSION_FACTOR_REQUIRED retained by aggregate",
+    "Missing carbon cannot become zero or block independent physical arithmetic",
+    "Exact helper parameters and optional per-step fixture mode",
+    "Complete carbon composition capture reruns alongside all earlier captures",
+    "Dependency paths resolve; additions remain development pending review"
+  ],
+  "limits": [
+    "Synthetic factor and physical data only; no real inventory",
+    "Coverage is selected first electricity feed; other feed/direct/category coverage incomplete",
+    "100% hotspot share refers only to selected denominator",
+    "No causal reduction, financial attribution, implementation or readiness established",
+    "Independent organization-wide evaluation and later roadmap work remain"
+  ],
+  "sha256": {
+    "scripts/operations_tools.py": "2be7143d63b250e572edb02d1cf353396dc51892ff582fe8adeee55e6738feb5",
+    "tests/test_operations.py": "741155acfc1e73f9cd89a343c04a55265861ec68adf401a81e16d9b881170449",
+    "docs/operations-contract.md": "6bf308c80b1e7927cbf430dc6caf2d6939d3126b7481369e1cb8dcfdd588625f",
+    "skillsets/sustainable-operations/manifest.json": "40f000cb28f5b360e5c55d730efc10c2449c8d6c5c2a9fe40c64a3f0d4f9aaec",
+    "skillsets/sustainable-operations/SKILL.md": "6ac9a5c2c840b5b7eee55169b1e324365c052811815c620e57d8b0bc5d6c9f69",
+    "evaluations/sus13-carbon-composition.json": "3d0fa63f50329f0ca4efca0bb521fad15506e48720504b4d5fadc2ebd64a05b6"
+  }
+}
