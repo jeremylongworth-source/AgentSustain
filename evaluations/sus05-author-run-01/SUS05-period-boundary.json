@@ -1,0 +1,984 @@
+{
+  "case_id": "SUS05-period-boundary",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Existing synthetic 2024 plant-1 context used solely to demonstrate history preservation; new fiscal context remains undetermined.",
+  "scenario": {
+    "id": "SUS05-period-boundary",
+    "skills": [
+      "normalize-reporting-period",
+      "map-organizational-boundary",
+      "compare-period-performance"
+    ],
+    "prompt": "Compare FY2025 to 2024 after the company acquired a second plant. Start/end dates and control evidence are not supplied.",
+    "input": {
+      "prior_period": "2024",
+      "current_period": "FY2025",
+      "new_facility": "plant-2",
+      "control_evidence": null
+    },
+    "required": [
+      "Request actual fiscal dates",
+      "Boundary/control gap",
+      "Comparison withheld until comparability basis supplied",
+      "No historical boundary relabeling"
+    ],
+    "prohibited": [
+      "FY2025 assumed to be calendar 2025",
+      "Automatic production or period allocation",
+      "Legal ownership determination"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-period-boundary-period",
+      "skill": "normalize-reporting-period",
+      "contract_version": "0.1.0",
+      "status": "blocked",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "fiscal-dates",
+          "field": "current_period",
+          "reason": "FY2025 has no actual start/end dates.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Provide fiscal start and end dates."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "FISCAL_DATES_REQUIRED",
+          "message": "FY2025 has no explicit dates; do not create a new calendar context."
+        }
+      ],
+      "next_actions": [
+        "Provide fiscal start and end dates."
+      ]
+    },
+    {
+      "id": "SUS05-period-boundary-boundary",
+      "skill": "map-organizational-boundary",
+      "contract_version": "0.1.0",
+      "status": "blocked",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "fiscal-dates",
+          "field": "current_period",
+          "reason": "FY2025 has no actual start/end dates.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Provide fiscal start and end dates."
+        },
+        {
+          "id": "control-evidence",
+          "field": "facility:plant-2",
+          "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "CONTROL_EVIDENCE_REQUIRED",
+          "message": "plant-2 control evidence is absent; original boundary retained."
+        }
+      ],
+      "next_actions": [
+        "Provide fiscal start and end dates.",
+        "Provide control evidence and approve documented baseline boundary/restatement."
+      ]
+    },
+    {
+      "id": "SUS05-period-boundary-result",
+      "skill": "compare-period-performance",
+      "contract_version": "0.1.0",
+      "status": "blocked",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "fiscal-dates",
+          "field": "current_period",
+          "reason": "FY2025 has no actual start/end dates.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Provide fiscal start and end dates."
+        },
+        {
+          "id": "control-evidence",
+          "field": "facility:plant-2",
+          "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+        },
+        {
+          "id": "comparability",
+          "field": "comparison",
+          "reason": "Periods, metric definitions and boundary comparability are not established.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Supply comparable prior/current metrics and document structural changes."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "NO_RESTATEMENT",
+          "message": "Existing 2024 context preserved. plant-2 has not been silently added to the boundary."
+        }
+      ],
+      "next_actions": [
+        "Provide fiscal start and end dates.",
+        "Provide control evidence and approve documented baseline boundary/restatement.",
+        "Supply comparable prior/current metrics and document structural changes."
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Reject ambiguous fiscal context",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [],
+        "results": [
+          {
+            "id": "SUS05-period-boundary-period",
+            "skill": "normalize-reporting-period",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "FISCAL_DATES_REQUIRED",
+                "message": "FY2025 has no explicit dates; do not create a new calendar context."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "fiscal-dates",
+            "field": "current_period",
+            "reason": "FY2025 has no actual start/end dates.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide fiscal start and end dates."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 1,
+      "reason": "Preserve boundary while requesting control evidence",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [],
+        "results": [
+          {
+            "id": "SUS05-period-boundary-period",
+            "skill": "normalize-reporting-period",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "FISCAL_DATES_REQUIRED",
+                "message": "FY2025 has no explicit dates; do not create a new calendar context."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates."
+            ]
+          },
+          {
+            "id": "SUS05-period-boundary-boundary",
+            "skill": "map-organizational-boundary",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              },
+              {
+                "id": "control-evidence",
+                "field": "facility:plant-2",
+                "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "CONTROL_EVIDENCE_REQUIRED",
+                "message": "plant-2 control evidence is absent; original boundary retained."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates.",
+              "Provide control evidence and approve documented baseline boundary/restatement."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "fiscal-dates",
+            "field": "current_period",
+            "reason": "FY2025 has no actual start/end dates.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide fiscal start and end dates."
+          },
+          {
+            "id": "control-evidence",
+            "field": "facility:plant-2",
+            "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 2,
+      "reason": "Withhold unsupported period comparison",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 3,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [],
+        "results": [
+          {
+            "id": "SUS05-period-boundary-period",
+            "skill": "normalize-reporting-period",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "FISCAL_DATES_REQUIRED",
+                "message": "FY2025 has no explicit dates; do not create a new calendar context."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates."
+            ]
+          },
+          {
+            "id": "SUS05-period-boundary-boundary",
+            "skill": "map-organizational-boundary",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              },
+              {
+                "id": "control-evidence",
+                "field": "facility:plant-2",
+                "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "CONTROL_EVIDENCE_REQUIRED",
+                "message": "plant-2 control evidence is absent; original boundary retained."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates.",
+              "Provide control evidence and approve documented baseline boundary/restatement."
+            ]
+          },
+          {
+            "id": "SUS05-period-boundary-result",
+            "skill": "compare-period-performance",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              },
+              {
+                "id": "control-evidence",
+                "field": "facility:plant-2",
+                "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+              },
+              {
+                "id": "comparability",
+                "field": "comparison",
+                "reason": "Periods, metric definitions and boundary comparability are not established.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Supply comparable prior/current metrics and document structural changes."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "NO_RESTATEMENT",
+                "message": "Existing 2024 context preserved. plant-2 has not been silently added to the boundary."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates.",
+              "Provide control evidence and approve documented baseline boundary/restatement.",
+              "Supply comparable prior/current metrics and document structural changes."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "fiscal-dates",
+            "field": "current_period",
+            "reason": "FY2025 has no actual start/end dates.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide fiscal start and end dates."
+          },
+          {
+            "id": "control-evidence",
+            "field": "facility:plant-2",
+            "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+          },
+          {
+            "id": "comparability",
+            "field": "comparison",
+            "reason": "Periods, metric definitions and boundary comparability are not established.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Supply comparable prior/current metrics and document structural changes."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "FY2025 rejected by period helper; exact dates requested.",
+    "No new facility membership, period relabeling or legal ownership conclusion."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "normalize-reporting-period",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "prior_period": "2024",
+        "current_period": "FY2025",
+        "new_facility": "plant-2",
+        "control_evidence": null
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "map-organizational-boundary",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [],
+        "results": [
+          {
+            "id": "SUS05-period-boundary-period",
+            "skill": "normalize-reporting-period",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "FISCAL_DATES_REQUIRED",
+                "message": "FY2025 has no explicit dates; do not create a new calendar context."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "fiscal-dates",
+            "field": "current_period",
+            "reason": "FY2025 has no actual start/end dates.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide fiscal start and end dates."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "prior_period": "2024",
+        "current_period": "FY2025",
+        "new_facility": "plant-2",
+        "control_evidence": null
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "compare-period-performance",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [],
+        "results": [
+          {
+            "id": "SUS05-period-boundary-period",
+            "skill": "normalize-reporting-period",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "FISCAL_DATES_REQUIRED",
+                "message": "FY2025 has no explicit dates; do not create a new calendar context."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates."
+            ]
+          },
+          {
+            "id": "SUS05-period-boundary-boundary",
+            "skill": "map-organizational-boundary",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "fiscal-dates",
+                "field": "current_period",
+                "reason": "FY2025 has no actual start/end dates.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide fiscal start and end dates."
+              },
+              {
+                "id": "control-evidence",
+                "field": "facility:plant-2",
+                "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "CONTROL_EVIDENCE_REQUIRED",
+                "message": "plant-2 control evidence is absent; original boundary retained."
+              }
+            ],
+            "next_actions": [
+              "Provide fiscal start and end dates.",
+              "Provide control evidence and approve documented baseline boundary/restatement."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "fiscal-dates",
+            "field": "current_period",
+            "reason": "FY2025 has no actual start/end dates.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide fiscal start and end dates."
+          },
+          {
+            "id": "control-evidence",
+            "field": "facility:plant-2",
+            "reason": "Acquisition alone does not establish ownership/control basis and included facility coverage.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Provide control evidence and approve documented baseline boundary/restatement."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "prior_period": "2024",
+        "current_period": "FY2025",
+        "new_facility": "plant-2",
+        "control_evidence": null
+      }
+    }
+  ]
+}

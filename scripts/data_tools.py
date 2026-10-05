@@ -75,18 +75,44 @@ def comparable(items, same_period=True):
             raise ValueError("Input reporting periods differ.")
 
 
-def baseline(metrics, target_unit, nonoverlap_confirmed=False):
+def baseline(metrics, target_unit, nonoverlap_confirmed=False, coverage_details=None):
     comparable(metrics)
     if nonoverlap_confirmed is not True:
         raise ValueError("Confirm mutually exclusive quantity coverage before aggregation.")
     refs = [ident for item in metrics for ident in item["evidence_ids"]]
-    if any(not item["evidence_ids"] for item in metrics) or len(refs) != len(set(refs)):
-        raise ValueError("Shared or missing evidence requires reconciliation before summing.")
+    if any(not item["evidence_ids"] for item in metrics):
+        raise ValueError("Missing evidence requires reconciliation before summing.")
+    if coverage_details is not None:
+        ids = [item.get("id") for item in metrics]
+        if any(not isinstance(ident, str) or not ident for ident in ids) or len(ids) != len(set(ids)):
+            raise ValueError("Line-level coverage requires unique metric IDs.")
+        if not isinstance(coverage_details, dict) or set(coverage_details) != set(ids):
+            raise ValueError("Provide coverage details for every selected metric only.")
+        coverage_pairs = []
+        for item in metrics:
+            fragments = coverage_details[item["id"]]
+            if not isinstance(fragments, list) or not fragments:
+                raise ValueError("Coverage needs source fragments for each metric.")
+            covered_refs = set()
+            for fragment in fragments:
+                if not isinstance(fragment, dict) or set(fragment) != {"evidence_id", "source_fragment"}:
+                    raise ValueError("Each coverage fragment needs evidence_id and source_fragment.")
+                if any(not isinstance(value, str) or not value.strip() for value in fragment.values()):
+                    raise ValueError("Coverage identifiers must be nonempty strings.")
+                covered_refs.add(fragment["evidence_id"])
+                coverage_pairs.append((fragment["evidence_id"], fragment["source_fragment"].strip()))
+            if covered_refs != set(item["evidence_ids"]):
+                raise ValueError("Coverage fragments must match the metric's evidence references.")
+        if len(coverage_pairs) != len(set(coverage_pairs)):
+            raise ValueError("Source fragment reused across quantities; reconcile overlap.")
+    elif len(refs) != len(set(refs)):
+        raise ValueError("Shared evidence requires explicit line-level coverage reconciliation before summing.")
     converted = [convert(item["value"], item["unit"], target_unit) for item in metrics]
     with localcontext() as context:
         context.prec = 34
         return {"value": sum((item["value"] for item in converted), Decimal(0)), "unit": target_unit,
-                "formula": "sum(converted inputs)", "conversions": converted}
+                "formula": "sum(converted inputs)", "conversions": converted,
+                "coverage_details": coverage_details}
 
 
 def kpi(numerator, denominator, operation):
@@ -148,7 +174,7 @@ def main():
         elif operation == "period":
             output = period(request["period"])
         elif operation == "baseline":
-            output = baseline(request["metrics"], request["target_unit"], request.get("nonoverlap_confirmed", False))
+            output = baseline(request["metrics"], request["target_unit"], request.get("nonoverlap_confirmed", False), request.get("coverage_details"))
         elif operation == "kpi":
             output = kpi(request["numerator"], request["denominator"], request["kpi_operation"])
         elif operation == "compare":

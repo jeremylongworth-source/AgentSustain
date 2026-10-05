@@ -1,0 +1,1416 @@
+{
+  "case_id": "SUS05-normalize-duplicates",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Organization, Ontario location and operational boundary are synthetic test context, not facts inferred about a real business.",
+  "scenario": {
+    "id": "SUS05-normalize-duplicates",
+    "skills": [
+      "normalize-sustainability-data",
+      "validate-sustainability-data"
+    ],
+    "prompt": "Normalize these fictional electricity invoice records for one facility in January 2025. Preserve source identity and reconcile duplicates before summing.",
+    "input": {
+      "facility": "plant-1",
+      "period": {
+        "start": "2025-01-01",
+        "end": "2025-01-31"
+      },
+      "records": [
+        {
+          "invoice": "E-101",
+          "source": "fixture:invoice-101",
+          "quantity": 1000,
+          "unit": "kWh"
+        },
+        {
+          "invoice": "E-101",
+          "source": "fixture:invoice-101-copy",
+          "quantity": 1000,
+          "unit": "kWh"
+        },
+        {
+          "invoice": "E-102",
+          "source": "fixture:invoice-102",
+          "quantity": 500,
+          "unit": null
+        }
+      ]
+    },
+    "required": [
+      "Duplicate E-101 records flagged",
+      "Missing E-102 unit produces a gap",
+      "No total treats all three rows as valid",
+      "Source identity retained"
+    ],
+    "prohibited": [
+      "Invented unit for E-102",
+      "2500 kWh complete baseline",
+      "Assurance or verified inventory claim"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-01-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "e101",
+        "source": {
+          "locator": "fixture:invoice-101",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:invoice-101"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "e101-copy",
+        "source": {
+          "locator": "fixture:invoice-101-copy",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:invoice-101-copy"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "e102",
+        "source": {
+          "locator": "fixture:invoice-102",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:invoice-102"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-normalize-duplicates-result",
+      "skill": "normalize-sustainability-data",
+      "contract_version": "0.1.0",
+      "status": "partial",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "m-e101",
+          "name": "Electricity invoice E-101",
+          "value": 1000,
+          "unit": "kWh",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-01-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "e101"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extracted 1000 kWh",
+            "inputs": [
+              "e101"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "e101",
+        "e101-copy",
+        "e102"
+      ],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "duplicate-e101",
+          "field": "invoice:E-101",
+          "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+        },
+        {
+          "id": "unit-e102",
+          "field": "invoice:E-102.unit",
+          "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Obtain the E-102 unit from the source record."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "DUPLICATE_SOURCE",
+          "message": "E-101 original and copy refer to one activity quantity; no complete total emitted."
+        },
+        {
+          "code": "REJECTED_QUANTITY",
+          "message": "E-102 value 500 retained in raw scenario, not normalized to an invented unit."
+        }
+      ],
+      "next_actions": [
+        "Confirm canonical invoice identity and exclude duplicate coverage.",
+        "Obtain the E-102 unit from the source record."
+      ]
+    },
+    {
+      "id": "SUS05-normalize-duplicates-validate-sustainability-data",
+      "skill": "validate-sustainability-data",
+      "contract_version": "0.1.0",
+      "status": "partial",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [
+        "e101",
+        "e101-copy",
+        "e102"
+      ],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "duplicate-e101",
+          "field": "invoice:E-101",
+          "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+        },
+        {
+          "id": "unit-e102",
+          "field": "invoice:E-102.unit",
+          "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Obtain the E-102 unit from the source record."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "VALIDATION_SCOPE",
+          "message": "Named records checked; duplicate identity and missing E-102 unit remain unresolved. No complete total is approved."
+        }
+      ],
+      "next_actions": [
+        "Confirm canonical invoice identity and exclude duplicate coverage.",
+        "Obtain the E-102 unit from the source record."
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Preserve duplicate source evidence and valid independent extraction",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "e101",
+            "source": {
+              "locator": "fixture:invoice-101",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e101-copy",
+            "source": {
+              "locator": "fixture:invoice-101-copy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101-copy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e102",
+            "source": {
+              "locator": "fixture:invoice-102",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-102"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "UNKNOWN_UNIT",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-normalize-duplicates-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "m-e101",
+                "name": "Electricity invoice E-101",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-01-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "e101"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 1000 kWh",
+                  "inputs": [
+                    "e101"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "e101",
+              "e101-copy",
+              "e102"
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "duplicate-e101",
+                "field": "invoice:E-101",
+                "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+              },
+              {
+                "id": "unit-e102",
+                "field": "invoice:E-102.unit",
+                "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain the E-102 unit from the source record."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "DUPLICATE_SOURCE",
+                "message": "E-101 original and copy refer to one activity quantity; no complete total emitted."
+              },
+              {
+                "code": "REJECTED_QUANTITY",
+                "message": "E-102 value 500 retained in raw scenario, not normalized to an invented unit."
+              }
+            ],
+            "next_actions": [
+              "Confirm canonical invoice identity and exclude duplicate coverage.",
+              "Obtain the E-102 unit from the source record."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "duplicate-e101",
+            "field": "invoice:E-101",
+            "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+          },
+          {
+            "id": "unit-e102",
+            "field": "invoice:E-102.unit",
+            "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain the E-102 unit from the source record."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 1,
+      "reason": "Named records checked; duplicate identity and missing E-102 unit remain unresolved. No complete total is approved.",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "e101",
+            "source": {
+              "locator": "fixture:invoice-101",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e101-copy",
+            "source": {
+              "locator": "fixture:invoice-101-copy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101-copy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e102",
+            "source": {
+              "locator": "fixture:invoice-102",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-102"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "UNKNOWN_UNIT",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-normalize-duplicates-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "m-e101",
+                "name": "Electricity invoice E-101",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-01-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "e101"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 1000 kWh",
+                  "inputs": [
+                    "e101"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "e101",
+              "e101-copy",
+              "e102"
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "duplicate-e101",
+                "field": "invoice:E-101",
+                "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+              },
+              {
+                "id": "unit-e102",
+                "field": "invoice:E-102.unit",
+                "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain the E-102 unit from the source record."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "DUPLICATE_SOURCE",
+                "message": "E-101 original and copy refer to one activity quantity; no complete total emitted."
+              },
+              {
+                "code": "REJECTED_QUANTITY",
+                "message": "E-102 value 500 retained in raw scenario, not normalized to an invented unit."
+              }
+            ],
+            "next_actions": [
+              "Confirm canonical invoice identity and exclude duplicate coverage.",
+              "Obtain the E-102 unit from the source record."
+            ]
+          },
+          {
+            "id": "SUS05-normalize-duplicates-validate-sustainability-data",
+            "skill": "validate-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "e101",
+              "e101-copy",
+              "e102"
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "duplicate-e101",
+                "field": "invoice:E-101",
+                "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+              },
+              {
+                "id": "unit-e102",
+                "field": "invoice:E-102.unit",
+                "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain the E-102 unit from the source record."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "VALIDATION_SCOPE",
+                "message": "Named records checked; duplicate identity and missing E-102 unit remain unresolved. No complete total is approved."
+              }
+            ],
+            "next_actions": [
+              "Confirm canonical invoice identity and exclude duplicate coverage.",
+              "Obtain the E-102 unit from the source record."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "duplicate-e101",
+            "field": "invoice:E-101",
+            "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+          },
+          {
+            "id": "unit-e102",
+            "field": "invoice:E-102.unit",
+            "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain the E-102 unit from the source record."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "Retained one 1000 kWh quantity; duplicate and missing-unit gaps remain.",
+    "No total of 2500 kWh or assurance claim."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "normalize-sustainability-data",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "e101",
+            "source": {
+              "locator": "fixture:invoice-101",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e101-copy",
+            "source": {
+              "locator": "fixture:invoice-101-copy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101-copy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e102",
+            "source": {
+              "locator": "fixture:invoice-102",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-102"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "UNKNOWN_UNIT",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "facility": "plant-1",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "records": [
+          {
+            "invoice": "E-101",
+            "source": "fixture:invoice-101",
+            "quantity": 1000,
+            "unit": "kWh"
+          },
+          {
+            "invoice": "E-101",
+            "source": "fixture:invoice-101-copy",
+            "quantity": 1000,
+            "unit": "kWh"
+          },
+          {
+            "invoice": "E-102",
+            "source": "fixture:invoice-102",
+            "quantity": 500,
+            "unit": null
+          }
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "validate-sustainability-data",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "e101",
+            "source": {
+              "locator": "fixture:invoice-101",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e101-copy",
+            "source": {
+              "locator": "fixture:invoice-101-copy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-101-copy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "e102",
+            "source": {
+              "locator": "fixture:invoice-102",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:invoice-102"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "UNKNOWN_UNIT",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-normalize-duplicates-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "m-e101",
+                "name": "Electricity invoice E-101",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-01-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "e101"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 1000 kWh",
+                  "inputs": [
+                    "e101"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "e101",
+              "e101-copy",
+              "e102"
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "duplicate-e101",
+                "field": "invoice:E-101",
+                "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+              },
+              {
+                "id": "unit-e102",
+                "field": "invoice:E-102.unit",
+                "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain the E-102 unit from the source record."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "DUPLICATE_SOURCE",
+                "message": "E-101 original and copy refer to one activity quantity; no complete total emitted."
+              },
+              {
+                "code": "REJECTED_QUANTITY",
+                "message": "E-102 value 500 retained in raw scenario, not normalized to an invented unit."
+              }
+            ],
+            "next_actions": [
+              "Confirm canonical invoice identity and exclude duplicate coverage.",
+              "Obtain the E-102 unit from the source record."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "duplicate-e101",
+            "field": "invoice:E-101",
+            "reason": "Two representations of invoice E-101 cover the same facility and period. The copy is retained but not counted.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Confirm canonical invoice identity and exclude duplicate coverage."
+          },
+          {
+            "id": "unit-e102",
+            "field": "invoice:E-102.unit",
+            "reason": "Unit not supplied; 500 has no computable dimensional basis.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain the E-102 unit from the source record."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "facility": "plant-1",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "records": [
+          {
+            "invoice": "E-101",
+            "source": "fixture:invoice-101",
+            "quantity": 1000,
+            "unit": "kWh"
+          },
+          {
+            "invoice": "E-101",
+            "source": "fixture:invoice-101-copy",
+            "quantity": 1000,
+            "unit": "kWh"
+          },
+          {
+            "invoice": "E-102",
+            "source": "fixture:invoice-102",
+            "quantity": 500,
+            "unit": null
+          }
+        ]
+      }
+    }
+  ]
+}

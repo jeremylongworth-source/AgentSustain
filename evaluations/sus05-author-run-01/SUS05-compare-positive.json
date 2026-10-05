@@ -1,0 +1,1306 @@
+{
+  "case_id": "SUS05-compare-positive",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Organization, Ontario location and operational boundary are synthetic test context, not facts inferred about a real business.",
+  "scenario": {
+    "id": "SUS05-compare-positive",
+    "skills": [
+      "normalize-sustainability-data",
+      "compare-period-performance"
+    ],
+    "prompt": "Compare fictional 2022 electricity of 100 kWh with 2023 electricity of 80 kWh. Both periods are 365 days and method, boundary and operating context are explicitly comparable.",
+    "input": {
+      "prior": {
+        "value": 100,
+        "unit": "kWh",
+        "period": "2022",
+        "source": "fixture:prior-energy"
+      },
+      "current": {
+        "value": 80,
+        "unit": "kWh",
+        "period": "2023",
+        "source": "fixture:current-energy"
+      },
+      "comparability_confirmed": true
+    },
+    "required": [
+      "-20 kWh absolute change",
+      "-20 percent change",
+      "Both periods and sources retained"
+    ],
+    "prohibited": [
+      "Causal attribution",
+      "Silent annualization",
+      "Historical period relabeling"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2023-01-01",
+      "end": "2023-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "prior",
+        "source": {
+          "locator": "fixture:prior-energy",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:prior-energy"
+        },
+        "period": {
+          "start": "2022-01-01",
+          "end": "2022-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "current",
+        "source": {
+          "locator": "fixture:current-energy",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:current-energy"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-compare-positive-raw",
+      "skill": "normalize-sustainability-data",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "prior-quantity",
+          "name": "Electricity",
+          "value": 100,
+          "unit": "kWh",
+          "period": {
+            "start": "2022-01-01",
+            "end": "2022-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "prior"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extracted 100 kWh",
+            "inputs": [
+              "prior"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        },
+        {
+          "id": "current-quantity",
+          "name": "Electricity",
+          "value": 80,
+          "unit": "kWh",
+          "period": {
+            "start": "2023-01-01",
+            "end": "2023-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "current"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extracted 80 kWh",
+            "inputs": [
+              "current"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "current",
+        "prior"
+      ],
+      "assumptions": [],
+      "data_gaps": [],
+      "diagnostics": [
+        {
+          "code": "HISTORICAL_CONTEXT",
+          "message": "Prior metric retains its 2022 period; current is 2023."
+        }
+      ],
+      "next_actions": []
+    },
+    {
+      "id": "SUS05-compare-positive-compare",
+      "skill": "compare-period-performance",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "absolute-change",
+          "name": "Absolute electricity change",
+          "value": -20.0,
+          "unit": "kWh",
+          "period": {
+            "start": "2023-01-01",
+            "end": "2023-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "prior",
+            "current"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": "Fixture confirms comparable method, boundary, operating context and 365-day periods.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "80 kWh (2023) - 100 kWh (2022) = -20 kWh",
+            "inputs": [
+              "prior-quantity",
+              "current-quantity"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        },
+        {
+          "id": "percent-change",
+          "name": "Percentage electricity change",
+          "value": -20.0,
+          "unit": "%",
+          "period": {
+            "start": "2023-01-01",
+            "end": "2023-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "prior",
+            "current"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": "Fixture confirms comparable method, boundary, operating context and 365-day periods.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "(80 - 100) / 100 * 100 = -20 percent",
+            "inputs": [
+              "prior-quantity",
+              "current-quantity"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "current",
+        "prior"
+      ],
+      "assumptions": [
+        "Fixture confirms comparable method, boundary, operating context and 365-day periods."
+      ],
+      "data_gaps": [],
+      "diagnostics": [
+        {
+          "code": "PERIOD_BASIS",
+          "message": "Prior 2022 and current 2023 are both 365 days; no causal attribution or annualization."
+        }
+      ],
+      "next_actions": []
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Preserve periods and history",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "prior",
+            "source": {
+              "locator": "fixture:prior-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:prior-energy"
+            },
+            "period": {
+              "start": "2022-01-01",
+              "end": "2022-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "current",
+            "source": {
+              "locator": "fixture:current-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:current-energy"
+            },
+            "period": {
+              "start": "2023-01-01",
+              "end": "2023-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-compare-positive-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "prior-quantity",
+                "name": "Electricity",
+                "value": 100,
+                "unit": "kWh",
+                "period": {
+                  "start": "2022-01-01",
+                  "end": "2022-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "prior"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 100 kWh",
+                  "inputs": [
+                    "prior"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "current-quantity",
+                "name": "Electricity",
+                "value": 80,
+                "unit": "kWh",
+                "period": {
+                  "start": "2023-01-01",
+                  "end": "2023-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "current"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 80 kWh",
+                  "inputs": [
+                    "current"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "current",
+              "prior"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "HISTORICAL_CONTEXT",
+                "message": "Prior metric retains its 2022 period; current is 2023."
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 1,
+      "reason": "Compare explicitly compatible quantities",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "prior",
+            "source": {
+              "locator": "fixture:prior-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:prior-energy"
+            },
+            "period": {
+              "start": "2022-01-01",
+              "end": "2022-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "current",
+            "source": {
+              "locator": "fixture:current-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:current-energy"
+            },
+            "period": {
+              "start": "2023-01-01",
+              "end": "2023-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-compare-positive-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "prior-quantity",
+                "name": "Electricity",
+                "value": 100,
+                "unit": "kWh",
+                "period": {
+                  "start": "2022-01-01",
+                  "end": "2022-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "prior"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 100 kWh",
+                  "inputs": [
+                    "prior"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "current-quantity",
+                "name": "Electricity",
+                "value": 80,
+                "unit": "kWh",
+                "period": {
+                  "start": "2023-01-01",
+                  "end": "2023-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "current"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 80 kWh",
+                  "inputs": [
+                    "current"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "current",
+              "prior"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "HISTORICAL_CONTEXT",
+                "message": "Prior metric retains its 2022 period; current is 2023."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "SUS05-compare-positive-compare",
+            "skill": "compare-period-performance",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "absolute-change",
+                "name": "Absolute electricity change",
+                "value": -20.0,
+                "unit": "kWh",
+                "period": {
+                  "start": "2023-01-01",
+                  "end": "2023-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "prior",
+                  "current"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": "Fixture confirms comparable method, boundary, operating context and 365-day periods.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "80 kWh (2023) - 100 kWh (2022) = -20 kWh",
+                  "inputs": [
+                    "prior-quantity",
+                    "current-quantity"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "percent-change",
+                "name": "Percentage electricity change",
+                "value": -20.0,
+                "unit": "%",
+                "period": {
+                  "start": "2023-01-01",
+                  "end": "2023-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "prior",
+                  "current"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": "Fixture confirms comparable method, boundary, operating context and 365-day periods.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "(80 - 100) / 100 * 100 = -20 percent",
+                  "inputs": [
+                    "prior-quantity",
+                    "current-quantity"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "current",
+              "prior"
+            ],
+            "assumptions": [
+              "Fixture confirms comparable method, boundary, operating context and 365-day periods."
+            ],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "PERIOD_BASIS",
+                "message": "Prior 2022 and current 2023 are both 365 days; no causal attribution or annualization."
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [
+          "Fixture confirms comparable method, boundary, operating context and 365-day periods."
+        ],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "Executed compare helper: -20 kWh and -20 percent.",
+    "Both periods and sources preserved; no causal claim."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "normalize-sustainability-data",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "prior",
+            "source": {
+              "locator": "fixture:prior-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:prior-energy"
+            },
+            "period": {
+              "start": "2022-01-01",
+              "end": "2022-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "current",
+            "source": {
+              "locator": "fixture:current-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:current-energy"
+            },
+            "period": {
+              "start": "2023-01-01",
+              "end": "2023-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "prior": {
+          "value": 100,
+          "unit": "kWh",
+          "period": "2022",
+          "source": "fixture:prior-energy"
+        },
+        "current": {
+          "value": 80,
+          "unit": "kWh",
+          "period": "2023",
+          "source": "fixture:current-energy"
+        },
+        "comparability_confirmed": true
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "compare-period-performance",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "prior",
+            "source": {
+              "locator": "fixture:prior-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:prior-energy"
+            },
+            "period": {
+              "start": "2022-01-01",
+              "end": "2022-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "current",
+            "source": {
+              "locator": "fixture:current-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:current-energy"
+            },
+            "period": {
+              "start": "2023-01-01",
+              "end": "2023-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-compare-positive-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "prior-quantity",
+                "name": "Electricity",
+                "value": 100,
+                "unit": "kWh",
+                "period": {
+                  "start": "2022-01-01",
+                  "end": "2022-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "prior"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 100 kWh",
+                  "inputs": [
+                    "prior"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "current-quantity",
+                "name": "Electricity",
+                "value": 80,
+                "unit": "kWh",
+                "period": {
+                  "start": "2023-01-01",
+                  "end": "2023-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "current"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 80 kWh",
+                  "inputs": [
+                    "current"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "current",
+              "prior"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "HISTORICAL_CONTEXT",
+                "message": "Prior metric retains its 2022 period; current is 2023."
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "prior": {
+          "value": 100,
+          "unit": "kWh",
+          "period": "2022",
+          "source": "fixture:prior-energy"
+        },
+        "current": {
+          "value": 80,
+          "unit": "kWh",
+          "period": "2023",
+          "source": "fixture:current-energy"
+        },
+        "comparability_confirmed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "case_id": "SUS05-zero-denominator",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Synthetic 2025 same-period plant context supplied by fixture setup; scenario quantity values remain unchanged.",
+  "scenario": {
+    "id": "SUS05-zero-denominator",
+    "skills": [
+      "calculate-sustainability-kpi"
+    ],
+    "prompt": "Calculate intensity from 1000 kWh and zero produced items for the same fictional period and boundary.",
+    "input": {
+      "numerator": 1000,
+      "denominator": 0
+    },
+    "required": [
+      "Blocked calculation and denominator gap",
+      "No calculated KPI metric",
+      "Specific next action"
+    ],
+    "prohibited": [
+      "Infinity",
+      "Zero intensity",
+      "Assumed replacement production"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "energy",
+        "source": {
+          "locator": "fixture:zero-case-energy",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:zero-case-energy"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "production",
+        "source": {
+          "locator": "fixture:zero-case-production",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:zero-case-production"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-zero-denominator-result",
+      "skill": "calculate-sustainability-kpi",
+      "contract_version": "0.1.0",
+      "status": "blocked",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [
+        "energy",
+        "production"
+      ],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "zero-production",
+          "field": "denominator",
+          "reason": "Provided production is zero, so intensity is undefined.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Confirm production quantity and KPI applicability; use absolute energy if no production occurred."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "ZERO_DENOMINATOR",
+          "message": "No intensity metric emitted and zero was not replaced."
+        }
+      ],
+      "next_actions": [
+        "Confirm production quantity and KPI applicability; use absolute energy if no production occurred."
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Block undefined intensity without imputation",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:zero-case-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:zero-case-energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:zero-case-production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:zero-case-production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-zero-denominator-result",
+            "skill": "calculate-sustainability-kpi",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "zero-production",
+                "field": "denominator",
+                "reason": "Provided production is zero, so intensity is undefined.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Confirm production quantity and KPI applicability; use absolute energy if no production occurred."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "ZERO_DENOMINATOR",
+                "message": "No intensity metric emitted and zero was not replaced."
+              }
+            ],
+            "next_actions": [
+              "Confirm production quantity and KPI applicability; use absolute energy if no production occurred."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "zero-production",
+            "field": "denominator",
+            "reason": "Provided production is zero, so intensity is undefined.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Confirm production quantity and KPI applicability; use absolute energy if no production occurred."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "Helper rejected zero denominator.",
+    "Blocked envelope contains no KPI metric or invented production."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "calculate-sustainability-kpi",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:zero-case-energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:zero-case-energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:zero-case-production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:zero-case-production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "numerator": 1000,
+        "denominator": 0
+      }
+    }
+  ]
+}

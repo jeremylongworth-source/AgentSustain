@@ -1,0 +1,1004 @@
+{
+  "case_id": "SUS05-line-items",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Organization, Ontario location and operational boundary are synthetic test context, not facts inferred about a real business.",
+  "scenario": {
+    "id": "SUS05-line-items",
+    "skills": [
+      "normalize-sustainability-data",
+      "build-sustainability-baseline"
+    ],
+    "prompt": "A fictional invoice has two distinct nonoverlapping material line items. Normalize them without discarding legitimate shared-document evidence.",
+    "input": {
+      "source": "fixture:material-invoice",
+      "period": "2025",
+      "items": [
+        {
+          "line": "1",
+          "material": "paper",
+          "value": 200,
+          "unit": "kg"
+        },
+        {
+          "line": "2",
+          "material": "cardboard",
+          "value": 300,
+          "unit": "kg"
+        }
+      ]
+    },
+    "required": [
+      "Separate item IDs and material identities",
+      "One source with distinguishable line locators",
+      "Coverage reconciliation before any aggregate",
+      "Helper refusal of reused evidence is respected or a separately documented analysis is used"
+    ],
+    "prohibited": [
+      "Fabricated independent sources",
+      "Automatic removal of the second legitimate line",
+      "Combined emission calculations"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "document",
+        "source": {
+          "locator": "fixture:material-invoice",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:material-invoice"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-line-items-normalize",
+      "skill": "normalize-sustainability-data",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "paper-line-1",
+          "name": "Paper / invoice line 1",
+          "value": 200,
+          "unit": "kg",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "document"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extract line 1 quantity = 200 kg",
+            "inputs": [
+              "document"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        },
+        {
+          "id": "cardboard-line-2",
+          "name": "Cardboard / invoice line 2",
+          "value": 300,
+          "unit": "kg",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "document"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extract line 2 quantity = 300 kg",
+            "inputs": [
+              "document"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "document"
+      ],
+      "assumptions": [],
+      "data_gaps": [],
+      "diagnostics": [
+        {
+          "code": "LINE_LOCATORS",
+          "message": "Both quantities share fixture:material-invoice; line 1 and line 2 are distinct, nonoverlapping items."
+        }
+      ],
+      "next_actions": []
+    },
+    {
+      "id": "SUS05-line-items-baseline",
+      "skill": "build-sustainability-baseline",
+      "contract_version": "0.1.0",
+      "status": "blocked",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "shared-document",
+          "field": "baseline.coverage",
+          "reason": "Primitive helper refuses reused evidence; both legitimate line items remain available.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Use explicit documented line-level reconciliation before a supported aggregate."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "RETAINED_LINE_ITEMS",
+          "message": "Paper 200 kg and cardboard 300 kg are retained; no independent sources fabricated."
+        }
+      ],
+      "next_actions": [
+        "Use explicit documented line-level reconciliation before a supported aggregate."
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Normalize distinct line items without deduplicating the document",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "document",
+            "source": {
+              "locator": "fixture:material-invoice",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:material-invoice"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-line-items-normalize",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "paper-line-1",
+                "name": "Paper / invoice line 1",
+                "value": 200,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "document"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extract line 1 quantity = 200 kg",
+                  "inputs": [
+                    "document"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "cardboard-line-2",
+                "name": "Cardboard / invoice line 2",
+                "value": 300,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "document"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extract line 2 quantity = 300 kg",
+                  "inputs": [
+                    "document"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "document"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "LINE_LOCATORS",
+                "message": "Both quantities share fixture:material-invoice; line 1 and line 2 are distinct, nonoverlapping items."
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 1,
+      "reason": "Surface helper aggregation limitation",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "document",
+            "source": {
+              "locator": "fixture:material-invoice",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:material-invoice"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-line-items-normalize",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "paper-line-1",
+                "name": "Paper / invoice line 1",
+                "value": 200,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "document"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extract line 1 quantity = 200 kg",
+                  "inputs": [
+                    "document"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "cardboard-line-2",
+                "name": "Cardboard / invoice line 2",
+                "value": 300,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "document"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extract line 2 quantity = 300 kg",
+                  "inputs": [
+                    "document"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "document"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "LINE_LOCATORS",
+                "message": "Both quantities share fixture:material-invoice; line 1 and line 2 are distinct, nonoverlapping items."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "SUS05-line-items-baseline",
+            "skill": "build-sustainability-baseline",
+            "contract_version": "0.1.0",
+            "status": "blocked",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "shared-document",
+                "field": "baseline.coverage",
+                "reason": "Primitive helper refuses reused evidence; both legitimate line items remain available.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Use explicit documented line-level reconciliation before a supported aggregate."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "RETAINED_LINE_ITEMS",
+                "message": "Paper 200 kg and cardboard 300 kg are retained; no independent sources fabricated."
+              }
+            ],
+            "next_actions": [
+              "Use explicit documented line-level reconciliation before a supported aggregate."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "shared-document",
+            "field": "baseline.coverage",
+            "reason": "Primitive helper refuses reused evidence; both legitimate line items remain available.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Use explicit documented line-level reconciliation before a supported aggregate."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "Two line items survive with one source document.",
+    "Aggregation guard honored; no fabricated evidence IDs or emissions."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "normalize-sustainability-data",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "document",
+            "source": {
+              "locator": "fixture:material-invoice",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:material-invoice"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "source": "fixture:material-invoice",
+        "period": "2025",
+        "items": [
+          {
+            "line": "1",
+            "material": "paper",
+            "value": 200,
+            "unit": "kg"
+          },
+          {
+            "line": "2",
+            "material": "cardboard",
+            "value": 300,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "build-sustainability-baseline",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "document",
+            "source": {
+              "locator": "fixture:material-invoice",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:material-invoice"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-line-items-normalize",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "paper-line-1",
+                "name": "Paper / invoice line 1",
+                "value": 200,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "document"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extract line 1 quantity = 200 kg",
+                  "inputs": [
+                    "document"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "cardboard-line-2",
+                "name": "Cardboard / invoice line 2",
+                "value": 300,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "document"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extract line 2 quantity = 300 kg",
+                  "inputs": [
+                    "document"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "document"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "LINE_LOCATORS",
+                "message": "Both quantities share fixture:material-invoice; line 1 and line 2 are distinct, nonoverlapping items."
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "source": "fixture:material-invoice",
+        "period": "2025",
+        "items": [
+          {
+            "line": "1",
+            "material": "paper",
+            "value": 200,
+            "unit": "kg"
+          },
+          {
+            "line": "2",
+            "material": "cardboard",
+            "value": 300,
+            "unit": "kg"
+          }
+        ]
+      }
+    }
+  ]
+}

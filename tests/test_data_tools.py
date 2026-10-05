@@ -61,6 +61,30 @@ class DataToolTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             baseline([metric(100, source="a"), missing], "kWh", True)
 
+    def test_shared_document_with_reconciled_disjoint_lines(self):
+        a, b = metric(200, "kg", source="document"), metric(300, "kg", source="document")
+        a["id"], b["id"] = "paper", "cardboard"
+        coverage = {
+            "paper": [{"evidence_id": "document", "source_fragment": "line 1"}],
+            "cardboard": [{"evidence_id": "document", "source_fragment": "line 2"}],
+        }
+        result = baseline([a, b], "kg", True, coverage)
+        self.assertEqual(result["value"], Decimal(500))
+        self.assertEqual(result["coverage_details"], coverage)
+        coverage["cardboard"][0]["source_fragment"] = "line 1"
+        with self.assertRaisesRegex(ValueError, "fragment reused"):
+            baseline([a, b], "kg", True, coverage)
+
+    def test_coverage_cannot_invent_sources_or_omit_metrics(self):
+        a, b = metric(200, "kg", source="document"), metric(300, "kg", source="document")
+        a["id"], b["id"] = "paper", "cardboard"
+        coverage = {"paper": [{"evidence_id": "document", "source_fragment": "line 1"}]}
+        with self.assertRaisesRegex(ValueError, "every selected metric"):
+            baseline([a, b], "kg", True, coverage)
+        coverage["cardboard"] = [{"evidence_id": "invented-source", "source_fragment": "line 2"}]
+        with self.assertRaisesRegex(ValueError, "evidence references"):
+            baseline([a, b], "kg", True, coverage)
+
     def test_mixed_periods_boundaries_and_missing_values_block_baseline(self):
         for change in [{"period": period("2024")}, {"boundary_id": "b-2"}, {"value": None}]:
             metrics = [metric(100, source="a"), metric(100, source="b")]

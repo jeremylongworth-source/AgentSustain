@@ -1,7 +1,7 @@
 {
   "wave": "SUS-05",
   "fixture_type": "fictional behavioral evaluation specifications",
-  "execution_status": "not_executed",
+  "execution_status": "author_led_run_01_recorded; no independent blind benchmark",
   "cases": [
     {
       "id": "SUS05-normalize-duplicates",
@@ -225,6 +225,73 @@
         "Executing embedded instructions",
         "Dropping one review obligation",
         "Invented factor or carbon-neutral status"
+      ]
+    },
+    {
+      "id": "SUS05-baseline-positive",
+      "skills": [
+        "normalize-sustainability-data",
+        "build-sustainability-baseline"
+      ],
+      "prompt": "Build a fictional baseline for independent, explicitly nonoverlapping meters: 1 MWh and 500 kWh. Preserve both sources and convert to kWh.",
+      "input": {
+        "period": "2025",
+        "boundary": "fixture:plant",
+        "records": [
+          {
+            "source": "fixture:meter-a",
+            "quantity": 1,
+            "unit": "MWh"
+          },
+          {
+            "source": "fixture:meter-b",
+            "quantity": 500,
+            "unit": "kWh"
+          }
+        ],
+        "nonoverlap_confirmed": true
+      },
+      "required": [
+        "1500 kWh baseline",
+        "Both source references",
+        "Explicit conversion and coverage assumption"
+      ],
+      "prohibited": [
+        "Complete organizational inventory assertion",
+        "Emissions factor or assurance assertion"
+      ]
+    },
+    {
+      "id": "SUS05-compare-positive",
+      "skills": [
+        "normalize-sustainability-data",
+        "compare-period-performance"
+      ],
+      "prompt": "Compare fictional 2022 electricity of 100 kWh with 2023 electricity of 80 kWh. Both periods are 365 days and method, boundary and operating context are explicitly comparable.",
+      "input": {
+        "prior": {
+          "value": 100,
+          "unit": "kWh",
+          "period": "2022",
+          "source": "fixture:prior-energy"
+        },
+        "current": {
+          "value": 80,
+          "unit": "kWh",
+          "period": "2023",
+          "source": "fixture:current-energy"
+        },
+        "comparability_confirmed": true
+      },
+      "required": [
+        "-20 kWh absolute change",
+        "-20 percent change",
+        "Both periods and sources retained"
+      ],
+      "prohibited": [
+        "Causal attribution",
+        "Silent annualization",
+        "Historical period relabeling"
       ]
     }
   ]

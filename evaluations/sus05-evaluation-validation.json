@@ -1,0 +1,47 @@
+{
+  "wave": "SUS-05",
+  "checked_on": "2026-10-04",
+  "timezone": "America/Toronto",
+  "validation_command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+  "test_methods_passed": 51,
+  "breakdown": {
+    "architecture": 20,
+    "data_helpers": 16,
+    "state_proposals": 6,
+    "saved_artifacts": 9
+  },
+  "scenario_execution": {
+    "kind": "author_led",
+    "initial_cases": 9,
+    "shared_document_reruns": 1,
+    "recorded_skills": 10,
+    "independent_blind_model_run": false
+  },
+  "baseline_skill_packaging_validation": "passed after coverage reconciliation update",
+  "limits": [
+    "Saved-artifact checks do not rerun agent inference.",
+    "Fixture evidence is hypothetical; no source authentication or accounting assurance is established.",
+    "Overall v1 workflow and later waves are not implemented."
+  ],
+  "content_sha256": {
+    "scripts/data_tools.py": "e9d7c970b90ace9d7b7ef0db3803b95534ded65cc76f45db41018293d625b2e3",
+    "scripts/contract_validation.py": "7d10b157efbbc3a6fd6e044b5937085bb3827d3e41491014bcb0247321319f4a",
+    "scripts/state_proposal.py": "1a4375ae9e6c798f803716ea48af03e25ac3588a2a53cbdd99cde559294d8440",
+    "tests/test_data_tools.py": "36d002bf44fd1e35eed7770ae91fe0ecf8c760464ea5b172cd080bd0a07048bc",
+    "tests/test_state_proposal.py": "48d9ae6028dbcdd2af8c0ee0d72ef68e36e01995c687c6db5d972eee5ad68102",
+    "tests/test_sus05_evaluations.py": "6efa01fe2cb757fe71e5be2e9193aa5f84426a35402fb80c96b802852427aa19",
+    "skills/metrics/build-sustainability-baseline/SKILL.md": "7248d51047d801087c74a08966640807b217e537a36d87273bd1f2c8a3fc925c",
+    "scenarios/sus05-data-foundation.json": "3e6671b4b287f90a3c7604f9acbfc9f3d94c93cc06e75e845f3a480021643e44",
+    "evaluations/sus05-author-execution.md": "783b1b5f6cd2150a468f380fd99a30d87479b66ea5e25c88b6ffe1679726de18",
+    "evaluations/sus05-author-run-01/SUS05-baseline-positive.json": "50d9c0b9f193d011615d59a96c3255f00a50144223c393e6c945fc11415ea032",
+    "evaluations/sus05-author-run-01/SUS05-compare-positive.json": "dd2bcd033b59bfd58cc714ff143d172bc3a9bea73b84b33ad2c8068b7cef6bb4",
+    "evaluations/sus05-author-run-01/SUS05-evidence-fitness.json": "4be83b1dd79a4642fbee6fc162d23286aa16f2ebd540176d96ae587628910e02",
+    "evaluations/sus05-author-run-01/SUS05-kpi-known-answer.json": "3f629f7ad42d38f587b43f1ba648ff5ca96a406735342842f08bffc448eb1401",
+    "evaluations/sus05-author-run-01/SUS05-line-items.json": "d937794115f314a7ce93380974e7f0be371c9fbfa779fbfa53938dae13e57b21",
+    "evaluations/sus05-author-run-01/SUS05-normalize-duplicates.json": "0f1f54d37629bffea38f71c2adc3c7e5c3d5310006fb3a59c9b493e65c588a15",
+    "evaluations/sus05-author-run-01/SUS05-period-boundary.json": "781389b341b5cc0f46ff45ccf5851990c0209d3c154a8cc9505bd5832a65cf09",
+    "evaluations/sus05-author-run-01/SUS05-source-instructions.json": "1d30ed46a399c383ee315d9d6b56bcc5fa786d06b9683a27870ede8ff589bdae",
+    "evaluations/sus05-author-run-01/SUS05-zero-denominator.json": "a49b962530a526573578d9c67d3012be63ee5da13dd1beb50396cdb2dc64de26",
+    "evaluations/sus05-author-run-02/SUS05-line-items.json": "2c30bc2d8ae0c0e38fa7e35b0cf33cd0a8e5730bec5ad28eee7981afc69f96cf"
+  }
+}

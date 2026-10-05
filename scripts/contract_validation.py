@@ -1,6 +1,7 @@
 """Shared shape and reference validation; domain fitness needs skill checks."""
 
 import json
+import math
 from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker
@@ -60,6 +61,7 @@ def validate_state(state):
     unique(state["emission_factors"], "emission factor")
     for factor in state["emission_factors"]:
         evidence_refs(factor["evidence_ids"])
+        require(math.isfinite(factor["value"]), "Nonfinite emission factor")
 
     period(state["reporting_period"])
     require(set(boundary["facility_ids"]) <= facility_ids, "Unknown boundary facility")
@@ -103,6 +105,7 @@ def validate_state(state):
                 require(review_state in required_states, "Review state has no requirement")
         unique(result["data_gaps"], "result gap")
         for metric in result["metrics"]:
+            require(metric["value"] is None or math.isfinite(metric["value"]), "Nonfinite metric")
             period(metric["period"])
             require(metric["boundary_id"] == boundary["id"], "Unknown metric boundary")
             evidence_refs(metric["evidence_ids"])
@@ -125,3 +128,26 @@ def validate_state(state):
     for framework in state["frameworks"]:
         if framework["effective_to"] is not None:
             require(framework["effective_from"] <= framework["effective_to"], "Reversed framework dates")
+
+    # Shape/reference validity alone permits self-reference and indirect cycles.
+    graph = {}
+    for evidence in state["evidence"]:
+        graph[evidence["id"]] = evidence["calculation"]["inputs"] if evidence["calculation"] else []
+    for result in state["results"]:
+        for metric in result["metrics"]:
+            require(metric["id"] not in evidence_ids, "Evidence and metric IDs collide")
+            graph[metric["id"]] = metric["calculation"]["inputs"]
+    visited, active = set(), set()
+
+    def walk(ident):
+        require(ident not in active, "Calculation lineage cycle")
+        if ident in visited:
+            return
+        active.add(ident)
+        for parent in graph[ident]:
+            walk(parent)
+        active.remove(ident)
+        visited.add(ident)
+
+    for ident in graph:
+        walk(ident)

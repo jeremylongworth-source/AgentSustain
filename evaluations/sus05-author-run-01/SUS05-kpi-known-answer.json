@@ -1,0 +1,1879 @@
+{
+  "case_id": "SUS05-kpi-known-answer",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Organization, Ontario location and operational boundary are synthetic test context, not facts inferred about a real business.",
+  "scenario": {
+    "id": "SUS05-kpi-known-answer",
+    "skills": [
+      "normalize-units",
+      "calculate-sustainability-kpi"
+    ],
+    "prompt": "Calculate fictional energy intensity from 2 MWh and 400 produced items for the same period and boundary. Preserve both evidence references.",
+    "input": {
+      "energy": {
+        "value": 2,
+        "unit": "MWh",
+        "source": "fixture:energy"
+      },
+      "production": {
+        "value": 400,
+        "unit": "count",
+        "source": "fixture:production"
+      },
+      "period": "2025",
+      "boundary": "fixture:plant"
+    },
+    "required": [
+      "2000 kWh conversion with source",
+      "5 kWh/count intensity",
+      "Both evidence references and formula",
+      "Unknown input uncertainty remains visible"
+    ],
+    "prohibited": [
+      "Emissions invented from energy",
+      "Missing denominator provenance"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "energy",
+        "source": {
+          "locator": "fixture:energy",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:energy"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "MWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "production",
+        "source": {
+          "locator": "fixture:production",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:production"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-kpi-known-answer-raw",
+      "skill": "normalize-sustainability-data",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "energy-raw",
+          "name": "Electricity",
+          "value": 2,
+          "unit": "MWh",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "energy"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extracted 2 MWh",
+            "inputs": [
+              "energy"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        },
+        {
+          "id": "production-raw",
+          "name": "Production",
+          "value": 400,
+          "unit": "count",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "production"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "extracted 400 count",
+            "inputs": [
+              "production"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "energy",
+        "production"
+      ],
+      "assumptions": [],
+      "data_gaps": [],
+      "diagnostics": [],
+      "next_actions": []
+    },
+    {
+      "id": "SUS05-kpi-known-answer-convert",
+      "skill": "normalize-units",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "energy-kwh",
+          "name": "Electricity",
+          "value": 2000.0,
+          "unit": "kWh",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "energy"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "2 MWh * 1000 = 2000 kWh",
+            "inputs": [
+              "energy-raw"
+            ],
+            "conversions": [
+              "MWh -> kWh, factor 1000, https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+            ],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "energy"
+      ],
+      "assumptions": [],
+      "data_gaps": [],
+      "diagnostics": [],
+      "next_actions": []
+    },
+    {
+      "id": "SUS05-kpi-known-answer-kpi",
+      "skill": "calculate-sustainability-kpi",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "intensity",
+          "name": "Energy intensity",
+          "value": 5.0,
+          "unit": "kWh/count",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "energy",
+            "production"
+          ],
+          "method": {
+            "name": "SUS-05 author execution",
+            "version": "run-01",
+            "source": "repository:skills/metrics/"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "2000 kWh / 400 count = 5 kWh/count",
+            "inputs": [
+              "energy-kwh",
+              "production-raw"
+            ],
+            "conversions": [],
+            "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "energy",
+        "production"
+      ],
+      "assumptions": [],
+      "data_gaps": [],
+      "diagnostics": [
+        {
+          "code": "KPI_BASIS",
+          "message": "Same fictional period and boundary; output is activity intensity, not emissions or benchmarking."
+        }
+      ],
+      "next_actions": []
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Normalize supplied source quantities",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "MWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-kpi-known-answer-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-raw",
+                "name": "Electricity",
+                "value": 2,
+                "unit": "MWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 2 MWh",
+                  "inputs": [
+                    "energy"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "production-raw",
+                "name": "Production",
+                "value": 400,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "production"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 400 count",
+                  "inputs": [
+                    "production"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 1,
+      "reason": "Convert supported energy units",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "MWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-kpi-known-answer-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-raw",
+                "name": "Electricity",
+                "value": 2,
+                "unit": "MWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 2 MWh",
+                  "inputs": [
+                    "energy"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "production-raw",
+                "name": "Production",
+                "value": 400,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "production"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 400 count",
+                  "inputs": [
+                    "production"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "SUS05-kpi-known-answer-convert",
+            "skill": "normalize-units",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-kwh",
+                "name": "Electricity",
+                "value": 2000.0,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "2 MWh * 1000 = 2000 kWh",
+                  "inputs": [
+                    "energy-raw"
+                  ],
+                  "conversions": [
+                    "MWh -> kWh, factor 1000, https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                  ],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 2,
+      "reason": "Calculate defined production intensity",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 3,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "MWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-kpi-known-answer-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-raw",
+                "name": "Electricity",
+                "value": 2,
+                "unit": "MWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 2 MWh",
+                  "inputs": [
+                    "energy"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "production-raw",
+                "name": "Production",
+                "value": 400,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "production"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 400 count",
+                  "inputs": [
+                    "production"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "SUS05-kpi-known-answer-convert",
+            "skill": "normalize-units",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-kwh",
+                "name": "Electricity",
+                "value": 2000.0,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "2 MWh * 1000 = 2000 kWh",
+                  "inputs": [
+                    "energy-raw"
+                  ],
+                  "conversions": [
+                    "MWh -> kWh, factor 1000, https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                  ],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "SUS05-kpi-known-answer-kpi",
+            "skill": "calculate-sustainability-kpi",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "intensity",
+                "name": "Energy intensity",
+                "value": 5.0,
+                "unit": "kWh/count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy",
+                  "production"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "2000 kWh / 400 count = 5 kWh/count",
+                  "inputs": [
+                    "energy-kwh",
+                    "production-raw"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "KPI_BASIS",
+                "message": "Same fictional period and boundary; output is activity intensity, not emissions or benchmarking."
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "Executed convert and kpi helpers; 2000 kWh and 5 kWh/count.",
+    "Both denominator and numerator evidence preserved through three proposed revisions."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "normalize-sustainability-data",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "MWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "energy": {
+          "value": 2,
+          "unit": "MWh",
+          "source": "fixture:energy"
+        },
+        "production": {
+          "value": 400,
+          "unit": "count",
+          "source": "fixture:production"
+        },
+        "period": "2025",
+        "boundary": "fixture:plant"
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "normalize-units",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "MWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-kpi-known-answer-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-raw",
+                "name": "Electricity",
+                "value": 2,
+                "unit": "MWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 2 MWh",
+                  "inputs": [
+                    "energy"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "production-raw",
+                "name": "Production",
+                "value": 400,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "production"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 400 count",
+                  "inputs": [
+                    "production"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "energy": {
+          "value": 2,
+          "unit": "MWh",
+          "source": "fixture:energy"
+        },
+        "production": {
+          "value": 400,
+          "unit": "count",
+          "source": "fixture:production"
+        },
+        "period": "2025",
+        "boundary": "fixture:plant"
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "calculate-sustainability-kpi",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "energy",
+            "source": {
+              "locator": "fixture:energy",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:energy"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "MWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "production",
+            "source": {
+              "locator": "fixture:production",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:production"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-kpi-known-answer-raw",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-raw",
+                "name": "Electricity",
+                "value": 2,
+                "unit": "MWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 2 MWh",
+                  "inputs": [
+                    "energy"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              },
+              {
+                "id": "production-raw",
+                "name": "Production",
+                "value": 400,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "production"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "extracted 400 count",
+                  "inputs": [
+                    "production"
+                  ],
+                  "conversions": [],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy",
+              "production"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "SUS05-kpi-known-answer-convert",
+            "skill": "normalize-units",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "energy-kwh",
+                "name": "Electricity",
+                "value": 2000.0,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "energy"
+                ],
+                "method": {
+                  "name": "SUS-05 author execution",
+                  "version": "run-01",
+                  "source": "repository:skills/metrics/"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "2 MWh * 1000 = 2000 kWh",
+                  "inputs": [
+                    "energy-raw"
+                  ],
+                  "conversions": [
+                    "MWh -> kWh, factor 1000, https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                  ],
+                  "rounding": "no display rounding; Decimal helper arithmetic before JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "energy"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "energy": {
+          "value": 2,
+          "unit": "MWh",
+          "source": "fixture:energy"
+        },
+        "production": {
+          "value": 400,
+          "unit": "count",
+          "source": "fixture:production"
+        },
+        "period": "2025",
+        "boundary": "fixture:plant"
+      }
+    }
+  ]
+}

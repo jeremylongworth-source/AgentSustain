@@ -1,0 +1,1067 @@
+{
+  "case_id": "SUS05-evidence-fitness",
+  "execution_kind": "Author-led application of checked-in skill instructions; not an independent blind model benchmark",
+  "source_revision": "a602818",
+  "checked_on": "2026-10-04",
+  "fixture_setup": "Organization, Ontario location and operational boundary are synthetic test context, not facts inferred about a real business.",
+  "scenario": {
+    "id": "SUS05-evidence-fitness",
+    "skills": [
+      "classify-evidence-quality",
+      "detect-data-gaps"
+    ],
+    "prompt": "Assess these fictional records for a 2025 whole-year plant baseline; do not equate source tier with analytical fitness.",
+    "input": {
+      "records": [
+        {
+          "source": "fixture:meter-record",
+          "type": "primary meter",
+          "period": "2025-01",
+          "quantity": 1000,
+          "unit": "kWh"
+        },
+        {
+          "source": "fixture:supplier-email",
+          "type": "supplier estimate",
+          "period": "2025",
+          "quantity": 2000,
+          "unit": "kg",
+          "basis": "industry-average proxy"
+        }
+      ]
+    },
+    "required": [
+      "Partial annual meter coverage gap",
+      "Supplier estimate explicitly labeled with assumption and uncertainty",
+      "Tier and fitness assessed separately"
+    ],
+    "prohibited": [
+      "A numeric confidence percentage invented without basis",
+      "January extrapolated silently",
+      "Proxy labeled as measured"
+    ]
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "plant-1",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "fixture operational context; no legal determination",
+      "facility_ids": [
+        "plant-1"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "meter-jan",
+        "source": {
+          "locator": "fixture:meter-record",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:meter-record"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-01-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "supplier-proxy",
+        "source": {
+          "locator": "fixture:supplier-email",
+          "title": "Fictional scenario evidence",
+          "publisher": "Fictional fixture publisher",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Fictional supplied record",
+          "version": "fixture-1",
+          "source": "fixture:supplier-email"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+        },
+        "assumption": "Supplier quantity is an industry-average proxy, not measured mass.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "results": [
+    {
+      "id": "SUS05-evidence-fitness-result",
+      "skill": "classify-evidence-quality",
+      "contract_version": "0.1.0",
+      "status": "partial",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [
+        "meter-jan",
+        "supplier-proxy"
+      ],
+      "assumptions": [
+        "Supplier quantity is an industry-average proxy, not measured mass."
+      ],
+      "data_gaps": [
+        {
+          "id": "annual-meter",
+          "field": "electricity.coverage",
+          "reason": "January primary meter evidence does not cover the requested full year.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+        },
+        {
+          "id": "proxy-basis",
+          "field": "supplier.mass",
+          "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Obtain supplier activity records and proxy methodology."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "QUALITY_MAPPING",
+          "message": "meter-jan: tier 1 primary but temporally incomplete; supplier-proxy: tier 5 estimate with unquantified uncertainty. Source tier is separate from use fitness."
+        }
+      ],
+      "next_actions": [
+        "Obtain remaining monthly readings or declare partial-year coverage.",
+        "Obtain supplier activity records and proxy methodology."
+      ]
+    },
+    {
+      "id": "SUS05-evidence-fitness-detect-data-gaps",
+      "skill": "detect-data-gaps",
+      "contract_version": "0.1.0",
+      "status": "partial",
+      "review_states": [
+        "ANALYTICAL",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [],
+      "metrics": [],
+      "evidence_ids": [
+        "meter-jan",
+        "supplier-proxy"
+      ],
+      "assumptions": [
+        "Supplier quantity is an industry-average proxy, not measured mass."
+      ],
+      "data_gaps": [
+        {
+          "id": "annual-meter",
+          "field": "electricity.coverage",
+          "reason": "January primary meter evidence does not cover the requested full year.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+        },
+        {
+          "id": "proxy-basis",
+          "field": "supplier.mass",
+          "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+          "impact": "Affected total or comparison is incomplete or unavailable.",
+          "remedy": "Obtain supplier activity records and proxy methodology."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "COVERAGE_GAPS",
+          "message": "Annual electricity and measured supplier mass coverage are not demonstrated; obtain remaining months and actual supplier records."
+        }
+      ],
+      "next_actions": [
+        "Obtain remaining monthly readings or declare partial-year coverage.",
+        "Obtain supplier activity records and proxy methodology."
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "base_revision": 0,
+      "reason": "Classify source type and independent analytical fitness",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "meter-jan",
+            "source": {
+              "locator": "fixture:meter-record",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:meter-record"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "partial",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "supplier-proxy",
+            "source": {
+              "locator": "fixture:supplier-email",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 5
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:supplier-email"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": "Supplier quantity is an industry-average proxy, not measured mass.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-evidence-fitness-result",
+            "skill": "classify-evidence-quality",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "meter-jan",
+              "supplier-proxy"
+            ],
+            "assumptions": [
+              "Supplier quantity is an industry-average proxy, not measured mass."
+            ],
+            "data_gaps": [
+              {
+                "id": "annual-meter",
+                "field": "electricity.coverage",
+                "reason": "January primary meter evidence does not cover the requested full year.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+              },
+              {
+                "id": "proxy-basis",
+                "field": "supplier.mass",
+                "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain supplier activity records and proxy methodology."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "QUALITY_MAPPING",
+                "message": "meter-jan: tier 1 primary but temporally incomplete; supplier-proxy: tier 5 estimate with unquantified uncertainty. Source tier is separate from use fitness."
+              }
+            ],
+            "next_actions": [
+              "Obtain remaining monthly readings or declare partial-year coverage.",
+              "Obtain supplier activity records and proxy methodology."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Supplier quantity is an industry-average proxy, not measured mass."
+        ],
+        "data_gaps": [
+          {
+            "id": "annual-meter",
+            "field": "electricity.coverage",
+            "reason": "January primary meter evidence does not cover the requested full year.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+          },
+          {
+            "id": "proxy-basis",
+            "field": "supplier.mass",
+            "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain supplier activity records and proxy methodology."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    },
+    {
+      "base_revision": 1,
+      "reason": "Annual electricity and measured supplier mass coverage are not demonstrated; obtain remaining months and actual supplier records.",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "meter-jan",
+            "source": {
+              "locator": "fixture:meter-record",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:meter-record"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "partial",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "supplier-proxy",
+            "source": {
+              "locator": "fixture:supplier-email",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 5
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:supplier-email"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": "Supplier quantity is an industry-average proxy, not measured mass.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-evidence-fitness-result",
+            "skill": "classify-evidence-quality",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "meter-jan",
+              "supplier-proxy"
+            ],
+            "assumptions": [
+              "Supplier quantity is an industry-average proxy, not measured mass."
+            ],
+            "data_gaps": [
+              {
+                "id": "annual-meter",
+                "field": "electricity.coverage",
+                "reason": "January primary meter evidence does not cover the requested full year.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+              },
+              {
+                "id": "proxy-basis",
+                "field": "supplier.mass",
+                "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain supplier activity records and proxy methodology."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "QUALITY_MAPPING",
+                "message": "meter-jan: tier 1 primary but temporally incomplete; supplier-proxy: tier 5 estimate with unquantified uncertainty. Source tier is separate from use fitness."
+              }
+            ],
+            "next_actions": [
+              "Obtain remaining monthly readings or declare partial-year coverage.",
+              "Obtain supplier activity records and proxy methodology."
+            ]
+          },
+          {
+            "id": "SUS05-evidence-fitness-detect-data-gaps",
+            "skill": "detect-data-gaps",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "meter-jan",
+              "supplier-proxy"
+            ],
+            "assumptions": [
+              "Supplier quantity is an industry-average proxy, not measured mass."
+            ],
+            "data_gaps": [
+              {
+                "id": "annual-meter",
+                "field": "electricity.coverage",
+                "reason": "January primary meter evidence does not cover the requested full year.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+              },
+              {
+                "id": "proxy-basis",
+                "field": "supplier.mass",
+                "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain supplier activity records and proxy methodology."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "COVERAGE_GAPS",
+                "message": "Annual electricity and measured supplier mass coverage are not demonstrated; obtain remaining months and actual supplier records."
+              }
+            ],
+            "next_actions": [
+              "Obtain remaining monthly readings or declare partial-year coverage.",
+              "Obtain supplier activity records and proxy methodology."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Supplier quantity is an industry-average proxy, not measured mass."
+        ],
+        "data_gaps": [
+          {
+            "id": "annual-meter",
+            "field": "electricity.coverage",
+            "reason": "January primary meter evidence does not cover the requested full year.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+          },
+          {
+            "id": "proxy-basis",
+            "field": "supplier.mass",
+            "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain supplier activity records and proxy methodology."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  ],
+  "observations": [
+    "Primary source still has annual coverage gap.",
+    "Proxy assumption and unquantified uncertainty retained; no annual extrapolation."
+  ],
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "classify-evidence-quality",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "meter-jan",
+            "source": {
+              "locator": "fixture:meter-record",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:meter-record"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "partial",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "supplier-proxy",
+            "source": {
+              "locator": "fixture:supplier-email",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 5
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:supplier-email"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": "Supplier quantity is an industry-average proxy, not measured mass.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "records": [
+          {
+            "source": "fixture:meter-record",
+            "type": "primary meter",
+            "period": "2025-01",
+            "quantity": 1000,
+            "unit": "kWh"
+          },
+          {
+            "source": "fixture:supplier-email",
+            "type": "supplier estimate",
+            "period": "2025",
+            "quantity": 2000,
+            "unit": "kg",
+            "basis": "industry-average proxy"
+          }
+        ]
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "detect-data-gaps",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "plant-1",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "fixture operational context; no legal determination",
+          "facility_ids": [
+            "plant-1"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "meter-jan",
+            "source": {
+              "locator": "fixture:meter-record",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:meter-record"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-01-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "partial",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "supplier-proxy",
+            "source": {
+              "locator": "fixture:supplier-email",
+              "title": "Fictional scenario evidence",
+              "publisher": "Fictional fixture publisher",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 5
+            },
+            "method": {
+              "name": "Fictional supplied record",
+              "version": "fixture-1",
+              "source": "fixture:supplier-email"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Source authenticity is not independently established; assess fitness for the named use."
+            },
+            "assumption": "Supplier quantity is an industry-average proxy, not measured mass.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional source uncertainty is unquantified; no confidence score is inferred.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "SUS05-evidence-fitness-result",
+            "skill": "classify-evidence-quality",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "meter-jan",
+              "supplier-proxy"
+            ],
+            "assumptions": [
+              "Supplier quantity is an industry-average proxy, not measured mass."
+            ],
+            "data_gaps": [
+              {
+                "id": "annual-meter",
+                "field": "electricity.coverage",
+                "reason": "January primary meter evidence does not cover the requested full year.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+              },
+              {
+                "id": "proxy-basis",
+                "field": "supplier.mass",
+                "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+                "impact": "Affected total or comparison is incomplete or unavailable.",
+                "remedy": "Obtain supplier activity records and proxy methodology."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "QUALITY_MAPPING",
+                "message": "meter-jan: tier 1 primary but temporally incomplete; supplier-proxy: tier 5 estimate with unquantified uncertainty. Source tier is separate from use fitness."
+              }
+            ],
+            "next_actions": [
+              "Obtain remaining monthly readings or declare partial-year coverage.",
+              "Obtain supplier activity records and proxy methodology."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Supplier quantity is an industry-average proxy, not measured mass."
+        ],
+        "data_gaps": [
+          {
+            "id": "annual-meter",
+            "field": "electricity.coverage",
+            "reason": "January primary meter evidence does not cover the requested full year.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain remaining monthly readings or declare partial-year coverage."
+          },
+          {
+            "id": "proxy-basis",
+            "field": "supplier.mass",
+            "reason": "Supplier estimate is based on an industry average; accuracy for this plant is unverified.",
+            "impact": "Affected total or comparison is incomplete or unavailable.",
+            "remedy": "Obtain supplier activity records and proxy methodology."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "records": [
+          {
+            "source": "fixture:meter-record",
+            "type": "primary meter",
+            "period": "2025-01",
+            "quantity": 1000,
+            "unit": "kWh"
+          },
+          {
+            "source": "fixture:supplier-email",
+            "type": "supplier estimate",
+            "period": "2025",
+            "quantity": 2000,
+            "unit": "kg",
+            "basis": "industry-average proxy"
+          }
+        ]
+      }
+    }
+  ]
+}
