@@ -18,7 +18,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-05 | Data skills | Ten skills with five helper operations and checked state proposals; nine initial author-led scenarios and shared-document rerun recorded; broader behavioral reliability remains unproven |
 | SUS-06 | GHG foundation | Eight skills, sourced-factor checks and CO2e helper; initial eight-skill author-led incomplete-inventory scenario recorded; broader independent behavioral evaluation remains |
 | SUS-07 | Scope 1/2 | Five workflows, classification/composition helpers and CLIs, boundary review propagation, allocation/coverage and market checks; 25 helper tests, two synthetic CLI reproductions and an eight-step mixed-source workflow pass; independent behavioral evaluation and thermal-factor derivation remain |
-| SUS-08 | Scope 3 | Five workflows; category classification, physical-activity totals and selected inventory helper/CLI; initial 725 kg synthetic partial inventory workflow; comparison/ranking runners and specialized category methods pending |
+| SUS-08 | Scope 3 | Five workflows; category, inventory, comparison and hotspot helpers/CLI; synthetic 725 kg partial inventory and -20% comparable partial-account change recorded; specialized methods and independent behavioral evaluation remain |
 | SUS-09 | Energy | Not implemented |
 | SUS-10 | Waste/resources | Not implemented |
 | SUS-11 | Water | Not implemented |
@@ -33,7 +33,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-20 | Claims controls | Not implemented |
 | SUS-21 | Router | Not implemented; interface draft only |
 | SUS-22 | Specialist skillsets | Not implemented |
-| SUS-23 | Evaluation suite | 104 architecture/data/GHG/scope/inventory/proposal/artifact tests pass; rerunnable scope 1/2/3 and partial inventory workflows recorded; independent and organization-wide end-to-end suites remain |
+| SUS-23 | Evaluation suite | 117 architecture/data/GHG/scope/inventory/analysis/proposal/artifact tests pass; rerunnable scope 1/2/3, inventory comparison and hotspot cases recorded; independent and organization-wide end-to-end suites remain |
 | SUS-24 | Documentation/examples | Foundation docs, shared data-skill guide and fictional schema fixtures |
 | SUS-25 | Public v1 readiness | Not assessed; no release authorization |
 
@@ -43,6 +43,6 @@ The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The d
 
 ## Next implementation work
 
-Implement inventory-aware comparison and hotspot ranking, and extend scope 3 category calculation coverage as required by organization scenarios. Initial category classification and physical-activity composition now feed a selected inventory account with one scope 2 method; all 15 categories require screening, and unknown leased control stays unresolved. Revalidation retains missing-factor diagnostics even if an omitted zero component leaves the numerical subtotal unchanged. Specialized category derivation, thermal-factor derivation and independent behavioral/source-format evaluations remain further coverage work. No general reliability or v1 readiness is claimed.
+Develop SUS-09 energy analysis using established unit/baseline/KPI primitives and evidence controls. Inventory-aware comparison and hotspot ranking now revalidate source totals, preserve historical lineage and partial coverage, check actual comparability and retain denominator limits. Extend specialized scope 3 and thermal-factor derivation as organization scenarios require; independent behavioral/source-format and organization-wide evaluations remain further work. No general reliability or v1 readiness is claimed.
 
 The shared contract validator lives in scripts/contract_validation.py; tests/contract_checks.py remains a compatibility entrypoint. Schema shapes are unchanged. Runtime validation now additionally rejects nonfinite quantities and calculation-lineage cycles. State proposals preserve review obligations, assumptions, gaps and existing source records. Historical architecture hashes continue to identify the reviewed f2d0ac9 snapshot.

@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "7d43987",
+  "checks": {
+    "unittest": {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "passed": 117,
+      "inventory_analysis_tests": 13
+    },
+    "changed_skill_packaging": {
+      "passed": 2,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "saved_case_reruns": {
+      "comparison": {
+        "absolute_change_kg_CO2e": -100,
+        "percentage_change": -20,
+        "partial": true,
+        "calendar_leap_year_difference_accepted": true
+      },
+      "source_hotspots": {
+        "denominator_kg_CO2e": 725,
+        "ranked_values_kg_CO2e": [
+          500,
+          200,
+          25
+        ],
+        "partial": true
+      }
+    }
+  },
+  "limitations": [
+    "Review/source facts and factor applicability judgments are fictional and author supplied.",
+    "Historical lineage must already exist unchanged in current state; no automatic import or restatement is implemented.",
+    "Inventory differences are not attributable or verified reductions; shares describe selected supported emissions.",
+    "Independent agent extraction/reasoning and organization-wide workflow evaluations remain."
+  ],
+  "sha256": {
+    "scripts/inventory_analysis.py": "beaa5ea4d7d6a6a4ecf0b6a2ad4a34f9a85f52bb418fc0b949a916773832aaab",
+    "scripts/run_scope3.py": "dd088092ecec9b6980591e9d2f2b5f83f5965b75780f3a3cc5ab6ef3c0f07b1e",
+    "tests/test_inventory_analysis.py": "25660350cf0ec5ebdceeca4caa5dacb6b6ce4040b687988360122586ead8642f",
+    "docs/scope-3-inventory-contract.md": "221e2d2a3ead84e802febdde80bc8817ff952b3419a86395a01f8a2e2c552c82",
+    "evaluations/sus08-analysis-workflow.json": "7274753407c98c6137853aec5377c5446c8bfe44bc6be93a2cd1780681640acf",
+    "skills/carbon/compare-ghg-inventories/SKILL.md": "f56e02c68bdb6822fe2a2a4ea54e29ff640434321b3d7e84abeb14eb6f1903ac",
+    "skills/carbon/identify-emission-hotspots/SKILL.md": "ee206632e002af642b0d96ca7ed69d0ee15b9533214715aecb1277ac91fef3c8"
+  }
+}
