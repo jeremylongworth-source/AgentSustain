@@ -1,0 +1,3631 @@
+{
+  "date": "2026-10-05",
+  "base_revision": "ec682a04515acf40bc94aa15d748464240c5909c",
+  "evaluation_type": "author-led fictional current-engine fit probes, not implemented regulatory quantification",
+  "executions": [
+    {
+      "case": "existing_co2e_control",
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "calculate-co2e",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "factor-evidence",
+              "source": {
+                "locator": "fixture:factor",
+                "title": "Synthetic emission-factor fixture",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kg CO2e/kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "quant-research-existing-factor-gap",
+              "skill": "calculate-co2e",
+              "contract_version": "0.1.0",
+              "status": "blocked",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE",
+                "LEGAL_REVIEW_REQUIRED"
+              ],
+              "review_requirements": [
+                {
+                  "id": "quant-research-existing-legal-review",
+                  "state": "LEGAL_REVIEW_REQUIRED",
+                  "reason": "Fictional regulation/source interpretation unresolved.",
+                  "scope": "Fictional subject only",
+                  "reviewer_role": "Qualified legal reviewer",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [
+                {
+                  "id": "gap-factor",
+                  "field": "emission_factor",
+                  "reason": "No sourced compatible factor supplied.",
+                  "impact": "Electricity emissions cannot be calculated.",
+                  "remedy": "Supply factor source, geography, vintage, units and methodology."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "EMISSION_FACTOR_REQUIRED",
+                  "message": "Supply a defensible emission factor."
+                }
+              ],
+              "next_actions": [
+                "Obtain and validate an applicable factor."
+              ]
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": [
+            {
+              "id": "synthetic-factor",
+              "value": 0.5,
+              "unit": "kg CO2e/kWh",
+              "source": {
+                "locator": "fixture:factor",
+                "publisher": "Fictional fixture publisher",
+                "version": "fixture-1",
+                "accessed": "2026-10-04"
+              },
+              "geography": "CA-ON",
+              "vintage_year": 2025,
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "gwp_basis": "Synthetic fixture basis",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "status": "synthetic"
+            }
+          ]
+        },
+        "parameters": {
+          "activity_id": "metric-001",
+          "factor_id": "synthetic-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "synthetic-factor",
+              "activity_id": "metric-001",
+              "source_locator": "fixture:factor",
+              "source_version": "fixture-1",
+              "confirmed_value": 0.5,
+              "confirmed_unit": "kg CO2e/kWh",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional activity only",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            }
+          },
+          "result_id": "probe-existing_co2e_control",
+          "fixture_mode": true
+        }
+      },
+      "output": {
+        "result": {
+          "id": "probe-existing_co2e_control",
+          "skill": "calculate-co2e",
+          "contract_version": "0.1.0",
+          "status": "partial",
+          "review_states": [
+            "ANALYTICAL",
+            "LEGAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [
+            {
+              "id": "probe-existing_co2e_control-metric",
+              "name": "Calculated CO2e",
+              "value": 500.0,
+              "unit": "kg CO2e",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "boundary_id": "boundary-001",
+              "evidence_ids": [
+                "ev-001",
+                "factor-evidence"
+              ],
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": {
+                "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+                "inputs": [
+                  "metric-001",
+                  "factor-evidence"
+                ],
+                "conversions": [
+                  "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                  "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                ],
+                "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+              }
+            }
+          ],
+          "evidence_ids": [
+            "ev-001",
+            "factor-evidence"
+          ],
+          "assumptions": [
+            "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          ],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "SYNTHETIC_FIXTURE",
+              "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+            },
+            {
+              "code": "FACTOR_BASIS",
+              "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+            }
+          ],
+          "next_actions": [
+            "Supply factor source, geography, vintage, units and methodology."
+          ]
+        },
+        "proposal": {
+          "base_revision": 1,
+          "reason": "Calculate or block CO2e using resolved factor and activity evidence",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 2,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "factor-evidence",
+                "source": {
+                  "locator": "fixture:factor",
+                  "title": "Synthetic emission-factor fixture",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kg CO2e/kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 1000,
+                    "unit": "kWh",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "quant-research-existing-factor-gap",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "EVIDENCE_INCOMPLETE",
+                  "LEGAL_REVIEW_REQUIRED"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Supply a defensible emission factor."
+                  }
+                ],
+                "next_actions": [
+                  "Obtain and validate an applicable factor."
+                ]
+              },
+              {
+                "id": "probe-existing_co2e_control",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "partial",
+                "review_states": [
+                  "ANALYTICAL",
+                  "LEGAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [
+                  {
+                    "id": "probe-existing_co2e_control-metric",
+                    "name": "Calculated CO2e",
+                    "value": 500.0,
+                    "unit": "kg CO2e",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001",
+                      "factor-evidence"
+                    ],
+                    "method": {
+                      "name": "Synthetic CO2e calculation",
+                      "version": "fixture-1",
+                      "source": "fixture:method"
+                    },
+                    "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+                      "inputs": [
+                        "metric-001",
+                        "factor-evidence"
+                      ],
+                      "conversions": [
+                        "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                        "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                      ],
+                      "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "assumptions": [
+                  "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+                ],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "SYNTHETIC_FIXTURE",
+                    "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+                  },
+                  {
+                    "code": "FACTOR_BASIS",
+                    "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+                  }
+                ],
+                "next_actions": [
+                  "Supply factor source, geography, vintage, units and methodology."
+                ]
+              }
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+            ],
+            "data_gaps": [
+              {
+                "id": "gap-factor",
+                "field": "emission_factor",
+                "reason": "No sourced compatible factor supplied.",
+                "impact": "Electricity emissions cannot be calculated.",
+                "remedy": "Supply factor source, geography, vintage, units and methodology."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "quant-research-existing-legal-review",
+                "state": "LEGAL_REVIEW_REQUIRED",
+                "reason": "Fictional regulation/source interpretation unresolved.",
+                "scope": "Fictional subject only",
+                "reviewer_role": "Qualified legal reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": [
+              {
+                "id": "synthetic-factor",
+                "value": 0.5,
+                "unit": "kg CO2e/kWh",
+                "source": {
+                  "locator": "fixture:factor",
+                  "publisher": "Fictional fixture publisher",
+                  "version": "fixture-1",
+                  "accessed": "2026-10-04"
+                },
+                "geography": "CA-ON",
+                "vintage_year": 2025,
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "evidence_ids": [
+                  "factor-evidence"
+                ],
+                "status": "synthetic"
+              }
+            ]
+          }
+        }
+      },
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3384908000007272,
+        "request_sha256": "d6889ed86ffd17df02f3ebc14a9ff77b56b1af8c7e32de68daa0f164cc44fa4b",
+        "stdout_sha256": "b76e5c58957cb13e5def49adb0be8ba81978d438e15631ee54913f674549f96c",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "historical_records_and_obligations_preserved": true
+      }
+    },
+    {
+      "case": "gas_factor_cannot_be_relabelled_co2e",
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "calculate-co2e",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "GJ",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "factor-evidence",
+              "source": {
+                "locator": "fixture:factor",
+                "title": "Synthetic emission-factor fixture",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "g CH4/GJ",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 2,
+                  "unit": "GJ",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "quant-research-existing-factor-gap",
+              "skill": "calculate-co2e",
+              "contract_version": "0.1.0",
+              "status": "blocked",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE",
+                "LEGAL_REVIEW_REQUIRED"
+              ],
+              "review_requirements": [
+                {
+                  "id": "quant-research-existing-legal-review",
+                  "state": "LEGAL_REVIEW_REQUIRED",
+                  "reason": "Fictional regulation/source interpretation unresolved.",
+                  "scope": "Fictional subject only",
+                  "reviewer_role": "Qualified legal reviewer",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [
+                {
+                  "id": "gap-factor",
+                  "field": "emission_factor",
+                  "reason": "No sourced compatible factor supplied.",
+                  "impact": "Electricity emissions cannot be calculated.",
+                  "remedy": "Supply factor source, geography, vintage, units and methodology."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "EMISSION_FACTOR_REQUIRED",
+                  "message": "Supply a defensible emission factor."
+                }
+              ],
+              "next_actions": [
+                "Obtain and validate an applicable factor."
+              ]
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": [
+            {
+              "id": "synthetic-factor",
+              "value": 5,
+              "unit": "g CH4/GJ",
+              "source": {
+                "locator": "fixture:factor",
+                "publisher": "Fictional fixture publisher",
+                "version": "fixture-1",
+                "accessed": "2026-10-04"
+              },
+              "geography": "CA-ON",
+              "vintage_year": 2025,
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "gwp_basis": "Synthetic fixture basis",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "status": "synthetic"
+            }
+          ]
+        },
+        "parameters": {
+          "activity_id": "metric-001",
+          "factor_id": "synthetic-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "synthetic-factor",
+              "activity_id": "metric-001",
+              "source_locator": "fixture:factor",
+              "source_version": "fixture-1",
+              "confirmed_value": 5,
+              "confirmed_unit": "g CH4/GJ",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional activity only",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            }
+          },
+          "result_id": "probe-gas_factor_cannot_be_relabelled_co2e",
+          "fixture_mode": true
+        }
+      },
+      "output": {
+        "result": {
+          "id": "probe-gas_factor_cannot_be_relabelled_co2e",
+          "skill": "calculate-co2e",
+          "contract_version": "0.1.0",
+          "status": "blocked",
+          "review_states": [
+            "ANALYTICAL",
+            "LEGAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [],
+          "evidence_ids": [
+            "ev-001",
+            "factor-evidence"
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            },
+            {
+              "id": "probe-gas_factor_cannot_be_relabelled_co2e-gap",
+              "field": "emission_factor",
+              "reason": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion.",
+              "impact": "CO2e calculation is unavailable.",
+              "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "EMISSION_FACTOR_REQUIRED",
+              "message": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion."
+            }
+          ],
+          "next_actions": [
+            "Supply factor source, geography, vintage, units and methodology.",
+            "Supply and validate compatible activity, factor source and applicability evidence."
+          ]
+        },
+        "proposal": {
+          "base_revision": 1,
+          "reason": "Calculate or block CO2e using resolved factor and activity evidence",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 2,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "GJ",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "factor-evidence",
+                "source": {
+                  "locator": "fixture:factor",
+                  "title": "Synthetic emission-factor fixture",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "g CH4/GJ",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 2,
+                    "unit": "GJ",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "quant-research-existing-factor-gap",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "EVIDENCE_INCOMPLETE",
+                  "LEGAL_REVIEW_REQUIRED"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Supply a defensible emission factor."
+                  }
+                ],
+                "next_actions": [
+                  "Obtain and validate an applicable factor."
+                ]
+              },
+              {
+                "id": "probe-gas_factor_cannot_be_relabelled_co2e",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "LEGAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  },
+                  {
+                    "id": "probe-gas_factor_cannot_be_relabelled_co2e-gap",
+                    "field": "emission_factor",
+                    "reason": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion.",
+                    "impact": "CO2e calculation is unavailable.",
+                    "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion."
+                  }
+                ],
+                "next_actions": [
+                  "Supply factor source, geography, vintage, units and methodology.",
+                  "Supply and validate compatible activity, factor source and applicability evidence."
+                ]
+              }
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "gap-factor",
+                "field": "emission_factor",
+                "reason": "No sourced compatible factor supplied.",
+                "impact": "Electricity emissions cannot be calculated.",
+                "remedy": "Supply factor source, geography, vintage, units and methodology."
+              },
+              {
+                "id": "probe-gas_factor_cannot_be_relabelled_co2e-gap",
+                "field": "emission_factor",
+                "reason": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion.",
+                "impact": "CO2e calculation is unavailable.",
+                "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "quant-research-existing-legal-review",
+                "state": "LEGAL_REVIEW_REQUIRED",
+                "reason": "Fictional regulation/source interpretation unresolved.",
+                "scope": "Fictional subject only",
+                "reviewer_role": "Qualified legal reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": [
+              {
+                "id": "synthetic-factor",
+                "value": 5,
+                "unit": "g CH4/GJ",
+                "source": {
+                  "locator": "fixture:factor",
+                  "publisher": "Fictional fixture publisher",
+                  "version": "fixture-1",
+                  "accessed": "2026-10-04"
+                },
+                "geography": "CA-ON",
+                "vintage_year": 2025,
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "evidence_ids": [
+                  "factor-evidence"
+                ],
+                "status": "synthetic"
+              }
+            ]
+          }
+        }
+      },
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3365243000444025,
+        "request_sha256": "bfe432894862b0cb0e740b3e634cec11402c3fd4edd2e913120fa97685480acb",
+        "stdout_sha256": "06bc7f3f6cb72b0d674db7c9fab31e88131592ed942b6cecdbaf1401375c1ba9",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "historical_records_and_obligations_preserved": true
+      }
+    },
+    {
+      "case": "missing_defensible_factor",
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "calculate-co2e",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "factor-evidence",
+              "source": {
+                "locator": "fixture:factor",
+                "title": "Synthetic emission-factor fixture",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kg CO2e/kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "quant-research-existing-factor-gap",
+              "skill": "calculate-co2e",
+              "contract_version": "0.1.0",
+              "status": "blocked",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE",
+                "LEGAL_REVIEW_REQUIRED"
+              ],
+              "review_requirements": [
+                {
+                  "id": "quant-research-existing-legal-review",
+                  "state": "LEGAL_REVIEW_REQUIRED",
+                  "reason": "Fictional regulation/source interpretation unresolved.",
+                  "scope": "Fictional subject only",
+                  "reviewer_role": "Qualified legal reviewer",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [
+                {
+                  "id": "gap-factor",
+                  "field": "emission_factor",
+                  "reason": "No sourced compatible factor supplied.",
+                  "impact": "Electricity emissions cannot be calculated.",
+                  "remedy": "Supply factor source, geography, vintage, units and methodology."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "EMISSION_FACTOR_REQUIRED",
+                  "message": "Supply a defensible emission factor."
+                }
+              ],
+              "next_actions": [
+                "Obtain and validate an applicable factor."
+              ]
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": [
+            {
+              "id": "synthetic-factor",
+              "value": 0.5,
+              "unit": "kg CO2e/kWh",
+              "source": {
+                "locator": "fixture:factor",
+                "publisher": "Fictional fixture publisher",
+                "version": "fixture-1",
+                "accessed": "2026-10-04"
+              },
+              "geography": "CA-ON",
+              "vintage_year": 2025,
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "gwp_basis": "Synthetic fixture basis",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "status": "synthetic"
+            }
+          ]
+        },
+        "parameters": {
+          "activity_id": "metric-001",
+          "factor_id": "absent-source-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "synthetic-factor",
+              "activity_id": "metric-001",
+              "source_locator": "fixture:factor",
+              "source_version": "fixture-1",
+              "confirmed_value": 0.5,
+              "confirmed_unit": "kg CO2e/kWh",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional activity only",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            }
+          },
+          "result_id": "probe-missing_defensible_factor",
+          "fixture_mode": true
+        }
+      },
+      "output": {
+        "result": {
+          "id": "probe-missing_defensible_factor",
+          "skill": "calculate-co2e",
+          "contract_version": "0.1.0",
+          "status": "blocked",
+          "review_states": [
+            "ANALYTICAL",
+            "LEGAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [],
+          "evidence_ids": [
+            "ev-001"
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            },
+            {
+              "id": "probe-missing_defensible_factor-gap",
+              "field": "emission_factor",
+              "reason": "No sourced emission factor supplied.",
+              "impact": "CO2e calculation is unavailable.",
+              "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "EMISSION_FACTOR_REQUIRED",
+              "message": "No sourced emission factor supplied."
+            }
+          ],
+          "next_actions": [
+            "Supply factor source, geography, vintage, units and methodology.",
+            "Supply and validate compatible activity, factor source and applicability evidence."
+          ]
+        },
+        "proposal": {
+          "base_revision": 1,
+          "reason": "Calculate or block CO2e using resolved factor and activity evidence",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 2,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "factor-evidence",
+                "source": {
+                  "locator": "fixture:factor",
+                  "title": "Synthetic emission-factor fixture",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kg CO2e/kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 1000,
+                    "unit": "kWh",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "quant-research-existing-factor-gap",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "EVIDENCE_INCOMPLETE",
+                  "LEGAL_REVIEW_REQUIRED"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Supply a defensible emission factor."
+                  }
+                ],
+                "next_actions": [
+                  "Obtain and validate an applicable factor."
+                ]
+              },
+              {
+                "id": "probe-missing_defensible_factor",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "LEGAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  },
+                  {
+                    "id": "probe-missing_defensible_factor-gap",
+                    "field": "emission_factor",
+                    "reason": "No sourced emission factor supplied.",
+                    "impact": "CO2e calculation is unavailable.",
+                    "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "No sourced emission factor supplied."
+                  }
+                ],
+                "next_actions": [
+                  "Supply factor source, geography, vintage, units and methodology.",
+                  "Supply and validate compatible activity, factor source and applicability evidence."
+                ]
+              }
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "gap-factor",
+                "field": "emission_factor",
+                "reason": "No sourced compatible factor supplied.",
+                "impact": "Electricity emissions cannot be calculated.",
+                "remedy": "Supply factor source, geography, vintage, units and methodology."
+              },
+              {
+                "id": "probe-missing_defensible_factor-gap",
+                "field": "emission_factor",
+                "reason": "No sourced emission factor supplied.",
+                "impact": "CO2e calculation is unavailable.",
+                "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "quant-research-existing-legal-review",
+                "state": "LEGAL_REVIEW_REQUIRED",
+                "reason": "Fictional regulation/source interpretation unresolved.",
+                "scope": "Fictional subject only",
+                "reviewer_role": "Qualified legal reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": [
+              {
+                "id": "synthetic-factor",
+                "value": 0.5,
+                "unit": "kg CO2e/kWh",
+                "source": {
+                  "locator": "fixture:factor",
+                  "publisher": "Fictional fixture publisher",
+                  "version": "fixture-1",
+                  "accessed": "2026-10-04"
+                },
+                "geography": "CA-ON",
+                "vintage_year": 2025,
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "evidence_ids": [
+                  "factor-evidence"
+                ],
+                "status": "synthetic"
+              }
+            ]
+          }
+        }
+      },
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3358933001291007,
+        "request_sha256": "29621bb6ffd626eafdf4553bc2744ece88ad189ef5e222048403981040bae6ae",
+        "stdout_sha256": "5290d415f6100d69df2ad95bec556704475e6e4034c639ec5f530c9384fa3739",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "historical_records_and_obligations_preserved": true
+      }
+    },
+    {
+      "case": "raw_gas_mass_is_not_co2e",
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "calculate-co2e",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "g",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "factor-evidence",
+              "source": {
+                "locator": "fixture:factor",
+                "title": "Synthetic emission-factor fixture",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kg CO2e/kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 10,
+                  "unit": "g",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "quant-research-existing-factor-gap",
+              "skill": "calculate-co2e",
+              "contract_version": "0.1.0",
+              "status": "blocked",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE",
+                "LEGAL_REVIEW_REQUIRED"
+              ],
+              "review_requirements": [
+                {
+                  "id": "quant-research-existing-legal-review",
+                  "state": "LEGAL_REVIEW_REQUIRED",
+                  "reason": "Fictional regulation/source interpretation unresolved.",
+                  "scope": "Fictional subject only",
+                  "reviewer_role": "Qualified legal reviewer",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [
+                {
+                  "id": "gap-factor",
+                  "field": "emission_factor",
+                  "reason": "No sourced compatible factor supplied.",
+                  "impact": "Electricity emissions cannot be calculated.",
+                  "remedy": "Supply factor source, geography, vintage, units and methodology."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "EMISSION_FACTOR_REQUIRED",
+                  "message": "Supply a defensible emission factor."
+                }
+              ],
+              "next_actions": [
+                "Obtain and validate an applicable factor."
+              ]
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": [
+            {
+              "id": "synthetic-factor",
+              "value": 0.5,
+              "unit": "kg CO2e/kWh",
+              "source": {
+                "locator": "fixture:factor",
+                "publisher": "Fictional fixture publisher",
+                "version": "fixture-1",
+                "accessed": "2026-10-04"
+              },
+              "geography": "CA-ON",
+              "vintage_year": 2025,
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "gwp_basis": "Synthetic fixture basis",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "status": "synthetic"
+            }
+          ]
+        },
+        "parameters": {
+          "activity_id": "metric-001",
+          "factor_id": "synthetic-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "synthetic-factor",
+              "activity_id": "metric-001",
+              "source_locator": "fixture:factor",
+              "source_version": "fixture-1",
+              "confirmed_value": 0.5,
+              "confirmed_unit": "kg CO2e/kWh",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional activity only",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            }
+          },
+          "result_id": "probe-raw_gas_mass_is_not_co2e",
+          "fixture_mode": true
+        }
+      },
+      "output": {
+        "result": {
+          "id": "probe-raw_gas_mass_is_not_co2e",
+          "skill": "calculate-co2e",
+          "contract_version": "0.1.0",
+          "status": "blocked",
+          "review_states": [
+            "ANALYTICAL",
+            "LEGAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [],
+          "evidence_ids": [
+            "ev-001",
+            "factor-evidence"
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            },
+            {
+              "id": "probe-raw_gas_mass_is_not_co2e-gap",
+              "field": "emission_factor",
+              "reason": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion.",
+              "impact": "CO2e calculation is unavailable.",
+              "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "EMISSION_FACTOR_REQUIRED",
+              "message": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion."
+            }
+          ],
+          "next_actions": [
+            "Supply factor source, geography, vintage, units and methodology.",
+            "Supply and validate compatible activity, factor source and applicability evidence."
+          ]
+        },
+        "proposal": {
+          "base_revision": 1,
+          "reason": "Calculate or block CO2e using resolved factor and activity evidence",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 2,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "g",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "factor-evidence",
+                "source": {
+                  "locator": "fixture:factor",
+                  "title": "Synthetic emission-factor fixture",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kg CO2e/kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 10,
+                    "unit": "g",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "quant-research-existing-factor-gap",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "EVIDENCE_INCOMPLETE",
+                  "LEGAL_REVIEW_REQUIRED"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Supply a defensible emission factor."
+                  }
+                ],
+                "next_actions": [
+                  "Obtain and validate an applicable factor."
+                ]
+              },
+              {
+                "id": "probe-raw_gas_mass_is_not_co2e",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "LEGAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  },
+                  {
+                    "id": "probe-raw_gas_mass_is_not_co2e-gap",
+                    "field": "emission_factor",
+                    "reason": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion.",
+                    "impact": "CO2e calculation is unavailable.",
+                    "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion."
+                  }
+                ],
+                "next_actions": [
+                  "Supply factor source, geography, vintage, units and methodology.",
+                  "Supply and validate compatible activity, factor source and applicability evidence."
+                ]
+              }
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "gap-factor",
+                "field": "emission_factor",
+                "reason": "No sourced compatible factor supplied.",
+                "impact": "Electricity emissions cannot be calculated.",
+                "remedy": "Supply factor source, geography, vintage, units and methodology."
+              },
+              {
+                "id": "probe-raw_gas_mass_is_not_co2e-gap",
+                "field": "emission_factor",
+                "reason": "Factor/activity units or values are incompatible; no implicit gas, GWP or heating-value conversion.",
+                "impact": "CO2e calculation is unavailable.",
+                "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "quant-research-existing-legal-review",
+                "state": "LEGAL_REVIEW_REQUIRED",
+                "reason": "Fictional regulation/source interpretation unresolved.",
+                "scope": "Fictional subject only",
+                "reviewer_role": "Qualified legal reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": [
+              {
+                "id": "synthetic-factor",
+                "value": 0.5,
+                "unit": "kg CO2e/kWh",
+                "source": {
+                  "locator": "fixture:factor",
+                  "publisher": "Fictional fixture publisher",
+                  "version": "fixture-1",
+                  "accessed": "2026-10-04"
+                },
+                "geography": "CA-ON",
+                "vintage_year": 2025,
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "evidence_ids": [
+                  "factor-evidence"
+                ],
+                "status": "synthetic"
+              }
+            ]
+          }
+        }
+      },
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.33649539994075894,
+        "request_sha256": "3865a2dd97cc4e77b3be5141eb938ce2035cea8f01b59f016279e92352fea143",
+        "stdout_sha256": "e3b1eadaccedbcbe1797d21b70e9cd6146397a3bab7e30675b23bd9195fb2a74",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "historical_records_and_obligations_preserved": true
+      }
+    },
+    {
+      "case": "synthetic_not_real_authority",
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "calculate-co2e",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "factor-evidence",
+              "source": {
+                "locator": "fixture:factor",
+                "title": "Synthetic emission-factor fixture",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kg CO2e/kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "quant-research-existing-factor-gap",
+              "skill": "calculate-co2e",
+              "contract_version": "0.1.0",
+              "status": "blocked",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE",
+                "LEGAL_REVIEW_REQUIRED"
+              ],
+              "review_requirements": [
+                {
+                  "id": "quant-research-existing-legal-review",
+                  "state": "LEGAL_REVIEW_REQUIRED",
+                  "reason": "Fictional regulation/source interpretation unresolved.",
+                  "scope": "Fictional subject only",
+                  "reviewer_role": "Qualified legal reviewer",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [
+                {
+                  "id": "gap-factor",
+                  "field": "emission_factor",
+                  "reason": "No sourced compatible factor supplied.",
+                  "impact": "Electricity emissions cannot be calculated.",
+                  "remedy": "Supply factor source, geography, vintage, units and methodology."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "EMISSION_FACTOR_REQUIRED",
+                  "message": "Supply a defensible emission factor."
+                }
+              ],
+              "next_actions": [
+                "Obtain and validate an applicable factor."
+              ]
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": [
+            {
+              "id": "synthetic-factor",
+              "value": 0.5,
+              "unit": "kg CO2e/kWh",
+              "source": {
+                "locator": "fixture:factor",
+                "publisher": "Fictional fixture publisher",
+                "version": "fixture-1",
+                "accessed": "2026-10-04"
+              },
+              "geography": "CA-ON",
+              "vintage_year": 2025,
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "gwp_basis": "Synthetic fixture basis",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "status": "synthetic"
+            }
+          ]
+        },
+        "parameters": {
+          "activity_id": "metric-001",
+          "factor_id": "synthetic-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "synthetic-factor",
+              "activity_id": "metric-001",
+              "source_locator": "fixture:factor",
+              "source_version": "fixture-1",
+              "confirmed_value": 0.5,
+              "confirmed_unit": "kg CO2e/kWh",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional activity only",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            }
+          },
+          "result_id": "probe-synthetic_not_real_authority",
+          "fixture_mode": false
+        }
+      },
+      "output": {
+        "result": {
+          "id": "probe-synthetic_not_real_authority",
+          "skill": "calculate-co2e",
+          "contract_version": "0.1.0",
+          "status": "blocked",
+          "review_states": [
+            "ANALYTICAL",
+            "LEGAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "quant-research-existing-legal-review",
+              "state": "LEGAL_REVIEW_REQUIRED",
+              "reason": "Fictional regulation/source interpretation unresolved.",
+              "scope": "Fictional subject only",
+              "reviewer_role": "Qualified legal reviewer",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [],
+          "evidence_ids": [
+            "ev-001",
+            "factor-evidence"
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "gap-factor",
+              "field": "emission_factor",
+              "reason": "No sourced compatible factor supplied.",
+              "impact": "Electricity emissions cannot be calculated.",
+              "remedy": "Supply factor source, geography, vintage, units and methodology."
+            },
+            {
+              "id": "probe-synthetic_not_real_authority-gap",
+              "field": "emission_factor",
+              "reason": "Factor is not reviewed for real use; synthetic factors require explicit fixture mode. Fictional source locators cannot support a real inventory.",
+              "impact": "CO2e calculation is unavailable.",
+              "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "EMISSION_FACTOR_REQUIRED",
+              "message": "Factor is not reviewed for real use; synthetic factors require explicit fixture mode. Fictional source locators cannot support a real inventory."
+            }
+          ],
+          "next_actions": [
+            "Supply factor source, geography, vintage, units and methodology.",
+            "Supply and validate compatible activity, factor source and applicability evidence."
+          ]
+        },
+        "proposal": {
+          "base_revision": 1,
+          "reason": "Calculate or block CO2e using resolved factor and activity evidence",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 2,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "factor-evidence",
+                "source": {
+                  "locator": "fixture:factor",
+                  "title": "Synthetic emission-factor fixture",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kg CO2e/kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 1000,
+                    "unit": "kWh",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "quant-research-existing-factor-gap",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "EVIDENCE_INCOMPLETE",
+                  "LEGAL_REVIEW_REQUIRED"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Supply a defensible emission factor."
+                  }
+                ],
+                "next_actions": [
+                  "Obtain and validate an applicable factor."
+                ]
+              },
+              {
+                "id": "probe-synthetic_not_real_authority",
+                "skill": "calculate-co2e",
+                "contract_version": "0.1.0",
+                "status": "blocked",
+                "review_states": [
+                  "ANALYTICAL",
+                  "LEGAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "quant-research-existing-legal-review",
+                    "state": "LEGAL_REVIEW_REQUIRED",
+                    "reason": "Fictional regulation/source interpretation unresolved.",
+                    "scope": "Fictional subject only",
+                    "reviewer_role": "Qualified legal reviewer",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "gap-factor",
+                    "field": "emission_factor",
+                    "reason": "No sourced compatible factor supplied.",
+                    "impact": "Electricity emissions cannot be calculated.",
+                    "remedy": "Supply factor source, geography, vintage, units and methodology."
+                  },
+                  {
+                    "id": "probe-synthetic_not_real_authority-gap",
+                    "field": "emission_factor",
+                    "reason": "Factor is not reviewed for real use; synthetic factors require explicit fixture mode. Fictional source locators cannot support a real inventory.",
+                    "impact": "CO2e calculation is unavailable.",
+                    "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "EMISSION_FACTOR_REQUIRED",
+                    "message": "Factor is not reviewed for real use; synthetic factors require explicit fixture mode. Fictional source locators cannot support a real inventory."
+                  }
+                ],
+                "next_actions": [
+                  "Supply factor source, geography, vintage, units and methodology.",
+                  "Supply and validate compatible activity, factor source and applicability evidence."
+                ]
+              }
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "gap-factor",
+                "field": "emission_factor",
+                "reason": "No sourced compatible factor supplied.",
+                "impact": "Electricity emissions cannot be calculated.",
+                "remedy": "Supply factor source, geography, vintage, units and methodology."
+              },
+              {
+                "id": "probe-synthetic_not_real_authority-gap",
+                "field": "emission_factor",
+                "reason": "Factor is not reviewed for real use; synthetic factors require explicit fixture mode. Fictional source locators cannot support a real inventory.",
+                "impact": "CO2e calculation is unavailable.",
+                "remedy": "Supply and validate compatible activity, factor source and applicability evidence."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "quant-research-existing-legal-review",
+                "state": "LEGAL_REVIEW_REQUIRED",
+                "reason": "Fictional regulation/source interpretation unresolved.",
+                "scope": "Fictional subject only",
+                "reviewer_role": "Qualified legal reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": [
+              {
+                "id": "synthetic-factor",
+                "value": 0.5,
+                "unit": "kg CO2e/kWh",
+                "source": {
+                  "locator": "fixture:factor",
+                  "publisher": "Fictional fixture publisher",
+                  "version": "fixture-1",
+                  "accessed": "2026-10-04"
+                },
+                "geography": "CA-ON",
+                "vintage_year": 2025,
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "evidence_ids": [
+                  "factor-evidence"
+                ],
+                "status": "synthetic"
+              }
+            ]
+          }
+        }
+      },
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.33702180022373796,
+        "request_sha256": "1b78af3f41c6bf6ae2df7dd2879bb51d5e7891b196844c5780c0c1aff7340c9e",
+        "stdout_sha256": "b2807b3b58dfdfa5ebd020d6da995324b4df8046084d05830832c8ac05524f80",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "historical_records_and_obligations_preserved": true
+      }
+    }
+  ],
+  "limits": [
+    "Fictional 0.5 CO2e factor and 5 g CH4/GJ probe factor are not real factors or GWPs.",
+    "Existing CO2e arithmetic is reproduced; gas-specific mass/GWP computation remains unimplemented.",
+    "No statutory coverage, filing, legal adoption or review resolution."
+  ]
+}
