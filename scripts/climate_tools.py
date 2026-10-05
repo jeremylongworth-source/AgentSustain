@@ -20,6 +20,10 @@ OPERATIONS = {
 CODE = {"identify-climate-hazards": "CLIMATE_HAZARDS", "map-assets-to-hazards": "ASSET_HAZARD_MAP"}
 CODE.update({"assess-exposure": "CLIMATE_EXPOSURE", "assess-vulnerability": "CLIMATE_VULNERABILITY"})
 CODE.update({"score-physical-risk": "PHYSICAL_RISK_SCREEN", "identify-adaptation-options": "ADAPTATION_OPTIONS"})
+for _skill, _family in [('identify-policy-risk', 'POLICY'), ('identify-market-risk', 'MARKET'),
+        ('identify-technology-risk', 'TECHNOLOGY'), ('identify-reputation-risk', 'REPUTATION')]:
+    OPERATIONS[_skill] = {'drivers', 'transition_review', 'result_id'}
+    CODE[_skill] = 'TRANSITION_' + _family + '_DRIVERS'
 
 
 def _text(value):
@@ -252,14 +256,20 @@ def _execute(state, skill, parameters):
         "evidence_ids": [], "assumptions": list(state["assumptions"]), "data_gaps": copy.deepcopy(state["data_gaps"]),
         "diagnostics": [], "next_actions": []}
     refs = set(); report = None
+    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk'}
     def gap(message, code="CLIMATE_DATA_REQUIRED"):
         result["data_gaps"].append({"id": result["id"] + "-gap-" + str(len(result["data_gaps"])),
             "field": "climate_screening_basis", "reason": message,
-            "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
-            "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."})
+            "impact": ("Selected transition driver is source-attributed; organization exposure, obligation and business effects remain unverified." if transition else
+                "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination."),
+            "remedy": ("Inspect actual transition sources and obtain qualified domain/applicability review." if transition else
+                "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review.")})
         result["diagnostics"].append({"code": code, "message": message})
     try:
-        if skill in {"score-physical-risk", "identify-adaptation-options"}:
+        if skill in {"identify-policy-risk", "identify-market-risk", "identify-technology-risk", "identify-reputation-risk"}:
+            from .climate_transition import identify
+            report = identify(state, skill, parameters, refs, result, gap)
+        elif skill in {"score-physical-risk", "identify-adaptation-options"}:
             from .climate_risk import score, adaptation
             report = (score if skill == "score-physical-risk" else adaptation)(state, parameters, refs, result, gap)
         elif skill in {"assess-exposure", "assess-vulnerability"}:
@@ -268,11 +278,13 @@ def _execute(state, skill, parameters):
         else:
             report = (_hazards if skill == "identify-climate-hazards" else _mapping)(state, parameters, refs, result, gap)
         result["review_requirements"].append({"id": result["id"] + "-climate-review", "state": "PROFESSIONAL_REVIEW_REQUIRED",
-            "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+            "reason": ("Review transition-source status, applicability, segment/service/group coverage, scenario/horizon and organizational pathways; source candidates do not establish obligations, losses or risk acceptance." if transition else
+                "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety."),
             "scope": report[{"identify-climate-hazards": "hazard_review", "map-assets-to-hazards": "mapping_review",
                 "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review",
-                "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review"}[skill]]["scope"],
-            "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner", "status": "open", "resolution": None})
+                "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review"}.get(skill, "transition_review")]["scope"],
+            "reviewer_role": ("Qualified transition-risk domain specialist and legal/applicability reviewer where relevant, with accountable owner" if transition else
+                "Qualified climate-risk and site/dependency specialist with accountable owner"), "status": "open", "resolution": None})
         result["diagnostics"].append({"code": CODE[skill], "message": json.dumps(report, sort_keys=True)})
         result["status"] = "partial" if result["data_gaps"] else "completed"
     except (ValueError, TypeError, KeyError) as error:

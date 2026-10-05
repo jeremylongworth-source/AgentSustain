@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "f78af79",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 461,
+    "duration_seconds": 194.897,
+    "status": "passed"
+  },
+  "focused_climate_suites": {
+    "command": "python -m unittest tests.test_climate_transition tests.test_climate tests.test_climate_assessment tests.test_climate_risk",
+    "tests": 47,
+    "duration_seconds": 15.838,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "identify-policy-risk": "quick_validate.py passed",
+    "identify-market-risk": "quick_validate.py passed",
+    "identify-technology-risk": "quick_validate.py passed",
+    "identify-reputation-risk": "quick_validate.py passed"
+  },
+  "cli_validation": "All eight complete author/independent outputs equal current helpers and actual CLI runs; original bytes and request bytes, historical state/obligations and exact author sequential state handoffs verified.",
+  "known_answer": {
+    "families": [
+      "policy",
+      "market",
+      "technology",
+      "reputation"
+    ],
+    "author_policy_status": "proposed",
+    "policy_effective_period": null,
+    "author_technology_maturity": "pilot",
+    "author_reputation_statement": "allegation",
+    "author_response_observed": false,
+    "new_metrics": 0,
+    "organization_exposure": null,
+    "financial_effects": null,
+    "legal_determination": false,
+    "risk_accepted": false,
+    "public_claim_authorized": false
+  },
+  "parent_replays": [
+    {
+      "capture": "author",
+      "skill": "identify-policy-risk",
+      "status": "partial",
+      "source_support": "source_transition_candidate",
+      "result_gaps": 4,
+      "result_reviews": 1,
+      "exit_code": 0,
+      "runtime_seconds": 0.349,
+      "request_sha256": "986243ce47adf8fa8853f63403164d1752fc2e5c8c51344f44b2f7f60a39c712",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "author",
+      "skill": "identify-market-risk",
+      "status": "partial",
+      "source_support": "source_transition_candidate",
+      "result_gaps": 6,
+      "result_reviews": 2,
+      "exit_code": 0,
+      "runtime_seconds": 0.369,
+      "request_sha256": "bc66fd6b45bc171382b3e9aa85324a4582afd83450cba634b7a93cd0db8f02ae",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "author",
+      "skill": "identify-technology-risk",
+      "status": "partial",
+      "source_support": "source_transition_candidate",
+      "result_gaps": 8,
+      "result_reviews": 3,
+      "exit_code": 0,
+      "runtime_seconds": 0.376,
+      "request_sha256": "a2a069bb3cd65d2bc5e8d8247859a104807428244d180cb91b3679573a86c85b",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "author",
+      "skill": "identify-reputation-risk",
+      "status": "partial",
+      "source_support": "source_transition_candidate",
+      "result_gaps": 10,
+      "result_reviews": 4,
+      "exit_code": 0,
+      "runtime_seconds": 0.376,
+      "request_sha256": "fe348ee9b13b369e22aa6811072d860ce7dbc34cb8f1fd0a2f1457ed1f85e887",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "skill": "identify-policy-risk",
+      "status": "partial",
+      "source_support": "unverified",
+      "result_gaps": 6,
+      "result_reviews": 1,
+      "exit_code": 0,
+      "runtime_seconds": 0.349,
+      "request_sha256": "a17048c46d17f68e327b6e6295725b34552539f1d7ebfc594595344ba2ef0902",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "skill": "identify-market-risk",
+      "status": "partial",
+      "source_support": "source_transition_candidate",
+      "result_gaps": 4,
+      "result_reviews": 1,
+      "exit_code": 0,
+      "runtime_seconds": 0.349,
+      "request_sha256": "796df9292dabbc98b26d27d4646f522168dcc189d90b468e9b2678101e1487f4",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "skill": "identify-technology-risk",
+      "status": "partial",
+      "source_support": "unverified",
+      "result_gaps": 4,
+      "result_reviews": 1,
+      "exit_code": 0,
+      "runtime_seconds": 0.357,
+      "request_sha256": "5382ec23c883540e1c5be6ca50835eb15af67a07798473eed93e33b77306121a",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "skill": "identify-reputation-risk",
+      "status": "partial",
+      "source_support": "source_transition_candidate",
+      "result_gaps": 3,
+      "result_reviews": 1,
+      "exit_code": 0,
+      "runtime_seconds": 0.376,
+      "request_sha256": "59aaf078438cfc4541741e37319c80f9f2cebf523a51354df93e79a41bf62551",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    }
+  ],
+  "independent_case": {
+    "original_input_sha256": {
+      "raw-sources.json": "3731ca16f8f6ab7817a8d39e1c995354c81238b06b1825ab891b1178e326d0a2",
+      "draft-requests.json": "174f534dff2e14cc4763fb03505336bc62f110b98d381039f8f3745e36f9597a"
+    },
+    "original_bytes_verified": true,
+    "policy_source_support": "unverified",
+    "market_source_support": "source_transition_candidate",
+    "technology_source_support": "unverified",
+    "reputation_source_support": "source_transition_candidate",
+    "reviews_resolved": false
+  },
+  "limitations": [
+    "Ten initial named workflows do not complete fourteen climate workflows or close SUS-16.",
+    "Source attribution cannot authenticate arbitrary prose or infer organization exposure, legal applicability, financial loss, replacement feasibility or stakeholder consensus.",
+    "Source-linked transition exposure, broader quantitative physical/transition methods and organization register/prioritization/resilience/evaluation remain open.",
+    "One fictional independent case does not establish general reliability, scientific/legal/commercial validity, professional approval or public-v1 readiness.",
+    "Subsequent contracts do not inherit the b7e1fc7 scoped approval; source-specific professional and specialist/router/release gates remain open."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "8202f23dd1a609eac94d6fbf8f1ea3876f4d31d5238fe10a29ccc5679770e0cb",
+    "scripts/climate_transition.py": "f088c4253966d40f0885294750772cae2565ca74da0bac4ef2794a22b6a77fde",
+    "tests/test_climate_transition.py": "364e059f33dc912ccb05c4bb474c91da29148b456713b00acbfc9be6bf58628c",
+    "docs/climate-risk-contract.md": "97f5bb5679b781ee8a31a64ed2464e2c420ff995a32805ca6627e384fbdeade5",
+    "evaluations/sus16-transition-drivers.json": "9884f38f8729e717a9169601afad05b2031f1a63e187c46ccdd072aea8830672",
+    "evaluations/sus16-independent-transition-drivers.json": "c8770b51b324c0a4c81c991f11092115281f2855bb628bd5dba29036db2862b3",
+    "skills/climate-risk/identify-policy-risk/SKILL.md": "1451e9eb643f2a955d624abf2a00bec3856c6c8374d7f7f14f41c15a3b1bf48a",
+    "skills/climate-risk/identify-market-risk/SKILL.md": "659fb984e6577044fbf96b0253bb448147f200b69161e1a10f6969c8fe056781",
+    "skills/climate-risk/identify-technology-risk/SKILL.md": "89fe886bc90d7821d1f43fd35f886724568116d9a2c224a6395cd4c0614b5b59",
+    "skills/climate-risk/identify-reputation-risk/SKILL.md": "c8a3b43998a6758c17b20526141ea92fc889da5589a6567c4229e8abc41c9498"
+  }
+}
