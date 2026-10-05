@@ -88,3 +88,7 @@ The source-linked qualitative risk and opportunity registers follow the approved
 This extension is now included in the 681a3e6 continued-development approval; the outstanding review requirements below remain applicable.
 
 The source-reproduced strategy composer follows a935647 under continued roadmap authorization. Later specialist/router/release review must cover source scopes and parent consistency, topic/risk omissions, objective/intervention links, shared sources, target-period timing, prerequisite ordering, resource context and monitoring. Professional strategy/target/materiality decisions and owner acceptance remain open; no adoption, funded delivery or implementation is inferred. Evidence is in [the composition capture](../evaluations/sus15-strategy-composition.json).
+
+## Subsequent transition extension
+
+The sourced transition-pathway contract follows the approved 681a3e6 snapshot under continued roadmap authorization. It does not inherit that revision's scoped review. Later specialist/router/release review must cover interim/final target comparability, scenario versus investment selection, timing/profile reconciliation, external dependencies, milestone acceptance evidence, governance, omissions and non-additivity. Scenario-specific professional decisions and actual owner acceptance, funding, monitoring and adoption remain open. Evidence is in [the transition capture](../evaluations/sus15-transition-workflow.json). This does not close SUS-15 or establish a certified climate pathway, disclosure conformity or general transition feasibility.

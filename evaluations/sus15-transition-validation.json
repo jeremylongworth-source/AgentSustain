@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "f76fa30",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 397,
+    "duration_seconds": 161.912,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 75,
+    "duration_seconds": 31.336,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "build-transition-plan": "quick_validate.py passed"
+  },
+  "cli_validation": "Complete final author and independent helper/CLI outputs replayed exactly; request/raw bytes unchanged; historical state/results/evidence/reviews/gaps preserved.",
+  "known_answer": {
+    "proposed_checkpoint_endpoints": [
+      9,
+      8
+    ],
+    "endpoint_unit": "kWh/count",
+    "baseline_intensity": 10,
+    "gross_baseline_kWh": 1000,
+    "modeled_final_gross_kWh": 1500,
+    "modeled_final_service_count": 200,
+    "modeled_final_intensity": 7.5,
+    "supplied_intensity_range": [
+      7,
+      8.5
+    ],
+    "point_meets_proposed_endpoint": true,
+    "delivery_screen": "known_conditions_not_met",
+    "selected_installed_cost_CAD": 400,
+    "available_envelope_CAD": 300,
+    "budget_minus_cost_CAD": -100,
+    "new_metrics": 0,
+    "annual_trajectory": null,
+    "portfolio_total": null,
+    "adoption": false,
+    "funding_approved": false
+  },
+  "checks": [
+    "Strategy and interim/final checkpoint reproduction with matched KPI/baseline/physical-service/accounting definition",
+    "Ordered disjoint commitment periods; incompatible source definitions and overlapping periods blocked",
+    "Modeled objective coverage, growth, range, timing and budget/delivery constraints remain distinct",
+    "Unassessed interim feasibility, external dependencies, monitoring and governance remain gaps",
+    "Alternative paths reusing sources are non-additive; no annual interpolation or invented checkpoints",
+    "Qualitative pathways, omitted objectives/initiatives and overdue unverified milestones preserved",
+    "Wrong references/scopes/scenarios, invalid dates, empty acceptance criteria, cycles and conflicting prerequisite dates blocked",
+    "Known external-condition status requires reviewed supporting evidence; fulfilment never inferred",
+    "Changed current sources block replay; missing-factor diagnostics retained through already-blocked strategy dependency",
+    "Historical results/evidence/gaps/reviews unchanged; new professional transition gate remains open"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-transition.json",
+    "status": "partial",
+    "new_metrics": 0,
+    "new_gaps": 13,
+    "new_reviews": 1,
+    "observed": "Unsupported guarantee, funding, completed commissioning/results and operating-governance claims corrected; late commissioning, CAD 100 deficit and historical narrative conflicts retained for review.",
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "fd19e3641ad745df1054ac9c11b6e52445ff4ec22e05348438b3ee70cbdf48bf",
+    "author_fixture_correction": "Fresh author scope and interim ambition prose corrected after independent findings; independent original state/history preserved."
+  },
+  "source_orientation": [
+    {
+      "url": "https://www.ifrs.org/news-and-events/news/2025/06/ifrs-publishes-guidance-disclosures-transition-plans/",
+      "accessed": "2026-10-05",
+      "scope": "Strategy/targets/actions/resources orientation, not an IFRS adapter, jurisdiction rule or conformity claim."
+    }
+  ],
+  "limitations": [
+    "Eleven of thirteen strategy workflows; detailed implementation roadmap and accountability workflows remain.",
+    "One fictional independent source-reading case does not establish general reliability, source authenticity or organization-wide coverage.",
+    "Arbitrary prose requires source review; historical narrative conflicts are retained, not validated by helper consistency.",
+    "No engineering profile recalculation, portfolio optimization, funding, owner acceptance, workforce consent, performance, science-based/net-zero validation or release approval.",
+    "Broader technical/financial methods, professional, specialist/router and independent organization evaluations remain open."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "dacd03b2a3ac9379bc32ecb2d79f5246c9d78b560757aaa7a9aa515ef25573de",
+    "scripts/strategy_transition.py": "84d7d304886b86a39ed44587975b2813eddc0456380fa98b065759a7ce80e17e",
+    "tests/test_strategy_transition.py": "6b99ca94e6a39de4fc87dfdaa06120d77ddb5211d478e659cd82678bdc54208b",
+    "skills/strategy/build-transition-plan/SKILL.md": "317b53d8bcc17de49cdcd643f657aebd45e31ff61eb24da075ee544471cba683",
+    "docs/strategy-contract.md": "b83f4cfc75aca9decac78161a62470bbc4772ff404df9957879dd317b9b022eb",
+    "evaluations/sus15-transition-workflow.json": "3b7f548c5a3403c7db392f6eba4c9797b4bd0ef53233237d4160b9d92742a73d",
+    "evaluations/sus15-independent-transition.json": "3e35ea6c159ffd35f90038c21355dc514dac0e66915c8b4034dd5afdeae1110d"
+  }
+}
