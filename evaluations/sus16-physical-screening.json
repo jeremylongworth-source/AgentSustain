@@ -1,0 +1,1535 @@
+{
+  "fixture_version": "fictional-1",
+  "executions": [
+    {
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "identify-climate-hazards",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 0,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "hazard-source",
+              "source": {
+                "locator": "fixture:hazard-source",
+                "title": "Fictional coarse regional climate grid",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-05",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional selected source extract",
+                "version": "fixture-1",
+                "source": "fixture:hazard-source"
+              },
+              "period": {
+                "start": "2026-10-01",
+                "end": "2026-10-05"
+              },
+              "unit": "UNKNOWN_UNIT",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "partial",
+                "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Coarse resolution and future operating/site conditions are unverified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "asset-source",
+              "source": {
+                "locator": "fixture:asset-source",
+                "title": "Fictional asset and service location record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-05",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional selected source extract",
+                "version": "fixture-1",
+                "source": "fixture:asset-source"
+              },
+              "period": {
+                "start": "2026-10-01",
+                "end": "2026-10-05"
+              },
+              "unit": "UNKNOWN_UNIT",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "partial",
+                "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Coarse resolution and future operating/site conditions are unverified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [],
+          "review_requirements": [],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": []
+        },
+        "parameters": {
+          "hazards": [
+            {
+              "id": "rain-cell",
+              "name": "Fictional heavy-rain candidate",
+              "physical_type": "acute",
+              "mechanism": "Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.",
+              "context": {
+                "kind": "projected",
+                "scenario": "Fictional exploratory scenario A",
+                "model": "Fictional coarse grid v1",
+                "baseline_period": {
+                  "start": "2000-01-01",
+                  "end": "2020-12-31"
+                },
+                "horizon": {
+                  "start": "2030-01-01",
+                  "end": "2050-12-31"
+                }
+              },
+              "spatial_extent": {
+                "crs": "OGC:CRS84",
+                "bounds": [
+                  10,
+                  10,
+                  20,
+                  20
+                ],
+                "representation": "bounding_box",
+                "resolution": "Fictional selected regional cell/envelope, not a hazard footprint or surveyed building."
+              },
+              "evidence_ids": [
+                "hazard-source"
+              ],
+              "evidence_fit": "reviewed_supporting",
+              "source_fragment": "Fictional supplied grid extent under scenario A; not site inundation data.",
+              "observed_date": "2026-10-02",
+              "limitations": "Unknown local drainage, ground elevation, climate attribution, intensity and probability."
+            }
+          ],
+          "hazard_review": {
+            "confirmed": true,
+            "reviewer_role": "Fictional source screener",
+            "rationale": "Fictional extracts reviewed for selected screening only.",
+            "evidence_ids": [
+              "hazard-source"
+            ],
+            "boundary_id": "boundary-001",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "scope": "Fictional selected plant and service dependency",
+            "selection_basis": "One selected regional grid, no complete hazard coverage.",
+            "limitations": "No specialist model or provider/site authentication.",
+            "as_of_date": "2026-10-05",
+            "coverage_complete": false,
+            "exclusions": [
+              "Other hazards and locations"
+            ],
+            "method": "source_hazard_register"
+          },
+          "result_id": "climate-hazards"
+        }
+      },
+      "output": {
+        "result": {
+          "id": "climate-hazards",
+          "skill": "identify-climate-hazards",
+          "contract_version": "0.1.0",
+          "status": "partial",
+          "review_states": [
+            "ADVISORY",
+            "PROFESSIONAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "climate-hazards-climate-review",
+              "state": "PROFESSIONAL_REVIEW_REQUIRED",
+              "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+              "scope": "Fictional selected plant and service dependency",
+              "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [],
+          "evidence_ids": [
+            "hazard-source"
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "climate-hazards-gap-0",
+              "field": "climate_screening_basis",
+              "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+              "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+              "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "CLIMATE_DATA_REQUIRED",
+              "message": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment."
+            },
+            {
+              "code": "CLIMATE_HAZARDS",
+              "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"asset_damage\": null, \"climate_attribution_verified\": false, \"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"probability\": null, \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"source_support\": \"reviewed_source_candidate\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"risk_score\": null, \"specialist_model_validated\": false}"
+            },
+            {
+              "code": "CLIMATE_INPUTS",
+              "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"result_id\": \"climate-hazards\"}"
+            }
+          ],
+          "next_actions": [
+            "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+          ]
+        },
+        "proposal": {
+          "base_revision": 0,
+          "reason": "Record source-attributed climate hazard/exposure candidates without modelling, decisions or claims",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 1,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "hazard-source",
+                "source": {
+                  "locator": "fixture:hazard-source",
+                  "title": "Fictional coarse regional climate grid",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-05",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Fictional selected source extract",
+                  "version": "fixture-1",
+                  "source": "fixture:hazard-source"
+                },
+                "period": {
+                  "start": "2026-10-01",
+                  "end": "2026-10-05"
+                },
+                "unit": "UNKNOWN_UNIT",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "partial",
+                  "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Coarse resolution and future operating/site conditions are unverified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "asset-source",
+                "source": {
+                  "locator": "fixture:asset-source",
+                  "title": "Fictional asset and service location record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-05",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Fictional selected source extract",
+                  "version": "fixture-1",
+                  "source": "fixture:asset-source"
+                },
+                "period": {
+                  "start": "2026-10-01",
+                  "end": "2026-10-05"
+                },
+                "unit": "UNKNOWN_UNIT",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "partial",
+                  "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Coarse resolution and future operating/site conditions are unverified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 1000,
+                    "unit": "kWh",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "climate-hazards",
+                "skill": "identify-climate-hazards",
+                "contract_version": "0.1.0",
+                "status": "partial",
+                "review_states": [
+                  "ADVISORY",
+                  "PROFESSIONAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "climate-hazards-climate-review",
+                    "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                    "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                    "scope": "Fictional selected plant and service dependency",
+                    "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "hazard-source"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "climate-hazards-gap-0",
+                    "field": "climate_screening_basis",
+                    "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+                    "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                    "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "CLIMATE_DATA_REQUIRED",
+                    "message": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment."
+                  },
+                  {
+                    "code": "CLIMATE_HAZARDS",
+                    "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"asset_damage\": null, \"climate_attribution_verified\": false, \"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"probability\": null, \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"source_support\": \"reviewed_source_candidate\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"risk_score\": null, \"specialist_model_validated\": false}"
+                  },
+                  {
+                    "code": "CLIMATE_INPUTS",
+                    "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"result_id\": \"climate-hazards\"}"
+                  }
+                ],
+                "next_actions": [
+                  "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                ]
+              }
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "climate-hazards-gap-0",
+                "field": "climate_screening_basis",
+                "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+                "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "climate-hazards-climate-review",
+                "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                "scope": "Fictional selected plant and service dependency",
+                "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": []
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "contract_version": "0.1.0",
+        "skill": "map-assets-to-hazards",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "hazard-source",
+              "source": {
+                "locator": "fixture:hazard-source",
+                "title": "Fictional coarse regional climate grid",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-05",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional selected source extract",
+                "version": "fixture-1",
+                "source": "fixture:hazard-source"
+              },
+              "period": {
+                "start": "2026-10-01",
+                "end": "2026-10-05"
+              },
+              "unit": "UNKNOWN_UNIT",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "partial",
+                "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Coarse resolution and future operating/site conditions are unverified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "asset-source",
+              "source": {
+                "locator": "fixture:asset-source",
+                "title": "Fictional asset and service location record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-05",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional selected source extract",
+                "version": "fixture-1",
+                "source": "fixture:asset-source"
+              },
+              "period": {
+                "start": "2026-10-01",
+                "end": "2026-10-05"
+              },
+              "unit": "UNKNOWN_UNIT",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "partial",
+                "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Coarse resolution and future operating/site conditions are unverified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "climate-hazards",
+              "skill": "identify-climate-hazards",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ADVISORY",
+                "PROFESSIONAL_REVIEW_REQUIRED",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [
+                {
+                  "id": "climate-hazards-climate-review",
+                  "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                  "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                  "scope": "Fictional selected plant and service dependency",
+                  "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [],
+              "evidence_ids": [
+                "hazard-source"
+              ],
+              "assumptions": [],
+              "data_gaps": [
+                {
+                  "id": "climate-hazards-gap-0",
+                  "field": "climate_screening_basis",
+                  "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+                  "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                  "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "CLIMATE_DATA_REQUIRED",
+                  "message": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment."
+                },
+                {
+                  "code": "CLIMATE_HAZARDS",
+                  "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"asset_damage\": null, \"climate_attribution_verified\": false, \"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"probability\": null, \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"source_support\": \"reviewed_source_candidate\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"risk_score\": null, \"specialist_model_validated\": false}"
+                },
+                {
+                  "code": "CLIMATE_INPUTS",
+                  "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"result_id\": \"climate-hazards\"}"
+                }
+              ],
+              "next_actions": [
+                "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+              ]
+            }
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "climate-hazards-gap-0",
+              "field": "climate_screening_basis",
+              "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+              "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+              "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "climate-hazards-climate-review",
+              "state": "PROFESSIONAL_REVIEW_REQUIRED",
+              "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+              "scope": "Fictional selected plant and service dependency",
+              "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": []
+        },
+        "parameters": {
+          "hazard_result_id": "climate-hazards",
+          "assets": [
+            {
+              "id": "plant-site",
+              "name": "Fictional plant location envelope",
+              "asset_type": "physical_asset",
+              "boundary_relation": "direct",
+              "facility_id": "facility-001",
+              "function": "Selected processing service",
+              "owner": "Fictional plant source-review owner",
+              "location": {
+                "crs": "OGC:CRS84",
+                "bounds": [
+                  12,
+                  12,
+                  12,
+                  12
+                ],
+                "representation": "bounding_box",
+                "resolution": "Fictional selected regional cell/envelope, not a hazard footprint or surveyed building."
+              },
+              "operating_period": {
+                "start": "2027-01-01",
+                "end": "2035-12-31"
+              },
+              "evidence_ids": [
+                "asset-source"
+              ],
+              "evidence_fit": "reviewed_supporting",
+              "source_fragment": "Fictional supplied location and proposed operating-window extract.",
+              "observed_date": "2026-10-03",
+              "limitations": "No surveyed footprint, verified future availability, vulnerability or damage function."
+            },
+            {
+              "id": "external-service",
+              "name": "Fictional service envelope",
+              "asset_type": "service_dependency",
+              "boundary_relation": "value_chain",
+              "facility_id": null,
+              "function": "Selected processing service",
+              "owner": "Fictional plant source-review owner",
+              "location": {
+                "crs": "OGC:CRS84",
+                "bounds": [
+                  30,
+                  30,
+                  31,
+                  31
+                ],
+                "representation": "bounding_box",
+                "resolution": "Fictional selected regional cell/envelope, not a hazard footprint or surveyed building."
+              },
+              "operating_period": {
+                "start": "2027-01-01",
+                "end": "2035-12-31"
+              },
+              "evidence_ids": [
+                "asset-source"
+              ],
+              "evidence_fit": "reviewed_supporting",
+              "source_fragment": "Fictional supplied location and proposed operating-window extract.",
+              "observed_date": "2026-10-03",
+              "limitations": "No surveyed footprint, verified future availability, vulnerability or damage function."
+            }
+          ],
+          "comparisons": [
+            {
+              "asset_id": "plant-site",
+              "hazard_id": "rain-cell",
+              "evidence_ids": [
+                "hazard-source",
+                "asset-source"
+              ],
+              "spatial_fit": "reviewed_supporting",
+              "context_fit": "reviewed_supporting",
+              "rationale": "Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference."
+            },
+            {
+              "asset_id": "external-service",
+              "hazard_id": "rain-cell",
+              "evidence_ids": [
+                "hazard-source",
+                "asset-source"
+              ],
+              "spatial_fit": "reviewed_supporting",
+              "context_fit": "reviewed_supporting",
+              "rationale": "Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference."
+            }
+          ],
+          "mapping_review": {
+            "confirmed": true,
+            "reviewer_role": "Fictional source screener",
+            "rationale": "Fictional extracts reviewed for selected screening only.",
+            "evidence_ids": [
+              "hazard-source",
+              "asset-source"
+            ],
+            "boundary_id": "boundary-001",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "scope": "Fictional selected plant and service dependency",
+            "selection_basis": "One selected regional grid, no complete hazard coverage.",
+            "limitations": "No specialist model or provider/site authentication.",
+            "as_of_date": "2026-10-05",
+            "coverage_complete": false,
+            "exclusions": [
+              "Other hazards and locations"
+            ],
+            "method": "bounding_box_screen"
+          },
+          "result_id": "climate-map"
+        }
+      },
+      "output": {
+        "result": {
+          "id": "climate-map",
+          "skill": "map-assets-to-hazards",
+          "contract_version": "0.1.0",
+          "status": "partial",
+          "review_states": [
+            "ADVISORY",
+            "PROFESSIONAL_REVIEW_REQUIRED",
+            "EVIDENCE_INCOMPLETE"
+          ],
+          "review_requirements": [
+            {
+              "id": "climate-hazards-climate-review",
+              "state": "PROFESSIONAL_REVIEW_REQUIRED",
+              "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+              "scope": "Fictional selected plant and service dependency",
+              "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+              "status": "open",
+              "resolution": null
+            },
+            {
+              "id": "climate-map-climate-review",
+              "state": "PROFESSIONAL_REVIEW_REQUIRED",
+              "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+              "scope": "Fictional selected plant and service dependency",
+              "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "metrics": [],
+          "evidence_ids": [
+            "asset-source",
+            "hazard-source"
+          ],
+          "assumptions": [],
+          "data_gaps": [
+            {
+              "id": "climate-hazards-gap-0",
+              "field": "climate_screening_basis",
+              "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+              "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+              "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+            },
+            {
+              "id": "climate-map-gap-1",
+              "field": "climate_screening_basis",
+              "reason": "plant-site / rain-cell: bounding-box overlap needs site/dependency investigation; vulnerability and damage are unassessed.",
+              "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+              "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+            },
+            {
+              "id": "climate-map-gap-2",
+              "field": "climate_screening_basis",
+              "reason": "Asset/hazard mapping coverage is incomplete or excludes locations/dependencies.",
+              "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+              "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+            }
+          ],
+          "diagnostics": [
+            {
+              "code": "CLIMATE_DATA_REQUIRED",
+              "message": "plant-site / rain-cell: bounding-box overlap needs site/dependency investigation; vulnerability and damage are unassessed."
+            },
+            {
+              "code": "CLIMATE_DATA_REQUIRED",
+              "message": "Asset/hazard mapping coverage is incomplete or excludes locations/dependencies."
+            },
+            {
+              "code": "ASSET_HAZARD_MAP",
+              "message": "{\"assets\": [{\"asset_type\": \"physical_asset\", \"boundary_relation\": \"direct\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": \"facility-001\", \"function\": \"Selected processing service\", \"id\": \"plant-site\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [12, 12, 12, 12], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional plant location envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}]}, {\"asset_type\": \"service_dependency\", \"boundary_relation\": \"value_chain\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": null, \"function\": \"Selected processing service\", \"id\": \"external-service\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [30, 30, 31, 31], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional service envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}]}], \"comparisons\": [{\"asset_id\": \"plant-site\", \"asset_safe\": false, \"candidate_spatial_relation\": \"intersects_selected_boxes\", \"comparison_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}, {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"context_fit\": \"reviewed_supporting\", \"damage\": null, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exposure_verified\": false, \"hazard_id\": \"rain-cell\", \"probability\": null, \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"risk_score\": null, \"screening_status\": \"possible_exposure_candidate\", \"spatial_fit\": \"reviewed_supporting\", \"temporal_relation\": \"overlapping\", \"vulnerability\": null}, {\"asset_id\": \"external-service\", \"asset_safe\": false, \"candidate_spatial_relation\": \"outside_selected_box\", \"comparison_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}, {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"context_fit\": \"reviewed_supporting\", \"damage\": null, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exposure_verified\": false, \"hazard_id\": \"rain-cell\", \"probability\": null, \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"risk_score\": null, \"screening_status\": \"outside_selected_extent_screen\", \"spatial_fit\": \"reviewed_supporting\", \"temporal_relation\": \"overlapping\", \"vulnerability\": null}], \"hazard_snapshot\": {\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"asset_damage\": null, \"climate_attribution_verified\": false, \"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"probability\": null, \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"source_support\": \"reviewed_source_candidate\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"risk_score\": null, \"specialist_model_validated\": false}, \"implementation_authorized\": false, \"mapping_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"bounding_box_screen\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"organization_safe\": false, \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}, {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"specialist_model_validated\": false}"
+            },
+            {
+              "code": "CLIMATE_INPUTS",
+              "message": "{\"assets\": [{\"asset_type\": \"physical_asset\", \"boundary_relation\": \"direct\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": \"facility-001\", \"function\": \"Selected processing service\", \"id\": \"plant-site\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [12, 12, 12, 12], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional plant location envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\"}, {\"asset_type\": \"service_dependency\", \"boundary_relation\": \"value_chain\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": null, \"function\": \"Selected processing service\", \"id\": \"external-service\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [30, 30, 31, 31], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional service envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\"}], \"comparisons\": [{\"asset_id\": \"plant-site\", \"context_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"hazard_id\": \"rain-cell\", \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"spatial_fit\": \"reviewed_supporting\"}, {\"asset_id\": \"external-service\", \"context_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"hazard_id\": \"rain-cell\", \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"spatial_fit\": \"reviewed_supporting\"}], \"hazard_result_id\": \"climate-hazards\", \"mapping_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"bounding_box_screen\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"result_id\": \"climate-map\"}"
+            }
+          ],
+          "next_actions": [
+            "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+          ]
+        },
+        "proposal": {
+          "base_revision": 1,
+          "reason": "Record source-attributed climate hazard/exposure candidates without modelling, decisions or claims",
+          "state": {
+            "contract_version": "0.1.0",
+            "revision": 2,
+            "organization": {
+              "id": "org-001",
+              "name": "Fictional Example Company",
+              "sector": "manufacturing"
+            },
+            "facilities": [
+              {
+                "id": "facility-001",
+                "name": "Fictional plant",
+                "jurisdiction": "CA-ON"
+              }
+            ],
+            "jurisdictions": [
+              "CA",
+              "CA-ON"
+            ],
+            "reporting_period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "organizational_boundary": {
+              "id": "boundary-001",
+              "approach": "operational control (fixture only)",
+              "facility_ids": [
+                "facility-001"
+              ],
+              "exclusions": [],
+              "evidence_ids": []
+            },
+            "evidence": [
+              {
+                "id": "ev-001",
+                "source": {
+                  "locator": "fixture:meter-001",
+                  "title": "Fictional annual electricity record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "unit": "kWh",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "hazard-source",
+                "source": {
+                  "locator": "fixture:hazard-source",
+                  "title": "Fictional coarse regional climate grid",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-05",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Fictional selected source extract",
+                  "version": "fixture-1",
+                  "source": "fixture:hazard-source"
+                },
+                "period": {
+                  "start": "2026-10-01",
+                  "end": "2026-10-05"
+                },
+                "unit": "UNKNOWN_UNIT",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "partial",
+                  "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Coarse resolution and future operating/site conditions are unverified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "asset-source",
+                "source": {
+                  "locator": "fixture:asset-source",
+                  "title": "Fictional asset and service location record",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-05",
+                  "version": "fixture-1",
+                  "tier": 1
+                },
+                "method": {
+                  "name": "Fictional selected source extract",
+                  "version": "fixture-1",
+                  "source": "fixture:asset-source"
+                },
+                "period": {
+                  "start": "2026-10-01",
+                  "end": "2026-10-05"
+                },
+                "unit": "UNKNOWN_UNIT",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "partial",
+                  "fitness_notes": "Fictional screening fixture; no authenticated climate or site dataset."
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Coarse resolution and future operating/site conditions are unverified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              }
+            ],
+            "results": [
+              {
+                "id": "res-001",
+                "skill": "normalize-sustainability-data",
+                "contract_version": "0.1.0",
+                "status": "completed",
+                "review_states": [
+                  "ANALYTICAL"
+                ],
+                "review_requirements": [],
+                "metrics": [
+                  {
+                    "id": "metric-001",
+                    "name": "Recorded electricity",
+                    "value": 1000,
+                    "unit": "kWh",
+                    "period": {
+                      "start": "2025-01-01",
+                      "end": "2025-12-31"
+                    },
+                    "boundary_id": "boundary-001",
+                    "evidence_ids": [
+                      "ev-001"
+                    ],
+                    "method": {
+                      "name": "Synthetic meter reading fixture",
+                      "version": "fixture-1",
+                      "source": "fixture:meter-001"
+                    },
+                    "assumption": null,
+                    "uncertainty": {
+                      "kind": "unquantified",
+                      "description": "Fictional meter uncertainty is not quantified.",
+                      "value": null,
+                      "unit": null
+                    },
+                    "calculation": {
+                      "formula": "recorded quantity",
+                      "inputs": [
+                        "ev-001"
+                      ],
+                      "conversions": [],
+                      "rounding": "none"
+                    }
+                  }
+                ],
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "assumptions": [],
+                "data_gaps": [],
+                "diagnostics": [],
+                "next_actions": []
+              },
+              {
+                "id": "climate-hazards",
+                "skill": "identify-climate-hazards",
+                "contract_version": "0.1.0",
+                "status": "partial",
+                "review_states": [
+                  "ADVISORY",
+                  "PROFESSIONAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "climate-hazards-climate-review",
+                    "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                    "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                    "scope": "Fictional selected plant and service dependency",
+                    "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "hazard-source"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "climate-hazards-gap-0",
+                    "field": "climate_screening_basis",
+                    "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+                    "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                    "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "CLIMATE_DATA_REQUIRED",
+                    "message": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment."
+                  },
+                  {
+                    "code": "CLIMATE_HAZARDS",
+                    "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"asset_damage\": null, \"climate_attribution_verified\": false, \"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"probability\": null, \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"source_support\": \"reviewed_source_candidate\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"risk_score\": null, \"specialist_model_validated\": false}"
+                  },
+                  {
+                    "code": "CLIMATE_INPUTS",
+                    "message": "{\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"result_id\": \"climate-hazards\"}"
+                  }
+                ],
+                "next_actions": [
+                  "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                ]
+              },
+              {
+                "id": "climate-map",
+                "skill": "map-assets-to-hazards",
+                "contract_version": "0.1.0",
+                "status": "partial",
+                "review_states": [
+                  "ADVISORY",
+                  "PROFESSIONAL_REVIEW_REQUIRED",
+                  "EVIDENCE_INCOMPLETE"
+                ],
+                "review_requirements": [
+                  {
+                    "id": "climate-hazards-climate-review",
+                    "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                    "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                    "scope": "Fictional selected plant and service dependency",
+                    "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                    "status": "open",
+                    "resolution": null
+                  },
+                  {
+                    "id": "climate-map-climate-review",
+                    "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                    "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                    "scope": "Fictional selected plant and service dependency",
+                    "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                    "status": "open",
+                    "resolution": null
+                  }
+                ],
+                "metrics": [],
+                "evidence_ids": [
+                  "asset-source",
+                  "hazard-source"
+                ],
+                "assumptions": [],
+                "data_gaps": [
+                  {
+                    "id": "climate-hazards-gap-0",
+                    "field": "climate_screening_basis",
+                    "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+                    "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                    "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                  },
+                  {
+                    "id": "climate-map-gap-1",
+                    "field": "climate_screening_basis",
+                    "reason": "plant-site / rain-cell: bounding-box overlap needs site/dependency investigation; vulnerability and damage are unassessed.",
+                    "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                    "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                  },
+                  {
+                    "id": "climate-map-gap-2",
+                    "field": "climate_screening_basis",
+                    "reason": "Asset/hazard mapping coverage is incomplete or excludes locations/dependencies.",
+                    "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                    "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                  }
+                ],
+                "diagnostics": [
+                  {
+                    "code": "CLIMATE_DATA_REQUIRED",
+                    "message": "plant-site / rain-cell: bounding-box overlap needs site/dependency investigation; vulnerability and damage are unassessed."
+                  },
+                  {
+                    "code": "CLIMATE_DATA_REQUIRED",
+                    "message": "Asset/hazard mapping coverage is incomplete or excludes locations/dependencies."
+                  },
+                  {
+                    "code": "ASSET_HAZARD_MAP",
+                    "message": "{\"assets\": [{\"asset_type\": \"physical_asset\", \"boundary_relation\": \"direct\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": \"facility-001\", \"function\": \"Selected processing service\", \"id\": \"plant-site\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [12, 12, 12, 12], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional plant location envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}]}, {\"asset_type\": \"service_dependency\", \"boundary_relation\": \"value_chain\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": null, \"function\": \"Selected processing service\", \"id\": \"external-service\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [30, 30, 31, 31], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional service envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}]}], \"comparisons\": [{\"asset_id\": \"plant-site\", \"asset_safe\": false, \"candidate_spatial_relation\": \"intersects_selected_boxes\", \"comparison_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}, {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"context_fit\": \"reviewed_supporting\", \"damage\": null, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exposure_verified\": false, \"hazard_id\": \"rain-cell\", \"probability\": null, \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"risk_score\": null, \"screening_status\": \"possible_exposure_candidate\", \"spatial_fit\": \"reviewed_supporting\", \"temporal_relation\": \"overlapping\", \"vulnerability\": null}, {\"asset_id\": \"external-service\", \"asset_safe\": false, \"candidate_spatial_relation\": \"outside_selected_box\", \"comparison_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}, {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"context_fit\": \"reviewed_supporting\", \"damage\": null, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exposure_verified\": false, \"hazard_id\": \"rain-cell\", \"probability\": null, \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"risk_score\": null, \"screening_status\": \"outside_selected_extent_screen\", \"spatial_fit\": \"reviewed_supporting\", \"temporal_relation\": \"overlapping\", \"vulnerability\": null}], \"hazard_snapshot\": {\"hazard_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"source_hazard_register\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"hazards\": [{\"asset_damage\": null, \"climate_attribution_verified\": false, \"context\": {\"baseline_period\": {\"end\": \"2020-12-31\", \"start\": \"2000-01-01\"}, \"horizon\": {\"end\": \"2050-12-31\", \"start\": \"2030-01-01\"}, \"kind\": \"projected\", \"model\": \"Fictional coarse grid v1\", \"scenario\": \"Fictional exploratory scenario A\"}, \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\"], \"id\": \"rain-cell\", \"limitations\": \"Unknown local drainage, ground elevation, climate attribution, intensity and probability.\", \"mechanism\": \"Supplied regional extreme-rain study suggests investigation of drainage and service disruption; no flood depth.\", \"name\": \"Fictional heavy-rain candidate\", \"observed_date\": \"2026-10-02\", \"physical_type\": \"acute\", \"probability\": null, \"source_fragment\": \"Fictional supplied grid extent under scenario A; not site inundation data.\", \"source_support\": \"reviewed_source_candidate\", \"sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"spatial_extent\": {\"bounds\": [10, 10, 20, 20], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}}], \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"risk_score\": null, \"specialist_model_validated\": false}, \"implementation_authorized\": false, \"mapping_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"bounding_box_screen\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"organization_safe\": false, \"public_claim_authorized\": false, \"review_sources\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"hazard-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:hazard-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:hazard-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional coarse regional climate grid\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}, {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": null, \"geography\": \"CA-ON\", \"id\": \"asset-source\", \"method\": {\"name\": \"Fictional selected source extract\", \"source\": \"fixture:asset-source\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2026-10-05\", \"start\": \"2026-10-01\"}, \"quality\": {\"completeness\": \"partial\", \"fitness_notes\": \"Fictional screening fixture; no authenticated climate or site dataset.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-05\", \"locator\": \"fixture:asset-source\", \"publisher\": \"Fictional Example Company\", \"tier\": 1, \"title\": \"Fictional asset and service location record\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Coarse resolution and future operating/site conditions are unverified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"UNKNOWN_UNIT\"}], \"specialist_model_validated\": false}"
+                  },
+                  {
+                    "code": "CLIMATE_INPUTS",
+                    "message": "{\"assets\": [{\"asset_type\": \"physical_asset\", \"boundary_relation\": \"direct\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": \"facility-001\", \"function\": \"Selected processing service\", \"id\": \"plant-site\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [12, 12, 12, 12], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional plant location envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\"}, {\"asset_type\": \"service_dependency\", \"boundary_relation\": \"value_chain\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"asset-source\"], \"facility_id\": null, \"function\": \"Selected processing service\", \"id\": \"external-service\", \"limitations\": \"No surveyed footprint, verified future availability, vulnerability or damage function.\", \"location\": {\"bounds\": [30, 30, 31, 31], \"crs\": \"OGC:CRS84\", \"representation\": \"bounding_box\", \"resolution\": \"Fictional selected regional cell/envelope, not a hazard footprint or surveyed building.\"}, \"name\": \"Fictional service envelope\", \"observed_date\": \"2026-10-03\", \"operating_period\": {\"end\": \"2035-12-31\", \"start\": \"2027-01-01\"}, \"owner\": \"Fictional plant source-review owner\", \"source_fragment\": \"Fictional supplied location and proposed operating-window extract.\"}], \"comparisons\": [{\"asset_id\": \"plant-site\", \"context_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"hazard_id\": \"rain-cell\", \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"spatial_fit\": \"reviewed_supporting\"}, {\"asset_id\": \"external-service\", \"context_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"hazard_id\": \"rain-cell\", \"rationale\": \"Fictional same-CRS, selected scenario/window envelope comparison; no building hazard inference.\", \"spatial_fit\": \"reviewed_supporting\"}], \"hazard_result_id\": \"climate-hazards\", \"mapping_review\": {\"as_of_date\": \"2026-10-05\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"hazard-source\", \"asset-source\"], \"exclusions\": [\"Other hazards and locations\"], \"limitations\": \"No specialist model or provider/site authentication.\", \"method\": \"bounding_box_screen\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional extracts reviewed for selected screening only.\", \"reviewer_role\": \"Fictional source screener\", \"scope\": \"Fictional selected plant and service dependency\", \"selection_basis\": \"One selected regional grid, no complete hazard coverage.\"}, \"result_id\": \"climate-map\"}"
+                  }
+                ],
+                "next_actions": [
+                  "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+                ]
+              }
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "climate-hazards-gap-0",
+                "field": "climate_screening_basis",
+                "reason": "Selected hazard coverage has omissions/exclusions; no complete regional or organization hazard assessment.",
+                "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+              },
+              {
+                "id": "climate-map-gap-1",
+                "field": "climate_screening_basis",
+                "reason": "plant-site / rain-cell: bounding-box overlap needs site/dependency investigation; vulnerability and damage are unassessed.",
+                "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+              },
+              {
+                "id": "climate-map-gap-2",
+                "field": "climate_screening_basis",
+                "reason": "Asset/hazard mapping coverage is incomplete or excludes locations/dependencies.",
+                "impact": "Selected hazard/exposure screening is conditional; no vulnerability, loss, safety or risk determination.",
+                "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."
+              }
+            ],
+            "review_requirements": [
+              {
+                "id": "climate-hazards-climate-review",
+                "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                "scope": "Fictional selected plant and service dependency",
+                "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                "status": "open",
+                "resolution": null
+              },
+              {
+                "id": "climate-map-climate-review",
+                "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
+                "scope": "Fictional selected plant and service dependency",
+                "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "energy": [
+              "res-001"
+            ],
+            "water": [],
+            "materials": [],
+            "waste": [],
+            "ghg": {
+              "scope_1": [],
+              "scope_2": [],
+              "scope_3": []
+            },
+            "suppliers": [],
+            "targets": [],
+            "risks": [],
+            "opportunities": [],
+            "projects": [],
+            "frameworks": [],
+            "emission_factors": []
+          }
+        }
+      }
+    }
+  ]
+}

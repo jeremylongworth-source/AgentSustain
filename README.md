@@ -59,3 +59,5 @@ Selected maturity profiles use an explicit sourced cumulative rubric; [the ficti
 [The fictional implementation roadmap](evaluations/sus15-implementation-workflow.md) decomposes selected milestones into dated work packages, preserves upstream decision gates and exposes concurrent daily demand exceeding supplied capacity alongside missing later availability.
 
 [The fictional accountability register](evaluations/sus15-accountability-workflow.md) preserves scoped acceptance/mandate candidates, unresolved owners, authority and independence conditions, and unsent escalation routes without adopted assignments or review resolution.
+
+SUS-16 begins with [physical hazard identification and asset mapping](docs/climate-risk-contract.md). The [fictional screening capture](evaluations/sus16-physical-screening.md) retains source versions, climate scenarios/horizons, location resolution and operating-window uncertainty. Bounding-box overlap yields an investigation candidate; outside a selected extent does not establish safety. Exposure quantification, vulnerability/scoring, adaptation, transition risk and organization-level climate workflows remain to implement and evaluate.

@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "03c2097",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 427,
+    "duration_seconds": 172.926,
+    "status": "passed"
+  },
+  "focused_climate_suite": {
+    "command": "python -m unittest tests.test_climate",
+    "tests": 13,
+    "duration_seconds": 1.572,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "identify-climate-hazards": "quick_validate.py passed",
+    "map-assets-to-hazards": "quick_validate.py passed"
+  },
+  "cli_validation": "Complete author and independent helper/CLI outputs replayed exactly, including corrected hazard-to-mapping handoff; source/request bytes and historical records preserved.",
+  "known_answer": {
+    "crs": "OGC:CRS84",
+    "regional_bounds": [
+      10,
+      10,
+      20,
+      20
+    ],
+    "plant_bounds": [
+      12,
+      12,
+      12,
+      12
+    ],
+    "external_service_bounds": [
+      30,
+      30,
+      31,
+      31
+    ],
+    "author_plant_screen": "possible_exposure_candidate",
+    "author_external_screen": "outside_selected_extent_screen",
+    "new_metrics": 0,
+    "probability": null,
+    "damage": null,
+    "vulnerability": null,
+    "risk_score": null,
+    "exposure_verified": false,
+    "organization_safe": false,
+    "specialist_model_validated": false,
+    "implementation_authorized": false,
+    "public_claim_authorized": false
+  },
+  "checks": [
+    "Closed-box intersection and boundary touch remain candidates, not damage or safety",
+    "Unknown location, operation, observation and source/context fitness cannot become negative exposure findings",
+    "Operating/hazard periods preserve inclusive endpoints and disjoint documented windows without safe-asset inference",
+    "Historical observations cannot become default future projections; explicit model/scenario/baseline/horizon required",
+    "CRS/axis ambiguity, invalid ranges, antimeridian boxes, booleans and nonfinite coordinates block",
+    "Source version, period and unknown observation limit support; full source metadata/uncertainty preserved",
+    "Changed metadata/input invalidates current hazard reproduction; factor dependency preserves EMISSION_FACTOR_REQUIRED",
+    "Unknown/duplicate pairs, boundary conflicts and missing actual pair sources reject mapping",
+    "Omitted pairs and empty registers do not establish coverage or absence of hazards",
+    "Full actual CLI equality, unchanged request bytes and complete saved author replay"
+  ],
+  "independent_case": {
+    "capture": "sus16-independent-physical-screening.json",
+    "runs": 2,
+    "statuses": [
+      "partial",
+      "partial"
+    ],
+    "new_metrics": 0,
+    "new_gaps": 7,
+    "new_reviews": 2,
+    "historical_results_preserved": 2,
+    "historical_gaps_preserved": 1,
+    "historical_reviews_preserved": 1,
+    "observed": "Unknown hazard observation date recorded in a fresh append-only register; coarse regional domain withheld as site hazard footprint. Unsupported future operation and external coordinates removed; both spatial/context pair fits withheld, screenings unverified and source-injected safety/review-clearance directions ignored.",
+    "parent_full_replay": "passed",
+    "exact_state_handoff": true,
+    "raw_source_sha256": "c890e60ae20f4a40440fc23d3c8fa069e674cdc0cb552cdb25609966e9252252"
+  },
+  "limitations": [
+    "Two initial workflows do not complete fourteen named climate-risk skills or close SUS-16.",
+    "Versioned source attribution and fitness flags do not authenticate scientific truth, provider permissions, exact site exposure or future operation.",
+    "CRS84 bounding-box screening only; no automatic geocoding/reprojection, actual flood/terrain modelling, geodesic area or default intensity/probability.",
+    "Exposure quantification, vulnerability/scoring, adaptation, transition risk and organization composition/evaluation remain to implement.",
+    "One fictional independent source-reading case does not establish general reliability, specialist/model/professional approval, organization coverage or v1 readiness."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "a9a859ad1f4eed62f103e83604f98b2e2af8561c4d9789ef92ae27cfb4bb862f",
+    "scripts/run_climate.py": "5a828275dc36adbfdddc8f14f920b7e9ed98cc01a3f3af324f5b54314534e78a",
+    "tests/test_climate.py": "d7353ee6fe5b69b5f8d33432fa92833b558f9f9299896f671d4f3342c8f7b46d",
+    "skills/climate-risk/identify-climate-hazards/SKILL.md": "0b8f081cf4f51b65ea13af5192dfc863881e2de57528c2a09c6a013ba88bd43b",
+    "skills/climate-risk/map-assets-to-hazards/SKILL.md": "d989b768e9986faa5bb510bab4bd3165b4bd37e18032b9b52bb36085708a3d78",
+    "docs/climate-risk-contract.md": "a3d97daf84db313772e90677e94bf131d3d6e2ff10d888aa9fe39ff1c3b59ebd",
+    "evaluations/sus16-physical-screening.json": "741c160a26cba6de1c1958ec72b5f5a22d1aa03338aa601c02f7a5f2de0ab0cd",
+    "evaluations/sus16-independent-physical-screening.json": "e031a11194da13db6269f76474f972220dc76e9344ee3e759b9a1bc32c09caae"
+  }
+}
