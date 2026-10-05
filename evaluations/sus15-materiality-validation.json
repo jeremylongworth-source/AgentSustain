@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "1b06855",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 369,
+    "duration_seconds": 130.956,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 47,
+    "duration_seconds": 7.257,
+    "status": "passed"
+  },
+  "skill_validation": "identify-material-sustainability-issues quick_validate.py passed",
+  "cli_validation": "Full author and independent actual output/checked proposals replayed exactly through CLI; independent helper replay passed; raw source hash and request bytes unchanged",
+  "known_answer": {
+    "potential_adverse_human_rights_severity_rank": 2,
+    "likelihood_rank": 1,
+    "significance_threshold_met": true,
+    "topic_candidate": "proposed_significant",
+    "final_material_topics": null,
+    "metrics": 0
+  },
+  "checks": [
+    "Explicit versioned sourced method and separate ordinal significance thresholds",
+    "Actual adverse severity and potential adverse severity/likelihood or high-severity override",
+    "Potential human-rights severity precedence without occurrence being claimed actual",
+    "Actual positive scale/scope separate; positive benefits cannot offset harm",
+    "Proxy, irrelevant, missing/historical/unknown-date impacts remain unresolved, not immaterial",
+    "Empty impact topics, unsupported context and absent issue perspectives retain investigation gaps",
+    "Complete current-source stakeholder reproduction; changed source or mismatched scope blocked",
+    "Duplicate impacts, invalid dates/anchors/references, actual likelihood and wrong adverse/benefit axes blocked",
+    "Owned unsent/overdue unverified follow-ups; prior state/evidence/gaps/reviews preserved; new professional review open"
+  ],
+  "additional_executed_probes": {
+    "potential_positive_likelihood_below_threshold": false,
+    "potential_positive_likelihood_meets_threshold": true,
+    "potential_positive_likelihood_unknown": null
+  },
+  "independent_case": {
+    "capture": "sus15-independent-materiality.json",
+    "observed": "Draft actual harm corrected to prospective; actual training benefit separate; unsupported historical stakeholder map declined",
+    "status": "partial",
+    "harm_significant": true,
+    "benefit_significant": true,
+    "netting": false,
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "6bb592e71c2ebb36137194f902bbad5455b29b90d9566aecf01263476816736f",
+    "limits": "One fictional selected-plant source case; ratings/method are supplied judgments, not authenticated harms or full issue universe."
+  },
+  "source_orientation": [
+    {
+      "url": "https://www.globalreporting.org/publications/documents/english/gri-3-material-topics-2021/",
+      "accessed": "2026-10-05",
+      "scope": "Significance distinctions background, not a GRI adapter or conformity determination"
+    }
+  ],
+  "limitations": [
+    "Seven of thirteen strategy workflows; remaining six, broader methods and organization evaluation remain.",
+    "Selected supplied-method topic candidates, not universal materiality or financial materiality.",
+    "No final approval, framework conformity, impact/legal authentication, public claims or general reliability established."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "65492eaa889d5185f415500c5f7c432298c54f40a85d23739eace5a84f46987f",
+    "scripts/strategy_materiality.py": "a4e51a4be77f244ea5f8f99e5c6fd3257127fc3c5a1525bb580422b81b7102fb",
+    "tests/test_strategy_materiality.py": "f1f8220d372153e5de15c8098e40a9cf3b02f53fc59ef611ff55c800efdd72d6",
+    "skills/strategy/identify-material-sustainability-issues/SKILL.md": "50f727d0559c289c9d1ea12272c78a2c9f757c0c6b06f36f51db1064eefdd05e",
+    "docs/strategy-contract.md": "a296163c8ef2033d611b68decfdc2a7776c9f877c479b23a4d767324a8bfa4fd",
+    "evaluations/sus15-materiality-workflow.json": "3378dc082e8b39a1ea10bf49f1f5ff09affcbfd836929edec87e0f7d85e90dcc",
+    "evaluations/sus15-independent-materiality.json": "4af6d660c753af1e618a8601570138f92a7f2e802d68c686b284f20c8e9caf2c"
+  }
+}

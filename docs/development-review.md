@@ -58,3 +58,7 @@ The subsequent stakeholder map also requires later specialist/router/release rev
 ## Subsequent maturity extension
 
 The selected-practice maturity contract was developed after the approved a935647 snapshot under continued roadmap authorization. It requires later specialist/router/release review of rubric fitness, cumulative criteria, source periods, contradictions and scope coverage. Scenario-specific professional review remains open; no organization score, certification or actual improvement is inferred. Evidence is in [the maturity capture](../evaluations/sus15-maturity-workflow.json).
+
+## Subsequent material-issue extension
+
+The selected impact-significance candidate contract is subsequent to a935647 under continued roadmap authorization. Later specialist/router/release review must cover method fitness, source periods, separate impact thresholds, human-rights severity precedence, grouping and stakeholder coverage. Scenario-specific professional and final materiality decisions remain open; this does not approve reporting conformance or public claims. Evidence is in [the material-issue capture](../evaluations/sus15-materiality-workflow.json).
