@@ -64,7 +64,7 @@ def _expression(expression, attributes, depth=0, budget=None):
     _typed(expression['value'], 'string_set' if op == 'in' else kind)
 
 
-def load_pack(pin, fixture_mode):
+def read_pinned_pack(pin):
     _fields(pin, {'path', 'sha256'}, ('path', 'sha256'))
     base = (ROOT / 'standards/jurisdictions').resolve()
     relative = Path(pin['path'])
@@ -74,7 +74,10 @@ def load_pack(pin, fixture_mode):
     raw = path.read_bytes()
     if hashlib.sha256(raw).hexdigest() != pin['sha256']:
         raise ValueError('Pack bytes differ from the explicit version pin.')
-    pack = json.loads(raw)
+    return json.loads(raw)
+
+
+def validate_pack(pack, fixture_mode):
     _fields(pack, {'id', 'version', 'synthetic', 'jurisdiction_attribute', 'attributes', 'rules', 'scope', 'limitations'},
             ('id', 'version', 'jurisdiction_attribute', 'scope', 'limitations'))
     if not isinstance(pack['synthetic'], bool) or pack['synthetic'] and not fixture_mode:
@@ -121,6 +124,10 @@ def load_pack(pin, fixture_mode):
             exception_ids.add(exception['id'])
             _expression(exception['condition'], attributes)
     return pack
+
+
+def load_pack(pin, fixture_mode):
+    return validate_pack(read_pinned_pack(pin), fixture_mode)
 
 
 def _combine(values, mode):

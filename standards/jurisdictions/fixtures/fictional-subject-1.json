@@ -1,0 +1,99 @@
+{
+  "id": "fictional-subject-pack",
+  "version": "fictional-subject-1",
+  "synthetic": true,
+  "jurisdiction_attribute": "operating_jurisdictions",
+  "attributes": [
+    {
+      "id": "operating_jurisdictions",
+      "type": "string_set",
+      "unit": "1",
+      "definition": "Explicit fictional subject operating jurisdiction roster; no parent inference.",
+      "temporal_basis": "reporting_year"
+    },
+    {
+      "id": "annual_mass",
+      "type": "number",
+      "unit": "kg",
+      "definition": "Declared fictional annual resource mass per selected subject; no actual regulated emission method.",
+      "temporal_basis": "reporting_year"
+    },
+    {
+      "id": "operator_at_event",
+      "type": "string",
+      "unit": "1",
+      "definition": "Fictional recorded operator identity at the responsibility event; not delegation or adopted authority.",
+      "temporal_basis": "responsibility_event"
+    },
+    {
+      "id": "activity",
+      "type": "boolean",
+      "unit": "1",
+      "definition": "Fictional stated activity during the selected observed operating interval.",
+      "temporal_basis": "operating_interval"
+    }
+  ],
+  "rules": [
+    {
+      "id": "annual-mass",
+      "jurisdiction": "ZZ",
+      "subject": "fictional subject reporting",
+      "source": {
+        "authority": "Fictional Rule Author",
+        "locator": "fixture:subject-rule-annual-mass",
+        "clause": "Fictional subject clause annual-mass",
+        "version": "fictional-subject-1",
+        "retrieved": "2026-10-05"
+      },
+      "legal_status": "in_force",
+      "effective_from": null,
+      "effective_to": null,
+      "condition": {
+        "attribute": "annual_mass",
+        "operator": "gte",
+        "value": 1000
+      },
+      "exceptions": [],
+      "exceptions_complete": true,
+      "uncertainty": "Invented rules for subject/year and event-date architecture tests only; no real law.",
+      "reviewer_requirement": "Qualified legal review of primary sources, entity facts and rule completeness.",
+      "subject_kind": "facility",
+      "reporting_years": [
+        2025
+      ],
+      "operator_attribute": "operator_at_event"
+    },
+    {
+      "id": "activity-branch",
+      "jurisdiction": "ZZ",
+      "subject": "fictional subject reporting",
+      "source": {
+        "authority": "Fictional Rule Author",
+        "locator": "fixture:subject-rule-activity-branch",
+        "clause": "Fictional subject clause activity-branch",
+        "version": "fictional-subject-1",
+        "retrieved": "2026-10-05"
+      },
+      "legal_status": "in_force",
+      "effective_from": null,
+      "effective_to": null,
+      "condition": {
+        "attribute": "activity",
+        "operator": "eq",
+        "value": true
+      },
+      "exceptions": [],
+      "exceptions_complete": true,
+      "uncertainty": "Invented rules for subject/year and event-date architecture tests only; no real law.",
+      "reviewer_requirement": "Qualified legal review of primary sources, entity facts and rule completeness.",
+      "subject_kind": "facility",
+      "reporting_years": [
+        2025
+      ],
+      "operator_attribute": "operator_at_event"
+    }
+  ],
+  "scope": "Fictional per-facility declared mass/activity candidates with event-date operator identity.",
+  "limitations": "No actual Canadian threshold, emission account or obligation; no legal commencement inferred from covered year.",
+  "execution_contract": "subject-screen-0.1.0"
+}
