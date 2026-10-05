@@ -5,6 +5,16 @@ Status: APPROVED FOR CONTINUED DEVELOPMENT by the project owner on 2026-10-05 (A
 ## Latest decision
 
 - User instruction: "approve the review".
+- Reviewed revision: `8e7f002aa9e10179337c2f83e2742288de67deb9`.
+- Scope: the current local development snapshot, including the subsequent SUS-15 transition, implementation-roadmap and accountability extensions and their saved validation and independent source-reading evidence.
+- Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Validation evidence: [the accountability validation record](../evaluations/sus15-accountability-validation.json) records 414 passing tests, 92 passing focused tests, skill validation and complete author/independent helper/CLI replay. These are completed implementation checks, not new tests run for this approval.
+
+This approval permits continued local roadmap development. It preserves all scenario-specific professional decisions, actual responsibility acceptance and delegation, upstream source-fitness issues, broader independent evaluation and specialist/router/release gates. It does not resolve result/state review records or authorize assignment adoption, funding, implementation, claims, publication, push, merge, release or deployment. Later changes do not inherit this revision's scoped approval.
+
+## Previous strategy-composition decision
+
+- User instruction: "approve the review".
 - Reviewed revision: `681a3e658584bafab721dab4496dbed8b8f0589d`.
 - Scope: the current local development snapshot, including the subsequent SUS-15 maturity, material-issue, risk/opportunity and strategy-composition extensions and their saved validation/source-reading evidence.
 - Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
@@ -91,12 +101,18 @@ The source-reproduced strategy composer follows a935647 under continued roadmap 
 
 ## Subsequent transition extension
 
+This extension is now included in the 8e7f002 continued-development approval; its outstanding review requirements remain applicable.
+
 The sourced transition-pathway contract follows the approved 681a3e6 snapshot under continued roadmap authorization. It does not inherit that revision's scoped review. Later specialist/router/release review must cover interim/final target comparability, scenario versus investment selection, timing/profile reconciliation, external dependencies, milestone acceptance evidence, governance, omissions and non-additivity. Scenario-specific professional decisions and actual owner acceptance, funding, monitoring and adoption remain open. Evidence is in [the transition capture](../evaluations/sus15-transition-workflow.json). This does not close SUS-15 or establish a certified climate pathway, disclosure conformity or general transition feasibility.
 
 ## Subsequent implementation-roadmap extension
 
+This extension is now included in the 8e7f002 continued-development approval; its outstanding review requirements remain applicable.
+
 The implementation-roadmap contract follows the approved 681a3e6 snapshot under continued roadmap authorization. Later specialist/router/release review must include task decomposition, acceptance criteria, milestone prerequisite mapping, inclusive calendar semantics, daily resource fitness/identity/coverage, conflicting demand, preconditions and propagation of upstream funding/timing gates. Its bounded capacity arithmetic does not approve staffing, resource reservation, work starts, phase exits, delivery or claims. Evidence is in [the implementation capture](../evaluations/sus15-implementation-workflow.json). Formal accountability, broader scheduling methods and independent organization evaluation remain open; this extension does not inherit scoped approval or close SUS-15.
 
 ## Subsequent accountability extension
+
+This extension is now included in the 8e7f002 continued-development approval; its outstanding review requirements remain applicable.
 
 The source-attributed accountability contract follows the approved 681a3e6 snapshot under continued roadmap authorization. Later specialist/router/release review must cover item ownership/delegation, actor identity and qualifications, scope-specific acceptance, mandate observations/expiry, shared workload, reviewer independence, decision-role boundaries, review propagation and unsent escalation routes. Evidence is in [the accountability capture](../evaluations/sus15-accountability-workflow.json). Source candidates do not adopt assignments, grant authority, reserve resources, resolve reviews or approve implementation/claims. Actual organization acceptance and qualified professional decisions remain open. This extension does not inherit scoped approval, close SUS-15 or establish v1 readiness.
