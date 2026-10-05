@@ -62,3 +62,7 @@ The selected-practice maturity contract was developed after the approved a935647
 ## Subsequent material-issue extension
 
 The selected impact-significance candidate contract is subsequent to a935647 under continued roadmap authorization. Later specialist/router/release review must cover method fitness, source periods, separate impact thresholds, human-rights severity precedence, grouping and stakeholder coverage. Scenario-specific professional and final materiality decisions remain open; this does not approve reporting conformance or public claims. Evidence is in [the material-issue capture](../evaluations/sus15-materiality-workflow.json).
+
+## Subsequent risk/opportunity extension
+
+The source-linked qualitative risk and opportunity registers follow the approved a935647 snapshot under continued roadmap authorization. Subsequent specialist/router/release review must include impact-versus-organization pathways, source periods and horizons, conditions, trade-offs and reproduction of materiality/risk dependencies. Scenario-specific professional, materiality and action decisions remain open; no financial effect, risk acceptance or realized mitigation is inferred. Evidence is in [the composed capture](../evaluations/sus15-risk-opportunity-workflow.json).

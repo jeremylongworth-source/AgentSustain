@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "cd9415f",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 378,
+    "duration_seconds": 129.103,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 56,
+    "duration_seconds": 9.056,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "identify-sustainability-risks": "quick_validate.py passed",
+    "identify-sustainability-opportunities": "quick_validate.py passed"
+  },
+  "cli_validation": "Complete author and independent two-step outputs/checked proposals replayed through CLI; independent helper replay and exact proposal-state handoff passed; raw hash and request bytes unchanged",
+  "known_answer": {
+    "author_risk": "sourced_conditional_candidate",
+    "author_opportunity": "sourced_conditional_candidate",
+    "likelihood": "unknown",
+    "engagement_dependency": "unresolved",
+    "trade_offs": null,
+    "realized_effect": false,
+    "metrics": 0
+  },
+  "checks": [
+    "Current material-issue and risk dependency reproduction with matched scope/period/topic",
+    "Impact, organization and delivery pathways remain distinct",
+    "Missing/proxy/irrelevant/historical/unknown-date sources and elapsed horizons retain investigation",
+    "Unresolved linked impacts and risks cannot be upgraded to verified mitigation",
+    "Qualitative likelihood/magnitude with null/unknown support; numeric values rejected",
+    "Owned known-unmet/unresolved dependencies and unassessed trade-offs retain gaps",
+    "Changed sources, invalid topic/risk/impact links, future observation, empty owner/action and unsupported known prerequisites blocked",
+    "Empty selected coverage does not establish absence",
+    "Owned unsent/overdue unverified follow-ups and all historical reviews/gaps preserved; new professional review remains open"
+  ],
+  "additional_executed_probe": "Positive-impact substitution for adverse risk evidence blocked",
+  "independent_case": {
+    "capture": "sus15-independent-risk-opportunity.json",
+    "risk_status": "partial",
+    "risk_candidate": "sourced_conditional_candidate",
+    "opportunity_status": "partial",
+    "opportunity_candidate": "investigation_required",
+    "observed": "Certainty/loss/funding/no-tradeoff assertions removed; notice-to-cost-risk treatment link withheld; historical materiality not assumed",
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "5796f6920300ff1c13cca355378817360b9c943a351a5b17f9f650c5193fe719",
+    "limits": [
+      "One fictional raw-source case; no complete organization coverage or general reliability.",
+      "Potential organization effect retained without occurrence, calibrated likelihood, quantified loss or financial materiality.",
+      "Notice feedback does not establish mitigation or benefits; unsupported risk-response link removed.",
+      "Initial missing-jsonschema runtime attempt preserved; actual successful captures use repository runtime."
+    ]
+  },
+  "source_orientation": [
+    {
+      "url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s1-general-requirements/",
+      "accessed": "2026-10-05",
+      "scope": "Organizational effects distinction background, not IFRS adapter or conformity"
+    }
+  ],
+  "limitations": [
+    "Nine of thirteen strategy workflows; remaining four composition/accountability workflows and broader methods remain.",
+    "Qualitative sourced pathways, not quantified loss/savings, calibrated likelihood, risk scoring or selected portfolio.",
+    "No risk acceptance, verified delivery, mitigation, materiality, framework conformity, implementation or general reliability established."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "4922213625dcc1265e30a23fa1733b083b64e1ffa5e9c54498c4c0ab03f918af",
+    "scripts/strategy_registers.py": "28ded4cc5313c2bfb2b388ebb55e95a268f6a805a745e051e0a31fa5376a7aac",
+    "tests/test_strategy_registers.py": "845a55427149ad9d87aa15bd3a5cf858432834a460ed3b443e66a7b96f5427ab",
+    "skills/strategy/identify-sustainability-risks/SKILL.md": "20e9d59b43d77f7e8d3c2b93f7c68421dd182678f26c968c0b1ae2e33f5be600",
+    "skills/strategy/identify-sustainability-opportunities/SKILL.md": "c063914fcdd7151776cdf851c9a01089e07648713117186db661a6b96ea53fb9",
+    "docs/strategy-contract.md": "cd63373a5e595692e472e7e45f565b073a22d359a5b82ad416d3c792837bba38",
+    "evaluations/sus15-risk-opportunity-workflow.json": "b4541cced7180a9ab3adee24fd8fb73b9e7ed5456e6022bf87a64322f902eb0f",
+    "evaluations/sus15-independent-risk-opportunity.json": "cd5ddca6ac42cdf35212484cf7ea210d508b966f237bf01aaeb097066f322414"
+  }
+}
