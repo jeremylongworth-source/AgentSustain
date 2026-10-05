@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "d5e0d2d",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 361,
+    "duration_seconds": 130.337,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 39,
+    "duration_seconds": 6.041,
+    "status": "passed",
+    "skipped": 0
+  },
+  "skill_validation": "assess-sustainability-maturity quick_validate.py passed",
+  "cli_validation": "Full author output/checked proposal and corrected independent blocked output replayed exactly through CLI; independent helper replay passed; historical state/evidence unchanged",
+  "known_answer": {
+    "owner_criterion": "demonstrated",
+    "operating_review": "planned",
+    "highest_supported_level": "defined",
+    "overall_score": null,
+    "metrics": 0
+  },
+  "checks": [
+    "Explicit sourced versioned rubric and cumulative ordered levels",
+    "Unknown/missing/historical/irrelevant/conflicting observations do not demonstrate practice",
+    "Higher-level evidence cannot bypass lower-level gaps",
+    "Selected complete coverage is not organization certification or impact performance",
+    "Owned proposed/overdue unverified follow-ups; no actual actions",
+    "Duplicate criteria, invalid references/dates, missing ownership and mismatched boundary blocked",
+    "Unverified or irrelevant rubric fitness withholds maturity assessment",
+    "Prior evidence, results, reviews and gaps retained; new completed-assessment professional review remains open"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-maturity.json",
+    "initial_observed_defect": "Known unrelated management memo ID counted as rubric provenance without explicit fitness review",
+    "correction": "Substantive rubric fit rationale and reviewed_supporting fitness required; source reader withheld fitness because memo contains no rubric",
+    "final_status": "blocked",
+    "final_metrics": 0,
+    "parent_full_replay": "passed",
+    "limits": [
+      "One fictional refusal; completed profile/professional-gate branch not independently exercised.",
+      "Archived pre-fix output is not a current-helper replay."
+    ]
+  },
+  "source_orientation": [
+    {
+      "url": "https://www.iso.org/standard/14001",
+      "accessed": "2026-10-05",
+      "scope": "Management practice/performance distinction background, not ISO rubric or certification"
+    }
+  ],
+  "limitations": [
+    "Six of thirteen strategy workflows; seven remaining, broader maturity methods and organization evaluation remain.",
+    "Supplied source fitness and rubric selection are not independent authentication.",
+    "No weighted organization score, conformity, performance, implementation, public claims or general reliability demonstrated."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "2ec65c115ae4c8a1099adfe69cade76c072a7f5043dac90fc3e28d37a7d009a2",
+    "scripts/strategy_maturity.py": "28439091fea84b7d38302d352ebe907d3620db1e60bcdb0c3d1192b504582713",
+    "tests/test_strategy_maturity.py": "7e6c61033d52b65ddd51b887e047407150adf6e8d153ded4688c6153bea0c0b6",
+    "skills/strategy/assess-sustainability-maturity/SKILL.md": "f4de26c2697334c3ad6e456c8f9998cffd0bf43261aac13055bf370a59515ef3",
+    "docs/strategy-contract.md": "fc2cf9c48dd24302d06102860dfb9c65a8f8b93bbc3a6ff1e9460e0949aa0a6d",
+    "evaluations/sus15-maturity-workflow.json": "392964e6775122f8fdc372959ee4df9687653ba3e87a70f035f1565aa8380c67",
+    "evaluations/sus15-independent-maturity.json": "13ec390822a52c08472d3fc88a39104f7f0ec75cfe8d233c45db2bc572bd2c51"
+  }
+}

@@ -54,3 +54,7 @@ The initial SUS-15 baseline/KPI/target contract was developed after the approved
 The subsequent bounded target-feasibility screen likewise requires later specialist/router/release review of joint model/service fitness, ranges, delivery dependencies and investment source/budget context. Its numerical coverage and declared delivery constraints do not resolve target or implementation approvals. Evidence is in [the feasibility capture](../evaluations/sus15-feasibility-workflow.json).
 
 The subsequent stakeholder map also requires later specialist/router/release review of affected-group inclusion, source attribution, representative mandates, source periods and engagement/barrier coverage. It does not close consultation, consensus, materiality or legal review. Evidence is in [the stakeholder capture](../evaluations/sus15-stakeholder-workflow.json); scenario-specific professional review and actual engagement authority remain open.
+
+## Subsequent maturity extension
+
+The selected-practice maturity contract was developed after the approved a935647 snapshot under continued roadmap authorization. It requires later specialist/router/release review of rubric fitness, cumulative criteria, source periods, contradictions and scope coverage. Scenario-specific professional review remains open; no organization score, certification or actual improvement is inferred. Evidence is in [the maturity capture](../evaluations/sus15-maturity-workflow.json).
