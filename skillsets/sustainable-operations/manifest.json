@@ -1,0 +1,153 @@
+{
+  "name": "sustainable-operations",
+  "contract_version": "0.1.0",
+  "status": "approved_for_development",
+  "runner": "scripts/run_operations.py",
+  "dependencies": [
+    {
+      "name": "analyze-material-consumption",
+      "path": "skills/resources/analyze-material-consumption/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "analyze-waste-cost",
+      "path": "skills/waste/analyze-waste-cost/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "build-energy-baseline",
+      "path": "skills/energy/build-energy-baseline/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "build-sustainability-business-case",
+      "path": "skills/finance/build-sustainability-business-case/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "build-waste-baseline",
+      "path": "skills/waste/build-waste-baseline/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "build-water-baseline",
+      "path": "skills/water/build-water-baseline/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-diversion-rate",
+      "path": "skills/waste/calculate-diversion-rate/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-energy-intensity",
+      "path": "skills/energy/calculate-energy-intensity/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-irr",
+      "path": "skills/finance/calculate-irr/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-marginal-abatement-cost",
+      "path": "skills/finance/calculate-marginal-abatement-cost/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-material-intensity",
+      "path": "skills/resources/calculate-material-intensity/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-npv",
+      "path": "skills/finance/calculate-npv/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-operating-savings",
+      "path": "skills/finance/calculate-operating-savings/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-roi",
+      "path": "skills/finance/calculate-roi/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-simple-payback",
+      "path": "skills/finance/calculate-simple-payback/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-sustainability-project-cost",
+      "path": "skills/finance/calculate-sustainability-project-cost/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "calculate-water-intensity",
+      "path": "skills/water/calculate-water-intensity/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "compare-sustainability-projects",
+      "path": "skills/finance/compare-sustainability-projects/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "detect-energy-hotspots",
+      "path": "skills/energy/detect-energy-hotspots/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "estimate-energy-savings",
+      "path": "skills/energy/estimate-energy-savings/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-material-loss",
+      "path": "skills/resources/identify-material-loss/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-waste-hotspots",
+      "path": "skills/waste/identify-waste-hotspots/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "identify-water-hotspots",
+      "path": "skills/water/identify-water-hotspots/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "model-carbon-price-scenario",
+      "path": "skills/finance/model-carbon-price-scenario/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "model-energy-price-scenario",
+      "path": "skills/finance/model-energy-price-scenario/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "model-resource-cost-scenario",
+      "path": "skills/finance/model-resource-cost-scenario/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "prioritize-energy-projects",
+      "path": "skills/energy/prioritize-energy-projects/SKILL.md",
+      "contract_version": "0.1.0"
+    },
+    {
+      "name": "rank-sustainability-investments",
+      "path": "skills/finance/rank-sustainability-investments/SKILL.md",
+      "contract_version": "0.1.0"
+    }
+  ],
+  "review_boundaries": [
+    "Engineering and funding review remain pending for actual implementation.",
+    "Independent behavioral, routing and specialist release review remains."
+  ],
+  "review_record": "docs/operations-review.md"
+}

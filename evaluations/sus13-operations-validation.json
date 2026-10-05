@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "f253efc",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 262,
+    "duration_seconds": 92.501,
+    "status": "passed"
+  },
+  "operations_focused_pre_decision": {
+    "tests": 9,
+    "duration_seconds": 14.078,
+    "status": "passed"
+  },
+  "skill_packaging": {
+    "command": "quick_validate.py skillsets/sustainable-operations",
+    "status": "passed"
+  },
+  "dependency_count": 28,
+  "review": "docs/operations-review.md",
+  "independent_scenario": {
+    "source_state_unchanged": true,
+    "candidate_count": 4,
+    "data_collection_action_count": 5,
+    "correction": "Only implementation proposals create new implementation engineering gates.",
+    "verification": "Unchanged independently authored request rerun by parent; exact corrected output replayed by full suite.",
+    "limitation": "Independent evaluator observed pre-correction behavior; parent rerun does not establish general reliability."
+  },
+  "sha256": {
+    "scripts/operations_tools.py": "a590ea7db83a84737b637db5bd235d5d5be7b272e3da9942f337a8e89271bdfe",
+    "scripts/run_operations.py": "9ba12138993c82830bf1149257f445dda96f3687bc09137a3636b1bbafefa3de",
+    "skillsets/sustainable-operations/SKILL.md": "c2c063977ce40b8e61b5e013ff0714fe2d6b084205168c3e5a28dba2e0dedf5c",
+    "skillsets/sustainable-operations/manifest.json": "19e2da6f3fadf8724be544081c5666a467b43d3331de454c159d6cb1e8393e85",
+    "tests/test_operations.py": "bc3c55f4d77aeb9582cc1ea3f781d258dc44d58c5dee951fec52d83c5cdbbc11",
+    "evaluations/sus13-operations-composition.json": "e41379a2c8651940f12578138053fd0221c483c9d0d46271d5eff2fc818b5d4d",
+    "evaluations/sus13-independent-operations.json": "fa10478a9985ab2a820f29fd02dd4700e80e406d7b51cb6764301a33e89cae0a",
+    "docs/operations-review.md": "557e1a4cd6fda3f25d4791659ff4bdc19f65e0308aa24946894f3949d4e5e479"
+  },
+  "remaining": [
+    "Richer action dependencies and operational interpretation",
+    "Broader independent and organization-wide evaluation",
+    "Later roadmap waves and release gates"
+  ]
+}
