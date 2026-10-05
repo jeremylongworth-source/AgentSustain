@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "23de088",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 468,
+    "duration_seconds": 204.896,
+    "status": "passed"
+  },
+  "focused_climate_suites": {
+    "command": "python -m unittest tests.test_transition_exposure tests.test_climate_transition tests.test_climate tests.test_climate_assessment tests.test_climate_risk",
+    "tests": 54,
+    "duration_seconds": 21.58,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "assess-transition-exposure": "quick_validate.py passed after metadata guidance correction"
+  },
+  "cli_validation": "Complete author, initial independent and corrected independent outputs equal current helpers and actual CLI runs. Original raw/draft byte hashes, request bytes, all historical evidence/state/results/obligations preserved; new link evidence appended explicitly.",
+  "known_answer": {
+    "selected_families": 4,
+    "author_conditional_pathways": 4,
+    "activity_period": {
+      "start": "2030-01-01",
+      "end": "2032-12-31"
+    },
+    "transition_horizon": {
+      "start": "2030-01-01",
+      "end": "2035-12-31"
+    },
+    "full_horizon_covered": false,
+    "new_metrics": 0,
+    "organization_total": null,
+    "financial_effect": null,
+    "exposure_verified": false,
+    "legal_determination": false,
+    "risk_accepted": false,
+    "public_claim_authorized": false
+  },
+  "parent_replays": [
+    {
+      "capture": "author",
+      "execution_index": 0,
+      "status": "partial",
+      "assessment_statuses": [
+        "conditional_exposure_candidate",
+        "conditional_exposure_candidate",
+        "conditional_exposure_candidate",
+        "conditional_exposure_candidate"
+      ],
+      "result_gaps": 19,
+      "result_reviews": 5,
+      "exit_code": 0,
+      "runtime_seconds": 0.448,
+      "request_sha256": "0d0224c4e02247c00a84ebd3e0316f4b4761978bda40d996c9b3b10f488916ef",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "execution_index": 0,
+      "status": "partial",
+      "assessment_statuses": [
+        "unverified",
+        "unverified",
+        "unverified",
+        "unverified"
+      ],
+      "result_gaps": 24,
+      "result_reviews": 5,
+      "exit_code": 0,
+      "runtime_seconds": 0.441,
+      "request_sha256": "4436f058474cfa4bdf335cd1ac88ad0e6ab3e9c823a6883a64c69c8d76ad599d",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "execution_index": 1,
+      "status": "partial",
+      "assessment_statuses": [
+        "unverified",
+        "unverified",
+        "unverified",
+        "unverified"
+      ],
+      "result_gaps": 24,
+      "result_reviews": 5,
+      "exit_code": 0,
+      "runtime_seconds": 0.567,
+      "request_sha256": "efc20adff58d219dfb8f91d246db70cb65b7179f1c7519079c151c7980b1ef84",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    }
+  ],
+  "independent_case": {
+    "original_input_sha256": {
+      "raw-sources.json": "13d1db43f0272c2419e11b2d2af5dadcb491556b8fb26d48312da46aeed132a7",
+      "draft-request.json": "f7691e4c2db801b838345d37f91051d469b4f177c1782cff4e56d3405deca842"
+    },
+    "original_bytes_verified": true,
+    "corrected_pathways_unverified": 4,
+    "activity_period": null,
+    "temporal_overlap": "unknown",
+    "new_link_period": {
+      "start": "2026-10-03",
+      "end": "2026-10-03"
+    },
+    "new_link_geography": "unknown",
+    "prior_registration_retained_for_audit": true,
+    "reviews_resolved": false
+  },
+  "preliminary_corrections": [
+    "Initial tampering test selected an unrelated architecture result instead of the selected transition parent; corrected fixture references, then focused/full suites passed.",
+    "Independent reader copied unrelated period/geography into appended link evidence. Preserved first request/output, corrected source registration and skill guidance, re-executed actual CLI and replayed all complete outputs."
+  ],
+  "limitations": [
+    "Eleven initial named workflows do not complete fourteen climate workflows or close SUS-16.",
+    "Selected qualitative causal pathways and period overlap do not authenticate arbitrary sources, future operation, legal applicability, replacement feasibility, causal effects or financial loss.",
+    "No quantitative effects or organization exposure totals; broader physical/transition methods and organization register/prioritization/resilience/evaluation remain open.",
+    "One fictional independent case and bounded tests do not establish general reliability, professional approval or public-v1 readiness.",
+    "Subsequent contracts do not inherit b7e1fc7 scoped approval; all source-specific and specialist/router/release gates remain open."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "a6218a171fbb9361723da0a1cb03fbb33cd5b7c69db3d17cc7924c3969e72de7",
+    "scripts/climate_transition.py": "f088c4253966d40f0885294750772cae2565ca74da0bac4ef2794a22b6a77fde",
+    "scripts/climate_transition_exposure.py": "a1ef2db51ba2e9af761ae25637683dfb81c7983bc3e7356b6aaf3d8bc512cb5c",
+    "tests/test_transition_exposure.py": "f4b2d9fa2b135b08c42e1a0b4d7026834288b491c69265bba8fe197adeb19e24",
+    "skills/climate-risk/assess-transition-exposure/SKILL.md": "8fe893f4f5f033c9e6dd180511005be1907e257e558a39cdf378082fb32c37d5",
+    "docs/climate-risk-contract.md": "93b2738db852ef6af7df9b46ef01745ee6f4745ca527389c8e82749a2f563d02",
+    "evaluations/sus16-transition-exposure.json": "7edaecb47216caf380a1a420ec03868d8b4f77d14eae6b376918bda3b72e4fe8",
+    "evaluations/sus16-independent-transition-exposure.json": "ace4328d3a128bea55d772f6e2ebacbac875ebacc95d659115df6ed58d41643b"
+  }
+}

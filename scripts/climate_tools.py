@@ -20,6 +20,8 @@ OPERATIONS = {
 CODE = {"identify-climate-hazards": "CLIMATE_HAZARDS", "map-assets-to-hazards": "ASSET_HAZARD_MAP"}
 CODE.update({"assess-exposure": "CLIMATE_EXPOSURE", "assess-vulnerability": "CLIMATE_VULNERABILITY"})
 CODE.update({"score-physical-risk": "PHYSICAL_RISK_SCREEN", "identify-adaptation-options": "ADAPTATION_OPTIONS"})
+OPERATIONS['assess-transition-exposure'] = {'driver_results', 'subjects', 'observations', 'exposure_review', 'result_id'}
+CODE['assess-transition-exposure'] = 'TRANSITION_EXPOSURE'
 for _skill, _family in [('identify-policy-risk', 'POLICY'), ('identify-market-risk', 'MARKET'),
         ('identify-technology-risk', 'TECHNOLOGY'), ('identify-reputation-risk', 'REPUTATION')]:
     OPERATIONS[_skill] = {'drivers', 'transition_review', 'result_id'}
@@ -256,7 +258,7 @@ def _execute(state, skill, parameters):
         "evidence_ids": [], "assumptions": list(state["assumptions"]), "data_gaps": copy.deepcopy(state["data_gaps"]),
         "diagnostics": [], "next_actions": []}
     refs = set(); report = None
-    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk'}
+    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk', 'assess-transition-exposure'}
     def gap(message, code="CLIMATE_DATA_REQUIRED"):
         result["data_gaps"].append({"id": result["id"] + "-gap-" + str(len(result["data_gaps"])),
             "field": "climate_screening_basis", "reason": message,
@@ -266,7 +268,10 @@ def _execute(state, skill, parameters):
                 "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review.")})
         result["diagnostics"].append({"code": code, "message": message})
     try:
-        if skill in {"identify-policy-risk", "identify-market-risk", "identify-technology-risk", "identify-reputation-risk"}:
+        if skill == 'assess-transition-exposure':
+            from .climate_transition_exposure import assess
+            report = assess(state, parameters, refs, result, gap)
+        elif skill in {"identify-policy-risk", "identify-market-risk", "identify-technology-risk", "identify-reputation-risk"}:
             from .climate_transition import identify
             report = identify(state, skill, parameters, refs, result, gap)
         elif skill in {"score-physical-risk", "identify-adaptation-options"}:
@@ -282,7 +287,8 @@ def _execute(state, skill, parameters):
                 "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety."),
             "scope": report[{"identify-climate-hazards": "hazard_review", "map-assets-to-hazards": "mapping_review",
                 "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review",
-                "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review"}.get(skill, "transition_review")]["scope"],
+                "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review",
+                "assess-transition-exposure": "exposure_review"}.get(skill, "transition_review")]["scope"],
             "reviewer_role": ("Qualified transition-risk domain specialist and legal/applicability reviewer where relevant, with accountable owner" if transition else
                 "Qualified climate-risk and site/dependency specialist with accountable owner"), "status": "open", "resolution": None})
         result["diagnostics"].append({"code": CODE[skill], "message": json.dumps(report, sort_keys=True)})
