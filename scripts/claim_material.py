@@ -75,7 +75,7 @@ def bind_material(state, parameters):
         'authorship_or_actual_publication_verified':False,'source_authenticity_verified':False}
 
 
-def assess_bound_claim(state, parameters):
+def assess_bound_claim(state, parameters, inventory_sources=None):
     validate_state(state)
     _fields(parameters, {'claim','classification_review','criteria','claim_review','fixture_mode','result_id','material_pin','material_selectors'}, ('result_id',))
     if type(parameters['fixture_mode']) is not bool or any(r['id']==parameters['result_id'] for r in state['results']):
@@ -93,7 +93,7 @@ def assess_bound_claim(state, parameters):
             'remedy':result['next_actions'][0]})
         return {'result':result,'proposal':propose(state,result,'Block unbound claim text; preserve all source records and reviews')}
     legacy={k:copy.deepcopy(v) for k,v in parameters.items() if k not in {'material_pin','material_selectors'}}
-    output=assess_claim(state,legacy);result=output['result'];result['skill']='assess-bound-claim-evidence'
+    output=assess_claim(state,legacy,inventory_sources);result=output['result'];result['skill']='assess-bound-claim-evidence'
     for d in result['diagnostics']:
         if d['code']=='CLAIM_EVIDENCE_REVIEW':
             report=json.loads(d['message']);report['execution_contract']='claim-evidence-0.2.0';report['material_binding']=binding

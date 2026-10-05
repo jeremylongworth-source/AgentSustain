@@ -37,7 +37,7 @@ def _reproduce(state, owner, result_id):
     return report
 
 
-def assess_claim(state, parameters):
+def assess_claim(state, parameters, inventory_sources=None):
     validate_state(state)
     _fields(parameters, {'claim','classification_review','criteria','claim_review','fixture_mode','result_id'}, ('result_id',))
     if type(parameters['fixture_mode']) is not bool or any(r['id']==parameters['result_id'] for r in state['results']):
@@ -90,7 +90,9 @@ def assess_claim(state, parameters):
             context_fit=False;gap('Fictional material/assessment cannot support real claims.')
         if not context_fit:gap('Original material, representation dates, scope/classification or current source fitness remains unverified.')
         if not isinstance(parameters['criteria'],list):raise ValueError('Explicit criterion review list required.')
-        required=BASE|EXTRA.get(claim['kind'],set());seen=set();rows=[];cache={}
+        required=BASE|EXTRA.get(claim['kind'],set())
+        if inventory_sources is not None and claim['scope']=='whole_subject':required=required|{'inventory'}
+        seen=set();rows=[];cache={}
         for criterion in parameters['criteria']:
             _fields(criterion, {'id','assertion','boundary_id','period','unit','evidence_ids','source_result_ids','evidence_fit',
                 'verdict','quantity','qualifications','qualification_visible','rationale'}, ('id','assertion','unit','rationale'))
@@ -108,22 +110,29 @@ def assess_claim(state, parameters):
                 owner=next((r for r in state['results'] if r['id']==ident),None)
                 if owner is None:raise ValueError('Every selected claim source result must resolve.')
                 refs.update(owner['evidence_ids'])
-                if ident not in cache:cache[ident]=_reproduce(state,owner,result['id'])
+                if ident not in cache:
+                    cache[ident]=(inventory_sources.get(ident) if inventory_sources is not None and owner['skill']=='build-ghg-inventory'
+                                  else _reproduce(state,owner,result['id']))
                 record=cache[ident];sources.append({'result':copy.deepcopy(owner),'reproduced_report':copy.deepcopy(record)})
                 if record is None or owner['status']=='blocked':
                     fit=False
                     if any(d['code']=='EMISSION_FACTOR_REQUIRED' for d in owner['diagnostics']):gap('Selected claim source has no defensible factor.','EMISSION_FACTOR_REQUIRED')
                 elif any(m['period']!=claim['period'] or m['boundary_id']!=claim['boundary_id'] for m in owner['metrics']):fit=False
-                if record:
+                if record and owner['skill']=='build-ghg-inventory':
+                    fit=fit and record['source_fit'] and claim['subject_kind']=='organization' and claim['subject_id']==state['organization']['id']
+                    fit=fit and record['claim_inventory_review']['as_of_date']==review['as_of_date']
+                    if claim['scope']=='whole_subject':fit=fit and record['declared_scope_coverage_reproduced']
+                    elif claim['scope']!='selected_sources':fit=False
+                elif record:
                     date_key={'calculate-gas-mass':'applicability_review','convert-gas-mass-to-co2e':'conversion_review',
                               'build-facility-gas-ledger':'ledger_review'}[owner['skill']]
                     if record[date_key]['as_of_date']!=review['as_of_date']:fit=False
                 if record and owner['skill']=='build-facility-gas-ledger':
                     if (claim['subject_kind']!='facility' or record['ledger_review']['facility_id']!=claim['subject_id']
                         or claim['scope']!='selected_sources' or not record['declared_coverage_reproduced']):fit=False
-                elif record and (claim['subject_kind']!='organization' or claim['scope']!='selected_sources'):
+                elif record and owner['skill']!='build-ghg-inventory' and (claim['subject_kind']!='organization' or claim['scope']!='selected_sources'):
                     fit=False  # Raw gas results have organization-bound activity, not a product/facility attribution bridge.
-                if record and not parameters['fixture_mode']:
+                if record and owner['skill']!='build-ghg-inventory' and not parameters['fixture_mode']:
                     inputs_code=REPLAY[owner['skill']][1]
                     if _diagnostic(owner,inputs_code)['fixture_mode']:fit=False
             if criterion['source_result_ids']:
@@ -142,7 +151,10 @@ def assess_claim(state, parameters):
                     quantity_mismatch=expected_value!=number(selected_metrics[0]['value'])
                     fit=fit and selected_metrics[0]['unit']==criterion['unit']
             elif criterion['id']=='quantity':fit=False
-            if criterion['id']=='inventory':fit=False  # No full-inventory claim bridge implemented; source subtotals cannot supply it.
+            if criterion['id']=='inventory':
+                fit=fit and inventory_sources is not None and len(sources)==1 and sources[0]['result']['skill']=='build-ghg-inventory' and bool(sources[0]['reproduced_report']) and sources[0]['reproduced_report']['declared_scope_coverage_reproduced']
+            if inventory_sources is not None and criterion['id'] in {'reductions','credits','residuals'}:
+                fit=False  # Inventory arithmetic supplies none of these distinct substantiation methods.
             if criterion['id']=='jurisdiction':fit=False  # Core assessment never determines legal applicability.
             state_name='INSUFFICIENT_EVIDENCE'
             if criterion['id']=='jurisdiction':state_name='PROFESSIONAL_REVIEW_REQUIRED'

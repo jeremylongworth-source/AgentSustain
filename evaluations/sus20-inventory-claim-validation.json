@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "249ab67",
+  "prior_approved_snapshot": "d99a70b72448c8e847ceef8d3bae03445daa841d",
+  "scoped_material_and_inventory_contract_approval": "pending; subsequent material/source bridges do not inherit approval",
+  "suite": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+    "tests": 625,
+    "duration_seconds": 385.484,
+    "status": "passed",
+    "includes_repository_architecture_validation": true,
+    "implementation_matches_final_implementation": true,
+    "additional_blocked_metric_schema_subcase_added_after_full_suite": true
+  },
+  "focused_suite": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest tests.test_claim_inventory tests.test_claim_material tests.test_claims_review",
+    "tests": 28,
+    "duration_seconds": 44.858,
+    "status": "passed",
+    "covers_final_added_blocked_metric_schema_subcase": true
+  },
+  "earlier_focused_suite": {
+    "tests": 28,
+    "duration_seconds": 45.749,
+    "status": "passed_before_added_schema_subcase"
+  },
+  "file_sha256": {
+    "README.md": "77ec118556616a7f307bbd335ce3c857f06c9ea2b957d93d648b5c713e63fdd1",
+    "docs/architecture-review.md": "6b4f5579cc39adedbb6ab855c5ed67ec3bf4e1d49a5ff9100681b953eb8e7dcd",
+    "docs/development-review.md": "b67e4fe90b1e87c9aaff3b2a08198264627a8ae3e60fa537d21b48086d46fb5f",
+    "docs/development-status.md": "be828aa332127dab2a7450bb2580b00a40f836d135f5dfb3cf2672f12677eb4f",
+    "docs/inventory-claim-method.md": "34d71ae615a2b7875255e3a71ce8af47e38f9d8b7ff143f30a430099fb1a7f36",
+    "scripts/claim_inventory.py": "39eaa856464a4878290ebbf8373013019af83157a30cc78cce68ea4d2377bc4d",
+    "scripts/claim_material.py": "350385235fc9a6be04a76f3c3d360f1df204445cd393a587dea0f6bd2e7149d7",
+    "scripts/claims_review.py": "5bedc3aabca8b52b803aedb76e5fecf2ce1890f78bfc4b59f8d14ce49fc3d89a",
+    "scripts/run_claims.py": "d75dc5ddb7afd6d9b11b7b46f5681f6638cef958bf26e4d38d14ad9552d2476e",
+    "tests/test_claim_inventory.py": "e68919365aecfc90d98df60f38c9aab28965713f54564d6a6bf220eba056c7e5",
+    "evaluations/sus20-inventory-claim.json": "27b01bee9914949f58317a869949eabf188b7455d30f017a3fb5a84b3d50060f",
+    "evaluations/sus20-inventory-claim.md": "3462552617c9e43c2a2dc39a7505bf1d06a7e78b70beff2ab368992ac5170a19",
+    "standards/claims/materials/fictional-inventory.json": "af0827f86bc84014859f09502ff7c2080a910fe56db9a83662e78de3c3cb0026",
+    "standards/claims/materials/fictional-inventory-conflict.json": "bbd44d14e38b4f31e39c09111e7baf686c0f073139324646d54e9303ca1feca9",
+    "standards/claims/materials/fictional-partial-inventory.json": "7169812a63fef03fbd72e8e0fdfa182eb56a65bd15b36beb2075dea5da65c424",
+    "standards/claims/materials/fictional-neutrality.json": "e7efad0154d74486996c3f4069c334dd9112ee0b37d6b27225590a6e9b60316a"
+  },
+  "new_complete_helper_cli_cases": 5,
+  "historical_complete_saved_helper_cli_replays": 24,
+  "final_implementation_complete_new_helper_cli_replays": 5,
+  "final_cli_request_and_stdout_hashes_match": true,
+  "exact_sequential_state_handoff": true,
+  "history_evidence_factor_gap_review_preservation_verified": true,
+  "material_checkout_integrity": {
+    "standards/claims/materials/fictional-inventory.json": {
+      "sha256": "af0827f86bc84014859f09502ff7c2080a910fe56db9a83662e78de3c3cb0026",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-inventory-conflict.json": {
+      "sha256": "bbd44d14e38b4f31e39c09111e7baf686c0f073139324646d54e9303ca1feca9",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-partial-inventory.json": {
+      "sha256": "7169812a63fef03fbd72e8e0fdfa182eb56a65bd15b36beb2075dea5da65c424",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-neutrality.json": {
+      "sha256": "e7efad0154d74486996c3f4069c334dd9112ee0b37d6b27225590a6e9b60316a",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    }
+  },
+  "unchanged_file_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637",
+    "scripts/gas_mass.py": "85e8e9c8bc6d4a5c85a8d10fc8e53a8d312ca5c895768c76148285caa38c1dcc",
+    "scripts/gas_conversion.py": "a442f8885aceb189c75e1029591eb28857fe8d756f47d7f1875095a661330b71",
+    "scripts/gas_ledger.py": "99eed9b9678da90624c06743399161e3b1dae98058e11c8d507ccd26a4935d1f",
+    "scripts/jurisdiction_tasks.py": "583607a466d25e72aaf5bc09c2561068d2d45b04f7e769f99c2087c40c7a62e7",
+    "evaluations/sus19-gas-ledger.json": "2eaed34d74831082f8376c9f5a2707f54550864b6c966733ac21dac874e34df0",
+    "evaluations/sus19-gas-conversion.json": "068ec30055b2dbb862cb664037a4bd10160f7326d713a8916f0367156ddeca8d",
+    "evaluations/sus19-gas-mass.json": "9898f20473b7092af4c622bffed00c35e51c1e661432caeb9a8da9b569fccb87",
+    "evaluations/sus19-claims-source-reading.json": "f8735a3aefe0d5f9fadea5e6c08e1858d7db3ee41c4ec8e821db74717b141d83",
+    "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+    "tests/test_claims_review.py": "525eb9f2c87c0c3f0715f4be70be63ea962c2d203fafc5642ec78942adeeb037",
+    "evaluations/sus20-claim-evidence.json": "74edb8b6b46766b195d491d3bf44f85af81cb1a0b107c1878d57cfcd81133f7d",
+    "evaluations/sus20-bound-claim.json": "70b731025be118f0ed1f61650a9a5fdf660297be6dc38ac23fcdcfd226282336",
+    "tests/test_claim_material.py": "fdbd6d3df0e42e63333c9a4de248106c724a5fc9a5c486b0a53563805132ad93",
+    "standards/claims/materials/fictional-selected.json": "7b863066fd50e806493b293263d6b0e9219c082cc80c411c44baa2564a6f3b16",
+    "standards/claims/materials/fictional-conflict.json": "124f1510880c3cdec0001cb584798cec7ae614c3d049a3ae0c5f2c8d43347daa"
+  },
+  "core_calculation_integrity": {
+    "scripts/ghg_foundation.py": {
+      "sha256": "633baea0ab102c8f89fab87cb952b6e444715aa3b6288a03296ecd0b44fd9d39",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/ghg_inventory.py": {
+      "sha256": "f60e5abc10e275f34e5cd2dc1b89d3b2d978d357a4720e5e4676d1b3bb93259e",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/scope_accounting.py": {
+      "sha256": "d542b6eb287b7dceeda778e817fb6272986ba8edaa578604431cb3e0b22f848d",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/scope3_accounting.py": {
+      "sha256": "6e7fb8c2338992879fd758726f76b32c00beac21e7245dc71f3e984f11cb3ded",
+      "git_content_unchanged_with_line_endings_normalized": true
+    }
+  },
+  "implementation_change_scope": "Claims helpers gain an internal verified inventory-source context used only by the new operation; legacy operation output captures replay unchanged. Core calculation engines and shared schemas are unchanged.",
+  "validation_type": "Author-led fictional declared coverage, known-answer/adversarial checks and complete reproducible CLI proposals; no independent professional, source-authenticity, external-completeness or legal assessment.",
+  "remaining_requirements": [
+    "Scoped owner review of subsequent material/inventory interfaces.",
+    "External organization/source/gas coverage, archived primary-source authenticity and qualified judgment review.",
+    "Distinct reduction, credit additionality/ownership/retirement/validity and residual-emission methods.",
+    "Broader inventory/product/test/comparison/future-plan and scientific substantiation methods.",
+    "Actual Canadian profiles and current jurisdiction/source/rights/legal decisions.",
+    "Independent end-to-end organization evaluation, individual skill interfaces, routing/specialist skillsets and full public-v1 readiness."
+  ],
+  "goal_status": "active; full ROADMAP scope retained",
+  "push_publication_or_external_action": false
+}
