@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-05",
+  "method": "Read official HTML bytes and select first explicit b.2 paragraph through next c marker; manually corroborated against opened current/historical primary pages. Full downloaded bytes/text not archived. No source data used as instructions.",
+  "sources": [
+    {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/C-34/section-74.01.html",
+      "resolved_url": "https://laws-lois.justice.gc.ca/eng/acts/C-34/section-74.01.html",
+      "html_bytes": 34490,
+      "html_sha256": "232f25b6f9f69d29613776696730b6f86d25ce302b982a573474cab0422eb5d5",
+      "consolidation_dates": [
+        [
+          "2026-09-21",
+          "2026-03-26"
+        ]
+      ],
+      "b2_selected": true,
+      "b2_first_match_text_sha256": "27a1ce375d1e43c1493c5a3205533f5234f30a9d70172ddb57fda947dab774fc",
+      "b2_international_methodology_phrase_present": false,
+      "b2_substantiation_present": true
+    },
+    {
+      "url": "https://laws.justice.gc.ca/eng/acts/C-34/section-74.01-20240620.html",
+      "resolved_url": "https://laws.justice.gc.ca/eng/acts/C-34/section-74.01-20240620.html",
+      "html_bytes": 21346,
+      "html_sha256": "19ec27656bcdd3277c857e119c0ebe21a10b361db4c8c2e4f79fa1a5c078f2c3",
+      "consolidation_dates": [],
+      "b2_selected": true,
+      "b2_first_match_text_sha256": "3e6662b8bedd6822bf1de7cb0fe847e3c8227ca1c253065ce449fed12439fb02",
+      "b2_international_methodology_phrase_present": true,
+      "b2_substantiation_present": true
+    },
+    {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/C-34/section-74.03.html",
+      "resolved_url": "https://laws-lois.justice.gc.ca/eng/acts/C-34/section-74.03.html",
+      "html_bytes": 30796,
+      "html_sha256": "d5fafbcf6cc519e14ae31892ed5ad5790a4da14e5dccfcb2bb0a081e1552657f",
+      "consolidation_dates": [
+        [
+          "2026-09-21",
+          "2026-03-26"
+        ]
+      ],
+      "b2_selected": false
+    },
+    {
+      "url": "https://competition-bureau.canada.ca/en/how-we-foster-competition/education-and-outreach/publications/environmental-claims-and-competition-act",
+      "resolved_url": "https://competition-bureau.canada.ca/en/how-we-foster-competition/education-and-outreach/publications/environmental-claims-and-competition-act",
+      "html_bytes": 86251,
+      "html_sha256": "552f54e5dc856b2920f13fd7e4ffedc4c78c1329445153de99fdc228b4c4c35d",
+      "consolidation_dates": [],
+      "b2_selected": false,
+      "amendment_banner_present": true,
+      "old_guidance_methodology_phrase_present": true
+    }
+  ],
+  "selection_limits": "First-match digest is not a permanent source archive or legal parser; later historical footnotes/body text are not substituted for the selected main provision."
+}

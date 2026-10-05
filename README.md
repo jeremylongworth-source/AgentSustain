@@ -85,3 +85,5 @@ The draft [explicit gas-to-CO2e converter](docs/gas-conversion-method.md) reprod
 The draft [facility/source gas ledger](docs/gas-ledger-method.md) reproduces species conversions into a marked selected-source subtotal with explicit missing/unfit slots and non-overlap guards. [Fictional workflow evidence](evaluations/sus19-gas-ledger.md) preserves raw history and open reviews. Statutory quantities, actual Canadian profiles and scoped review remain open.
 
 The draft [explicit retention-anchor contract](docs/retention-anchor-method.md) selects sourced required dates or supported actual dates without fallback or v1 migration. Fictional v2 checks and a separate non-executable Canadian research calendar preserve legal review; dates authorize no filing or record removal.
+
+[Canadian environmental-claims research](docs/canada-environmental-claims-research.md) separates historical/current primary sections from mixed-era regulator guidance and records requirements for the future neutral claims engine. It supplies no executable legal rules, substantiation score or claim/publication approval.

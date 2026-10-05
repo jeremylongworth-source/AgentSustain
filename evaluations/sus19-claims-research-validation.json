@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "ddf39a64755d1a23d015532c850b76e8402da178",
+  "scope": "Canadian environmental-claims primary/historical/regulator source research and current-code fit requirements; not an executable module or claims assessment.",
+  "focused_suite": {
+    "command": "python -m unittest tests.test_retention_anchors tests.test_jurisdictions",
+    "tests": 23,
+    "duration_seconds": 4.005,
+    "status": "passed"
+  },
+  "full_suite": "not rerun; runtime/tests/schemas unchanged; 597 tests in 328.415 seconds at ddf39a6 remain historical",
+  "runtime_tests_schemas_diff_empty": true,
+  "file_sha256": {
+    "README.md": "049d04cbccbef7179bfab380b521088907534f7b20c5850b339e33c70e59c4dd",
+    "docs/development-status.md": "c199aed7281cecd0da6d3c2df74de281dd062821a687f4ee262734b7d8a367ba",
+    "docs/canada-environmental-claims-research.md": "a7e63e9a1f432bc50ab5fa7371055b043cdcf6212425862f854aa895f66afb00",
+    "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+    "evaluations/sus19-claims-source-reading.json": "f8735a3aefe0d5f9fadea5e6c08e1858d7db3ee41c4ec8e821db74717b141d83",
+    "evaluations/sus19-claims-research-checks.json": "d3e6dad99fcb32a6eecdff134b25bdcfd7166fdb44d861d18b90214e8b3f5d67"
+  },
+  "runtime_sha256": {
+    "scripts/climate_assessment.py": "f8c0f867e01023ab11822f66a57323ef2e2c2c527ef3b4cbbec125b0a8c7c36e",
+    "scripts/climate_priority.py": "3a8760cc7fb073929da35f8b960e795182f599ee4961e3b267884157a098b539",
+    "scripts/climate_register.py": "504842f4ff6229e284afa12351a7c0e2c12543b6d4d77608e7fe64cd1dcd4fa0",
+    "scripts/climate_resilience.py": "7434c064aaf4366d6e5b3d754c20c711dd802445f0bf44f49ed105c07ce9fb58",
+    "scripts/climate_risk.py": "296ccd2321cfed9e59f25e4e2f081051ed3ea2811c633024d9ed6809fbbfc4ad",
+    "scripts/climate_tools.py": "207db7f78a77478188aa50e2c9b8602c69a7a9be1da0f55eaeb9ec2d942a531c",
+    "scripts/climate_transition.py": "f088c4253966d40f0885294750772cae2565ca74da0bac4ef2794a22b6a77fde",
+    "scripts/climate_transition_exposure.py": "a1ef2db51ba2e9af761ae25637683dfb81c7983bc3e7356b6aaf3d8bc512cb5c",
+    "scripts/contract_validation.py": "7d10b157efbbc3a6fd6e044b5937085bb3827d3e41491014bcb0247321319f4a",
+    "scripts/data_tools.py": "e9d7c970b90ace9d7b7ef0db3803b95534ded65cc76f45db41018293d625b2e3",
+    "scripts/energy_projects.py": "81573de9fa1272cb656c4e7ba4ea78f7ee5f0baca0547e71ba131847c10e2268",
+    "scripts/energy_tools.py": "98393ea3235ccd3cf55326df648ce2956ddf21367674e7b4bdc9319c415c6e75",
+    "scripts/finance_abatement.py": "49ab5104c7f600fdce3f8ea7bbef1654b8ea7eb54aada0a0ea5922b31c7a3812",
+    "scripts/finance_business_case.py": "037eace9a831d5a9eeef993c6b3adb68ff63d1a525f21bcdcf42a6f24df8dd72",
+    "scripts/finance_cashflow.py": "f976a186aae211942af532f04ec2eb1f88b83dd8a67d13e6ef6aa98b16bfa19e",
+    "scripts/finance_composition.py": "3ae71074287556febc3397e998b13d670f39e13f1d2a185235851f044ee5b16e",
+    "scripts/finance_prices.py": "3cafbaf8f13fa0330d8cf1796c4d2184821066b5caef4a18c104b4034b1fe3fc",
+    "scripts/finance_projects.py": "322e88ffbce3fdab6b29974fabd1b598b9505f6bc21a090fb05e8c8998b0055a",
+    "scripts/finance_tools.py": "404403c17aca64012d292546c98b23640b895c8e56d5d334a45d944f840bcff1",
+    "scripts/framework_tools.py": "7191c7f8c32167b2dbe4cedd0501cce90b457e80384c52911aed0c714710d8dd",
+    "scripts/gas_conversion.py": "a442f8885aceb189c75e1029591eb28857fe8d756f47d7f1875095a661330b71",
+    "scripts/gas_ledger.py": "99eed9b9678da90624c06743399161e3b1dae98058e11c8d507ccd26a4935d1f",
+    "scripts/gas_mass.py": "85e8e9c8bc6d4a5c85a8d10fc8e53a8d312ca5c895768c76148285caa38c1dcc",
+    "scripts/ghg_foundation.py": "633baea0ab102c8f89fab87cb952b6e444715aa3b6288a03296ecd0b44fd9d39",
+    "scripts/ghg_inventory.py": "f60e5abc10e275f34e5cd2dc1b89d3b2d978d357a4720e5e4676d1b3bb93259e",
+    "scripts/inventory_analysis.py": "beaa5ea4d7d6a6a4ecf0b6a2ad4a34f9a85f52bb418fc0b949a916773832aaab",
+    "scripts/irr_tools.py": "e17868e6974831de7312bdb6e1f4d6124ce5a042f7178f8e6b2d24baa0e22576",
+    "scripts/jurisdiction_subjects.py": "106a4bdae2e4097180a159704e17684336f641b21fa083b1c98756bf057d6094",
+    "scripts/jurisdiction_tasks.py": "583607a466d25e72aaf5bc09c2561068d2d45b04f7e769f99c2087c40c7a62e7",
+    "scripts/jurisdiction_tools.py": "bc2f605cc724242a7bcb2477512e15fe6a83ec11284f3f1cb5e575e0d37481ea",
+    "scripts/operations_tools.py": "2be7143d63b250e572edb02d1cf353396dc51892ff582fe8adeee55e6738feb5",
+    "scripts/procurement_options.py": "4b35ec3681aa11611cc670d35bcba0323a6e9a1a803253b2de78c51349d889c3",
+    "scripts/resource_tools.py": "916b9c71959078d30e06b2f9b808c4b9a18e1355db94347e98c552d1c57a8d04",
+    "scripts/run_climate.py": "5a828275dc36adbfdddc8f14f920b7e9ed98cc01a3f3af324f5b54314534e78a",
+    "scripts/run_energy.py": "8e51521f8993566ffe32f5497e0a9988708a0a26dcd4c07def291d931c51b2ef",
+    "scripts/run_finance.py": "c049f2be1165db7080923a8ed52cc532d8f45d39cb82d7de4ab4c8619d450b34",
+    "scripts/run_framework.py": "96419e118722c3497911fcfdc6e889cc05860d68e2344377fb0f20142c6f669a",
+    "scripts/run_gas_mass.py": "bde2a1211dcfd80ae34a57838d2764b51f724f69bfcfc478dbd1e8b2eb97582c",
+    "scripts/run_ghg_calculation.py": "b1cef726a1193d9d884aa2b8864edc08acd2f4c501bf5fbec2fc54f5e7ef4369",
+    "scripts/run_jurisdiction.py": "430786d1cd3330543478c8a2fe1be365f0e144db83849aee7d947939ee0af875",
+    "scripts/run_operations.py": "9ba12138993c82830bf1149257f445dda96f3687bc09137a3636b1bbafefa3de",
+    "scripts/run_resources.py": "1c4bdd10bcc473f5df98f31025a935e8a3927fd1553193eb522c96c182d3e1b0",
+    "scripts/run_scope3.py": "dd088092ecec9b6980591e9d2f2b5f83f5965b75780f3a3cc5ab6ef3c0f07b1e",
+    "scripts/run_scope_accounting.py": "1cce56c259d18ea134275908975f7f1e6dc285a9ca3c1a5a6383cd41569ff66e",
+    "scripts/run_scope_classification.py": "01419905207b368ebb00b0c5450ea7c9cec80ad6a09d7dd26c1d761b804c6b82",
+    "scripts/run_strategy.py": "d38bd5cf463674df72e9d071fb2af78cadb4ad8bbba7ef226be67fafe82522de",
+    "scripts/run_suppliers.py": "9a1ca4b415fd746a83e3cb2fac913cc2c459b203ab66d226c4f79e77c7f116c9",
+    "scripts/run_water.py": "027ca839f9d899c0ccaa49f22b7d3e3872e244f5784454e1f4aa3c499950d76b",
+    "scripts/scope3_accounting.py": "6e7fb8c2338992879fd758726f76b32c00beac21e7245dc71f3e984f11cb3ded",
+    "scripts/scope_accounting.py": "d542b6eb287b7dceeda778e817fb6272986ba8edaa578604431cb3e0b22f848d",
+    "scripts/scope_classification.py": "76e794f21bb8185f20a412fdf16ddcd34ca2aa09061901e6a8e9a7a9473ab1e4",
+    "scripts/state_proposal.py": "1a4375ae9e6c798f803716ea48af03e25ac3588a2a53cbdd99cde559294d8440",
+    "scripts/strategy_accountability.py": "8e9066d897534f85280e87a1ef0b5f5abdbeaec3f41ee300b42ac83cf8d783da",
+    "scripts/strategy_composition.py": "bc1aba63874f32915318a3dc824c9b26f4513435f4a5a6613cf095a292ced7d3",
+    "scripts/strategy_feasibility.py": "a3c2c8435ba606d88e0923954af0d0c65e4215e1705b5605353cefb81d026222",
+    "scripts/strategy_implementation.py": "fce6a0abff4d02d73a423d75e08837391d15493e23e61a65197429dc8312cd6e",
+    "scripts/strategy_materiality.py": "a4e51a4be77f244ea5f8f99e5c6fd3257127fc3c5a1525bb580422b81b7102fb",
+    "scripts/strategy_maturity.py": "28439091fea84b7d38302d352ebe907d3620db1e60bcdb0c3d1192b504582713",
+    "scripts/strategy_registers.py": "28ded4cc5313c2bfb2b388ebb55e95a268f6a805a745e051e0a31fa5376a7aac",
+    "scripts/strategy_stakeholders.py": "c7b8dbaeb6e45f59196c563ddb45d96f0a8e7e462bcf48333eb13ee2cfe5656d",
+    "scripts/strategy_tools.py": "fc138f910b39fedc2091d788610049b69d2c17c361a4f434fdc7c0ec6313bc29",
+    "scripts/strategy_transition.py": "84d7d304886b86a39ed44587975b2813eddc0456380fa98b065759a7ce80e17e",
+    "scripts/supplier_comparison.py": "bb423699141e3d98113bbb44d51b3f3e7a54062e0cbf084b6b952fdf6ad8b4e4",
+    "scripts/supplier_hotspots.py": "b2643686c31a3fdd1c3efd41546b2333cdfb3dd3311d9a188a42735d1fbd6f97",
+    "scripts/supplier_mapping.py": "0c27be459c17d391a67935fbe5a19ff2b30269999fb9fa7d95c88f2cfcc5c77b",
+    "scripts/supplier_planning.py": "81459b56cb1b7965f6ccf7c87f0bcff2bea1d7e1c76c15e0095e7a4f32fb43cb",
+    "scripts/supplier_risk.py": "031dec84b331293caa3677f77923e44974dd13f8b3f4d0ab25c0e022e4c561e0",
+    "scripts/supplier_tools.py": "f26a862070ae1749c1274e23b287a6dc8c6d2136664b7b77d58ef3d6707a07ae",
+    "scripts/water_tools.py": "11f79435fcd53abe9f66a6bf67ddcc930a376338905fc5d5e9d245a2615ae570"
+  },
+  "schema_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637"
+  },
+  "historical_sha256": {
+    "evaluations/sus18-jurisdiction-tasks.json": "0c003b8d311968dd373be3e12e3efa4ab52eabec9ccfb5590b4d7c8abf1949d4",
+    "evaluations/sus18-jurisdiction-tasks-validation.json": "56081bc75c60bdadde098e19a7c67708ac92774a789ff5503e099ff8c4d90d05",
+    "evaluations/sus18-jurisdiction-subjects.json": "9401d5a1446b50d5ca9ca5e805f4dfd4ae9f8926690e1e83ded98b645d1ad379",
+    "evaluations/sus18-jurisdiction-foundation.json": "4e9c082050ba614eaa0565ac814ce32e4a90ce0ac7a9cb2b0fa5b88129dcd9a8",
+    "standards/jurisdictions/fixtures/fictional-tasks-1.json": "400bc5c2a23ac5460aa62f802e41c06f6d1dbdd92d3ad2d433c330136096d594",
+    "standards/jurisdictions/canada/research/ghgrp-quantification-v7-fit-register.json": "84eac55554d53c16cae58a11cd6393be1705e07423f48724eb8f11c0fb952202",
+    "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395"
+  },
+  "historical_bytes_verified_unchanged": true,
+  "source_format_and_edition_checks": {
+    "sources": 6,
+    "direct_official_html_reads": 4,
+    "findings": 8,
+    "fit_gaps": 7,
+    "planned_claims_cases_not_executed": 14,
+    "status": "passed"
+  },
+  "edition_fingerprint_checks": {
+    "current_main_b2_old_qualifier": false,
+    "historical_main_b2_old_qualifier": true,
+    "substantiation_present_in_both": true,
+    "guidance_change_banner_and_old_body_coexist": true,
+    "status": "passed"
+  },
+  "primary_source_reading_record": "sus19-claims-source-reading.json",
+  "non_executable_register_isolation": [
+    {
+      "skill": "screen-subject-jurisdiction-applicability",
+      "status": "blocked",
+      "metrics": [],
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3953344998881221,
+        "request_sha256": "a259b40ea396f4f35f040f26a5582eee1ba30f006683a26b1ceb0d79a3eba974",
+        "stdout_sha256": "adfa8ada8e9db2e691229d349d7b56d146d38ec77261db0fdc540d15b2402999",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_open_reviews_preserved": true
+      }
+    },
+    {
+      "skill": "prepare-jurisdiction-task-register",
+      "status": "blocked",
+      "metrics": [],
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.48547689989209175,
+        "request_sha256": "e61dad3ba1b244750758a4b31a1c3dcec15d7ebbe18cdc5e23b397c3d0b40638",
+        "stdout_sha256": "0f38ac180114eea3965761a8f7fbc6f821f71f652c33ab416d6ddd4c51903dd2",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_open_reviews_preserved": true
+      }
+    }
+  ],
+  "source_roles": [
+    {
+      "id": "current-7401",
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/C-34/section-74.01.html",
+      "role": "primary_current_consolidation"
+    },
+    {
+      "id": "historical-7401",
+      "url": "https://laws.justice.gc.ca/eng/acts/C-34/section-74.01-20240620.html",
+      "role": "primary_historical_section"
+    },
+    {
+      "id": "current-7403",
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/C-34/section-74.03.html",
+      "role": "primary_current_consolidation"
+    },
+    {
+      "id": "bureau-guidance",
+      "url": "https://competition-bureau.canada.ca/en/how-we-foster-competition/education-and-outreach/publications/environmental-claims-and-competition-act",
+      "role": "regulator_guidance_not_law"
+    },
+    {
+      "id": "bureau-overview",
+      "url": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/greenwashing-guidance-businesses",
+      "role": "regulator_guidance_not_law"
+    },
+    {
+      "id": "amending-act",
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/B-9.8598/page-6.html",
+      "role": "primary_amending_act_locator"
+    }
+  ],
+  "claims_capabilities_executed": false,
+  "limits": [
+    "The observed consolidated sources display currency through 2026-09-21, not a qualified legal determination for every event on the retrieval date.",
+    "Old/current paragraph fingerprints and changed guidance context are preserved; no automatic historical migration, legal commencement, retroactivity or claim classification inferred.",
+    "Primary substantiation/general-impression/product-business/procedural context is not public claim support, immunity or publishing authority.",
+    "Four HTML byte readings/hashes and selected paragraph digests are recorded; full source text/bytes are not archived and the temporary selector is not a production legal parser.",
+    "Amending Act markers are locators; replacement text was checked in the consolidated Act. Failed Parliament-link access was not treated as evidence.",
+    "Fourteen fictional claims cases are planned criteria, not implemented or executed capability.",
+    "Core claims engine, actual Canadian module, qualified source/legal/rights/court/organization evaluation and release decisions remain open.",
+    "No actual claim/company data, factor/GWP table, individual skill, external contact, filing, review resolution, phase closure or v1 readiness."
+  ]
+}
