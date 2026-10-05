@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "d8206ea7fe6cc47a22624f9793422b3864331162",
+  "reviewed_implementation_revision": "39c7a96e3c0e3ff9e6e6390c0c6085a54b8b4b48",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 505,
+    "duration_seconds": 286.975,
+    "status": "passed"
+  },
+  "focused_suite": {
+    "command": "python -m unittest tests.test_framework_catalog_bytes tests.test_frameworks -v",
+    "tests": 13,
+    "duration_seconds": 7.031,
+    "status": "passed"
+  },
+  "git_checkout_evidence": {
+    "host": "Windows",
+    "autocrlf_settings": [
+      "true",
+      "false"
+    ],
+    "actual_temp_commits_and_clones": true,
+    "stored_and_checked_out_catalog_bytes_equal": true,
+    "native_linux_runtime_tested": false
+  },
+  "catalog_pin_migration": [
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004-amend2013.json",
+      "historical_crlf_sha256": "8f56e3e80b056e32bc5df57c7443d71591765548a1e68b9955b2ba314afc88b3",
+      "canonical_lf_sha256": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400",
+      "json_content_unchanged": true,
+      "matches_reviewed_git_blob": true
+    },
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004.json",
+      "historical_crlf_sha256": "6a131bf4259b2d381827ea15c3e1c0272cbc8d8cea91bdc01c9995130177c466",
+      "canonical_lf_sha256": "f4dc25a7e91fb190f372f32b023faf950d686fc629b78d103e32f7328e6e8b24",
+      "json_content_unchanged": true,
+      "matches_reviewed_git_blob": true
+    },
+    {
+      "path": "standards/frameworks/tnfd-2023-ghg-referral.json",
+      "historical_crlf_sha256": "5f6a07ab328d4b0915edd4d2ae5bbdd3f91f02e8e0913824ce060ca5f7f6fba7",
+      "canonical_lf_sha256": "31e0254cda834199f19e50dfb1de3a561ecbbe1960575bac7606b6b9425ac9e2",
+      "json_content_unchanged": true,
+      "matches_reviewed_git_blob": true
+    }
+  ],
+  "historical_capture_bytes_verified_unchanged": true,
+  "historical_capture_sha256": {
+    "evaluations/sus17-framework-mapping-validation.json": "dc707de993cee891c606436839474f7befb1c4c1911aed3d01a0992d02d5d660",
+    "evaluations/sus17-framework-mapping.json": "68d27ae450f815dd6f067a28082d7e486dd30db5391ddfd9f245353bd9fdaf18",
+    "evaluations/sus17-independent-framework-mapping.json": "70d47ccfa944cbd0ebb138d67b122a2cbcd6de308bb1f8e5d3703f762db60e6e",
+    "evaluations/sus17-framework-mapping.md": "002a671344713b709c629ad57d1444bc82a4204b805cb5bebe04398ea3393247",
+    "evaluations/sus17-independent-framework-mapping.md": "6cb87346250dc39b832cf4b8071f65fb72170ee5037e18b985da92e320361a52"
+  },
+  "replays": [
+    {
+      "case": "author_mapping",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.4897408001124859,
+        "request_sha256": "cb0432679e49ba8a22ed7b86fd5b53f18bb05577b88301beda4295a9d88f4042",
+        "stdout_sha256": "3cf406c30532619ee8dff56022cf518b9e80000a22dc30905ca5e3f13e65781e",
+        "request_bytes_unchanged": true,
+        "complete_helper_cli_equality": true
+      },
+      "only_catalog_pin_representation_changed": true
+    },
+    {
+      "case": "author_diff_exact_current_handoff",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.41524999984540045,
+        "request_sha256": "6c528d84610c9fbae1d216c7246039baa5e702d79ce503c6ae07892155230e90",
+        "stdout_sha256": "3ed86b82e1560bc6996eecb1ecd2849f250cc964f52c3d0a464776898a0d3ef4",
+        "request_bytes_unchanged": true,
+        "complete_helper_cli_equality": true
+      },
+      "only_catalog_pin_representation_changed": true
+    },
+    {
+      "case": "independent_mapping_replay",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.49123660009354353,
+        "request_sha256": "bf9797d2ef829e8853131ce9b9979cd9023fd0f051bedb6102570d42b4f36ea3",
+        "stdout_sha256": "b5dc5bdd6b5b5d225cc4d137c38af7ea70e40fb414713b0c849a66f0aef85b3c",
+        "request_bytes_unchanged": true,
+        "complete_helper_cli_equality": true
+      },
+      "only_catalog_pin_representation_changed": true
+    }
+  ],
+  "file_sha256": {
+    "README.md": "25252771b0bee5c63024cdfe094948fb35f78f5bff7e237ca9e3a3d9957f5e8f",
+    "docs/development-review.md": "4eeea976c7bc676b65dc2154345115db9912cd3ac9e57ebada24632cde775e7e",
+    "docs/development-status.md": "82d4234507d32add57cdeee6e94d094e3d902be0354aabe86a8cbd6992d91959",
+    "docs/framework-adapter-contract.md": "79ce22b33beeb5caee8bbc90b7a6dd9e4e432a0bddbc1e69a09f45949a7a268f",
+    "standards/frameworks/.gitattributes": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+    "tests/test_framework_catalog_bytes.py": "833b7ae255db95c4012394403ab7efade12e526af6657388a007560fe6b50fc5",
+    "evaluations/sus17-canonical-catalog-replay.json": "8841774de10b81d28e0657007d0c79591a4ae50d55990c54aa1033711bd8107a",
+    "evaluations/sus17-canonical-catalog-replay.md": "0573306f679acfdbfda6383343b2c4d475f6850542c63d0ba110165d697ae6a2",
+    "standards/frameworks/ghgp-corporate-2004-amend2013.json": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400",
+    "standards/frameworks/ghgp-corporate-2004.json": "f4dc25a7e91fb190f372f32b023faf950d686fc629b78d103e32f7328e6e8b24",
+    "standards/frameworks/tnfd-2023-ghg-referral.json": "31e0254cda834199f19e50dfb1de3a561ecbbe1960575bac7606b6b9425ac9e2"
+  },
+  "limits": [
+    "Original captures preserved as historical CRLF executions; current runtime rejects those pins.",
+    "Corrected author diff uses exact canonical mapping proposal; historical diagnostics differ only in pin representation.",
+    "Parent replay of independent capture is not a new independent reading.",
+    "No source/version/requirement/rights or normative migration.",
+    "Post-approval portability change does not inherit scoped owner approval.",
+    "Broader framework/domain and organization evaluation, professional/source/owner decisions and release gates remain open."
+  ]
+}

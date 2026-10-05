@@ -33,7 +33,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-20 | Claims controls | Not implemented |
 | SUS-21 | Router | Not implemented; interface draft only |
 | SUS-22 | Specialist skillsets | Not implemented |
-| SUS-23 | Evaluation suite | 502 architecture/data/GHG/scope/inventory/energy/resource/water/finance/analysis/strategy/proposal/artifact tests pass; numerical cases rerun and initial author-led interpretation proposals replay; independent and organization-wide end-to-end suites remain |
+| SUS-23 | Evaluation suite | 505 architecture/data/GHG/scope/inventory/energy/resource/water/finance/analysis/strategy/proposal/artifact tests pass; numerical cases rerun and initial author-led interpretation proposals replay; independent and organization-wide end-to-end suites remain |
 | SUS-24 | Documentation/examples | Foundation docs, shared data-skill guide and fictional schema fixtures |
 | SUS-25 | Public v1 readiness | Not assessed; no release authorization |
 
@@ -88,3 +88,7 @@ One independent raw-source reader withheld organization/edition applicability, r
 Final source-integrity review strengthened adapter scope/category checks to compare complete reproduced method records, metric metadata/uncertainty and evidence IDs, rather than trusting amount equality. Missing source references return checked blocked results. All three valid complete author/diff/independent outputs replay unchanged after the guard, with full historical obligations and input bytes preserved.
 
 The final initial reporting increment passed 502 repository tests, ten focused framework tests and both skill validations. [Validation evidence](../evaluations/sus17-framework-mapping-validation.json) records final source/metric/report/evidence guards, byte pins, exact author-state handoff and complete current helper/actual CLI replay. The full suite includes README architecture checks; these checks do not establish complete framework coverage, source rights, organization reliability or v1 readiness.
+
+The reporting catalog byte representation now has scoped LF checkout enforcement. Original initial SUS-17 captures remain unchanged; separate [canonical replay evidence](../evaluations/sus17-canonical-catalog-replay.json) records explicit pin replacement with unchanged catalog JSON and complete author mapping/diff plus independent parent replay. The new authored diff uses the canonical mapping's exact proposed state. Git stored/checkout bytes are tested under both autocrlf settings on this Windows host; this is not native Linux execution or new independent source reading. The change follows the approved 39c7a96 snapshot and does not inherit its scoped approval. Source/rights, broader framework methods, organization evaluation and release gates remain open.
+
+The final catalog-portability increment passed 505 repository tests in 286.975 seconds and 13 focused framework/checkout tests in 7.031 seconds. Three complete helper/actual CLI replays passed with historical capture bytes unchanged. [The validation record](../evaluations/sus17-canonical-catalog-validation.json) records canonical hashes, review scope and platform limits. These results do not close framework coverage, source rights, organization evaluation or the development goal.
