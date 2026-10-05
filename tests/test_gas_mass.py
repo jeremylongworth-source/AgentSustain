@@ -154,6 +154,12 @@ class GasMassTests(unittest.TestCase):
         self.assertEqual(out['result']['status'],'blocked');self.assertEqual(out['result']['metrics'],[])
         self.assertFalse(any(d['code']=='GAS_MASS_CALCULATION' for d in out['result']['diagnostics']))
 
+    def test_decimal_exponent_underflow_cannot_become_zero_mass(self):
+        state,p=fixture();p['factor']['value']='1e-1000100'
+        p['applicability_review']['factor_review']['confirmed_value']='1e-1000100'
+        out=calculate_gas_mass(state,p)
+        self.assertEqual(out['result']['status'],'blocked');self.assertEqual(out['result']['metrics'],[])
+
     def test_synthetic_cannot_be_relabelled_real(self):
         state,p=fixture();p['fixture_mode']=False
         self.assertEqual(calculate_gas_mass(state,p)['result']['status'],'blocked')

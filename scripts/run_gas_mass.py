@@ -6,6 +6,7 @@ import sys
 
 from .contract_validation import validate_shape
 from .gas_mass import calculate_gas_mass
+from .gas_conversion import convert_gas_mass
 
 
 def main():
@@ -15,9 +16,10 @@ def main():
     try:
         request = json.loads(args.request.read_text(encoding='utf-8'))
         validate_shape('input.schema.json', request)
-        if request['skill'] != 'calculate-gas-mass':
+        operations = {'calculate-gas-mass': calculate_gas_mass, 'convert-gas-mass-to-co2e': convert_gas_mass}
+        if request['skill'] not in operations:
             raise ValueError('Unsupported gas-mass operation.')
-        print(json.dumps(calculate_gas_mass(request['state'], request['parameters']), indent=2, allow_nan=False))
+        print(json.dumps(operations[request['skill']](request['state'], request['parameters']), indent=2, allow_nan=False))
         return 0
     except Exception as error:
         print(json.dumps({'error': 'INVALID_REQUEST', 'kind': type(error).__name__}))

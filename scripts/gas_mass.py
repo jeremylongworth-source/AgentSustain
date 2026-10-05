@@ -1,6 +1,6 @@
 """Explicit species mass from supplied factors; no built-in factors, GWP or law."""
 import copy
-from decimal import localcontext
+from decimal import DecimalException, Underflow, localcontext
 import json
 import re
 
@@ -102,6 +102,7 @@ def calculate_gas_mass(state, parameters):
             raise FactorRequired(str(error)) from error
         with localcontext() as context:
             context.prec = 34
+            context.traps[Underflow] = True
             raw_mass = activity_conversion['value'] * value
             output = convert(raw_mass, mass_unit, 'kg')
         result['metrics'] = [{'id': result['id'] + '-metric', 'name': 'Calculated ' + gas + ' mass',
@@ -126,7 +127,7 @@ def calculate_gas_mass(state, parameters):
         result['review_requirements'].append({'id': result['id'] + '-method-review', 'state': 'PROFESSIONAL_REVIEW_REQUIRED',
             'reason': 'Review species/fuel identity, source factor, quantity method, coverage, units and uncertainty.',
             'scope': review['scope'], 'reviewer_role': review['reviewer_role'], 'status': 'open', 'resolution': None})
-    except (ValueError, TypeError, KeyError) as error:
+    except (ValueError, TypeError, KeyError, DecimalException) as error:
         result['status'] = 'blocked'
         result['metrics'] = []
         gap(str(error), 'EMISSION_FACTOR_REQUIRED' if isinstance(error, FactorRequired) else 'GAS_ACTIVITY_DATA_REQUIRED')
