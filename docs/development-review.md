@@ -5,6 +5,16 @@ Status: APPROVED FOR CONTINUED DEVELOPMENT by the project owner on 2026-10-05 (A
 ## Latest decision
 
 - User instruction: "approve the review".
+- Reviewed revision: `681a3e658584bafab721dab4496dbed8b8f0589d`.
+- Scope: the current local development snapshot, including the subsequent SUS-15 maturity, material-issue, risk/opportunity and strategy-composition extensions and their saved validation/source-reading evidence.
+- Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Validation evidence: [the strategy-composition validation record](../evaluations/sus15-strategy-composition-validation.json) records 388 passing tests, 66 passing focused tests, skill validation and exact author/independent helper/CLI replay. These are completed implementation checks, not new tests run for this approval.
+
+This approval permits continued local roadmap development. Scenario-specific professional decisions, upstream source-fitness conflicts, broader independent evaluation and specialist/router/release review remain open. It does not resolve any result/state review record or approve strategy adoption, targets, funding, owner acceptance, implementation, claims, publication, push, merge, release or deployment. Later changes do not inherit this revision's scoped approval.
+
+## Previous strategy decision
+
+- User instruction: "approve the review".
 - Reviewed revision: `a935647ae053f7b413406f05fe89edaf1e5e1cd4`.
 - Scope: the completed current local development snapshot, including the five initial SUS-15 baseline, KPI, target, feasibility and stakeholder workflows and their recorded validation and independent source-reading cases.
 - Decision: approved for continued roadmap development on 2026-10-05; no additional conditions stated.
@@ -45,7 +55,7 @@ The subsequent sourced supplier-risk screening contract also requires inclusion 
 
 The subsequent conditional procurement-option contract also requires later specialist/router/release review. Its equivalence/lifetime/source-fitness decisions, selected emissions and cost comparison did not inherit approval from the earlier snapshot and remain subject to scenario-specific professional review under the latest continued-development approval. Evidence is in [the option capture](../evaluations/sus14-procurement-options.json).
 
-## Strategy extensions included in the latest approval
+## Strategy extensions included in the a935647 approval
 
 These extensions were developed after c7ad9f7 and are now included in the a935647 continued-development approval. Their scenario-specific and later specialist/router/release requirements remain open.
 
@@ -57,16 +67,24 @@ The subsequent stakeholder map also requires later specialist/router/release rev
 
 ## Subsequent maturity extension
 
+This extension is now included in the 681a3e6 continued-development approval; the outstanding review requirements below remain applicable.
+
 The selected-practice maturity contract was developed after the approved a935647 snapshot under continued roadmap authorization. It requires later specialist/router/release review of rubric fitness, cumulative criteria, source periods, contradictions and scope coverage. Scenario-specific professional review remains open; no organization score, certification or actual improvement is inferred. Evidence is in [the maturity capture](../evaluations/sus15-maturity-workflow.json).
 
 ## Subsequent material-issue extension
+
+This extension is now included in the 681a3e6 continued-development approval; the outstanding review requirements below remain applicable.
 
 The selected impact-significance candidate contract is subsequent to a935647 under continued roadmap authorization. Later specialist/router/release review must cover method fitness, source periods, separate impact thresholds, human-rights severity precedence, grouping and stakeholder coverage. Scenario-specific professional and final materiality decisions remain open; this does not approve reporting conformance or public claims. Evidence is in [the material-issue capture](../evaluations/sus15-materiality-workflow.json).
 
 ## Subsequent risk/opportunity extension
 
+This extension is now included in the 681a3e6 continued-development approval; the outstanding review requirements below remain applicable.
+
 The source-linked qualitative risk and opportunity registers follow the approved a935647 snapshot under continued roadmap authorization. Subsequent specialist/router/release review must include impact-versus-organization pathways, source periods and horizons, conditions, trade-offs and reproduction of materiality/risk dependencies. Scenario-specific professional, materiality and action decisions remain open; no financial effect, risk acceptance or realized mitigation is inferred. Evidence is in [the composed capture](../evaluations/sus15-risk-opportunity-workflow.json).
 
 ## Subsequent strategy composition extension
+
+This extension is now included in the 681a3e6 continued-development approval; the outstanding review requirements below remain applicable.
 
 The source-reproduced strategy composer follows a935647 under continued roadmap authorization. Later specialist/router/release review must cover source scopes and parent consistency, topic/risk omissions, objective/intervention links, shared sources, target-period timing, prerequisite ordering, resource context and monitoring. Professional strategy/target/materiality decisions and owner acceptance remain open; no adoption, funded delivery or implementation is inferred. Evidence is in [the composition capture](../evaluations/sus15-strategy-composition.json).
