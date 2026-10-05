@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "5b2fa32",
+  "checks": {
+    "unittest": {
+      "passed": 174,
+      "new_water_tests": 8,
+      "new_waste_opportunity_workflow_tests": 1,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests"
+    },
+    "skill_packaging": {
+      "passed": 5,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "selected_withdrawal_m3": 15,
+      "intensity_m3_per_count": 0.15,
+      "volume_contributions_m3": [
+        10,
+        5
+      ],
+      "catchment": "unknown; gap retained"
+    }
+  },
+  "limitations": [
+    "Fictional source measurements and coverage/context reviews are supplied, not authenticated.",
+    "Waste classifications/opportunities are author-led outputs; replay does not independently rerun reasoning.",
+    "Water dependency/opportunity scenarios, consumption/storage methods and independent evaluation remain.",
+    "Volume contributions do not establish water stress, quality impact, efficiency or approval."
+  ],
+  "sha256": {
+    "scripts/water_tools.py": "11f79435fcd53abe9f66a6bf67ddcc930a376338905fc5d5e9d245a2615ae570",
+    "scripts/run_water.py": "027ca839f9d899c0ccaa49f22b7d3e3872e244f5784454e1f4aa3c499950d76b",
+    "tests/test_water.py": "7a57f593ace3f7ae0f4190bfbe6080485f06cd9dd445852786c44a825a3af14d",
+    "tests/test_sus10_workflow.py": "b528d202fc0d7a4533e69159a56ce737aaf9070a6b2b3a3e4de29497c0dd974a",
+    "docs/water-contract.md": "180fbc06f5d81ab51a6435a253e227417d3b4d6fed334b3edba7f32f5d2dbfc3",
+    "examples/waste-opportunity-source.md": "f99553969e6ae7fd8795aa0871144f9eead49a2556aa349d3846203b9fabe434",
+    "evaluations/sus10-opportunity-workflow.json": "458c7fc3581edf9247ac90784e7d8fffb458e3f61a267e2ab13e1086c63d1e56",
+    "evaluations/sus11-water-workflow.json": "a4090bc6cad13ffa4e8c76e27f39d603372889fb2dbbf580d9f3bd3dbc72eb2e",
+    "skills/water/assess-water-dependency/SKILL.md": "978b478407277b2f384331e4a8d83c662d3d9fe52039455e75fda643fc24638d",
+    "skills/water/build-water-baseline/SKILL.md": "7a6fb0941772984e7c42c3a9ff0a518f2523f96abb709df778420554554547d9",
+    "skills/water/calculate-water-intensity/SKILL.md": "61e01d20eec3894b76e6e8c8e6dafd3c90a63031533016328690129ea9dc4494",
+    "skills/water/identify-water-efficiency-opportunities/SKILL.md": "a4cb1a2cdf9a9813df05e473c447df57d5700e39900509b164b536447e8122a2",
+    "skills/water/identify-water-hotspots/SKILL.md": "d1922851cb576e2ba5d3b1c0de753982a1435e52ba1f639286a24e57b747afff"
+  }
+}

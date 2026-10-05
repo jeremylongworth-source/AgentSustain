@@ -1,0 +1,1914 @@
+{
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "operator-note",
+        "source": {
+          "locator": "fixture:examples/waste-opportunity-source.md",
+          "title": "Fictional waste and process observations",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "qualitative process record",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [
+      {
+        "id": "residue-review",
+        "state": "PROFESSIONAL_REVIEW_REQUIRED",
+        "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+        "scope": "residue characterization and handling",
+        "reviewer_role": "qualified waste specialist",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "steps": [
+    {
+      "execution_type": "author-led skill application",
+      "skill": "classify-waste-streams",
+      "result": {
+        "id": "classification",
+        "skill": "classify-waste-streams",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "operator-note",
+          "recycled-evidence",
+          "landfilled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_PROCESS_ASSESSMENT",
+            "message": "{\"streams\": [{\"hazard\": \"nonhazardous\", \"id\": \"recycled\", \"material\": \"Uncontaminated cardboard\", \"metric_id\": \"recycled\", \"route\": \"recycling\", \"route_evidence_ids\": [\"recycled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"landfilled\", \"material\": \"Mixed packaging\", \"metric_id\": \"landfilled\", \"route\": \"landfill\", \"route_evidence_ids\": [\"landfilled-evidence\"]}, {\"hazard\": \"unknown\", \"id\": \"unrouted\", \"material\": \"Uncharacterized process residue\", \"metric_id\": \"unrouted\", \"route\": \"unknown\", \"route_evidence_ids\": []}], \"withheld\": \"Unknown residue remains unknown; collection intent is not recycling evidence.\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain residue characterization, treatment evidence and quantified process/packaging records."
+        ]
+      },
+      "proposal_reason": "Record bounded fictional process assessment without handling approval"
+    },
+    {
+      "execution_type": "deterministic helper",
+      "skill": "build-waste-baseline",
+      "parameters": {
+        "streams": [
+          {
+            "id": "recycled",
+            "metric_id": "recycled",
+            "material": "Uncontaminated cardboard",
+            "hazard": "nonhazardous",
+            "route": "recycling",
+            "route_evidence_ids": [
+              "recycled-evidence"
+            ]
+          },
+          {
+            "id": "landfilled",
+            "metric_id": "landfilled",
+            "material": "Mixed packaging",
+            "hazard": "nonhazardous",
+            "route": "landfill",
+            "route_evidence_ids": [
+              "landfilled-evidence"
+            ]
+          },
+          {
+            "id": "unrouted",
+            "metric_id": "unrouted",
+            "material": "Uncharacterized process residue",
+            "hazard": "unknown",
+            "route": "unknown",
+            "route_evidence_ids": []
+          }
+        ],
+        "coverage_review": {
+          "confirmed": true,
+          "basis": "generated_waste_same_cohort",
+          "measurement_boundary": "Fictional selected facility waste generation and same-cohort treatment.",
+          "nonoverlap_assessment": "Separate quantities, no total or transfers counted twice.",
+          "coverage": "Three selected mutually exclusive masses; one unresolved treatment route.",
+          "rationale": "Fictional cohort evidence only.",
+          "evidence_ids": [
+            "recycled-evidence",
+            "landfilled-evidence",
+            "unrouted-evidence"
+          ]
+        },
+        "result_id": "classified-baseline"
+      },
+      "result": {
+        "id": "classified-baseline",
+        "skill": "build-waste-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "classified-baseline-mass",
+            "name": "Selected generated waste mass",
+            "value": 1000.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping selected generated waste masses",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          },
+          {
+            "id": "classified-baseline-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_CLASSIFICATION_REQUIRED",
+            "message": "Unresolved route/hazard for stream unrouted; mass remains in selected total."
+          },
+          {
+            "code": "WASTE_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"generated_waste_same_cohort\", \"confirmed\": true, \"coverage\": \"Three selected mutually exclusive masses; one unresolved treatment route.\", \"evidence_ids\": [\"recycled-evidence\", \"landfilled-evidence\", \"unrouted-evidence\"], \"measurement_boundary\": \"Fictional selected facility waste generation and same-cohort treatment.\", \"nonoverlap_assessment\": \"Separate quantities, no total or transfers counted twice.\", \"rationale\": \"Fictional cohort evidence only.\"}, \"result_id\": \"classified-baseline\", \"streams\": [{\"hazard\": \"nonhazardous\", \"id\": \"recycled\", \"material\": \"Uncontaminated cardboard\", \"metric_id\": \"recycled\", \"route\": \"recycling\", \"route_evidence_ids\": [\"recycled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"landfilled\", \"material\": \"Mixed packaging\", \"metric_id\": \"landfilled\", \"route\": \"landfill\", \"route_evidence_ids\": [\"landfilled-evidence\"]}, {\"hazard\": \"unknown\", \"id\": \"unrouted\", \"material\": \"Uncharacterized process residue\", \"metric_id\": \"unrouted\", \"route\": \"unknown\", \"route_evidence_ids\": []}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain characterization and actual treatment records with qualified review.",
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      "proposal_reason": "Compute selected mass analysis with explicit definitions and retained review obligations"
+    },
+    {
+      "execution_type": "author-led skill application",
+      "skill": "identify-waste-reduction-opportunities",
+      "result": {
+        "id": "waste-candidates",
+        "skill": "identify-waste-reduction-opportunities",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "operator-note",
+          "recycled-evidence",
+          "landfilled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          },
+          {
+            "id": "classified-baseline-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "opportunity-quantification-gap",
+            "field": "packaging/process candidates",
+            "reason": "Source quantities, feasibility and ownership do not support quantified reduction.",
+            "impact": "Investigation candidates only; no additive savings or investment decision.",
+            "remedy": "Assign owners, measure candidate baselines and evaluate interacting scenarios with product/specialist review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_PROCESS_ASSESSMENT",
+            "message": "{\"candidates\": [{\"constraints\": [\"product protection\", \"contamination\", \"supplier return logistics\"], \"evidence_ids\": [\"operator-note\"], \"id\": \"returnable-packaging\", \"interacts_with\": [\"setup-yield\"], \"mechanism\": \"Investigate supplier returnable protective packaging\", \"owner_needed\": \"procurement owner\", \"quantified_savings\": null}, {\"constraints\": [\"product quality\", \"measured reject attribution\"], \"evidence_ids\": [\"operator-note\"], \"id\": \"setup-yield\", \"interacts_with\": [\"returnable-packaging\"], \"mechanism\": \"Investigate documented cutting rejects and process setup\", \"owner_needed\": \"process owner\", \"quantified_savings\": null}], \"residue_action\": \"Request qualified characterization; no sorting/disposal recommendation.\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain residue characterization, treatment evidence and quantified process/packaging records."
+        ]
+      },
+      "proposal_reason": "Record bounded fictional process assessment without handling approval"
+    },
+    {
+      "execution_type": "author-led skill application",
+      "skill": "identify-resource-efficiency-opportunities",
+      "result": {
+        "id": "resource-candidates",
+        "skill": "identify-resource-efficiency-opportunities",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "operator-note",
+          "recycled-evidence",
+          "landfilled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          },
+          {
+            "id": "classified-baseline-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "opportunity-quantification-gap",
+            "field": "packaging/process candidates",
+            "reason": "Source quantities, feasibility and ownership do not support quantified reduction.",
+            "impact": "Investigation candidates only; no additive savings or investment decision.",
+            "remedy": "Assign owners, measure candidate baselines and evaluate interacting scenarios with product/specialist review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_PROCESS_ASSESSMENT",
+            "message": "{\"candidates\": [{\"constraints\": [\"product quality\", \"measured reject attribution\"], \"evidence_ids\": [\"operator-note\"], \"id\": \"setup-yield\", \"interacts_with\": [\"returnable-packaging\"], \"mechanism\": \"Investigate documented cutting rejects and process setup\", \"owner_needed\": \"process owner\", \"quantified_savings\": null}], \"limits\": \"Unexplained residuals are not measured process loss; validate yield and service quality before quantification.\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain residue characterization, treatment evidence and quantified process/packaging records."
+        ]
+      },
+      "proposal_reason": "Record bounded fictional process assessment without handling approval"
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 4,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "operator-note",
+        "source": {
+          "locator": "fixture:examples/waste-opportunity-source.md",
+          "title": "Fictional waste and process observations",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "qualitative process record",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "classification",
+        "skill": "classify-waste-streams",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "operator-note",
+          "recycled-evidence",
+          "landfilled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_PROCESS_ASSESSMENT",
+            "message": "{\"streams\": [{\"hazard\": \"nonhazardous\", \"id\": \"recycled\", \"material\": \"Uncontaminated cardboard\", \"metric_id\": \"recycled\", \"route\": \"recycling\", \"route_evidence_ids\": [\"recycled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"landfilled\", \"material\": \"Mixed packaging\", \"metric_id\": \"landfilled\", \"route\": \"landfill\", \"route_evidence_ids\": [\"landfilled-evidence\"]}, {\"hazard\": \"unknown\", \"id\": \"unrouted\", \"material\": \"Uncharacterized process residue\", \"metric_id\": \"unrouted\", \"route\": \"unknown\", \"route_evidence_ids\": []}], \"withheld\": \"Unknown residue remains unknown; collection intent is not recycling evidence.\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain residue characterization, treatment evidence and quantified process/packaging records."
+        ]
+      },
+      {
+        "id": "classified-baseline",
+        "skill": "build-waste-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "classified-baseline-mass",
+            "name": "Selected generated waste mass",
+            "value": 1000.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping selected generated waste masses",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          },
+          {
+            "id": "classified-baseline-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_CLASSIFICATION_REQUIRED",
+            "message": "Unresolved route/hazard for stream unrouted; mass remains in selected total."
+          },
+          {
+            "code": "WASTE_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"generated_waste_same_cohort\", \"confirmed\": true, \"coverage\": \"Three selected mutually exclusive masses; one unresolved treatment route.\", \"evidence_ids\": [\"recycled-evidence\", \"landfilled-evidence\", \"unrouted-evidence\"], \"measurement_boundary\": \"Fictional selected facility waste generation and same-cohort treatment.\", \"nonoverlap_assessment\": \"Separate quantities, no total or transfers counted twice.\", \"rationale\": \"Fictional cohort evidence only.\"}, \"result_id\": \"classified-baseline\", \"streams\": [{\"hazard\": \"nonhazardous\", \"id\": \"recycled\", \"material\": \"Uncontaminated cardboard\", \"metric_id\": \"recycled\", \"route\": \"recycling\", \"route_evidence_ids\": [\"recycled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"landfilled\", \"material\": \"Mixed packaging\", \"metric_id\": \"landfilled\", \"route\": \"landfill\", \"route_evidence_ids\": [\"landfilled-evidence\"]}, {\"hazard\": \"unknown\", \"id\": \"unrouted\", \"material\": \"Uncharacterized process residue\", \"metric_id\": \"unrouted\", \"route\": \"unknown\", \"route_evidence_ids\": []}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain characterization and actual treatment records with qualified review.",
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      {
+        "id": "waste-candidates",
+        "skill": "identify-waste-reduction-opportunities",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "operator-note",
+          "recycled-evidence",
+          "landfilled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          },
+          {
+            "id": "classified-baseline-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "opportunity-quantification-gap",
+            "field": "packaging/process candidates",
+            "reason": "Source quantities, feasibility and ownership do not support quantified reduction.",
+            "impact": "Investigation candidates only; no additive savings or investment decision.",
+            "remedy": "Assign owners, measure candidate baselines and evaluate interacting scenarios with product/specialist review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_PROCESS_ASSESSMENT",
+            "message": "{\"candidates\": [{\"constraints\": [\"product protection\", \"contamination\", \"supplier return logistics\"], \"evidence_ids\": [\"operator-note\"], \"id\": \"returnable-packaging\", \"interacts_with\": [\"setup-yield\"], \"mechanism\": \"Investigate supplier returnable protective packaging\", \"owner_needed\": \"procurement owner\", \"quantified_savings\": null}, {\"constraints\": [\"product quality\", \"measured reject attribution\"], \"evidence_ids\": [\"operator-note\"], \"id\": \"setup-yield\", \"interacts_with\": [\"returnable-packaging\"], \"mechanism\": \"Investigate documented cutting rejects and process setup\", \"owner_needed\": \"process owner\", \"quantified_savings\": null}], \"residue_action\": \"Request qualified characterization; no sorting/disposal recommendation.\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain residue characterization, treatment evidence and quantified process/packaging records."
+        ]
+      },
+      {
+        "id": "resource-candidates",
+        "skill": "identify-resource-efficiency-opportunities",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "residue-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+            "scope": "residue characterization and handling",
+            "reviewer_role": "qualified waste specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "operator-note",
+          "recycled-evidence",
+          "landfilled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "residue-treatment-gap",
+            "field": "unknown residue",
+            "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+            "impact": "No supported recycling or safe-handling conclusion.",
+            "remedy": "Obtain characterization and actual treatment records with qualified review."
+          },
+          {
+            "id": "classified-baseline-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "opportunity-quantification-gap",
+            "field": "packaging/process candidates",
+            "reason": "Source quantities, feasibility and ownership do not support quantified reduction.",
+            "impact": "Investigation candidates only; no additive savings or investment decision.",
+            "remedy": "Assign owners, measure candidate baselines and evaluate interacting scenarios with product/specialist review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_PROCESS_ASSESSMENT",
+            "message": "{\"candidates\": [{\"constraints\": [\"product quality\", \"measured reject attribution\"], \"evidence_ids\": [\"operator-note\"], \"id\": \"setup-yield\", \"interacts_with\": [\"returnable-packaging\"], \"mechanism\": \"Investigate documented cutting rejects and process setup\", \"owner_needed\": \"process owner\", \"quantified_savings\": null}], \"limits\": \"Unexplained residuals are not measured process loss; validate yield and service quality before quantification.\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain residue characterization, treatment evidence and quantified process/packaging records."
+        ]
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [
+      {
+        "id": "residue-treatment-gap",
+        "field": "unknown residue",
+        "reason": "Collection label lacks composition, hazard and final-treatment evidence.",
+        "impact": "No supported recycling or safe-handling conclusion.",
+        "remedy": "Obtain characterization and actual treatment records with qualified review."
+      },
+      {
+        "id": "classified-baseline-gap-1",
+        "field": "resource_analysis",
+        "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+        "impact": "Selected coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+      },
+      {
+        "id": "opportunity-quantification-gap",
+        "field": "packaging/process candidates",
+        "reason": "Source quantities, feasibility and ownership do not support quantified reduction.",
+        "impact": "Investigation candidates only; no additive savings or investment decision.",
+        "remedy": "Assign owners, measure candidate baselines and evaluate interacting scenarios with product/specialist review."
+      }
+    ],
+    "review_requirements": [
+      {
+        "id": "residue-review",
+        "state": "PROFESSIONAL_REVIEW_REQUIRED",
+        "reason": "Unknown residue composition, hazard and treatment need qualified review.",
+        "scope": "residue characterization and handling",
+        "reviewer_role": "qualified waste specialist",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [
+      "classified-baseline"
+    ],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  }
+}
