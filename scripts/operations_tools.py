@@ -16,6 +16,36 @@ RUNNERS = {**{k:run_energy for k in ENERGY}, **{k:run_water for k in WATER},
            **{k:run_resources for k in RESOURCES}, **{k:run_finance for k in FINANCE}}
 
 
+def _action_sequence(actions):
+    """Validate proposed precedence without treating scheduled work as completed."""
+    identified = [a for a in actions if "id" in a]
+    if not identified: return None
+    if len(identified) != len(actions):
+        raise ValueError("Dependency planning requires IDs and depends_on for every selected action.")
+    ids = [a["id"] for a in actions]
+    if any(not isinstance(i,str) or not i.strip() for i in ids) or len(ids) != len(set(ids)):
+        raise ValueError("Action IDs must be nonempty and unique across the selected plan.")
+    records = {a["id"]:a for a in actions}
+    for action in actions:
+        dependencies = action["depends_on"]
+        if (not isinstance(dependencies,list) or any(not isinstance(i,str) for i in dependencies)
+                or len(dependencies) != len(set(dependencies))
+                or not set(dependencies) <= set(ids)-{action["id"]}):
+            raise ValueError("Action dependencies must identify other selected actions once.")
+        for dependency in dependencies:
+            source = records[dependency]
+            if date.fromisoformat(source["target_date"]) > date.fromisoformat(action["target_date"]):
+                raise ValueError("A prerequisite target date cannot follow its dependent action.")
+    pending = set(ids); ordered = []
+    while pending:
+        ready = sorted((i for i in pending if not set(records[i]["depends_on"]) & pending),
+                       key=lambda i:(records[i]["target_date"],i))
+        if not ready: raise ValueError("Proposed action dependencies contain a cycle.")
+        ordered.extend(ready);pending.difference_update(ready)
+    return {"action_ids":ordered,"basis":"Declared prerequisite graph; dates break ties only, not investment priority.",
+            "completion_verified":False,"implementation_authorized":False}
+
+
 def run_operations(state, parameters):
     validate_state(state)
     if not isinstance(parameters,dict) or set(parameters) != {"steps","opportunities","planning_review","result_id"}:
@@ -119,7 +149,9 @@ def run_operations(state, parameters):
             if not isinstance(proposed,list) or not proposed: raise ValueError("At least one proposed owned action required per opportunity.")
             planned = []
             for action in proposed:
-                if (not isinstance(action,dict) or set(action) != {"description","owner","kind","target_date","prerequisite_review_ids"}
+                if (not isinstance(action,dict) or set(action) not in (
+                        {"description","owner","kind","target_date","prerequisite_review_ids"},
+                        {"id","depends_on","description","owner","kind","target_date","prerequisite_review_ids"})
                         or action["kind"] not in {"data_collection","implementation"}
                         or any(not isinstance(action[f],str) or not action[f].strip() for f in ("description","owner","target_date"))
                         or not date.fromisoformat(planning["start"]) <= date.fromisoformat(action["target_date"]) <= date.fromisoformat(planning["end"])):
@@ -146,11 +178,14 @@ def run_operations(state, parameters):
             for other in entity["attributes"]["interacts_with"]:
                 peer = next(e for e in entities if e["id"] == other)
                 if entity["id"] not in peer["attributes"]["interacts_with"]: raise ValueError("Declare opportunity interactions symmetrically.")
+        sequence = _action_sequence(actions)
         if not review["coverage_complete"]: gap("Selected operational coverage is incomplete.","operations_coverage")
         result["review_requirements"].extend(reviews)
         working["opportunities"].extend(entities)
         result["diagnostics"].append({"code":"OPERATIONS_PLAN","message":json.dumps({"planning_review":review,"opportunities":entities,"actions":actions,
             "steps":trace,"portfolio_total":None,"implementation_authorized":False,"limits":"Candidate registration and proposed actions only. Source assessments, economic applicability and implementation design require review."},sort_keys=True)})
+        if sequence is not None:
+            result["diagnostics"].append({"code":"OPERATIONS_ACTION_SEQUENCE","message":json.dumps(sequence,sort_keys=True)})
         result["status"] = "partial" if result["data_gaps"] else "completed"
     except (ValueError,KeyError,TypeError) as error:
         gap(str(error));result["status"]="blocked"

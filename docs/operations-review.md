@@ -15,3 +15,7 @@ The reviewed working snapshot was based on commit f253efc. SHA-256 hashes below 
 | docs/operations-contract.md | `7873889431b82f0191c7f1851d2c30c7e9421c43caee7e6575186c59f218a70c` |
 
 Validation evidence is recorded separately in ../evaluations/sus13-operations-validation.json. Test success supports the implementation checks and does not substitute for this human decision. Material composition or dependency changes require a new scoped review.
+
+## Subsequent development extension
+
+The optional action-ID/dependency contract was added after the approved snapshot. Approval above remains specific to the original composition and dependency manifest; it does not imply human review of this later extension. The extension is local development under the approved roadmap, preserves legacy replay and all implementation gates, and is documented in operations-contract.md with reproducible evidence in ../evaluations/sus13-action-sequence.json. Specialist/router/release review must include this changed contract.

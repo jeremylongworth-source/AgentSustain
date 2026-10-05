@@ -46,6 +46,46 @@ def operations_fixture():
 
 
 class OperationsTests(unittest.TestCase):
+    def test_cross_domain_action_sequence_retains_unapproved_work(self):
+        state,params=operations_fixture()
+        for opportunity in params["opportunities"]:
+            for index,action in enumerate(opportunity["actions"]):
+                action.update(id=opportunity["domain"]+"-"+str(index),depends_on=[])
+            opportunity["actions"][1]["depends_on"]=[opportunity["domain"]+"-0"]
+        params["opportunities"][0]["actions"][1]["depends_on"].append("materials-0")
+        saved=copy.deepcopy(state);output=run_operations(state,params)
+        report=json.loads(next(d["message"] for d in output["result"]["diagnostics"] if d["code"]=="OPERATIONS_ACTION_SEQUENCE"))
+        order=report["action_ids"]
+        self.assertLess(order.index("materials-0"),order.index("energy-1"))
+        self.assertFalse(report["completion_verified"]);self.assertFalse(report["implementation_authorized"])
+        self.assertEqual(state,saved)
+        self.assertTrue(all(not a["attributes"]["implementation_authorized"] for a in output["proposal"]["state"]["opportunities"]))
+
+    def test_invalid_action_graph_never_registers_candidates(self):
+        def request():
+            state,params=operations_fixture()
+            for opportunity in params["opportunities"]:
+                for index,action in enumerate(opportunity["actions"]):
+                    action.update(id=opportunity["domain"]+"-"+str(index),depends_on=[])
+            return state,params
+        def cycle(p):
+            p["opportunities"][0]["actions"][0]["depends_on"]=["water-0"]
+            p["opportunities"][1]["actions"][0]["depends_on"]=["energy-0"]
+        changes=[lambda p:p["opportunities"][0]["actions"][0].update(depends_on=["unknown"]),
+            lambda p:p["opportunities"][0]["actions"][0].update(depends_on=["energy-0"]),
+            lambda p:p["opportunities"][0]["actions"][0].update(depends_on=["energy-1"]),
+            lambda p:p["opportunities"][0]["actions"][0].update(depends_on=["water-0","water-0"]),
+            lambda p:p["opportunities"][0]["actions"][0].update(id="water-0"),cycle,
+            lambda p:p["opportunities"][0]["actions"][0].pop("depends_on"),
+            lambda p:(p["opportunities"][0]["actions"][0].pop("id"),p["opportunities"][0]["actions"][0].pop("depends_on"))]
+        for change in changes:
+            with self.subTest(change=change):
+                state,params=request();change(params);output=run_operations(state,params)
+                self.assertEqual(output["result"]["status"],"blocked")
+                self.assertEqual(output["proposal"]["state"]["opportunities"],state["opportunities"])
+                self.assertEqual(output["proposal"]["state"]["review_requirements"],state["review_requirements"])
+                self.assertFalse(any(d["code"]=="OPERATIONS_ACTION_SEQUENCE" for d in output["result"]["diagnostics"]))
+
     def test_cross_domain_batch_register_and_proposed_actions(self):
         state,params=operations_fixture();saved=copy.deepcopy(state)
         output=run_operations(state,params);candidate=output["proposal"]["state"]
@@ -101,6 +141,8 @@ class OperationsTests(unittest.TestCase):
         self.assertEqual(run_operations(capture["state"],capture["parameters"]),capture["output"])
         independent=json.loads((ROOT/"evaluations/sus13-independent-operations.json").read_text(encoding="utf-8"))
         self.assertEqual(run_operations(independent["request"]["state"],independent["request"]["parameters"]),independent["output"])
+        sequence=json.loads((ROOT/"evaluations/sus13-action-sequence.json").read_text(encoding="utf-8"))
+        self.assertEqual(run_operations(sequence["state"],sequence["parameters"]),sequence["output"])
         request={"contract_version":"0.1.0","skill":"sustainable-operations","state":capture["state"],"parameters":capture["parameters"]}
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/"request.json";path.write_text(json.dumps(request),encoding="utf-8")

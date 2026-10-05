@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "a927c76",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 264,
+    "duration_seconds": 96.524,
+    "status": "passed"
+  },
+  "skill_validation": "passed",
+  "operations_tests": 11,
+  "scenario": "sus13-action-sequence.json",
+  "checks": [
+    "Exact original and independent-request capture replay",
+    "Exact proposed dependency-plan replay",
+    "Cross-domain dependencies precede proposed work",
+    "Unknown/self/duplicate dependencies and duplicate IDs rejected",
+    "Same-date cycles rejected",
+    "Later prerequisite dates rejected",
+    "Malformed and mixed legacy/identified action formats rejected",
+    "No candidate entities or new review gates registered for invalid plans",
+    "Every action remains proposed and unauthorized"
+  ],
+  "limits": [
+    "Author-led deterministic scenario, not independent plan-quality verification",
+    "Target dates do not establish durations, completion or resource capacity",
+    "Initial human approval does not cover this subsequent contract extension",
+    "Roadmap and release gates remain"
+  ],
+  "sha256": {
+    "scripts/operations_tools.py": "9c26a6dd600fd88e0407a6d592f137e7952bd5867c4d11253cdd37c674909c76",
+    "tests/test_operations.py": "4e6b6aeab52fc969c03dd010e394b0808ed71e7c1aed14668899036cf4cf57ba",
+    "skillsets/sustainable-operations/SKILL.md": "a3bd96dda71f376b8ab746aaa007838db3050188d25878d60117f2a803f31d3a",
+    "docs/operations-contract.md": "522298b0c973e82b83efb299c192eac794da63c2e7113d5c3edcf6817b378d59",
+    "evaluations/sus13-action-sequence.json": "51dfc7367cd36eb021b9867c1d6c62c76f8108ec328b6da9558eed88c9e4e7dd"
+  }
+}

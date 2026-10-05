@@ -1,0 +1,5 @@
+# Proposed cross-domain action sequence
+
+Recorded 2026-10-05. sus13-action-sequence.json contains fictional source state, full request and exact checked proposal. Four domain evidence-gathering actions precede their respective proposed pilots; the energy pilot additionally requires material evidence gathering. All actions remain proposed and implementation_authorized=false. The returned order is declared precedence, with date/ID tie ordering, not priority by economic value or a verified implementation schedule. Existing gaps, periods, source measurements and engineering gates remain.
+
+Adversarial checks reject unknown/self/duplicate dependency IDs, duplicate action IDs, cycles, prerequisite dates after dependent dates and malformed optional fields. Failed registration preserves source analyses without adding opportunity entities or new implementation review gates. Original date-only captures replay unchanged. This author-led scenario establishes deterministic dependency checks, not independently verified plan quality, source authenticity, accepted ownership, actual completion, capacity or public readiness.
