@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "d9e9d6b6193696af8cc8112d926e97465b7b1831",
+  "prior_approved_foundation_revision": "898d790af43a0cc867ab1f81a3519a6da5bbe49d",
+  "scoped_task_contract_review": "pending; prior foundation approval is preserved and not inherited",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 550,
+    "duration_seconds": 303.84,
+    "status": "passed",
+    "includes_repository_architecture_checks": true
+  },
+  "focused_suite": {
+    "command": "python -m unittest tests.test_jurisdiction_tasks tests.test_jurisdiction_subjects tests.test_jurisdictions",
+    "tests": 45,
+    "duration_seconds": 9.025,
+    "status": "passed_before_optional_capture_helper_flag; final full suite includes it"
+  },
+  "file_sha256": {
+    "README.md": "cc111e56a50085a912060bedc9abd1681426c66092b081949a3bd206b95dcaa5",
+    "docs/jurisdiction-model.md": "4f01f2d3c1a58f0f373772aeda2dfeeb0b697faeee74ef5689aad4725a8ccb33",
+    "docs/architecture-review.md": "b616bf1f37fbb92ceeecbf4bd6c9bffa75c5aef96f91762c1e2847b00c5f0bc0",
+    "docs/development-review.md": "fd032a6e6b5b332c376b7d40d6db8ba676f772b5348ece9e7fd1cf08bb0ee61c",
+    "docs/development-status.md": "c9d8307809146cdb2550c07a3be4a7ce667f9aad4e4d92fee338f88041a0269e",
+    "scripts/jurisdiction_tasks.py": "9982ec2d48a129a4ba6e5714ceafe4c4c5dfe6a195578f6a0a0ce6c4f0128c05",
+    "scripts/run_jurisdiction.py": "430786d1cd3330543478c8a2fe1be365f0e144db83849aee7d947939ee0af875",
+    "standards/jurisdictions/fixtures/fictional-tasks-1.json": "400bc5c2a23ac5460aa62f802e41c06f6d1dbdd92d3ad2d433c330136096d594",
+    "tests/test_jurisdiction_tasks.py": "4c376ce1b02741310269daf8143bbb9154a6e2f9261baf60439aacb804af1256",
+    "evaluations/sus18-jurisdiction-tasks.json": "0c003b8d311968dd373be3e12e3efa4ab52eabec9ccfb5590b4d7c8abf1949d4",
+    "evaluations/sus18-jurisdiction-tasks.md": "40dac7e3000f27faeff2aca5e3b522f43b2aa6c66082614dffd0ba4cbd7db111"
+  },
+  "shared_schema_diff_empty": true,
+  "schema_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637"
+  },
+  "historical_sha256": {
+    "evaluations/sus18-jurisdiction-foundation.json": "4e9c082050ba614eaa0565ac814ce32e4a90ce0ac7a9cb2b0fa5b88129dcd9a8",
+    "evaluations/sus18-jurisdiction-subjects.json": "9401d5a1446b50d5ca9ca5e805f4dfd4ae9f8926690e1e83ded98b645d1ad379",
+    "evaluations/sus18-jurisdiction-subjects-validation.json": "b9669dc1cdc3364ccf74501741bdcc2e5959cf1077f66d92be335d943dff8c36",
+    "standards/jurisdictions/fixtures/fictional-subject-1.json": "84f8ac2c36c5c76e8d7d09a6c599f7e1ab742b5780a23e1e3d62d376328e177b",
+    "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395"
+  },
+  "historical_bytes_verified_unchanged": true,
+  "composed_executions": [
+    {
+      "case": "reproduced_subject_screen",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.39654710004106164,
+        "request_sha256": "cc30d2786bf16a04ee4eea3f12c559494cfadefeff435dd58a2d60d97fcec280",
+        "stdout_sha256": "807ccd5615e86e3aa0ee2482c63f31334881d776e73d99c9e367af4ede9ec297",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 3,
+      "review_count": 2
+    },
+    {
+      "case": "separate_tasks_and_history",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.45512599986977875,
+        "request_sha256": "6fd76cfaab053a4e845f60bdf289e81e8c1e5721e6b6a961d86415cfd76e3757",
+        "stdout_sha256": "e742270eda932b546df1e126232a0bc5214785e51333685c6d69f1f1d9dd471b",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 9,
+      "review_count": 3
+    },
+    {
+      "case": "unknown_prior_history_and_source_fit",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.4780053000431508,
+        "request_sha256": "55f720dce2b80c97f373779f9a54fa9116d1cf1bc27bbcb0c795f0a9a29d5c18",
+        "stdout_sha256": "8371e0f650b297879103bfedcb46ccac967bd84a7b36fd786ed3adf3e49bc1ce",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 16,
+      "review_count": 4
+    },
+    {
+      "case": "no_submission_anchor_and_copied_source_instruction",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.5043616001494229,
+        "request_sha256": "e4478dd6e29f7b4c2874a7697b070fb0ffb5734e47fe7d2fbae4f4ca12a541e1",
+        "stdout_sha256": "7b26430790654350f8b01a81f8c3e3f97ca3cf2bdb4117c450f564f9d160af44",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 23,
+      "review_count": 5
+    }
+  ],
+  "legacy_complete_replays": [
+    {
+      "source": "evaluations/sus18-jurisdiction-foundation.json",
+      "case": "supported_fictional_conditions",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.37515889992937446,
+        "request_sha256": "4b7d287f2d944ec2497edac54aa4d14cd3478cc2a3f0ba38c32a0c6de119506c",
+        "stdout_sha256": "bdc4d4d76052dc73602c6f8f265df8066b3e0a16bcebcb54314f32d2728777d2",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "complete_saved_output_equality": true
+    },
+    {
+      "source": "evaluations/sus18-jurisdiction-foundation.json",
+      "case": "threshold_range_and_withheld_exception",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3866460002027452,
+        "request_sha256": "cf12d5e8d9b1e850058b43edc531e146dbe0497021068a1721081810c9cda489",
+        "stdout_sha256": "3cbe826377ee4ef1a0759c6ef864579be3c79e64caa52768ccb31277e5e90b73",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "complete_saved_output_equality": true
+    },
+    {
+      "source": "evaluations/sus18-jurisdiction-foundation.json",
+      "case": "unrelated_primary_source",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3942749002017081,
+        "request_sha256": "d67faa800c85785784f3660be6ef60a66730e47d4daadb2befab0c5ab8064e8b",
+        "stdout_sha256": "f2ce68b5deaa41eb29838f33f4c9a0c0b83198f338a8be8e5572eb5149b5bfa3",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "complete_saved_output_equality": true
+    },
+    {
+      "source": "evaluations/sus18-jurisdiction-subjects.json",
+      "case": "distinct_facilities_year_end_and_cessation",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.38228040002286434,
+        "request_sha256": "2db3bc81dc53b0a66cfb9e554f85b8b97cddeffae7ea1c83ab50bc4bc3a430e7",
+        "stdout_sha256": "4d8a701275c1dfde4274b6a97fa75df6664c0c969d4c67e81d04509677deabd7",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "complete_saved_output_equality": true
+    },
+    {
+      "source": "evaluations/sus18-jurisdiction-subjects.json",
+      "case": "uncertain_threshold_and_observed_through",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.3948008001316339,
+        "request_sha256": "8da264753e4eb3276b5bbdeb3512056ed3a1fc8a681ad4bdadcfed4322e447da",
+        "stdout_sha256": "1abda1caaaf61e0e912ca2c4af49aa4da3d277f846fc005f9079834ae47344c6",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "complete_saved_output_equality": true
+    },
+    {
+      "source": "evaluations/sus18-jurisdiction-subjects.json",
+      "case": "unfit_grouping_and_untrusted_source_note",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.40801310003735125,
+        "request_sha256": "36314a2a49433b42d6030843b0d01ee78f81db501596debd27224153514717ee",
+        "stdout_sha256": "83495fb0b719a50c07e02657c4229ce23a5736c5bb17058726e5e328e0c2730b",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true
+      },
+      "complete_saved_output_equality": true
+    }
+  ],
+  "exact_sequential_state_handoff": true,
+  "historical_records_and_obligations_preserved": true,
+  "evaluation_scope": "Author-led fictional task composition and complete historical helper/CLI replay; not new independent reading or real Canadian task implementation.",
+  "limits": [
+    "No actual regulation, emission factor, GWP or regulated emission quantity added.",
+    "Fictional actual-submission retention anchor is not the researched GHGRP notice-required submission anchor.",
+    "Declared source/year/operator attribution and observation fitness do not authenticate filing, statutory grouping or legal responsibility.",
+    "Real primary-source task adoption, regulated methods, broader history and Canadian coverage remain open.",
+    "Independent raw-source and organization-level evaluation, professional and scoped architecture/development reviews remain open.",
+    "No result review resolved, external action authorized, roadmap wave closed or v1 readiness established."
+  ]
+}
