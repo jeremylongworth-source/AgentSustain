@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "ed0b9d1",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 492,
+    "duration_seconds": 284.547,
+    "status": "passed",
+    "coverage": "Repository architecture, domain, proposal, CLI and saved-artifact regression checks; not full domain or organization readiness."
+  },
+  "focused_resilience_suite": {
+    "command": "python -m unittest tests.test_climate_resilience -v",
+    "tests": 9,
+    "duration_seconds": 53.388,
+    "status": "passed"
+  },
+  "development_test_history": [
+    {
+      "tests": 7,
+      "duration_seconds": 33.658,
+      "status": "failed",
+      "failures": 2,
+      "errors": 1,
+      "cause": "Wrong adaptation option ID in new test fixture."
+    },
+    {
+      "tests": 7,
+      "duration_seconds": 41.533,
+      "status": "failed",
+      "errors": 1,
+      "cause": "Missing contract_version in new CLI test envelope."
+    },
+    {
+      "tests": 7,
+      "duration_seconds": 41.48,
+      "status": "passed",
+      "scope": "After both fixture corrections, before two additional adversarial tests."
+    }
+  ],
+  "skill_validation": {
+    "develop-climate-resilience-plan": "quick_validate.py passed"
+  },
+  "parent_verification": {
+    "original_bytes_verified": true,
+    "original_historical_state_preserved": true,
+    "executions": [
+      {
+        "capture": "author",
+        "status": "partial",
+        "dependency_layers": [
+          [
+            "investigate"
+          ],
+          [
+            "design-review"
+          ]
+        ],
+        "unaddressed_entry_ids": [
+          "entry-2",
+          "entry-3"
+        ],
+        "result_gaps": 73,
+        "result_reviews": 14,
+        "exit_code": 0,
+        "runtime_seconds": 0.67,
+        "request_sha256": "1a802e3ebd9e388eedb36c4c074b23d26b270590acb5d6d70fc9e834dda37b17",
+        "request_bytes_preserved": true,
+        "full_helper_and_cli_equal": true,
+        "historical_state_preserved": true,
+        "stderr": ""
+      },
+      {
+        "capture": "independent",
+        "status": "partial",
+        "dependency_layers": [
+          [
+            "investigate"
+          ],
+          [
+            "design-review"
+          ]
+        ],
+        "unaddressed_entry_ids": [
+          "entry-2",
+          "entry-3"
+        ],
+        "result_gaps": 84,
+        "result_reviews": 14,
+        "exit_code": 0,
+        "runtime_seconds": 0.676,
+        "request_sha256": "f2cf31b8c6e392a5d135724179571980227d6b63e3e0f18c518ab3db1d2a8ef4",
+        "request_bytes_preserved": true,
+        "full_helper_and_cli_equal": true,
+        "historical_state_preserved": true,
+        "stderr": ""
+      }
+    ],
+    "original_reviewed_request_bytes_verified": true,
+    "original_reviewed_request_sha256": "8bf29094809fbfdf882e9bbe6c825b419196e2d553c3456d8beab621ef9cdb9d",
+    "complete_upstream_snapshots_unchanged_between_cases": true,
+    "all_action_and_plan_authorization_verification_flags_false": true
+  },
+  "original_input_sha256": {
+    "raw-sources.json": "35ce816b84d596ee97fde9cc3e545332ef44c2030cf5da29597a0afd7635a4a0",
+    "draft-request.json": "3a8ff4fbd1a28049118579dc1012ff03605c400f361500a9124b5bc5cedf8d71"
+  },
+  "known_answer_checks": [
+    "Complete source-reproduced priority and adaptation snapshots preserve original scopes/scenarios/horizons and R2/R3 uncertainty.",
+    "Two owned proposals yield investigate then design-review dependency layers without priority, feasibility or action authority.",
+    "Entry-4 remains unassessed; entry-0/1 overlap unchanged; entries 2/3 remain untreated.",
+    "Original option dates/prerequisites, unknown resources, unmet engineering and absent monitoring baseline/trigger remain unresolved.",
+    "No new metrics; all plan/action authority, acceptance, completion, effectiveness and resilience flags false."
+  ],
+  "adversarial_checks": [
+    "Exact adaptation parent physical-result/record matching and non-investigation physical-option support required.",
+    "Wrong-family/option/reference/context/scope/evidence and duplicate records rejected.",
+    "Dependency cycles/self/unknown links, known timing overlap and reversed/future source dates rejected.",
+    "Unknown dates and missing original adaptation prerequisite links expose review gaps rather than feasible schedule.",
+    "Unfit source/context/owner support preserves unverified proposals; invalid resource statuses/numeric trigger assumptions and duplicate monitoring IDs rejected.",
+    "Historical source-lineage tampering and missing emission factors block; original obligations preserved."
+  ],
+  "independent_result": {
+    "status": "partial",
+    "total_gaps": 84,
+    "new_gaps": 28,
+    "review_requirements": 14,
+    "new_metrics": 0,
+    "actions": "proposed_pending_review",
+    "decisions": "Unsupported consent/funding/completion/effectiveness removed; dates, resources and monitoring basis remain unknown; entry/adaptation context fitness withheld; affected-party/runoff concerns retained."
+  },
+  "limitations": [
+    "A single fictional source-reading case does not establish agent reliability or source authentication.",
+    "Initial named-workflow coverage does not close SUS-16, broader physical/transition/prioritization/resilience methods or organization evaluation.",
+    "Dependency layers and source observations do not establish schedule feasibility, sufficient capacity/funding, adopted assignments or implementation authority.",
+    "No specialist model, calibrated probability/loss, effective capacity, accepted residual risk, resilience or safety is established.",
+    "Professional, source-specific, architecture/specialist/router/release and licensing gates remain applicable; no publication authorization."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "207db7f78a77478188aa50e2c9b8602c69a7a9be1da0f55eaeb9ec2d942a531c",
+    "scripts/climate_resilience.py": "7434c064aaf4366d6e5b3d754c20c711dd802445f0bf44f49ed105c07ce9fb58",
+    "tests/test_climate_resilience.py": "63e85083e00f24dfd24fa8fa00b45e12748c3768f4e64a9b87d1b32665af2346",
+    "skills/climate-risk/develop-climate-resilience-plan/SKILL.md": "c5221b6060645bee313a820f5f0bb3e7125e8f6b292187eef104a6d20fb3e818",
+    "docs/climate-risk-contract.md": "b03426311882a58fd940628b7f21f0547c4c2b5cb7408e47233977c6ed87cba3",
+    "evaluations/sus16-climate-resilience.json": "4c394ebdaf39a455b18914d5319d533867a239e9f44d5ac6f23a7e171ad1413a",
+    "evaluations/sus16-independent-climate-resilience.json": "b142815b32a3ff4679b97cf3b42054e7279668f44113d9431cc4befe3715104f"
+  }
+}
