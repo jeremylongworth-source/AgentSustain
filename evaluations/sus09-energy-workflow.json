@@ -1,0 +1,2123 @@
+{
+  "id": "SUS09-energy-01",
+  "date": "2026-10-04",
+  "base_revision": "3398c89",
+  "evaluation_type": "Four deterministic helper calls plus three author-led incomplete-record assessments; no independent agent evaluation.",
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "second-meter-evidence",
+        "source": {
+          "locator": "fixture:second-meter",
+          "title": "Fictional separate meter",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "MWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "production-evidence",
+        "source": {
+          "locator": "fixture:production",
+          "title": "Fictional same-period production",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-evidence",
+        "source": {
+          "locator": "fixture:scenario",
+          "title": "Fictional projected total energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "low",
+          "completeness": "partial",
+          "fitness_notes": "Supplied fictional projection; not calibrated or validated against equipment/operating data."
+        },
+        "assumption": "Fictional modelled operating scenario; no realized savings.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "second-meter-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "second-meter",
+            "name": "Fictional separate meter",
+            "value": 0.5,
+            "unit": "MWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "second-meter-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "second-meter-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "production-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "production",
+            "name": "Fictional same-period production",
+            "value": 300,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "production-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "production-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "production-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario",
+            "name": "Fictional projected total energy",
+            "value": 1200,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional modelled operating scenario; no realized savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [
+      "Fictional modelled operating scenario; no realized savings."
+    ],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "steps": [
+    {
+      "skill": "build-energy-baseline",
+      "parameters": {
+        "metric_ids": [
+          "metric-001",
+          "second-meter"
+        ],
+        "coverage_review": {
+          "confirmed": true,
+          "basis": "delivered_final_energy",
+          "carrier_map": {
+            "metric-001": "electricity",
+            "second-meter": "electricity"
+          },
+          "measurement_boundary": "Two fictional independent meter feeds.",
+          "nonoverlap_assessment": "Separate metered loads, not total plus submeters.",
+          "representativeness": "Full fictional reporting year; no extrapolation.",
+          "rationale": "Fictional coverage assessment only.",
+          "evidence_ids": [
+            "ev-001",
+            "second-meter-evidence"
+          ]
+        },
+        "result_id": "workflow-energy-baseline"
+      },
+      "execution_type": "deterministic helper",
+      "result": {
+        "id": "workflow-energy-baseline",
+        "skill": "build-energy-baseline",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-energy-baseline-energy",
+            "name": "Delivered final-energy baseline",
+            "value": 1500.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping source quantities converted to target energy unit",
+              "inputs": [
+                "metric-001",
+                "second-meter"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"limits\": \"Source coverage/representativeness is supplied, not authenticated; not weather or production normalized.\", \"metric_ids\": [\"metric-001\", \"second-meter\"], \"target_unit\": \"kWh\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"metric_ids\": [\"metric-001\", \"second-meter\"], \"result_id\": \"workflow-energy-baseline\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      "proposal_reason": "Compute evidenced delivered-energy analysis without verification or state writes"
+    },
+    {
+      "skill": "calculate-energy-intensity",
+      "parameters": {
+        "energy_id": "workflow-energy-baseline-energy",
+        "denominator_id": "production",
+        "denominator_review": {
+          "confirmed": true,
+          "metric_id": "production",
+          "definition": "Fictional produced units in the same reporting year.",
+          "unit": "count",
+          "evidence_ids": [
+            "production-evidence"
+          ],
+          "rationale": "Explicit fictional production denominator."
+        },
+        "result_id": "workflow-intensity"
+      },
+      "execution_type": "deterministic helper",
+      "result": {
+        "id": "workflow-intensity",
+        "skill": "calculate-energy-intensity",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-intensity-intensity",
+            "name": "Delivered-energy intensity",
+            "value": 5.0,
+            "unit": "kWh/count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "production-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Energy in kWh / evidenced positive activity denominator",
+              "inputs": [
+                "workflow-energy-baseline-energy",
+                "production"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "production-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"denominator_id\": \"production\", \"denominator_review\": {\"confirmed\": true, \"definition\": \"Fictional produced units in the same reporting year.\", \"evidence_ids\": [\"production-evidence\"], \"metric_id\": \"production\", \"rationale\": \"Explicit fictional production denominator.\", \"unit\": \"count\"}, \"energy_id\": \"workflow-energy-baseline-energy\", \"result_id\": \"workflow-intensity\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      "proposal_reason": "Compute evidenced delivered-energy analysis without verification or state writes"
+    },
+    {
+      "skill": "detect-energy-hotspots",
+      "parameters": {
+        "baseline_result_id": "workflow-energy-baseline",
+        "coverage_review": {
+          "confirmed": true,
+          "baseline_result_id": "workflow-energy-baseline",
+          "evidence_ids": [
+            "ev-001",
+            "second-meter-evidence"
+          ],
+          "rationale": "Independent fictional meter feeds, not main/submeter overlap."
+        },
+        "result_id": "workflow-energy-hotspots"
+      },
+      "execution_type": "deterministic helper",
+      "result": {
+        "id": "workflow-energy-hotspots",
+        "skill": "detect-energy-hotspots",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-energy-hotspots-rank-1-energy",
+            "name": "Rank 1: Recorded electricity",
+            "value": 1000.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected nonoverlapping baseline component converted to kWh",
+              "inputs": [
+                "metric-001"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-hotspots-rank-1-share",
+            "name": "Rank 1: selected baseline share",
+            "value": 66.66666666666667,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Component energy / selected baseline energy * 100",
+              "inputs": [
+                "metric-001",
+                "workflow-energy-baseline-energy"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-hotspots-rank-2-energy",
+            "name": "Rank 2: Fictional separate meter",
+            "value": 500.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected nonoverlapping baseline component converted to kWh",
+              "inputs": [
+                "second-meter"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-hotspots-rank-2-share",
+            "name": "Rank 2: selected baseline share",
+            "value": 33.333333333333336,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Component energy / selected baseline energy * 100",
+              "inputs": [
+                "second-meter",
+                "workflow-energy-baseline-energy"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_HOTSPOTS",
+            "message": "{\"baseline_result_id\": \"workflow-energy-baseline\", \"denominator_kWh\": 1500.0, \"limits\": \"Shares of selected energy coverage; not efficiency or emissions impact.\", \"ranking\": [{\"kWh\": 1000.0, \"metric_id\": \"metric-001\", \"rank\": 1, \"share_percent\": 66.66666666666667}, {\"kWh\": 500.0, \"metric_id\": \"second-meter\", \"rank\": 2, \"share_percent\": 33.333333333333336}]}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"baseline_result_id\": \"workflow-energy-baseline\", \"coverage_review\": {\"baseline_result_id\": \"workflow-energy-baseline\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"rationale\": \"Independent fictional meter feeds, not main/submeter overlap.\"}, \"result_id\": \"workflow-energy-hotspots\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      "proposal_reason": "Compute evidenced delivered-energy analysis without verification or state writes"
+    },
+    {
+      "skill": "estimate-energy-savings",
+      "parameters": {
+        "baseline_id": "workflow-energy-baseline-energy",
+        "scenario_id": "scenario",
+        "comparison_review": {
+          "confirmed": true,
+          "baseline_id": "workflow-energy-baseline-energy",
+          "scenario_id": "scenario",
+          "analysis_type": "projection",
+          "comparison_basis": "same_conditions",
+          "baseline_conditions": "Fictional full-year delivered-energy coverage.",
+          "scenario_conditions": "Supplied hypothetical same-output/year scenario only.",
+          "adjustment_method": "No adjustment derived by helper; model applicability must be separately assessed.",
+          "evidence_ids": [
+            "scenario-evidence"
+          ],
+          "rationale": "Conditional arithmetic on supplied fictional model quantities; no engineering or M&V conclusion."
+        },
+        "result_id": "workflow-energy-savings"
+      },
+      "execution_type": "deterministic helper",
+      "result": {
+        "id": "workflow-energy-savings",
+        "skill": "estimate-energy-savings",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-energy-savings-savings",
+            "name": "Projected energy savings",
+            "value": 300.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Comparable/adjusted baseline energy - scenario/reporting energy in kWh",
+              "inputs": [
+                "workflow-energy-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-savings-savings-percent",
+            "name": "Energy difference relative to baseline",
+            "value": 20.0,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "(baseline - scenario) / baseline * 100",
+              "inputs": [
+                "workflow-energy-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "scenario-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_SAVINGS_BASIS",
+            "message": "{\"adjustment_method\": \"No adjustment derived by helper; model applicability must be separately assessed.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional full-year delivered-energy coverage.\", \"baseline_id\": \"workflow-energy-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional arithmetic on supplied fictional model quantities; no engineering or M&V conclusion.\", \"scenario_conditions\": \"Supplied hypothetical same-output/year scenario only.\", \"scenario_id\": \"scenario\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"baseline_id\": \"workflow-energy-baseline-energy\", \"comparison_review\": {\"adjustment_method\": \"No adjustment derived by helper; model applicability must be separately assessed.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional full-year delivered-energy coverage.\", \"baseline_id\": \"workflow-energy-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional arithmetic on supplied fictional model quantities; no engineering or M&V conclusion.\", \"scenario_conditions\": \"Supplied hypothetical same-output/year scenario only.\", \"scenario_id\": \"scenario\"}, \"result_id\": \"workflow-energy-savings\", \"scenario_id\": \"scenario\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      "proposal_reason": "Compute evidenced delivered-energy analysis without verification or state writes"
+    },
+    {
+      "skill": "analyze-energy-usage",
+      "parameters": {
+        "inputs": "Current energy baseline, intensity, hotspots and supplied scenario; no equipment/weather/schedule/project records."
+      },
+      "execution_type": "author-led reasoning, not independent agent evaluation",
+      "result": {
+        "id": "workflow-analyze-energy-usage",
+        "skill": "analyze-energy-usage",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence",
+          "production-evidence",
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "energy-driver-gap",
+            "field": "operating drivers",
+            "reason": "Only annual meter and production totals are supplied.",
+            "impact": "No normalized performance or causal efficiency conclusion.",
+            "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "OPERATING_DRIVERS_REQUIRED",
+            "message": "The first feed has the largest selected contribution; intensity is supported by workflow-intensity-intensity. No interval, weather, schedule or equipment records establish a causal efficiency finding. The scenario is low-reliability uncalibrated tier 5 evidence, so projected difference is conditional."
+          }
+        ],
+        "next_actions": [
+          "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+        ]
+      },
+      "proposal_reason": "Author-led energy interpretation of incomplete fictional operating records"
+    },
+    {
+      "skill": "identify-efficiency-opportunities",
+      "parameters": {
+        "inputs": "Current energy baseline, intensity, hotspots and supplied scenario; no equipment/weather/schedule/project records."
+      },
+      "execution_type": "author-led reasoning, not independent agent evaluation",
+      "result": {
+        "id": "workflow-identify-efficiency-opportunities",
+        "skill": "identify-efficiency-opportunities",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence",
+          "production-evidence",
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "energy-driver-gap",
+            "field": "operating drivers",
+            "reason": "Only annual meter and production totals are supplied.",
+            "impact": "No normalized performance or causal efficiency conclusion.",
+            "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+          },
+          {
+            "id": "energy-mechanism-gap",
+            "field": "equipment/project mechanism",
+            "reason": "No asset or control observations support a specific efficiency measure.",
+            "impact": "No defensible quantified efficiency candidate.",
+            "remedy": "Inspect affected equipment, load drivers, operating constraints and project interactions."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "OPPORTUNITY_MECHANISM_REQUIRED",
+            "message": "Investigate the largest metered feed, but do not propose a specific retrofit or savings rate without equipment/load/schedule evidence. The whole-baseline supplied scenario is not evidence that a particular measure achieves its projected difference."
+          }
+        ],
+        "next_actions": [
+          "Inspect affected equipment, load drivers, operating constraints and project interactions."
+        ]
+      },
+      "proposal_reason": "Author-led energy interpretation of incomplete fictional operating records"
+    },
+    {
+      "skill": "prioritize-energy-projects",
+      "parameters": {
+        "inputs": "Current energy baseline, intensity, hotspots and supplied scenario; no equipment/weather/schedule/project records."
+      },
+      "execution_type": "author-led reasoning, not independent agent evaluation",
+      "result": {
+        "id": "workflow-prioritize-energy-projects",
+        "skill": "prioritize-energy-projects",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence",
+          "production-evidence",
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "energy-driver-gap",
+            "field": "operating drivers",
+            "reason": "Only annual meter and production totals are supplied.",
+            "impact": "No normalized performance or causal efficiency conclusion.",
+            "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+          },
+          {
+            "id": "energy-mechanism-gap",
+            "field": "equipment/project mechanism",
+            "reason": "No asset or control observations support a specific efficiency measure.",
+            "impact": "No defensible quantified efficiency candidate.",
+            "remedy": "Inspect affected equipment, load drivers, operating constraints and project interactions."
+          },
+          {
+            "id": "energy-project-gap",
+            "field": "candidate projects and decision basis",
+            "reason": "Implementation candidates and criteria are absent.",
+            "impact": "Project priority cannot be established.",
+            "remedy": "Supply evidence-backed candidate mechanisms, feasibility, dependencies, owner and decision criteria."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "PROJECT_CRITERIA_REQUIRED",
+            "message": "No evidenced implementation candidates, readiness constraints, owners or decision criteria are supplied. Do not rank investments or fabricate weights/returns from meter contribution alone."
+          }
+        ],
+        "next_actions": [
+          "Supply evidence-backed candidate mechanisms, feasibility, dependencies, owner and decision criteria."
+        ]
+      },
+      "proposal_reason": "Author-led energy interpretation of incomplete fictional operating records"
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 7,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "second-meter-evidence",
+        "source": {
+          "locator": "fixture:second-meter",
+          "title": "Fictional separate meter",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "MWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "production-evidence",
+        "source": {
+          "locator": "fixture:production",
+          "title": "Fictional same-period production",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-evidence",
+        "source": {
+          "locator": "fixture:scenario",
+          "title": "Fictional projected total energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "low",
+          "completeness": "partial",
+          "fitness_notes": "Supplied fictional projection; not calibrated or validated against equipment/operating data."
+        },
+        "assumption": "Fictional modelled operating scenario; no realized savings.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "second-meter-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "second-meter",
+            "name": "Fictional separate meter",
+            "value": 0.5,
+            "unit": "MWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "second-meter-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "second-meter-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "production-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "production",
+            "name": "Fictional same-period production",
+            "value": 300,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "production-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "production-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "production-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario",
+            "name": "Fictional projected total energy",
+            "value": 1200,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional modelled operating scenario; no realized savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-energy-baseline",
+        "skill": "build-energy-baseline",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-energy-baseline-energy",
+            "name": "Delivered final-energy baseline",
+            "value": 1500.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping source quantities converted to target energy unit",
+              "inputs": [
+                "metric-001",
+                "second-meter"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"limits\": \"Source coverage/representativeness is supplied, not authenticated; not weather or production normalized.\", \"metric_ids\": [\"metric-001\", \"second-meter\"], \"target_unit\": \"kWh\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"metric_ids\": [\"metric-001\", \"second-meter\"], \"result_id\": \"workflow-energy-baseline\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-intensity",
+        "skill": "calculate-energy-intensity",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-intensity-intensity",
+            "name": "Delivered-energy intensity",
+            "value": 5.0,
+            "unit": "kWh/count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "production-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Energy in kWh / evidenced positive activity denominator",
+              "inputs": [
+                "workflow-energy-baseline-energy",
+                "production"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "production-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"denominator_id\": \"production\", \"denominator_review\": {\"confirmed\": true, \"definition\": \"Fictional produced units in the same reporting year.\", \"evidence_ids\": [\"production-evidence\"], \"metric_id\": \"production\", \"rationale\": \"Explicit fictional production denominator.\", \"unit\": \"count\"}, \"energy_id\": \"workflow-energy-baseline-energy\", \"result_id\": \"workflow-intensity\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-energy-hotspots",
+        "skill": "detect-energy-hotspots",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-energy-hotspots-rank-1-energy",
+            "name": "Rank 1: Recorded electricity",
+            "value": 1000.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected nonoverlapping baseline component converted to kWh",
+              "inputs": [
+                "metric-001"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-hotspots-rank-1-share",
+            "name": "Rank 1: selected baseline share",
+            "value": 66.66666666666667,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Component energy / selected baseline energy * 100",
+              "inputs": [
+                "metric-001",
+                "workflow-energy-baseline-energy"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-hotspots-rank-2-energy",
+            "name": "Rank 2: Fictional separate meter",
+            "value": 500.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected nonoverlapping baseline component converted to kWh",
+              "inputs": [
+                "second-meter"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-hotspots-rank-2-share",
+            "name": "Rank 2: selected baseline share",
+            "value": 33.333333333333336,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Component energy / selected baseline energy * 100",
+              "inputs": [
+                "second-meter",
+                "workflow-energy-baseline-energy"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_HOTSPOTS",
+            "message": "{\"baseline_result_id\": \"workflow-energy-baseline\", \"denominator_kWh\": 1500.0, \"limits\": \"Shares of selected energy coverage; not efficiency or emissions impact.\", \"ranking\": [{\"kWh\": 1000.0, \"metric_id\": \"metric-001\", \"rank\": 1, \"share_percent\": 66.66666666666667}, {\"kWh\": 500.0, \"metric_id\": \"second-meter\", \"rank\": 2, \"share_percent\": 33.333333333333336}]}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"baseline_result_id\": \"workflow-energy-baseline\", \"coverage_review\": {\"baseline_result_id\": \"workflow-energy-baseline\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"rationale\": \"Independent fictional meter feeds, not main/submeter overlap.\"}, \"result_id\": \"workflow-energy-hotspots\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-energy-savings",
+        "skill": "estimate-energy-savings",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-energy-savings-savings",
+            "name": "Projected energy savings",
+            "value": 300.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Comparable/adjusted baseline energy - scenario/reporting energy in kWh",
+              "inputs": [
+                "workflow-energy-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-energy-savings-savings-percent",
+            "name": "Energy difference relative to baseline",
+            "value": 20.0,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "(baseline - scenario) / baseline * 100",
+              "inputs": [
+                "workflow-energy-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "scenario-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_SAVINGS_BASIS",
+            "message": "{\"adjustment_method\": \"No adjustment derived by helper; model applicability must be separately assessed.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional full-year delivered-energy coverage.\", \"baseline_id\": \"workflow-energy-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional arithmetic on supplied fictional model quantities; no engineering or M&V conclusion.\", \"scenario_conditions\": \"Supplied hypothetical same-output/year scenario only.\", \"scenario_id\": \"scenario\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"baseline_id\": \"workflow-energy-baseline-energy\", \"comparison_review\": {\"adjustment_method\": \"No adjustment derived by helper; model applicability must be separately assessed.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional full-year delivered-energy coverage.\", \"baseline_id\": \"workflow-energy-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional arithmetic on supplied fictional model quantities; no engineering or M&V conclusion.\", \"scenario_conditions\": \"Supplied hypothetical same-output/year scenario only.\", \"scenario_id\": \"scenario\"}, \"result_id\": \"workflow-energy-savings\", \"scenario_id\": \"scenario\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-analyze-energy-usage",
+        "skill": "analyze-energy-usage",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence",
+          "production-evidence",
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "energy-driver-gap",
+            "field": "operating drivers",
+            "reason": "Only annual meter and production totals are supplied.",
+            "impact": "No normalized performance or causal efficiency conclusion.",
+            "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "OPERATING_DRIVERS_REQUIRED",
+            "message": "The first feed has the largest selected contribution; intensity is supported by workflow-intensity-intensity. No interval, weather, schedule or equipment records establish a causal efficiency finding. The scenario is low-reliability uncalibrated tier 5 evidence, so projected difference is conditional."
+          }
+        ],
+        "next_actions": [
+          "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+        ]
+      },
+      {
+        "id": "workflow-identify-efficiency-opportunities",
+        "skill": "identify-efficiency-opportunities",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence",
+          "production-evidence",
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "energy-driver-gap",
+            "field": "operating drivers",
+            "reason": "Only annual meter and production totals are supplied.",
+            "impact": "No normalized performance or causal efficiency conclusion.",
+            "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+          },
+          {
+            "id": "energy-mechanism-gap",
+            "field": "equipment/project mechanism",
+            "reason": "No asset or control observations support a specific efficiency measure.",
+            "impact": "No defensible quantified efficiency candidate.",
+            "remedy": "Inspect affected equipment, load drivers, operating constraints and project interactions."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "OPPORTUNITY_MECHANISM_REQUIRED",
+            "message": "Investigate the largest metered feed, but do not propose a specific retrofit or savings rate without equipment/load/schedule evidence. The whole-baseline supplied scenario is not evidence that a particular measure achieves its projected difference."
+          }
+        ],
+        "next_actions": [
+          "Inspect affected equipment, load drivers, operating constraints and project interactions."
+        ]
+      },
+      {
+        "id": "workflow-prioritize-energy-projects",
+        "skill": "prioritize-energy-projects",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence",
+          "production-evidence",
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "energy-driver-gap",
+            "field": "operating drivers",
+            "reason": "Only annual meter and production totals are supplied.",
+            "impact": "No normalized performance or causal efficiency conclusion.",
+            "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+          },
+          {
+            "id": "energy-mechanism-gap",
+            "field": "equipment/project mechanism",
+            "reason": "No asset or control observations support a specific efficiency measure.",
+            "impact": "No defensible quantified efficiency candidate.",
+            "remedy": "Inspect affected equipment, load drivers, operating constraints and project interactions."
+          },
+          {
+            "id": "energy-project-gap",
+            "field": "candidate projects and decision basis",
+            "reason": "Implementation candidates and criteria are absent.",
+            "impact": "Project priority cannot be established.",
+            "remedy": "Supply evidence-backed candidate mechanisms, feasibility, dependencies, owner and decision criteria."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "PROJECT_CRITERIA_REQUIRED",
+            "message": "No evidenced implementation candidates, readiness constraints, owners or decision criteria are supplied. Do not rank investments or fabricate weights/returns from meter contribution alone."
+          }
+        ],
+        "next_actions": [
+          "Supply evidence-backed candidate mechanisms, feasibility, dependencies, owner and decision criteria."
+        ]
+      }
+    ],
+    "assumptions": [
+      "Fictional modelled operating scenario; no realized savings.",
+      "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+    ],
+    "data_gaps": [
+      {
+        "id": "energy-driver-gap",
+        "field": "operating drivers",
+        "reason": "Only annual meter and production totals are supplied.",
+        "impact": "No normalized performance or causal efficiency conclusion.",
+        "remedy": "Obtain interval data, equipment mapping, schedules and relevant weather/service drivers."
+      },
+      {
+        "id": "energy-mechanism-gap",
+        "field": "equipment/project mechanism",
+        "reason": "No asset or control observations support a specific efficiency measure.",
+        "impact": "No defensible quantified efficiency candidate.",
+        "remedy": "Inspect affected equipment, load drivers, operating constraints and project interactions."
+      },
+      {
+        "id": "energy-project-gap",
+        "field": "candidate projects and decision basis",
+        "reason": "Implementation candidates and criteria are absent.",
+        "impact": "Project priority cannot be established.",
+        "remedy": "Supply evidence-backed candidate mechanisms, feasibility, dependencies, owner and decision criteria."
+      }
+    ],
+    "review_requirements": [],
+    "energy": [
+      "res-001",
+      "workflow-energy-baseline",
+      "workflow-intensity",
+      "workflow-energy-hotspots",
+      "workflow-energy-savings"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  }
+}

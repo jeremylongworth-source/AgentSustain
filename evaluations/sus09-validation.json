@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "3398c89",
+  "checks": {
+    "unittest": {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "passed": 129,
+      "energy_helper_tests": 11,
+      "energy_workflow_tests": 1
+    },
+    "skill_packaging": {
+      "passed": 7,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "saved_case_reruns": {
+      "baseline_kWh": 1500,
+      "intensity_kWh_per_count": 5,
+      "projected_savings_kWh": 300,
+      "projected_savings_percent": 20
+    }
+  },
+  "limitations": [
+    "Fictional source and review facts; supplied scenario is not a calibrated engineering model.",
+    "Three interpretation/project outputs are author-led incomplete-information cases, not independent agent evaluations.",
+    "Positive operational/equipment/project scenarios and engineering methods remain.",
+    "No verified savings, engineering approval or v1 readiness established."
+  ],
+  "sha256": {
+    "scripts/energy_tools.py": "00de6ca8050d210b0698808d70d5367cb773420b481ad4e7ba0fc8278eca40ff",
+    "scripts/run_energy.py": "8e51521f8993566ffe32f5497e0a9988708a0a26dcd4c07def291d931c51b2ef",
+    "tests/test_energy.py": "7bcf604e26568cc100e804692f84850f85c3e6d2263a533c02bb81b95f141af4",
+    "tests/test_sus09_workflow.py": "02631197e5ba1477f3a722b230dd033a12b42d56d3472c86506fd2a128f6abb3",
+    "docs/energy-contract.md": "e1a425c3b2aa9c4925ba9b4170a6962b7afc9174795458f194bc2a169eb7d1f8",
+    "evaluations/sus09-energy-workflow.json": "d40d213a91e8b28e135b58f82ce84516ac52af59088ff5f4ccd16196da8d6115",
+    "skills/energy/analyze-energy-usage/SKILL.md": "3cf5facf20cd62ace8b31d849762fdc3604ac9ead74351de105a3cb83ac72a20",
+    "skills/energy/build-energy-baseline/SKILL.md": "a2463cf9a2611eaebec47cb18b3e2c82d8eab1d72c596e377cfcc8b1a756b979",
+    "skills/energy/calculate-energy-intensity/SKILL.md": "a85944193abbb6b31aafefc3bd14d797e8ac99d73fa49c39e0979922f1159c53",
+    "skills/energy/detect-energy-hotspots/SKILL.md": "3e6ee854cd81eba64852925e1f8205f6256804653b0638cad965023074b68450",
+    "skills/energy/estimate-energy-savings/SKILL.md": "f592e3dfa832ffe1a5a203d1babd186472d951f89f1fc20a5bbc8210a6ed367c",
+    "skills/energy/identify-efficiency-opportunities/SKILL.md": "cbb5458f42e9f3aa8ff05a87ef76f34a9b211c4c5f2c1e69337f1fab874db282",
+    "skills/energy/prioritize-energy-projects/SKILL.md": "c45d685818737990e853d0967dd0533fe2e0557705ffaf18370f6c4766ece942"
+  }
+}
