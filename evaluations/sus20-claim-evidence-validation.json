@@ -1,0 +1,296 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "e72514779bae9be9b6812cd2b4b91cbfc16f2e97",
+  "prior_approved_foundation_revision": "898d790af43a0cc867ab1f81a3519a6da5bbe49d",
+  "scoped_claims_contract_approval": "pending; new dossier/classification/criterion/interpretation interface does not inherit prior owner approval",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 610,
+    "duration_seconds": 367.543,
+    "status": "passed",
+    "includes_repository_architecture_validation": true
+  },
+  "focused_suite": {
+    "command": "python -m unittest tests.test_claims_review",
+    "tests": 13,
+    "duration_seconds": 27.254,
+    "status": "passed"
+  },
+  "earlier_focused_suite": {
+    "tests": 10,
+    "duration_seconds": 23.982,
+    "status": "passed_before_additional_attribution_incomplete_ledger_and_source_date_guards"
+  },
+  "file_sha256": {
+    "README.md": "ffa5a2dc29912b4358eb58da97800e8a234dcce5e0c1ad0318ff4c0e81e54c46",
+    "docs/claim-evidence-method.md": "b8da0c88a72916d0f55e0b5d2ed30f456f0edab749973d612bd0fa48ee340e0a",
+    "docs/architecture-review.md": "c4acffb8d8d4123cf30c5f5a3d5dc7de948756444a3c36cb1ce790e3366c8d14",
+    "docs/development-review.md": "340eab6e292f468ea68c97fd022baba7c4ffc4e9e14aa5c25f9d75c67da66437",
+    "docs/development-status.md": "ab5f226e878ce874537b93ca9e23ea3ead2035ccc3ddb5b9c753f87b0f0c4410",
+    "scripts/claims_review.py": "1a29eb1e3505ca7702e5d534d1805e0480f75704d779847dad6c70b04fb8011b",
+    "scripts/run_claims.py": "e30efb45c096b2f4a6c7f4bdc30c4ea8452331cd535a2e28e3f4f318dd9b58e2",
+    "tests/test_claims_review.py": "525eb9f2c87c0c3f0715f4be70be63ea962c2d203fafc5642ec78942adeeb037",
+    "evaluations/sus20-claim-evidence.json": "74edb8b6b46766b195d491d3bf44f85af81cb1a0b107c1878d57cfcd81133f7d",
+    "evaluations/sus20-claim-evidence.md": "90154b4d2f1c6f88d5b720819251375ed72d9b412f72e47aad10234a8a1b95e4"
+  },
+  "shared_schema_and_existing_calculation_diff_empty": true,
+  "schema_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637"
+  },
+  "existing_calculation_sha256": {
+    "scripts/gas_mass.py": "85e8e9c8bc6d4a5c85a8d10fc8e53a8d312ca5c895768c76148285caa38c1dcc",
+    "scripts/gas_conversion.py": "a442f8885aceb189c75e1029591eb28857fe8d756f47d7f1875095a661330b71",
+    "scripts/gas_ledger.py": "99eed9b9678da90624c06743399161e3b1dae98058e11c8d507ccd26a4935d1f",
+    "scripts/jurisdiction_tasks.py": "583607a466d25e72aaf5bc09c2561068d2d45b04f7e769f99c2087c40c7a62e7"
+  },
+  "historical_sha256": {
+    "evaluations/sus19-gas-ledger.json": "2eaed34d74831082f8376c9f5a2707f54550864b6c966733ac21dac874e34df0",
+    "evaluations/sus19-gas-conversion.json": "068ec30055b2dbb862cb664037a4bd10160f7326d713a8916f0367156ddeca8d",
+    "evaluations/sus19-gas-mass.json": "9898f20473b7092af4c622bffed00c35e51c1e661432caeb9a8da9b569fccb87",
+    "evaluations/sus19-claims-source-reading.json": "f8735a3aefe0d5f9fadea5e6c08e1858d7db3ee41c4ec8e821db74717b141d83",
+    "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115"
+  },
+  "historical_bytes_verified_unchanged": true,
+  "new_composed_executions": [
+    {
+      "case": "qualified_selected_quantity",
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 5,
+      "review_count": 8,
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.8515129999723285,
+        "request_sha256": "18fb54ab4e9a42a6a22ff4b3dce9642cbee6abb22339bffa0dac293bfa88c6ff",
+        "stdout_sha256": "32c9f96d9e54e47689324f67d9694d5eff667efb5c24c863e6c4cb8f091d5bdf",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_reviews_preserved": true
+      }
+    },
+    {
+      "case": "insufficient_visible_qualification",
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 6,
+      "review_count": 10,
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.8838094000238925,
+        "request_sha256": "d3980804164f5b97909d488466d81acffd48935397c73f7b992a538d88171595",
+        "stdout_sha256": "a6e8c0a7ab7b85fd3d21585d52d4a0609fbc3a1217ad8ec5d21475527636d3cf",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_reviews_preserved": true
+      }
+    },
+    {
+      "case": "conflicting_quantified_interpretation",
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 6,
+      "review_count": 12,
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.9651879998855293,
+        "request_sha256": "539787ee6390883cba590fb221b4ca127fec6b15f9c760a5cd5d4fd1ce2d3187",
+        "stdout_sha256": "d60efc03d0688c08ff422a3029d96594834976c2eefdf3a044d9386b55010fac",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_reviews_preserved": true
+      }
+    },
+    {
+      "case": "missing_gwp_source",
+      "status": "blocked",
+      "metric_count": 0,
+      "gap_count": 7,
+      "review_count": 12,
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.5660357000306249,
+        "request_sha256": "4a9910660c35c3fb9befc91ad0144a8523fa04895a8ce552e61234f6c073d9eb",
+        "stdout_sha256": "bb0796d93c022affdb85e7b0ba04d0466b591108393b82c71969d383b2307bfa",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_reviews_preserved": true
+      }
+    },
+    {
+      "case": "missing_factor_claim_unknown",
+      "status": "partial",
+      "metric_count": 0,
+      "gap_count": 9,
+      "review_count": 14,
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.4829037000890821,
+        "request_sha256": "fc56aa5ea7b9f1cd9f75901ddab83b626b329e2d53ed917aabf8093c11d82cfb",
+        "stdout_sha256": "a2553a4c25ffcb2964fb6c165861eba43647112b06ba5f712f2afac83795b8cf",
+        "complete_helper_equality": true,
+        "request_bytes_unchanged": true,
+        "history_and_reviews_preserved": true
+      }
+    }
+  ],
+  "exact_sequential_state_handoff": true,
+  "historical_complete_gas_helper_cli_replays": [
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "source-calculation-0",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "d33090d5e15d25edf4fa1b33502e2b4725fec33fad63f9481b37dd0ddc1a7360",
+      "stdout_sha256": "adfff621babc6e470ef40b14eaa9e2daefb8c4b3da4ed0a1b79c06f6187cb834"
+    },
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "source-calculation-1",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "7ee52cb1dae1ef3d50ffdd071b91d1f195813b412bd13356677f244a4298f539",
+      "stdout_sha256": "d2907bd2b240907d5a29895c9cc3a8c60cba8ef406c1a6affb9b7ad1e84aafe2"
+    },
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "source-calculation-2",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "f03a411bc5a3fcb827347e070c7bc44dcfe9641272f7729f17b61f26516fb315",
+      "stdout_sha256": "4ffeff3db3ad8ef6bbe34603cd5168c181df21b76cbed1193f23796d0cc95b1d"
+    },
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "source-calculation-3",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "600adf6737ac3a7574a8e54465a65eea949a7d9259d0e42e3bc17573fcae8a53",
+      "stdout_sha256": "743f698fc9a6ffb1074001114e3bf26a045dd518b1fce5cd10ee09db84f5fed6"
+    },
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "two_species_declared_roster",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "aa60041a6d1b98bbab1e6eec01f86e8328d57c0d7a72eab1324fa8ec26d30240",
+      "stdout_sha256": "80ef7d6b907f7a8f37a92e9c06ceea9bbb6f6a0392ae54fb4c93b8bb70dce11d"
+    },
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "missing_species_conversion",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "962c48402af1e9986387d3592ef1ac7ec850860b165e09f064c961063a9fbd96",
+      "stdout_sha256": "635881e458493521b830e7d9b888ef1a04e2064431a0e77ca42e05add77619b0"
+    },
+    {
+      "source": "evaluations/sus19-gas-ledger.json",
+      "case": "withheld_source_attribution",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "b3abb8d80986286162d0e59cd7e753868fac7e7330b101012784cfe3f7c82aff",
+      "stdout_sha256": "339458916ec5bd5d24beca13aaf4d38379b1d6573461f5cb5d6bef72a08f3804"
+    },
+    {
+      "source": "evaluations/sus19-gas-conversion.json",
+      "case": "reproduced_species_mass",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "f2c818447423e6ede9b006cb26df4be6539ab3f06c0276136c39f438257994c9",
+      "stdout_sha256": "88307900117108bedbf1e63e4a9905050823554b8f43cfb9b3186aaea2ca4c92"
+    },
+    {
+      "source": "evaluations/sus19-gas-conversion.json",
+      "case": "explicit_fictional_100_year_basis",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "ee0631b7549622890e5e492afd30c1fff8c8d24f74e54e9d3a15935df98c8bef",
+      "stdout_sha256": "afa228f19209d3c62fa87a2d46883c90484168c1ccfc14b3daa6ed7bae1bcfc6"
+    },
+    {
+      "source": "evaluations/sus19-gas-conversion.json",
+      "case": "missing_gwp",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "4f5412685721531b195985e23669138efc572abbc7dbbcd1666b69c4d7bbd373",
+      "stdout_sha256": "2db5ed3329bbd19ff5171436577347cf198c0f6107651c2d188f7dea0119bc5e"
+    },
+    {
+      "source": "evaluations/sus19-gas-conversion.json",
+      "case": "wrong_species_gwp",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "915d91bf8ec257d140e7d644ffdd9eb72d8e54eb0ccc997df1a7c83d90b379ef",
+      "stdout_sha256": "51c53251748798bcc5e8bb620078db661710db074fd1ed1ddd35f07f79d2a460"
+    },
+    {
+      "source": "evaluations/sus19-gas-conversion.json",
+      "case": "explicit_alternative_source_basis_horizon",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "0ad293aeff58b332960915311f79d79846be484fb1b52cd1d90b97cd11f1f46c",
+      "stdout_sha256": "df8c8fb44cf5302270891c1ade18a4352221d884d2cd13a54d805a275d4698b5"
+    },
+    {
+      "source": "evaluations/sus19-gas-mass.json",
+      "case": "sourced_species_mass",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "5eca4334212ebada92c84550da3c4602eca90e84e49dc801ff5fc8083e6b8163",
+      "stdout_sha256": "eb5975cfb17a826aea76036a119f1565e2cdf97e0e3c9bb704613f0ab014208d"
+    },
+    {
+      "source": "evaluations/sus19-gas-mass.json",
+      "case": "missing_species_factor",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "b44416baa906c6cbf7e9d9416615a0bd923c080e57019b17eb436d921ddd4389",
+      "stdout_sha256": "ca3941fb588d3f69daeba3a307d48f295d3fc763c97ffd3e911a0feac8c484b6"
+    },
+    {
+      "source": "evaluations/sus19-gas-mass.json",
+      "case": "unsuitable_species_factor",
+      "exit_code": 0,
+      "complete_saved_helper_cli_equality": true,
+      "request_bytes_unchanged": true,
+      "request_sha256": "73b7feecce5f37f86ce5242d2ac3cc186b5a61650b3c31415c0dd4feb38066d9",
+      "stdout_sha256": "e6ec5760eabd171089648fb86655956b3c946e8d1f21d8fb77c982a90027bcab"
+    }
+  ],
+  "evaluation_scope": "Author-led fictional typed claim observations and reproduced gas quantities; not independent original-material or qualified source/legal reading.",
+  "limits": [
+    "Classification/verdict/qualification prominence/text and numerical interpretations are supplied records; authenticity and semantic accuracy are not verified by this operation.",
+    "Criterion support is a scoped candidate; aggregate never grants unconditional support, legal/publication approval or stronger marketing text.",
+    "Jurisdiction stays professionally unresolved; no actual Canadian doctrine or default internationally-recognized-methodology requirement is encoded.",
+    "Only gas-mass/conversion/declared-source-ledger replay bridges are implemented; unsupported source methods, whole-inventory/neutrality/product/testing/comparison/future-plan/general-impression methods remain open.",
+    "Incomplete ledgers cannot support unspecified selected totals; raw organization gas quantities cannot supply product/facility attribution.",
+    "Missing defensible factors remain EMISSION_FACTOR_REQUIRED; no number, GWP, zero quantity or scope is inferred.",
+    "All earlier source/quantity/history/assumptions/reviews survive; no individual skill, legal finding, owner adoption, publication, external action, phase closure or v1 readiness.",
+    "Scoped/professional/legal/source rights, independent material/organization evaluation, controlled approval and release gates remain open."
+  ]
+}

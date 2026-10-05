@@ -87,3 +87,5 @@ The draft [facility/source gas ledger](docs/gas-ledger-method.md) reproduces spe
 The draft [explicit retention-anchor contract](docs/retention-anchor-method.md) selects sourced required dates or supported actual dates without fallback or v1 migration. Fictional v2 checks and a separate non-executable Canadian research calendar preserve legal review; dates authorize no filing or record removal.
 
 [Canadian environmental-claims research](docs/canada-environmental-claims-research.md) separates historical/current primary sections from mixed-era regulator guidance and records requirements for the future neutral claims engine. It supplies no executable legal rules, substantiation score or claim/publication approval.
+
+The draft [claim-evidence reviewer](docs/claim-evidence-method.md) preserves original dossiers and supplied observations, reproduces selected gas-source quantities, and retains insufficient or conflicting evidence without strengthening claims. [Fictional workflow evidence](evaluations/sus20-claim-evidence.md) authorizes no publication or legal conclusion; original-material reading, broader substantiation methods and scoped review remain open.
