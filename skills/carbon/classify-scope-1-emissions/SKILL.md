@@ -9,4 +9,6 @@ Apply the [scope 1/2 execution contract](../../../docs/scope-1-2-contract.md), i
 
 Resolve each source against the selected consolidation approach using ownership/control or equity facts and supporting records. Inspect combustion, process and fugitive sources; equipment names alone do not establish inclusion. Keep unknown leased-operation treatment unresolved. Record source-to-scope decisions, rationale, allocation and exclusions in diagnostics. Separate biogenic CO2 treatment and retain other applicable gases.
 
+Use classify_sources or the classification CLI described in the shared contract to check supplied factual assessments and propose state. Pass the SOURCE_CLASSIFICATION register to accounting; preserve unknown entries and professional review obligations. The helper cannot authenticate control evidence or resolve joint financial-control treatment.
+
 Return a common result and checked state proposal. Preserve assumptions, gaps and outstanding review obligations; use EVIDENCE_INCOMPLETE for missing support and no numeric metrics when blocked. Include method, period, boundary, evidence and calculation lineage on every quantity. Parameters: source register, boundary decision records, period and evidence references. Check: Unknown operational control must produce a gap and any required boundary review, not an automatic inclusion or exclusion.

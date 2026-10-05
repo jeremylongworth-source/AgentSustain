@@ -10,7 +10,7 @@ Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9. 
 
 SUS-06 now contains eight GHG foundation skills and a sourced-factor CO2e calculation helper. [Its execution contract](docs/ghg-foundation-contract.md) describes factor applicability, fixture isolation and unsupported methods. Numerical examples are synthetic; no real emission-factor database or complete inventory workflow is provided.
 
-SUS-07 has five scope 1/2 workflows and a [shared execution contract](docs/scope-1-2-contract.md). A dedicated composition helper checks existing CO2e components, allocation, coverage and supplied market-quality records. Broader classification and independent scenario evaluation remain in development.
+SUS-07 has five scope 1/2 workflows and a [shared execution contract](docs/scope-1-2-contract.md). Classification checks supplied control/equity facts and retains uncertain sources; composition checks existing CO2e components, allocation, coverage and supplied market-quality records. A [mixed-source helper workflow](evaluations/sus07-composed-workflow.md) reruns all five skills. Independent behavioral evaluation remains in development.
 
 Start with [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Material changes to the approved architecture contracts require renewed review.
 

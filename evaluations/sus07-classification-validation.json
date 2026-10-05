@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "ea9b253",
+  "checks": {
+    "unittest": {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "passed": 90,
+      "classification_tests": 9,
+      "composed_workflow_tests": 1
+    },
+    "changed_skill_packaging": {
+      "passed": 2,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "composed_workflow": {
+      "helper_invocations_rerun": 8,
+      "scope_1_kg_CO2e": 25,
+      "scope_2_location_kg_CO2e": 500,
+      "scope_2_market_kg_CO2e": 500,
+      "all_partial": true,
+      "unresolved_lease_review_retained": true
+    }
+  },
+  "limitations": [
+    "Source facts and eligibility judgments are author supplied, not independently extracted or authenticated.",
+    "Only fictional factors and organization data are included.",
+    "Thermal factor derivation and broader independent organization-wide evaluation remain."
+  ],
+  "sha256": {
+    "scripts/scope_classification.py": "76e794f21bb8185f20a412fdf16ddcd34ca2aa09061901e6a8e9a7a9473ab1e4",
+    "scripts/run_scope_classification.py": "01419905207b368ebb00b0c5450ea7c9cec80ad6a09d7dd26c1d761b804c6b82",
+    "tests/test_scope_classification.py": "af411376ff654cbb29a537efb51d9bb3dd7c46e305475ff3af61ee48b58ee80b",
+    "tests/test_sus07_workflow.py": "b3e8dd2f934e7da6f6a8d2a3b6f616550428a61d868ae7cbd9098b7ba647123d",
+    "evaluations/sus07-composed-workflow.json": "c5fcdc06e720490b4b712013351cbe7911e0a174dcae4d3735798e208b6da913",
+    "docs/scope-1-2-contract.md": "b1f4ab7b50e4c9bb803e70d1bee568a29de6ba4502f27bd68447f38a0cb316b6",
+    "skills/carbon/classify-scope-1-emissions/SKILL.md": "9bfd5e987bc529289915fb90959848541e2b3a6b137b7997a2b481975a005f82",
+    "skills/carbon/classify-scope-2-emissions/SKILL.md": "8882fb069f17b77deb7be1f225076175da05f1819c36e2f59239d9c74b38cc98"
+  }
+}

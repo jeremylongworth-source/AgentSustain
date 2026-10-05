@@ -1,0 +1,3236 @@
+{
+  "id": "SUS07-composed-01",
+  "date": "2026-10-04",
+  "base_revision": "ea9b253",
+  "evaluation_type": "Deterministic helper composition using author-supplied fictional source facts; not independent agent reasoning.",
+  "prompt": "Classify and calculate scope 1/2 for a fictional controlled boiler and purchased electricity, retaining an unresolved leased operation. Boiler fuel is 100 m3; explicit synthetic CO2 and CH4 factors are 0.2 and 0.05 kg CO2e/m3. Electricity is 1000 kWh with synthetic factor 0.5 kg CO2e/kWh. No eligible contract or residual mix is supplied; document a market fallback. Never count unknown leased emissions as zero.",
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 1,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      },
+      {
+        "id": "leased-facility",
+        "name": "Fictional leased operation",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "factor-evidence",
+        "source": {
+          "locator": "fixture:factor",
+          "title": "Synthetic emission-factor fixture",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "gas-activity-evidence",
+        "source": {
+          "locator": "fixture:gas-activity-evidence",
+          "title": "Fictional 2025 measured boiler fuel volume",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "workflow-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "gas-factor-evidence",
+        "source": {
+          "locator": "fixture:gas-factor-evidence",
+          "title": "Synthetic two-row gas factor table",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "workflow-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "lease-evidence",
+        "source": {
+          "locator": "fixture:lease-evidence",
+          "title": "Fictional lease without control determination",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "workflow-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "gas-normalization",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "gas-activity",
+            "name": "Fictional boiler fuel volume",
+            "value": 100,
+            "unit": "m3",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "gas-activity-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Fictional measured 2025 gas volume record, no extrapolation",
+              "inputs": [
+                "gas-activity-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "gas-activity-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": [
+      {
+        "id": "synthetic-factor",
+        "value": 0.5,
+        "unit": "kg CO2e/kWh",
+        "source": {
+          "locator": "fixture:factor",
+          "publisher": "Fictional fixture publisher",
+          "version": "fixture-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "factor-evidence"
+        ],
+        "status": "synthetic"
+      },
+      {
+        "id": "gas-co2-factor",
+        "value": 0.2,
+        "unit": "kg CO2e/m3",
+        "source": {
+          "locator": "fixture:gas-factor-table",
+          "publisher": "Fictional fixture publisher",
+          "version": "workflow-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "gas-factor-evidence"
+        ],
+        "status": "synthetic"
+      },
+      {
+        "id": "gas-ch4-factor",
+        "value": 0.05,
+        "unit": "kg CO2e/m3",
+        "source": {
+          "locator": "fixture:gas-factor-table",
+          "publisher": "Fictional fixture publisher",
+          "version": "workflow-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "gas-factor-evidence"
+        ],
+        "status": "synthetic"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "request": {
+        "skill": "classify-scope-1-emissions",
+        "parameters": {
+          "sources": [
+            {
+              "id": "boiler",
+              "kind": "direct",
+              "relationship": "direct",
+              "activity_id": "gas-activity",
+              "gases": [
+                "CO2",
+                "CH4"
+              ],
+              "facility_id": "facility-001",
+              "market": "fixture-market",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "evidence_ids": [
+                "gas-activity-evidence"
+              ],
+              "rationale": "Fictional source relationship supplied for this workflow only.",
+              "boundary_review": {
+                "approach": "operational control (fixture only)",
+                "consolidation_method": "operational_control",
+                "operational_control": true,
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "evidence_ids": [
+                  "gas-activity-evidence"
+                ],
+                "rationale": "Fictional operational-control assessment; leased control is unresolved when null."
+              }
+            },
+            {
+              "id": "electricity",
+              "kind": "electricity",
+              "relationship": "purchased_consumed",
+              "activity_id": "metric-001",
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "facility_id": "facility-001",
+              "market": "fixture-market",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "rationale": "Fictional source relationship supplied for this workflow only.",
+              "boundary_review": {
+                "approach": "operational control (fixture only)",
+                "consolidation_method": "operational_control",
+                "operational_control": true,
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "rationale": "Fictional operational-control assessment; leased control is unresolved when null."
+              }
+            },
+            {
+              "id": "leased-source",
+              "kind": "direct",
+              "relationship": "direct",
+              "activity_id": null,
+              "gases": null,
+              "facility_id": "leased-facility",
+              "market": "fixture-market",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "evidence_ids": [
+                "lease-evidence"
+              ],
+              "rationale": "Fictional source relationship supplied for this workflow only.",
+              "boundary_review": {
+                "approach": "operational control (fixture only)",
+                "consolidation_method": "operational_control",
+                "operational_control": null,
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "evidence_ids": [
+                  "lease-evidence"
+                ],
+                "rationale": "Fictional operational-control assessment; leased control is unresolved when null."
+              }
+            }
+          ],
+          "result_id": "workflow-classify-scope-1-emissions",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "workflow-classify-scope-1-emissions",
+        "skill": "classify-scope-1-emissions",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture source classification only; supplied records do not establish real control."
+          },
+          {
+            "code": "SOURCE_CLASSIFICATION",
+            "message": "{\"input_facts\": [{\"activity_id\": \"gas-activity\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"gas-activity-evidence\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}, {\"activity_id\": \"metric-001\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"ev-001\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"purchased_consumed\"}, {\"activity_id\": null, \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"lease-evidence\"], \"operational_control\": null, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}], \"limits\": \"Analytical classification of supplied facts; not authenticated boundary approval or scope 3 category assignment.\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}], \"target_scope\": \"scope_1\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      "proposal_reason": "Classify supplied source relationships under the selected inventory boundary",
+      "domain_result_ids": {
+        "scope_1": [],
+        "scope_2": [],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "classify-scope-2-emissions",
+        "parameters": {
+          "sources": [
+            {
+              "id": "boiler",
+              "kind": "direct",
+              "relationship": "direct",
+              "activity_id": "gas-activity",
+              "gases": [
+                "CO2",
+                "CH4"
+              ],
+              "facility_id": "facility-001",
+              "market": "fixture-market",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "evidence_ids": [
+                "gas-activity-evidence"
+              ],
+              "rationale": "Fictional source relationship supplied for this workflow only.",
+              "boundary_review": {
+                "approach": "operational control (fixture only)",
+                "consolidation_method": "operational_control",
+                "operational_control": true,
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "evidence_ids": [
+                  "gas-activity-evidence"
+                ],
+                "rationale": "Fictional operational-control assessment; leased control is unresolved when null."
+              }
+            },
+            {
+              "id": "electricity",
+              "kind": "electricity",
+              "relationship": "purchased_consumed",
+              "activity_id": "metric-001",
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "facility_id": "facility-001",
+              "market": "fixture-market",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "rationale": "Fictional source relationship supplied for this workflow only.",
+              "boundary_review": {
+                "approach": "operational control (fixture only)",
+                "consolidation_method": "operational_control",
+                "operational_control": true,
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "rationale": "Fictional operational-control assessment; leased control is unresolved when null."
+              }
+            },
+            {
+              "id": "leased-source",
+              "kind": "direct",
+              "relationship": "direct",
+              "activity_id": null,
+              "gases": null,
+              "facility_id": "leased-facility",
+              "market": "fixture-market",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "evidence_ids": [
+                "lease-evidence"
+              ],
+              "rationale": "Fictional source relationship supplied for this workflow only.",
+              "boundary_review": {
+                "approach": "operational control (fixture only)",
+                "consolidation_method": "operational_control",
+                "operational_control": null,
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "evidence_ids": [
+                  "lease-evidence"
+                ],
+                "rationale": "Fictional operational-control assessment; leased control is unresolved when null."
+              }
+            }
+          ],
+          "result_id": "workflow-classify-scope-2-emissions",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "workflow-classify-scope-2-emissions",
+        "skill": "classify-scope-2-emissions",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture source classification only; supplied records do not establish real control."
+          },
+          {
+            "code": "SOURCE_CLASSIFICATION",
+            "message": "{\"input_facts\": [{\"activity_id\": \"gas-activity\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"gas-activity-evidence\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}, {\"activity_id\": \"metric-001\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"ev-001\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"purchased_consumed\"}, {\"activity_id\": null, \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"lease-evidence\"], \"operational_control\": null, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}], \"limits\": \"Analytical classification of supplied facts; not authenticated boundary approval or scope 3 category assignment.\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}], \"target_scope\": \"scope_2\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      "proposal_reason": "Classify supplied source relationships under the selected inventory boundary",
+      "domain_result_ids": {
+        "scope_1": [],
+        "scope_2": [],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "calculate-co2e",
+        "parameters": {
+          "activity_id": "gas-activity",
+          "factor_id": "gas-co2-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "gas-co2-factor",
+              "activity_id": "gas-activity",
+              "source_locator": "fixture:gas-factor-table",
+              "source_version": "workflow-1",
+              "confirmed_value": 0.2,
+              "confirmed_unit": "kg CO2e/m3",
+              "evidence_ids": [
+                "gas-factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional boiler CO2 component already expressed in CO2e",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            },
+            "activity_kind": "direct",
+            "gas_coverage": [
+              "CO2"
+            ],
+            "scope_basis": "direct"
+          },
+          "result_id": "gas-co2-factor-component",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "gas-co2-factor-component",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "gas-co2-factor-component-metric",
+            "name": "Calculated CO2e",
+            "value": 20.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "gas-activity-evidence",
+              "gas-factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity gas-activity * conversion 1 * factor gas-co2-factor (0.2 kg CO2e/m3) * output conversion 1",
+              "inputs": [
+                "gas-activity",
+                "gas-factor-evidence"
+              ],
+              "conversions": [
+                "m3 -> m3, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "gas-activity-evidence",
+          "gas-factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied gas-co2-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      "proposal_reason": "Calculate or block CO2e using resolved factor and activity evidence",
+      "domain_result_ids": {
+        "scope_1": [],
+        "scope_2": [],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "calculate-co2e",
+        "parameters": {
+          "activity_id": "gas-activity",
+          "factor_id": "gas-ch4-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "gas-ch4-factor",
+              "activity_id": "gas-activity",
+              "source_locator": "fixture:gas-factor-table",
+              "source_version": "workflow-1",
+              "confirmed_value": 0.05,
+              "confirmed_unit": "kg CO2e/m3",
+              "evidence_ids": [
+                "gas-factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional boiler CH4 component already expressed in CO2e",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            },
+            "activity_kind": "direct",
+            "gas_coverage": [
+              "CH4"
+            ],
+            "scope_basis": "direct"
+          },
+          "result_id": "gas-ch4-factor-component",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "gas-ch4-factor-component",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "gas-ch4-factor-component-metric",
+            "name": "Calculated CO2e",
+            "value": 5.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "gas-activity-evidence",
+              "gas-factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity gas-activity * conversion 1 * factor gas-ch4-factor (0.05 kg CO2e/m3) * output conversion 1",
+              "inputs": [
+                "gas-activity",
+                "gas-factor-evidence"
+              ],
+              "conversions": [
+                "m3 -> m3, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "gas-activity-evidence",
+          "gas-factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied gas-ch4-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      "proposal_reason": "Calculate or block CO2e using resolved factor and activity evidence",
+      "domain_result_ids": {
+        "scope_1": [],
+        "scope_2": [],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "calculate-scope-1",
+        "parameters": {
+          "sources": [
+            {
+              "activity_id": "gas-activity",
+              "allocation_applied": false,
+              "allocation_fraction": 1.0,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "gas-activity-evidence"
+              ],
+              "facility_id": "facility-001",
+              "gases": [
+                "CO2",
+                "CH4"
+              ],
+              "id": "boiler",
+              "kind": "direct",
+              "market": "fixture-market",
+              "rationale": "Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.",
+              "scope": "scope_1"
+            },
+            {
+              "activity_id": "metric-001",
+              "allocation_applied": false,
+              "allocation_fraction": 1.0,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "facility_id": "facility-001",
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "id": "electricity",
+              "kind": "electricity",
+              "market": "fixture-market",
+              "rationale": "Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.",
+              "scope": "scope_2"
+            },
+            {
+              "activity_id": null,
+              "allocation_applied": false,
+              "allocation_fraction": null,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "lease-evidence"
+              ],
+              "facility_id": "leased-facility",
+              "gases": null,
+              "id": "leased-source",
+              "kind": "direct",
+              "market": "fixture-market",
+              "rationale": "Unresolved source facts.",
+              "scope": "unknown"
+            }
+          ],
+          "components": [
+            {
+              "source_id": "boiler",
+              "metric_id": "gas-co2-factor-component-metric",
+              "factor_id": "gas-co2-factor",
+              "policy": {
+                "geography": "CA-ON",
+                "acceptable_vintages": [
+                  2025
+                ],
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "source_review": {
+                  "factor_id": "gas-co2-factor",
+                  "activity_id": "gas-activity",
+                  "source_locator": "fixture:gas-factor-table",
+                  "source_version": "workflow-1",
+                  "confirmed_value": 0.2,
+                  "confirmed_unit": "kg CO2e/m3",
+                  "evidence_ids": [
+                    "gas-factor-evidence"
+                  ],
+                  "reviewer": "Fictional fixture reviewer",
+                  "coverage": "Fictional boiler CO2 component already expressed in CO2e",
+                  "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+                },
+                "activity_kind": "direct",
+                "gas_coverage": [
+                  "CO2"
+                ],
+                "scope_basis": "direct"
+              },
+              "activity_fraction": 1,
+              "gases": [
+                "CO2"
+              ]
+            },
+            {
+              "source_id": "boiler",
+              "metric_id": "gas-ch4-factor-component-metric",
+              "factor_id": "gas-ch4-factor",
+              "policy": {
+                "geography": "CA-ON",
+                "acceptable_vintages": [
+                  2025
+                ],
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "source_review": {
+                  "factor_id": "gas-ch4-factor",
+                  "activity_id": "gas-activity",
+                  "source_locator": "fixture:gas-factor-table",
+                  "source_version": "workflow-1",
+                  "confirmed_value": 0.05,
+                  "confirmed_unit": "kg CO2e/m3",
+                  "evidence_ids": [
+                    "gas-factor-evidence"
+                  ],
+                  "reviewer": "Fictional fixture reviewer",
+                  "coverage": "Fictional boiler CH4 component already expressed in CO2e",
+                  "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+                },
+                "activity_kind": "direct",
+                "gas_coverage": [
+                  "CH4"
+                ],
+                "scope_basis": "direct"
+              },
+              "activity_fraction": 1,
+              "gases": [
+                "CH4"
+              ]
+            }
+          ],
+          "coverage_review": {
+            "confirmed": true,
+            "evidence_ids": [
+              "ev-001",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "rationale": "Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.",
+            "gwp_basis": "Synthetic fixture basis"
+          },
+          "result_id": "workflow-scope1",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "workflow-scope1",
+        "skill": "calculate-scope-1",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "workflow-scope1-metric",
+            "name": "scope_1 direct emissions subtotal",
+            "value": 25.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "gas-activity-evidence",
+              "gas-factor-evidence",
+              "lease-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope_1 direct composition",
+              "version": "2004",
+              "source": "https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf"
+            },
+            "assumption": "Synthetic fixture scope account only; not a real inventory.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined component and allocation uncertainty has not been quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+              "inputs": [
+                "gas-co2-factor-component-metric",
+                "gas-ch4-factor-component-metric",
+                "ev-001",
+                "gas-activity-evidence",
+                "gas-factor-evidence",
+                "lease-evidence"
+              ],
+              "conversions": [
+                "gas-co2-factor-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once",
+                "gas-ch4-factor-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once"
+              ],
+              "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "gas-activity-evidence",
+          "gas-factor-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "CLASSIFICATION_REQUIRED",
+            "message": "Source leased-source has unresolved classification."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope account only; not a real inventory."
+          },
+          {
+            "code": "SCOPE_METHOD",
+            "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\"], \"metric_id\": \"gas-co2-factor-component-metric\", \"source_id\": \"boiler\"}, {\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CH4\"], \"metric_id\": \"gas-ch4-factor-component-metric\", \"source_id\": \"boiler\"}], \"components\": [{\"activity_fraction\": 1, \"factor_id\": \"gas-co2-factor\", \"gases\": [\"CO2\"], \"metric_id\": \"gas-co2-factor-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"direct\", \"gas_coverage\": [\"CO2\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"direct\", \"source_review\": {\"activity_id\": \"gas-activity\", \"confirmed_unit\": \"kg CO2e/m3\", \"confirmed_value\": 0.2, \"coverage\": \"Fictional boiler CO2 component already expressed in CO2e\", \"evidence_ids\": [\"gas-factor-evidence\"], \"factor_id\": \"gas-co2-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:gas-factor-table\", \"source_version\": \"workflow-1\"}}, \"source_id\": \"boiler\"}, {\"activity_fraction\": 1, \"factor_id\": \"gas-ch4-factor\", \"gases\": [\"CH4\"], \"metric_id\": \"gas-ch4-factor-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"direct\", \"gas_coverage\": [\"CH4\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"direct\", \"source_review\": {\"activity_id\": \"gas-activity\", \"confirmed_unit\": \"kg CO2e/m3\", \"confirmed_value\": 0.05, \"coverage\": \"Fictional boiler CH4 component already expressed in CO2e\", \"evidence_ids\": [\"gas-factor-evidence\"], \"factor_id\": \"gas-ch4-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:gas-factor-table\", \"source_version\": \"workflow-1\"}}, \"source_id\": \"boiler\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"gas-activity-evidence\", \"lease-evidence\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"direct\", \"scope\": \"scope_1\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      "proposal_reason": "Compose a separate scope account with retained evidence and review obligations",
+      "domain_result_ids": {
+        "scope_1": [
+          "workflow-scope1"
+        ],
+        "scope_2": [],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "calculate-co2e",
+        "parameters": {
+          "activity_id": "metric-001",
+          "factor_id": "synthetic-factor",
+          "policy": {
+            "geography": "CA-ON",
+            "acceptable_vintages": [
+              2025
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "source_review": {
+              "factor_id": "synthetic-factor",
+              "activity_id": "metric-001",
+              "source_locator": "fixture:factor",
+              "source_version": "fixture-1",
+              "confirmed_value": 0.5,
+              "confirmed_unit": "kg CO2e/kWh",
+              "evidence_ids": [
+                "factor-evidence"
+              ],
+              "reviewer": "Fictional fixture reviewer",
+              "coverage": "Fictional activity only",
+              "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+            },
+            "activity_kind": "electricity",
+            "gas_coverage": [
+              "CO2",
+              "CH4",
+              "N2O"
+            ],
+            "scope_basis": "location"
+          },
+          "result_id": "electricity-workflow-component",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "electricity-workflow-component",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "electricity-workflow-component-metric",
+            "name": "Calculated CO2e",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+              "inputs": [
+                "metric-001",
+                "factor-evidence"
+              ],
+              "conversions": [
+                "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      "proposal_reason": "Calculate or block CO2e using resolved factor and activity evidence",
+      "domain_result_ids": {
+        "scope_1": [
+          "workflow-scope1"
+        ],
+        "scope_2": [],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "calculate-location-based-scope-2",
+        "parameters": {
+          "sources": [
+            {
+              "activity_id": "gas-activity",
+              "allocation_applied": false,
+              "allocation_fraction": 1.0,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "gas-activity-evidence"
+              ],
+              "facility_id": "facility-001",
+              "gases": [
+                "CO2",
+                "CH4"
+              ],
+              "id": "boiler",
+              "kind": "direct",
+              "market": "fixture-market",
+              "rationale": "Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.",
+              "scope": "scope_1"
+            },
+            {
+              "activity_id": "metric-001",
+              "allocation_applied": false,
+              "allocation_fraction": 1.0,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "facility_id": "facility-001",
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "id": "electricity",
+              "kind": "electricity",
+              "market": "fixture-market",
+              "rationale": "Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.",
+              "scope": "scope_2"
+            },
+            {
+              "activity_id": null,
+              "allocation_applied": false,
+              "allocation_fraction": null,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "lease-evidence"
+              ],
+              "facility_id": "leased-facility",
+              "gases": null,
+              "id": "leased-source",
+              "kind": "direct",
+              "market": "fixture-market",
+              "rationale": "Unresolved source facts.",
+              "scope": "unknown"
+            }
+          ],
+          "components": [
+            {
+              "source_id": "electricity",
+              "metric_id": "electricity-workflow-component-metric",
+              "factor_id": "synthetic-factor",
+              "policy": {
+                "geography": "CA-ON",
+                "acceptable_vintages": [
+                  2025
+                ],
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "source_review": {
+                  "factor_id": "synthetic-factor",
+                  "activity_id": "metric-001",
+                  "source_locator": "fixture:factor",
+                  "source_version": "fixture-1",
+                  "confirmed_value": 0.5,
+                  "confirmed_unit": "kg CO2e/kWh",
+                  "evidence_ids": [
+                    "factor-evidence"
+                  ],
+                  "reviewer": "Fictional fixture reviewer",
+                  "coverage": "Fictional activity only",
+                  "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+                },
+                "activity_kind": "electricity",
+                "gas_coverage": [
+                  "CO2",
+                  "CH4",
+                  "N2O"
+                ],
+                "scope_basis": "location"
+              },
+              "activity_fraction": 1,
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "basis": "location"
+            }
+          ],
+          "coverage_review": {
+            "confirmed": true,
+            "evidence_ids": [
+              "ev-001",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "rationale": "Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.",
+            "gwp_basis": "Synthetic fixture basis"
+          },
+          "result_id": "workflow-scope2-location",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "workflow-scope2-location",
+        "skill": "calculate-location-based-scope-2",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "workflow-scope2-location-metric",
+            "name": "scope_2 location emissions subtotal",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope_2 location composition",
+              "version": "2015",
+              "source": "https://ghgprotocol.org/sites/default/files/2023-03/Scope%202%20Guidance.pdf"
+            },
+            "assumption": "Synthetic fixture scope account only; not a real inventory.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined component and allocation uncertainty has not been quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+              "inputs": [
+                "electricity-workflow-component-metric",
+                "ev-001",
+                "factor-evidence",
+                "gas-activity-evidence",
+                "lease-evidence"
+              ],
+              "conversions": [
+                "electricity-workflow-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once"
+              ],
+              "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          },
+          {
+            "id": "workflow-scope2-location-gap-2",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "CLASSIFICATION_REQUIRED",
+            "message": "Source leased-source has unresolved classification."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope account only; not a real inventory."
+          },
+          {
+            "code": "SCOPE_METHOD",
+            "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-workflow-component-metric\", \"source_id\": \"electricity\"}], \"components\": [{\"activity_fraction\": 1, \"basis\": \"location\", \"factor_id\": \"synthetic-factor\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-workflow-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"electricity\", \"gas_coverage\": [\"CO2\", \"CH4\", \"N2O\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"location\", \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kWh\", \"confirmed_value\": 0.5, \"coverage\": \"Fictional activity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"electricity\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"gas-activity-evidence\", \"lease-evidence\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"location\", \"scope\": \"scope_2\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      "proposal_reason": "Compose a separate scope account with retained evidence and review obligations",
+      "domain_result_ids": {
+        "scope_1": [
+          "workflow-scope1"
+        ],
+        "scope_2": [
+          "workflow-scope2-location"
+        ],
+        "scope_3": []
+      }
+    },
+    {
+      "request": {
+        "skill": "calculate-market-based-scope-2",
+        "parameters": {
+          "sources": [
+            {
+              "activity_id": "gas-activity",
+              "allocation_applied": false,
+              "allocation_fraction": 1.0,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "gas-activity-evidence"
+              ],
+              "facility_id": "facility-001",
+              "gases": [
+                "CO2",
+                "CH4"
+              ],
+              "id": "boiler",
+              "kind": "direct",
+              "market": "fixture-market",
+              "rationale": "Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.",
+              "scope": "scope_1"
+            },
+            {
+              "activity_id": "metric-001",
+              "allocation_applied": false,
+              "allocation_fraction": 1.0,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "facility_id": "facility-001",
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "id": "electricity",
+              "kind": "electricity",
+              "market": "fixture-market",
+              "rationale": "Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.",
+              "scope": "scope_2"
+            },
+            {
+              "activity_id": null,
+              "allocation_applied": false,
+              "allocation_fraction": null,
+              "boundary_approach": "operational control (fixture only)",
+              "evidence_ids": [
+                "lease-evidence"
+              ],
+              "facility_id": "leased-facility",
+              "gases": null,
+              "id": "leased-source",
+              "kind": "direct",
+              "market": "fixture-market",
+              "rationale": "Unresolved source facts.",
+              "scope": "unknown"
+            }
+          ],
+          "components": [
+            {
+              "source_id": "electricity",
+              "metric_id": "electricity-workflow-component-metric",
+              "factor_id": "synthetic-factor",
+              "policy": {
+                "geography": "CA-ON",
+                "acceptable_vintages": [
+                  2025
+                ],
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "gwp_basis": "Synthetic fixture basis",
+                "source_review": {
+                  "factor_id": "synthetic-factor",
+                  "activity_id": "metric-001",
+                  "source_locator": "fixture:factor",
+                  "source_version": "fixture-1",
+                  "confirmed_value": 0.5,
+                  "confirmed_unit": "kg CO2e/kWh",
+                  "evidence_ids": [
+                    "factor-evidence"
+                  ],
+                  "reviewer": "Fictional fixture reviewer",
+                  "coverage": "Fictional activity only",
+                  "rationale": "Synthetic factor supplied solely to test arithmetic and provenance, not for real use."
+                },
+                "activity_kind": "electricity",
+                "gas_coverage": [
+                  "CO2",
+                  "CH4",
+                  "N2O"
+                ],
+                "scope_basis": "grid_fallback"
+              },
+              "activity_fraction": 1,
+              "gases": [
+                "CO2",
+                "CH4",
+                "N2O"
+              ],
+              "basis": "location",
+              "market_review": {
+                "category": "grid_fallback",
+                "evidence_ids": [
+                  "factor-evidence"
+                ],
+                "rationale": "Fictional fallback to available grid factor; no real factor or instrument eligibility established.",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "market": "fixture-market",
+                "matched_quantity": 1000,
+                "unit": "kWh",
+                "hierarchy_reviewed": true,
+                "higher_priority_unavailable": "No contractual instruments or supplier-specific factors supplied in this fictional market.",
+                "residual_mix_available": false,
+                "absence_disclosure": "No adjusted residual mix is supplied; fictional location factor used as disclosed fallback."
+              }
+            }
+          ],
+          "coverage_review": {
+            "confirmed": true,
+            "evidence_ids": [
+              "ev-001",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "rationale": "Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.",
+            "gwp_basis": "Synthetic fixture basis"
+          },
+          "result_id": "workflow-scope2-market",
+          "fixture_mode": true
+        }
+      },
+      "result": {
+        "id": "workflow-scope2-market",
+        "skill": "calculate-market-based-scope-2",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "workflow-scope2-market-metric",
+            "name": "scope_2 market emissions subtotal",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope_2 market composition",
+              "version": "2015",
+              "source": "https://ghgprotocol.org/sites/default/files/2023-03/Scope%202%20Guidance.pdf"
+            },
+            "assumption": "Synthetic fixture scope account only; not a real inventory.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined component and allocation uncertainty has not been quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+              "inputs": [
+                "electricity-workflow-component-metric",
+                "ev-001",
+                "factor-evidence",
+                "gas-activity-evidence",
+                "lease-evidence"
+              ],
+              "conversions": [
+                "electricity-workflow-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once"
+              ],
+              "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          },
+          {
+            "id": "workflow-scope2-location-gap-2",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          },
+          {
+            "id": "workflow-scope2-market-gap-3",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "MARKET_COVERAGE",
+            "message": "{\"absence_disclosure\": \"No adjusted residual mix is supplied; fictional location factor used as disclosed fallback.\", \"category\": \"grid_fallback\", \"evidence_ids\": [\"factor-evidence\"], \"hierarchy_reviewed\": true, \"higher_priority_unavailable\": \"No contractual instruments or supplier-specific factors supplied in this fictional market.\", \"market\": \"fixture-market\", \"matched_quantity\": 1000, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional fallback to available grid factor; no real factor or instrument eligibility established.\", \"residual_mix_available\": false, \"unit\": \"kWh\"}"
+          },
+          {
+            "code": "CLASSIFICATION_REQUIRED",
+            "message": "Source leased-source has unresolved classification."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope account only; not a real inventory."
+          },
+          {
+            "code": "SCOPE_METHOD",
+            "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-workflow-component-metric\", \"source_id\": \"electricity\"}], \"components\": [{\"activity_fraction\": 1, \"basis\": \"location\", \"factor_id\": \"synthetic-factor\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"market_review\": {\"absence_disclosure\": \"No adjusted residual mix is supplied; fictional location factor used as disclosed fallback.\", \"category\": \"grid_fallback\", \"evidence_ids\": [\"factor-evidence\"], \"hierarchy_reviewed\": true, \"higher_priority_unavailable\": \"No contractual instruments or supplier-specific factors supplied in this fictional market.\", \"market\": \"fixture-market\", \"matched_quantity\": 1000, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional fallback to available grid factor; no real factor or instrument eligibility established.\", \"residual_mix_available\": false, \"unit\": \"kWh\"}, \"metric_id\": \"electricity-workflow-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"electricity\", \"gas_coverage\": [\"CO2\", \"CH4\", \"N2O\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"grid_fallback\", \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kWh\", \"confirmed_value\": 0.5, \"coverage\": \"Fictional activity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"electricity\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"gas-activity-evidence\", \"lease-evidence\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"market\", \"scope\": \"scope_2\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      "proposal_reason": "Compose a separate scope account with retained evidence and review obligations",
+      "domain_result_ids": {
+        "scope_1": [
+          "workflow-scope1"
+        ],
+        "scope_2": [
+          "workflow-scope2-location",
+          "workflow-scope2-market"
+        ],
+        "scope_3": []
+      }
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 9,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      },
+      {
+        "id": "leased-facility",
+        "name": "Fictional leased operation",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "factor-evidence",
+        "source": {
+          "locator": "fixture:factor",
+          "title": "Synthetic emission-factor fixture",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "gas-activity-evidence",
+        "source": {
+          "locator": "fixture:gas-activity-evidence",
+          "title": "Fictional 2025 measured boiler fuel volume",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "workflow-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "gas-factor-evidence",
+        "source": {
+          "locator": "fixture:gas-factor-evidence",
+          "title": "Synthetic two-row gas factor table",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "workflow-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "lease-evidence",
+        "source": {
+          "locator": "fixture:lease-evidence",
+          "title": "Fictional lease without control determination",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "workflow-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "gas-normalization",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "gas-activity",
+            "name": "Fictional boiler fuel volume",
+            "value": 100,
+            "unit": "m3",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "gas-activity-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Fictional measured 2025 gas volume record, no extrapolation",
+              "inputs": [
+                "gas-activity-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "gas-activity-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-classify-scope-1-emissions",
+        "skill": "classify-scope-1-emissions",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture source classification only; supplied records do not establish real control."
+          },
+          {
+            "code": "SOURCE_CLASSIFICATION",
+            "message": "{\"input_facts\": [{\"activity_id\": \"gas-activity\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"gas-activity-evidence\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}, {\"activity_id\": \"metric-001\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"ev-001\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"purchased_consumed\"}, {\"activity_id\": null, \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"lease-evidence\"], \"operational_control\": null, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}], \"limits\": \"Analytical classification of supplied facts; not authenticated boundary approval or scope 3 category assignment.\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}], \"target_scope\": \"scope_1\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      {
+        "id": "workflow-classify-scope-2-emissions",
+        "skill": "classify-scope-2-emissions",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture source classification only; supplied records do not establish real control."
+          },
+          {
+            "code": "SOURCE_CLASSIFICATION",
+            "message": "{\"input_facts\": [{\"activity_id\": \"gas-activity\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"gas-activity-evidence\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}, {\"activity_id\": \"metric-001\", \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"ev-001\"], \"operational_control\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"purchased_consumed\"}, {\"activity_id\": null, \"boundary_review\": {\"approach\": \"operational control (fixture only)\", \"consolidation_method\": \"operational_control\", \"evidence_ids\": [\"lease-evidence\"], \"operational_control\": null, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional operational-control assessment; leased control is unresolved when null.\"}, \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional source relationship supplied for this workflow only.\", \"relationship\": \"direct\"}], \"limits\": \"Analytical classification of supplied facts; not authenticated boundary approval or scope 3 category assignment.\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}], \"target_scope\": \"scope_2\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      {
+        "id": "gas-co2-factor-component",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "gas-co2-factor-component-metric",
+            "name": "Calculated CO2e",
+            "value": 20.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "gas-activity-evidence",
+              "gas-factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity gas-activity * conversion 1 * factor gas-co2-factor (0.2 kg CO2e/m3) * output conversion 1",
+              "inputs": [
+                "gas-activity",
+                "gas-factor-evidence"
+              ],
+              "conversions": [
+                "m3 -> m3, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "gas-activity-evidence",
+          "gas-factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied gas-co2-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      {
+        "id": "gas-ch4-factor-component",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "gas-ch4-factor-component-metric",
+            "name": "Calculated CO2e",
+            "value": 5.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "gas-activity-evidence",
+              "gas-factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity gas-activity * conversion 1 * factor gas-ch4-factor (0.05 kg CO2e/m3) * output conversion 1",
+              "inputs": [
+                "gas-activity",
+                "gas-factor-evidence"
+              ],
+              "conversions": [
+                "m3 -> m3, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "gas-activity-evidence",
+          "gas-factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied gas-ch4-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+        ]
+      },
+      {
+        "id": "workflow-scope1",
+        "skill": "calculate-scope-1",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "workflow-scope1-metric",
+            "name": "scope_1 direct emissions subtotal",
+            "value": 25.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "gas-activity-evidence",
+              "gas-factor-evidence",
+              "lease-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope_1 direct composition",
+              "version": "2004",
+              "source": "https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf"
+            },
+            "assumption": "Synthetic fixture scope account only; not a real inventory.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined component and allocation uncertainty has not been quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+              "inputs": [
+                "gas-co2-factor-component-metric",
+                "gas-ch4-factor-component-metric",
+                "ev-001",
+                "gas-activity-evidence",
+                "gas-factor-evidence",
+                "lease-evidence"
+              ],
+              "conversions": [
+                "gas-co2-factor-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once",
+                "gas-ch4-factor-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once"
+              ],
+              "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "gas-activity-evidence",
+          "gas-factor-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "CLASSIFICATION_REQUIRED",
+            "message": "Source leased-source has unresolved classification."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope account only; not a real inventory."
+          },
+          {
+            "code": "SCOPE_METHOD",
+            "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\"], \"metric_id\": \"gas-co2-factor-component-metric\", \"source_id\": \"boiler\"}, {\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CH4\"], \"metric_id\": \"gas-ch4-factor-component-metric\", \"source_id\": \"boiler\"}], \"components\": [{\"activity_fraction\": 1, \"factor_id\": \"gas-co2-factor\", \"gases\": [\"CO2\"], \"metric_id\": \"gas-co2-factor-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"direct\", \"gas_coverage\": [\"CO2\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"direct\", \"source_review\": {\"activity_id\": \"gas-activity\", \"confirmed_unit\": \"kg CO2e/m3\", \"confirmed_value\": 0.2, \"coverage\": \"Fictional boiler CO2 component already expressed in CO2e\", \"evidence_ids\": [\"gas-factor-evidence\"], \"factor_id\": \"gas-co2-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:gas-factor-table\", \"source_version\": \"workflow-1\"}}, \"source_id\": \"boiler\"}, {\"activity_fraction\": 1, \"factor_id\": \"gas-ch4-factor\", \"gases\": [\"CH4\"], \"metric_id\": \"gas-ch4-factor-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"direct\", \"gas_coverage\": [\"CH4\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"direct\", \"source_review\": {\"activity_id\": \"gas-activity\", \"confirmed_unit\": \"kg CO2e/m3\", \"confirmed_value\": 0.05, \"coverage\": \"Fictional boiler CH4 component already expressed in CO2e\", \"evidence_ids\": [\"gas-factor-evidence\"], \"factor_id\": \"gas-ch4-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:gas-factor-table\", \"source_version\": \"workflow-1\"}}, \"source_id\": \"boiler\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"gas-activity-evidence\", \"lease-evidence\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"direct\", \"scope\": \"scope_1\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      {
+        "id": "electricity-workflow-component",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "electricity-workflow-component-metric",
+            "name": "Calculated CO2e",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+              "inputs": [
+                "metric-001",
+                "factor-evidence"
+              ],
+              "conversions": [
+                "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      {
+        "id": "workflow-scope2-location",
+        "skill": "calculate-location-based-scope-2",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "workflow-scope2-location-metric",
+            "name": "scope_2 location emissions subtotal",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope_2 location composition",
+              "version": "2015",
+              "source": "https://ghgprotocol.org/sites/default/files/2023-03/Scope%202%20Guidance.pdf"
+            },
+            "assumption": "Synthetic fixture scope account only; not a real inventory.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined component and allocation uncertainty has not been quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+              "inputs": [
+                "electricity-workflow-component-metric",
+                "ev-001",
+                "factor-evidence",
+                "gas-activity-evidence",
+                "lease-evidence"
+              ],
+              "conversions": [
+                "electricity-workflow-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once"
+              ],
+              "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          },
+          {
+            "id": "workflow-scope2-location-gap-2",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "CLASSIFICATION_REQUIRED",
+            "message": "Source leased-source has unresolved classification."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope account only; not a real inventory."
+          },
+          {
+            "code": "SCOPE_METHOD",
+            "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-workflow-component-metric\", \"source_id\": \"electricity\"}], \"components\": [{\"activity_fraction\": 1, \"basis\": \"location\", \"factor_id\": \"synthetic-factor\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-workflow-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"electricity\", \"gas_coverage\": [\"CO2\", \"CH4\", \"N2O\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"location\", \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kWh\", \"confirmed_value\": 0.5, \"coverage\": \"Fictional activity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"electricity\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"gas-activity-evidence\", \"lease-evidence\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"location\", \"scope\": \"scope_2\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      },
+      {
+        "id": "workflow-scope2-market",
+        "skill": "calculate-market-based-scope-2",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "scope": "inventory boundary for source leased-source",
+            "reviewer_role": "GHG inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "workflow-scope2-market-metric",
+            "name": "scope_2 market emissions subtotal",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "gas-activity-evidence",
+              "lease-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope_2 market composition",
+              "version": "2015",
+              "source": "https://ghgprotocol.org/sites/default/files/2023-03/Scope%202%20Guidance.pdf"
+            },
+            "assumption": "Synthetic fixture scope account only; not a real inventory.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined component and allocation uncertainty has not been quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+              "inputs": [
+                "electricity-workflow-component-metric",
+                "ev-001",
+                "factor-evidence",
+                "gas-activity-evidence",
+                "lease-evidence"
+              ],
+              "conversions": [
+                "electricity-workflow-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1.0, applied once"
+              ],
+              "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-activity-evidence",
+          "lease-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture source classification only; supplied records do not establish real control.",
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope account only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "workflow-classify-scope-1-emissions-gap-0",
+            "field": "control/equity facts",
+            "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+            "impact": "Source classification or downstream calculation is incomplete.",
+            "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+          },
+          {
+            "id": "workflow-scope1-gap-1",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          },
+          {
+            "id": "workflow-scope2-location-gap-2",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          },
+          {
+            "id": "workflow-scope2-market-gap-3",
+            "field": "scope_coverage",
+            "reason": "Source leased-source has unresolved classification.",
+            "impact": "Scope total is incomplete or unavailable.",
+            "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "MARKET_COVERAGE",
+            "message": "{\"absence_disclosure\": \"No adjusted residual mix is supplied; fictional location factor used as disclosed fallback.\", \"category\": \"grid_fallback\", \"evidence_ids\": [\"factor-evidence\"], \"hierarchy_reviewed\": true, \"higher_priority_unavailable\": \"No contractual instruments or supplier-specific factors supplied in this fictional market.\", \"market\": \"fixture-market\", \"matched_quantity\": 1000, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional fallback to available grid factor; no real factor or instrument eligibility established.\", \"residual_mix_available\": false, \"unit\": \"kWh\"}"
+          },
+          {
+            "code": "CLASSIFICATION_REQUIRED",
+            "message": "Source leased-source has unresolved classification."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope account only; not a real inventory."
+          },
+          {
+            "code": "SCOPE_METHOD",
+            "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-workflow-component-metric\", \"source_id\": \"electricity\"}], \"components\": [{\"activity_fraction\": 1, \"basis\": \"location\", \"factor_id\": \"synthetic-factor\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"market_review\": {\"absence_disclosure\": \"No adjusted residual mix is supplied; fictional location factor used as disclosed fallback.\", \"category\": \"grid_fallback\", \"evidence_ids\": [\"factor-evidence\"], \"hierarchy_reviewed\": true, \"higher_priority_unavailable\": \"No contractual instruments or supplier-specific factors supplied in this fictional market.\", \"market\": \"fixture-market\", \"matched_quantity\": 1000, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional fallback to available grid factor; no real factor or instrument eligibility established.\", \"residual_mix_available\": false, \"unit\": \"kWh\"}, \"metric_id\": \"electricity-workflow-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"electricity\", \"gas_coverage\": [\"CO2\", \"CH4\", \"N2O\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"grid_fallback\", \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kWh\", \"confirmed_value\": 0.5, \"coverage\": \"Fictional activity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"electricity\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"gas-activity-evidence\", \"lease-evidence\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Explicit fictional source register; unresolved leased operation retained as a gap, not treated as zero.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"market\", \"scope\": \"scope_2\", \"sources\": [{\"activity_id\": \"gas-activity\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"gas-activity-evidence\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\"], \"id\": \"boiler\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_1\"}, {\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1.0, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional source relationship supplied for this workflow only. Fictional operational-control assessment; leased control is unresolved when null.\", \"scope\": \"scope_2\"}, {\"activity_id\": null, \"allocation_applied\": false, \"allocation_fraction\": null, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"lease-evidence\"], \"facility_id\": \"leased-facility\", \"gases\": null, \"id\": \"leased-source\", \"kind\": \"direct\", \"market\": \"fixture-market\", \"rationale\": \"Unresolved source facts.\", \"scope\": \"unknown\"}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting.",
+          "Reconcile source coverage, classification, factors and eligibility with supporting records."
+        ]
+      }
+    ],
+    "assumptions": [
+      "Synthetic fixture source classification only; supplied records do not establish real control.",
+      "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+      "Synthetic fixture scope account only; not a real inventory."
+    ],
+    "data_gaps": [
+      {
+        "id": "workflow-classify-scope-1-emissions-gap-0",
+        "field": "control/equity facts",
+        "reason": "leased-source: Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+        "impact": "Source classification or downstream calculation is incomplete.",
+        "remedy": "Obtain the missing source facts and evidence; reconcile the inventory boundary before accounting."
+      },
+      {
+        "id": "workflow-scope1-gap-1",
+        "field": "scope_coverage",
+        "reason": "Source leased-source has unresolved classification.",
+        "impact": "Scope total is incomplete or unavailable.",
+        "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+      },
+      {
+        "id": "workflow-scope2-location-gap-2",
+        "field": "scope_coverage",
+        "reason": "Source leased-source has unresolved classification.",
+        "impact": "Scope total is incomplete or unavailable.",
+        "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+      },
+      {
+        "id": "workflow-scope2-market-gap-3",
+        "field": "scope_coverage",
+        "reason": "Source leased-source has unresolved classification.",
+        "impact": "Scope total is incomplete or unavailable.",
+        "remedy": "Reconcile source coverage, classification, factors and eligibility with supporting records."
+      }
+    ],
+    "review_requirements": [
+      {
+        "id": "workflow-classify-scope-1-emissions-boundary-review-leased-source",
+        "state": "PROFESSIONAL_REVIEW_REQUIRED",
+        "reason": "Control or equity share is unresolved; ownership or a lease label alone does not determine it.",
+        "scope": "inventory boundary for source leased-source",
+        "reviewer_role": "GHG inventory boundary specialist",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [
+        "workflow-scope1"
+      ],
+      "scope_2": [
+        "workflow-scope2-location",
+        "workflow-scope2-market"
+      ],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": [
+      {
+        "id": "synthetic-factor",
+        "value": 0.5,
+        "unit": "kg CO2e/kWh",
+        "source": {
+          "locator": "fixture:factor",
+          "publisher": "Fictional fixture publisher",
+          "version": "fixture-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "factor-evidence"
+        ],
+        "status": "synthetic"
+      },
+      {
+        "id": "gas-co2-factor",
+        "value": 0.2,
+        "unit": "kg CO2e/m3",
+        "source": {
+          "locator": "fixture:gas-factor-table",
+          "publisher": "Fictional fixture publisher",
+          "version": "workflow-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "gas-factor-evidence"
+        ],
+        "status": "synthetic"
+      },
+      {
+        "id": "gas-ch4-factor",
+        "value": 0.05,
+        "unit": "kg CO2e/m3",
+        "source": {
+          "locator": "fixture:gas-factor-table",
+          "publisher": "Fictional fixture publisher",
+          "version": "workflow-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "gas-factor-evidence"
+        ],
+        "status": "synthetic"
+      }
+    ]
+  }
+}
