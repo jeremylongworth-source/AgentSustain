@@ -13,6 +13,7 @@ from .finance_composition import OPERATIONS as COMPOSITION_OPERATIONS, compose
 from .irr_tools import irr_roots
 from .finance_prices import OPERATIONS as PRICE_OPERATIONS, price_path
 from .finance_abatement import abatement_cost
+from .finance_projects import compare_projects, rank_projects
 
 
 OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id", "analysis_review", "result_id"},
@@ -22,6 +23,8 @@ OPERATIONS["calculate-irr"] = {"cashflows", "root_search", "analysis_review", "r
 OPERATIONS.update(COMPOSITION_OPERATIONS)
 OPERATIONS.update(PRICE_OPERATIONS)
 OPERATIONS["calculate-marginal-abatement-cost"] = {"incremental_cost_id", "baseline_emissions_id", "scenario_emissions_id", "abatement_review", "analysis_review", "result_id"}
+OPERATIONS["compare-sustainability-projects"] = {"projects", "criteria", "comparison_review", "analysis_review", "result_id"}
+OPERATIONS["rank-sustainability-investments"] = {"comparison_result_id", "decision_review", "analysis_review", "result_id"}
 
 
 def run_finance(state, skill, parameters):
@@ -84,7 +87,17 @@ def run_finance(state, skill, parameters):
         output_period = horizon
         with localcontext() as context:
             context.prec = 34
-            if skill == "calculate-marginal-abatement-cost":
+            if skill in {"compare-sustainability-projects", "rank-sustainability-investments"}:
+                if skill == "compare-sustainability-projects":
+                    entries, report, complete = compare_projects(state,parameters,resolve,refs,run_finance,OPERATIONS)
+                    code = "PROJECT_COMPARISON"
+                else:
+                    entries, report, complete = rank_projects(state,parameters,resolve,refs,run_finance)
+                    code = "INVESTMENT_RANKING"
+                result["diagnostics"].append({"code": code, "message": json.dumps(report, sort_keys=True)})
+                if not complete: gap("FINANCIAL_COVERAGE_REQUIRED", "Project comparison coverage is incomplete; outcomes/ranks remain conditional.")
+                if not entries: raise ValueError("No eligible alternatives remain under the supplied criteria, ownership, readiness and dependencies.")
+            elif skill == "calculate-marginal-abatement-cost":
                 entries, complete = abatement_cost(state,parameters,resolve,refs)
                 if not complete:
                     gap("FINANCIAL_COVERAGE_REQUIRED", "Cost-per-abatement coverage is incomplete; this is a conditional selected-project ratio.")

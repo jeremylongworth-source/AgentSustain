@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-05",
+  "base_revision": "a267e9c",
+  "checks": {
+    "unittest": {
+      "passed": 244,
+      "seconds": 55.236,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "new_project_tests": 11
+    },
+    "focused_project_tests": {
+      "passed": 11
+    },
+    "changed_skill_packaging": {
+      "passed": 2,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "economic_first_order": [
+        "b",
+        "a"
+      ],
+      "physical_first_order": [
+        "a",
+        "b"
+      ],
+      "exact_tuple_ties": "competition ranks retained",
+      "unassigned_deferred_unsatisfied_or_threshold_failure": "candidate retained with null rank and explicit reasons",
+      "portfolio_total": null,
+      "stale_financial_source_and_GWP_relabeling": "comparison withheld"
+    }
+  },
+  "limitations": [
+    "Fictional project outcomes and supplied ranges/feasibility; source confirmations are not document authentication.",
+    "Explicit lexicographic estimate screening, not weighted scoring, robust optimization or portfolio selection.",
+    "Overlapping primary ranges disclose sensitivity; thresholds apply to estimates, not every scenario.",
+    "Financial outcomes are rechecked; external supported physical inputs use reviewed source context.",
+    "All open reviews/gaps remain; no investment or engineering approval.",
+    "Author-led numerical/adversarial replay; full business-case and independent organization-wide evaluation remains."
+  ],
+  "sha256": {
+    "scripts/finance_projects.py": "322e88ffbce3fdab6b29974fabd1b598b9505f6bc21a090fb05e8c8998b0055a",
+    "scripts/finance_tools.py": "f6dca363f3b4d08d66098c3198cf00f7c7682b6f2e7606816701fa3f6cb1f1ed",
+    "tests/test_finance_projects.py": "5dbe052f109407fe27338d9f482c647d02d58b98825104c8d0aadac3042bb288",
+    "docs/finance-contract.md": "524cc5d9f0d6f603094dcd4b2fc539d4d6f446a2df64d5deaa30c7008457402a",
+    "skills/finance/compare-sustainability-projects/SKILL.md": "7547a27be168a8f3a90229b7920b6afd867daba0a3937b46c0b08607f4dc6e85",
+    "skills/finance/rank-sustainability-investments/SKILL.md": "55638eb9bebf229aedde9f61a930878a2e949e3de9cfa397194e6c9642a1b221",
+    "evaluations/sus12-project-comparison.json": "90c6615b7bb14eae41532bd9db0a6f1d20d9a7915088443b800f00e641bde557"
+  }
+}
