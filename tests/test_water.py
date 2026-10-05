@@ -8,6 +8,7 @@ import tempfile
 
 from scripts.contract_validation import ROOT, validate_state
 from scripts.water_tools import run_water
+from scripts.state_proposal import propose
 from tests.test_resources import resource_fixture
 
 
@@ -25,6 +26,16 @@ def water_fixture():
 
 
 class WaterTests(unittest.TestCase):
+    def test_dependency_example_preserves_local_gaps_and_unquantified_candidates(self):
+        capture=json.loads((ROOT/"evaluations/sus11-dependency-workflow.json").read_text(encoding="utf-8"))
+        state=copy.deepcopy(capture["initial_state"])
+        for step in capture["steps"]:
+            state=propose(state,step["result"],step["proposal_reason"])["state"];validate_state(state)
+            self.assertEqual(step["result"]["metrics"],[])
+        self.assertEqual(state,capture["final_state"])
+        self.assertTrue({"water-service-gap","water-scenario-gap"}<={g["id"] for g in state["data_gaps"]})
+        self.assertIn("ENGINEERING_REVIEW_REQUIRED",state["results"][-1]["review_states"])
+
     def test_cli_request_and_incompatible_period(self):
         state,quantities,review=water_fixture()
         request={"contract_version":"0.1.0","skill":"build-water-baseline","state":state,"parameters":{"quantities":quantities,"coverage_review":review,"result_id":"cli-water"}}

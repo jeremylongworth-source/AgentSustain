@@ -1,0 +1,2064 @@
+{
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 1,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "supply-a-evidence",
+        "source": {
+          "locator": "fixture:water/supply-a",
+          "title": "Fictional independent water supply supply-a",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "L",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "supply-b-evidence",
+        "source": {
+          "locator": "fixture:water/supply-b",
+          "title": "Fictional independent water supply supply-b",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "water-process-note",
+        "source": {
+          "locator": "fixture:examples/water-dependency-source.md",
+          "title": "Fictional water process and dependency note",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "qualitative process record",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "supply-a-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "supply-a",
+            "name": "supply-a",
+            "value": 10000,
+            "unit": "L",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "supply-a-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "supply-a-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "supply-a-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "supply-b-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "supply-b",
+            "name": "supply-b",
+            "value": 5,
+            "unit": "m3",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "supply-b-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "supply-b-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "dependency-water",
+        "skill": "build-water-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "dependency-water-volume",
+            "name": "Selected water withdrawal baseline",
+            "value": 15.0,
+            "unit": "m3",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "supply-a-evidence",
+              "supply-b-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected water-volume arithmetic",
+              "version": "0.1.0",
+              "source": "docs/water-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied measurement and local-context judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum nonoverlapping quantities of one declared water measurement basis",
+              "inputs": [
+                "supply-a",
+                "supply-b"
+              ],
+              "conversions": [
+                "Supported volume units converted to m3; no mass density, consumption or water-stress inference."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "supply-a-evidence",
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "dependency-water-gap-0",
+            "field": "water_analysis",
+            "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+            "impact": "Selected coverage or local interpretation remains incomplete.",
+            "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WATER_LOCAL_CONTEXT_REQUIRED",
+            "message": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions."
+          },
+          {
+            "code": "WATER_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"withdrawal\", \"confirmed\": true, \"coverage\": \"Selected facility external feeds; local catchment absent.\", \"coverage_complete\": true, \"evidence_ids\": [\"supply-a-evidence\", \"supply-b-evidence\"], \"measurement_boundary\": \"Fictional independent external supply meters.\", \"nonoverlap_assessment\": \"Separate supplied water feeds, not meter total plus submeter or recycled water.\", \"rationale\": \"Fictional source review only.\"}, \"quantities\": [{\"basis\": \"withdrawal\", \"catchment\": null, \"evidence_ids\": [\"supply-a-evidence\"], \"facility_id\": \"facility-001\", \"metric_id\": \"supply-a\", \"source_kind\": \"third_party\"}, {\"basis\": \"withdrawal\", \"catchment\": null, \"evidence_ids\": [\"supply-b-evidence\"], \"facility_id\": \"facility-001\", \"metric_id\": \"supply-b\", \"source_kind\": \"third_party\"}], \"result_id\": \"dependency-water\"}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible water quantities, measurement roles and facility/catchment context."
+        ]
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [
+      {
+        "id": "dependency-water-gap-0",
+        "field": "water_analysis",
+        "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+        "impact": "Selected coverage or local interpretation remains incomplete.",
+        "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+      }
+    ],
+    "review_requirements": [
+      {
+        "id": "reuse-review",
+        "state": "ENGINEERING_REVIEW_REQUIRED",
+        "reason": "Reuse feasibility, quality and treatment need technical assessment.",
+        "scope": "proposed water reuse",
+        "reviewer_role": "qualified process engineer",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [
+      "dependency-water"
+    ],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "steps": [
+    {
+      "skill": "assess-water-dependency",
+      "result": {
+        "id": "water-dependency",
+        "skill": "assess-water-dependency",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "ENGINEERING_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "reuse-review",
+            "state": "ENGINEERING_REVIEW_REQUIRED",
+            "reason": "Reuse feasibility, quality and treatment need technical assessment.",
+            "scope": "proposed water reuse",
+            "reviewer_role": "qualified process engineer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "water-process-note",
+          "supply-a-evidence",
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "dependency-water-gap-0",
+            "field": "water_analysis",
+            "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+            "impact": "Selected coverage or local interpretation remains incomplete.",
+            "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+          },
+          {
+            "id": "water-service-gap",
+            "field": "water dependency/opportunity",
+            "reason": "Quantity/quality and seasonal supply requirements are not established.",
+            "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+            "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WATER_PROCESS_ASSESSMENT",
+            "message": "{\"dependency\": \"Water supports rinsing and service quality.\", \"limits\": \"No basin or outage forecast is supported.\", \"stress_score\": null, \"unknowns\": [\"quality thresholds\", \"seasonal demand\", \"catchment stress\", \"supply reliability\", \"downstream/community conditions\"]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain measured/service/context records and technical assessment."
+        ]
+      },
+      "proposal_reason": "Record bounded fictional water investigation without approval"
+    },
+    {
+      "skill": "identify-water-efficiency-opportunities",
+      "result": {
+        "id": "water-candidates",
+        "skill": "identify-water-efficiency-opportunities",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "ENGINEERING_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "reuse-review",
+            "state": "ENGINEERING_REVIEW_REQUIRED",
+            "reason": "Reuse feasibility, quality and treatment need technical assessment.",
+            "scope": "proposed water reuse",
+            "reviewer_role": "qualified process engineer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "water-process-note",
+          "supply-a-evidence",
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "dependency-water-gap-0",
+            "field": "water_analysis",
+            "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+            "impact": "Selected coverage or local interpretation remains incomplete.",
+            "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+          },
+          {
+            "id": "water-service-gap",
+            "field": "water dependency/opportunity",
+            "reason": "Quantity/quality and seasonal supply requirements are not established.",
+            "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+            "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+          },
+          {
+            "id": "water-scenario-gap",
+            "field": "water dependency/opportunity",
+            "reason": "No validated leak/reuse quantities or feasibility model is supplied.",
+            "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+            "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WATER_PROCESS_ASSESSMENT",
+            "message": "{\"approval\": null, \"candidates\": [{\"id\": \"valve-inspection\", \"mechanism\": \"Investigate reported dripping valve\", \"needs\": [\"measured flow and duration\", \"service/repair constraints\"], \"owner\": \"facility operator\", \"quantified_saving\": null}, {\"id\": \"reuse-assessment\", \"limits\": \"Circulating reuse is not new withdrawal or avoided consumption.\", \"mechanism\": \"Assess proposed reuse loop\", \"needs\": [\"quality\", \"treatment\", \"storage\", \"discharge interactions\"], \"owner_needed\": \"process engineer\", \"quantified_saving\": null}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain measured/service/context records and technical assessment."
+        ]
+      },
+      "proposal_reason": "Record bounded fictional water investigation without approval"
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 3,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "supply-a-evidence",
+        "source": {
+          "locator": "fixture:water/supply-a",
+          "title": "Fictional independent water supply supply-a",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "L",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "supply-b-evidence",
+        "source": {
+          "locator": "fixture:water/supply-b",
+          "title": "Fictional independent water supply supply-b",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "water-process-note",
+        "source": {
+          "locator": "fixture:examples/water-dependency-source.md",
+          "title": "Fictional water process and dependency note",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "qualitative process record",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "supply-a-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "supply-a",
+            "name": "supply-a",
+            "value": 10000,
+            "unit": "L",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "supply-a-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "supply-a-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "supply-a-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "supply-b-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "supply-b",
+            "name": "supply-b",
+            "value": 5,
+            "unit": "m3",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "supply-b-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "supply-b-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "dependency-water",
+        "skill": "build-water-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "dependency-water-volume",
+            "name": "Selected water withdrawal baseline",
+            "value": 15.0,
+            "unit": "m3",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "supply-a-evidence",
+              "supply-b-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected water-volume arithmetic",
+              "version": "0.1.0",
+              "source": "docs/water-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied measurement and local-context judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum nonoverlapping quantities of one declared water measurement basis",
+              "inputs": [
+                "supply-a",
+                "supply-b"
+              ],
+              "conversions": [
+                "Supported volume units converted to m3; no mass density, consumption or water-stress inference."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "supply-a-evidence",
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "dependency-water-gap-0",
+            "field": "water_analysis",
+            "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+            "impact": "Selected coverage or local interpretation remains incomplete.",
+            "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WATER_LOCAL_CONTEXT_REQUIRED",
+            "message": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions."
+          },
+          {
+            "code": "WATER_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"withdrawal\", \"confirmed\": true, \"coverage\": \"Selected facility external feeds; local catchment absent.\", \"coverage_complete\": true, \"evidence_ids\": [\"supply-a-evidence\", \"supply-b-evidence\"], \"measurement_boundary\": \"Fictional independent external supply meters.\", \"nonoverlap_assessment\": \"Separate supplied water feeds, not meter total plus submeter or recycled water.\", \"rationale\": \"Fictional source review only.\"}, \"quantities\": [{\"basis\": \"withdrawal\", \"catchment\": null, \"evidence_ids\": [\"supply-a-evidence\"], \"facility_id\": \"facility-001\", \"metric_id\": \"supply-a\", \"source_kind\": \"third_party\"}, {\"basis\": \"withdrawal\", \"catchment\": null, \"evidence_ids\": [\"supply-b-evidence\"], \"facility_id\": \"facility-001\", \"metric_id\": \"supply-b\", \"source_kind\": \"third_party\"}], \"result_id\": \"dependency-water\"}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible water quantities, measurement roles and facility/catchment context."
+        ]
+      },
+      {
+        "id": "water-dependency",
+        "skill": "assess-water-dependency",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "ENGINEERING_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "reuse-review",
+            "state": "ENGINEERING_REVIEW_REQUIRED",
+            "reason": "Reuse feasibility, quality and treatment need technical assessment.",
+            "scope": "proposed water reuse",
+            "reviewer_role": "qualified process engineer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "water-process-note",
+          "supply-a-evidence",
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "dependency-water-gap-0",
+            "field": "water_analysis",
+            "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+            "impact": "Selected coverage or local interpretation remains incomplete.",
+            "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+          },
+          {
+            "id": "water-service-gap",
+            "field": "water dependency/opportunity",
+            "reason": "Quantity/quality and seasonal supply requirements are not established.",
+            "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+            "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WATER_PROCESS_ASSESSMENT",
+            "message": "{\"dependency\": \"Water supports rinsing and service quality.\", \"limits\": \"No basin or outage forecast is supported.\", \"stress_score\": null, \"unknowns\": [\"quality thresholds\", \"seasonal demand\", \"catchment stress\", \"supply reliability\", \"downstream/community conditions\"]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain measured/service/context records and technical assessment."
+        ]
+      },
+      {
+        "id": "water-candidates",
+        "skill": "identify-water-efficiency-opportunities",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "ENGINEERING_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "reuse-review",
+            "state": "ENGINEERING_REVIEW_REQUIRED",
+            "reason": "Reuse feasibility, quality and treatment need technical assessment.",
+            "scope": "proposed water reuse",
+            "reviewer_role": "qualified process engineer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "water-process-note",
+          "supply-a-evidence",
+          "supply-b-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "dependency-water-gap-0",
+            "field": "water_analysis",
+            "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+            "impact": "Selected coverage or local interpretation remains incomplete.",
+            "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+          },
+          {
+            "id": "water-service-gap",
+            "field": "water dependency/opportunity",
+            "reason": "Quantity/quality and seasonal supply requirements are not established.",
+            "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+            "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+          },
+          {
+            "id": "water-scenario-gap",
+            "field": "water dependency/opportunity",
+            "reason": "No validated leak/reuse quantities or feasibility model is supplied.",
+            "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+            "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WATER_PROCESS_ASSESSMENT",
+            "message": "{\"approval\": null, \"candidates\": [{\"id\": \"valve-inspection\", \"mechanism\": \"Investigate reported dripping valve\", \"needs\": [\"measured flow and duration\", \"service/repair constraints\"], \"owner\": \"facility operator\", \"quantified_saving\": null}, {\"id\": \"reuse-assessment\", \"limits\": \"Circulating reuse is not new withdrawal or avoided consumption.\", \"mechanism\": \"Assess proposed reuse loop\", \"needs\": [\"quality\", \"treatment\", \"storage\", \"discharge interactions\"], \"owner_needed\": \"process engineer\", \"quantified_saving\": null}]}"
+          }
+        ],
+        "next_actions": [
+          "Obtain measured/service/context records and technical assessment."
+        ]
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [
+      {
+        "id": "dependency-water-gap-0",
+        "field": "water_analysis",
+        "reason": "Catchment context is missing; volume supports arithmetic, not water-stress or impact conclusions.",
+        "impact": "Selected coverage or local interpretation remains incomplete.",
+        "remedy": "Supply compatible water quantities, measurement roles and facility/catchment context."
+      },
+      {
+        "id": "water-service-gap",
+        "field": "water dependency/opportunity",
+        "reason": "Quantity/quality and seasonal supply requirements are not established.",
+        "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+        "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+      },
+      {
+        "id": "water-scenario-gap",
+        "field": "water dependency/opportunity",
+        "reason": "No validated leak/reuse quantities or feasibility model is supplied.",
+        "impact": "Investigation only; no quantified efficiency, stress or safe reuse claim.",
+        "remedy": "Obtain documented service/local supply data and technically reviewed scenario measurements."
+      }
+    ],
+    "review_requirements": [
+      {
+        "id": "reuse-review",
+        "state": "ENGINEERING_REVIEW_REQUIRED",
+        "reason": "Reuse feasibility, quality and treatment need technical assessment.",
+        "scope": "proposed water reuse",
+        "reviewer_role": "qualified process engineer",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [
+      "dependency-water"
+    ],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  }
+}

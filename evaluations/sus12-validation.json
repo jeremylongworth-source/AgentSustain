@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "06eee96",
+  "checks": {
+    "unittest": {
+      "passed": 185,
+      "new_finance_tests": 10,
+      "new_water_dependency_workflow_tests": 1,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests"
+    },
+    "skill_packaging": {
+      "passed": 13,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "investment_CAD": 1000,
+      "annual_net_savings_CAD_per_year": 600,
+      "simple_payback_years": 1.6666666666666667,
+      "horizon_roi_percent": 20,
+      "annual_end_of_year_npv_CAD": 41.32231404958678
+    }
+  },
+  "limitations": [
+    "Fictional finance source quantities, completeness and economic definitions are supplied, not authenticated.",
+    "NPV currently supports explicit calendar-year-end timing; no default rate, tax, inflation or FX conversion.",
+    "Water interpretations are author-led outputs; replay does not independently rerun agent reasoning.",
+    "Additional economics methods and independent organization-wide evaluations remain; no investment approval."
+  ],
+  "sha256": {
+    "scripts/finance_tools.py": "ce305aaacae3b75e3cb21d6f921d8b5ac8b9299087d63a1d2239edcc5c9592e6",
+    "scripts/run_finance.py": "c049f2be1165db7080923a8ed52cc532d8f45d39cb82d7de4ab4c8619d450b34",
+    "tests/test_finance.py": "2eeb5f59eb908ec8fd47026ff860b5e3c2c5c627d419e5da0d77bfb3dc135893",
+    "tests/test_water.py": "8ce78438b6ff3974592e08d1ca37e84b0bfc0366b3d443b4ae088dc52c928fcf",
+    "docs/finance-contract.md": "ff99624d883d0440cd4c7e6e22f3bee99e1973ea9d0328bd2718838e559630dc",
+    "examples/water-dependency-source.md": "d246717b42a15d34e8c1482ceeeb0f9ec983fb18b53bec3204bb8503dad51dab",
+    "evaluations/sus11-dependency-workflow.json": "e8a05ba79d5fffbd4c3a8de5ab4685e4e3ad7b87344a4f2c345744e28075355c",
+    "evaluations/sus12-finance-workflow.json": "98ba7cbb72376bbb0110c9eb7cf99ea70ccb21d1cc167de410fe2b80005756b5",
+    "skills/finance/build-sustainability-business-case/SKILL.md": "88135c781fdf541ae935bf9128b25fd5d6e621ca6ab327ac1832ae8349eae1b4",
+    "skills/finance/calculate-irr/SKILL.md": "5704af8c9fd3a68b267b9a2439e2ed3b51b1a3a6c43f963a4387e5aa2cafa301",
+    "skills/finance/calculate-marginal-abatement-cost/SKILL.md": "72cb780703d2b7eb9bbbda7ad994b477d1c58851110eb2a76391da8d5b28636c",
+    "skills/finance/calculate-npv/SKILL.md": "353115a52e2d054f05e65cf7bb4e9d753f09de6dffe9debb8d72a713a227786f",
+    "skills/finance/calculate-operating-savings/SKILL.md": "ac451abf3731f86d943415e7914b5d0fefe6af3044729c9585ec2acfb99b1580",
+    "skills/finance/calculate-roi/SKILL.md": "4681b0dbaf09a7041650da1dd20c72fbf2ab2930b14352c891e9c5bebf89771e",
+    "skills/finance/calculate-simple-payback/SKILL.md": "9fd894fc88a7e33998896f03244b4a267dcba4a7bb4d1004ce0d06663fd75a14",
+    "skills/finance/calculate-sustainability-project-cost/SKILL.md": "e18b1d043e66633f88949f804a918dc1b7055d04060410982a384552e5f72974",
+    "skills/finance/compare-sustainability-projects/SKILL.md": "4e82c2284fbf8a7d4ffed8c07c45db8fe5cfdf241ec04c047322d319a402a5de",
+    "skills/finance/model-carbon-price-scenario/SKILL.md": "327ea2faf3368f2f36444d5b82488d98e8f78d331e7916434fdd68ffc8926052",
+    "skills/finance/model-energy-price-scenario/SKILL.md": "c71046cd8df85a37a6dd10b8017fa04c921ec29635ff55e4881a518fe6a24640",
+    "skills/finance/model-resource-cost-scenario/SKILL.md": "eea767bac5706d8edde174ac1f7b1ee3b8fed78236595c8eea66bfbde8aaced5",
+    "skills/finance/rank-sustainability-investments/SKILL.md": "56477c650bebe17c84c6ff697a6dc6fc1aaa858941ebfd33dd5ca3bbde86bd99"
+  }
+}
