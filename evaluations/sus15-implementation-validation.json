@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "520ec30",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 406,
+    "duration_seconds": 169.281,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 84,
+    "duration_seconds": 44.712,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "build-implementation-roadmap": "quick_validate.py passed"
+  },
+  "cli_validation": "Complete author and independent helper/CLI outputs replayed exactly; request/raw bytes unchanged; historical state/results/evidence/reviews/gaps preserved.",
+  "known_answer": {
+    "resource": "engineering",
+    "unit": "h/day",
+    "overlap_period": {
+      "start": "2027-02-02",
+      "end": "2027-02-03"
+    },
+    "daily_demand": 9,
+    "daily_capacity": 8,
+    "daily_capacity_minus_demand": -1,
+    "later_daily_demand": 3,
+    "later_daily_capacity": null,
+    "upstream_quote_CAD": 400,
+    "upstream_envelope_CAD": 300,
+    "delivery_screen": "known_conditions_not_met",
+    "new_metrics": 0,
+    "resource_optimized": false,
+    "resources_reserved": false,
+    "roadmap_adopted": false,
+    "implementation_authorized": false
+  },
+  "checks": [
+    "Complete transition/strategy/target source reproduction with scope and review-date consistency",
+    "Owned dated phases and task deliverables/acceptance criteria remain proposals, not completed gates",
+    "Constant daily event-window arithmetic exposes concurrent over-allocation and missing capacity",
+    "Zero capacity stays unavailable; missing capacity stays null, not zero or unlimited",
+    "Exact daily units/task periods/boundaries required; weekly/working-day conversions not inferred",
+    "Overlapping capacity windows and reused metrics across renamed resource pools rejected",
+    "Task dependencies acyclic with strict inclusive finish-to-start; source milestone prerequisites retained as ancestors",
+    "Missing milestone responses, overdue work and source finish conflicts retain review",
+    "Preconditions require source fitness and preserve unknowns; upstream budget/model/timing conditions remain unmet/unresolved",
+    "Altered sources and missing-factor dependency block without metrics; historical records/obligations preserved"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-implementation.json",
+    "status": "partial",
+    "new_metrics": 0,
+    "new_gaps": 20,
+    "new_reviews": 1,
+    "observed": "Weekly/shared capacity and interval-total effort withheld as daily rates; completion, funding, reservation and phase-exit assertions removed; unknown capacity and upstream gates preserved.",
+    "daily_capacity": null,
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "c1479af9b9494f8740402a8def28f780bdde03e0cf87de35660024f9af2eaa9c"
+  },
+  "limitations": [
+    "Twelve of thirteen initial strategy/implementation workflows; formal accountability remains.",
+    "Constant inclusive calendar rates and finish-to-start packages only; variable working calendars, finer capacity identity, task splitting and uncertainty/optimization remain.",
+    "Source metrics selected as supplied; source truth and daily-resource fitness require actual raw-source and professional review.",
+    "One fictional independent case does not establish authenticated availability, workforce acceptance, engineering validity, organization readiness or general reliability.",
+    "No staffing reservations, actual starts, funding, phase completion, performance, claims or release approval. Broader methods and specialist/router/organization evaluation remain open."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "5d031a197c2170dedec99dae62d941de0ab9020644fd346385512fbe12c92745",
+    "scripts/strategy_implementation.py": "fce6a0abff4d02d73a423d75e08837391d15493e23e61a65197429dc8312cd6e",
+    "tests/test_strategy_implementation.py": "028fec4a615a9779271235779c271b363c9dd845b8d4c44a9c937607775f221f",
+    "skills/implementation/build-implementation-roadmap/SKILL.md": "0c31575a24468b403f439721055ecf775b3bb0a514621eb8df9b36c9e96dee46",
+    "docs/strategy-contract.md": "a0609beed6519846c7204573bafea0313edfb26cd1cce16ecb0b72037be38785",
+    "evaluations/sus15-implementation-workflow.json": "8d75d60d93232b44979a7a3bc915bb10ed83e5c12d49d8125ad35b7a6f40a6a8",
+    "evaluations/sus15-independent-implementation.json": "a0a44c6d78620276214ba525d319d70f5053472e6b421d140aceba0b41bd33a6"
+  }
+}
