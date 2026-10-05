@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "2eb0d9a",
+  "checks": {
+    "unittest": {
+      "passed": 211,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "new_cashflow_tests": 7,
+      "seconds": 38.606
+    },
+    "focused_cashflow": {
+      "passed": 7
+    },
+    "changed_skill_packaging": {
+      "passed": 1,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "cashflows_CAD": [
+        -1000,
+        500,
+        500
+      ],
+      "npv_CAD_at_10_percent": -132.23140495867767,
+      "irr_percent_approximately": 0
+    }
+  },
+  "limitations": [
+    "Annual calendar-year-end timing only; each year requires a separately identified supported flow.",
+    "Constant annual repetition and completeness are explicit fictional scenario judgments, not authenticated facts.",
+    "No inferred tax, escalation, replacement, residual value or economic price path.",
+    "Author-led numerical replay; independent behavioral and organization-wide evaluation remains."
+  ],
+  "sha256": {
+    "scripts/finance_cashflow.py": "f976a186aae211942af532f04ec2eb1f88b83dd8a67d13e6ef6aa98b16bfa19e",
+    "scripts/finance_composition.py": "3ae71074287556febc3397e998b13d670f39e13f1d2a185235851f044ee5b16e",
+    "tests/test_finance_cashflow.py": "c66fad288e9b4d0b428d9d3c6fc0d953586b1abb734d04fa456fe9eba1d9a276",
+    "docs/finance-contract.md": "b78cb316a84d616d79dcf9e5e41bd8912e650fa40295e20986555b8251dfb368",
+    "skills/finance/build-sustainability-business-case/SKILL.md": "321342b4ea0d6719f6418b187fcc23b57a0f3b97d1c5a521533cecaf67d1e0f2",
+    "evaluations/sus12-cashflow-composition.json": "8f4123df9ab89866383651dcd85728f63b7e35cca1291616ec3dd799c5d06ae7"
+  }
+}

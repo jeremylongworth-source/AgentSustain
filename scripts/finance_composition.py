@@ -2,15 +2,19 @@
 from datetime import date
 
 from .data_tools import baseline, number
+from .finance_cashflow import cashflow
 
 
 OPERATIONS = {
+    "build-sustainability-business-case": {"lines", "cashflow_review", "analysis_review", "result_id"},
     "calculate-sustainability-project-cost": {"lines", "composition_review", "analysis_review", "result_id"},
     "calculate-operating-savings": {"baseline_lines", "scenario_lines", "comparison_review", "analysis_review", "result_id"},
 }
 
 
 def compose(state, skill, parameters, resolve, refs):
+    if skill == "build-sustainability-business-case":
+        return cashflow(state, parameters, resolve, refs)
     known = {e["id"]: e for e in state["evidence"]}
     metrics = {m["id"]: m for r in state["results"] for m in r["metrics"]}
     currency = parameters["analysis_review"]["currency"]
