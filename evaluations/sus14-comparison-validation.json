@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "a6a033b",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 282,
+    "duration_seconds": 114.399,
+    "status": "passed"
+  },
+  "focused": {
+    "command": "python -m unittest tests.test_suppliers tests.test_supplier_comparison",
+    "tests": 13,
+    "duration_seconds": 1.407,
+    "status": "passed"
+  },
+  "skill_validation": "compare-suppliers quick_validate.py passed",
+  "fixture": "sus14-supplier-comparison.json",
+  "checks": [
+    "Reproduced original source inputs and entire cached assessment reports",
+    "Distinct supplier identities and common criteria, scope, evidence policy and exclusions",
+    "Strictly separated ranges, overlap/touch and complete ties",
+    "Altered report, changed weight/rubric/exclusion and repeated supplier rejected",
+    "Missing/duplicate sources and changed comparison scope rejected",
+    "Whole saved proposal replay and earlier supplier regression cases",
+    "No selected supplier or procurement/supplier approval",
+    "Source history, supplier entities, gaps and reviews retained"
+  ],
+  "limitations": [
+    "Author-led deterministic fixtures, not independent comparison behavior",
+    "Functional equivalence and source fitness remain supplied review judgments",
+    "No environmental/economic superiority or purchase recommendation",
+    "Sourced risk, attribution, engagement and organization evaluation remain"
+  ],
+  "sha256": {
+    "scripts/supplier_tools.py": "22c01a70bfb98b68e7489321c5d0d4c24cf4dff72cf1f5d0523d7465a290bc31",
+    "scripts/supplier_comparison.py": "bb423699141e3d98113bbb44d51b3f3e7a54062e0cbf084b6b952fdf6ad8b4e4",
+    "tests/test_supplier_comparison.py": "cee3b5882e38d9fd614a081b87ff2de2456266f3de87635dedfdd2fb24b6d8f2",
+    "docs/supplier-contract.md": "c015bc077c8d3f155e0575e54fa38dbfed102018a129166bb30feb17be3b48e5",
+    "skills/procurement/compare-suppliers/SKILL.md": "8dd936c01c2d0c5d9ca5ac6425957844e25940e3114d0cee8db3884528def39a",
+    "evaluations/sus14-supplier-comparison.json": "2adbbabebe7c17201594d3a3c6949f09c81da2c9d0e379927b5f5031c787d920"
+  }
+}
