@@ -5,6 +5,16 @@ Status: APPROVED FOR CONTINUED DEVELOPMENT by the project owner on 2026-10-05 (A
 ## Latest decision
 
 - User instruction: "approve the review".
+- Reviewed revision: `39c7a96e3c0e3ff9e6e6390c0c6085a54b8b4b48`.
+- Scope: the committed local development snapshot, including subsequent SUS-16 physical-risk/adaptation, transition-driver/exposure, register, priority and resilience workflows; initial SUS-17 inventory mapping/version-diff workflows; source-integrity guards; and their saved validation and independent source-reading evidence.
+- Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Validation evidence: [the reporting-adapter validation record](../evaluations/sus17-framework-mapping-validation.json) records 502 passing repository tests, ten passing focused framework tests, both skill validations and complete author/independent helper/CLI replay. These are existing checks, not new tests run for this approval.
+
+This approval includes the subsequent extensions described below through the reviewed revision. It preserves source-specific, professional, accountable-owner, broader organization evaluation and specialist/router/release gates. It does not resolve result/state reviews, close SUS-16 or SUS-17, establish v1 readiness or authorize operational implementation, claims, publication, push, merge, release or deployment. Exact-byte catalog replay across platform checkouts remains unvalidated in the saved evidence. Subsequent changes do not inherit this revision's scoped approval.
+
+## Previous physical-climate decision
+
+- User instruction: "approve the review".
 - Reviewed revision: `b7e1fc714becf1813194240fab5bc91043c35361`.
 - Scope: the committed local development snapshot, including initial SUS-16 hazard identification, asset mapping, exposure-stock assessment and vulnerability-condition workflows and their saved validation and independent source-reading evidence.
 - Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
