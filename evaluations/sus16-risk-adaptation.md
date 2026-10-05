@@ -1,0 +1,13 @@
+# Initial physical-risk and adaptation workflow
+
+The wholly fictional [complete request/output capture](sus16-risk-adaptation.json) exercises `score-physical-risk` followed by `identify-adaptation-options` using the exact risk proposal state. It extends the initial hazard/mapping/exposure/vulnerability chain; it does not close SUS-16.
+
+The supplied versioned two-by-three ordinal matrix maps the supported L1–L2 and C2–C3 ranges to the exact possible classes R2 and R3. Neither endpoint is selected. Stock share is not a probability, ordinal labels are not multiplied, and no expected loss, organization score or accepted risk is calculated. Planned coping and unknown adaptive capacity remain unresolved. The risk result is partial, with 14 result gaps, five review requirements and no new metrics.
+
+Two owned candidate proposals retain site investigation before equipment-position design investigation. The design proposal ends in February 2031, after the selected hazard horizon starts in January 2030; it cannot establish early-horizon protection. Unmet engineering investigation and potential runoff displacement affecting neighbors remain explicit, alongside unknown effectiveness, residual risk, monitoring, funding and actual owner acceptance. The adaptation result is partial, with 22 result gaps, six review requirements and no new metrics. Implementation, funding, resource reservation, verified effectiveness and monitoring-start flags remain false; no preferred option or resilience guarantee is inferred.
+
+Known-answer and adversarial checks cover complete/nonmonotonic/missing matrix cells, severe consequences at lower likelihood, unknown or unfit bounds, exact scenario/horizon compatibility, omitted exposures, source-version changes, emission-factor obligations, option references, source dates, cycles and inclusive prerequisite timing. Actual CLI outputs must equal complete helper outputs, preserve request bytes and retain every historical source/result and outstanding obligation.
+
+These cases verify bounded contract behavior. Caller source-fitness judgments still require inspection of raw material; source fragments alone cannot prove their truth. Qualified site, model, engineering and affected-party review, broader methods, transition-risk workflows, organization composition and independent organization evaluation remain open.
+
+[Independent raw-source reading](sus16-independent-risk-adaptation.md) withheld unsupported site ratings, removed efficacy/approval claims and preserved source-version reconciliation plus affected-party/timing review. Complete current author and independent helper/CLI outputs replay exactly. [The validation record](sus16-risk-adaptation-validation.json) records the passing suites and their limits.

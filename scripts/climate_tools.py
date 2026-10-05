@@ -14,9 +14,12 @@ OPERATIONS = {
     "map-assets-to-hazards": {"hazard_result_id", "assets", "comparisons", "mapping_review", "result_id"},
     "assess-exposure": {"mapping_result_id", "observations", "exposure_review", "result_id"},
     "assess-vulnerability": {"exposure_result_id", "rubric", "factors", "vulnerability_review", "result_id"},
+    "score-physical-risk": {"vulnerability_result_id", "model", "ratings", "risk_review", "result_id"},
+    "identify-adaptation-options": {"risk_result_id", "options", "adaptation_review", "result_id"},
 }
 CODE = {"identify-climate-hazards": "CLIMATE_HAZARDS", "map-assets-to-hazards": "ASSET_HAZARD_MAP"}
 CODE.update({"assess-exposure": "CLIMATE_EXPOSURE", "assess-vulnerability": "CLIMATE_VULNERABILITY"})
+CODE.update({"score-physical-risk": "PHYSICAL_RISK_SCREEN", "identify-adaptation-options": "ADAPTATION_OPTIONS"})
 
 
 def _text(value):
@@ -256,7 +259,10 @@ def _execute(state, skill, parameters):
             "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."})
         result["diagnostics"].append({"code": code, "message": message})
     try:
-        if skill in {"assess-exposure", "assess-vulnerability"}:
+        if skill in {"score-physical-risk", "identify-adaptation-options"}:
+            from .climate_risk import score, adaptation
+            report = (score if skill == "score-physical-risk" else adaptation)(state, parameters, refs, result, gap)
+        elif skill in {"assess-exposure", "assess-vulnerability"}:
             from .climate_assessment import exposure, vulnerability
             report = (exposure if skill == "assess-exposure" else vulnerability)(state, parameters, refs, result, gap)
         else:
@@ -264,7 +270,8 @@ def _execute(state, skill, parameters):
         result["review_requirements"].append({"id": result["id"] + "-climate-review", "state": "PROFESSIONAL_REVIEW_REQUIRED",
             "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
             "scope": report[{"identify-climate-hazards": "hazard_review", "map-assets-to-hazards": "mapping_review",
-                "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review"}[skill]]["scope"],
+                "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review",
+                "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review"}[skill]]["scope"],
             "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner", "status": "open", "resolution": None})
         result["diagnostics"].append({"code": CODE[skill], "message": json.dumps(report, sort_keys=True)})
         result["status"] = "partial" if result["data_gaps"] else "completed"

@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "23efcf8",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 455,
+    "duration_seconds": 188.84,
+    "status": "passed"
+  },
+  "focused_climate_suites": {
+    "command": "python -m unittest tests.test_climate tests.test_climate_assessment tests.test_climate_risk",
+    "tests": 41,
+    "duration_seconds": 13.183,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "score-physical-risk": "quick_validate.py passed",
+    "identify-adaptation-options": "quick_validate.py passed"
+  },
+  "cli_validation": "Full author/independent helper and actual CLI outputs equal; original raw/draft hashes and request bytes preserved, exact state handoff and every historical state record/obligation verified.",
+  "known_answer": {
+    "author_possible_classes": [
+      "R2",
+      "R3"
+    ],
+    "chosen_class": null,
+    "probability": null,
+    "expected_loss": null,
+    "new_metrics": 0,
+    "adaptation_proposals": 2,
+    "risk_accepted": false,
+    "effectiveness_verified": false,
+    "funding_authorized": false,
+    "implementation_authorized": false,
+    "resilience_verified": false
+  },
+  "parent_replays": [
+    {
+      "capture": "author",
+      "skill": "score-physical-risk",
+      "exit_code": 0,
+      "runtime_seconds": 0.41,
+      "request_sha256": "9b3474e65b4eeed567d87d1265aa3de409a227c1ef5752fea5034b718cb0bc2b",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "status": "partial",
+      "result_gaps": 14,
+      "result_reviews": 5,
+      "stderr": ""
+    },
+    {
+      "capture": "author",
+      "skill": "identify-adaptation-options",
+      "exit_code": 0,
+      "runtime_seconds": 0.434,
+      "request_sha256": "4603c16b8503969ddbbdaac5883544748fdd60bea598b6a9d1e448662b2cc08c",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "status": "partial",
+      "result_gaps": 22,
+      "result_reviews": 6,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "skill": "score-physical-risk",
+      "exit_code": 0,
+      "runtime_seconds": 0.413,
+      "request_sha256": "f686f1d62ff849ef56dddbcb08eb15d8cd4793cf05f1dc82d9408264983ea3d7",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "status": "partial",
+      "result_gaps": 18,
+      "result_reviews": 5,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "skill": "identify-adaptation-options",
+      "exit_code": 0,
+      "runtime_seconds": 0.439,
+      "request_sha256": "f25275cd2a1f1be30558b086d57ce9b046febf6a256a44b84e46ccbdf150faa5",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "status": "partial",
+      "result_gaps": 28,
+      "result_reviews": 6,
+      "stderr": ""
+    }
+  ],
+  "independent_case": {
+    "source_files": 3,
+    "original_bytes_verified": true,
+    "risk_status": "partial",
+    "screening_status": "unclassified",
+    "possible_classes": [],
+    "adaptation_status": "partial",
+    "source_version_reconciliation": "open",
+    "reviews_resolved": false
+  },
+  "limitations": [
+    "Six initial workflows do not close SUS-16 or complete fourteen named climate-risk skills.",
+    "Caller source-fitness judgments do not authenticate arbitrary source prose, scientific calibration, site probability or engineering tolerance.",
+    "Ordinal Cartesian uncertainty screen and proposal ordering only; broader physical methods, quantitative effectiveness, transition workflows and organization composition/evaluation remain.",
+    "One fictional independent case does not establish general reliability, professional approval, organization coverage or public-v1 readiness.",
+    "Changes subsequent to b7e1fc7 do not inherit its scoped approval; all specialist/router/release gates remain open."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "48d22e424563e37b4f1ae7ce9b442d8e41e4cf8e5ff54e7517f7c821d8b442d1",
+    "scripts/climate_assessment.py": "f8c0f867e01023ab11822f66a57323ef2e2c2c527ef3b4cbbec125b0a8c7c36e",
+    "scripts/climate_risk.py": "296ccd2321cfed9e59f25e4e2f081051ed3ea2811c633024d9ed6809fbbfc4ad",
+    "tests/test_climate_risk.py": "f395978b10bea08a1c6b91037424fe6c00c381a082d443c94ac2f7a3fb4e6897",
+    "skills/climate-risk/score-physical-risk/SKILL.md": "a1dba857a671f40b5d2400ddb8c76626c9d0a49ad6ccd2b24897561bdd7ba8ee",
+    "skills/climate-risk/identify-adaptation-options/SKILL.md": "0892f8c499a03f4c881632100de6f9a0fd185d1a945b75215e7e00faa66c9e1c",
+    "docs/climate-risk-contract.md": "d89cad092d4b3d79784b1d14611dc663c60cdd8d1e88b21afc2bcb8dc760df33",
+    "evaluations/sus16-risk-adaptation.json": "2ed9be599eb7c1e7ef0338c2cdb9717d3a556a3e9d1948a4dde10f3348d59fe9",
+    "evaluations/sus16-independent-risk-adaptation.json": "850c81240f92fe63bd5137690abaff984f60985ce43270bbcff32d5df60fb94c"
+  }
+}
