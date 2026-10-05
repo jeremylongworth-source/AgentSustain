@@ -18,6 +18,7 @@ OPERATIONS["map-supply-chain-emissions"]={"links","mapping_review","result_id"}
 OPERATIONS["prioritize-supplier-engagement"]={"assessment_result_ids","engagement_review","priority_rule","result_id"}
 OPERATIONS["develop-supplier-improvement-plan"]={"assessment_result_id","plan_review","actions","result_id"}
 OPERATIONS["identify-scope-3-hotspots"]={"mapping_result_ids","hotspot_review","hotspot_threshold_percent","result_id"}
+OPERATIONS["screen-supplier-sustainability-risk"]={"supplier_id","screening_review","risk_model","risks","result_id"}
 
 
 def run_suppliers(state, skill, parameters):
@@ -52,6 +53,9 @@ def run_suppliers(state, skill, parameters):
         elif skill=="identify-scope-3-hotspots":
             from .supplier_hotspots import hotspots
             report=hotspots(state,parameters,refs,result,gap)
+        elif skill=="screen-supplier-sustainability-risk":
+            from .supplier_risk import screen
+            report=screen(state,parameters,refs,result,gap)
         else:
             supplier=next((s for s in state["suppliers"] if s["id"]==parameters["supplier_id"]),None)
             if supplier is None or not supplier["evidence_ids"]:
@@ -144,7 +148,7 @@ def run_suppliers(state, skill, parameters):
                     else: gap("All criteria are excluded; no applicable scoring denominator exists.")
         code={"compare-suppliers":"SUPPLIER_COMPARISON","map-supply-chain-emissions":"SUPPLY_CHAIN_MAPPING",
             "prioritize-supplier-engagement":"SUPPLIER_ENGAGEMENT","develop-supplier-improvement-plan":"SUPPLIER_IMPROVEMENT_PLAN",
-            "identify-scope-3-hotspots":"SUPPLIER_HOTSPOTS"}.get(skill,"SUPPLIER_ASSESSMENT")
+            "identify-scope-3-hotspots":"SUPPLIER_HOTSPOTS","screen-supplier-sustainability-risk":"SUPPLIER_RISK_SCREENING"}.get(skill,"SUPPLIER_ASSESSMENT")
         result["diagnostics"].append({"code":code,"message":json.dumps(report,sort_keys=True)})
         result["status"]="partial" if result["data_gaps"] else "completed"
     except (ValueError,TypeError,KeyError) as error:

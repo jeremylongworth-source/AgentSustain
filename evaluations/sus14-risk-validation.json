@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "c3149dc",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 312,
+    "duration_seconds": 116.923,
+    "status": "passed"
+  },
+  "focused_supplier_suites": {
+    "tests": 43,
+    "duration_seconds": 7.827,
+    "status": "passed"
+  },
+  "skill_validation": "screen-supplier-sustainability-risk quick_validate.py passed",
+  "cli_validation": "Author-led complete capture reproduced; independent actual corrected CLI exit 0 and complete output reproduced by parent",
+  "source_orientation": {
+    "title": "OECD Due Diligence Guidance for Responsible Business Conduct (2018)",
+    "url": "https://doi.org/10.1787/15f5f4b3-en",
+    "sections": "II 2.3-2.4; annex Q29-31",
+    "accessed": "2026-10-05",
+    "scope": "Primary source orientation for actual/potential impacts, buyer relationship and severity/likelihood; not a prescribed scoring model or legal finding"
+  },
+  "checks": [
+    "Explicit caller ordinal anchors with no multiplication or default country/sector scores",
+    "Supported selected impacts distinct from proxies, allegations and irrelevant/missing evidence",
+    "Severity ties and unknown likelihood/relationship remain visible",
+    "Actual occurrence likelihood null; unknown observation date null plus gap distinct from source access",
+    "Empty/incomplete screening cannot establish no risk or low risk",
+    "Owned follow-ups and new open professional review preserve prior gates",
+    "No aggregate supplier risk, physical metrics, misconduct finding, contact or procurement approval",
+    "Invalid anchors/ratings/source references/context/dates reject full screening register",
+    "Original supplier entities, history, assumptions and gaps preserved",
+    "Full author-led and corrected independent proposal reproduction"
+  ],
+  "independent_case": {
+    "capture": "sus14-independent-risk.json",
+    "initial_issue": "Mandatory observed_date required a substitute for undated source",
+    "correction": "Explicit null observation date and gap; access metadata remains separate",
+    "rerun": "Raw source unchanged, unknown severity withheld, labour proxy unranked and review open",
+    "remaining": "Geographic/source-period applicability contradictions remain human review; one scenario is not general reliability"
+  },
+  "limitations": [
+    "Supplied source-fitness and relationship/severity judgments are not independently authenticated",
+    "Selected supplier/site/topic triage only, not complete due diligence or legal compliance",
+    "Broader methods, low-carbon procurement options, organizational evaluation and release gates remain"
+  ],
+  "sha256": {
+    "scripts/supplier_risk.py": "031dec84b331293caa3677f77923e44974dd13f8b3f4d0ab25c0e022e4c561e0",
+    "scripts/supplier_tools.py": "aff6a9927aba0acfeda539250d8aad971b3bb1eef5f9cfdd2c47136f99c64ab3",
+    "tests/test_supplier_risk.py": "1c83fd61ff52ad9ac429a49ded73be820d9e4314252047a6cd4a701ee7bd5a7a",
+    "skills/procurement/screen-supplier-sustainability-risk/SKILL.md": "cceb99ad2504618d9d956f79195da60daa04ad7db4c517e8de1c25e3dc0fb64f",
+    "docs/supplier-contract.md": "aa5b3efed87e8dcb0974009b687f89efa8f6e9ed78616bc98e0e3bc7ce5a0c4b",
+    "evaluations/sus14-supplier-risk.json": "7be758acc9ccc81c3811588c6e42be94368b078d21031c3b13b9e8da14f25965",
+    "evaluations/sus14-independent-risk.json": "bb2ac1a22ee3e13dbe613fcb6db0b3f328ca1e244912a0aef0eec0891ae12ac2"
+  }
+}

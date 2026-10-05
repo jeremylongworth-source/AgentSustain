@@ -1,0 +1,27 @@
+Independent subagent source-reading report, preserved from an actual temporary execution. One fictional scenario; no general reliability or real-source authentication claim.
+
+# Independent fictional supplier source screening
+
+Scope: supplier-a packaging, buyer 2025-01-01 to 2025-12-31, application boundary-001. Caller fictional-ordinal-v1 is unchanged. Source reasoning came from the supplied raw documents; no network, repository tests/evaluations, prior output, repository edits or external communication used.
+
+Severity triage: no ordinal priority group can be formed defensibly. The incident report supports a site-specific spill, but scale, extent and remediation feasibility are unknown. The caller anchors merely label limited/substantial/severe, with no substantive thresholds. Assigning any rank would be speculative. Actual-incident likelihood is null. Buyer packaging purchases from the site support preliminary directly-linked relationship, with no evidence of buyer causation/contribution. This is analytical source support, not independently authenticated misconduct.
+
+The labour note names no supplier, site or product and no confirmed supplier incident. It is a sector proxy and investigation need, with unknown impact status, severity, likelihood and buyer relationship. No supplier-specific harm follows. Buyer electricity ev-001 is irrelevant and excluded from screening support. Metadata tier labels do not remedy unknown reliability or unquantified uncertainty.
+
+Each follow-up is proposed for proposed fictional buyer-analyst by 2026-11-01. Obtain spill substance/quantity, drainage/receptor/extent and remediation records plus source/site/purchase confirmation. For labour, first establish publication date, region and supplier applicability, then seek supplier/site-specific records and worker/stakeholder evidence through a separately authorized process. Due-diligence reviewer must assess source fitness, severity and buyer relationship. No communication sent, supplier agreement inferred or review gate cleared.
+
+Applicability limits: incident raw text says fictional region A while metadata says CA-ON. Labour note is undated and region unspecified despite annual-period and CA-ON metadata. These are explicit reconciliation needs. Its mandatory observed_date is populated with 2026-10-04 source-access date, explicitly not an occurrence or publication date. Buyer boundary is application context, not supplier operational control. Unexamined sites/products/topics remain unknown.
+
+Execution summary: {"exit_code": 0, "status": "partial", "severity_priority_groups": [], "review_states": ["ANALYTICAL", "PROFESSIONAL_REVIEW_REQUIRED", "EVIDENCE_INCOMPLETE"], "raw_sha256": "66414b26a33e1b4538a182471ef2a794529247a7cd42746ff7f1aa040a3beef1", "raw_input_unchanged": true}. Complete output contains the common result and checked append-only proposal; source input preserved. No aggregate risk score, emissions, legal determination, supplier approval, procurement/contact authorization.
+
+Observed behavior limits: required observed_date has no unknown-date representation, so the proxy access-date substitution requires the visible qualification. The helper does not authenticate raw-document judgments or detect metadata/text contradictions; they remain prose review needs. It correctly preserves unranked supported impact and proxy exclusion in this run. Initial system Python lacked jsonschema; rerunning with the existing repository virtual environment succeeded without installations. Initial stderr preserved in initial-runtime-error.txt. No other runtime defect observed.
+
+## Complete recorded source reasoning
+
+spill-site-a: Documented site-specific incident and purchase relationship support a selected actual impact for screening only. No evidence of buyer causation or contribution. None of the generic limited/substantial/severe anchors can be selected defensibly without extent and remediation information. Proposed follow-up: obtain spill quantity/substance, drainage and receptor assessment, containment/remediation records, site purchase linkage and source authentication; due-diligence reviewer to assess severity and buyer relationship.
+
+Report dated 2025-09-01 falls within buyer 2025 period and explicitly concerns packaging site A. Application uses buyer boundary-001, not an assertion of supplier operational control. Raw report says fictional region A whereas registered metadata says CA-ON; geographic fit needs reconciliation. Source accessed 2026-10-04; reliability unknown and uncertainty unquantified. No evidence of present-day remediation status.
+
+sector-labour-investigation: Sector exposure is an investigation prompt, not a supplier finding. Source has no supplier-specific evidence, so no severity or likelihood rank is assigned. Proposed follow-up: identify the note publication date, geography and sector applicability; request relevant site-specific labour documentation and worker/stakeholder evidence through a separately authorized process; reviewer to assess any resulting evidence.
+
+Raw note is undated and contains no supplier/site/product linkage. observed_date is solely source-access/review date 2026-10-04 from metadata, not occurrence or publication date. Application to buyer 2025 boundary is a screening question only; metadata annual period and CA-ON geography do not prove source applicability. Unknown reliability and unquantified uncertainty retained.

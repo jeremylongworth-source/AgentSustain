@@ -1,0 +1,843 @@
+{
+  "state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "supplier-record",
+        "source": {
+          "locator": "fixture:supplier-packaging-record",
+          "title": "Fictional packaging purchase and partial supplier activity documentation",
+          "publisher": "Fictional packaging supplier",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional supplier documentation review",
+          "version": "fixture-1",
+          "source": "fixture:supplier-packaging-record"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional purchase-specific packaging documentation supporting the supplied partial buyer rating; allocation evidence is absent."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional documentation relevance and rating uncertainty are not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "incident-record",
+        "source": {
+          "locator": "fixture:incident-record",
+          "title": "Fictional supplier site spill report",
+          "publisher": "Fictional source only",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional source review",
+          "version": "fixture-1",
+          "source": "fixture:incident-record"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional impact-specific record."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional documentation relevance and rating uncertainty are not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "sector-note",
+        "source": {
+          "locator": "fixture:sector-note",
+          "title": "Fictional general sector concern",
+          "publisher": "Fictional source only",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional source review",
+          "version": "fixture-1",
+          "source": "fixture:sector-note"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional sector proxy; no supplier-specific finding."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional documentation relevance and rating uncertainty are not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [
+      {
+        "id": "supplier-a",
+        "evidence_ids": [
+          "supplier-record"
+        ],
+        "attributes": {
+          "name": "Fictional packaging supplier"
+        }
+      }
+    ],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "parameters": {
+    "supplier_id": "supplier-a",
+    "screening_review": {
+      "confirmed": true,
+      "evidence_ids": [
+        "incident-record"
+      ],
+      "reviewer_role": "fictional buyer analyst",
+      "rationale": "Fictional local screening only.",
+      "scope_boundary": "Fictional packaging supplier selected site and product, environmental/human-rights concerns only.",
+      "screening_basis": "Review selected impact records; do not infer compliance or comprehensive supplier coverage.",
+      "stakeholder_context": "Affected parties not consulted in this fictional example; expert review remains.",
+      "period": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "boundary_id": "boundary-001",
+      "coverage_complete": false
+    },
+    "risk_model": {
+      "id": "fictional-ordinal-v1",
+      "severity_anchors": [
+        {
+          "rank": 1,
+          "label": "limited",
+          "description": "Fictional caller-defined limited ordinal anchor; not an OECD score."
+        },
+        {
+          "rank": 2,
+          "label": "substantial",
+          "description": "Fictional caller-defined substantial ordinal anchor; not an OECD score."
+        },
+        {
+          "rank": 3,
+          "label": "severe",
+          "description": "Fictional caller-defined severe ordinal anchor; not an OECD score."
+        }
+      ],
+      "likelihood_anchors": [
+        {
+          "rank": 1,
+          "label": "limited",
+          "description": "Fictional caller-defined limited ordinal anchor; not an OECD score."
+        },
+        {
+          "rank": 2,
+          "label": "substantial",
+          "description": "Fictional caller-defined substantial ordinal anchor; not an OECD score."
+        },
+        {
+          "rank": 3,
+          "label": "severe",
+          "description": "Fictional caller-defined severe ordinal anchor; not an OECD score."
+        }
+      ],
+      "priority_rule": "severity_groups"
+    },
+    "risks": [
+      {
+        "id": "site-spill",
+        "topic": "environment",
+        "impact_status": "actual",
+        "adverse_impact": "Fictional documented spill affecting a drainage area.",
+        "relationship": "directly_linked",
+        "product": "Fictional packaging supply",
+        "site": "Fictional site A",
+        "geography": "Fictional region A",
+        "observed_date": "2025-09-01",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "boundary_id": "boundary-001",
+        "evidence_ids": [
+          "incident-record"
+        ],
+        "evidence_fit": "reviewed_supporting",
+        "severity_rank": 2,
+        "likelihood_rank": null,
+        "scale": "Fictional localized environmental harm; measured extent unresolved.",
+        "scope": "Selected drainage area; further affected receptors unknown.",
+        "irremediability": "Remediation feasibility not independently verified.",
+        "assessment_rationale": "Fictional buyer selects substantial severity for triage, not a verified hazard model.",
+        "source_applicability": "Synthetic incident report matches fictional selected supplier site and reporting period.",
+        "follow_up_owner": "Fictional buyer analyst",
+        "follow_up_date": "2026-11-01"
+      },
+      {
+        "id": "sector-allegation",
+        "topic": "human_rights",
+        "impact_status": "potential",
+        "adverse_impact": "Fictional general sector labour allegation; no site-specific source.",
+        "relationship": "unknown",
+        "product": "Fictional packaging supply",
+        "site": "Fictional site A",
+        "geography": "Fictional region A",
+        "observed_date": "2025-09-01",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "boundary_id": "boundary-001",
+        "evidence_ids": [
+          "sector-note"
+        ],
+        "evidence_fit": "proxy",
+        "severity_rank": 3,
+        "likelihood_rank": 1,
+        "scale": "Fictional localized environmental harm; measured extent unresolved.",
+        "scope": "Selected drainage area; further affected receptors unknown.",
+        "irremediability": "Remediation feasibility not independently verified.",
+        "assessment_rationale": "Fictional buyer selects substantial severity for triage, not a verified hazard model.",
+        "source_applicability": "Sector proxy requires supplier-specific investigation; cannot assert actual misconduct.",
+        "follow_up_owner": "Fictional buyer analyst",
+        "follow_up_date": "2026-11-01"
+      }
+    ],
+    "result_id": "supplier-risk"
+  },
+  "output": {
+    "result": {
+      "id": "supplier-risk",
+      "skill": "screen-supplier-sustainability-risk",
+      "contract_version": "0.1.0",
+      "status": "partial",
+      "review_states": [
+        "ANALYTICAL",
+        "PROFESSIONAL_REVIEW_REQUIRED",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [
+        {
+          "id": "supplier-risk-risk-review",
+          "state": "PROFESSIONAL_REVIEW_REQUIRED",
+          "reason": "Selected supplier impact screening, source fitness and response priorities require substantive due-diligence review.",
+          "scope": "Supplier supplier-a adverse-impact screening",
+          "reviewer_role": "sustainability due-diligence reviewer",
+          "status": "open",
+          "resolution": null
+        }
+      ],
+      "metrics": [],
+      "evidence_ids": [
+        "incident-record",
+        "sector-note",
+        "supplier-record"
+      ],
+      "assumptions": [],
+      "data_gaps": [
+        {
+          "id": "supplier-risk-gap-0",
+          "field": "supplier_evidence",
+          "reason": "sector-allegation: Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only.",
+          "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+          "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+        },
+        {
+          "id": "supplier-risk-gap-1",
+          "field": "supplier_evidence",
+          "reason": "sector-allegation: Buyer relationship to the adverse impact needs review.",
+          "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+          "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+        },
+        {
+          "id": "supplier-risk-gap-2",
+          "field": "supplier_evidence",
+          "reason": "Supplier screening coverage is incomplete; unexamined products, sites and topics are not low risk.",
+          "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+          "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "SUPPLIER_DATA_REQUIRED",
+          "message": "sector-allegation: Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only."
+        },
+        {
+          "code": "SUPPLIER_DATA_REQUIRED",
+          "message": "sector-allegation: Buyer relationship to the adverse impact needs review."
+        },
+        {
+          "code": "SUPPLIER_DATA_REQUIRED",
+          "message": "Supplier screening coverage is incomplete; unexamined products, sites and topics are not low risk."
+        },
+        {
+          "code": "SUPPLIER_RISK_SCREENING",
+          "message": "{\"aggregate_supplier_risk\": null, \"contact_authorized\": false, \"legal_determination\": null, \"limits\": \"Supplied reviewed impact facts and ordinal severity groups only; not independent source authentication or an OECD numeric score. Equal severities remain tied; likelihood is retained separately, not multiplied. Unsupported allegations/proxies remain investigation needs. No misconduct, compliance, disengagement or overall low-risk finding.\", \"procurement_authorized\": false, \"risk_model\": {\"id\": \"fictional-ordinal-v1\", \"likelihood_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}], \"priority_rule\": \"severity_groups\", \"severity_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}]}, \"rows\": [{\"finding_of_misconduct\": false, \"risk\": {\"adverse_impact\": \"Fictional documented spill affecting a drainage area.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"incident-record\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"site-spill\", \"impact_status\": \"actual\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": null, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"directly_linked\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 2, \"site\": \"Fictional site A\", \"source_applicability\": \"Synthetic incident report matches fictional selected supplier site and reporting period.\", \"topic\": \"environment\"}, \"screening_status\": \"supported_selected_impact\", \"severity_priority_group\": 1, \"source_records\": [{\"geography\": \"CA-ON\", \"id\": \"incident-record\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"quality\": {\"completeness\": \"complete\", \"fitness_notes\": \"Fictional impact-specific record.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-04\", \"locator\": \"fixture:incident-record\", \"publisher\": \"Fictional source only\", \"tier\": 1, \"title\": \"Fictional supplier site spill report\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Fictional documentation relevance and rating uncertainty are not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}}], \"supported_likelihood_rank\": null, \"supported_severity_rank\": 2, \"unresolved_fields\": []}, {\"finding_of_misconduct\": false, \"risk\": {\"adverse_impact\": \"Fictional general sector labour allegation; no site-specific source.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"proxy\", \"evidence_ids\": [\"sector-note\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"sector-allegation\", \"impact_status\": \"potential\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": 1, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"unknown\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 3, \"site\": \"Fictional site A\", \"source_applicability\": \"Sector proxy requires supplier-specific investigation; cannot assert actual misconduct.\", \"topic\": \"human_rights\"}, \"screening_status\": \"investigation_required\", \"severity_priority_group\": null, \"source_records\": [{\"geography\": \"CA-ON\", \"id\": \"sector-note\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"quality\": {\"completeness\": \"complete\", \"fitness_notes\": \"Fictional sector proxy; no supplier-specific finding.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-04\", \"locator\": \"fixture:sector-note\", \"publisher\": \"Fictional source only\", \"tier\": 1, \"title\": \"Fictional general sector concern\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Fictional documentation relevance and rating uncertainty are not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}}], \"supported_likelihood_rank\": null, \"supported_severity_rank\": null, \"unresolved_fields\": [\"Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only.\", \"Buyer relationship to the adverse impact needs review.\"]}], \"screening_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"incident-record\"], \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional local screening only.\", \"reviewer_role\": \"fictional buyer analyst\", \"scope_boundary\": \"Fictional packaging supplier selected site and product, environmental/human-rights concerns only.\", \"screening_basis\": \"Review selected impact records; do not infer compliance or comprehensive supplier coverage.\", \"stakeholder_context\": \"Affected parties not consulted in this fictional example; expert review remains.\"}, \"severity_priority_groups\": [{\"group\": 1, \"risk_ids\": [\"site-spill\"], \"severity_rank\": 2}], \"supplier_approved\": false, \"supplier_id\": \"supplier-a\"}"
+        },
+        {
+          "code": "SUPPLIER_INPUTS",
+          "message": "{\"result_id\": \"supplier-risk\", \"risk_model\": {\"id\": \"fictional-ordinal-v1\", \"likelihood_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}], \"priority_rule\": \"severity_groups\", \"severity_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}]}, \"risks\": [{\"adverse_impact\": \"Fictional documented spill affecting a drainage area.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"incident-record\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"site-spill\", \"impact_status\": \"actual\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": null, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"directly_linked\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 2, \"site\": \"Fictional site A\", \"source_applicability\": \"Synthetic incident report matches fictional selected supplier site and reporting period.\", \"topic\": \"environment\"}, {\"adverse_impact\": \"Fictional general sector labour allegation; no site-specific source.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"proxy\", \"evidence_ids\": [\"sector-note\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"sector-allegation\", \"impact_status\": \"potential\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": 1, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"unknown\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 3, \"site\": \"Fictional site A\", \"source_applicability\": \"Sector proxy requires supplier-specific investigation; cannot assert actual misconduct.\", \"topic\": \"human_rights\"}], \"screening_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"incident-record\"], \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional local screening only.\", \"reviewer_role\": \"fictional buyer analyst\", \"scope_boundary\": \"Fictional packaging supplier selected site and product, environmental/human-rights concerns only.\", \"screening_basis\": \"Review selected impact records; do not infer compliance or comprehensive supplier coverage.\", \"stakeholder_context\": \"Affected parties not consulted in this fictional example; expert review remains.\"}, \"supplier_id\": \"supplier-a\"}"
+        }
+      ],
+      "next_actions": [
+        "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+      ]
+    },
+    "proposal": {
+      "base_revision": 0,
+      "reason": "Assess sourced supplier evidence under an explicit buyer rubric without approval or external communication",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "facility-001",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "operational control (fixture only)",
+          "facility_ids": [
+            "facility-001"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "ev-001",
+            "source": {
+              "locator": "fixture:meter-001",
+              "title": "Fictional annual electricity record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "supplier-record",
+            "source": {
+              "locator": "fixture:supplier-packaging-record",
+              "title": "Fictional packaging purchase and partial supplier activity documentation",
+              "publisher": "Fictional packaging supplier",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional supplier documentation review",
+              "version": "fixture-1",
+              "source": "fixture:supplier-packaging-record"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional purchase-specific packaging documentation supporting the supplied partial buyer rating; allocation evidence is absent."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional documentation relevance and rating uncertainty are not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "incident-record",
+            "source": {
+              "locator": "fixture:incident-record",
+              "title": "Fictional supplier site spill report",
+              "publisher": "Fictional source only",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional source review",
+              "version": "fixture-1",
+              "source": "fixture:incident-record"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional impact-specific record."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional documentation relevance and rating uncertainty are not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "sector-note",
+            "source": {
+              "locator": "fixture:sector-note",
+              "title": "Fictional general sector concern",
+              "publisher": "Fictional source only",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional source review",
+              "version": "fixture-1",
+              "source": "fixture:sector-note"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional sector proxy; no supplier-specific finding."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional documentation relevance and rating uncertainty are not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "res-001",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "metric-001",
+                "name": "Recorded electricity",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "ev-001"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "supplier-risk",
+            "skill": "screen-supplier-sustainability-risk",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "PROFESSIONAL_REVIEW_REQUIRED",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [
+              {
+                "id": "supplier-risk-risk-review",
+                "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                "reason": "Selected supplier impact screening, source fitness and response priorities require substantive due-diligence review.",
+                "scope": "Supplier supplier-a adverse-impact screening",
+                "reviewer_role": "sustainability due-diligence reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "metrics": [],
+            "evidence_ids": [
+              "incident-record",
+              "sector-note",
+              "supplier-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [
+              {
+                "id": "supplier-risk-gap-0",
+                "field": "supplier_evidence",
+                "reason": "sector-allegation: Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only.",
+                "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+                "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+              },
+              {
+                "id": "supplier-risk-gap-1",
+                "field": "supplier_evidence",
+                "reason": "sector-allegation: Buyer relationship to the adverse impact needs review.",
+                "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+                "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+              },
+              {
+                "id": "supplier-risk-gap-2",
+                "field": "supplier_evidence",
+                "reason": "Supplier screening coverage is incomplete; unexamined products, sites and topics are not low risk.",
+                "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+                "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "SUPPLIER_DATA_REQUIRED",
+                "message": "sector-allegation: Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only."
+              },
+              {
+                "code": "SUPPLIER_DATA_REQUIRED",
+                "message": "sector-allegation: Buyer relationship to the adverse impact needs review."
+              },
+              {
+                "code": "SUPPLIER_DATA_REQUIRED",
+                "message": "Supplier screening coverage is incomplete; unexamined products, sites and topics are not low risk."
+              },
+              {
+                "code": "SUPPLIER_RISK_SCREENING",
+                "message": "{\"aggregate_supplier_risk\": null, \"contact_authorized\": false, \"legal_determination\": null, \"limits\": \"Supplied reviewed impact facts and ordinal severity groups only; not independent source authentication or an OECD numeric score. Equal severities remain tied; likelihood is retained separately, not multiplied. Unsupported allegations/proxies remain investigation needs. No misconduct, compliance, disengagement or overall low-risk finding.\", \"procurement_authorized\": false, \"risk_model\": {\"id\": \"fictional-ordinal-v1\", \"likelihood_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}], \"priority_rule\": \"severity_groups\", \"severity_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}]}, \"rows\": [{\"finding_of_misconduct\": false, \"risk\": {\"adverse_impact\": \"Fictional documented spill affecting a drainage area.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"incident-record\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"site-spill\", \"impact_status\": \"actual\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": null, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"directly_linked\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 2, \"site\": \"Fictional site A\", \"source_applicability\": \"Synthetic incident report matches fictional selected supplier site and reporting period.\", \"topic\": \"environment\"}, \"screening_status\": \"supported_selected_impact\", \"severity_priority_group\": 1, \"source_records\": [{\"geography\": \"CA-ON\", \"id\": \"incident-record\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"quality\": {\"completeness\": \"complete\", \"fitness_notes\": \"Fictional impact-specific record.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-04\", \"locator\": \"fixture:incident-record\", \"publisher\": \"Fictional source only\", \"tier\": 1, \"title\": \"Fictional supplier site spill report\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Fictional documentation relevance and rating uncertainty are not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}}], \"supported_likelihood_rank\": null, \"supported_severity_rank\": 2, \"unresolved_fields\": []}, {\"finding_of_misconduct\": false, \"risk\": {\"adverse_impact\": \"Fictional general sector labour allegation; no site-specific source.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"proxy\", \"evidence_ids\": [\"sector-note\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"sector-allegation\", \"impact_status\": \"potential\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": 1, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"unknown\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 3, \"site\": \"Fictional site A\", \"source_applicability\": \"Sector proxy requires supplier-specific investigation; cannot assert actual misconduct.\", \"topic\": \"human_rights\"}, \"screening_status\": \"investigation_required\", \"severity_priority_group\": null, \"source_records\": [{\"geography\": \"CA-ON\", \"id\": \"sector-note\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"quality\": {\"completeness\": \"complete\", \"fitness_notes\": \"Fictional sector proxy; no supplier-specific finding.\", \"reliability\": \"unknown\"}, \"source\": {\"accessed\": \"2026-10-04\", \"locator\": \"fixture:sector-note\", \"publisher\": \"Fictional source only\", \"tier\": 1, \"title\": \"Fictional general sector concern\", \"version\": \"fixture-1\"}, \"uncertainty\": {\"description\": \"Fictional documentation relevance and rating uncertainty are not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}}], \"supported_likelihood_rank\": null, \"supported_severity_rank\": null, \"unresolved_fields\": [\"Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only.\", \"Buyer relationship to the adverse impact needs review.\"]}], \"screening_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"incident-record\"], \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional local screening only.\", \"reviewer_role\": \"fictional buyer analyst\", \"scope_boundary\": \"Fictional packaging supplier selected site and product, environmental/human-rights concerns only.\", \"screening_basis\": \"Review selected impact records; do not infer compliance or comprehensive supplier coverage.\", \"stakeholder_context\": \"Affected parties not consulted in this fictional example; expert review remains.\"}, \"severity_priority_groups\": [{\"group\": 1, \"risk_ids\": [\"site-spill\"], \"severity_rank\": 2}], \"supplier_approved\": false, \"supplier_id\": \"supplier-a\"}"
+              },
+              {
+                "code": "SUPPLIER_INPUTS",
+                "message": "{\"result_id\": \"supplier-risk\", \"risk_model\": {\"id\": \"fictional-ordinal-v1\", \"likelihood_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}], \"priority_rule\": \"severity_groups\", \"severity_anchors\": [{\"description\": \"Fictional caller-defined limited ordinal anchor; not an OECD score.\", \"label\": \"limited\", \"rank\": 1}, {\"description\": \"Fictional caller-defined substantial ordinal anchor; not an OECD score.\", \"label\": \"substantial\", \"rank\": 2}, {\"description\": \"Fictional caller-defined severe ordinal anchor; not an OECD score.\", \"label\": \"severe\", \"rank\": 3}]}, \"risks\": [{\"adverse_impact\": \"Fictional documented spill affecting a drainage area.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"reviewed_supporting\", \"evidence_ids\": [\"incident-record\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"site-spill\", \"impact_status\": \"actual\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": null, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"directly_linked\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 2, \"site\": \"Fictional site A\", \"source_applicability\": \"Synthetic incident report matches fictional selected supplier site and reporting period.\", \"topic\": \"environment\"}, {\"adverse_impact\": \"Fictional general sector labour allegation; no site-specific source.\", \"assessment_rationale\": \"Fictional buyer selects substantial severity for triage, not a verified hazard model.\", \"boundary_id\": \"boundary-001\", \"evidence_fit\": \"proxy\", \"evidence_ids\": [\"sector-note\"], \"follow_up_date\": \"2026-11-01\", \"follow_up_owner\": \"Fictional buyer analyst\", \"geography\": \"Fictional region A\", \"id\": \"sector-allegation\", \"impact_status\": \"potential\", \"irremediability\": \"Remediation feasibility not independently verified.\", \"likelihood_rank\": 1, \"observed_date\": \"2025-09-01\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"product\": \"Fictional packaging supply\", \"relationship\": \"unknown\", \"scale\": \"Fictional localized environmental harm; measured extent unresolved.\", \"scope\": \"Selected drainage area; further affected receptors unknown.\", \"severity_rank\": 3, \"site\": \"Fictional site A\", \"source_applicability\": \"Sector proxy requires supplier-specific investigation; cannot assert actual misconduct.\", \"topic\": \"human_rights\"}], \"screening_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"incident-record\"], \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional local screening only.\", \"reviewer_role\": \"fictional buyer analyst\", \"scope_boundary\": \"Fictional packaging supplier selected site and product, environmental/human-rights concerns only.\", \"screening_basis\": \"Review selected impact records; do not infer compliance or comprehensive supplier coverage.\", \"stakeholder_context\": \"Affected parties not consulted in this fictional example; expert review remains.\"}, \"supplier_id\": \"supplier-a\"}"
+              }
+            ],
+            "next_actions": [
+              "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+            ]
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "supplier-risk-gap-0",
+            "field": "supplier_evidence",
+            "reason": "sector-allegation: Supplier-specific adverse-impact evidence remains unverified, missing, irrelevant or proxy-only.",
+            "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+            "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+          },
+          {
+            "id": "supplier-risk-gap-1",
+            "field": "supplier_evidence",
+            "reason": "sector-allegation: Buyer relationship to the adverse impact needs review.",
+            "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+            "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+          },
+          {
+            "id": "supplier-risk-gap-2",
+            "field": "supplier_evidence",
+            "reason": "Supplier screening coverage is incomplete; unexamined products, sites and topics are not low risk.",
+            "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+            "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+          }
+        ],
+        "review_requirements": [
+          {
+            "id": "supplier-risk-risk-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Selected supplier impact screening, source fitness and response priorities require substantive due-diligence review.",
+            "scope": "Supplier supplier-a adverse-impact screening",
+            "reviewer_role": "sustainability due-diligence reviewer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "energy": [
+          "res-001"
+        ],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [
+          {
+            "id": "supplier-a",
+            "evidence_ids": [
+              "supplier-record"
+            ],
+            "attributes": {
+              "name": "Fictional packaging supplier"
+            }
+          }
+        ],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  }
+}
