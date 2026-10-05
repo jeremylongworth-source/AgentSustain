@@ -1,0 +1,208 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "2df757d",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 502,
+    "duration_seconds": 285.608,
+    "status": "passed",
+    "scope": "Final current repository architecture, domain, proposal, CLI and saved-artifact regressions; not full framework/domain/organization readiness."
+  },
+  "focused_framework_suite": {
+    "command": "python -m unittest tests.test_frameworks -v",
+    "tests": 10,
+    "duration_seconds": 4.624,
+    "status": "passed"
+  },
+  "earlier_full_suites": [
+    {
+      "tests": 500,
+      "duration_seconds": 287.866,
+      "status": "passed_before_version_diff_chronology_guard"
+    },
+    {
+      "tests": 501,
+      "duration_seconds": 282.664,
+      "status": "passed_before_complete_scope_integrity_guard"
+    }
+  ],
+  "development_failures": [
+    "Initial tests used an incorrect expected fixture conversion and unchanged period mutation; a lineage mutation was already schema-invalid. Fixtures were corrected.",
+    "Blocked synthetic-inventory use initially returned generic disclosure failure; it now propagates EMISSION_FACTOR_REQUIRED.",
+    "Source chronology and complete scope method/uncertainty/evidence integrity were strengthened after parent review; final tests/capture replay include both guards."
+  ],
+  "skill_validation": {
+    "map-framework-disclosures": "quick_validate.py passed",
+    "compare-framework-mappings": "quick_validate.py passed"
+  },
+  "parent_verification": {
+    "original_bytes_verified": true,
+    "original_state_exact": true,
+    "original_reviewed_request_sha256": "6ab2fb794caa922ed782df675eb81175171f22a2547689999f2e57d930060527",
+    "exact_author_state_handoff_verified": true,
+    "executions": [
+      {
+        "execution": "author-map",
+        "status": "partial",
+        "gaps": 28,
+        "reviews": 1,
+        "full_helper_and_cli_equal": true,
+        "input_bytes_preserved": true,
+        "historical_state_preserved": true,
+        "exit_code": 0,
+        "stderr": "",
+        "runtime_seconds": 0.504,
+        "replay_request_sha256": "37a0eecd51b42ebfa38278f593a6e8b5941dda7112aa8fe674c68762a6e3865c"
+      },
+      {
+        "execution": "author-diff",
+        "status": "partial",
+        "gaps": 29,
+        "reviews": 2,
+        "full_helper_and_cli_equal": true,
+        "input_bytes_preserved": true,
+        "historical_state_preserved": true,
+        "exit_code": 0,
+        "stderr": "",
+        "runtime_seconds": 0.397,
+        "replay_request_sha256": "ba8051b9a1d20049d86f2454fd9a6041bfe4f053f68400d0a6a7e1aae68dff0e"
+      },
+      {
+        "execution": "independent-map",
+        "status": "partial",
+        "gaps": 32,
+        "reviews": 1,
+        "full_helper_and_cli_equal": true,
+        "input_bytes_preserved": true,
+        "historical_state_preserved": true,
+        "exit_code": 0,
+        "stderr": "",
+        "runtime_seconds": 0.503,
+        "replay_request_sha256": "e3172d1c7c136c6e294cc188407ba0543477a1ee6339145d5aeb7e34cc468e6c"
+      }
+    ],
+    "original_reviewed_request_and_output_hashes_verified": true,
+    "before_scope_guard_executions": [
+      {
+        "execution": "author-map",
+        "status": "partial",
+        "gaps": 28,
+        "reviews": 1,
+        "full_helper_and_cli_equal": true,
+        "input_bytes_preserved": true,
+        "historical_state_preserved": true,
+        "exit_code": 0,
+        "stderr": "",
+        "runtime_seconds": 0.457,
+        "replay_request_sha256": "37a0eecd51b42ebfa38278f593a6e8b5941dda7112aa8fe674c68762a6e3865c"
+      },
+      {
+        "execution": "author-diff",
+        "status": "partial",
+        "gaps": 29,
+        "reviews": 2,
+        "full_helper_and_cli_equal": true,
+        "input_bytes_preserved": true,
+        "historical_state_preserved": true,
+        "exit_code": 0,
+        "stderr": "",
+        "runtime_seconds": 0.393,
+        "replay_request_sha256": "ba8051b9a1d20049d86f2454fd9a6041bfe4f053f68400d0a6a7e1aae68dff0e"
+      },
+      {
+        "execution": "independent-map",
+        "status": "partial",
+        "gaps": 32,
+        "reviews": 1,
+        "full_helper_and_cli_equal": true,
+        "input_bytes_preserved": true,
+        "historical_state_preserved": true,
+        "exit_code": 0,
+        "stderr": "",
+        "runtime_seconds": 0.479,
+        "replay_request_sha256": "e3172d1c7c136c6e294cc188407ba0543477a1ee6339145d5aeb7e34cc468e6c"
+      }
+    ],
+    "final_full_scope_account_replay_passed": true
+  },
+  "original_input_sha256": {
+    "draft-request.json": "a49ced52813a23bf5a9612a0d5285de42c028e985e47c5f958723a74f8bb0cf1",
+    "raw-sources.json": "84657f2fc9dc0f69ff159a7c35e120f77e9a864a0546b1635d20c5a9ab4633a8"
+  },
+  "known_answer_checks": [
+    "Selected 500 kg CO2e is displayed as 0.5 t CO2e by the existing core conversion helper, with original metrics/units/IDs preserved.",
+    "Two selected framework catalogs retain one inventory lineage and zero new emissions metrics.",
+    "Missing direct scope, gross basis, gas detail, biogenic amounts, recalculation history, GWP source and exclusions remain gaps.",
+    "Historical 2004/2013 diff changes gas-detail mapping and adds GWP-source disclosure; old catalogs/state preserved and no migration performed.",
+    "TNFD unnumbered GHG referral is context only; no IFRS requirement mapping or conformity follows."
+  ],
+  "adversarial_checks": [
+    "Changed/unknown catalog pins, duplicate adapter selections and wrong date/period/boundary reject.",
+    "Unsupported requirements stay explicit gaps; notes cannot supply missing structured quantities or fulfillment.",
+    "Unfit edition/organization/note support stays unverified; orphan/future notes reject.",
+    "Complete inventory and child scope/category report, metrics/uncertainty/method and evidence-ID lineage reproduce.",
+    "Modified metrics, method/uncertainty, source reports, extra evidence IDs and missing source references reject.",
+    "Synthetic normal-mode use and unresolved factors produce EMISSION_FACTOR_REQUIRED; no default factors or missing-scope zeros.",
+    "Version-diff review cannot predate source retrieval; same-version and cross-framework comparisons reject."
+  ],
+  "independent_result": {
+    "status": "partial",
+    "gaps": 32,
+    "review_requirements": 1,
+    "unverified_rows": 12,
+    "new_metrics": 0,
+    "decisions": "Withheld applicability and edition fitness, replaced completeness/approval claims, removed unsupported observation date and retained missing scopes plus external-standard/rights limits."
+  },
+  "sources": [
+    {
+      "source": "https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf",
+      "coverage": "Chapter 9 printed page 63, historical revised edition",
+      "accessed": "2026-10-05"
+    },
+    {
+      "source": "https://ghgprotocol.org/sites/default/files/2022-12/Required%20gases%20and%20GWP%20values_0.pdf",
+      "coverage": "February 2013 gas/GWP-source amendments, immediate-effect basis and license notice",
+      "accessed": "2026-10-05"
+    },
+    {
+      "source": "https://tnfd.global/wp-content/uploads/2023/08/Recommendations_of_the_Taskforce_on_Nature-related_Financial_Disclosures_September_2023.pdf",
+      "coverage": "September 2023 Annex 1 Table 6 printed page 83 unnumbered GHG referral and CC BY 4.0 notice",
+      "accessed": "2026-10-05"
+    },
+    {
+      "source": "https://www.ifrs.org/content/dam/ifrs/publications/amendments/english/2025/issb-2025-1-amendments-ifrs-s2.pdf",
+      "coverage": "Rights constraints and C1B 2027/early-application metadata only; no requirement catalog implemented",
+      "accessed": "2026-10-05"
+    },
+    {
+      "source": "https://ghgprotocol.org/terms-use",
+      "coverage": "Public/commercial source-use constraints, no rights grant inferred",
+      "accessed": "2026-10-05"
+    }
+  ],
+  "limitations": [
+    "Historical candidates and an external-standard referral are not complete or active authoritative framework mappings.",
+    "Other core-domain and full-framework mappings, current-source applicability and organization evaluation remain open.",
+    "Source reading, caller fitness and successful tests do not grant source rights, legal applicability, conformity, assurance, publication or commercial use.",
+    "A single fictional independent reader case does not establish general reliability.",
+    "Exact-byte catalog pins require unchanged catalog bytes; cross-platform checkout byte replay has not been validated.",
+    "No factor/GWP value, NF3 emission, missing-scope zero, complete gross coverage or approved migration is inferred.",
+    "Professional, specialist/router/release, source-rights and project licensing gates remain open; SUS-17 and v1 readiness are not closed."
+  ],
+  "sha256": {
+    "scripts/framework_tools.py": "7191c7f8c32167b2dbe4cedd0501cce90b457e80384c52911aed0c714710d8dd",
+    "scripts/run_framework.py": "96419e118722c3497911fcfdc6e889cc05860d68e2344377fb0f20142c6f669a",
+    "tests/test_frameworks.py": "c17aea705e1a54df182afe323992699bee07736ceb16555b4f500ede18aa14b6",
+    "skills/frameworks/map-framework-disclosures/SKILL.md": "8f2dcf92c93d4062b64fdc7d0ece953d264a2b7221a37000b35753632dc6d759",
+    "skills/frameworks/compare-framework-mappings/SKILL.md": "827eebc7f2ce3e1d4c535c175f46df7ae65fb527096f3ca10032c3e4c7d5ec9a",
+    "docs/framework-adapter-contract.md": "1606e5a036a76256c041cb1464ce462f18f30896d86aa2a0ec3be410dd107ad5",
+    "docs/framework-registry.md": "887b2776371c67c9edabfb8dcdae9f9a9a10d3703d999bc505eea2ff637a466d",
+    "standards/frameworks/ghgp-corporate-2004.json": "6a131bf4259b2d381827ea15c3e1c0272cbc8d8cea91bdc01c9995130177c466",
+    "standards/frameworks/ghgp-corporate-2004-amend2013.json": "8f56e3e80b056e32bc5df57c7443d71591765548a1e68b9955b2ba314afc88b3",
+    "standards/frameworks/tnfd-2023-ghg-referral.json": "5f6a07ab328d4b0915edd4d2ae5bbdd3f91f02e8e0913824ce060ca5f7f6fba7",
+    "evaluations/sus17-framework-mapping.json": "68d27ae450f815dd6f067a28082d7e486dd30db5391ddfd9f245353bd9fdaf18",
+    "evaluations/sus17-independent-framework-mapping.json": "70d47ccfa944cbd0ebb138d67b122a2cbcd6de308bb1f8e5d3703f762db60e6e"
+  }
+}

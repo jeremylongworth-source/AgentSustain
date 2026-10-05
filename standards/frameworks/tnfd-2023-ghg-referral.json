@@ -1,0 +1,34 @@
+{
+  "id": "tnfd-2023-ghg-referral",
+  "framework": "TNFD Recommendations",
+  "version": "September 2023",
+  "mapping_revision": "0.1.0",
+  "publication_status": "issued",
+  "source_verified": true,
+  "jurisdiction": "global voluntary recommendations; no legal applicability inferred",
+  "source": "https://tnfd.global/wp-content/uploads/2023/08/Recommendations_of_the_Taskforce_on_Nature-related_Financial_Disclosures_September_2023.pdf",
+  "retrieved": "2026-10-05",
+  "effective_interval": {
+    "start": null,
+    "end": null,
+    "basis": "Published recommendations, not a statutory commencement date; selected edition and applicability require review."
+  },
+  "license": {
+    "basis": "TNFD 2023, CC BY 4.0; original paraphrase of referral, attribution via source. External IFRS requirements are not reproduced or implemented.",
+    "commercial_or_public_use_authorized": false
+  },
+  "review_status": "source_read_mapping_candidate",
+  "coverage": "Annex 1 Table 6 climate-change GHG referral only; no TNFD conformity or IFRS S2 requirement mapping.",
+  "required_gases": [],
+  "requirements": [
+    {
+      "id": "annex1-ghg-referral",
+      "clause": "Annex 1 Table 6, printed page 83, unnumbered climate-change row (not C2.0)",
+      "description": "GHG reporting refers to IFRS S2; selected inventory is context only, external requirements unresolved.",
+      "required_core_fields": [
+        "inventory_reference"
+      ],
+      "external_requirement_pending": true
+    }
+  ]
+}

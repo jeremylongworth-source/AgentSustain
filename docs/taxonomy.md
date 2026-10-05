@@ -179,7 +179,7 @@ Circular practice assessment, reuse and recovery, circular business models. Atom
 
 ## SUS-11: Reporting & Disclosure (`reporting`)
 
-Disclosure mapping, gap analysis, evidence mapping, draft disclosures. Atomic names are not specified in the roadmap and will be designed in the corresponding wave.
+Disclosure mapping, gap analysis, evidence mapping, draft disclosures. Initial SUS-17 atomic names are `map-framework-disclosures` and `compare-framework-mappings`; full framework/domain coverage remains open.
 
 ## SUS-12: Compliance Intelligence (`compliance`)
 
