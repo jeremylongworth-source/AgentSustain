@@ -26,6 +26,8 @@ SUS-13 now adds the [sustainable-operations skillset](skillsets/sustainable-oper
 
 Start with [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Material changes to the approved architecture contracts require renewed review.
 
+SUS-15 now begins with three [strategy workflows](docs/strategy-contract.md) for selected baselines, owned KPI definitions and proposed absolute/intensity target endpoints. A [fictional three-step replay](evaluations/sus15-target-workflow.md) retains incomplete coverage, the absolute baseline and all review obligations. Targets remain unadopted and feasibility/claims unestablished; the other ten roadmap strategy/implementation workflows and broader organization evaluation remain further work.
+
 ## Validate the architecture pack
 
 Requires Python 3.11 or later. JSON Schema is a development dependency; consumers of future skills need not use Python.

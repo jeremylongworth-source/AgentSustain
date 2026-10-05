@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "596a5c0",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 333,
+    "duration_seconds": 127.593,
+    "status": "passed"
+  },
+  "focused_strategy_suite": {
+    "tests": 11,
+    "duration_seconds": 1.686,
+    "status": "passed"
+  },
+  "skill_validation": "All three strategy quick_validate.py checks passed",
+  "cli_validation": "All three author workflow outputs reproduced exactly; independent final partial/blocked/blocked outputs reproduced by helper and CLI",
+  "known_answer": {
+    "baseline_kwh": 1000,
+    "baseline_output_count": 100,
+    "intensity_kwh_per_count": 10,
+    "proposed_reduction_percent": 20,
+    "endpoint_kwh_per_count": 8,
+    "absolute_endpoint_kwh": 800,
+    "coverage_complete": false
+  },
+  "independent_case": {
+    "capture": "sus15-independent-target.json",
+    "observed": "80 saleable units and 20 scrap differ from normalized count 100; source-fit confirmation withheld",
+    "executed_statuses": [
+      "partial",
+      "blocked",
+      "blocked"
+    ],
+    "limit": "One source-reading reconciliation/refusal case; conditional raw arithmetic is not accepted helper target or delivery validation"
+  },
+  "checks": [
+    "Source-fit/accounting basis, physical service and selected scope review",
+    "Baseline conversion, nonoverlap, coverage/exclusions and append-only policy",
+    "Complete dependency reproduction rejects altered quantities/reports",
+    "Absolute/intensity endpoints, zero baseline percentage refusal, leap-year and equal-duration commitment periods",
+    "Missing factor ancestry preserves EMISSION_FACTOR_REQUIRED",
+    "No offsets, default levels, annual trajectory, future absolute inference or adoption",
+    "Old gaps/assumptions/reviews and untouched GHG state; exact complete proposal replays"
+  ],
+  "limitations": [
+    "Three of thirteen roadmap strategy/implementation workflows; feasibility, maturity, materiality, stakeholders, risks/opportunities and composed plans remain",
+    "Supplied substantive source reviews are not authenticated; selected domain calculations are not universally rerun",
+    "Gross physical quantities and decreasing absolute/intensity targets only; other indicators, offsets, rolling/multi-year averages and restatement remain",
+    "No adopted target, general reliability, whole-organization strategy or public-v1 readiness"
+  ],
+  "source_orientation": [
+    {
+      "url": "https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf",
+      "edition": "Revised Corporate Standard",
+      "section": "Chapter 11",
+      "accessed": "2026-10-05",
+      "scope": "Absolute/intensity distinction and explicit target/base/commitment periods; not framework validation or target-level recommendations"
+    }
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "89e45edd2aa0e9abc1fdbe185de5bb9efed436c88d6203046ae37826e7c81a13",
+    "scripts/run_strategy.py": "d38bd5cf463674df72e9d071fb2af78cadb4ad8bbba7ef226be67fafe82522de",
+    "tests/test_strategy.py": "2236254cebc461443897da03a53a7da9dc05bbefec82a18b89a27c63a9ac4a27",
+    "docs/strategy-contract.md": "421a7e180ffcbe23bd4d6bb1db7fdc2b595f68f82345c8f186d72fa2c9c6f0c2",
+    "skills/strategy/establish-baseline/SKILL.md": "01045c2c5067484aab0a67f0394497e56dbf3455495a09e9dbd8deb94f0fcd05",
+    "skills/strategy/define-kpis/SKILL.md": "947eccc638371dc8190ab49581627bd29ebfee50cc34e6d251651381839e6c10",
+    "skills/strategy/develop-target/SKILL.md": "092dbef25060888431bae8fe3036d602a5ee23335c18da228b801b2416c30e04",
+    "evaluations/sus15-target-workflow.json": "a9d283af7a2cee7633c7ce7506363df942f3cd9705c29e540b0f4908b6459e98",
+    "evaluations/sus15-independent-target.json": "fabbb6471d6a2215c874f53fc8809ce0f9a14b9c2de8077c0d7f7bcd6c58a126"
+  }
+}

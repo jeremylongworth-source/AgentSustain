@@ -34,3 +34,7 @@ The later mapped supplier/category hotspot contract also lies beyond the reviewe
 The subsequent sourced supplier-risk screening contract also requires inclusion in later specialist/router/release review. It records caller-reviewed impacts and ordinal severity while preserving allegations, proxies, uncertainty and due-diligence review. It grants no supplier clearance or legal determination. Evidence is in [the risk capture](../evaluations/sus14-supplier-risk.json).
 
 The subsequent conditional procurement-option contract also requires later specialist/router/release review. Its equivalence/lifetime/source-fitness decisions, selected emissions and cost comparison did not inherit approval from the earlier snapshot and remain subject to scenario-specific professional review under the latest continued-development approval. Evidence is in [the option capture](../evaluations/sus14-procurement-options.json).
+
+## Subsequent strategy extension
+
+The initial SUS-15 baseline/KPI/target contract was developed after the approved c7ad9f7 snapshot under continued roadmap authorization. It does not inherit scoped human review from that snapshot; subsequent specialist/router/release review must include its source-fit, comparable-service, target-period and adoption boundaries. Scenario-specific professional review remains open. Evidence is in [the strategy capture](../evaluations/sus15-target-workflow.json). This extension does not close SUS-15 or validate a target's delivery, ambition or public claim.

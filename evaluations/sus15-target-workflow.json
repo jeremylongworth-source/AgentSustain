@@ -1,0 +1,2468 @@
+{
+  "fictional": true,
+  "requests": [
+    {
+      "contract_version": "0.1.0",
+      "skill": "establish-baseline",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 0,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "facility-001",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "operational control (fixture only)",
+          "facility_ids": [
+            "facility-001"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "ev-001",
+            "source": {
+              "locator": "fixture:meter-001",
+              "title": "Fictional annual electricity record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "service-record",
+            "source": {
+              "locator": "fixture:output-log",
+              "title": "Fictional 100-unit production log",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional accepted-output log",
+              "version": "fixture-1",
+              "source": "fixture:output-log"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "res-001",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "metric-001",
+                "name": "Recorded electricity",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "ev-001"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              },
+              {
+                "id": "service-metric",
+                "name": "Fictional production output",
+                "value": 100,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "service-record"
+                ],
+                "method": {
+                  "name": "Fictional accepted-output log",
+                  "version": "fixture-1",
+                  "source": "fixture:output-log"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "service-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001",
+              "service-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [
+          "res-001"
+        ],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "metric_ids": [
+          "metric-001"
+        ],
+        "unit": "kWh",
+        "baseline_review": {
+          "confirmed": true,
+          "reviewer_role": "fictional strategy analyst",
+          "rationale": "Fictional selected meter and production log inspected; not an assurance opinion.",
+          "evidence_ids": [
+            "ev-001"
+          ],
+          "boundary_id": "boundary-001",
+          "scope": "Fictional plant purchased electricity only",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "selection_rationale": "Fictional annual operating year",
+          "recalculation_policy": "Review acquisitions, meter changes and corrected records before a new append-only baseline.",
+          "accounting_basis": "Gross selected purchased electricity, no credits or renewable claims.",
+          "coverage_complete": false,
+          "exclusions": [
+            "Other plants and fuel use"
+          ],
+          "nonoverlap_confirmed": true,
+          "metric_contexts": {
+            "metric-001": {
+              "confirmed": true,
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "scope": "Fictional plant purchased electricity only",
+              "rationale": "Fictional source is reviewed for the selected plant service.",
+              "accounting_basis": "Gross selected purchased electricity, no credits or renewable claims."
+            }
+          }
+        },
+        "result_id": "strategy-baseline"
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "define-kpis",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "facility-001",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "operational control (fixture only)",
+          "facility_ids": [
+            "facility-001"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "ev-001",
+            "source": {
+              "locator": "fixture:meter-001",
+              "title": "Fictional annual electricity record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "service-record",
+            "source": {
+              "locator": "fixture:output-log",
+              "title": "Fictional 100-unit production log",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional accepted-output log",
+              "version": "fixture-1",
+              "source": "fixture:output-log"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "res-001",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "metric-001",
+                "name": "Recorded electricity",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "ev-001"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              },
+              {
+                "id": "service-metric",
+                "name": "Fictional production output",
+                "value": 100,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "service-record"
+                ],
+                "method": {
+                  "name": "Fictional accepted-output log",
+                  "version": "fixture-1",
+                  "source": "fixture:output-log"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "service-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001",
+              "service-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "strategy-baseline",
+            "skill": "establish-baseline",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "strategy-baseline-baseline",
+                "name": "Selected sustainability baseline",
+                "value": 1000.0,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Reviewed strategy arithmetic",
+                  "version": "0.1.0",
+                  "source": "repository:docs/strategy-contract.md"
+                },
+                "assumption": "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "sum(converted inputs)",
+                  "inputs": [
+                    "metric-001"
+                  ],
+                  "conversions": [
+                    "{\"factor\": 1.0, \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"unit\": \"kWh\", \"value\": 1000.0}"
+                  ],
+                  "rounding": "Decimal precision 34; no display rounding"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "assumptions": [
+              "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+            ],
+            "data_gaps": [
+              {
+                "id": "strategy-baseline-gap-0",
+                "field": "strategy_basis",
+                "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "STRATEGY_DATA_REQUIRED",
+                "message": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization."
+              },
+              {
+                "code": "STRATEGY_BASELINE",
+                "message": "{\"baseline_metric_id\": \"strategy-baseline-baseline\", \"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"coverage_complete\": false, \"organization_coverage_verified\": false, \"restatement_applied\": false, \"selected_scope\": \"Fictional plant purchased electricity only\", \"source_authentication\": \"Supplied review is not independent authentication.\", \"source_metrics\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Recorded electricity\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000}]}"
+              },
+              {
+                "code": "STRATEGY_INPUTS",
+                "message": "{\"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"metric_ids\": [\"metric-001\"], \"result_id\": \"strategy-baseline\", \"unit\": \"kWh\"}"
+              }
+            ],
+            "next_actions": [
+              "Obtain scoped source evidence and documented review of the missing strategy basis."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+        ],
+        "data_gaps": [
+          {
+            "id": "strategy-baseline-gap-0",
+            "field": "strategy_basis",
+            "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [
+          "res-001"
+        ],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "definitions": [
+          {
+            "id": "electricity-intensity",
+            "name": "Electricity per produced unit",
+            "kind": "intensity",
+            "baseline_result_id": "strategy-baseline",
+            "denominator_metric_id": "service-metric",
+            "denominator_review": {
+              "confirmed": true,
+              "reviewer_role": "fictional strategy analyst",
+              "rationale": "Fictional selected meter and production log inspected; not an assurance opinion.",
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "boundary_id": "boundary-001",
+              "scope": "Fictional plant purchased electricity only",
+              "service_definition": "Count of completed equivalent fictional units",
+              "comparability_policy": "Same product and plant output log; review product-mix changes.",
+              "metric_contexts": {
+                "service-metric": {
+                  "confirmed": true,
+                  "evidence_ids": [
+                    "service-record"
+                  ],
+                  "scope": "Fictional plant purchased electricity only",
+                  "rationale": "Fictional source is reviewed for the selected plant service."
+                }
+              }
+            },
+            "owner": "Fictional operations lead",
+            "frequency": "annual",
+            "definition": "Selected electricity kWh divided by completed equivalent units",
+            "desired_direction": "decrease"
+          }
+        ],
+        "definition_review": {
+          "confirmed": true,
+          "reviewer_role": "fictional strategy analyst",
+          "rationale": "Fictional selected meter and production log inspected; not an assurance opinion.",
+          "evidence_ids": [
+            "ev-001"
+          ],
+          "boundary_id": "boundary-001",
+          "scope": "Fictional plant purchased electricity only",
+          "monitoring_basis": "Annual matched meter/output records; not started."
+        },
+        "result_id": "strategy-kpis"
+      }
+    },
+    {
+      "contract_version": "0.1.0",
+      "skill": "develop-target",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 2,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "facility-001",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "operational control (fixture only)",
+          "facility_ids": [
+            "facility-001"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "ev-001",
+            "source": {
+              "locator": "fixture:meter-001",
+              "title": "Fictional annual electricity record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "service-record",
+            "source": {
+              "locator": "fixture:output-log",
+              "title": "Fictional 100-unit production log",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional accepted-output log",
+              "version": "fixture-1",
+              "source": "fixture:output-log"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "res-001",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "metric-001",
+                "name": "Recorded electricity",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "ev-001"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              },
+              {
+                "id": "service-metric",
+                "name": "Fictional production output",
+                "value": 100,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "service-record"
+                ],
+                "method": {
+                  "name": "Fictional accepted-output log",
+                  "version": "fixture-1",
+                  "source": "fixture:output-log"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "service-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001",
+              "service-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "strategy-baseline",
+            "skill": "establish-baseline",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "strategy-baseline-baseline",
+                "name": "Selected sustainability baseline",
+                "value": 1000.0,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Reviewed strategy arithmetic",
+                  "version": "0.1.0",
+                  "source": "repository:docs/strategy-contract.md"
+                },
+                "assumption": "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "sum(converted inputs)",
+                  "inputs": [
+                    "metric-001"
+                  ],
+                  "conversions": [
+                    "{\"factor\": 1.0, \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"unit\": \"kWh\", \"value\": 1000.0}"
+                  ],
+                  "rounding": "Decimal precision 34; no display rounding"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "assumptions": [
+              "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+            ],
+            "data_gaps": [
+              {
+                "id": "strategy-baseline-gap-0",
+                "field": "strategy_basis",
+                "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "STRATEGY_DATA_REQUIRED",
+                "message": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization."
+              },
+              {
+                "code": "STRATEGY_BASELINE",
+                "message": "{\"baseline_metric_id\": \"strategy-baseline-baseline\", \"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"coverage_complete\": false, \"organization_coverage_verified\": false, \"restatement_applied\": false, \"selected_scope\": \"Fictional plant purchased electricity only\", \"source_authentication\": \"Supplied review is not independent authentication.\", \"source_metrics\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Recorded electricity\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000}]}"
+              },
+              {
+                "code": "STRATEGY_INPUTS",
+                "message": "{\"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"metric_ids\": [\"metric-001\"], \"result_id\": \"strategy-baseline\", \"unit\": \"kWh\"}"
+              }
+            ],
+            "next_actions": [
+              "Obtain scoped source evidence and documented review of the missing strategy basis."
+            ]
+          },
+          {
+            "id": "strategy-kpis",
+            "skill": "define-kpis",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "ev-001",
+              "service-record"
+            ],
+            "assumptions": [
+              "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+            ],
+            "data_gaps": [
+              {
+                "id": "strategy-baseline-gap-0",
+                "field": "strategy_basis",
+                "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+              },
+              {
+                "id": "strategy-kpis-gap-1",
+                "field": "strategy_basis",
+                "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+                "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "STRATEGY_DATA_REQUIRED",
+                "message": "KPI electricity-intensity retains incomplete selected-baseline coverage."
+              },
+              {
+                "code": "KPI_DEFINITIONS",
+                "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_metric\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_scope_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"definition\": {\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}, \"denominator_metric\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"service-record\"], \"id\": \"service-metric\", \"method\": {\"name\": \"Fictional accepted-output log\", \"source\": \"fixture:output-log\", \"version\": \"fixture-1\"}, \"name\": \"Fictional production output\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"unit\": \"kWh/count\"}], \"monitoring_started\": false, \"performance_verified\": false}"
+              },
+              {
+                "code": "STRATEGY_INPUTS",
+                "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}], \"result_id\": \"strategy-kpis\"}"
+              }
+            ],
+            "next_actions": [
+              "Obtain scoped source evidence and documented review of the missing strategy basis."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+        ],
+        "data_gaps": [
+          {
+            "id": "strategy-baseline-gap-0",
+            "field": "strategy_basis",
+            "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          },
+          {
+            "id": "strategy-kpis-gap-1",
+            "field": "strategy_basis",
+            "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          }
+        ],
+        "review_requirements": [],
+        "energy": [
+          "res-001"
+        ],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      },
+      "parameters": {
+        "definition_result_id": "strategy-kpis",
+        "kpi_id": "electricity-intensity",
+        "target": {
+          "id": "electricity-objective",
+          "kind": "intensity",
+          "level_type": "reduction_percent",
+          "value": 20,
+          "unit": "%",
+          "period": {
+            "start": "2030-01-01",
+            "end": "2030-12-31"
+          },
+          "owner": "Fictional operations lead"
+        },
+        "target_review": {
+          "confirmed": true,
+          "reviewer_role": "fictional strategy analyst",
+          "rationale": "Fictional selected meter and production log inspected; not an assurance opinion.",
+          "evidence_ids": [
+            "ev-001"
+          ],
+          "boundary_id": "boundary-001",
+          "scope": "Fictional plant purchased electricity only",
+          "ambition_basis": "Fictional proposed 20% level; technical and financial delivery not assessed.",
+          "period_comparability": "Annual matched service; no future production quantity supplied.",
+          "growth_assumptions": "Unknown future output; intensity improvement cannot imply absolute improvement.",
+          "double_counting_policy": "Selected meter only; do not add a projected reduction to the inventory.",
+          "recalculation_policy": "Review acquisitions, meter changes and corrected records before a new append-only baseline.",
+          "offset_policy": "excluded"
+        },
+        "result_id": "strategy-target"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "result": {
+        "id": "strategy-baseline",
+        "skill": "establish-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "strategy-baseline-baseline",
+            "name": "Selected sustainability baseline",
+            "value": 1000.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Reviewed strategy arithmetic",
+              "version": "0.1.0",
+              "source": "repository:docs/strategy-contract.md"
+            },
+            "assumption": "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "sum(converted inputs)",
+              "inputs": [
+                "metric-001"
+              ],
+              "conversions": [
+                "{\"factor\": 1.0, \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"unit\": \"kWh\", \"value\": 1000.0}"
+              ],
+              "rounding": "Decimal precision 34; no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [
+          "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+        ],
+        "data_gaps": [
+          {
+            "id": "strategy-baseline-gap-0",
+            "field": "strategy_basis",
+            "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "STRATEGY_DATA_REQUIRED",
+            "message": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization."
+          },
+          {
+            "code": "STRATEGY_BASELINE",
+            "message": "{\"baseline_metric_id\": \"strategy-baseline-baseline\", \"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"coverage_complete\": false, \"organization_coverage_verified\": false, \"restatement_applied\": false, \"selected_scope\": \"Fictional plant purchased electricity only\", \"source_authentication\": \"Supplied review is not independent authentication.\", \"source_metrics\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Recorded electricity\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000}]}"
+          },
+          {
+            "code": "STRATEGY_INPUTS",
+            "message": "{\"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"metric_ids\": [\"metric-001\"], \"result_id\": \"strategy-baseline\", \"unit\": \"kWh\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain scoped source evidence and documented review of the missing strategy basis."
+        ]
+      },
+      "proposal": {
+        "base_revision": 0,
+        "reason": "Propose reviewed baseline, KPI definition or target without adoption or claims",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 1,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "service-record",
+              "source": {
+                "locator": "fixture:output-log",
+                "title": "Fictional 100-unit production log",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional accepted-output log",
+                "version": "fixture-1",
+                "source": "fixture:output-log"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "count",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "id": "service-metric",
+                  "name": "Fictional production output",
+                  "value": 100,
+                  "unit": "count",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "service-record"
+                  ],
+                  "method": {
+                    "name": "Fictional accepted-output log",
+                    "version": "fixture-1",
+                    "source": "fixture:output-log"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "service-record"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001",
+                "service-record"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "strategy-baseline",
+              "skill": "establish-baseline",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "strategy-baseline-baseline",
+                  "name": "Selected sustainability baseline",
+                  "value": 1000.0,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Reviewed strategy arithmetic",
+                    "version": "0.1.0",
+                    "source": "repository:docs/strategy-contract.md"
+                  },
+                  "assumption": "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "sum(converted inputs)",
+                    "inputs": [
+                      "metric-001"
+                    ],
+                    "conversions": [
+                      "{\"factor\": 1.0, \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"unit\": \"kWh\", \"value\": 1000.0}"
+                    ],
+                    "rounding": "Decimal precision 34; no display rounding"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [
+                "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+              ],
+              "data_gaps": [
+                {
+                  "id": "strategy-baseline-gap-0",
+                  "field": "strategy_basis",
+                  "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "STRATEGY_DATA_REQUIRED",
+                  "message": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization."
+                },
+                {
+                  "code": "STRATEGY_BASELINE",
+                  "message": "{\"baseline_metric_id\": \"strategy-baseline-baseline\", \"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"coverage_complete\": false, \"organization_coverage_verified\": false, \"restatement_applied\": false, \"selected_scope\": \"Fictional plant purchased electricity only\", \"source_authentication\": \"Supplied review is not independent authentication.\", \"source_metrics\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Recorded electricity\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000}]}"
+                },
+                {
+                  "code": "STRATEGY_INPUTS",
+                  "message": "{\"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"metric_ids\": [\"metric-001\"], \"result_id\": \"strategy-baseline\", \"unit\": \"kWh\"}"
+                }
+              ],
+              "next_actions": [
+                "Obtain scoped source evidence and documented review of the missing strategy basis."
+              ]
+            }
+          ],
+          "assumptions": [
+            "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+          ],
+          "data_gaps": [
+            {
+              "id": "strategy-baseline-gap-0",
+              "field": "strategy_basis",
+              "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+              "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+              "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+            }
+          ],
+          "review_requirements": [],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": []
+        }
+      }
+    },
+    {
+      "result": {
+        "id": "strategy-kpis",
+        "skill": "define-kpis",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "service-record"
+        ],
+        "assumptions": [
+          "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+        ],
+        "data_gaps": [
+          {
+            "id": "strategy-baseline-gap-0",
+            "field": "strategy_basis",
+            "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          },
+          {
+            "id": "strategy-kpis-gap-1",
+            "field": "strategy_basis",
+            "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "STRATEGY_DATA_REQUIRED",
+            "message": "KPI electricity-intensity retains incomplete selected-baseline coverage."
+          },
+          {
+            "code": "KPI_DEFINITIONS",
+            "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_metric\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_scope_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"definition\": {\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}, \"denominator_metric\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"service-record\"], \"id\": \"service-metric\", \"method\": {\"name\": \"Fictional accepted-output log\", \"source\": \"fixture:output-log\", \"version\": \"fixture-1\"}, \"name\": \"Fictional production output\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"unit\": \"kWh/count\"}], \"monitoring_started\": false, \"performance_verified\": false}"
+          },
+          {
+            "code": "STRATEGY_INPUTS",
+            "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}], \"result_id\": \"strategy-kpis\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain scoped source evidence and documented review of the missing strategy basis."
+        ]
+      },
+      "proposal": {
+        "base_revision": 1,
+        "reason": "Propose reviewed baseline, KPI definition or target without adoption or claims",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 2,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "service-record",
+              "source": {
+                "locator": "fixture:output-log",
+                "title": "Fictional 100-unit production log",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional accepted-output log",
+                "version": "fixture-1",
+                "source": "fixture:output-log"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "count",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "id": "service-metric",
+                  "name": "Fictional production output",
+                  "value": 100,
+                  "unit": "count",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "service-record"
+                  ],
+                  "method": {
+                    "name": "Fictional accepted-output log",
+                    "version": "fixture-1",
+                    "source": "fixture:output-log"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "service-record"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001",
+                "service-record"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "strategy-baseline",
+              "skill": "establish-baseline",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "strategy-baseline-baseline",
+                  "name": "Selected sustainability baseline",
+                  "value": 1000.0,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Reviewed strategy arithmetic",
+                    "version": "0.1.0",
+                    "source": "repository:docs/strategy-contract.md"
+                  },
+                  "assumption": "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "sum(converted inputs)",
+                    "inputs": [
+                      "metric-001"
+                    ],
+                    "conversions": [
+                      "{\"factor\": 1.0, \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"unit\": \"kWh\", \"value\": 1000.0}"
+                    ],
+                    "rounding": "Decimal precision 34; no display rounding"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [
+                "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+              ],
+              "data_gaps": [
+                {
+                  "id": "strategy-baseline-gap-0",
+                  "field": "strategy_basis",
+                  "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "STRATEGY_DATA_REQUIRED",
+                  "message": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization."
+                },
+                {
+                  "code": "STRATEGY_BASELINE",
+                  "message": "{\"baseline_metric_id\": \"strategy-baseline-baseline\", \"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"coverage_complete\": false, \"organization_coverage_verified\": false, \"restatement_applied\": false, \"selected_scope\": \"Fictional plant purchased electricity only\", \"source_authentication\": \"Supplied review is not independent authentication.\", \"source_metrics\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Recorded electricity\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000}]}"
+                },
+                {
+                  "code": "STRATEGY_INPUTS",
+                  "message": "{\"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"metric_ids\": [\"metric-001\"], \"result_id\": \"strategy-baseline\", \"unit\": \"kWh\"}"
+                }
+              ],
+              "next_actions": [
+                "Obtain scoped source evidence and documented review of the missing strategy basis."
+              ]
+            },
+            {
+              "id": "strategy-kpis",
+              "skill": "define-kpis",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001",
+                "service-record"
+              ],
+              "assumptions": [
+                "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+              ],
+              "data_gaps": [
+                {
+                  "id": "strategy-baseline-gap-0",
+                  "field": "strategy_basis",
+                  "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                },
+                {
+                  "id": "strategy-kpis-gap-1",
+                  "field": "strategy_basis",
+                  "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "STRATEGY_DATA_REQUIRED",
+                  "message": "KPI electricity-intensity retains incomplete selected-baseline coverage."
+                },
+                {
+                  "code": "KPI_DEFINITIONS",
+                  "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_metric\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_scope_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"definition\": {\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}, \"denominator_metric\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"service-record\"], \"id\": \"service-metric\", \"method\": {\"name\": \"Fictional accepted-output log\", \"source\": \"fixture:output-log\", \"version\": \"fixture-1\"}, \"name\": \"Fictional production output\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"unit\": \"kWh/count\"}], \"monitoring_started\": false, \"performance_verified\": false}"
+                },
+                {
+                  "code": "STRATEGY_INPUTS",
+                  "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}], \"result_id\": \"strategy-kpis\"}"
+                }
+              ],
+              "next_actions": [
+                "Obtain scoped source evidence and documented review of the missing strategy basis."
+              ]
+            }
+          ],
+          "assumptions": [
+            "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+          ],
+          "data_gaps": [
+            {
+              "id": "strategy-baseline-gap-0",
+              "field": "strategy_basis",
+              "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+              "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+              "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+            },
+            {
+              "id": "strategy-kpis-gap-1",
+              "field": "strategy_basis",
+              "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+              "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+              "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+            }
+          ],
+          "review_requirements": [],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": []
+        }
+      }
+    },
+    {
+      "result": {
+        "id": "strategy-target",
+        "skill": "develop-target",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "strategy-target-target-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Review source fitness, target ambition, growth, comparable commitment periods and delivery feasibility before adoption or claims.",
+            "scope": "Fictional plant purchased electricity only",
+            "reviewer_role": "Sustainability strategy reviewer and accountable decision owner",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "strategy-target-target",
+            "name": "Proposed Electricity per produced unit endpoint",
+            "value": 8.0,
+            "unit": "kWh/count",
+            "period": {
+              "start": "2030-01-01",
+              "end": "2030-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "service-record"
+            ],
+            "method": {
+              "name": "Reviewed strategy arithmetic",
+              "version": "0.1.0",
+              "source": "repository:docs/strategy-contract.md"
+            },
+            "assumption": "Proposed gross selected-scope objective, not a forecast, approved commitment, feasible delivery or validated science-based target.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "baseline * (1 - supplied reduction_percent / 100)",
+              "inputs": [
+                "strategy-baseline-baseline",
+                "service-metric",
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "Decimal precision 34; no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "service-record"
+        ],
+        "assumptions": [
+          "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+          "Proposed gross selected-scope objective, not a forecast, approved commitment, feasible delivery or validated science-based target."
+        ],
+        "data_gaps": [
+          {
+            "id": "strategy-baseline-gap-0",
+            "field": "strategy_basis",
+            "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          },
+          {
+            "id": "strategy-kpis-gap-1",
+            "field": "strategy_basis",
+            "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          },
+          {
+            "id": "strategy-target-gap-2",
+            "field": "strategy_basis",
+            "reason": "Target retains incomplete selected-baseline coverage; no full-organization reduction claim.",
+            "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "STRATEGY_DATA_REQUIRED",
+            "message": "Target retains incomplete selected-baseline coverage; no full-organization reduction claim."
+          },
+          {
+            "code": "TARGET_PROPOSAL",
+            "message": "{\"absolute_future_quantity\": null, \"baseline_absolute_quantity\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_unit\": \"kWh/count\", \"baseline_value\": 10.0, \"definition\": {\"baseline_metric\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_scope_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"definition\": {\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}, \"denominator_metric\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"service-record\"], \"id\": \"service-metric\", \"method\": {\"name\": \"Fictional accepted-output log\", \"source\": \"fixture:output-log\", \"version\": \"fixture-1\"}, \"name\": \"Fictional production output\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"unit\": \"kWh/count\"}, \"endpoint_metric_id\": \"strategy-target-target\", \"feasibility\": null, \"implementation_authorized\": false, \"intensity_warning\": \"Lower intensity can coexist with higher absolute impact; no future activity or absolute outcome inferred.\", \"net_zero_validated\": false, \"proposed_reduction\": 2.0, \"public_claim_authorized\": false, \"science_based_validated\": false, \"target\": {\"id\": \"electricity-objective\", \"kind\": \"intensity\", \"level_type\": \"reduction_percent\", \"owner\": \"Fictional operations lead\", \"period\": {\"end\": \"2030-12-31\", \"start\": \"2030-01-01\"}, \"unit\": \"%\", \"value\": 20}, \"target_adopted\": false, \"target_review\": {\"ambition_basis\": \"Fictional proposed 20% level; technical and financial delivery not assessed.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"double_counting_policy\": \"Selected meter only; do not add a projected reduction to the inventory.\", \"evidence_ids\": [\"ev-001\"], \"growth_assumptions\": \"Unknown future output; intensity improvement cannot imply absolute improvement.\", \"offset_policy\": \"excluded\", \"period_comparability\": \"Annual matched service; no future production quantity supplied.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"trajectory\": null}"
+          },
+          {
+            "code": "STRATEGY_INPUTS",
+            "message": "{\"definition_result_id\": \"strategy-kpis\", \"kpi_id\": \"electricity-intensity\", \"result_id\": \"strategy-target\", \"target\": {\"id\": \"electricity-objective\", \"kind\": \"intensity\", \"level_type\": \"reduction_percent\", \"owner\": \"Fictional operations lead\", \"period\": {\"end\": \"2030-12-31\", \"start\": \"2030-01-01\"}, \"unit\": \"%\", \"value\": 20}, \"target_review\": {\"ambition_basis\": \"Fictional proposed 20% level; technical and financial delivery not assessed.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"double_counting_policy\": \"Selected meter only; do not add a projected reduction to the inventory.\", \"evidence_ids\": [\"ev-001\"], \"growth_assumptions\": \"Unknown future output; intensity improvement cannot imply absolute improvement.\", \"offset_policy\": \"excluded\", \"period_comparability\": \"Annual matched service; no future production quantity supplied.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}}"
+          }
+        ],
+        "next_actions": [
+          "Obtain scoped source evidence and documented review of the missing strategy basis."
+        ]
+      },
+      "proposal": {
+        "base_revision": 2,
+        "reason": "Propose reviewed baseline, KPI definition or target without adoption or claims",
+        "state": {
+          "contract_version": "0.1.0",
+          "revision": 3,
+          "organization": {
+            "id": "org-001",
+            "name": "Fictional Example Company",
+            "sector": "manufacturing"
+          },
+          "facilities": [
+            {
+              "id": "facility-001",
+              "name": "Fictional plant",
+              "jurisdiction": "CA-ON"
+            }
+          ],
+          "jurisdictions": [
+            "CA",
+            "CA-ON"
+          ],
+          "reporting_period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "organizational_boundary": {
+            "id": "boundary-001",
+            "approach": "operational control (fixture only)",
+            "facility_ids": [
+              "facility-001"
+            ],
+            "exclusions": [],
+            "evidence_ids": []
+          },
+          "evidence": [
+            {
+              "id": "ev-001",
+              "source": {
+                "locator": "fixture:meter-001",
+                "title": "Fictional annual electricity record",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "kWh",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            },
+            {
+              "id": "service-record",
+              "source": {
+                "locator": "fixture:output-log",
+                "title": "Fictional 100-unit production log",
+                "publisher": "Fictional Example Company",
+                "accessed": "2026-10-04",
+                "version": "fixture-1",
+                "tier": 1
+              },
+              "method": {
+                "name": "Fictional accepted-output log",
+                "version": "fixture-1",
+                "source": "fixture:output-log"
+              },
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "unit": "count",
+              "boundary_id": "boundary-001",
+              "geography": "CA-ON",
+              "quality": {
+                "reliability": "unknown",
+                "completeness": "complete",
+                "fitness_notes": "Synthetic fixture, not independently verified."
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": null
+            }
+          ],
+          "results": [
+            {
+              "id": "res-001",
+              "skill": "normalize-sustainability-data",
+              "contract_version": "0.1.0",
+              "status": "completed",
+              "review_states": [
+                "ANALYTICAL"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "metric-001",
+                  "name": "Recorded electricity",
+                  "value": 1000,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Synthetic meter reading fixture",
+                    "version": "fixture-1",
+                    "source": "fixture:meter-001"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                },
+                {
+                  "id": "service-metric",
+                  "name": "Fictional production output",
+                  "value": 100,
+                  "unit": "count",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "service-record"
+                  ],
+                  "method": {
+                    "name": "Fictional accepted-output log",
+                    "version": "fixture-1",
+                    "source": "fixture:output-log"
+                  },
+                  "assumption": null,
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Fictional meter uncertainty is not quantified.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "recorded quantity",
+                    "inputs": [
+                      "service-record"
+                    ],
+                    "conversions": [],
+                    "rounding": "none"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001",
+                "service-record"
+              ],
+              "assumptions": [],
+              "data_gaps": [],
+              "diagnostics": [],
+              "next_actions": []
+            },
+            {
+              "id": "strategy-baseline",
+              "skill": "establish-baseline",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [],
+              "metrics": [
+                {
+                  "id": "strategy-baseline-baseline",
+                  "name": "Selected sustainability baseline",
+                  "value": 1000.0,
+                  "unit": "kWh",
+                  "period": {
+                    "start": "2025-01-01",
+                    "end": "2025-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001"
+                  ],
+                  "method": {
+                    "name": "Reviewed strategy arithmetic",
+                    "version": "0.1.0",
+                    "source": "repository:docs/strategy-contract.md"
+                  },
+                  "assumption": "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "sum(converted inputs)",
+                    "inputs": [
+                      "metric-001"
+                    ],
+                    "conversions": [
+                      "{\"factor\": 1.0, \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"unit\": \"kWh\", \"value\": 1000.0}"
+                    ],
+                    "rounding": "Decimal precision 34; no display rounding"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "assumptions": [
+                "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+              ],
+              "data_gaps": [
+                {
+                  "id": "strategy-baseline-gap-0",
+                  "field": "strategy_basis",
+                  "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "STRATEGY_DATA_REQUIRED",
+                  "message": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization."
+                },
+                {
+                  "code": "STRATEGY_BASELINE",
+                  "message": "{\"baseline_metric_id\": \"strategy-baseline-baseline\", \"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"coverage_complete\": false, \"organization_coverage_verified\": false, \"restatement_applied\": false, \"selected_scope\": \"Fictional plant purchased electricity only\", \"source_authentication\": \"Supplied review is not independent authentication.\", \"source_metrics\": [{\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Recorded electricity\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000}]}"
+                },
+                {
+                  "code": "STRATEGY_INPUTS",
+                  "message": "{\"baseline_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"metric_ids\": [\"metric-001\"], \"result_id\": \"strategy-baseline\", \"unit\": \"kWh\"}"
+                }
+              ],
+              "next_actions": [
+                "Obtain scoped source evidence and documented review of the missing strategy basis."
+              ]
+            },
+            {
+              "id": "strategy-kpis",
+              "skill": "define-kpis",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ANALYTICAL",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [],
+              "metrics": [],
+              "evidence_ids": [
+                "ev-001",
+                "service-record"
+              ],
+              "assumptions": [
+                "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication."
+              ],
+              "data_gaps": [
+                {
+                  "id": "strategy-baseline-gap-0",
+                  "field": "strategy_basis",
+                  "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                },
+                {
+                  "id": "strategy-kpis-gap-1",
+                  "field": "strategy_basis",
+                  "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "STRATEGY_DATA_REQUIRED",
+                  "message": "KPI electricity-intensity retains incomplete selected-baseline coverage."
+                },
+                {
+                  "code": "KPI_DEFINITIONS",
+                  "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_metric\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_scope_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"definition\": {\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}, \"denominator_metric\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"service-record\"], \"id\": \"service-metric\", \"method\": {\"name\": \"Fictional accepted-output log\", \"source\": \"fixture:output-log\", \"version\": \"fixture-1\"}, \"name\": \"Fictional production output\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"unit\": \"kWh/count\"}], \"monitoring_started\": false, \"performance_verified\": false}"
+                },
+                {
+                  "code": "STRATEGY_INPUTS",
+                  "message": "{\"definition_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"monitoring_basis\": \"Annual matched meter/output records; not started.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"definitions\": [{\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}], \"result_id\": \"strategy-kpis\"}"
+                }
+              ],
+              "next_actions": [
+                "Obtain scoped source evidence and documented review of the missing strategy basis."
+              ]
+            },
+            {
+              "id": "strategy-target",
+              "skill": "develop-target",
+              "contract_version": "0.1.0",
+              "status": "partial",
+              "review_states": [
+                "ANALYTICAL",
+                "PROFESSIONAL_REVIEW_REQUIRED",
+                "EVIDENCE_INCOMPLETE"
+              ],
+              "review_requirements": [
+                {
+                  "id": "strategy-target-target-review",
+                  "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                  "reason": "Review source fitness, target ambition, growth, comparable commitment periods and delivery feasibility before adoption or claims.",
+                  "scope": "Fictional plant purchased electricity only",
+                  "reviewer_role": "Sustainability strategy reviewer and accountable decision owner",
+                  "status": "open",
+                  "resolution": null
+                }
+              ],
+              "metrics": [
+                {
+                  "id": "strategy-target-target",
+                  "name": "Proposed Electricity per produced unit endpoint",
+                  "value": 8.0,
+                  "unit": "kWh/count",
+                  "period": {
+                    "start": "2030-01-01",
+                    "end": "2030-12-31"
+                  },
+                  "boundary_id": "boundary-001",
+                  "evidence_ids": [
+                    "ev-001",
+                    "service-record"
+                  ],
+                  "method": {
+                    "name": "Reviewed strategy arithmetic",
+                    "version": "0.1.0",
+                    "source": "repository:docs/strategy-contract.md"
+                  },
+                  "assumption": "Proposed gross selected-scope objective, not a forecast, approved commitment, feasible delivery or validated science-based target.",
+                  "uncertainty": {
+                    "kind": "unquantified",
+                    "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.",
+                    "value": null,
+                    "unit": null
+                  },
+                  "calculation": {
+                    "formula": "baseline * (1 - supplied reduction_percent / 100)",
+                    "inputs": [
+                      "strategy-baseline-baseline",
+                      "service-metric",
+                      "ev-001"
+                    ],
+                    "conversions": [],
+                    "rounding": "Decimal precision 34; no display rounding"
+                  }
+                }
+              ],
+              "evidence_ids": [
+                "ev-001",
+                "service-record"
+              ],
+              "assumptions": [
+                "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+                "Proposed gross selected-scope objective, not a forecast, approved commitment, feasible delivery or validated science-based target."
+              ],
+              "data_gaps": [
+                {
+                  "id": "strategy-baseline-gap-0",
+                  "field": "strategy_basis",
+                  "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                },
+                {
+                  "id": "strategy-kpis-gap-1",
+                  "field": "strategy_basis",
+                  "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                },
+                {
+                  "id": "strategy-target-gap-2",
+                  "field": "strategy_basis",
+                  "reason": "Target retains incomplete selected-baseline coverage; no full-organization reduction claim.",
+                  "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+                  "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+                }
+              ],
+              "diagnostics": [
+                {
+                  "code": "STRATEGY_DATA_REQUIRED",
+                  "message": "Target retains incomplete selected-baseline coverage; no full-organization reduction claim."
+                },
+                {
+                  "code": "TARGET_PROPOSAL",
+                  "message": "{\"absolute_future_quantity\": null, \"baseline_absolute_quantity\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_unit\": \"kWh/count\", \"baseline_value\": 10.0, \"definition\": {\"baseline_metric\": {\"assumption\": \"Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"{\\\"factor\\\": 1.0, \\\"source\\\": \\\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\\\", \\\"unit\\\": \\\"kWh\\\", \\\"value\\\": 1000.0}\"], \"formula\": \"sum(converted inputs)\", \"inputs\": [\"metric-001\"], \"rounding\": \"Decimal precision 34; no display rounding\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"strategy-baseline-baseline\", \"method\": {\"name\": \"Reviewed strategy arithmetic\", \"source\": \"repository:docs/strategy-contract.md\", \"version\": \"0.1.0\"}, \"name\": \"Selected sustainability baseline\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kWh\", \"value\": 1000.0}, \"baseline_scope_review\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"exclusions\": [\"Other plants and fuel use\"], \"metric_contexts\": {\"metric-001\": {\"accounting_basis\": \"Gross selected purchased electricity, no credits or renewable claims.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"nonoverlap_confirmed\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"selection_rationale\": \"Fictional annual operating year\"}, \"definition\": {\"baseline_result_id\": \"strategy-baseline\", \"definition\": \"Selected electricity kWh divided by completed equivalent units\", \"denominator_metric_id\": \"service-metric\", \"denominator_review\": {\"boundary_id\": \"boundary-001\", \"comparability_policy\": \"Same product and plant output log; review product-mix changes.\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"metric_contexts\": {\"service-metric\": {\"confirmed\": true, \"evidence_ids\": [\"service-record\"], \"rationale\": \"Fictional source is reviewed for the selected plant service.\", \"scope\": \"Fictional plant purchased electricity only\"}}, \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\", \"service_definition\": \"Count of completed equivalent fictional units\"}, \"desired_direction\": \"decrease\", \"frequency\": \"annual\", \"id\": \"electricity-intensity\", \"kind\": \"intensity\", \"name\": \"Electricity per produced unit\", \"owner\": \"Fictional operations lead\"}, \"denominator_metric\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"service-record\"], \"id\": \"service-metric\", \"method\": {\"name\": \"Fictional accepted-output log\", \"source\": \"fixture:output-log\", \"version\": \"fixture-1\"}, \"name\": \"Fictional production output\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"unit\": \"kWh/count\"}, \"endpoint_metric_id\": \"strategy-target-target\", \"feasibility\": null, \"implementation_authorized\": false, \"intensity_warning\": \"Lower intensity can coexist with higher absolute impact; no future activity or absolute outcome inferred.\", \"net_zero_validated\": false, \"proposed_reduction\": 2.0, \"public_claim_authorized\": false, \"science_based_validated\": false, \"target\": {\"id\": \"electricity-objective\", \"kind\": \"intensity\", \"level_type\": \"reduction_percent\", \"owner\": \"Fictional operations lead\", \"period\": {\"end\": \"2030-12-31\", \"start\": \"2030-01-01\"}, \"unit\": \"%\", \"value\": 20}, \"target_adopted\": false, \"target_review\": {\"ambition_basis\": \"Fictional proposed 20% level; technical and financial delivery not assessed.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"double_counting_policy\": \"Selected meter only; do not add a projected reduction to the inventory.\", \"evidence_ids\": [\"ev-001\"], \"growth_assumptions\": \"Unknown future output; intensity improvement cannot imply absolute improvement.\", \"offset_policy\": \"excluded\", \"period_comparability\": \"Annual matched service; no future production quantity supplied.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}, \"trajectory\": null}"
+                },
+                {
+                  "code": "STRATEGY_INPUTS",
+                  "message": "{\"definition_result_id\": \"strategy-kpis\", \"kpi_id\": \"electricity-intensity\", \"result_id\": \"strategy-target\", \"target\": {\"id\": \"electricity-objective\", \"kind\": \"intensity\", \"level_type\": \"reduction_percent\", \"owner\": \"Fictional operations lead\", \"period\": {\"end\": \"2030-12-31\", \"start\": \"2030-01-01\"}, \"unit\": \"%\", \"value\": 20}, \"target_review\": {\"ambition_basis\": \"Fictional proposed 20% level; technical and financial delivery not assessed.\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"double_counting_policy\": \"Selected meter only; do not add a projected reduction to the inventory.\", \"evidence_ids\": [\"ev-001\"], \"growth_assumptions\": \"Unknown future output; intensity improvement cannot imply absolute improvement.\", \"offset_policy\": \"excluded\", \"period_comparability\": \"Annual matched service; no future production quantity supplied.\", \"rationale\": \"Fictional selected meter and production log inspected; not an assurance opinion.\", \"recalculation_policy\": \"Review acquisitions, meter changes and corrected records before a new append-only baseline.\", \"reviewer_role\": \"fictional strategy analyst\", \"scope\": \"Fictional plant purchased electricity only\"}}"
+                }
+              ],
+              "next_actions": [
+                "Obtain scoped source evidence and documented review of the missing strategy basis."
+              ]
+            }
+          ],
+          "assumptions": [
+            "Selected gross baseline only; source-fit, nonoverlap and accounting basis are supplied substantive review, not source authentication.",
+            "Proposed gross selected-scope objective, not a forecast, approved commitment, feasible delivery or validated science-based target."
+          ],
+          "data_gaps": [
+            {
+              "id": "strategy-baseline-gap-0",
+              "field": "strategy_basis",
+              "reason": "Selected baseline coverage is incomplete; do not treat its subtotal as the complete organization.",
+              "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+              "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+            },
+            {
+              "id": "strategy-kpis-gap-1",
+              "field": "strategy_basis",
+              "reason": "KPI electricity-intensity retains incomplete selected-baseline coverage.",
+              "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+              "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+            },
+            {
+              "id": "strategy-target-gap-2",
+              "field": "strategy_basis",
+              "reason": "Target retains incomplete selected-baseline coverage; no full-organization reduction claim.",
+              "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+              "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."
+            }
+          ],
+          "review_requirements": [
+            {
+              "id": "strategy-target-target-review",
+              "state": "PROFESSIONAL_REVIEW_REQUIRED",
+              "reason": "Review source fitness, target ambition, growth, comparable commitment periods and delivery feasibility before adoption or claims.",
+              "scope": "Fictional plant purchased electricity only",
+              "reviewer_role": "Sustainability strategy reviewer and accountable decision owner",
+              "status": "open",
+              "resolution": null
+            }
+          ],
+          "energy": [
+            "res-001"
+          ],
+          "water": [],
+          "materials": [],
+          "waste": [],
+          "ghg": {
+            "scope_1": [],
+            "scope_2": [],
+            "scope_3": []
+          },
+          "suppliers": [],
+          "targets": [],
+          "risks": [],
+          "opportunities": [],
+          "projects": [],
+          "frameworks": [],
+          "emission_factors": []
+        }
+      }
+    }
+  ]
+}
