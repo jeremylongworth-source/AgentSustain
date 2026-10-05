@@ -12,6 +12,7 @@ from .state_proposal import propose
 from .finance_composition import OPERATIONS as COMPOSITION_OPERATIONS, compose
 from .irr_tools import irr_roots
 from .finance_prices import OPERATIONS as PRICE_OPERATIONS, price_path
+from .finance_abatement import abatement_cost
 
 
 OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id", "analysis_review", "result_id"},
@@ -20,6 +21,7 @@ OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id",
 OPERATIONS["calculate-irr"] = {"cashflows", "root_search", "analysis_review", "result_id"}
 OPERATIONS.update(COMPOSITION_OPERATIONS)
 OPERATIONS.update(PRICE_OPERATIONS)
+OPERATIONS["calculate-marginal-abatement-cost"] = {"incremental_cost_id", "baseline_emissions_id", "scenario_emissions_id", "abatement_review", "analysis_review", "result_id"}
 
 
 def run_finance(state, skill, parameters):
@@ -82,7 +84,14 @@ def run_finance(state, skill, parameters):
         output_period = horizon
         with localcontext() as context:
             context.prec = 34
-            if skill in PRICE_OPERATIONS:
+            if skill == "calculate-marginal-abatement-cost":
+                entries, complete = abatement_cost(state,parameters,resolve,refs)
+                if not complete:
+                    gap("FINANCIAL_COVERAGE_REQUIRED", "Cost-per-abatement coverage is incomplete; this is a conditional selected-project ratio.")
+                result["review_requirements"].append({"id": ident+"-abatement-review", "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                    "reason": "Review incremental cost completeness, baseline/scenario applicability, physical reduction and exclusions.",
+                    "scope": "Project cost per abatement", "reviewer_role": parameters["abatement_review"]["reviewer_role"], "status": "open", "resolution": None})
+            elif skill in PRICE_OPERATIONS:
                 entries, complete = price_path(state,skill,parameters,resolve,refs)
                 if not complete:
                     gap("FINANCIAL_COVERAGE_REQUIRED", "Selected variable-unit price coverage is incomplete; results are conditional exposure subtotals.")
@@ -189,7 +198,7 @@ def run_finance(state, skill, parameters):
             for metric_id, value, unit, inputs, formula, output_period in entries]
         result["diagnostics"].append({"code": "FINANCIAL_ANALYSIS_BASIS", "message": json.dumps(parameters, sort_keys=True)})
     except (ValueError, KeyError, TypeError) as error:
-        result["metrics"] = []; gap("FINANCIAL_DATA_REQUIRED", str(error))
+        result["metrics"] = []; gap(getattr(error, "diagnostic_code", "FINANCIAL_DATA_REQUIRED"), str(error))
     result["evidence_ids"] = sorted(refs)
     result["status"] = "blocked" if not result["metrics"] else ("partial" if result["data_gaps"] else "completed")
     result["review_states"] += [r["state"] for r in result["review_requirements"] if r["status"] == "open"]

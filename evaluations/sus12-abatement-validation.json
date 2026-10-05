@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-05",
+  "base_revision": "2f838e6",
+  "checks": {
+    "unittest": {
+      "passed": 233,
+      "seconds": 47.313,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "new_abatement_tests": 10
+    },
+    "focused_abatement_tests": {
+      "passed": 10
+    },
+    "changed_skill_packaging": {
+      "passed": 1,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "net_cost_300_CAD_abatement_10_t_CO2e": 30,
+      "net_cost_minus_200_CAD_abatement_10_t_CO2e": -20,
+      "npv_net_benefit_41_322314_CAD_inverted_over_10_t_CO2e": -4.132231404958678,
+      "zero_or_negative_abatement": "ratio withheld",
+      "missing_factor_lineage": "EMISSION_FACTOR_REQUIRED propagated; no factor invented"
+    }
+  },
+  "limitations": [
+    "Selected-project net-cost-per-abatement convention, not a market-wide marginal derivative or certified abatement.",
+    "Fictional horizon cost and physical emissions assessments; source confirmation does not authenticate completeness or applicability.",
+    "Already-discounted external cost is reviewed, not recomputed; NPV sources require matched economic basis and explicit sign inversion.",
+    "Offsets/removals and period/GWP/unit restatements need separate methods; professional review remains open.",
+    "Author-led known-answer and replay cases; independent behavioral and organization-wide evidence remains."
+  ],
+  "sha256": {
+    "scripts/finance_abatement.py": "49ab5104c7f600fdce3f8ea7bbef1654b8ea7eb54aada0a0ea5922b31c7a3812",
+    "scripts/finance_tools.py": "5ea5ed117a14196ddda271e81ad94041e0b46e158a255037b9559a3a416eba15",
+    "tests/test_finance_abatement.py": "352ec8f7ff5991a0e9eb3fe2d156964e5f6bab2c84a50fa5526985cf24c04339",
+    "docs/finance-contract.md": "a612858f4b6d51c6ef3bd1dbe86e792b5e917f3ed01bda7194c730c00364ac9c",
+    "skills/finance/calculate-marginal-abatement-cost/SKILL.md": "c9675d8efc8fca6cbdc984b5166d64511fc7348793fac7e58f657225a93ecccf",
+    "evaluations/sus12-abatement-cost.json": "7c0caff082d270c8058245a68108113e3fc41487b3d2db9f830ed72a7c3d40f4"
+  }
+}
