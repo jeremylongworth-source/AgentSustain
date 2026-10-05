@@ -5,6 +5,16 @@ Status: APPROVED FOR CONTINUED DEVELOPMENT by the project owner on 2026-10-05 (A
 ## Latest decision
 
 - User instruction: "approve the review".
+- Reviewed revision: `a935647ae053f7b413406f05fe89edaf1e5e1cd4`.
+- Scope: the completed current local development snapshot, including the five initial SUS-15 baseline, KPI, target, feasibility and stakeholder workflows and their recorded validation and independent source-reading cases.
+- Decision: approved for continued roadmap development on 2026-10-05; no additional conditions stated.
+- Validation evidence: [the stakeholder validation record](../evaluations/sus15-stakeholder-validation.json) records 354 passing tests, 32 passing focused tests, skill validation and complete independent helper/CLI replay. These checks support the implementation evidence; approval comes from the user instruction.
+
+This approval includes the strategy extensions described below and permits continued local roadmap development. It preserves outstanding scenario-specific professional review, broader independent evaluation, specialist/router and release gates. It does not resolve any result/state review record or approve targets, actual engagement, procurement, implementation, claims, publication, push, merge, release or deployment. Later changes do not inherit this revision's scoped approval.
+
+## Previous decision
+
+- User instruction: "approve the review".
 - Reviewed revision: `c7ad9f722f698133f98437f214cebdeb2092dc5d`.
 - Scope: the current local implementation snapshot, including the subsequent SUS-14 engagement/improvement planning, mapped hotspots, supplier-risk screening and conditional procurement-option comparison extensions described below.
 - Decision: approved for continued roadmap development; no additional conditions stated.
@@ -35,7 +45,9 @@ The subsequent sourced supplier-risk screening contract also requires inclusion 
 
 The subsequent conditional procurement-option contract also requires later specialist/router/release review. Its equivalence/lifetime/source-fitness decisions, selected emissions and cost comparison did not inherit approval from the earlier snapshot and remain subject to scenario-specific professional review under the latest continued-development approval. Evidence is in [the option capture](../evaluations/sus14-procurement-options.json).
 
-## Subsequent strategy extension
+## Strategy extensions included in the latest approval
+
+These extensions were developed after c7ad9f7 and are now included in the a935647 continued-development approval. Their scenario-specific and later specialist/router/release requirements remain open.
 
 The initial SUS-15 baseline/KPI/target contract was developed after the approved c7ad9f7 snapshot under continued roadmap authorization. It does not inherit scoped human review from that snapshot; subsequent specialist/router/release review must include its source-fit, comparable-service, target-period and adoption boundaries. Scenario-specific professional review remains open. Evidence is in [the strategy capture](../evaluations/sus15-target-workflow.json). This extension does not close SUS-15 or validate a target's delivery, ambition or public claim.
 
