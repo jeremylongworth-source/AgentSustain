@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "e76300d",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 414,
+    "duration_seconds": 178.539,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 92,
+    "duration_seconds": 56.089,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "assign-accountability": "quick_validate.py passed"
+  },
+  "cli_validation": "Complete author and independent helper/CLI outputs replayed exactly; raw/request bytes and historical state, results, evidence, assumptions, gaps and reviews preserved.",
+  "known_answer": {
+    "scoped_acceptance": "sourced_acceptance_candidate",
+    "mandate": "sourced_mandate_candidate",
+    "decision_record": null,
+    "delivery_screen": "known_conditions_not_met",
+    "inherited_daily_demand": 9,
+    "inherited_daily_capacity": 8,
+    "inherited_later_daily_capacity": null,
+    "resource_unit": "h/day",
+    "upstream_quote_CAD": 400,
+    "upstream_envelope_CAD": 300,
+    "new_metrics": 0,
+    "assignments_adopted": false,
+    "authority_verified": false,
+    "review_requirements_resolved": false,
+    "implementation_authorized": false
+  },
+  "checks": [
+    "Current implementation/transition/strategy sources reproduce; historical state and review obligations retained",
+    "Missing/multiple accountable actors and reviewer conflicts remain open",
+    "Unknown observations, expired mandates and source-period mismatches cannot establish authority",
+    "Unknown actors/items/resources/reviews, mismatched scoped acceptance and invalid dates rejected",
+    "Escalation loops and duplicate item assignments rejected",
+    "Omitted items, missing acceptance/reviews and shared resource pools remain gaps; empty registers do not close coverage",
+    "Altered source capacity invalidates reproduction; missing-factor obligations preserve EMISSION_FACTOR_REQUIRED",
+    "Saved author capture fully reproduces"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-accountability.json",
+    "status": "partial",
+    "new_metrics": 0,
+    "new_gaps": 38,
+    "new_reviews": 1,
+    "historical_results_preserved": 9,
+    "historical_gaps_preserved": 31,
+    "historical_reviews_preserved": 6,
+    "observed": "Receipt withheld as responsibility acceptance; unsupported authority, expiry and blanket consent corrected; assignments unverified, routes unsent, technical review pending and inherited delivery conditions preserved.",
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "cc3a7d8bbd6fc272edea32faa153eeaec92e9a56cc1549bb914734c8cc00123c"
+  },
+  "limitations": [
+    "Thirteen initial named strategy/implementation workflows do not close SUS-15 or establish whole-organization readiness.",
+    "Source attribution and supplied fitness cannot authenticate arbitrary prose, identity, qualifications, actual consent or delegation.",
+    "One fictional independent source-reading case does not establish general reliability or actual organization governance.",
+    "Professional decisions, broader methods, independent organization evaluation, specialist/router and release gates remain open."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "fc138f910b39fedc2091d788610049b69d2c17c361a4f434fdc7c0ec6313bc29",
+    "scripts/strategy_accountability.py": "8e9066d897534f85280e87a1ef0b5f5abdbeaec3f41ee300b42ac83cf8d783da",
+    "tests/test_strategy_accountability.py": "3decb3f785ece476f9b6edee6bb232854ccbbeee99b7fecab299962d0ec233c3",
+    "skills/implementation/assign-accountability/SKILL.md": "1972aeac9151bce728deebdf44981fbd1f64535f73b1a3c0be23b101e12e7f6e",
+    "docs/strategy-contract.md": "7c30314be254d9a131ab7849befb30745657bba74cc59b8e156934f102bc67b8",
+    "evaluations/sus15-accountability-workflow.json": "2c60b1bcf5fff10543167c3118015570afc356c4bf26ef38a72fe455696768ac",
+    "evaluations/sus15-independent-accountability.json": "5cac9a341fecc8643f13be5bde8e79396a40d1c00297b67d7f0a39d5b48b087a"
+  }
+}
