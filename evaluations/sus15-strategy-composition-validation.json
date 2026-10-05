@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "ecab95591d6d509bdefd986b63cc2f85700dfdee",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 388,
+    "duration_seconds": 138.347,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 66,
+    "duration_seconds": 20.302,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "build-sustainability-strategy": "quick_validate.py passed"
+  },
+  "cli_validation": {
+    "author_cli": "passed",
+    "independent_helper": "passed",
+    "independent_cli": "passed",
+    "unchanged_request_bytes": true,
+    "unchanged_raw_source_sha256": "adf0a6bbb18dda83d9a72716d1bed5e5040bf1195dde3fbdda87c472a9e0f968",
+    "historical_results_preserved": true,
+    "evidence_preserved": true,
+    "existing_reviews_and_gaps_preserved": true
+  },
+  "known_answer": {
+    "baseline_intensity": "10 kWh/count",
+    "target_intensity": "8 kWh/count",
+    "gross_baseline": "1000 kWh",
+    "future_gross_quantity": null,
+    "new_metrics": 0,
+    "strategy_adopted": false,
+    "portfolio_benefit": null
+  },
+  "checks": [
+    "Current source reproduction, scope and parent consistency",
+    "Omitted topics/risks and unserved objectives retain gaps",
+    "Shared sources are not added into portfolio benefits",
+    "Invalid links, cycles, conflicting dates, changed sources and missing-factor ancestry blocked",
+    "Point target coverage does not resolve known unmet budget/delivery conditions",
+    "Resource and monitoring proposals do not establish funding, owner acceptance or implementation",
+    "Historical records and open review obligations preserved"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-strategy-composition.json",
+    "status": "partial",
+    "new_gaps": 12,
+    "new_reviews": 1,
+    "observed": "Unsupported guarantee/funding/monitoring assertions removed; raw-source date/method mismatch preserved for upstream review",
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "adf0a6bbb18dda83d9a72716d1bed5e5040bf1195dde3fbdda87c472a9e0f968"
+  },
+  "source_orientation": [
+    {
+      "url": "https://www.globalreporting.org/publications/documents/english/gri-3-material-topics-2021/",
+      "accessed": "2026-10-05",
+      "scope": "Disclosure 3-3 orientation, not a framework adapter or conformity claim"
+    }
+  ],
+  "limitations": [
+    "Ten of thirteen strategy workflows; transition, implementation and accountability workflows and broader methods remain.",
+    "One fictional independent source-reading case does not establish authentication, general reliability, engineering validity, workforce consensus or organization-wide coverage.",
+    "Free-text semantic truth requires source review; preserved planning-source metadata conflicts require upstream review.",
+    "Professional, specialist/router and release gates remain open; no adoption, funding, implementation, public claims or v1 readiness."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "5b4d57e79e6f6b585320af6e79be4bb887ce6f302d8b7f4ad522ca2999bbc4cc",
+    "scripts/strategy_composition.py": "bc1aba63874f32915318a3dc824c9b26f4513435f4a5a6613cf095a292ced7d3",
+    "tests/test_strategy_composition.py": "a8b8288ffb90f703892047caca0f7ee7fdb36447aee7ce21de8a627b9ce70f23",
+    "skills/strategy/build-sustainability-strategy/SKILL.md": "707319fb42488a1c273754b458166bbea8a293410ccd8e8a1d6262cdb918d532",
+    "docs/strategy-contract.md": "8aa39468885d36d6519dad3f7a92d62fc6e20d1d75d8ed67ae066956fdd532c3",
+    "evaluations/sus15-strategy-composition.json": "2955d688b35d01be6e12a51768fabf0d951b772fc7aaf807ae026cb3d47a95ff",
+    "evaluations/sus15-independent-strategy-composition.json": "05ec5071d22ceee114064e8262f11dfc249593abff348681729bd04977885a13"
+  }
+}

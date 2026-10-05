@@ -66,3 +66,7 @@ The selected impact-significance candidate contract is subsequent to a935647 und
 ## Subsequent risk/opportunity extension
 
 The source-linked qualitative risk and opportunity registers follow the approved a935647 snapshot under continued roadmap authorization. Subsequent specialist/router/release review must include impact-versus-organization pathways, source periods and horizons, conditions, trade-offs and reproduction of materiality/risk dependencies. Scenario-specific professional, materiality and action decisions remain open; no financial effect, risk acceptance or realized mitigation is inferred. Evidence is in [the composed capture](../evaluations/sus15-risk-opportunity-workflow.json).
+
+## Subsequent strategy composition extension
+
+The source-reproduced strategy composer follows a935647 under continued roadmap authorization. Later specialist/router/release review must cover source scopes and parent consistency, topic/risk omissions, objective/intervention links, shared sources, target-period timing, prerequisite ordering, resource context and monitoring. Professional strategy/target/materiality decisions and owner acceptance remain open; no adoption, funded delivery or implementation is inferred. Evidence is in [the composition capture](../evaluations/sus15-strategy-composition.json).

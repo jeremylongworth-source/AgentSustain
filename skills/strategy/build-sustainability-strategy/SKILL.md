@@ -1,0 +1,14 @@
+---
+name: build-sustainability-strategy
+description: Compose source-linked sustainability issues, risks, opportunities and proposed targets into an owned strategy proposal with initiatives, monitoring and open decisions. Use for strategy composition, not strategy adoption, transition certification or approved implementation.
+---
+
+Read [the strategy composition contract](../../../docs/strategy-contract.md). Inspect current sources and prior result records before linking them; reproducibility proves consistency with current inputs, not source truth or professional approval.
+
+Establish purpose, organizational boundary, reporting context, planning horizon, proposed owner and review cadence. Build scoped pillars with substantive selection rationale. Separate impact prevention, organizational effects and resource targets; do not imply that cost savings or an energy target resolves human-rights harm. Link current material-issue, risk, opportunity, target and feasibility records, and stakeholder/maturity context where relevant. Require source scope/period compatibility and preserve source-specific exclusions, assumptions, units and uncertainty. A changed source, stale dependency or inconsistent materiality/risk parent needs a fresh upstream assessment rather than a rewritten historical result.
+
+Turn selected topics/targets into owned objective proposals. Keep omitted issues, unaddressed risks and unsupported opportunities visible as open work, not immateriality or risk acceptance. Explain initiative-to-objective pathways using actual opportunity and source evidence; a management slogan is not a supported intervention. Link quantitative targets through their own baseline/KPI chain, retaining physical service definitions and absolute context. Do not add heterogeneous target reductions, reused sources or modeled project benefits into a portfolio total.
+
+Record proposed initiatives with owners, dates, prerequisites, resource context and monitoring methods. Owner names are proposals without verified acceptance or authority. A quote is not funded investment; numerical objective coverage is not delivery feasibility. Missing funding, engineering, worker engagement or monitoring remains a gap. Validate prerequisite ordering without treating planned work as completed; overdue proposals remain unverified. Keep target-period timing and incomplete organization coverage explicit.
+
+Use `scripts.run_strategy` with `build-sustainability-strategy` for the checked append-only proposal. It reproduces selected dependencies and preserves all prior review requirements, adding a strategy specialist/owner gate. It calculates no new reductions or financial benefits. Do not adopt targets or strategy, select a feasibility scenario, approve budgets, start monitoring, authorize implementation or publish. Detailed transition, implementation-roadmap and accountability workflows remain separate.

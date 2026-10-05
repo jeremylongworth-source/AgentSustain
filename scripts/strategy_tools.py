@@ -11,6 +11,7 @@ from .state_proposal import propose
 
 
 OPERATIONS = {
+    "build-sustainability-strategy": {"strategy", "pillars", "objectives", "initiatives", "strategy_review", "result_id"},
     "identify-sustainability-risks": {"risks", "materiality_result_id", "identification_review", "result_id"},
     "identify-sustainability-opportunities": {"opportunities", "materiality_result_id", "risk_result_id", "identification_review", "result_id"},
     "establish-baseline": {"metric_ids", "unit", "baseline_review", "result_id"},
@@ -28,6 +29,7 @@ CODE["assess-sustainability-maturity"] = "MATURITY_ASSESSMENT"
 CODE["identify-material-sustainability-issues"] = "MATERIAL_ISSUE_CANDIDATES"
 CODE["identify-sustainability-risks"] = "SUSTAINABILITY_RISKS"
 CODE["identify-sustainability-opportunities"] = "SUSTAINABILITY_OPPORTUNITIES"
+CODE["build-sustainability-strategy"] = "STRATEGY_PROPOSAL"
 
 
 def _text(value):
@@ -129,20 +131,23 @@ def _reproduce(state, ident, skill, refs):
 
 def _execute(state, skill, parameters):
     result = {"id": parameters["result_id"], "skill": skill, "contract_version": "0.1.0", "status": "completed",
-        "review_states": ["ADVISORY" if skill in {"map-stakeholders", "assess-sustainability-maturity", "identify-material-sustainability-issues", "identify-sustainability-risks", "identify-sustainability-opportunities"} else "ANALYTICAL"], "review_requirements": copy.deepcopy(state["review_requirements"]),
+        "review_states": ["ADVISORY" if skill in {"map-stakeholders", "assess-sustainability-maturity", "identify-material-sustainability-issues", "identify-sustainability-risks", "identify-sustainability-opportunities", "build-sustainability-strategy"} else "ANALYTICAL"], "review_requirements": copy.deepcopy(state["review_requirements"]),
         "metrics": [], "evidence_ids": [], "assumptions": list(state["assumptions"]),
         "data_gaps": copy.deepcopy(state["data_gaps"]), "diagnostics": [], "next_actions": []}
     refs = set()
     report = None
     def gap(message, code="STRATEGY_DATA_REQUIRED"):
         result["data_gaps"].append({"id": result["id"] + "-gap-" + str(len(result["data_gaps"])), "field": "strategy_basis",
-            "reason": message, "impact": "Stakeholder inclusion, perspective attribution and engagement remain conditional." if skill == "map-stakeholders" else "Current practice, rubric fitness and maturity coverage remain conditional." if skill == "assess-sustainability-maturity" else "Impact significance, topic grouping and materiality coverage remain conditional." if skill == "identify-material-sustainability-issues" else "Risk/opportunity source fitness, effects and delivery conditions remain unresolved." if skill in {"identify-sustainability-risks", "identify-sustainability-opportunities"} else "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "reason": message, "impact": "Stakeholder inclusion, perspective attribution and engagement remain conditional." if skill == "map-stakeholders" else "Current practice, rubric fitness and maturity coverage remain conditional." if skill == "assess-sustainability-maturity" else "Impact significance, topic grouping and materiality coverage remain conditional." if skill == "identify-material-sustainability-issues" else "Risk/opportunity source fitness, effects and delivery conditions remain unresolved." if skill in {"identify-sustainability-risks", "identify-sustainability-opportunities"} else "Strategy source linkage, issue coverage and proposed delivery remain unresolved." if skill == "build-sustainability-strategy" else "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
             "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."})
         result["diagnostics"].append({"code": code, "message": message})
     try:
         with localcontext() as context:
             context.prec = 34
-            if skill in {"identify-sustainability-risks", "identify-sustainability-opportunities"}:
+            if skill == "build-sustainability-strategy":
+                from .strategy_composition import build
+                report = build(state, parameters, refs, result, gap)
+            elif skill in {"identify-sustainability-risks", "identify-sustainability-opportunities"}:
                 from .strategy_registers import identify
                 report = identify(state, skill, parameters, refs, result, gap)
             elif skill == "identify-material-sustainability-issues":
@@ -290,5 +295,5 @@ def run_strategy(state, skill, parameters):
     if skill not in OPERATIONS or not isinstance(parameters, dict) or set(parameters) != OPERATIONS[skill] or not _text(parameters["result_id"]):
         raise ValueError("Supported strategy operation with exact parameters and fresh result ID required.")
     result, _ = _execute(state, skill, parameters)
-    reason = "Identify sourced risk/opportunity candidates without effect realization or implementation approval" if skill in {"identify-sustainability-risks", "identify-sustainability-opportunities"} else "Identify selected impact-significance candidates without final materiality or reporting approval" if skill == "identify-material-sustainability-issues" else "Assess selected current practices against a sourced cumulative rubric with unresolved professional review" if skill == "assess-sustainability-maturity" else "Map source-attributed stakeholder interests with unsent follow-ups and unresolved engagement review" if skill == "map-stakeholders" else "Propose reviewed baseline, KPI definition or target without adoption or claims"
+    reason = "Compose a source-reproduced strategy proposal without adoption, funding or implementation authority" if skill == "build-sustainability-strategy" else "Identify sourced risk/opportunity candidates without effect realization or implementation approval" if skill in {"identify-sustainability-risks", "identify-sustainability-opportunities"} else "Identify selected impact-significance candidates without final materiality or reporting approval" if skill == "identify-material-sustainability-issues" else "Assess selected current practices against a sourced cumulative rubric with unresolved professional review" if skill == "assess-sustainability-maturity" else "Map source-attributed stakeholder interests with unsent follow-ups and unresolved engagement review" if skill == "map-stakeholders" else "Propose reviewed baseline, KPI definition or target without adoption or claims"
     return {"result": result, "proposal": propose(state, result, reason)}
