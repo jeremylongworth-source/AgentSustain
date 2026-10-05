@@ -12,8 +12,11 @@ from .state_proposal import propose
 OPERATIONS = {
     "identify-climate-hazards": {"hazards", "hazard_review", "result_id"},
     "map-assets-to-hazards": {"hazard_result_id", "assets", "comparisons", "mapping_review", "result_id"},
+    "assess-exposure": {"mapping_result_id", "observations", "exposure_review", "result_id"},
+    "assess-vulnerability": {"exposure_result_id", "rubric", "factors", "vulnerability_review", "result_id"},
 }
 CODE = {"identify-climate-hazards": "CLIMATE_HAZARDS", "map-assets-to-hazards": "ASSET_HAZARD_MAP"}
+CODE.update({"assess-exposure": "CLIMATE_EXPOSURE", "assess-vulnerability": "CLIMATE_VULNERABILITY"})
 
 
 def _text(value):
@@ -150,17 +153,19 @@ def _record(result, code):
     return rows[0]
 
 
-def _reproduce(state, ident, refs):
-    owner = next((r for r in state["results"] if r["id"] == ident and r["skill"] == "identify-climate-hazards"), None)
+def _reproduce(state, ident, refs, skill="identify-climate-hazards"):
+    owner = next((r for r in state["results"] if r["id"] == ident and r["skill"] == skill), None)
     if owner is None:
-        raise ValueError("Current hazard result required.")
+        raise ValueError("Current " + skill + " result required.")
     if any(d["code"] == "EMISSION_FACTOR_REQUIRED" for d in owner["diagnostics"]):
-        raise ClimateFactorRequired("Selected hazard dependency has an unresolved emission factor.")
+        raise ClimateFactorRequired("Selected climate dependency has an unresolved emission factor.")
     if owner["status"] in {"blocked", "invalid_input"}:
-        raise ValueError("Blocked hazard results cannot support mapping.")
-    checked, report = _execute(state, "identify-climate-hazards", _record(owner, "CLIMATE_INPUTS"))
-    if checked["status"] == "blocked" or report != _record(owner, "CLIMATE_HAZARDS") or owner["metrics"] != checked["metrics"]:
-        raise ValueError("Hazard source metadata/context changed or no longer reproduces against current state.")
+        raise ValueError("Blocked climate results cannot support assessment.")
+    checked, report = _execute(state, skill, _record(owner, "CLIMATE_INPUTS"))
+    if any(d["code"] == "EMISSION_FACTOR_REQUIRED" for d in checked["diagnostics"]):
+        raise ClimateFactorRequired("Selected climate dependency has an unresolved emission factor.")
+    if checked["status"] == "blocked" or report != _record(owner, CODE[skill]) or owner["metrics"] != checked["metrics"]:
+        raise ValueError("Climate source metadata/context changed or no longer reproduces against current state.")
     refs.update(owner["evidence_ids"])
     return report
 
@@ -251,14 +256,20 @@ def _execute(state, skill, parameters):
             "remedy": "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review."})
         result["diagnostics"].append({"code": code, "message": message})
     try:
-        report = (_hazards if skill == "identify-climate-hazards" else _mapping)(state, parameters, refs, result, gap)
+        if skill in {"assess-exposure", "assess-vulnerability"}:
+            from .climate_assessment import exposure, vulnerability
+            report = (exposure if skill == "assess-exposure" else vulnerability)(state, parameters, refs, result, gap)
+        else:
+            report = (_hazards if skill == "identify-climate-hazards" else _mapping)(state, parameters, refs, result, gap)
         result["review_requirements"].append({"id": result["id"] + "-climate-review", "state": "PROFESSIONAL_REVIEW_REQUIRED",
             "reason": "Review source applicability, scenario/horizon, spatial resolution and site/dependency conditions; screening does not establish vulnerability, damage or safety.",
-            "scope": report["hazard_review" if skill == "identify-climate-hazards" else "mapping_review"]["scope"],
+            "scope": report[{"identify-climate-hazards": "hazard_review", "map-assets-to-hazards": "mapping_review",
+                "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review"}[skill]]["scope"],
             "reviewer_role": "Qualified climate-risk and site/dependency specialist with accountable owner", "status": "open", "resolution": None})
         result["diagnostics"].append({"code": CODE[skill], "message": json.dumps(report, sort_keys=True)})
         result["status"] = "partial" if result["data_gaps"] else "completed"
     except (ValueError, TypeError, KeyError) as error:
+        result["metrics"] = []
         gap(str(error), "EMISSION_FACTOR_REQUIRED" if isinstance(error, ClimateFactorRequired) else "CLIMATE_DATA_REQUIRED")
         result["status"] = "blocked"
     result["evidence_ids"] = sorted(refs)
