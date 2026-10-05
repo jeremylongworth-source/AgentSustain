@@ -1,0 +1,2500 @@
+{
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "steps": [
+    {
+      "skill": "build-waste-baseline",
+      "parameters": {
+        "streams": [
+          {
+            "id": "recycled",
+            "metric_id": "recycled",
+            "material": "Fictional documented material",
+            "hazard": "nonhazardous",
+            "route": "recycling",
+            "route_evidence_ids": [
+              "recycled-evidence"
+            ]
+          },
+          {
+            "id": "landfilled",
+            "metric_id": "landfilled",
+            "material": "Fictional documented material",
+            "hazard": "nonhazardous",
+            "route": "landfill",
+            "route_evidence_ids": [
+              "landfilled-evidence"
+            ]
+          },
+          {
+            "id": "unrouted",
+            "metric_id": "unrouted",
+            "material": "Fictional documented material",
+            "hazard": "nonhazardous",
+            "route": "unknown",
+            "route_evidence_ids": []
+          }
+        ],
+        "coverage_review": {
+          "confirmed": true,
+          "basis": "generated_waste_same_cohort",
+          "measurement_boundary": "Fictional selected facility waste generation and same-cohort treatment.",
+          "nonoverlap_assessment": "Separate quantities, no total or transfers counted twice.",
+          "coverage": "Three selected mutually exclusive masses; one unresolved treatment route.",
+          "rationale": "Fictional cohort evidence only.",
+          "evidence_ids": [
+            "recycled-evidence",
+            "landfilled-evidence",
+            "unrouted-evidence"
+          ]
+        },
+        "result_id": "workflow-waste"
+      },
+      "result": {
+        "id": "workflow-waste",
+        "skill": "build-waste-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-waste-mass",
+            "name": "Selected generated waste mass",
+            "value": 1000.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping selected generated waste masses",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_CLASSIFICATION_REQUIRED",
+            "message": "Unresolved route/hazard for stream unrouted; mass remains in selected total."
+          },
+          {
+            "code": "WASTE_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"generated_waste_same_cohort\", \"confirmed\": true, \"coverage\": \"Three selected mutually exclusive masses; one unresolved treatment route.\", \"evidence_ids\": [\"recycled-evidence\", \"landfilled-evidence\", \"unrouted-evidence\"], \"measurement_boundary\": \"Fictional selected facility waste generation and same-cohort treatment.\", \"nonoverlap_assessment\": \"Separate quantities, no total or transfers counted twice.\", \"rationale\": \"Fictional cohort evidence only.\"}, \"result_id\": \"workflow-waste\", \"streams\": [{\"hazard\": \"nonhazardous\", \"id\": \"recycled\", \"material\": \"Fictional documented material\", \"metric_id\": \"recycled\", \"route\": \"recycling\", \"route_evidence_ids\": [\"recycled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"landfilled\", \"material\": \"Fictional documented material\", \"metric_id\": \"landfilled\", \"route\": \"landfill\", \"route_evidence_ids\": [\"landfilled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"unrouted\", \"material\": \"Fictional documented material\", \"metric_id\": \"unrouted\", \"route\": \"unknown\", \"route_evidence_ids\": []}]}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      "proposal_reason": "Compute selected mass analysis with explicit definitions and retained review obligations"
+    },
+    {
+      "skill": "calculate-diversion-rate",
+      "parameters": {
+        "baseline_result_id": "workflow-waste",
+        "route_policy": {
+          "confirmed": true,
+          "name": "Fictional material-recovery diversion definition",
+          "version": "fixture-1",
+          "source": "fixture:policy",
+          "rationale": "Recycling and preparation for reuse only; no energy recovery.",
+          "evidence_ids": [
+            "recycled-evidence"
+          ],
+          "included_routes": [
+            "recycling",
+            "preparing_for_reuse"
+          ]
+        },
+        "result_id": "workflow-diversion"
+      },
+      "result": {
+        "id": "workflow-diversion",
+        "skill": "calculate-diversion-rate",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-diversion-diverted-mass",
+            "name": "Known selected diverted mass under supplied policy",
+            "value": 600.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Filter selected generated masses by evidenced eligible treatment routes, then sum",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-diversion-rate",
+            "name": "Known diversion / selected generated mass",
+            "value": 60.0,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Known eligible routed mass / selected generated mass * 100",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_ROUTE_REQUIRED",
+            "message": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate."
+          },
+          {
+            "code": "DIVERSION_POLICY",
+            "message": "{\"confirmed\": true, \"evidence_ids\": [\"recycled-evidence\"], \"included_routes\": [\"recycling\", \"preparing_for_reuse\"], \"name\": \"Fictional material-recovery diversion definition\", \"rationale\": \"Recycling and preparation for reuse only; no energy recovery.\", \"source\": \"fixture:policy\", \"version\": \"fixture-1\"}"
+          },
+          {
+            "code": "PARTIAL_WASTE_BASELINE",
+            "message": "Selected baseline is partial; preserve coverage/classification limitations."
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      "proposal_reason": "Compute selected mass analysis with explicit definitions and retained review obligations"
+    },
+    {
+      "skill": "identify-waste-hotspots",
+      "parameters": {
+        "baseline_result_id": "workflow-waste",
+        "result_id": "workflow-hotspots"
+      },
+      "result": {
+        "id": "workflow-hotspots",
+        "skill": "identify-waste-hotspots",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-hotspots-rank-1",
+            "name": "Selected waste contribution: recycled",
+            "value": 600.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected stream mass converted to kg; mass order only",
+              "inputs": [
+                "recycled"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-hotspots-rank-2",
+            "name": "Selected waste contribution: landfilled",
+            "value": 300.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected stream mass converted to kg; mass order only",
+              "inputs": [
+                "landfilled"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-hotspots-rank-3",
+            "name": "Selected waste contribution: unrouted",
+            "value": 100.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected stream mass converted to kg; mass order only",
+              "inputs": [
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-hotspots-gap-3",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_HOTSPOT_LIMITS",
+            "message": "Mass contribution order, not hazard, cost or impact ranking; selected coverage only."
+          },
+          {
+            "code": "PARTIAL_WASTE_BASELINE",
+            "message": "Selected baseline is partial; preserve coverage/classification limitations."
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      "proposal_reason": "Compute selected mass analysis with explicit definitions and retained review obligations"
+    },
+    {
+      "skill": "analyze-material-consumption",
+      "parameters": {
+        "metric_ids": [
+          "consumed"
+        ],
+        "coverage_review": {
+          "confirmed": true,
+          "basis": "consumed_material",
+          "measurement_boundary": "Fictional selected facility waste generation and same-cohort treatment.",
+          "nonoverlap_assessment": "Separate quantities, no total or transfers counted twice.",
+          "coverage": "Documented selected process consumption.",
+          "rationale": "Fictional cohort evidence only.",
+          "evidence_ids": [
+            "consumed-evidence"
+          ]
+        },
+        "result_id": "workflow-material"
+      },
+      "result": {
+        "id": "workflow-material",
+        "skill": "analyze-material-consumption",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-material-mass",
+            "name": "Selected consumed material mass",
+            "value": 2000.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping documented consumed material masses; not purchases",
+              "inputs": [
+                "consumed"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-hotspots-gap-3",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "MATERIAL_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"consumed_material\", \"confirmed\": true, \"coverage\": \"Documented selected process consumption.\", \"evidence_ids\": [\"consumed-evidence\"], \"measurement_boundary\": \"Fictional selected facility waste generation and same-cohort treatment.\", \"nonoverlap_assessment\": \"Separate quantities, no total or transfers counted twice.\", \"rationale\": \"Fictional cohort evidence only.\"}, \"metric_ids\": [\"consumed\"], \"result_id\": \"workflow-material\"}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      "proposal_reason": "Compute selected mass analysis with explicit definitions and retained review obligations"
+    },
+    {
+      "skill": "calculate-material-intensity",
+      "parameters": {
+        "material_result_id": "workflow-material",
+        "denominator_id": "products",
+        "denominator_review": {
+          "confirmed": true,
+          "metric_id": "products",
+          "definition": "Fictional produced units.",
+          "unit": "count",
+          "rationale": "Same period production.",
+          "evidence_ids": [
+            "products-evidence"
+          ]
+        },
+        "result_id": "workflow-material-intensity"
+      },
+      "result": {
+        "id": "workflow-material-intensity",
+        "skill": "calculate-material-intensity",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-material-intensity-intensity",
+            "name": "Selected material intensity",
+            "value": 20.0,
+            "unit": "kg/count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence",
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected consumed material kg / positive evidenced activity denominator",
+              "inputs": [
+                "workflow-material-mass",
+                "products"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence",
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-hotspots-gap-3",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      "proposal_reason": "Compute selected mass analysis with explicit definitions and retained review obligations"
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 5,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "workflow-waste",
+        "skill": "build-waste-baseline",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-waste-mass",
+            "name": "Selected generated waste mass",
+            "value": 1000.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping selected generated waste masses",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_CLASSIFICATION_REQUIRED",
+            "message": "Unresolved route/hazard for stream unrouted; mass remains in selected total."
+          },
+          {
+            "code": "WASTE_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"generated_waste_same_cohort\", \"confirmed\": true, \"coverage\": \"Three selected mutually exclusive masses; one unresolved treatment route.\", \"evidence_ids\": [\"recycled-evidence\", \"landfilled-evidence\", \"unrouted-evidence\"], \"measurement_boundary\": \"Fictional selected facility waste generation and same-cohort treatment.\", \"nonoverlap_assessment\": \"Separate quantities, no total or transfers counted twice.\", \"rationale\": \"Fictional cohort evidence only.\"}, \"result_id\": \"workflow-waste\", \"streams\": [{\"hazard\": \"nonhazardous\", \"id\": \"recycled\", \"material\": \"Fictional documented material\", \"metric_id\": \"recycled\", \"route\": \"recycling\", \"route_evidence_ids\": [\"recycled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"landfilled\", \"material\": \"Fictional documented material\", \"metric_id\": \"landfilled\", \"route\": \"landfill\", \"route_evidence_ids\": [\"landfilled-evidence\"]}, {\"hazard\": \"nonhazardous\", \"id\": \"unrouted\", \"material\": \"Fictional documented material\", \"metric_id\": \"unrouted\", \"route\": \"unknown\", \"route_evidence_ids\": []}]}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      {
+        "id": "workflow-diversion",
+        "skill": "calculate-diversion-rate",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-diversion-diverted-mass",
+            "name": "Known selected diverted mass under supplied policy",
+            "value": 600.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Filter selected generated masses by evidenced eligible treatment routes, then sum",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-diversion-rate",
+            "name": "Known diversion / selected generated mass",
+            "value": 60.0,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Known eligible routed mass / selected generated mass * 100",
+              "inputs": [
+                "recycled",
+                "landfilled",
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_ROUTE_REQUIRED",
+            "message": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate."
+          },
+          {
+            "code": "DIVERSION_POLICY",
+            "message": "{\"confirmed\": true, \"evidence_ids\": [\"recycled-evidence\"], \"included_routes\": [\"recycling\", \"preparing_for_reuse\"], \"name\": \"Fictional material-recovery diversion definition\", \"rationale\": \"Recycling and preparation for reuse only; no energy recovery.\", \"source\": \"fixture:policy\", \"version\": \"fixture-1\"}"
+          },
+          {
+            "code": "PARTIAL_WASTE_BASELINE",
+            "message": "Selected baseline is partial; preserve coverage/classification limitations."
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      {
+        "id": "workflow-hotspots",
+        "skill": "identify-waste-hotspots",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-hotspots-rank-1",
+            "name": "Selected waste contribution: recycled",
+            "value": 600.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected stream mass converted to kg; mass order only",
+              "inputs": [
+                "recycled"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-hotspots-rank-2",
+            "name": "Selected waste contribution: landfilled",
+            "value": 300.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected stream mass converted to kg; mass order only",
+              "inputs": [
+                "landfilled"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "workflow-hotspots-rank-3",
+            "name": "Selected waste contribution: unrouted",
+            "value": 100.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence",
+              "recycled-evidence",
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected stream mass converted to kg; mass order only",
+              "inputs": [
+                "unrouted"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence",
+          "recycled-evidence",
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-hotspots-gap-3",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "WASTE_HOTSPOT_LIMITS",
+            "message": "Mass contribution order, not hazard, cost or impact ranking; selected coverage only."
+          },
+          {
+            "code": "PARTIAL_WASTE_BASELINE",
+            "message": "Selected baseline is partial; preserve coverage/classification limitations."
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      {
+        "id": "workflow-material",
+        "skill": "analyze-material-consumption",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-material-mass",
+            "name": "Selected consumed material mass",
+            "value": 2000.0,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping documented consumed material masses; not purchases",
+              "inputs": [
+                "consumed"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-hotspots-gap-3",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "MATERIAL_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"consumed_material\", \"confirmed\": true, \"coverage\": \"Documented selected process consumption.\", \"evidence_ids\": [\"consumed-evidence\"], \"measurement_boundary\": \"Fictional selected facility waste generation and same-cohort treatment.\", \"nonoverlap_assessment\": \"Separate quantities, no total or transfers counted twice.\", \"rationale\": \"Fictional cohort evidence only.\"}, \"metric_ids\": [\"consumed\"], \"result_id\": \"workflow-material\"}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      },
+      {
+        "id": "workflow-material-intensity",
+        "skill": "calculate-material-intensity",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "workflow-material-intensity-intensity",
+            "name": "Selected material intensity",
+            "value": 20.0,
+            "unit": "kg/count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence",
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Explicit selected mass arithmetic",
+              "version": "0.1.0",
+              "source": "docs/waste-resource-contract.md"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Supplied mass, coverage and route judgments are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Selected consumed material kg / positive evidenced activity denominator",
+              "inputs": [
+                "workflow-material-mass",
+                "products"
+              ],
+              "conversions": [
+                "Mass converted to kg using the supported unit registry; no volume density inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence",
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "workflow-waste-gap-0",
+            "field": "resource_analysis",
+            "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-1",
+            "field": "resource_analysis",
+            "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-diversion-gap-2",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          },
+          {
+            "id": "workflow-hotspots-gap-3",
+            "field": "resource_analysis",
+            "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+            "impact": "Selected coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+          }
+        ],
+        "diagnostics": [],
+        "next_actions": [
+          "Supply compatible mass records, treatment/definition evidence and coverage review."
+        ]
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [
+      {
+        "id": "workflow-waste-gap-0",
+        "field": "resource_analysis",
+        "reason": "Unresolved route/hazard for stream unrouted; mass remains in selected total.",
+        "impact": "Selected coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+      },
+      {
+        "id": "workflow-diversion-gap-1",
+        "field": "resource_analysis",
+        "reason": "Unknown routes remain in denominator; known diversion is a lower-bound subtotal, not a complete rate.",
+        "impact": "Selected coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+      },
+      {
+        "id": "workflow-diversion-gap-2",
+        "field": "resource_analysis",
+        "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+        "impact": "Selected coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+      },
+      {
+        "id": "workflow-hotspots-gap-3",
+        "field": "resource_analysis",
+        "reason": "Selected baseline is partial; preserve coverage/classification limitations.",
+        "impact": "Selected coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible mass records, treatment/definition evidence and coverage review."
+      }
+    ],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [
+      "workflow-material",
+      "workflow-material-intensity"
+    ],
+    "waste": [
+      "workflow-waste",
+      "workflow-diversion",
+      "workflow-hotspots"
+    ],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  }
+}

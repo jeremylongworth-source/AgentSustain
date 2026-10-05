@@ -9,6 +9,22 @@ from scripts.state_proposal import propose
 
 
 class SUS09WorkflowTests(unittest.TestCase):
+    def test_positive_equipment_investigation_preserves_limits_through_screening(self):
+        capture=json.loads((ROOT/"evaluations/sus09-equipment-workflow.json").read_text(encoding="utf-8"))
+        state=copy.deepcopy(capture["initial_state"])
+        for step in capture["steps"]:
+            if step["execution_type"]=="deterministic helper":
+                output=run_energy(state,step["skill"],step["parameters"])
+                self.assertEqual(output["result"],step["result"])
+                state=output["proposal"]["state"]
+            else:
+                state=propose(state,step["result"],step["proposal_reason"])["state"]
+            validate_state(state)
+        self.assertEqual(state,capture["final_state"])
+        self.assertTrue({"fan-interval-gap","fan-calibration-gap"}<={g["id"] for g in state["data_gaps"]})
+        self.assertIn("ENGINEERING_REVIEW_REQUIRED",state["results"][-1]["review_states"])
+        self.assertEqual(state["results"][-1]["status"],"partial")
+
     def test_energy_workflow_preserves_conditional_projection_and_unresolved_context(self):
         capture = json.loads((ROOT / "evaluations/sus09-energy-workflow.json").read_text(encoding="utf-8"))
         state = copy.deepcopy(capture["initial_state"])

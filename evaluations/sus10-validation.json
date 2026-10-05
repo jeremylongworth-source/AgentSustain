@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "40fa704",
+  "checks": {
+    "unittest": {
+      "passed": 150,
+      "resource_tests": 11,
+      "mass_workflow_tests": 1,
+      "new_energy_equipment_workflow_tests": 1,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests"
+    },
+    "skill_packaging": {
+      "passed": 10,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "selected_waste_kg": 1000,
+      "known_diverted_kg": 600,
+      "known_diversion_lower_bound_percent": 60,
+      "unknown_route_kg": 100,
+      "selected_consumed_kg": 2000,
+      "material_intensity_kg_per_count": 20
+    }
+  },
+  "limitations": [
+    "Fictional quantities, definition and supplied source assessments; no authenticated treatment verification.",
+    "Energy interpretations are author-led; proposal replay does not independently rerun agent reasoning.",
+    "Waste cost and material-loss arithmetic, classification/opportunity cases and independent evaluations remain.",
+    "Core custom diversion definitions do not establish framework conformance or legal classification."
+  ],
+  "sha256": {
+    "scripts/resource_tools.py": "40eb66fe3cb872c330b93ab32abc1c37e4aa2ff47f81a19067b906dfa9158bac",
+    "scripts/run_resources.py": "1c4bdd10bcc473f5df98f31025a935e8a3927fd1553193eb522c96c182d3e1b0",
+    "tests/test_resources.py": "95cce956c4445fb7ca9db1b75b9083c1fdc0c8e38c8f9be27585a3ff6cddd8e9",
+    "tests/test_sus10_workflow.py": "fc2497276e6c0528e416dff0867dca9f319db5006e4c3ae577c17584982eecdd",
+    "tests/test_sus09_workflow.py": "0ad14b89001a37344633a0981a0551485ba59e88c32499d58ad686b1c40091df",
+    "docs/waste-resource-contract.md": "c40c287ac062913d4e4dd3b7441263da63244c296ac459ba7a2e303aca010c25",
+    "evaluations/sus10-mass-workflow.json": "4159eab52fe84072a9be734844cda8459bedd2ba92169a1f49420331f97c8c31",
+    "evaluations/sus09-equipment-workflow.json": "dfca13302bfbb6630f7343d1d6cbd416d809723fdfa1a0c00b64983454897a40",
+    "skills/waste/analyze-waste-cost/SKILL.md": "097478af7110f69c86332e72fdc5201aae101ce9e2a40be37ae0da91ae37bfc2",
+    "skills/waste/build-waste-baseline/SKILL.md": "583f92b98794e67045a31fd8b626d6da0c85ccd84a11725bb734d54a1b2705fb",
+    "skills/waste/calculate-diversion-rate/SKILL.md": "0261796261719023ca7c763d8ee7f296b76e713dde603c5b8b6428fe2d027392",
+    "skills/waste/classify-waste-streams/SKILL.md": "087ad9af1b7e11ecf6dec32cbf854f1b17c4ef4f8122eac0b0f29fc02d016195",
+    "skills/waste/identify-waste-hotspots/SKILL.md": "a056e02450911dc3ad952f35c2d6a2f3887b0b2f0ddf24871406615126cc3df7",
+    "skills/waste/identify-waste-reduction-opportunities/SKILL.md": "d2511f829c2c73008d470fc3b9a252c81fa7c6bf954a670c7cb94039b36454b9",
+    "skills/resources/analyze-material-consumption/SKILL.md": "e9d3f69e8c79ace8e00ddc11a9923b85cb3eee9d09e336a430bdc812d4264729",
+    "skills/resources/calculate-material-intensity/SKILL.md": "8111b0686d28e3cd638b1380d58bc4b90f6aa5a59beb5651f2ec345f81f8de41",
+    "skills/resources/identify-material-loss/SKILL.md": "1dc58788dd38687c39d93330709c6afefb2a5ad43393ffc7ec2de25820140caa",
+    "skills/resources/identify-resource-efficiency-opportunities/SKILL.md": "66d748c4e566e2a561d336e39f5bbd0c558fa6bd473080138ccae4e2344c28d2"
+  }
+}
