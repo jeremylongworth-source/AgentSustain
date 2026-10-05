@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "309c332",
+  "prior_approved_snapshot": "d99a70b72448c8e847ceef8d3bae03445daa841d",
+  "scoped_material_binding_approval": "pending; subsequent interface excluded from prior approval",
+  "suite": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests",
+    "tests": 616,
+    "duration_seconds": 361.32,
+    "status": "passed",
+    "includes_repository_architecture_validation": true,
+    "readme_command_difference": "verbosity flag only"
+  },
+  "focused_suite": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest tests.test_claim_material tests.test_claims_review",
+    "tests": 19,
+    "duration_seconds": 35.489,
+    "status": "passed"
+  },
+  "file_sha256": {
+    "README.md": "9cd523e18473ad5bd9d32f3c050dc7927ff4bd29cef9bf66af9fef4cbd51ecef",
+    "docs/architecture-review.md": "fd32df1c507a7176b1c21773e36782a84b2afad1f358e54ff0adfd48c59cf372",
+    "docs/development-review.md": "157d21bfae74bf0a993cff3777b8de7a07c5a36e95684750cd86032dfbc28416",
+    "docs/development-status.md": "578846e7a3ef0908a6fc9e2201ae44dcbf58014207553e32c7cbbd94306519dc",
+    "docs/claim-material-binding.md": "50815c6c5c21591c41473df75f9514abb6b3530b115498d02c0855f75ea04821",
+    "scripts/claim_material.py": "25d6cd9b6ab4fcfb76712ebe6dd92f7b0a6b70b28e4c6d1166a470447990fb18",
+    "scripts/run_claims.py": "149fecf7ff3aabac4daf303f4c162d0ccfc58539a7d9e4707651fae80a6046fd",
+    "tests/test_claim_material.py": "fdbd6d3df0e42e63333c9a4de248106c724a5fc9a5c486b0a53563805132ad93",
+    "standards/claims/materials/.gitattributes": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+    "standards/claims/materials/fictional-selected.json": "7b863066fd50e806493b293263d6b0e9219c082cc80c411c44baa2564a6f3b16",
+    "standards/claims/materials/fictional-conflict.json": "124f1510880c3cdec0001cb584798cec7ae614c3d049a3ae0c5f2c8d43347daa",
+    "evaluations/sus20-bound-claim.json": "70b731025be118f0ed1f61650a9a5fdf660297be6dc38ac23fcdcfd226282336",
+    "evaluations/sus20-bound-claim.md": "7174e6e4eb9d77cf983b9fe8c5578032585517ba8d5e43aa2a988d471d4ee4a4"
+  },
+  "new_complete_helper_cli_cases": 4,
+  "historical_complete_saved_helper_cli_replays": 20,
+  "exact_sequential_state_handoff": true,
+  "captured_state_material_consistency_verified": true,
+  "material_checkout_integrity": {
+    "standards/claims/materials/fictional-selected.json": {
+      "sha256": "7b863066fd50e806493b293263d6b0e9219c082cc80c411c44baa2564a6f3b16",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-conflict.json": {
+      "sha256": "124f1510880c3cdec0001cb584798cec7ae614c3d049a3ae0c5f2c8d43347daa",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    }
+  },
+  "unchanged_file_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637",
+    "scripts/gas_mass.py": "85e8e9c8bc6d4a5c85a8d10fc8e53a8d312ca5c895768c76148285caa38c1dcc",
+    "scripts/gas_conversion.py": "a442f8885aceb189c75e1029591eb28857fe8d756f47d7f1875095a661330b71",
+    "scripts/gas_ledger.py": "99eed9b9678da90624c06743399161e3b1dae98058e11c8d507ccd26a4935d1f",
+    "scripts/jurisdiction_tasks.py": "583607a466d25e72aaf5bc09c2561068d2d45b04f7e769f99c2087c40c7a62e7",
+    "evaluations/sus19-gas-ledger.json": "2eaed34d74831082f8376c9f5a2707f54550864b6c966733ac21dac874e34df0",
+    "evaluations/sus19-gas-conversion.json": "068ec30055b2dbb862cb664037a4bd10160f7326d713a8916f0367156ddeca8d",
+    "evaluations/sus19-gas-mass.json": "9898f20473b7092af4c622bffed00c35e51c1e661432caeb9a8da9b569fccb87",
+    "evaluations/sus19-claims-source-reading.json": "f8735a3aefe0d5f9fadea5e6c08e1858d7db3ee41c4ec8e821db74717b141d83",
+    "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+    "scripts/claims_review.py": "1a29eb1e3505ca7702e5d534d1805e0480f75704d779847dad6c70b04fb8011b",
+    "tests/test_claims_review.py": "525eb9f2c87c0c3f0715f4be70be63ea962c2d203fafc5642ec78942adeeb037",
+    "evaluations/sus20-claim-evidence.json": "74edb8b6b46766b195d491d3bf44f85af81cb1a0b107c1878d57cfcd81133f7d"
+  },
+  "research_source_integrity": {
+    "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json": {
+      "sha256": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+      "git_content_equality_with_line_endings_normalized": true
+    },
+    "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json": {
+      "sha256": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395",
+      "git_content_equality_with_line_endings_normalized": true
+    },
+    "standards/jurisdictions/canada/research/ghgrp-quantification-v7-fit-register.json": {
+      "sha256": "84eac55554d53c16cae58a11cd6393be1705e07423f48724eb8f11c0fb952202",
+      "git_content_equality_with_line_endings_normalized": true
+    },
+    "standards/jurisdictions/canada/research/ghgrp-required-submission-calendar.json": {
+      "sha256": "9171250e7941561f9e09458d242ae58b8f8422ecc510a1d53d45365ab1556b88",
+      "git_content_equality_with_line_endings_normalized": true
+    }
+  },
+  "raw_git_blob_comparison_limitation": "Windows core.autocrlf changes stored Git text versus checkout line endings; unchanged prior source/schema/calculation/capture bytes were checked against recorded raw SHA-256 values. Additional research content was compared to Git with line endings normalized and its current raw hashes recorded.",
+  "validation_type": "author-led known-answer/adversarial checks and full reproducible fictional CLI cases; no independent domain, source, material authenticity, semantic, visibility or legal evaluation",
+  "remaining_requirements": [
+    "Scoped owner review of the new material binding interface.",
+    "Original material authenticity/publication provenance, semantic classification, general-impression and visual-prominence review.",
+    "Broader inventory/product/test/comparison/future-plan and claims substantiation methods.",
+    "Actual jurisdiction/source/rights and qualified professional/legal/owner decisions.",
+    "Independent end-to-end organization evaluation, routing/specialist skillsets and full public-v1 readiness."
+  ],
+  "goal_status": "active; full ROADMAP scope retained",
+  "push_publication_or_external_action": false
+}
