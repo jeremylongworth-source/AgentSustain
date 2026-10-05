@@ -5,6 +5,17 @@ Status: APPROVED FOR CONTINUED DEVELOPMENT by the project owner on 2026-10-05 (A
 ## Latest decision
 
 - User instruction: "approve the review".
+- Reviewed revision/content snapshot: `898d790af43a0cc867ab1f81a3519a6da5bbe49d`; the in-progress subject/event extension was finalized with validation evidence and saved as this local revision before recording the decision.
+- Reviewer: project owner via this development chat.
+- Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Scope: the local snapshot through this revision, including canonical reporting-catalog byte portability, the SUS-18 company screening foundation and separate subject/year/event execution extension, and the non-executable Canadian GHGRP source research register.
+- Validation evidence: [subject/event foundation validation](../evaluations/sus18-jurisdiction-subjects-validation.json) records 537 passing repository tests, 32 passing focused jurisdiction tests and six complete helper/actual CLI replays. Historical captures, Canadian research bytes and shared schemas were preserved.
+
+This decision passes the scoped owner architecture/development review of the jurisdiction execution extension. Historical pending-review statements below and in captured artifacts describe the state before this decision. It permits continued local development in roadmap order and preserves qualified source/legal interpretation, evidence fitness, operator authority, regulated-quantity reproduction, independent organization evaluation and specialist/router/release gates. It resolves no result/state professional review, closes no roadmap wave, establishes no v1 readiness and grants no push, merge, publication, release, deployment, filing or third-party contact authority. Later material changes require a new scoped review.
+
+## Previous climate/reporting decision
+
+- User instruction: "approve the review".
 - Reviewed revision: `39c7a96e3c0e3ff9e6e6390c0c6085a54b8b4b48`.
 - Scope: the committed local development snapshot, including subsequent SUS-16 physical-risk/adaptation, transition-driver/exposure, register, priority and resilience workflows; initial SUS-17 inventory mapping/version-diff workflows; source-integrity guards; and their saved validation and independent source-reading evidence.
 - Decision: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
