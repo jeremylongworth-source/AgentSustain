@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "b22b3a2",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 354,
+    "duration_seconds": 128.37,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 32,
+    "duration_seconds": 5.755,
+    "status": "passed"
+  },
+  "skill_validation": "map-stakeholders quick_validate.py passed",
+  "cli_validation": "Author saved output replay passed in focused tests; independent full helper and CLI replay passed; raw-source hash and request bytes unchanged",
+  "checks": [
+    "Direct individual attribution distinct from management proxy and unverified representative mandates",
+    "Unknown/historical observation dates, source fit and shared fragments retained without consensus",
+    "Missing voices, engagement and participation barriers remain gaps",
+    "Owned follow-ups unsent; overdue dates unverified; no contact authority",
+    "Invalid evidence, dates, representative scope and missing owners blocked",
+    "Existing source/state/history retained with new open professional review; no computed metrics"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-stakeholders.json",
+    "status": "partial",
+    "raw_source_sha256": "8a9696155ad6e891567fea40c0c71770171b7497a094bee7592d0558b7c4a67d",
+    "limits": [
+      "One fictional independently read source case; prior review/gap collections were empty.",
+      "Source review is not authentication, completed consultation, human approval, or general reliability."
+    ]
+  },
+  "source_orientation": [
+    {
+      "url": "https://www.globalreporting.org/publications/documents/english/gri-2-general-disclosures-2021/",
+      "section": "Disclosure 2-29",
+      "accessed": "2026-10-05",
+      "scope": "Orientation only; neutral map is not GRI conformance"
+    }
+  ],
+  "limitations": [
+    "Five of thirteen strategy workflows; remaining eight and organization evaluation remain.",
+    "Supplied attribution reviews are not source authentication, actual consultation, legal coverage or materiality conclusions.",
+    "No general reliability or v1 readiness established."
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "ef79b9cd8fdb06e95cb80fc18e21b2834e9deeb1f275c0dcebbacc1d1fa8c0bd",
+    "scripts/strategy_stakeholders.py": "c7b8dbaeb6e45f59196c563ddb45d96f0a8e7e462bcf48333eb13ee2cfe5656d",
+    "tests/test_strategy_stakeholders.py": "740480ea53e0ef03340586daaf3a8042cb35aea04ac28bced582b0adc1775a74",
+    "skills/strategy/map-stakeholders/SKILL.md": "a45aae3f9440d79e360b5b5b90628b90d20853f54c9b8d92d3e1ea4fefe21eef",
+    "docs/strategy-contract.md": "b142b07c9873fa9a50333336b9d0c142b900ea0a1a8517ee6ac12879f754a98e",
+    "evaluations/sus15-stakeholder-workflow.json": "f5e71ae75d7aebd20d83967b09e757f921d93b0bcc2ac5df29ccf0e835ba303c",
+    "evaluations/sus15-independent-stakeholders.json": "9e170e7f8c582f1ef96da81e0a0781314db7fa1f43a448b61498842cf00ff76e"
+  }
+}

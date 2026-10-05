@@ -1,4 +1,4 @@
-"""Reviewed baseline selection, KPI definitions and proposed target endpoints."""
+"""Reviewed strategy baselines, targets, scenarios and source-attributed registers."""
 import copy
 from datetime import date
 from decimal import localcontext
@@ -15,9 +15,11 @@ OPERATIONS = {
     "define-kpis": {"definitions", "definition_review", "result_id"},
     "develop-target": {"definition_result_id", "kpi_id", "target", "target_review", "result_id"},
     "evaluate-target-feasibility": {"target_result_id", "scenarios", "feasibility_review", "result_id"},
+    "map-stakeholders": {"stakeholders", "mapping_review", "result_id"},
 }
 CODE = {"establish-baseline": "STRATEGY_BASELINE", "define-kpis": "KPI_DEFINITIONS", "develop-target": "TARGET_PROPOSAL"}
 CODE["evaluate-target-feasibility"] = "TARGET_FEASIBILITY"
+CODE["map-stakeholders"] = "STAKEHOLDER_MAP"
 
 
 def _text(value):
@@ -119,20 +121,23 @@ def _reproduce(state, ident, skill, refs):
 
 def _execute(state, skill, parameters):
     result = {"id": parameters["result_id"], "skill": skill, "contract_version": "0.1.0", "status": "completed",
-        "review_states": ["ANALYTICAL"], "review_requirements": copy.deepcopy(state["review_requirements"]),
+        "review_states": ["ADVISORY" if skill == "map-stakeholders" else "ANALYTICAL"], "review_requirements": copy.deepcopy(state["review_requirements"]),
         "metrics": [], "evidence_ids": [], "assumptions": list(state["assumptions"]),
         "data_gaps": copy.deepcopy(state["data_gaps"]), "diagnostics": [], "next_actions": []}
     refs = set()
     report = None
     def gap(message, code="STRATEGY_DATA_REQUIRED"):
         result["data_gaps"].append({"id": result["id"] + "-gap-" + str(len(result["data_gaps"])), "field": "strategy_basis",
-            "reason": message, "impact": "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
+            "reason": message, "impact": "Stakeholder inclusion, perspective attribution and engagement remain conditional." if skill == "map-stakeholders" else "Baseline, KPI or target remains conditional; no commitment or feasibility established.",
             "remedy": "Obtain scoped source evidence and documented review of the missing strategy basis."})
         result["diagnostics"].append({"code": code, "message": message})
     try:
         with localcontext() as context:
             context.prec = 34
-            if skill == "evaluate-target-feasibility":
+            if skill == "map-stakeholders":
+                from .strategy_stakeholders import map_stakeholders
+                report = map_stakeholders(state, parameters, refs, result, gap)
+            elif skill == "evaluate-target-feasibility":
                 from .strategy_feasibility import evaluate
                 report = evaluate(state, parameters, refs, result, gap)
             elif skill == "establish-baseline":
@@ -268,4 +273,5 @@ def run_strategy(state, skill, parameters):
     if skill not in OPERATIONS or not isinstance(parameters, dict) or set(parameters) != OPERATIONS[skill] or not _text(parameters["result_id"]):
         raise ValueError("Supported strategy operation with exact parameters and fresh result ID required.")
     result, _ = _execute(state, skill, parameters)
-    return {"result": result, "proposal": propose(state, result, "Propose reviewed baseline, KPI definition or target without adoption or claims")}
+    reason = "Map source-attributed stakeholder interests with unsent follow-ups and unresolved engagement review" if skill == "map-stakeholders" else "Propose reviewed baseline, KPI definition or target without adoption or claims"
+    return {"result": result, "proposal": propose(state, result, reason)}
