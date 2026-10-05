@@ -1,0 +1,166 @@
+{
+  "id": "fictional-jurisdiction-pack",
+  "version": "fictional-1",
+  "synthetic": true,
+  "jurisdiction_attribute": "operating_jurisdictions",
+  "attributes": [
+    {
+      "id": "operating_jurisdictions",
+      "type": "string_set",
+      "unit": "1",
+      "definition": "Explicit fictional legal-entity operating jurisdiction roster; parents must be stated, not inferred."
+    },
+    {
+      "id": "employee_count",
+      "type": "number",
+      "unit": "person",
+      "definition": "Fictional legal-entity annual employee count; no facility/entity aggregation implied."
+    },
+    {
+      "id": "research_only",
+      "type": "boolean",
+      "unit": "1",
+      "definition": "Fictional organization qualifies for a supplied research-only exception."
+    }
+  ],
+  "rules": [
+    {
+      "id": "federal-count",
+      "jurisdiction": "ZZ",
+      "subject": "reporting",
+      "source": {
+        "authority": "Fictional Rule Author",
+        "locator": "fixture:jurisdiction-federal-count",
+        "clause": "Fictional clause federal-count",
+        "version": "fictional-1",
+        "retrieved": "2026-10-05"
+      },
+      "legal_status": "in_force",
+      "effective_from": "2025-01-01",
+      "effective_to": null,
+      "condition": {
+        "attribute": "employee_count",
+        "operator": "gte",
+        "value": 100
+      },
+      "exceptions": [
+        {
+          "id": "research",
+          "description": "Fictional research-only exclusion; not a real exemption.",
+          "condition": {
+            "attribute": "research_only",
+            "operator": "eq",
+            "value": true
+          }
+        }
+      ],
+      "exceptions_complete": true,
+      "uncertainty": "Invented rules solely for architecture testing; no real legal applicability.",
+      "reviewer_requirement": "Qualified legal review of primary sources, entity facts and rule completeness."
+    },
+    {
+      "id": "province-count",
+      "jurisdiction": "ZZ-AA",
+      "subject": "reporting",
+      "source": {
+        "authority": "Fictional Rule Author",
+        "locator": "fixture:jurisdiction-province-count",
+        "clause": "Fictional clause province-count",
+        "version": "fictional-1",
+        "retrieved": "2026-10-05"
+      },
+      "legal_status": "in_force",
+      "effective_from": "2025-07-01",
+      "effective_to": null,
+      "condition": {
+        "attribute": "employee_count",
+        "operator": "gte",
+        "value": 150
+      },
+      "exceptions": [
+        {
+          "id": "research",
+          "description": "Fictional research-only exclusion; not a real exemption.",
+          "condition": {
+            "attribute": "research_only",
+            "operator": "eq",
+            "value": true
+          }
+        }
+      ],
+      "exceptions_complete": true,
+      "uncertainty": "Invented rules solely for architecture testing; no real legal applicability.",
+      "reviewer_requirement": "Qualified legal review of primary sources, entity facts and rule completeness."
+    },
+    {
+      "id": "historical-count",
+      "jurisdiction": "ZZ",
+      "subject": "reporting",
+      "source": {
+        "authority": "Fictional Rule Author",
+        "locator": "fixture:jurisdiction-historical-count",
+        "clause": "Fictional clause historical-count",
+        "version": "fictional-1",
+        "retrieved": "2026-10-05"
+      },
+      "legal_status": "repealed",
+      "effective_from": "2020-01-01",
+      "effective_to": "2024-12-31",
+      "condition": {
+        "attribute": "employee_count",
+        "operator": "gte",
+        "value": 100
+      },
+      "exceptions": [
+        {
+          "id": "research",
+          "description": "Fictional research-only exclusion; not a real exemption.",
+          "condition": {
+            "attribute": "research_only",
+            "operator": "eq",
+            "value": true
+          }
+        }
+      ],
+      "exceptions_complete": true,
+      "uncertainty": "Invented rules solely for architecture testing; no real legal applicability.",
+      "reviewer_requirement": "Qualified legal review of primary sources, entity facts and rule completeness."
+    },
+    {
+      "id": "draft-count",
+      "jurisdiction": "ZZ",
+      "subject": "reporting",
+      "source": {
+        "authority": "Fictional Rule Author",
+        "locator": "fixture:jurisdiction-draft-count",
+        "clause": "Fictional clause draft-count",
+        "version": "fictional-1",
+        "retrieved": "2026-10-05"
+      },
+      "legal_status": "proposed",
+      "effective_from": null,
+      "effective_to": null,
+      "condition": {
+        "attribute": "employee_count",
+        "operator": "gte",
+        "value": 100
+      },
+      "exceptions": [
+        {
+          "id": "research",
+          "description": "Fictional research-only exclusion; not a real exemption.",
+          "condition": {
+            "attribute": "research_only",
+            "operator": "eq",
+            "value": true
+          }
+        }
+      ],
+      "exceptions_complete": true,
+      "uncertainty": "Invented rules solely for architecture testing; no real legal applicability.",
+      "reviewer_requirement": "Qualified legal review of primary sources, entity facts and rule completeness."
+    }
+  ],
+  "scope": "Fictional overlapping country/province reporting screens only.",
+  "limitations": "No Canadian or other actual law. No hierarchy, precedence, compliance, legal determination or release readiness."
+}

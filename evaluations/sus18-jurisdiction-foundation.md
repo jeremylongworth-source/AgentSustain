@@ -1,0 +1,19 @@
+# Initial jurisdiction execution foundation
+
+This is author-led architecture evaluation with fictional company facts and invented country/province rules. It is not independent source reading, legal guidance, a Canada pack or organization-level reliability evidence. The shared state schemas are unchanged. The source/version/threshold/exception contract is in `docs/jurisdiction-model.md`; owner review of its new execution semantics remains open.
+
+## Known-answer and adversarial scenarios
+
+The fictional full-year employee range is initially [150, 150]. A country rule at 100 matches for the whole reporting period. A province rule at 150 begins 2025-07-01: January–June is outside its recorded effective interval and July–December matches, leaving the annual screen potentially_applicable. A fictional repealed rule ending 2024-12-31 is outside the reporting year; a proposed rule stays only potentially_applicable. Neither overlapping country/province rule suppresses the other.
+
+The second request uses employee bounds [99, 151] and withholds the research-only exception fact. Both in-period thresholds remain undetermined, no endpoint or approved exemption is selected, and the historical rule's date exclusion is preserved. The third request substitutes the original electricity evidence for the country primary-rule review; its locator/version do not match, so that rule remains undetermined even with sufficient employee counts. All rows retain source and company snapshots, predicate traces, exception verdicts, dates and false legal/compliance/exemption flags.
+
+The companion JSON preserves full requests and outputs. Each actual CLI execution returned exit 0 with empty stderr, matched the helper's complete output, and left request bytes unchanged. Each next request starts from the preceding exact proposed state. Existing evidence/results/quantities, factor gap, assumptions and engineering review survive unchanged. Three additional legal reviews stay open. Outputs remain partial: 4/13/18 accumulated gaps, 2/3/4 accumulated reviews and zero new metrics. The original EMISSION_FACTOR_REQUIRED result is preserved; no factors or emissions are inferred.
+
+## Verification scope and limits
+
+Focused checks cover numeric operator boundaries/range uncertainty, missing/unfit/incomplete facts, source period/unit/version mismatch, exceptions, explicit location rosters, currency-source matching, future dates, bad pins, traversal, fixture isolation, reversed/nonfinite ranges, duplicate facts/versions and orphan reviews. Declarative pack validation rejects executable/unsupported expressions, missing attributes, malformed dates, duplicate rules and repealed rules without an end date. Temporal amendment and historical-active cases preserve inclusive date boundaries. Complete actual CLI replay and sequential inherited-review preservation are checked.
+
+Current primary-law source interpretation, current legal status/exceptions completeness, real Canadian modules, automatic amendment comparison, changing company facts within a reporting period, independent source-reading and organization evaluation remain further work. HTTPS metadata and a caller's source fitness do not authenticate law or establish legal applicability. Catalog/rule selection grants no publication, compliance, exemption, obligation adoption or legal advice authority.
+
+Validation: 15 focused tests passed in 1.555 seconds; the final repository suite passed 520 tests in 297.871 seconds, including the README architecture checks. The earlier 11- and 14-test focused runs also passed before the final inherited-review, boundary and numeric-operator checks were complete. No domain/source reliability or v1 readiness follows. Exact current hashes and complete CLI metadata are in `sus18-jurisdiction-foundation-validation.json`.

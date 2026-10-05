@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "b8929c9ad147c13159ef875770ec9eece1c7159c",
+  "prior_approved_implementation_revision": "39c7a96e3c0e3ff9e6e6390c0c6085a54b8b4b48",
+  "scoped_execution_contract_approval": "pending; material interface extension identified in architecture-review.md",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 520,
+    "duration_seconds": 297.871,
+    "status": "passed"
+  },
+  "focused_suite": {
+    "command": "python -m unittest tests.test_jurisdictions -v",
+    "tests": 15,
+    "duration_seconds": 1.555,
+    "status": "passed"
+  },
+  "earlier_focused_runs": [
+    {
+      "tests": 11,
+      "duration_seconds": 1.313,
+      "status": "passed_before_additional_guard_checks"
+    },
+    {
+      "tests": 14,
+      "duration_seconds": 1.51,
+      "status": "passed_before_numeric_operator_check"
+    }
+  ],
+  "evaluation_scope": "Author-led fictional module/fact cases; no independent legal or primary-source interpretation.",
+  "shared_schema_diff_empty": true,
+  "schema_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637"
+  },
+  "file_sha256": {
+    "README.md": "bb49abc7e0e155c5985ba211114c634642b1f383787801c623a7e0a806eeb6a7",
+    "docs/architecture-review.md": "462020ed8940053c4fb6e66ce0ba3d66b111193e5d2d8f1248974b3c91c12c83",
+    "docs/development-review.md": "4021e6a0bb23982e6d88e8e36f1a6a7a7e5331e306c1c59336bea17263daa950",
+    "docs/development-status.md": "6eb820ba7b6a0487f38a7d64d12fc6ffd45599e0022cc758c6bc2b2f98973954",
+    "docs/jurisdiction-model.md": "0ae0495a08c7a21cebba8f82b85ffbec19856e4dc02ec5b0780ae24cabbf1cf2",
+    "scripts/jurisdiction_tools.py": "03be04994b6303a3a62703f0af7cbbb8210153a5c0e17b8fa58a5817c558edd2",
+    "scripts/run_jurisdiction.py": "b4989cb2bfa47ffaa1fc3057001f3a056bdb1d6382819eec3ea939398d5bff72",
+    "standards/jurisdictions/.gitattributes": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+    "standards/jurisdictions/fixtures/fictional-1.json": "6b7ac545854a43250b8dc50c0a65584877d01af2e6ef9eb584837962840a50ca",
+    "tests/test_jurisdictions.py": "a66dba03c2020f233208c67ef6aa61abbd1064715fec858b3a8c54589d7e655a",
+    "evaluations/sus18-jurisdiction-foundation.json": "4e9c082050ba614eaa0565ac814ce32e4a90ce0ac7a9cb2b0fa5b88129dcd9a8",
+    "evaluations/sus18-jurisdiction-foundation.md": "4541e2f671836df3e6a1a50a23d23af0d3680d972bebb51754841e9f5015b3bb"
+  },
+  "cli_replays": [
+    {
+      "case": "supported_fictional_conditions",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.42396660009399056,
+        "request_sha256": "4b7d287f2d944ec2497edac54aa4d14cd3478cc2a3f0ba38c32a0c6de119506c",
+        "stdout_sha256": "8beb7e492d2bf1df77dd1e86c6438bcdd6151d3e3aab8ebe22d85f0c2e4074b7",
+        "request_bytes_unchanged": true,
+        "complete_helper_cli_equality": true
+      },
+      "historical_records_and_obligations_preserved": true
+    },
+    {
+      "case": "threshold_range_and_withheld_exception",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.4196725001093,
+        "request_sha256": "cf12d5e8d9b1e850058b43edc531e146dbe0497021068a1721081810c9cda489",
+        "stdout_sha256": "157cdbe41d9912b4394663e60f512bcdbdad1b0c5fff8bf1756a33c30cb86454",
+        "request_bytes_unchanged": true,
+        "complete_helper_cli_equality": true
+      },
+      "historical_records_and_obligations_preserved": true
+    },
+    {
+      "case": "unrelated_primary_source",
+      "cli": {
+        "exit_code": 0,
+        "stderr": "",
+        "duration_seconds": 0.4070491997990757,
+        "request_sha256": "d67faa800c85785784f3660be6ef60a66730e47d4daadb2befab0c5ab8064e8b",
+        "stdout_sha256": "fbb623ee930aa6be25b59e277a2defa7bba9be56e0cab8d8a1993f24f7d332a1",
+        "request_bytes_unchanged": true,
+        "complete_helper_cli_equality": true
+      },
+      "historical_records_and_obligations_preserved": true
+    }
+  ],
+  "exact_sequential_proposal_state_handoff_verified": true,
+  "existing_emission_factor_required_result_preserved": true,
+  "new_metrics": 0,
+  "implemented_checks": [
+    "Pinned canonical modules with path containment and fixture isolation",
+    "Typed whole-period source-bound company attributes with units and finite numeric ranges",
+    "Threshold strictness, compound true/false/unknown predicates and exception uncertainty",
+    "Explicit company jurisdiction rosters without inferred hierarchy or rule precedence",
+    "Version/locator-matched current-source reviews and chronological guards",
+    "Effective-date segmentation, historical repeal and proposed-rule boundaries",
+    "Append-only historical evidence/results/gaps/assumptions and concurrent engineering/legal reviews",
+    "Complete helper/actual CLI equality and unchanged request bytes"
+  ],
+  "limits": [
+    "No actual Canadian or other regulatory rule pack is implemented.",
+    "No installed individual jurisdiction skill, router or active jurisdiction registration.",
+    "Source/version/currency fitness is supplied and remains subject to actual qualified review.",
+    "HTTPS metadata alone does not authenticate primary sources or full legal/exceptions coverage.",
+    "Broader temporal company facts, amendment comparison, independent source-reading and organization evaluation remain open.",
+    "The new executable interface awaits scoped human review; tests do not grant it.",
+    "Legal applicability, compliance, exemption, obligation adoption and publication remain unverified.",
+    "SUS-18 and the complete development goal remain in progress."
+  ]
+}

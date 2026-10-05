@@ -36,3 +36,9 @@ License choice is needed before public distribution, but does not prevent privat
 - Implementation authorization: granted for SUS-05 and subsequent development in roadmap order; no publication authorization granted
 
 Record explicit user approval with the reviewed revision and conditions. Material contract changes reopen review. Preserve this record; never substitute an agent's self-review for the required human decision.
+
+## SUS-18 execution extension awaiting scoped review
+
+The original f2d0ac9 architecture approval remains recorded above. The initial executable jurisdiction semantics extend the reviewed interface and reopen scoped review under the material-contract-change rule. This extension has no owner approval yet. Review [jurisdiction-model.md](jurisdiction-model.md), `scripts/jurisdiction_tools.py`, `scripts/run_jurisdiction.py`, the fictional module under `standards/jurisdictions/fixtures/`, tests and [saved scenario evidence](../evaluations/sus18-jurisdiction-foundation.md) together. The final validation record identifies exact file hashes; successful tests do not approve this extension.
+
+Review scope includes exact byte/version selection, typed whole-period entity facts, separate source/currency fitness, three-valued threshold/exception predicates, inclusive effective-date segmentation, historical repeal/proposed-status handling, jurisdiction overlap without hierarchy/precedence inference, source snapshots and append-only legal-review propagation. Shared state schemas, neutral core calculations, original architecture approval and all existing professional/source/owner/release gates remain unchanged. Actual Canadian rules, independent source interpretation and organization coverage remain open.
