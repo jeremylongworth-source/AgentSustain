@@ -1,0 +1,19 @@
+{
+  "id": "fictional-gas-ledger",
+  "version": "fictional-ledger-1",
+  "execution_contract": "gas-ledger-0.1.0",
+  "synthetic": true,
+  "gases": [
+    "CH4",
+    "N2O"
+  ],
+  "basis": "Invented demonstration basis",
+  "time_horizon_years": 100,
+  "source": {
+    "locator": "fixture:fictional-ledger-profile",
+    "version": "fictional-ledger-1",
+    "accessed": "2026-10-05"
+  },
+  "scope": "Fictional facility/source/species architecture checks only.",
+  "limitations": "No actual GWP, gas roster, regulatory method, facility definition or Canadian rule."
+}
