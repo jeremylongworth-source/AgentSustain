@@ -1,0 +1,94 @@
+{
+  "id": "fictional-task-anchor-catalog",
+  "version": "fictional-tasks-anchor-2",
+  "execution_contract": "jurisdiction-tasks-0.2.0",
+  "synthetic": true,
+  "screen_pack_pin": {
+    "path": "fixtures/fictional-subject-1.json",
+    "sha256": "84f8ac2c36c5c76e8d7d09a6c599f7e1ab742b5780a23e1e3d62d376328e177b"
+  },
+  "rule_ids": [
+    "annual-mass",
+    "activity-branch"
+  ],
+  "tasks": [
+    {
+      "id": "fictional-report",
+      "kind": "report",
+      "trigger": "reporting_condition",
+      "deadlines": {
+        "2025": "2026-06-10"
+      },
+      "retention_years": null,
+      "source": {
+        "authority": "Fictional Task Author",
+        "locator": "fixture:fictional-task-report",
+        "clause": "Invented report clause",
+        "version": "fictional-tasks-1",
+        "retrieved": "2026-10-05"
+      },
+      "uncertainty": "Fictional source only; actual task applicability, dates and legal interpretation unverified.",
+      "retention_anchor_basis": null,
+      "retention_anchor_task_id": null
+    },
+    {
+      "id": "fictional-notify",
+      "kind": "notify",
+      "trigger": "prior_report_no_current_condition",
+      "deadlines": {
+        "2025": "2026-06-15"
+      },
+      "retention_years": null,
+      "source": {
+        "authority": "Fictional Task Author",
+        "locator": "fixture:fictional-task-notify",
+        "clause": "Invented notify clause",
+        "version": "fictional-tasks-1",
+        "retrieved": "2026-10-05"
+      },
+      "uncertainty": "Fictional source only; actual task applicability, dates and legal interpretation unverified.",
+      "retention_anchor_basis": null,
+      "retention_anchor_task_id": null
+    },
+    {
+      "id": "fictional-retain",
+      "kind": "retain",
+      "trigger": "reporting_condition",
+      "deadlines": {
+        "2025": null
+      },
+      "retention_years": 3,
+      "source": {
+        "authority": "Fictional Task Author",
+        "locator": "fixture:fictional-task-retain",
+        "clause": "Invented retain clause",
+        "version": "fictional-tasks-1",
+        "retrieved": "2026-10-05"
+      },
+      "uncertainty": "Fictional source only; actual task applicability, dates and legal interpretation unverified.",
+      "retention_anchor_basis": "required_submission",
+      "retention_anchor_task_id": "fictional-report"
+    },
+    {
+      "id": "fictional-certify",
+      "kind": "certify",
+      "trigger": "reporting_condition",
+      "deadlines": {
+        "2025": null
+      },
+      "retention_years": null,
+      "source": {
+        "authority": "Fictional Task Author",
+        "locator": "fixture:fictional-task-certify",
+        "clause": "Invented certify clause",
+        "version": "fictional-tasks-1",
+        "retrieved": "2026-10-05"
+      },
+      "uncertainty": "Fictional source only; actual task applicability, dates and legal interpretation unverified.",
+      "retention_anchor_basis": null,
+      "retention_anchor_task_id": null
+    }
+  ],
+  "scope": "Separate fictional report, notification, retention and certification candidates.",
+  "limitations": "Fictional required/actual submission anchor comparison only; not actual Canadian obligations."
+}

@@ -11,6 +11,7 @@ from .state_proposal import propose
 
 
 CONTRACT = 'jurisdiction-tasks-0.1.0'
+ANCHOR_CONTRACT = 'jurisdiction-tasks-0.2.0'
 
 
 def _retention_date(anchor, years):
@@ -33,7 +34,7 @@ def load_task_catalog(pin, fixture_mode):
     _fields(catalog, {'id', 'version', 'execution_contract', 'synthetic', 'screen_pack_pin',
                      'rule_ids', 'tasks', 'scope', 'limitations'},
             ('id', 'version', 'execution_contract', 'scope', 'limitations'))
-    if catalog['execution_contract'] != CONTRACT or not isinstance(catalog['synthetic'], bool):
+    if catalog['execution_contract'] not in {CONTRACT, ANCHOR_CONTRACT} or not isinstance(catalog['synthetic'], bool):
         raise ValueError('Explicit task execution contract and synthetic flag required.')
     if catalog['synthetic'] and not fixture_mode:
         raise ValueError('Fictional task catalogs require explicit fixture mode.')
@@ -45,10 +46,26 @@ def load_task_catalog(pin, fixture_mode):
         raise ValueError('Nonempty task catalog required.')
     seen = set()
     for task in catalog['tasks']:
-        _fields(task, {'id', 'kind', 'trigger', 'deadlines', 'retention_years', 'source', 'uncertainty'},
+        fields = {'id', 'kind', 'trigger', 'deadlines', 'retention_years', 'source', 'uncertainty'}
+        if catalog['execution_contract'] == ANCHOR_CONTRACT:
+            fields |= {'retention_anchor_basis', 'retention_anchor_task_id'}
+        _fields(task, fields,
                 ('id', 'kind', 'trigger', 'uncertainty'))
         expected = {'report': 'reporting_condition', 'notify': 'prior_report_no_current_condition',
                     'certify': 'reporting_condition', 'retain': 'current_submission'}
+        if catalog['execution_contract'] == ANCHOR_CONTRACT:
+            basis = task['retention_anchor_basis']; ident = task['retention_anchor_task_id']
+            if task['kind'] == 'retain':
+                if basis not in {'actual_submission', 'required_submission'}:
+                    raise ValueError('Explicit actual/required submission retention anchor basis required.')
+                if basis == 'required_submission':
+                    if not _text(ident):
+                        raise ValueError('Required-submission anchor must name a report task in this exact catalog.')
+                    expected['retain'] = 'reporting_condition'
+                elif ident is not None:
+                    raise ValueError('Actual-submission retention cannot borrow a report deadline.')
+            elif basis is not None or ident is not None:
+                raise ValueError('Only retention tasks select retention anchors.')
         if task['id'] in seen or expected.get(task['kind']) != task['trigger']:
             raise ValueError('Distinct supported task kinds and matching triggers required.')
         seen.add(task['id'])
@@ -76,6 +93,13 @@ def load_task_catalog(pin, fixture_mode):
         if not catalog['synthetic'] and not source['locator'].startswith('https://'):
             raise ValueError('Real task sources require primary HTTPS locators.')
         _date(source['retrieved'])
+    if catalog['execution_contract'] == ANCHOR_CONTRACT:
+        tasks = {t['id']: t for t in catalog['tasks']}
+        for task in tasks.values():
+            if task['kind'] == 'retain' and task['retention_anchor_basis'] == 'required_submission':
+                anchor = tasks.get(task['retention_anchor_task_id'])
+                if anchor is None or anchor['kind'] != 'report' or not set(task['deadlines']) <= set(anchor['deadlines']):
+                    raise ValueError('Retention anchor requires a selected report task covering all retention reporting years.')
     return catalog
 
 
@@ -178,11 +202,34 @@ def prepare_jurisdiction_tasks(state, parameters):
                     trigger = False if prior is False or current_condition is True else True if prior is True and current_condition is False else None
                 elif task['kind'] == 'retain':
                     trigger = prior
+                    if catalog['execution_contract'] == ANCHOR_CONTRACT and task['retention_anchor_basis'] == 'required_submission':
+                        trigger = current_condition
                 covered = str(year) in task['deadlines']
+                anchor_detail = None
+                if catalog['execution_contract'] == ANCHOR_CONTRACT and task['kind'] == 'retain':
+                    anchor_detail = {'basis': task['retention_anchor_basis'], 'report_task': None,
+                                     'source_review': None, 'source_snapshots': [], 'source_fit': None}
+                    if task['retention_anchor_basis'] == 'required_submission':
+                        anchor_task = next(t for t in catalog['tasks'] if t['id'] == task['retention_anchor_task_id'])
+                        anchor_review, anchor_sources = task_reviews.get(anchor_task['id'], (None, []))
+                        anchor_source = anchor_task['source']
+                        anchor_fit = (planning_fit and subjects[sid]['supported'] and anchor_review is not None
+                            and anchor_review['evidence_fit'] == 'reviewed_supporting'
+                            and anchor_review['checked_as_of'] == review['as_of_date'] and anchor_source['version'] is not None
+                            and _date(anchor_source['retrieved']) <= as_of
+                            and all(_date(e['source']['accessed']) <= as_of for e in anchor_sources)
+                            and any(e['source']['locator'] == anchor_source['locator'] and e['source']['version'] == anchor_source['version'] for e in anchor_sources))
+                        anchor_detail.update(report_task=copy.deepcopy(anchor_task), source_review=copy.deepcopy(anchor_review),
+                                             source_snapshots=anchor_sources, source_fit=anchor_fit)
+                        source_fit = source_fit and anchor_fit
                 status = 'potential_task' if source_fit and covered and trigger is True else 'not_triggered' if source_fit and covered and trigger is False else 'undetermined'
                 due = task['deadlines'].get(str(year)); anchor = None
-                if task['kind'] == 'retain' and selected_history and selected_history['supported'] and prior is True:
-                    anchor = selected_history['record']['submitted_date']
+                if task['kind'] == 'retain':
+                    if anchor_detail and anchor_detail['basis'] == 'required_submission':
+                        if source_fit and covered:
+                            anchor = anchor_detail['report_task']['deadlines'].get(str(year))
+                    elif selected_history and selected_history['supported'] and prior is True:
+                        anchor = selected_history['record']['submitted_date']
                     if anchor is not None:
                         due = _retention_date(anchor, task['retention_years'])
                         if due is None:
@@ -198,7 +245,9 @@ def prepare_jurisdiction_tasks(state, parameters):
                     'trigger': trigger, 'candidate_status': status, 'candidate_date': due, 'retention_anchor': anchor,
                     'candidate_date_precedes_assessment': due is not None and _date(due) < as_of,
                     'legal_obligation_determined': False, 'completion_verified': False, 'filing_authorized': False})
-        report = {'execution_contract': CONTRACT, 'catalog': catalog, 'catalog_pin': copy.deepcopy(parameters['task_catalog_pin']),
+                if catalog['execution_contract'] == ANCHOR_CONTRACT:
+                    rows[-1]['retention_anchor_selection'] = anchor_detail
+        report = {'execution_contract': catalog['execution_contract'], 'catalog': catalog, 'catalog_pin': copy.deepcopy(parameters['task_catalog_pin']),
                   'screen_result_id': owner['id'], 'screen_snapshot': screen, 'history': list(history.values()),
                   'planning_review': copy.deepcopy(review), 'rows': rows, 'legal_obligation_determined': False,
                   'regulatory_quantity_verified': False, 'whole_organization_coverage_verified': False,
