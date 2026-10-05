@@ -1,0 +1,11 @@
+# Initial supplier evidence assessment
+
+Recorded 2026-10-05. The full fictional state/request/output is saved in sus14-supplier-assessment.json and rerun by regression, including the CLI's full proposal. The supplier and rubric use explicit source evidence, the buyer reporting period and organizational boundary.
+
+Two supplied criteria have weights 3 and 1 and anchored ratings 0, 1 or 2. The first has a buyer rating of 1 with purchase-specific fictional packaging source evidence and an explicit evidence-fit review; the second is unanswered. Supported weighted coverage is 75%. The known normalized contribution is 37.5 points, and unresolved rating possibilities give a 37.5–62.5 range. The point score remains null. Unknown is not assigned a zero rating; with an explicitly evidenced zero for the second criterion, coverage becomes 100% and the conditional buyer score is 37.5.
+
+The supplier answer contains an instruction to approve everything. It remains source text: supplier_approved and procurement_authorized stay false, the supplier register is unchanged and open reviews survive. Questionnaires remain draft_unsent. Missing/unsupported evidence, unverified answers and justified exclusions are distinguished; all-excluded rubrics have no denominator or score. Invalid periods, boundaries, scores, anchors, identities and evidence references block assessment rather than manufacturing a rating.
+
+These tests establish bounded arithmetic and state-proposal behavior, not independent source authentication, appropriate real-world criterion weights, complete supplier risk, emissions attribution, accepted supplier responsibility or procurement readiness. Broader supplier comparison and supply-chain mapping remain further work.
+
+An independent raw-source scenario caught that the original fixture referenced unrelated buyer electricity as supplier support. The fixture now has a distinct supplier-specific record, and the helper requires explicit reviewed evidence fit before counting a rating. Missing, unverified or irrelevant fit retains an unknown rating despite resolving source IDs. This still checks supplied review fields rather than authenticating source relevance; the independent report records the initial behavior and subsequent revision separately.

@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "062608c",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 277,
+    "duration_seconds": 110.441,
+    "status": "passed"
+  },
+  "supplier_helper_tests": 8,
+  "skill_packages": {
+    "count": 11,
+    "status": "passed",
+    "validator": "skill-creator quick_validate.py"
+  },
+  "independent_scenario": {
+    "initial_run": "Found unrelated buyer electricity evidence counted under the supplied rating.",
+    "correction": "Evidence-fit defaults unverified; explicit supporting review or documented optional-evidence policy required for a rating contribution. Fixture uses a distinct purchase-specific supplier record.",
+    "independent_corrected_cli_runs": 3,
+    "parent_exact_output_reproductions": 3,
+    "result": "No point score, zero supported coverage and 0\u2013100 possible buyer-rubric score range on original unrelated-source input. Draft questionnaire retains gaps and remains unsent.",
+    "remaining_limit": "Evidence fit is caller judgment, not source authentication; only one realistic source-reading scenario."
+  },
+  "known_answer": {
+    "supported_weight_percent": 75,
+    "partial_score": null,
+    "possible_score_range": [
+      37.5,
+      62.5
+    ],
+    "basis": "Weights 3 and 1; supported criterion rating 1 of 2; other criterion unknown."
+  },
+  "checks": [
+    "Missing scores are not assigned zero",
+    "Observed evidenced zero remains known",
+    "Documented exclusions and empty denominators remain explicit",
+    "Required evidence without reviewed fit cannot support a rating",
+    "Period/boundary/identity/anchor/source errors block",
+    "Questionnaire remains draft; supplier and procurement flags false",
+    "Existing review ledger and supplier/state history preserved",
+    "Common request CLI and full saved proposal replay"
+  ],
+  "limitations": [
+    "No automated supplier risk, comparison ranking, purchase-to-emissions attribution or engagement method claimed",
+    "Instruction workflows and broader independent/organization scenarios remain",
+    "No certification, purchase approval or public-v1 readiness"
+  ],
+  "sha256": {
+    "scripts/supplier_tools.py": "32d391822223797f889d681e8837c86f785fcfaf419b46eed65f7be823cb7e06",
+    "scripts/run_suppliers.py": "9a1ca4b415fd746a83e3cb2fac913cc2c459b203ab66d226c4f79e77c7f116c9",
+    "tests/test_suppliers.py": "f7b322abd683503acd7c6c897e14da318e356c92630c55b39f065672869258d2",
+    "docs/supplier-contract.md": "d3a0e5bb421a0722780526c25442483ccd9a11f9ea84f59e131d4d98f382eab5",
+    "evaluations/sus14-supplier-assessment.json": "a12fac56bbd4b4df95444292243ff4c0b59a7aa69a5a842ec41d4c316ce21b1d",
+    "evaluations/sus14-independent-supplier.json": "8917e2ac6222b3fa390dd4bff3222e7603feff6350a2d4570703a34dbeeb4b57"
+  }
+}

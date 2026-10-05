@@ -41,3 +41,5 @@ Schemas use JSON Schema Draft 2020-12. The same test command runs architecture, 
 ## Data skills
 
 SUS-05 covers data normalization/validation, evidence quality, gaps, units, reporting periods, organizational boundaries, baselines, KPIs and period comparisons. Skill entrypoints live under `skills/metrics/`; each links to the [shared execution contract](docs/data-skill-contract.md). They are repository artifacts, not installed into a user's agent configuration. Helpers are portable Python and require no network access. They provide primitives; skills must wrap results with provenance and validate proposed shared state.
+
+SUS-14 now provides eleven procurement/supply-chain skill workflows and four bounded [supplier evidence helpers](docs/supplier-contract.md), with a [fictional rubric assessment](evaluations/sus14-supplier-assessment.md). Missing ratings remain unknown, questionnaires stay unsent and supplier/purchase approval stays false. Comparative ranking, sourced risk methods and purchase-to-emissions attribution remain further work.
