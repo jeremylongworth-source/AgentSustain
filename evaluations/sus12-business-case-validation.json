@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-05",
+  "base_revision": "f045b4c",
+  "checks": {
+    "unittest": {
+      "passed": 253,
+      "seconds": 75.274,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "new_business_case_tests": 9
+    },
+    "focused_case_and_project_regression": {
+      "passed": 20
+    },
+    "changed_skill_packaging": {
+      "passed": 1,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "base_npv_CAD": [
+        41.32231404958678,
+        214.87603305785123
+      ],
+      "supplied_20_percent_sensitivity_npv_CAD": [
+        -83.33333333333333,
+        69.44444444444444
+      ],
+      "horizon_reduction_t_CO2e": [
+        10,
+        8
+      ],
+      "case_a_sensitivity_outside_comparison_range": true,
+      "funding_status": "pending_human_review",
+      "implementation_authorized": false,
+      "portfolio_total": null
+    },
+    "fixture_provenance": "Physical projection fixtures now use explicitly labeled physical-model evidence rather than financial evidence; project replay regenerated."
+  },
+  "limitations": [
+    "Fictional model/source assessments; no authentic factor, cost, certified reduction or engineering feasibility established.",
+    "Explicit sampled financial sensitivities, not exhaustive uncertainty or robust ranking; physical scenario consequences need separate source review.",
+    "Current composed interface uses verified ranking, NPV and matched horizon physical reductions; broader timing/tariffs/portfolio methods remain.",
+    "Human funding/engineering/claims review stays pending; no implementation or external action authorized.",
+    "Author-led numerical/adversarial/replay checks; independent behavioral and organization-wide end-to-end evidence remains."
+  ],
+  "sha256": {
+    "scripts/finance_business_case.py": "037eace9a831d5a9eeef993c6b3adb68ff63d1a525f21bcdcf42a6f24df8dd72",
+    "scripts/finance_tools.py": "404403c17aca64012d292546c98b23640b895c8e56d5d334a45d944f840bcff1",
+    "tests/test_finance_business_case.py": "b500f8ebb4ebe81823efa8a0d1e5a2cf0e1e4744cbf2e43e0a4c311e8c7320a2",
+    "tests/test_finance_projects.py": "dc9fa6d62d23c65f256096db45aa154ee5c1256ab244ec4bd5dfa3c6911bd71c",
+    "docs/finance-contract.md": "75da2fa857da2ee6f2bf123a149389eb63b95fc682d6aa36d25e27b3a1108f45",
+    "skills/finance/build-sustainability-business-case/SKILL.md": "3acd3927d2db707cf372c521893493c4e2798b7d95258af1dd19b6091df8befe",
+    "evaluations/sus12-business-case.json": "8e134fd7f80a2d16d911c14c18e5d5c4fbadc9a12596dfecdb27dbf3c889cc89",
+    "evaluations/sus12-project-comparison.json": "9cc484ffe769276758f1d70fdca3dddb82dbc6f4662dfea98ad2ea276be15017"
+  }
+}

@@ -320,6 +320,78 @@
           "unit": null
         },
         "calculation": null
+      },
+      {
+        "id": "a-abatement-evidence",
+        "source": {
+          "locator": "fixture:projects/physical-a",
+          "title": "Fictional project physical-model assessment",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-12-31",
+          "end": "2027-12-31"
+        },
+        "unit": "t CO2e",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "b-abatement-evidence",
+        "source": {
+          "locator": "fixture:projects/physical-b",
+          "title": "Fictional project physical-model assessment",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-12-31",
+          "end": "2027-12-31"
+        },
+        "unit": "t CO2e",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
       }
     ],
     "results": [
@@ -886,14 +958,14 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
-              "horizon-net-evidence"
+              "a-abatement-evidence"
             ],
             "method": {
-              "name": "Synthetic meter reading fixture",
-              "version": "fixture-1",
-              "source": "fixture:meter-001"
+              "name": "Fictional physical projection assessment",
+              "version": "fixture-v1",
+              "source": "fixture:projects/physical-model"
             },
-            "assumption": "Fictional conditional projected financial input.",
+            "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
             "uncertainty": {
               "kind": "unquantified",
               "description": "Fictional meter uncertainty is not quantified.",
@@ -903,7 +975,7 @@
             "calculation": {
               "formula": "recorded quantity",
               "inputs": [
-                "horizon-net-evidence"
+                "a-abatement-evidence"
               ],
               "conversions": [],
               "rounding": "none"
@@ -911,10 +983,10 @@
           }
         ],
         "evidence_ids": [
-          "horizon-net-evidence"
+          "a-abatement-evidence"
         ],
         "assumptions": [
-          "Fictional conditional projected financial input."
+          "Fictional horizon physical projection assessment; not certified emissions reduction."
         ],
         "data_gaps": [],
         "diagnostics": [],
@@ -983,6 +1055,7 @@
         ],
         "assumptions": [
           "Fictional conditional projected financial input.",
+          "Fictional horizon physical projection assessment; not certified emissions reduction.",
           "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
         ],
         "data_gaps": [],
@@ -1015,14 +1088,14 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
-              "horizon-net-evidence"
+              "b-abatement-evidence"
             ],
             "method": {
-              "name": "Synthetic meter reading fixture",
-              "version": "fixture-1",
-              "source": "fixture:meter-001"
+              "name": "Fictional physical projection assessment",
+              "version": "fixture-v1",
+              "source": "fixture:projects/physical-model"
             },
-            "assumption": "Fictional conditional projected financial input.",
+            "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
             "uncertainty": {
               "kind": "unquantified",
               "description": "Fictional meter uncertainty is not quantified.",
@@ -1032,7 +1105,7 @@
             "calculation": {
               "formula": "recorded quantity",
               "inputs": [
-                "horizon-net-evidence"
+                "b-abatement-evidence"
               ],
               "conversions": [],
               "rounding": "none"
@@ -1040,10 +1113,10 @@
           }
         ],
         "evidence_ids": [
-          "horizon-net-evidence"
+          "b-abatement-evidence"
         ],
         "assumptions": [
-          "Fictional conditional projected financial input."
+          "Fictional horizon physical projection assessment; not certified emissions reduction."
         ],
         "data_gaps": [],
         "diagnostics": [],
@@ -1112,6 +1185,7 @@
         ],
         "assumptions": [
           "Fictional conditional projected financial input.",
+          "Fictional horizon physical projection assessment; not certified emissions reduction.",
           "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
         ],
         "data_gaps": [],
@@ -1126,6 +1200,7 @@
     ],
     "assumptions": [
       "Fictional conditional projected financial input.",
+      "Fictional horizon physical projection assessment; not certified emissions reduction.",
       "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
     ],
     "data_gaps": [],
@@ -1316,12 +1391,12 @@
               },
               "boundary_id": "boundary-001",
               "method": {
-                "name": "Synthetic meter reading fixture",
-                "version": "fixture-1",
-                "source": "fixture:meter-001"
+                "name": "Fictional physical projection assessment",
+                "version": "fixture-v1",
+                "source": "fixture:projects/physical-model"
               },
               "evidence_ids": [
-                "horizon-net-evidence"
+                "a-abatement-evidence"
               ],
               "definition": "Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.",
               "gwp_basis": "Fictional matching 100-year assessment; no GWP conversion.",
@@ -1358,12 +1433,12 @@
               },
               "boundary_id": "boundary-001",
               "method": {
-                "name": "Synthetic meter reading fixture",
-                "version": "fixture-1",
-                "source": "fixture:meter-001"
+                "name": "Fictional physical projection assessment",
+                "version": "fixture-v1",
+                "source": "fixture:projects/physical-model"
               },
               "evidence_ids": [
-                "horizon-net-evidence"
+                "b-abatement-evidence"
               ],
               "definition": "Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.",
               "gwp_basis": "Fictional matching 100-year assessment; no GWP conversion.",
@@ -1415,12 +1490,13 @@
               },
               "boundary_id": "boundary-001",
               "evidence_ids": [
+                "a-abatement-evidence",
                 "annual-net-evidence",
+                "b-abatement-evidence",
                 "discount-evidence",
                 "flow-0-evidence",
                 "flow-1-evidence",
-                "flow-2-evidence",
-                "horizon-net-evidence"
+                "flow-2-evidence"
               ],
               "method": {
                 "name": "Explicit supplied project-finance arithmetic",
@@ -1456,12 +1532,13 @@
               },
               "boundary_id": "boundary-001",
               "evidence_ids": [
+                "a-abatement-evidence",
                 "annual-net-evidence",
+                "b-abatement-evidence",
                 "discount-evidence",
                 "flow-0-evidence",
                 "flow-1-evidence",
-                "flow-2-evidence",
-                "horizon-net-evidence"
+                "flow-2-evidence"
               ],
               "method": {
                 "name": "Explicit supplied project-finance arithmetic",
@@ -1497,12 +1574,13 @@
               },
               "boundary_id": "boundary-001",
               "evidence_ids": [
+                "a-abatement-evidence",
                 "annual-net-evidence",
+                "b-abatement-evidence",
                 "discount-evidence",
                 "flow-0-evidence",
                 "flow-1-evidence",
-                "flow-2-evidence",
-                "horizon-net-evidence"
+                "flow-2-evidence"
               ],
               "method": {
                 "name": "Explicit supplied project-finance arithmetic",
@@ -1538,12 +1616,13 @@
               },
               "boundary_id": "boundary-001",
               "evidence_ids": [
+                "a-abatement-evidence",
                 "annual-net-evidence",
+                "b-abatement-evidence",
                 "discount-evidence",
                 "flow-0-evidence",
                 "flow-1-evidence",
-                "flow-2-evidence",
-                "horizon-net-evidence"
+                "flow-2-evidence"
               ],
               "method": {
                 "name": "Explicit supplied project-finance arithmetic",
@@ -1570,15 +1649,17 @@
             }
           ],
           "evidence_ids": [
+            "a-abatement-evidence",
             "annual-net-evidence",
+            "b-abatement-evidence",
             "discount-evidence",
             "flow-0-evidence",
             "flow-1-evidence",
-            "flow-2-evidence",
-            "horizon-net-evidence"
+            "flow-2-evidence"
           ],
           "assumptions": [
             "Fictional conditional projected financial input.",
+            "Fictional horizon physical projection assessment; not certified emissions reduction.",
             "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
             "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
           ],
@@ -1586,11 +1667,11 @@
           "diagnostics": [
             {
               "code": "PROJECT_COMPARISON",
-              "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
+              "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
             },
             {
               "code": "FINANCIAL_ANALYSIS_BASIS",
-              "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
+              "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
             }
           ],
           "next_actions": []
@@ -1911,6 +1992,78 @@
                   "fitness_notes": "Synthetic fixture, not independently verified."
                 },
                 "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "a-abatement-evidence",
+                "source": {
+                  "locator": "fixture:projects/physical-a",
+                  "title": "Fictional project physical-model assessment",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 5
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-12-31",
+                  "end": "2027-12-31"
+                },
+                "unit": "t CO2e",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "b-abatement-evidence",
+                "source": {
+                  "locator": "fixture:projects/physical-b",
+                  "title": "Fictional project physical-model assessment",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 5
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-12-31",
+                  "end": "2027-12-31"
+                },
+                "unit": "t CO2e",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
                 "uncertainty": {
                   "kind": "unquantified",
                   "description": "Fictional meter uncertainty is not quantified.",
@@ -2484,14 +2637,14 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
-                      "horizon-net-evidence"
+                      "a-abatement-evidence"
                     ],
                     "method": {
-                      "name": "Synthetic meter reading fixture",
-                      "version": "fixture-1",
-                      "source": "fixture:meter-001"
+                      "name": "Fictional physical projection assessment",
+                      "version": "fixture-v1",
+                      "source": "fixture:projects/physical-model"
                     },
-                    "assumption": "Fictional conditional projected financial input.",
+                    "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
                     "uncertainty": {
                       "kind": "unquantified",
                       "description": "Fictional meter uncertainty is not quantified.",
@@ -2501,7 +2654,7 @@
                     "calculation": {
                       "formula": "recorded quantity",
                       "inputs": [
-                        "horizon-net-evidence"
+                        "a-abatement-evidence"
                       ],
                       "conversions": [],
                       "rounding": "none"
@@ -2509,10 +2662,10 @@
                   }
                 ],
                 "evidence_ids": [
-                  "horizon-net-evidence"
+                  "a-abatement-evidence"
                 ],
                 "assumptions": [
-                  "Fictional conditional projected financial input."
+                  "Fictional horizon physical projection assessment; not certified emissions reduction."
                 ],
                 "data_gaps": [],
                 "diagnostics": [],
@@ -2581,6 +2734,7 @@
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
                 ],
                 "data_gaps": [],
@@ -2613,14 +2767,14 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
-                      "horizon-net-evidence"
+                      "b-abatement-evidence"
                     ],
                     "method": {
-                      "name": "Synthetic meter reading fixture",
-                      "version": "fixture-1",
-                      "source": "fixture:meter-001"
+                      "name": "Fictional physical projection assessment",
+                      "version": "fixture-v1",
+                      "source": "fixture:projects/physical-model"
                     },
-                    "assumption": "Fictional conditional projected financial input.",
+                    "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
                     "uncertainty": {
                       "kind": "unquantified",
                       "description": "Fictional meter uncertainty is not quantified.",
@@ -2630,7 +2784,7 @@
                     "calculation": {
                       "formula": "recorded quantity",
                       "inputs": [
-                        "horizon-net-evidence"
+                        "b-abatement-evidence"
                       ],
                       "conversions": [],
                       "rounding": "none"
@@ -2638,10 +2792,10 @@
                   }
                 ],
                 "evidence_ids": [
-                  "horizon-net-evidence"
+                  "b-abatement-evidence"
                 ],
                 "assumptions": [
-                  "Fictional conditional projected financial input."
+                  "Fictional horizon physical projection assessment; not certified emissions reduction."
                 ],
                 "data_gaps": [],
                 "diagnostics": [],
@@ -2710,6 +2864,7 @@
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
                 ],
                 "data_gaps": [],
@@ -2742,12 +2897,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -2783,12 +2939,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -2824,12 +2981,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -2865,12 +3023,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -2897,15 +3056,17 @@
                   }
                 ],
                 "evidence_ids": [
+                  "a-abatement-evidence",
                   "annual-net-evidence",
+                  "b-abatement-evidence",
                   "discount-evidence",
                   "flow-0-evidence",
                   "flow-1-evidence",
-                  "flow-2-evidence",
-                  "horizon-net-evidence"
+                  "flow-2-evidence"
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
                   "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
                 ],
@@ -2913,11 +3074,11 @@
                 "diagnostics": [
                   {
                     "code": "PROJECT_COMPARISON",
-                    "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
+                    "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
                   },
                   {
                     "code": "FINANCIAL_ANALYSIS_BASIS",
-                    "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
+                    "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
                   }
                 ],
                 "next_actions": []
@@ -2925,6 +3086,7 @@
             ],
             "assumptions": [
               "Fictional conditional projected financial input.",
+              "Fictional horizon physical projection assessment; not certified emissions reduction.",
               "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
               "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
             ],
@@ -3015,12 +3177,13 @@
               },
               "boundary_id": "boundary-001",
               "evidence_ids": [
+                "a-abatement-evidence",
                 "annual-net-evidence",
+                "b-abatement-evidence",
                 "discount-evidence",
                 "flow-0-evidence",
                 "flow-1-evidence",
-                "flow-2-evidence",
-                "horizon-net-evidence"
+                "flow-2-evidence"
               ],
               "method": {
                 "name": "Explicit supplied project-finance arithmetic",
@@ -3059,12 +3222,13 @@
               },
               "boundary_id": "boundary-001",
               "evidence_ids": [
+                "a-abatement-evidence",
                 "annual-net-evidence",
+                "b-abatement-evidence",
                 "discount-evidence",
                 "flow-0-evidence",
                 "flow-1-evidence",
-                "flow-2-evidence",
-                "horizon-net-evidence"
+                "flow-2-evidence"
               ],
               "method": {
                 "name": "Explicit supplied project-finance arithmetic",
@@ -3094,15 +3258,17 @@
             }
           ],
           "evidence_ids": [
+            "a-abatement-evidence",
             "annual-net-evidence",
+            "b-abatement-evidence",
             "discount-evidence",
             "flow-0-evidence",
             "flow-1-evidence",
-            "flow-2-evidence",
-            "horizon-net-evidence"
+            "flow-2-evidence"
           ],
           "assumptions": [
             "Fictional conditional projected financial input.",
+            "Fictional horizon physical projection assessment; not certified emissions reduction.",
             "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
             "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
           ],
@@ -3110,7 +3276,7 @@
           "diagnostics": [
             {
               "code": "INVESTMENT_RANKING",
-              "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"decision_review\": {\"confirmed\": true, \"criteria_order\": [\"npv\", \"abatement\"], \"eligibility_basis\": \"Assigned owner, supplied readiness and satisfied dependencies; no implementation approval.\", \"evidence_ids\": [\"annual-net-evidence\"], \"method\": \"lexicographic_estimate\", \"question\": \"Which selected comparable alternative leads under supplied priorities?\", \"rationale\": \"Explicit economic-first estimate screening; sensitivity remains visible.\", \"thresholds\": {}}, \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 1, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 2, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}], \"sensitivity\": [{\"criterion\": \"npv\", \"finding\": \"Supplied primary ranges overlap; estimate ordering is not established as robust across these scenarios.\", \"projects\": [\"b\", \"a\"]}]}"
+              "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"decision_review\": {\"confirmed\": true, \"criteria_order\": [\"npv\", \"abatement\"], \"eligibility_basis\": \"Assigned owner, supplied readiness and satisfied dependencies; no implementation approval.\", \"evidence_ids\": [\"annual-net-evidence\"], \"method\": \"lexicographic_estimate\", \"question\": \"Which selected comparable alternative leads under supplied priorities?\", \"rationale\": \"Explicit economic-first estimate screening; sensitivity remains visible.\", \"thresholds\": {}}, \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 1, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 2, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}], \"sensitivity\": [{\"criterion\": \"npv\", \"finding\": \"Supplied primary ranges overlap; estimate ordering is not established as robust across these scenarios.\", \"projects\": [\"b\", \"a\"]}]}"
             },
             {
               "code": "FINANCIAL_ANALYSIS_BASIS",
@@ -3442,6 +3608,78 @@
                   "unit": null
                 },
                 "calculation": null
+              },
+              {
+                "id": "a-abatement-evidence",
+                "source": {
+                  "locator": "fixture:projects/physical-a",
+                  "title": "Fictional project physical-model assessment",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 5
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-12-31",
+                  "end": "2027-12-31"
+                },
+                "unit": "t CO2e",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
+              },
+              {
+                "id": "b-abatement-evidence",
+                "source": {
+                  "locator": "fixture:projects/physical-b",
+                  "title": "Fictional project physical-model assessment",
+                  "publisher": "Fictional Example Company",
+                  "accessed": "2026-10-04",
+                  "version": "fixture-1",
+                  "tier": 5
+                },
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "period": {
+                  "start": "2025-12-31",
+                  "end": "2027-12-31"
+                },
+                "unit": "t CO2e",
+                "boundary_id": "boundary-001",
+                "geography": "CA-ON",
+                "quality": {
+                  "reliability": "unknown",
+                  "completeness": "complete",
+                  "fitness_notes": "Synthetic fixture, not independently verified."
+                },
+                "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": null
               }
             ],
             "results": [
@@ -4008,14 +4246,14 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
-                      "horizon-net-evidence"
+                      "a-abatement-evidence"
                     ],
                     "method": {
-                      "name": "Synthetic meter reading fixture",
-                      "version": "fixture-1",
-                      "source": "fixture:meter-001"
+                      "name": "Fictional physical projection assessment",
+                      "version": "fixture-v1",
+                      "source": "fixture:projects/physical-model"
                     },
-                    "assumption": "Fictional conditional projected financial input.",
+                    "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
                     "uncertainty": {
                       "kind": "unquantified",
                       "description": "Fictional meter uncertainty is not quantified.",
@@ -4025,7 +4263,7 @@
                     "calculation": {
                       "formula": "recorded quantity",
                       "inputs": [
-                        "horizon-net-evidence"
+                        "a-abatement-evidence"
                       ],
                       "conversions": [],
                       "rounding": "none"
@@ -4033,10 +4271,10 @@
                   }
                 ],
                 "evidence_ids": [
-                  "horizon-net-evidence"
+                  "a-abatement-evidence"
                 ],
                 "assumptions": [
-                  "Fictional conditional projected financial input."
+                  "Fictional horizon physical projection assessment; not certified emissions reduction."
                 ],
                 "data_gaps": [],
                 "diagnostics": [],
@@ -4105,6 +4343,7 @@
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
                 ],
                 "data_gaps": [],
@@ -4137,14 +4376,14 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
-                      "horizon-net-evidence"
+                      "b-abatement-evidence"
                     ],
                     "method": {
-                      "name": "Synthetic meter reading fixture",
-                      "version": "fixture-1",
-                      "source": "fixture:meter-001"
+                      "name": "Fictional physical projection assessment",
+                      "version": "fixture-v1",
+                      "source": "fixture:projects/physical-model"
                     },
-                    "assumption": "Fictional conditional projected financial input.",
+                    "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
                     "uncertainty": {
                       "kind": "unquantified",
                       "description": "Fictional meter uncertainty is not quantified.",
@@ -4154,7 +4393,7 @@
                     "calculation": {
                       "formula": "recorded quantity",
                       "inputs": [
-                        "horizon-net-evidence"
+                        "b-abatement-evidence"
                       ],
                       "conversions": [],
                       "rounding": "none"
@@ -4162,10 +4401,10 @@
                   }
                 ],
                 "evidence_ids": [
-                  "horizon-net-evidence"
+                  "b-abatement-evidence"
                 ],
                 "assumptions": [
-                  "Fictional conditional projected financial input."
+                  "Fictional horizon physical projection assessment; not certified emissions reduction."
                 ],
                 "data_gaps": [],
                 "diagnostics": [],
@@ -4234,6 +4473,7 @@
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
                 ],
                 "data_gaps": [],
@@ -4266,12 +4506,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -4307,12 +4548,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -4348,12 +4590,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -4389,12 +4632,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -4421,15 +4665,17 @@
                   }
                 ],
                 "evidence_ids": [
+                  "a-abatement-evidence",
                   "annual-net-evidence",
+                  "b-abatement-evidence",
                   "discount-evidence",
                   "flow-0-evidence",
                   "flow-1-evidence",
-                  "flow-2-evidence",
-                  "horizon-net-evidence"
+                  "flow-2-evidence"
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
                   "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
                 ],
@@ -4437,11 +4683,11 @@
                 "diagnostics": [
                   {
                     "code": "PROJECT_COMPARISON",
-                    "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
+                    "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
                   },
                   {
                     "code": "FINANCIAL_ANALYSIS_BASIS",
-                    "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
+                    "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
                   }
                 ],
                 "next_actions": []
@@ -4467,12 +4713,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -4511,12 +4758,13 @@
                     },
                     "boundary_id": "boundary-001",
                     "evidence_ids": [
+                      "a-abatement-evidence",
                       "annual-net-evidence",
+                      "b-abatement-evidence",
                       "discount-evidence",
                       "flow-0-evidence",
                       "flow-1-evidence",
-                      "flow-2-evidence",
-                      "horizon-net-evidence"
+                      "flow-2-evidence"
                     ],
                     "method": {
                       "name": "Explicit supplied project-finance arithmetic",
@@ -4546,15 +4794,17 @@
                   }
                 ],
                 "evidence_ids": [
+                  "a-abatement-evidence",
                   "annual-net-evidence",
+                  "b-abatement-evidence",
                   "discount-evidence",
                   "flow-0-evidence",
                   "flow-1-evidence",
-                  "flow-2-evidence",
-                  "horizon-net-evidence"
+                  "flow-2-evidence"
                 ],
                 "assumptions": [
                   "Fictional conditional projected financial input.",
+                  "Fictional horizon physical projection assessment; not certified emissions reduction.",
                   "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
                   "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
                 ],
@@ -4562,7 +4812,7 @@
                 "diagnostics": [
                   {
                     "code": "INVESTMENT_RANKING",
-                    "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"decision_review\": {\"confirmed\": true, \"criteria_order\": [\"npv\", \"abatement\"], \"eligibility_basis\": \"Assigned owner, supplied readiness and satisfied dependencies; no implementation approval.\", \"evidence_ids\": [\"annual-net-evidence\"], \"method\": \"lexicographic_estimate\", \"question\": \"Which selected comparable alternative leads under supplied priorities?\", \"rationale\": \"Explicit economic-first estimate screening; sensitivity remains visible.\", \"thresholds\": {}}, \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 1, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 2, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}], \"sensitivity\": [{\"criterion\": \"npv\", \"finding\": \"Supplied primary ranges overlap; estimate ordering is not established as robust across these scenarios.\", \"projects\": [\"b\", \"a\"]}]}"
+                    "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"decision_review\": {\"confirmed\": true, \"criteria_order\": [\"npv\", \"abatement\"], \"eligibility_basis\": \"Assigned owner, supplied readiness and satisfied dependencies; no implementation approval.\", \"evidence_ids\": [\"annual-net-evidence\"], \"method\": \"lexicographic_estimate\", \"question\": \"Which selected comparable alternative leads under supplied priorities?\", \"rationale\": \"Explicit economic-first estimate screening; sensitivity remains visible.\", \"thresholds\": {}}, \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 1, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 2, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}], \"sensitivity\": [{\"criterion\": \"npv\", \"finding\": \"Supplied primary ranges overlap; estimate ordering is not established as robust across these scenarios.\", \"projects\": [\"b\", \"a\"]}]}"
                   },
                   {
                     "code": "FINANCIAL_ANALYSIS_BASIS",
@@ -4574,6 +4824,7 @@
             ],
             "assumptions": [
               "Fictional conditional projected financial input.",
+              "Fictional horizon physical projection assessment; not certified emissions reduction.",
               "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
               "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
             ],
@@ -4922,6 +5173,78 @@
           "unit": null
         },
         "calculation": null
+      },
+      {
+        "id": "a-abatement-evidence",
+        "source": {
+          "locator": "fixture:projects/physical-a",
+          "title": "Fictional project physical-model assessment",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-12-31",
+          "end": "2027-12-31"
+        },
+        "unit": "t CO2e",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "b-abatement-evidence",
+        "source": {
+          "locator": "fixture:projects/physical-b",
+          "title": "Fictional project physical-model assessment",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-12-31",
+          "end": "2027-12-31"
+        },
+        "unit": "t CO2e",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
       }
     ],
     "results": [
@@ -5488,14 +5811,14 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
-              "horizon-net-evidence"
+              "a-abatement-evidence"
             ],
             "method": {
-              "name": "Synthetic meter reading fixture",
-              "version": "fixture-1",
-              "source": "fixture:meter-001"
+              "name": "Fictional physical projection assessment",
+              "version": "fixture-v1",
+              "source": "fixture:projects/physical-model"
             },
-            "assumption": "Fictional conditional projected financial input.",
+            "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
             "uncertainty": {
               "kind": "unquantified",
               "description": "Fictional meter uncertainty is not quantified.",
@@ -5505,7 +5828,7 @@
             "calculation": {
               "formula": "recorded quantity",
               "inputs": [
-                "horizon-net-evidence"
+                "a-abatement-evidence"
               ],
               "conversions": [],
               "rounding": "none"
@@ -5513,10 +5836,10 @@
           }
         ],
         "evidence_ids": [
-          "horizon-net-evidence"
+          "a-abatement-evidence"
         ],
         "assumptions": [
-          "Fictional conditional projected financial input."
+          "Fictional horizon physical projection assessment; not certified emissions reduction."
         ],
         "data_gaps": [],
         "diagnostics": [],
@@ -5585,6 +5908,7 @@
         ],
         "assumptions": [
           "Fictional conditional projected financial input.",
+          "Fictional horizon physical projection assessment; not certified emissions reduction.",
           "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
         ],
         "data_gaps": [],
@@ -5617,14 +5941,14 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
-              "horizon-net-evidence"
+              "b-abatement-evidence"
             ],
             "method": {
-              "name": "Synthetic meter reading fixture",
-              "version": "fixture-1",
-              "source": "fixture:meter-001"
+              "name": "Fictional physical projection assessment",
+              "version": "fixture-v1",
+              "source": "fixture:projects/physical-model"
             },
-            "assumption": "Fictional conditional projected financial input.",
+            "assumption": "Fictional horizon physical projection assessment; not certified emissions reduction.",
             "uncertainty": {
               "kind": "unquantified",
               "description": "Fictional meter uncertainty is not quantified.",
@@ -5634,7 +5958,7 @@
             "calculation": {
               "formula": "recorded quantity",
               "inputs": [
-                "horizon-net-evidence"
+                "b-abatement-evidence"
               ],
               "conversions": [],
               "rounding": "none"
@@ -5642,10 +5966,10 @@
           }
         ],
         "evidence_ids": [
-          "horizon-net-evidence"
+          "b-abatement-evidence"
         ],
         "assumptions": [
-          "Fictional conditional projected financial input."
+          "Fictional horizon physical projection assessment; not certified emissions reduction."
         ],
         "data_gaps": [],
         "diagnostics": [],
@@ -5714,6 +6038,7 @@
         ],
         "assumptions": [
           "Fictional conditional projected financial input.",
+          "Fictional horizon physical projection assessment; not certified emissions reduction.",
           "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
         ],
         "data_gaps": [],
@@ -5746,12 +6071,13 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
+              "a-abatement-evidence",
               "annual-net-evidence",
+              "b-abatement-evidence",
               "discount-evidence",
               "flow-0-evidence",
               "flow-1-evidence",
-              "flow-2-evidence",
-              "horizon-net-evidence"
+              "flow-2-evidence"
             ],
             "method": {
               "name": "Explicit supplied project-finance arithmetic",
@@ -5787,12 +6113,13 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
+              "a-abatement-evidence",
               "annual-net-evidence",
+              "b-abatement-evidence",
               "discount-evidence",
               "flow-0-evidence",
               "flow-1-evidence",
-              "flow-2-evidence",
-              "horizon-net-evidence"
+              "flow-2-evidence"
             ],
             "method": {
               "name": "Explicit supplied project-finance arithmetic",
@@ -5828,12 +6155,13 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
+              "a-abatement-evidence",
               "annual-net-evidence",
+              "b-abatement-evidence",
               "discount-evidence",
               "flow-0-evidence",
               "flow-1-evidence",
-              "flow-2-evidence",
-              "horizon-net-evidence"
+              "flow-2-evidence"
             ],
             "method": {
               "name": "Explicit supplied project-finance arithmetic",
@@ -5869,12 +6197,13 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
+              "a-abatement-evidence",
               "annual-net-evidence",
+              "b-abatement-evidence",
               "discount-evidence",
               "flow-0-evidence",
               "flow-1-evidence",
-              "flow-2-evidence",
-              "horizon-net-evidence"
+              "flow-2-evidence"
             ],
             "method": {
               "name": "Explicit supplied project-finance arithmetic",
@@ -5901,15 +6230,17 @@
           }
         ],
         "evidence_ids": [
+          "a-abatement-evidence",
           "annual-net-evidence",
+          "b-abatement-evidence",
           "discount-evidence",
           "flow-0-evidence",
           "flow-1-evidence",
-          "flow-2-evidence",
-          "horizon-net-evidence"
+          "flow-2-evidence"
         ],
         "assumptions": [
           "Fictional conditional projected financial input.",
+          "Fictional horizon physical projection assessment; not certified emissions reduction.",
           "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
           "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
         ],
@@ -5917,11 +6248,11 @@
         "diagnostics": [
           {
             "code": "PROJECT_COMPARISON",
-            "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
+            "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": null, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}]}"
           },
           {
             "code": "FINANCIAL_ANALYSIS_BASIS",
-            "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
+            "message": "{\"analysis_review\": {\"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"discount_basis\": \"real\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"timing\": \"calendar_year_end\", \"valuation_date\": \"2025-12-31\"}, \"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\"}], \"result_id\": \"comparison\"}"
           }
         ],
         "next_actions": []
@@ -5947,12 +6278,13 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
+              "a-abatement-evidence",
               "annual-net-evidence",
+              "b-abatement-evidence",
               "discount-evidence",
               "flow-0-evidence",
               "flow-1-evidence",
-              "flow-2-evidence",
-              "horizon-net-evidence"
+              "flow-2-evidence"
             ],
             "method": {
               "name": "Explicit supplied project-finance arithmetic",
@@ -5991,12 +6323,13 @@
             },
             "boundary_id": "boundary-001",
             "evidence_ids": [
+              "a-abatement-evidence",
               "annual-net-evidence",
+              "b-abatement-evidence",
               "discount-evidence",
               "flow-0-evidence",
               "flow-1-evidence",
-              "flow-2-evidence",
-              "horizon-net-evidence"
+              "flow-2-evidence"
             ],
             "method": {
               "name": "Explicit supplied project-finance arithmetic",
@@ -6026,15 +6359,17 @@
           }
         ],
         "evidence_ids": [
+          "a-abatement-evidence",
           "annual-net-evidence",
+          "b-abatement-evidence",
           "discount-evidence",
           "flow-0-evidence",
           "flow-1-evidence",
-          "flow-2-evidence",
-          "horizon-net-evidence"
+          "flow-2-evidence"
         ],
         "assumptions": [
           "Fictional conditional projected financial input.",
+          "Fictional horizon physical projection assessment; not certified emissions reduction.",
           "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
           "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
         ],
@@ -6042,7 +6377,7 @@
         "diagnostics": [
           {
             "code": "INVESTMENT_RANKING",
-            "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"horizon-net-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"decision_review\": {\"confirmed\": true, \"criteria_order\": [\"npv\", \"abatement\"], \"eligibility_basis\": \"Assigned owner, supplied readiness and satisfied dependencies; no implementation approval.\", \"evidence_ids\": [\"annual-net-evidence\"], \"method\": \"lexicographic_estimate\", \"question\": \"Which selected comparable alternative leads under supplied priorities?\", \"rationale\": \"Explicit economic-first estimate screening; sensitivity remains visible.\", \"thresholds\": {}}, \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 1, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 2, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}], \"sensitivity\": [{\"criterion\": \"npv\", \"finding\": \"Supplied primary ranges overlap; estimate ordering is not established as robust across these scenarios.\", \"projects\": [\"b\", \"a\"]}]}"
+            "message": "{\"comparison_review\": {\"baseline_id\": \"fictional-common-baseline\", \"comparability_basis\": \"Same selected economic horizon and physical definition; supplied applicability assessment.\", \"confirmed\": true, \"coverage_complete\": true, \"discount_rate_id\": \"discount\", \"evidence_ids\": [\"annual-net-evidence\"], \"rationale\": \"Fictional alternative comparison with explicit interactions.\", \"service_basis\": \"Same fictional two-year output/service.\", \"source_contexts\": {\"a-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"a-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 10}, \"a-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 41.32231404958678}, \"b-abatement\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"evidence_ids\": [\"b-abatement-evidence\"], \"gwp_basis\": \"Fictional matching 100-year assessment; no GWP conversion.\", \"method\": {\"name\": \"Fictional physical projection assessment\", \"source\": \"fixture:projects/physical-model\", \"version\": \"fixture-v1\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"scope_boundary\": \"Same selected fictional equipment scopes; offsets excluded.\", \"unit\": \"t CO2e\", \"value\": 8}, \"b-npv-value\": {\"boundary_id\": \"boundary-001\", \"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\", \"flow-0-evidence\", \"flow-1-evidence\", \"flow-2-evidence\"], \"method\": {\"name\": \"Explicit supplied project-finance arithmetic\", \"source\": \"docs/finance-contract.md\", \"version\": \"0.1.0\"}, \"period\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"unit\": \"CAD\", \"value\": 214.87603305785123}}}, \"criteria\": [{\"definition\": \"Net cashflow NPV, real pre-tax, common sourced 10 percent rate.\", \"direction\": \"maximize\", \"id\": \"npv\", \"period_basis\": \"horizon\", \"unit\": \"CAD\"}, {\"definition\": \"Supported undiscounted physical horizon reduction, common GWP/scope; offsets excluded.\", \"direction\": \"maximize\", \"id\": \"abatement\", \"period_basis\": \"horizon\", \"unit\": \"t CO2e\"}], \"decision_review\": {\"confirmed\": true, \"criteria_order\": [\"npv\", \"abatement\"], \"eligibility_basis\": \"Assigned owner, supplied readiness and satisfied dependencies; no implementation approval.\", \"evidence_ids\": [\"annual-net-evidence\"], \"method\": \"lexicographic_estimate\", \"question\": \"Which selected comparable alternative leads under supplied priorities?\", \"rationale\": \"Explicit economic-first estimate screening; sensitivity remains visible.\", \"thresholds\": {}}, \"limits\": \"Conditional comparable alternatives; supplied ranges and feasibility are not authenticated. No joint portfolio model or investment approval.\", \"portfolio_total\": null, \"projects\": [{\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"b\", \"interacts_with\": [\"a\"], \"metrics\": {\"abatement\": {\"metric_id\": \"b-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"b-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 1, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 8, \"npv\": 214.87603305785123}}, {\"baseline_id\": \"fictional-common-baseline\", \"constraints\": \"Fictional funding/engineering assessment remains pending.\", \"deferral_reasons\": [], \"dependencies\": [], \"economic_basis\": {\"currency\": \"CAD\", \"dollar_basis\": \"real\", \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"eligible\": true, \"evidence_ids\": [\"annual-net-evidence\"], \"id\": \"a\", \"interacts_with\": [\"b\"], \"metrics\": {\"abatement\": {\"metric_id\": \"a-abatement\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 15, \"low\": 5, \"unit\": \"t CO2e\"}}, \"npv\": {\"metric_id\": \"a-npv-value\", \"range\": {\"basis\": \"Supplied fictional scenario envelope; no probability or confidence level.\", \"evidence_ids\": [\"annual-net-evidence\"], \"high\": 300, \"low\": -50, \"unit\": \"CAD\"}}}, \"owner\": \"project sponsor\", \"rank\": 2, \"readiness\": \"ready_for_screening\", \"service_basis\": \"Same fictional two-year output/service.\", \"values\": {\"abatement\": 10, \"npv\": 41.32231404958678}}], \"sensitivity\": [{\"criterion\": \"npv\", \"finding\": \"Supplied primary ranges overlap; estimate ordering is not established as robust across these scenarios.\", \"projects\": [\"b\", \"a\"]}]}"
           },
           {
             "code": "FINANCIAL_ANALYSIS_BASIS",
@@ -6054,6 +6389,7 @@
     ],
     "assumptions": [
       "Fictional conditional projected financial input.",
+      "Fictional horizon physical projection assessment; not certified emissions reduction.",
       "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
       "Fictional comparable alternatives, reviewed estimates and supplied scenario ranges; no joint portfolio benefits established."
     ],

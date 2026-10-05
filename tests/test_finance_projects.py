@@ -16,9 +16,16 @@ def project_fixture():
         m=copy.deepcopy(metric(state,f"flow-{year}"));m.update(id=f"b-flow-{year}",value=700)
         r.update(metrics=[m],evidence_ids=m["evidence_ids"]);state["results"].append(r)
     for project, tonnes in (("a",10),("b",8)):
+        evidence=copy.deepcopy(next(e for e in state["evidence"] if e["id"]=="horizon-net-evidence"))
+        evidence.update(id=project+"-abatement-evidence",unit="t CO2e",assumption="Fictional horizon physical projection assessment; not certified emissions reduction.")
+        evidence["source"].update(locator="fixture:projects/physical-"+project,title="Fictional project physical-model assessment",tier=5)
+        state["evidence"].append(evidence)
+        if evidence["assumption"] not in state["assumptions"]:state["assumptions"].append(evidence["assumption"])
         r=copy.deepcopy(source);r.update(id=project+"-abatement-result")
-        m=copy.deepcopy(metric(state,"horizon-net"));m.update(id=project+"-abatement",value=tonnes,unit="t CO2e",name="Fictional supported physical horizon reduction")
-        r.update(metrics=[m],evidence_ids=m["evidence_ids"]);state["results"].append(r)
+        m=copy.deepcopy(metric(state,"horizon-net"));m.update(id=project+"-abatement",value=tonnes,unit="t CO2e",name="Fictional supported physical horizon reduction",
+            evidence_ids=[evidence["id"]],assumption=evidence["assumption"],method={"name":"Fictional physical projection assessment","version":"fixture-v1","source":"fixture:projects/physical-model"})
+        m["calculation"]["inputs"]=[evidence["id"]]
+        r.update(metrics=[m],evidence_ids=m["evidence_ids"],assumptions=[evidence["assumption"]]);state["results"].append(r)
         p=copy.deepcopy(requests["calculate-npv"]);p["result_id"]=project+"-npv"
         if project=="b":
             p["cashflows"]=[{"year":0,"metric_id":"flow-0"},{"year":1,"metric_id":"b-flow-1"},{"year":2,"metric_id":"b-flow-2"}]

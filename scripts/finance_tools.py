@@ -14,6 +14,7 @@ from .irr_tools import irr_roots
 from .finance_prices import OPERATIONS as PRICE_OPERATIONS, price_path
 from .finance_abatement import abatement_cost
 from .finance_projects import compare_projects, rank_projects
+from .finance_business_case import PARAMETERS as CASE_PARAMETERS, business_case
 
 
 OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id", "analysis_review", "result_id"},
@@ -29,7 +30,8 @@ OPERATIONS["rank-sustainability-investments"] = {"comparison_result_id", "decisi
 
 def run_finance(state, skill, parameters):
     validate_state(state)
-    if skill not in OPERATIONS or not isinstance(parameters, dict) or set(parameters) != OPERATIONS[skill]:
+    full_case = skill == "build-sustainability-business-case" and isinstance(parameters,dict) and set(parameters) == CASE_PARAMETERS
+    if skill not in OPERATIONS or not isinstance(parameters, dict) or (set(parameters) != OPERATIONS[skill] and not full_case):
         raise ValueError("Supported finance operation with exact parameters required.")
     ident = parameters["result_id"]
     if not isinstance(ident, str) or not ident.strip(): raise ValueError("Result ID required.")
@@ -87,7 +89,16 @@ def run_finance(state, skill, parameters):
         output_period = horizon
         with localcontext() as context:
             context.prec = 34
-            if skill in {"compare-sustainability-projects", "rank-sustainability-investments"}:
+            if full_case:
+                entries, report, complete = business_case(state,parameters,resolve,refs,run_finance)
+                result["review_requirements"].append({"id":ident+"-case-review","state":"PROFESSIONAL_REVIEW_REQUIRED",
+                    "reason":"Review business-case financial/physical assumptions, sensitivity, implementation feasibility and decision/claims boundaries.",
+                    "scope":"Business-case decision pack","reviewer_role":parameters["case_review"]["reviewer_role"],"status":"open","resolution":None})
+                if not complete: gap("FINANCIAL_COVERAGE_REQUIRED","Business-case coverage is incomplete; retained outcomes are conditional alternatives.")
+                report["review_requirements"] = copy.deepcopy(result["review_requirements"])
+                report["data_gaps"] = copy.deepcopy(result["data_gaps"])
+                result["diagnostics"].append({"code":"SUSTAINABILITY_BUSINESS_CASE","message":json.dumps(report,sort_keys=True)})
+            elif skill in {"compare-sustainability-projects", "rank-sustainability-investments"}:
                 if skill == "compare-sustainability-projects":
                     entries, report, complete = compare_projects(state,parameters,resolve,refs,run_finance,OPERATIONS)
                     code = "PROJECT_COMPARISON"
