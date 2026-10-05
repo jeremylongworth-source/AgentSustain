@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentsustain.example/schemas/result.schema.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skill": {
+      "type": "string",
+      "pattern": "^[a-z]+(?:-[a-z0-9]+)+$"
+    },
+    "contract_version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "partial",
+        "blocked",
+        "invalid_input"
+      ]
+    },
+    "review_states": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/review_state"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "review_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/review_requirement"
+      },
+      "minItems": 0
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/metric"
+      },
+      "minItems": 0
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/gap"
+      },
+      "minItems": 0
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "id",
+    "skill",
+    "contract_version",
+    "status",
+    "review_states",
+    "review_requirements",
+    "metrics",
+    "evidence_ids",
+    "assumptions",
+    "data_gaps",
+    "diagnostics",
+    "next_actions"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "blocked",
+              "invalid_input"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "metrics": {
+            "maxItems": 0
+          },
+          "next_actions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "diagnostics": {
+            "contains": {
+              "properties": {
+                "code": {
+                  "const": "EMISSION_FACTOR_REQUIRED"
+                }
+              },
+              "required": [
+                "code"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "blocked",
+              "partial"
+            ]
+          },
+          "review_states": {
+            "contains": {
+              "const": "EVIDENCE_INCOMPLETE"
+            }
+          },
+          "data_gaps": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

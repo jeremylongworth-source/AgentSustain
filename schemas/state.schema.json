@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentsustain.example/schemas/state.schema.json",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": "0.1.0"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sector": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "sector"
+      ],
+      "additionalProperties": false
+    },
+    "facilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "jurisdiction": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "jurisdiction"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "jurisdictions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "reporting_period": {
+      "$ref": "common.schema.json#/$defs/period"
+    },
+    "organizational_boundary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approach": {
+          "type": "string",
+          "minLength": 1
+        },
+        "facility_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "approach",
+        "facility_ids",
+        "exclusions",
+        "evidence_ids"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence.schema.json"
+      },
+      "minItems": 0
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "result.schema.json"
+      },
+      "minItems": 0
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/gap"
+      },
+      "minItems": 0
+    },
+    "review_requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/review_requirement"
+      },
+      "minItems": 0
+    },
+    "energy": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "water": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "waste": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "ghg": {
+      "type": "object",
+      "properties": {
+        "scope_1": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "scope_2": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "scope_3": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "scope_1",
+        "scope_2",
+        "scope_3"
+      ],
+      "additionalProperties": false
+    },
+    "suppliers": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entity"
+      },
+      "minItems": 0
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entity"
+      },
+      "minItems": 0
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entity"
+      },
+      "minItems": 0
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entity"
+      },
+      "minItems": 0
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/entity"
+      },
+      "minItems": 0
+    },
+    "frameworks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "framework": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "effective_from": {
+            "type": "string",
+            "format": "date"
+          },
+          "effective_to": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retrieved": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "enum": [
+              "candidate",
+              "reviewed"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "framework",
+          "version",
+          "effective_from",
+          "effective_to",
+          "jurisdiction",
+          "source",
+          "retrieved",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "emission_factors": {
+      "type": "array",
+      "items": {
+        "$ref": "emission-factor.schema.json"
+      }
+    }
+  },
+  "required": [
+    "contract_version",
+    "revision",
+    "organization",
+    "facilities",
+    "jurisdictions",
+    "reporting_period",
+    "organizational_boundary",
+    "evidence",
+    "results",
+    "assumptions",
+    "data_gaps",
+    "review_requirements",
+    "energy",
+    "water",
+    "materials",
+    "waste",
+    "ghg",
+    "suppliers",
+    "targets",
+    "risks",
+    "opportunities",
+    "projects",
+    "frameworks",
+    "emission_factors"
+  ],
+  "additionalProperties": false
+}

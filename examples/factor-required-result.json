@@ -1,0 +1,34 @@
+{
+  "id": "res-factor-required",
+  "skill": "calculate-co2e",
+  "contract_version": "0.1.0",
+  "status": "blocked",
+  "review_states": [
+    "ANALYTICAL",
+    "EVIDENCE_INCOMPLETE"
+  ],
+  "review_requirements": [],
+  "metrics": [],
+  "evidence_ids": [
+    "ev-001"
+  ],
+  "assumptions": [],
+  "data_gaps": [
+    {
+      "id": "gap-factor",
+      "field": "emission_factor",
+      "reason": "No sourced compatible factor supplied.",
+      "impact": "Electricity emissions cannot be calculated.",
+      "remedy": "Supply factor source, geography, vintage, units and methodology."
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "EMISSION_FACTOR_REQUIRED",
+      "message": "Supply a defensible emission factor."
+    }
+  ],
+  "next_actions": [
+    "Obtain and validate an applicable factor."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentsustain.example/schemas/emission-factor.schema.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {
+      "type": "number",
+      "minimum": 0
+    },
+    "unit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accessed": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "locator",
+        "publisher",
+        "version",
+        "accessed"
+      ],
+      "additionalProperties": false
+    },
+    "geography": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vintage_year": {
+      "type": "integer",
+      "minimum": 1900,
+      "maximum": 2200
+    },
+    "method": {
+      "$ref": "common.schema.json#/$defs/method"
+    },
+    "gwp_basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "status": {
+      "enum": [
+        "synthetic",
+        "candidate",
+        "reviewed"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "value",
+    "unit",
+    "source",
+    "geography",
+    "vintage_year",
+    "method",
+    "gwp_basis",
+    "evidence_ids",
+    "status"
+  ],
+  "additionalProperties": false
+}

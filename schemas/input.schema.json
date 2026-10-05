@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentsustain.example/schemas/input.schema.json",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": "0.1.0"
+    },
+    "skill": {
+      "type": "string",
+      "pattern": "^[a-z]+(?:-[a-z0-9]+)+$"
+    },
+    "state": {
+      "$ref": "state.schema.json"
+    },
+    "parameters": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "contract_version",
+    "skill",
+    "state",
+    "parameters"
+  ],
+  "additionalProperties": false
+}
