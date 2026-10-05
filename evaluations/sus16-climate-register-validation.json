@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "f4deb32",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 476,
+    "duration_seconds": 214.338,
+    "status": "passed"
+  },
+  "focused_climate_suites": {
+    "command": "python -m unittest tests.test_climate_register tests.test_climate tests.test_climate_assessment tests.test_climate_risk tests.test_climate_transition tests.test_transition_exposure",
+    "tests": 62,
+    "duration_seconds": 36.9,
+    "status": "passed"
+  },
+  "initial_register_suite": {
+    "tests": 7,
+    "duration_seconds": 17.046,
+    "status": "passed_before_lineage_probe"
+  },
+  "initial_full_suite": {
+    "tests": 475,
+    "duration_seconds": 211.234,
+    "status": "passed_before_lineage_probe"
+  },
+  "skill_validation": {
+    "build-climate-risk-register": "quick_validate.py passed"
+  },
+  "cli_validation": "Complete current author and independent outputs equal current helpers and fresh actual CLI runs after lineage guard; original raw/draft/request bytes, all source records/state/results/quantities/obligations preserved.",
+  "previous_capture_regression": {
+    "method": "Complete helper output equality after evidence-lineage guard",
+    "complete_outputs": 23,
+    "captures": [
+      {
+        "path": "evaluations/sus16-physical-screening.json",
+        "outputs": 2
+      },
+      {
+        "path": "evaluations/sus16-independent-physical-screening.json",
+        "outputs": 2
+      },
+      {
+        "path": "evaluations/sus16-exposure-vulnerability.json",
+        "outputs": 2
+      },
+      {
+        "path": "evaluations/sus16-independent-exposure-vulnerability.json",
+        "outputs": 2
+      },
+      {
+        "path": "evaluations/sus16-risk-adaptation.json",
+        "outputs": 2
+      },
+      {
+        "path": "evaluations/sus16-independent-risk-adaptation.json",
+        "outputs": 2
+      },
+      {
+        "path": "evaluations/sus16-transition-drivers.json",
+        "outputs": 4
+      },
+      {
+        "path": "evaluations/sus16-independent-transition-drivers.json",
+        "outputs": 4
+      },
+      {
+        "path": "evaluations/sus16-transition-exposure.json",
+        "outputs": 1
+      },
+      {
+        "path": "evaluations/sus16-independent-transition-exposure.json",
+        "outputs": 2
+      }
+    ]
+  },
+  "known_answer": {
+    "physical_entries": 1,
+    "transition_entries": 4,
+    "physical_possible_classes": [
+      "R2",
+      "R3"
+    ],
+    "selected_class": null,
+    "physical_scenario": "Fictional exploratory scenario A",
+    "transition_scenario": "Fictional exploratory transition case",
+    "source_bases_combined": false,
+    "interaction_hypotheses": 1,
+    "register_note_usage_entries": 5,
+    "transition_source_usage_entries": 4,
+    "new_metrics": 0,
+    "combined_score": null,
+    "aggregate_loss": null,
+    "owner_accepted": false,
+    "risk_accepted": false,
+    "risk_mitigated": false,
+    "public_claim_authorized": false
+  },
+  "parent_replays": [
+    {
+      "capture": "author",
+      "status": "partial",
+      "entries": 5,
+      "interactions": 1,
+      "result_gaps": 40,
+      "result_reviews": 11,
+      "exit_code": 0,
+      "runtime_seconds": 0.524,
+      "request_sha256": "994728a2406a4f8009321bc90a8b31c8355a095ebbe7291364e0a52fa4a7e020",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    },
+    {
+      "capture": "independent",
+      "status": "partial",
+      "entries": 5,
+      "interactions": 1,
+      "result_gaps": 57,
+      "result_reviews": 11,
+      "exit_code": 0,
+      "runtime_seconds": 0.529,
+      "request_sha256": "27ba6bde2f50d37229f39ad614d1ceabef32505939b97742eda42e14e3906201",
+      "request_bytes_preserved": true,
+      "full_helper_and_cli_equal": true,
+      "historical_state_preserved": true,
+      "stderr": ""
+    }
+  ],
+  "independent_case": {
+    "original_input_sha256": {
+      "raw-sources.json": "a35e952d18b5915eb124cd519ee6bdc96e9476aa8bcebbc79a60c02d14a35ac6",
+      "draft-request.json": "ec5d87919ee8ae7d9d79bb6e6234ff26731c33ef9a8caa7c60caeb715781cdea"
+    },
+    "original_state_and_bytes_preserved": true,
+    "registered_pending_review": 5,
+    "source_inclusion_fitness": "withheld",
+    "follow_up_dates": "unknown",
+    "reviews_resolved": false
+  },
+  "lineage_correction": {
+    "probe": "Replace selected physical result evidence IDs and inclusion-review evidence IDs with an unrelated register note, leaving report unchanged.",
+    "previous_result_status": "partial",
+    "current_result_status": "blocked",
+    "regression_test": "test_tampered_parent_evidence_lineage_cannot_be_relabelled_as_review_evidence",
+    "valid_captures_unchanged": true
+  },
+  "limitations": [
+    "Twelve initial named workflows do not complete fourteen climate workflows or close SUS-16.",
+    "Source metadata, declared lineage and report equality do not authenticate source truth, inclusion applicability, owner consent, mitigation or risk causation.",
+    "No cross-model/scenario averaging, combined score, joint probability or aggregate loss; interaction hypotheses and shared sources remain unverified/non-additive.",
+    "Prioritization/resilience, broader physical/transition methods and independent organization evaluation remain open.",
+    "One fictional independent case and bounded tests do not establish general reliability, professional approval, complete organization coverage or v1 readiness.",
+    "Subsequent contracts do not inherit b7e1fc7 scoped approval; all domain/source-specific and specialist/router/release gates remain open."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "59a059a76d285f3f0af326da4998853a0eafc9ff87b0aa8c79f5e498bc7d67bf",
+    "scripts/climate_register.py": "504842f4ff6229e284afa12351a7c0e2c12543b6d4d77608e7fe64cd1dcd4fa0",
+    "tests/test_climate_register.py": "a79d6b811fd40d8407c7699d5e3c4e64d15bb7e54da5da5015d057816b74dc73",
+    "skills/climate-risk/build-climate-risk-register/SKILL.md": "86834ca25a22248cc9fa9db6c68c3bf3aff4b9acc18578fea4198966fbf1bcab",
+    "docs/climate-risk-contract.md": "efbe95b35b1e078aad7793c9f713a99af459189e656d6ecef92d548497309ecf",
+    "evaluations/sus16-climate-register.json": "3c06cc54d295c2f6211479e04472bed2bf134b8851ed59f7056335103c660e15",
+    "evaluations/sus16-independent-climate-register.json": "2deea915a73059bda4206a50c02ea840e1900e8b3701c60f1e31e12e74b11c16"
+  }
+}

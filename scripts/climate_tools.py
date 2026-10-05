@@ -22,6 +22,8 @@ CODE.update({"assess-exposure": "CLIMATE_EXPOSURE", "assess-vulnerability": "CLI
 CODE.update({"score-physical-risk": "PHYSICAL_RISK_SCREEN", "identify-adaptation-options": "ADAPTATION_OPTIONS"})
 OPERATIONS['assess-transition-exposure'] = {'driver_results', 'subjects', 'observations', 'exposure_review', 'result_id'}
 CODE['assess-transition-exposure'] = 'TRANSITION_EXPOSURE'
+OPERATIONS['build-climate-risk-register'] = {'physical_results','transition_results','entries','interactions','register_review','result_id'}
+CODE['build-climate-risk-register'] = 'CLIMATE_RISK_REGISTER'
 for _skill, _family in [('identify-policy-risk', 'POLICY'), ('identify-market-risk', 'MARKET'),
         ('identify-technology-risk', 'TECHNOLOGY'), ('identify-reputation-risk', 'REPUTATION')]:
     OPERATIONS[_skill] = {'drivers', 'transition_review', 'result_id'}
@@ -173,7 +175,8 @@ def _reproduce(state, ident, refs, skill="identify-climate-hazards"):
     checked, report = _execute(state, skill, _record(owner, "CLIMATE_INPUTS"))
     if any(d["code"] == "EMISSION_FACTOR_REQUIRED" for d in checked["diagnostics"]):
         raise ClimateFactorRequired("Selected climate dependency has an unresolved emission factor.")
-    if checked["status"] == "blocked" or report != _record(owner, CODE[skill]) or owner["metrics"] != checked["metrics"]:
+    if (checked["status"] == "blocked" or report != _record(owner, CODE[skill]) or owner["metrics"] != checked["metrics"]
+            or set(owner['evidence_ids']) != set(checked['evidence_ids'])):
         raise ValueError("Climate source metadata/context changed or no longer reproduces against current state.")
     refs.update(owner["evidence_ids"])
     return report
@@ -258,7 +261,7 @@ def _execute(state, skill, parameters):
         "evidence_ids": [], "assumptions": list(state["assumptions"]), "data_gaps": copy.deepcopy(state["data_gaps"]),
         "diagnostics": [], "next_actions": []}
     refs = set(); report = None
-    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk', 'assess-transition-exposure'}
+    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk', 'assess-transition-exposure', 'build-climate-risk-register'}
     def gap(message, code="CLIMATE_DATA_REQUIRED"):
         result["data_gaps"].append({"id": result["id"] + "-gap-" + str(len(result["data_gaps"])),
             "field": "climate_screening_basis", "reason": message,
@@ -268,7 +271,10 @@ def _execute(state, skill, parameters):
                 "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review.")})
         result["diagnostics"].append({"code": code, "message": message})
     try:
-        if skill == 'assess-transition-exposure':
+        if skill == 'build-climate-risk-register':
+            from .climate_register import build
+            report = build(state, parameters, refs, result, gap)
+        elif skill == 'assess-transition-exposure':
             from .climate_transition_exposure import assess
             report = assess(state, parameters, refs, result, gap)
         elif skill in {"identify-policy-risk", "identify-market-risk", "identify-technology-risk", "identify-reputation-risk"}:
@@ -288,7 +294,7 @@ def _execute(state, skill, parameters):
             "scope": report[{"identify-climate-hazards": "hazard_review", "map-assets-to-hazards": "mapping_review",
                 "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review",
                 "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review",
-                "assess-transition-exposure": "exposure_review"}.get(skill, "transition_review")]["scope"],
+                "assess-transition-exposure": "exposure_review", "build-climate-risk-register": "register_review"}.get(skill, "transition_review")]["scope"],
             "reviewer_role": ("Qualified transition-risk domain specialist and legal/applicability reviewer where relevant, with accountable owner" if transition else
                 "Qualified climate-risk and site/dependency specialist with accountable owner"), "status": "open", "resolution": None})
         result["diagnostics"].append({"code": CODE[skill], "message": json.dumps(report, sort_keys=True)})

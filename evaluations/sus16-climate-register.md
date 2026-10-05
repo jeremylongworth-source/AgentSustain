@@ -1,0 +1,13 @@
+# Initial source-linked climate-risk register
+
+The wholly fictional [complete request/output capture](sus16-climate-register.json) reproduces the current physical-risk chain and four-family transition-exposure chain, then records one physical and four transition concerns. Source inclusion reviews retain their actual evidence and original scopes within a separately scoped selected organization register.
+
+The physical characterization retains possible R2–R3 classes under scenario A/2030–2050, no selected class and unresolved vulnerability. Transition pathways retain their distinct exploratory case/2030–2035, qualitative effects and partial future service coverage. These bases are not averaged, normalized or monetized. Five proposed owners and dated investigation follow-ups remain pending acceptance; no work has started or completed. A shared-service interaction remains a hypothesis, not verified correlation or a joint event.
+
+Actual upstream plus interpretation evidence is recorded across entries in the source-usage table, with shared sources non-additive. The result is partial, with 40 gaps, 11 review requirements and zero new metrics. Combined score and aggregate loss remain null; risk verification, acceptance, mitigation, owner adoption, implementation and claims remain false.
+
+Known-answer and adversarial checks cover complete parent reproduction, distinct characterization bases, exact source scopes/evidence, withheld inclusion/owner/interpretation fitness, omitted entries/families, empty interactions/follow-ups, unknown/overdue dates, duplicate or invalid links, future source dates, changed nested sources and missing-factor propagation. Actual CLI output equals the complete helper output, leaves request bytes unchanged and preserves every historical state record and obligation.
+
+This is a selected source-linked register proposal, not proven complete organization coverage or risk acceptance. Raw-source interpretation still requires inspection and qualified review. Prioritization, resilience, broader methods and independent organization evaluation remain open; twelve initial named climate workflows do not complete fourteen workflows or close SUS-16.
+
+[Independent source reading](sus16-independent-climate-register.md) removed acceptance, mitigation, completion and comparability claims and retained withheld scope fitness and dates. A separate adversarial probe exposed altered declared parent evidence lineage; current reproduction now checks recomputed IDs as well as reports/metrics and blocks substitution. Both complete valid captures replay unchanged. [Validation evidence](sus16-climate-register-validation.json) records final checks and limits.
