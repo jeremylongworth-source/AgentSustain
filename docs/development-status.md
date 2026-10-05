@@ -15,7 +15,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-02 | Master taxonomy | Architecture approved; all roadmap-listed names included |
 | SUS-03 | Evidence/provenance | Contract and schema approved for implementation |
 | SUS-04 | Common schemas/state | Architecture approved; 20 architecture tests passed at review snapshot |
-| SUS-05 | Data skills | Authorized; not implemented |
+| SUS-05 | Data skills | Ten skill instructions and five arithmetic/period helper operations added; 14 helper tests pass; full behavioral evaluation pending |
 | SUS-06 | GHG foundation | Not implemented |
 | SUS-07 | Scope 1/2 | Not implemented |
 | SUS-08 | Scope 3 | Not implemented |
@@ -33,10 +33,14 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-20 | Claims controls | Not implemented |
 | SUS-21 | Router | Not implemented; interface draft only |
 | SUS-22 | Specialist skillsets | Not implemented |
-| SUS-23 | Evaluation suite | Architecture tests only; domain/agent suites remain |
-| SUS-24 | Documentation/examples | Foundation docs and fictional schema fixtures only |
+| SUS-23 | Evaluation suite | 20 architecture + 14 data-helper tests pass; SUS-05 behavioral scenarios specified but not executed |
+| SUS-24 | Documentation/examples | Foundation docs, shared data-skill guide and fictional schema fixtures |
 | SUS-25 | Public v1 readiness | Not assessed; no release authorization |
 
 ## Current gate
 
 The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The decision is recorded in architecture-review.md. SUS-05 and subsequent development may proceed in roadmap order. Architecture validation results in architecture-validation.md describe the reviewed snapshot and their limits; they do not establish domain correctness or v1 readiness. Material contract changes reopen architecture review.
+
+## Next implementation work
+
+Execute the realistic SUS-05 scenarios in scenarios/sus05-data-foundation.json, capture actual output envelopes and validate their proposed state. Improve extraction/reconciliation behavior based on those results before claiming the wave fully evaluated. Then build SUS-06 GHG foundations without inventing emission factors. The shared contract validator was moved into scripts/contract_validation.py for use by skills and tests; tests/contract_checks.py remains a compatibility entrypoint. Approved schema behavior is unchanged. Historical architecture hashes continue to identify the reviewed f2d0ac9 snapshot.

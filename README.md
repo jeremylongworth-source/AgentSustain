@@ -6,7 +6,7 @@ Intended users include manufacturers, logistics businesses, commercial facilitie
 
 ## Current status
 
-Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9; no individual skills or production workflows are implemented. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing SUS-05 and subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
+Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9. The ten SUS-05 data skills and shared arithmetic helpers are present; full agent workflow evaluation is still pending. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
 
 Start with [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Material changes to the approved architecture contracts require renewed review.
 
@@ -20,4 +20,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Schemas use JSON Schema Draft 2020-12. Examples are fictional fixtures, not emission factors or advice for a real organization. No license has been chosen yet; public release is gated on the owner's licensing decision.
+Schemas use JSON Schema Draft 2020-12. The same test command runs architecture and data-helper checks. Examples are fictional fixtures, not emission factors or advice for a real organization. No license has been chosen yet; public release is gated on the owner's licensing decision.
+
+## Data skills
+
+SUS-05 covers data normalization/validation, evidence quality, gaps, units, reporting periods, organizational boundaries, baselines, KPIs and period comparisons. Skill entrypoints live under `skills/metrics/`; each links to the [shared execution contract](docs/data-skill-contract.md). They are repository artifacts, not installed into a user's agent configuration. Helpers are portable Python and require no network access. They provide primitives; skills must wrap results with provenance and validate proposed shared state.
