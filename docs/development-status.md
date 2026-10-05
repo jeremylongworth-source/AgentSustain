@@ -39,7 +39,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 
 ## Current gate
 
-The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The decision is recorded in architecture-review.md. SUS-05 and subsequent development may proceed in roadmap order. Architecture validation results in architecture-validation.md describe the reviewed snapshot and their limits; they do not establish domain correctness or v1 readiness. Material contract changes reopen architecture review.
+The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The decision is recorded in architecture-review.md. SUS-05 and subsequent development may proceed in roadmap order. Architecture validation results in architecture-validation.md describe the reviewed snapshot and their limits; they do not establish domain correctness or v1 readiness. Material contract changes reopen architecture review. The owner approved continued development of the current snapshot at revision 13d4f19 on 2026-10-05, including subsequent SUS-13 extensions and the implemented SUS-14 supplier work; see development-review.md. This decision preserves all independent, professional and release gates.
 
 ## Next implementation work
 

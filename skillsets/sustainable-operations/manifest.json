@@ -187,7 +187,7 @@
       "contract_version": "0.1.0"
     }
   ],
-  "interpretation_dependency_status": "development_pending_review",
+  "interpretation_dependency_status": "approved_for_development",
   "carbon_dependencies": [
     {
       "name": "build-ghg-inventory",
@@ -235,5 +235,6 @@
       "contract_version": "0.1.0"
     }
   ],
-  "carbon_dependency_status": "development_pending_review"
+  "carbon_dependency_status": "approved_for_development",
+  "extension_review_record": "docs/development-review.md"
 }

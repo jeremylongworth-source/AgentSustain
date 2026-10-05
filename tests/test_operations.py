@@ -244,13 +244,13 @@ class OperationsTests(unittest.TestCase):
         manifest=json.loads((ROOT/"skillsets/sustainable-operations/manifest.json").read_text(encoding="utf-8"))
         self.assertEqual({d["name"] for d in manifest["dependencies"]+manifest["carbon_dependencies"]},set(RUNNERS))
         self.assertEqual({d["name"] for d in manifest["carbon_dependencies"]},set(CARBON_PARAMETERS))
-        self.assertEqual(manifest["carbon_dependency_status"],"development_pending_review")
+        self.assertEqual(manifest["carbon_dependency_status"],"approved_for_development")
         for dependency in manifest["carbon_dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())
         self.assertEqual(manifest["status"],"approved_for_development")
         self.assertTrue((ROOT/manifest["review_record"]).is_file())
         for dependency in manifest["dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())
         self.assertEqual({d["name"] for d in manifest["interpretation_dependencies"]},set().union(*INTERPRETATIONS.values()))
-        self.assertEqual(manifest["interpretation_dependency_status"],"development_pending_review")
+        self.assertEqual(manifest["interpretation_dependency_status"],"approved_for_development")
         for dependency in manifest["interpretation_dependencies"]:self.assertTrue((ROOT/dependency["path"]).is_file())
 
     def test_business_case_link_requires_current_applicable_alternative(self):
