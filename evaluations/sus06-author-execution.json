@@ -1,0 +1,1887 @@
+{
+  "id": "SUS06-author-01",
+  "date": "2026-10-04",
+  "source_revision": "4bf9756",
+  "evaluation_type": "author-led saved reasoning execution; not an independent model benchmark",
+  "prompt": "Prepare a 2025 GHG foundation assessment from 1000 kWh electricity, a January-only gas record, a refrigerant maintenance note without gas identity or quantity, and a lease with unknown operational control. Only a synthetic 0.5 kg CO2e/kWh factor is supplied. Calculate a labeled electricity fixture demonstration, preserve review obligations, and assess whether missing annual gas may be estimated.",
+  "fictional_record_details": {
+    "gas-record": "January gas volume record; annual total and operational pattern not supplied.",
+    "refrigerant-record": "Maintenance occurred; identity, charge and leakage quantities not supplied.",
+    "lease-record": "Leased operation exists; operational control not determined."
+  },
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "factor-evidence",
+        "source": {
+          "locator": "fixture:factor",
+          "title": "Synthetic emission-factor fixture",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "gas-record",
+        "source": {
+          "locator": "fixture:gas-record",
+          "title": "January-only boiler record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "scenario-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Fictional record; insufficient for annual emissions accounting."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "refrigerant-record",
+        "source": {
+          "locator": "fixture:refrigerant-record",
+          "title": "Maintenance note without refrigerant identity",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "scenario-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Fictional record; insufficient for annual emissions accounting."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "lease-record",
+        "source": {
+          "locator": "fixture:lease-record",
+          "title": "Lease without operational-control determination",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "scenario-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Fictional record; insufficient for annual emissions accounting."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [
+      {
+        "id": "lease-control-review",
+        "state": "PROFESSIONAL_REVIEW_REQUIRED",
+        "reason": "Lease does not establish operational control.",
+        "scope": "leased operation inventory inclusion",
+        "reviewer_role": "inventory boundary specialist",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": [
+      {
+        "id": "synthetic-factor",
+        "value": 0.5,
+        "unit": "kg CO2e/kWh",
+        "source": {
+          "locator": "fixture:factor",
+          "publisher": "Fictional fixture publisher",
+          "version": "fixture-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "factor-evidence"
+        ],
+        "status": "synthetic"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "result": {
+        "id": "sus06-define-ghg-inventory-boundary",
+        "skill": "define-ghg-inventory-boundary",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "BOUNDARY_UNRESOLVED",
+            "message": "Retain the supplied operational-control fixture boundary. The lease record supplies no control determination; do not infer inclusion or exclusion."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: define-ghg-inventory-boundary"
+    },
+    {
+      "result": {
+        "id": "sus06-identify-emission-sources",
+        "skill": "identify-emission-sources",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SOURCE_REGISTER",
+            "message": "Identified purchased electricity (metric-001), boiler combustion (gas-record), refrigerant maintenance (refrigerant-record), and unresolved leased operation (lease-record). This is a potential-source register, not scope classification or evidence of completeness."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: identify-emission-sources"
+    },
+    {
+      "result": {
+        "id": "sus06-select-emission-factor",
+        "skill": "select-emission-factor",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "EMISSION_FACTOR_REQUIRED",
+            "message": "The only supplied electricity factor is synthetic. No real electricity, fuel or refrigerant factor has been supplied or source-reviewed."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: select-emission-factor"
+    },
+    {
+      "result": {
+        "id": "sus06-validate-emission-factor",
+        "skill": "validate-emission-factor",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "EMISSION_FACTOR_REQUIRED",
+            "message": "Synthetic metadata can support explicit fixture arithmetic only. It cannot become a real reviewed factor through a status label."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: validate-emission-factor"
+    },
+    {
+      "result": {
+        "id": "sus06-calculate-co2e",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "sus06-calculate-co2e-metric",
+            "name": "Calculated CO2e",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+              "inputs": [
+                "metric-001",
+                "factor-evidence"
+              ],
+              "conversions": [
+                "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain control facts and a scoped professional boundary review.",
+          "Obtain annual gas records and check meter coverage.",
+          "Obtain gas identity and maintenance mass balance.",
+          "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+        ]
+      },
+      "reason": "Calculate or block CO2e using resolved factor and activity evidence"
+    },
+    {
+      "result": {
+        "id": "sus06-identify-ghg-data-gaps",
+        "skill": "identify-ghg-data-gaps",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "GHG_GAP_REGISTER",
+            "message": "Preserved boundary, annual gas, refrigerant identity/quantity and real-factor gaps. A calculated electricity fixture component does not close any of these gaps."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: identify-ghg-data-gaps"
+    },
+    {
+      "result": {
+        "id": "sus06-estimate-missing-activity-data",
+        "skill": "estimate-missing-activity-data",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "PROXY_BASIS_REQUIRED",
+            "message": "Do not multiply January gas by twelve: no seasonality, production, weather or comparable-month evidence establishes that proxy. No estimated metric was created."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: estimate-missing-activity-data"
+    },
+    {
+      "result": {
+        "id": "sus06-assess-ghg-data-quality",
+        "skill": "assess-ghg-data-quality",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "GHG_QUALITY_ASSESSMENT",
+            "message": "Electricity quantity has fixture lineage; numerical factor is synthetic. Gas and refrigerant records are incomplete; the lease is insufficient for boundary fitness. No aggregate quality score, quantified uncertainty or assurance conclusion is supported."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      "reason": "Author-led fictional SUS-06 reasoning execution: assess-ghg-data-quality"
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 8,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "factor-evidence",
+        "source": {
+          "locator": "fixture:factor",
+          "title": "Synthetic emission-factor fixture",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "gas-record",
+        "source": {
+          "locator": "fixture:gas-record",
+          "title": "January-only boiler record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "scenario-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "m3",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Fictional record; insufficient for annual emissions accounting."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "refrigerant-record",
+        "source": {
+          "locator": "fixture:refrigerant-record",
+          "title": "Maintenance note without refrigerant identity",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "scenario-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Fictional record; insufficient for annual emissions accounting."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "lease-record",
+        "source": {
+          "locator": "fixture:lease-record",
+          "title": "Lease without operational-control determination",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "scenario-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "UNKNOWN_UNIT",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "partial",
+          "fitness_notes": "Fictional record; insufficient for annual emissions accounting."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "sus06-define-ghg-inventory-boundary",
+        "skill": "define-ghg-inventory-boundary",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "BOUNDARY_UNRESOLVED",
+            "message": "Retain the supplied operational-control fixture boundary. The lease record supplies no control determination; do not infer inclusion or exclusion."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      {
+        "id": "sus06-identify-emission-sources",
+        "skill": "identify-emission-sources",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SOURCE_REGISTER",
+            "message": "Identified purchased electricity (metric-001), boiler combustion (gas-record), refrigerant maintenance (refrigerant-record), and unresolved leased operation (lease-record). This is a potential-source register, not scope classification or evidence of completeness."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      {
+        "id": "sus06-select-emission-factor",
+        "skill": "select-emission-factor",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "EMISSION_FACTOR_REQUIRED",
+            "message": "The only supplied electricity factor is synthetic. No real electricity, fuel or refrigerant factor has been supplied or source-reviewed."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      {
+        "id": "sus06-validate-emission-factor",
+        "skill": "validate-emission-factor",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "EMISSION_FACTOR_REQUIRED",
+            "message": "Synthetic metadata can support explicit fixture arithmetic only. It cannot become a real reviewed factor through a status label."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      {
+        "id": "sus06-calculate-co2e",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [
+          {
+            "id": "sus06-calculate-co2e-metric",
+            "name": "Calculated CO2e",
+            "value": 500.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+              "inputs": [
+                "metric-001",
+                "factor-evidence"
+              ],
+              "conversions": [
+                "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": [
+          "Obtain control facts and a scoped professional boundary review.",
+          "Obtain annual gas records and check meter coverage.",
+          "Obtain gas identity and maintenance mass balance.",
+          "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+        ]
+      },
+      {
+        "id": "sus06-identify-ghg-data-gaps",
+        "skill": "identify-ghg-data-gaps",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "GHG_GAP_REGISTER",
+            "message": "Preserved boundary, annual gas, refrigerant identity/quantity and real-factor gaps. A calculated electricity fixture component does not close any of these gaps."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      {
+        "id": "sus06-estimate-missing-activity-data",
+        "skill": "estimate-missing-activity-data",
+        "contract_version": "0.1.0",
+        "status": "blocked",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "PROXY_BASIS_REQUIRED",
+            "message": "Do not multiply January gas by twelve: no seasonality, production, weather or comparable-month evidence establishes that proxy. No estimated metric was created."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      },
+      {
+        "id": "sus06-assess-ghg-data-quality",
+        "skill": "assess-ghg-data-quality",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "PROFESSIONAL_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "lease-control-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Lease does not establish operational control.",
+            "scope": "leased operation inventory inclusion",
+            "reviewer_role": "inventory boundary specialist",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "gas-record",
+          "refrigerant-record",
+          "lease-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [
+          {
+            "id": "lease-gap",
+            "field": "organizational_boundary",
+            "reason": "Operational control of the leased operation is unknown.",
+            "impact": "Inventory boundary incomplete.",
+            "remedy": "Obtain control facts and a scoped professional boundary review."
+          },
+          {
+            "id": "gas-gap",
+            "field": "annual gas activity",
+            "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+            "impact": "Annual boiler activity cannot be quantified.",
+            "remedy": "Obtain annual gas records and check meter coverage."
+          },
+          {
+            "id": "refrigerant-gap",
+            "field": "refrigerant identity and quantity",
+            "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+            "impact": "Fugitive emissions cannot be quantified.",
+            "remedy": "Obtain gas identity and maintenance mass balance."
+          },
+          {
+            "id": "real-factor-gap",
+            "field": "emission_factors",
+            "reason": "Only a synthetic fixture factor is present.",
+            "impact": "Real emissions calculation blocked.",
+            "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "GHG_QUALITY_ASSESSMENT",
+            "message": "Electricity quantity has fixture lineage; numerical factor is synthetic. Gas and refrigerant records are incomplete; the lease is insufficient for boundary fitness. No aggregate quality score, quantified uncertainty or assurance conclusion is supported."
+          }
+        ],
+        "next_actions": [
+          "Obtain complete activity, boundary and applicable factor evidence before inventory totals."
+        ]
+      }
+    ],
+    "assumptions": [
+      "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+    ],
+    "data_gaps": [
+      {
+        "id": "lease-gap",
+        "field": "organizational_boundary",
+        "reason": "Operational control of the leased operation is unknown.",
+        "impact": "Inventory boundary incomplete.",
+        "remedy": "Obtain control facts and a scoped professional boundary review."
+      },
+      {
+        "id": "gas-gap",
+        "field": "annual gas activity",
+        "reason": "Only January gas volume is described; remaining months and operating pattern are absent.",
+        "impact": "Annual boiler activity cannot be quantified.",
+        "remedy": "Obtain annual gas records and check meter coverage."
+      },
+      {
+        "id": "refrigerant-gap",
+        "field": "refrigerant identity and quantity",
+        "reason": "Maintenance record has no gas identity or charge/leak quantity.",
+        "impact": "Fugitive emissions cannot be quantified.",
+        "remedy": "Obtain gas identity and maintenance mass balance."
+      },
+      {
+        "id": "real-factor-gap",
+        "field": "emission_factors",
+        "reason": "Only a synthetic fixture factor is present.",
+        "impact": "Real emissions calculation blocked.",
+        "remedy": "Retrieve applicable factors from identified authoritative sources and inspect their coverage."
+      }
+    ],
+    "review_requirements": [
+      {
+        "id": "lease-control-review",
+        "state": "PROFESSIONAL_REVIEW_REQUIRED",
+        "reason": "Lease does not establish operational control.",
+        "scope": "leased operation inventory inclusion",
+        "reviewer_role": "inventory boundary specialist",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": [
+      {
+        "id": "synthetic-factor",
+        "value": 0.5,
+        "unit": "kg CO2e/kWh",
+        "source": {
+          "locator": "fixture:factor",
+          "publisher": "Fictional fixture publisher",
+          "version": "fixture-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "factor-evidence"
+        ],
+        "status": "synthetic"
+      }
+    ]
+  }
+}

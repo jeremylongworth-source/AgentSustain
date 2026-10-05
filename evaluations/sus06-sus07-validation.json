@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "4bf9756",
+  "checks": {
+    "unittest": {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+      "passed": 64
+    },
+    "new_skill_packaging": {
+      "passed": 5,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    }
+  },
+  "limitations": [
+    "Saved author-led reasoning is not independently rerun agent inference.",
+    "Scope instruction workflows have no dedicated calculation composition runner or scenario results yet.",
+    "No real emission factors or complete inventory are established."
+  ],
+  "sha256": {
+    "evaluations/sus06-author-execution.json": "995449d0b13153cd8e19324d62e6427cb7167cbad04d1a0ed8b192a4436354e7",
+    "tests/test_sus06_evaluation.py": "70996a80c3a9775cbbeed49c8ceec9910b0931a655b751f64a9cbe975f83dd53",
+    "docs/scope-1-2-contract.md": "9dabeaad915e18ecee665ccc5bdefa6ce74471ee233bfeb8de3a3c82368636e8",
+    "skills/carbon/classify-scope-1-emissions/SKILL.md": "b708979015a4426eca077fc3c654103b2bbc7ef2dfa1009ab9b2405ac486d68b",
+    "skills/carbon/classify-scope-2-emissions/SKILL.md": "6aa532f73457492984f71efa6ebdee8e0846142c0d19218862ff32dbc0c9dd4a",
+    "skills/carbon/calculate-scope-1/SKILL.md": "73a0aeb91932db2cf4aea202dd07a15f57d31d4fff92055e40f8ed2c5aca6254",
+    "skills/carbon/calculate-location-based-scope-2/SKILL.md": "38a1fff6d618064f2387c4196e563a5a8f08392d2a1c09916fed4c138b8eb968",
+    "skills/carbon/calculate-market-based-scope-2/SKILL.md": "0641040eee0f4e1c995d460c348142c133d81dcb3b193fe1857163813f242493"
+  }
+}
