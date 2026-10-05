@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "ac3a7c6",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 295,
+    "duration_seconds": 110.413,
+    "status": "passed"
+  },
+  "focused_supplier_suites": {
+    "tests": 26,
+    "duration_seconds": 3.411,
+    "status": "passed"
+  },
+  "skill_validation": "Both changed skill entrypoints passed quick_validate.py",
+  "cli_validation": "Both full saved step outputs reproduced exactly via scripts.run_suppliers",
+  "fixture": "sus14-supplier-planning.json",
+  "checks": [
+    "Current-source complete assessment reproduction",
+    "Equal rubric/scope/period/exclusion evidence priority basis",
+    "Explicit lexicographic rule, tied groups and no priority for fully supported rubrics",
+    "Targeted unresolved questions remain unsent",
+    "Supported higher-anchor targets versus null data-collection targets",
+    "Named owners, canonical dates and known acyclic dated dependencies",
+    "Changed sources, invalid targets and conflicting/cyclic prerequisites reject complete register",
+    "Unknown and unaddressed criteria remain gaps",
+    "No supplier register overwrite, commitment, procurement approval or emissions projection",
+    "Full two-step proposal and CLI replay"
+  ],
+  "limitations": [
+    "Author-led fictional arithmetic/contract scenario; not independent behavior or source authentication",
+    "Evidence-request priority only; broader emissions/materiality/risk engagement remains",
+    "Rubric target is a proposed goal, not guaranteed supplier performance",
+    "No organization-wide, router, professional or release closure"
+  ],
+  "sha256": {
+    "scripts/supplier_planning.py": "81459b56cb1b7965f6ccf7c87f0bcff2bea1d7e1c76c15e0095e7a4f32fb43cb",
+    "scripts/supplier_tools.py": "3557bf554dbccae295dbc70b384fe7c8c44eb517d25428aad05233314c33c32f",
+    "tests/test_supplier_planning.py": "df80dd86ae3db30d6f247a5cd64deef4c1e7cdaec0e7a0cb5a9579dec4c42d10",
+    "docs/supplier-contract.md": "deabfbf5e70a99e2764ce9f40d195e60034276fa705ecf33ed4c9b678ca6eeb9",
+    "skills/supply-chain/prioritize-supplier-engagement/SKILL.md": "3f71cb5761ef7fd2d9585e7ef60df644f06070d56dc69de6a058637b2cfcf847",
+    "skills/procurement/develop-supplier-improvement-plan/SKILL.md": "74cedcb7869f7d644049773dd62e38fab959a086542ca05108e559ae45d87d6e",
+    "evaluations/sus14-supplier-planning.json": "c93eee4e5b678706e196da1dbbbf34977b92baa02fc772d198ee72b0d2ed3d5a"
+  }
+}

@@ -15,6 +15,8 @@ OPERATIONS.update({s:BASE|{"responses"} for s in (
     "evaluate-supplier-response","score-supplier-sustainability","identify-supplier-data-gaps")})
 OPERATIONS["compare-suppliers"]={"assessment_result_ids","comparison_review","result_id"}
 OPERATIONS["map-supply-chain-emissions"]={"links","mapping_review","result_id"}
+OPERATIONS["prioritize-supplier-engagement"]={"assessment_result_ids","engagement_review","priority_rule","result_id"}
+OPERATIONS["develop-supplier-improvement-plan"]={"assessment_result_id","plan_review","actions","result_id"}
 
 
 def run_suppliers(state, skill, parameters):
@@ -40,6 +42,12 @@ def run_suppliers(state, skill, parameters):
         elif skill=="map-supply-chain-emissions":
             from .supplier_mapping import map_chain
             report=map_chain(state,parameters,refs,result,gap)
+        elif skill=="prioritize-supplier-engagement":
+            from .supplier_planning import engage
+            report=engage(state,parameters,refs,gap)
+        elif skill=="develop-supplier-improvement-plan":
+            from .supplier_planning import improve
+            report=improve(state,parameters,refs,gap)
         else:
             supplier=next((s for s in state["suppliers"] if s["id"]==parameters["supplier_id"]),None)
             if supplier is None or not supplier["evidence_ids"]:
@@ -130,7 +138,8 @@ def run_suppliers(state, skill, parameters):
                         report["weighted_coverage_percent"]=serialize(100*supported_weight/denominator)
                         if unknown_weight==0: report["score"]=serialize(low)
                     else: gap("All criteria are excluded; no applicable scoring denominator exists.")
-        code={"compare-suppliers":"SUPPLIER_COMPARISON","map-supply-chain-emissions":"SUPPLY_CHAIN_MAPPING"}.get(skill,"SUPPLIER_ASSESSMENT")
+        code={"compare-suppliers":"SUPPLIER_COMPARISON","map-supply-chain-emissions":"SUPPLY_CHAIN_MAPPING",
+            "prioritize-supplier-engagement":"SUPPLIER_ENGAGEMENT","develop-supplier-improvement-plan":"SUPPLIER_IMPROVEMENT_PLAN"}.get(skill,"SUPPLIER_ASSESSMENT")
         result["diagnostics"].append({"code":code,"message":json.dumps(report,sort_keys=True)})
         result["status"]="partial" if result["data_gaps"] else "completed"
     except (ValueError,TypeError,KeyError) as error:

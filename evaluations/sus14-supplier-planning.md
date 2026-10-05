@@ -1,0 +1,9 @@
+# Fictional supplier evidence engagement and improvement plan
+
+Author-led deterministic helper fixture at the local development snapshot; no independent agent reasoning or real supplier agreement is established. [The full capture](sus14-supplier-planning.json) contains the original state, exact two-step requests and complete checked proposals.
+
+Two fictional packaging suppliers share one explicit buyer rubric and selected purchase scope. Supplier A has 75% weighted evidence coverage and an unresolved allocation criterion; its score remains unknown with a 37.5–62.5 possibility range. Supplier B has fully supported ratings. The caller chooses ascending weighted coverage for evidence-request priority. A receives priority group 1 with the original allocation question; B receives no evidence-request priority. The result does not claim A has greater emissions or supplier risk.
+
+A proposed plan assigns allocation data collection to a fictional buyer analyst by 2026-11-01, then fuller activity documentation to a fictional procurement lead by 2026-12-01. The latter targets the declared upper documentation anchor of 2 from the supported current anchor of 1 and depends on collection. No improvement is projected or verified. All actions remain proposed, unagreed and unauthorized; requests remain unsent. Missing allocation evidence and existing obligations survive both proposals. Source supplier entities and history are preserved.
+
+Adversarial checks cover changed source reports, mismatched scope/weights, duplicate sources, unsupported priority fields, invalid or unsupported targets, missing owners, invalid dates, unknown dependencies, conflicting dates and cycles. Equal priorities share a group independently of selection order. Unaddressed unresolved criteria remain visible. Full saved outputs replay exactly. Broader materiality/emissions engagement, sourced risk and independent organization evaluation remain open.
