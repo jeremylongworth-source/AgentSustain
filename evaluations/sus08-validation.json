@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "62c79a9",
+  "checks": {
+    "unittest": {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "passed": 104,
+      "scope3_inventory_tests": 13,
+      "composed_workflow_tests": 1
+    },
+    "skill_packaging": {
+      "passed": 5,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "composed_workflow": {
+      "helper_calls_rerun": 4,
+      "category_1_kg_CO2e": 200,
+      "selected_inventory_kg_CO2e": 725,
+      "partial": true,
+      "open_review_retained": true,
+      "category_and_inventory_cli_outputs_match": true
+    }
+  },
+  "limitations": [
+    "Source facts, category screening and factor applicability judgments are fictional and author supplied.",
+    "Category arithmetic currently supports physical activity with an already derived CO2e factor, not all category-specific methods.",
+    "Comparison/hotspot instructions exist; dedicated inventory-aware runners are pending.",
+    "No independent agent behavioral, assurance or organization-wide finished workflow validation is claimed."
+  ],
+  "sha256": {
+    "scripts/scope3_accounting.py": "6e7fb8c2338992879fd758726f76b32c00beac21e7245dc71f3e984f11cb3ded",
+    "scripts/ghg_inventory.py": "f60e5abc10e275f34e5cd2dc1b89d3b2d978d357a4720e5e4676d1b3bb93259e",
+    "scripts/run_scope3.py": "808fe9aa588d92bc083abe6f4326529fc4f3a994b22f73d298c7f496e9534c44",
+    "tests/test_scope3.py": "f2657be673562ace3b2c883b30565442094a54d31462c239b062054ee47c48d6",
+    "tests/test_sus08_workflow.py": "7b960e22d8710b5bcabc3795dc5e7be74461b4b2fc79aecd3f17f3a98449c92a",
+    "docs/scope-3-inventory-contract.md": "b73bf6a4b553e2a58ba313288473626561e5e7fb4bc7d7f7c4e457902a702667",
+    "evaluations/sus08-composed-workflow.json": "658ae5608f39ba9a768e1780894f1137361bf3b8d4b1d533beaba6e56a311b47",
+    "skills/carbon/classify-scope-3-emissions/SKILL.md": "7cf9642678152b41e305d0e35ab3f7931d8e45daf0f2e00f58af241708a0e23e",
+    "skills/carbon/calculate-scope-3-category/SKILL.md": "2d6abc1673118bee8caec071aba0ce6cd5c5af425b15f432b59513eef17076c1",
+    "skills/carbon/build-ghg-inventory/SKILL.md": "4131feb82b73a9d83c837e46e849d898117f0422c6c90b1c819dbedb29492ef2",
+    "skills/carbon/compare-ghg-inventories/SKILL.md": "b0e30642a608727f0cbcb8ae63b3753a7112af65bfb6d87a62f1523239641dd8",
+    "skills/carbon/identify-emission-hotspots/SKILL.md": "991ff9b0361a0d347e1611acdf8ccbe0ed14deef5db0247b1deec16fbb902c09"
+  }
+}
