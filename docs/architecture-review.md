@@ -79,3 +79,16 @@ The separate v2 task catalog adds explicit required-versus-actual submission anc
 ## Subsequent claim-evidence interface awaiting scoped review
 
 The initial `claim-evidence-0.1.0` dossier/classification/criterion/source-replay interface follows approved 898d790 under continued roadmap authorization and does not inherit scoped approval. Review [the contract](claim-evidence-method.md) and [complete fictional evidence](../evaluations/sus20-claim-evidence.md), including original material/representation dates, supplied judgment provenance, mandatory criterion completeness, exact scoped numeric assertions, visible original qualifications, source/metric/report/uncertainty/lineage replay and incomplete-subtotal/product/facility boundaries. Core review determines no jurisdiction applicability or publication approval. Independent material/general-impression reading, full inventory/neutrality/test/comparison/future-plan methods, actual legal/source profiles and all qualified/owner/release gates remain open. No original statement, source quantity or review is rewritten/resolved, and no individual skill or public claim is adopted.
+
+## Scoped owner approval through d99a70b
+
+- Reviewer: project owner via this development chat.
+- User instruction: "approve the review".
+- Reviewed revision/content snapshot: `d99a70b72448c8e847ceef8d3bae03445daa841d`.
+- Decision/date: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Scope: the committed snapshot through the initial claims-evidence reviewer, including the conditional task register, species-mass calculations, explicit GWP conversion, facility/source/species ledger, v2 retention anchors and associated Canadian source research and recorded validation.
+- Evidence: [claims validation record](../evaluations/sus20-claim-evidence-validation.json), recording 610 repository tests, 13 focused claims tests, five composed CLI captures and fifteen historical gas replays at the reviewed snapshot. These are existing results, not newly rerun tests.
+
+This decision supersedes the pending scoped-owner-review descriptions for these committed increments through d99a70b, while preserving earlier decision records and historical validation artifacts. The uncommitted plain-text material-binding helper, CLI changes and material fixtures are outside this reviewed snapshot and remain unapproved. Subsequent material changes reopen scoped review.
+
+Approval authorizes continued development under ROADMAP.md. It does not resolve professional, legal, source-specific, organization or state reviews, certify actual Canadian applicability or claims, close roadmap waves, establish v1 readiness, or authorize pushing, publishing, merging, releasing, deploying or contacting third parties.
