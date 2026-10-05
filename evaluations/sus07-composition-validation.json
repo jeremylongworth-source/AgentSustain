@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "fb8bc75",
+  "checks": {
+    "unittest": {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "passed": 80,
+      "scope_tests": 16
+    },
+    "cli_reproductions": {
+      "location": {
+        "matched_saved_output": true,
+        "kg_CO2e": 500
+      },
+      "market": {
+        "matched_saved_output": true,
+        "kg_CO2e": 120
+      }
+    }
+  },
+  "limitations": [
+    "Source classification and eligibility assessments are supplied and not authenticated.",
+    "Thermal factors are supplied pre-derived; CHP/efficiency/loss derivation is not implemented.",
+    "These fictional examples and helper checks are not independent behavioral or end-to-end inventory evaluation."
+  ],
+  "sha256": {
+    "scripts/scope_accounting.py": "d542b6eb287b7dceeda778e817fb6272986ba8edaa578604431cb3e0b22f848d",
+    "scripts/run_scope_accounting.py": "1cce56c259d18ea134275908975f7f1e6dc285a9ca3c1a5a6383cd41569ff66e",
+    "tests/test_scope_accounting.py": "a1a940dd131a4c64af34fe7c08d1b86a3cf6cea7d7870e6e18d856c17ff55676",
+    "docs/scope-1-2-contract.md": "36a32a93ab6c24dbeb00d61d13bab5be68eb1e57af5e17968bff463b6629dbd6",
+    "examples/scope-accounting/location-output.json": "616e3ace78bd03f2ee0ae23b8764e899b46ee109aa6ca9c86c721a4359990870",
+    "examples/scope-accounting/location-request.json": "377c596edc60293f130e19bfe00f7f797bddce7101ac0b832d83ce3ea225a62c",
+    "examples/scope-accounting/market-output.json": "5cefc481368963dd0c2504a7f11cb3bd95f80aa0116c9d5d0ec58f57d53b8b56",
+    "examples/scope-accounting/market-request.json": "491b7e2bfd1d78ee8a3c24b7840c4000ad46378bf5889ace1edc4e9cdc5d0a63"
+  }
+}

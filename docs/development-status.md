@@ -17,7 +17,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-04 | Common schemas/state | Architecture approved; 20 architecture tests passed at review snapshot |
 | SUS-05 | Data skills | Ten skills with five helper operations and checked state proposals; nine initial author-led scenarios and shared-document rerun recorded; broader behavioral reliability remains unproven |
 | SUS-06 | GHG foundation | Eight skills, sourced-factor checks and CO2e helper; initial eight-skill author-led incomplete-inventory scenario recorded; broader independent behavioral evaluation remains |
-| SUS-07 | Scope 1/2 | Five instruction workflows and sourced execution contract added; dedicated calculation composition and scenario evaluation pending |
+| SUS-07 | Scope 1/2 | Five workflows, separate scope composition helper/CLI, allocation and coverage checks, market quality/fallback records; 16 known-answer/error tests and two synthetic CLI reproductions pass; broader classification and independent evaluations pending |
 | SUS-08 | Scope 3 | Not implemented |
 | SUS-09 | Energy | Not implemented |
 | SUS-10 | Waste/resources | Not implemented |
@@ -33,7 +33,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-20 | Claims controls | Not implemented |
 | SUS-21 | Router | Not implemented; interface draft only |
 | SUS-22 | Specialist skillsets | Not implemented |
-| SUS-23 | Evaluation suite | 64 architecture/data/GHG/proposal/artifact tests pass; author-led data/GHG outputs and synthetic examples recorded; independent and end-to-end suites remain |
+| SUS-23 | Evaluation suite | 80 architecture/data/GHG/scope/proposal/artifact tests pass; author-led data/GHG outputs and synthetic examples recorded; independent and end-to-end suites remain |
 | SUS-24 | Documentation/examples | Foundation docs, shared data-skill guide and fictional schema fixtures |
 | SUS-25 | Public v1 readiness | Not assessed; no release authorization |
 
@@ -43,6 +43,6 @@ The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The d
 
 ## Next implementation work
 
-Implement and evaluate SUS-07 scope component composition, allocation/coverage checks and contractual-quality enforcement. The five instruction workflows distinguish scope classification, direct emissions, location-based purchased energy and market-based purchased energy; they are not a complete inventory runner. The initial SUS-06 author-led scenario preserves an unresolved lease review, blocks unsupported gas extrapolation and real-factor use, and retains missing records after synthetic electricity arithmetic. Continue broader independent behavioral and source-format evaluations as later capabilities consume these foundations; no general reliability or v1 readiness is claimed.
+Exercise SUS-07 source classification and composed skill workflows against incomplete records, leased operations, mixed gas factors and purchased thermal energy. Scope composition now consumes existing CO2e metrics with factor/activity rechecks, applies allocation once, checks market records and retains separate scope 2 alternatives. Thermal calculations consume reviewed derived factors; underlying thermal-factor derivation remains future work. Continue broader independent behavioral and source-format evaluations as later capabilities consume these foundations, then develop SUS-08 scope 3 accounting; no general reliability or v1 readiness is claimed.
 
 The shared contract validator lives in scripts/contract_validation.py; tests/contract_checks.py remains a compatibility entrypoint. Schema shapes are unchanged. Runtime validation now additionally rejects nonfinite quantities and calculation-lineage cycles. State proposals preserve review obligations, assumptions, gaps and existing source records. Historical architecture hashes continue to identify the reviewed f2d0ac9 snapshot.

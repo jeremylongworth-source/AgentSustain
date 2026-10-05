@@ -1,0 +1,430 @@
+{
+  "result": {
+    "id": "location-account",
+    "skill": "calculate-location-based-scope-2",
+    "contract_version": "0.1.0",
+    "status": "completed",
+    "review_states": [
+      "ANALYTICAL"
+    ],
+    "review_requirements": [],
+    "metrics": [
+      {
+        "id": "location-account-metric",
+        "name": "scope_2 location emissions subtotal",
+        "value": 500.0,
+        "unit": "kg CO2e",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "boundary_id": "boundary-001",
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "method": {
+          "name": "GHG Protocol scope_2 location composition",
+          "version": "2015",
+          "source": "https://ghgprotocol.org/sites/default/files/2023-03/Scope%202%20Guidance.pdf"
+        },
+        "assumption": "Synthetic fixture scope account only; not a real inventory.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Combined component and allocation uncertainty has not been quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": {
+          "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+          "inputs": [
+            "electricity-component-metric",
+            "ev-001",
+            "factor-evidence"
+          ],
+          "conversions": [
+            "electricity-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1, applied once"
+          ],
+          "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+        }
+      }
+    ],
+    "evidence_ids": [
+      "ev-001",
+      "factor-evidence"
+    ],
+    "assumptions": [
+      "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+      "Synthetic fixture scope account only; not a real inventory."
+    ],
+    "data_gaps": [],
+    "diagnostics": [
+      {
+        "code": "SYNTHETIC_FIXTURE",
+        "message": "Synthetic fixture scope account only; not a real inventory."
+      },
+      {
+        "code": "SCOPE_METHOD",
+        "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-component-metric\", \"source_id\": \"electricity\"}], \"components\": [{\"activity_fraction\": 1, \"basis\": \"location\", \"factor_id\": \"synthetic-factor\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"electricity\", \"gas_coverage\": [\"CO2\", \"CH4\", \"N2O\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"location\", \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kWh\", \"confirmed_value\": 0.5, \"coverage\": \"Fictional activity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"electricity\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Single-source fictional completeness and nonoverlap assessment.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"location\", \"scope\": \"scope_2\", \"sources\": [{\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional consumed electricity source; fixture boundary only.\", \"scope\": \"scope_2\"}]}"
+      }
+    ],
+    "next_actions": []
+  },
+  "proposal": {
+    "base_revision": 1,
+    "reason": "Compose a separate scope account with retained evidence and review obligations",
+    "state": {
+      "contract_version": "0.1.0",
+      "revision": 2,
+      "organization": {
+        "id": "org-001",
+        "name": "Fictional Example Company",
+        "sector": "manufacturing"
+      },
+      "facilities": [
+        {
+          "id": "facility-001",
+          "name": "Fictional plant",
+          "jurisdiction": "CA-ON"
+        }
+      ],
+      "jurisdictions": [
+        "CA",
+        "CA-ON"
+      ],
+      "reporting_period": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "organizational_boundary": {
+        "id": "boundary-001",
+        "approach": "operational control (fixture only)",
+        "facility_ids": [
+          "facility-001"
+        ],
+        "exclusions": [],
+        "evidence_ids": []
+      },
+      "evidence": [
+        {
+          "id": "ev-001",
+          "source": {
+            "locator": "fixture:meter-001",
+            "title": "Fictional annual electricity record",
+            "publisher": "Fictional Example Company",
+            "accessed": "2026-10-04",
+            "version": "fixture-1",
+            "tier": 1
+          },
+          "method": {
+            "name": "Synthetic meter reading fixture",
+            "version": "fixture-1",
+            "source": "fixture:meter-001"
+          },
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "unit": "kWh",
+          "boundary_id": "boundary-001",
+          "geography": "CA-ON",
+          "quality": {
+            "reliability": "unknown",
+            "completeness": "complete",
+            "fitness_notes": "Synthetic fixture, not independently verified."
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional meter uncertainty is not quantified.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": null
+        },
+        {
+          "id": "factor-evidence",
+          "source": {
+            "locator": "fixture:factor",
+            "title": "Synthetic emission-factor fixture",
+            "publisher": "Fictional Example Company",
+            "accessed": "2026-10-04",
+            "version": "fixture-1",
+            "tier": 1
+          },
+          "method": {
+            "name": "Synthetic meter reading fixture",
+            "version": "fixture-1",
+            "source": "fixture:meter-001"
+          },
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "unit": "kg CO2e/kWh",
+          "boundary_id": "boundary-001",
+          "geography": "CA-ON",
+          "quality": {
+            "reliability": "unknown",
+            "completeness": "complete",
+            "fitness_notes": "Synthetic fixture, not independently verified."
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Fictional meter uncertainty is not quantified.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": null
+        }
+      ],
+      "results": [
+        {
+          "id": "res-001",
+          "skill": "normalize-sustainability-data",
+          "contract_version": "0.1.0",
+          "status": "completed",
+          "review_states": [
+            "ANALYTICAL"
+          ],
+          "review_requirements": [],
+          "metrics": [
+            {
+              "id": "metric-001",
+              "name": "Recorded electricity",
+              "value": 1000,
+              "unit": "kWh",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "boundary_id": "boundary-001",
+              "evidence_ids": [
+                "ev-001"
+              ],
+              "method": {
+                "name": "Synthetic meter reading fixture",
+                "version": "fixture-1",
+                "source": "fixture:meter-001"
+              },
+              "assumption": null,
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Fictional meter uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": {
+                "formula": "recorded quantity",
+                "inputs": [
+                  "ev-001"
+                ],
+                "conversions": [],
+                "rounding": "none"
+              }
+            }
+          ],
+          "evidence_ids": [
+            "ev-001"
+          ],
+          "assumptions": [],
+          "data_gaps": [],
+          "diagnostics": [],
+          "next_actions": []
+        },
+        {
+          "id": "electricity-component",
+          "skill": "calculate-co2e",
+          "contract_version": "0.1.0",
+          "status": "completed",
+          "review_states": [
+            "ANALYTICAL"
+          ],
+          "review_requirements": [],
+          "metrics": [
+            {
+              "id": "electricity-component-metric",
+              "name": "Calculated CO2e",
+              "value": 500.0,
+              "unit": "kg CO2e",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "boundary_id": "boundary-001",
+              "evidence_ids": [
+                "ev-001",
+                "factor-evidence"
+              ],
+              "method": {
+                "name": "Synthetic CO2e calculation",
+                "version": "fixture-1",
+                "source": "fixture:method"
+              },
+              "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": {
+                "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (0.5 kg CO2e/kWh) * output conversion 1",
+                "inputs": [
+                  "metric-001",
+                  "factor-evidence"
+                ],
+                "conversions": [
+                  "kWh -> kWh, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                  "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                ],
+                "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+              }
+            }
+          ],
+          "evidence_ids": [
+            "ev-001",
+            "factor-evidence"
+          ],
+          "assumptions": [
+            "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          ],
+          "data_gaps": [],
+          "diagnostics": [
+            {
+              "code": "SYNTHETIC_FIXTURE",
+              "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+            },
+            {
+              "code": "FACTOR_BASIS",
+              "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+            }
+          ],
+          "next_actions": []
+        },
+        {
+          "id": "location-account",
+          "skill": "calculate-location-based-scope-2",
+          "contract_version": "0.1.0",
+          "status": "completed",
+          "review_states": [
+            "ANALYTICAL"
+          ],
+          "review_requirements": [],
+          "metrics": [
+            {
+              "id": "location-account-metric",
+              "name": "scope_2 location emissions subtotal",
+              "value": 500.0,
+              "unit": "kg CO2e",
+              "period": {
+                "start": "2025-01-01",
+                "end": "2025-12-31"
+              },
+              "boundary_id": "boundary-001",
+              "evidence_ids": [
+                "ev-001",
+                "factor-evidence"
+              ],
+              "method": {
+                "name": "GHG Protocol scope_2 location composition",
+                "version": "2015",
+                "source": "https://ghgprotocol.org/sites/default/files/2023-03/Scope%202%20Guidance.pdf"
+              },
+              "assumption": "Synthetic fixture scope account only; not a real inventory.",
+              "uncertainty": {
+                "kind": "unquantified",
+                "description": "Combined component and allocation uncertainty has not been quantified.",
+                "value": null,
+                "unit": null
+              },
+              "calculation": {
+                "formula": "Sum of accepted component CO2e * activity fraction * consolidation allocation",
+                "inputs": [
+                  "electricity-component-metric",
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "conversions": [
+                  "electricity-component-metric: kg CO2e -> kg CO2e; activity fraction 1; consolidation allocation 1, applied once"
+                ],
+                "rounding": "34-digit Decimal component arithmetic; JSON number serialization"
+              }
+            }
+          ],
+          "evidence_ids": [
+            "ev-001",
+            "factor-evidence"
+          ],
+          "assumptions": [
+            "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "Synthetic fixture scope account only; not a real inventory."
+          ],
+          "data_gaps": [],
+          "diagnostics": [
+            {
+              "code": "SYNTHETIC_FIXTURE",
+              "message": "Synthetic fixture scope account only; not a real inventory."
+            },
+            {
+              "code": "SCOPE_METHOD",
+              "message": "{\"accepted\": [{\"activity_fraction\": 1.0, \"allocation_fraction\": 1.0, \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-component-metric\", \"source_id\": \"electricity\"}], \"components\": [{\"activity_fraction\": 1, \"basis\": \"location\", \"factor_id\": \"synthetic-factor\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"metric_id\": \"electricity-component-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"activity_kind\": \"electricity\", \"gas_coverage\": [\"CO2\", \"CH4\", \"N2O\"], \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope_basis\": \"location\", \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kWh\", \"confirmed_value\": 0.5, \"coverage\": \"Fictional activity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"electricity\"}], \"coverage_review\": {\"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"gwp_basis\": \"Synthetic fixture basis\", \"rationale\": \"Single-source fictional completeness and nonoverlap assessment.\"}, \"limitations\": \"Supplied source and criterion assessments are not authenticated; alternative scope 2 accounts must not be summed.\", \"method\": \"location\", \"scope\": \"scope_2\", \"sources\": [{\"activity_id\": \"metric-001\", \"allocation_applied\": false, \"allocation_fraction\": 1, \"boundary_approach\": \"operational control (fixture only)\", \"evidence_ids\": [\"ev-001\"], \"facility_id\": \"facility-001\", \"gases\": [\"CO2\", \"CH4\", \"N2O\"], \"id\": \"electricity\", \"kind\": \"electricity\", \"market\": \"fixture-market\", \"rationale\": \"Fictional consumed electricity source; fixture boundary only.\", \"scope\": \"scope_2\"}]}"
+            }
+          ],
+          "next_actions": []
+        }
+      ],
+      "assumptions": [
+        "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+        "Synthetic fixture scope account only; not a real inventory."
+      ],
+      "data_gaps": [],
+      "review_requirements": [],
+      "energy": [
+        "res-001"
+      ],
+      "water": [],
+      "materials": [],
+      "waste": [],
+      "ghg": {
+        "scope_1": [],
+        "scope_2": [
+          "location-account"
+        ],
+        "scope_3": []
+      },
+      "suppliers": [],
+      "targets": [],
+      "risks": [],
+      "opportunities": [],
+      "projects": [],
+      "frameworks": [],
+      "emission_factors": [
+        {
+          "id": "synthetic-factor",
+          "value": 0.5,
+          "unit": "kg CO2e/kWh",
+          "source": {
+            "locator": "fixture:factor",
+            "publisher": "Fictional fixture publisher",
+            "version": "fixture-1",
+            "accessed": "2026-10-04"
+          },
+          "geography": "CA-ON",
+          "vintage_year": 2025,
+          "method": {
+            "name": "Synthetic CO2e calculation",
+            "version": "fixture-1",
+            "source": "fixture:method"
+          },
+          "gwp_basis": "Synthetic fixture basis",
+          "evidence_ids": [
+            "factor-evidence"
+          ],
+          "status": "synthetic"
+        }
+      ]
+    }
+  }
+}
