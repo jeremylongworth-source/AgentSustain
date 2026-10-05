@@ -10,7 +10,7 @@ Energy arithmetic cannot identify verified savings merely by subtracting bills. 
 
 ## Helper interface
 
-scripts/energy_tools.py exposes `run_energy(state, skill, parameters)` for four operations below. Common requests run with `python -m scripts.run_energy request.json`. It returns a common result and checked proposal, with valid energy result IDs appended to state.energy. Exit 0 includes valid blocked results; exit 2 is invalid input. No state file is written. Historical domain references, assumptions, gaps and review obligations survive.
+scripts/energy_tools.py exposes `run_energy(state, skill, parameters)` for four arithmetic operations and project screening below. Common requests run with `python -m scripts.run_energy request.json`. It returns a common result and checked proposal, with supported energy result IDs appended to state.energy. Exit 0 includes valid blocked results; exit 2 is invalid input. No state file is written. Historical domain references, assumptions, gaps and review obligations survive.
 
 All helper energy inputs resolve from state, have finite nonnegative quantities, and match the current period/boundary. They must convert through supported energy units. Raw fuel volume/mass needs a separately sourced calorific transformation before becoming an energy metric; no heating value, source-energy multiplier, tariff, emissions factor or density is supplied from memory. Negative savings can describe increased use; physical consumption itself cannot be negative.
 
@@ -38,8 +38,18 @@ detect-energy-hotspots parameters: baseline_result_id, coverage_review, result_i
 
 ## Interpretation, opportunities and prioritization
 
-analyze-energy-usage, identify-efficiency-opportunities and prioritize-energy-projects currently provide instruction workflows, not additional deterministic runners. They return evidence-backed assessments and explicit checked proposals under the common contract. Inspect source patterns and context rather than generating opportunity lists from generic industry stereotypes. Record affected equipment/process, supporting evidence, uncertainty, interactions, feasibility and information still needed.
+analyze-energy-usage and identify-efficiency-opportunities provide instruction workflows. They return evidence-backed assessments and explicit checked proposals under the common contract. Inspect source patterns and context rather than generating opportunity lists from generic industry stereotypes. Record affected equipment/process, supporting evidence, uncertainty, interactions, feasibility and information still needed.
 
 Project prioritization needs an explicit decision basis. Keep quantified preliminary energy benefits separate from evidence quality, readiness, operational constraints, owner and implementation dependencies. Do not sum overlapping project savings or manufacture financial scores. Monetary business cases are developed in SUS-12; preliminary screening is not an investment recommendation, engineering sign-off or procurement authorization. Preserve applicable professional/engineering review states when those uses are requested.
+
+### Bounded project screening
+
+prioritize-energy-projects accepts projects, decision_review and result_id. decision_review requires confirmed=true, question, rationale, eligibility_basis, evidence_ids and criterion=descending_lower_bound_kWh. This single supported criterion ranks by the supplied lower scenario bound; no weights or additional preferences are inferred.
+
+Each project contains exactly id, equipment, mechanism, owner (role or null), constraints, dependencies (description and boolean satisfied), readiness (ready_for_screening/deferred), evidence_ids, savings_result_id, range and interacts_with. range contains low, high, unit=kWh, basis and evidence_ids. These are supplied scenario bounds, not derived confidence intervals. Inspect their source and relevance before invoking. The referenced projected savings result must reproduce from its ENERGY_INPUTS against current source quantities, period and boundary, and its point estimate must lie within the supplied range.
+
+An unassigned owner, unsatisfied prerequisite, deferred readiness or nonpositive lower bound defers the candidate. Eligible candidates receive descending lower-bound ranks; equal bounds retain tied ranks. Overlapping eligible ranges flag possible order reversal/ties. Interactions must reference selected projects symmetrically; a reused savings result requires an explicit interaction declaration. Hidden interactions still require source review. The ENERGY_PROJECT_SCREENING diagnostic retains all candidates, deferral reasons, context, criterion and sensitivity findings. No portfolio total is computed even for declared independent candidates. All-deferred registers are blocked; mixed registers are partial. Quantities remain in the referenced savings results, avoiding duplicate standalone benefit metrics.
+
+The [fictional fan source pack](../examples/energy-project-source.md) and saved project-screening fixture demonstrate this narrow decision rule. They do not establish general equipment reasoning or source authenticity.
 
 Initial helper tests use fictional meters, production and tier 5 scenario quantities. They establish bounded arithmetic and blocking behavior, not certified M&V, independent agent reasoning or complete energy workflow reliability. Broader operational scenarios and engineering methods remain evaluation/development work.

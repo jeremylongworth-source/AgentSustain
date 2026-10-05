@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "6219254",
+  "checks": {
+    "unittest": {
+      "passed": 137,
+      "new_project_tests": 8,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests"
+    },
+    "changed_skill_packaging": {
+      "passed": 1,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "saved_screening": {
+      "ranks": {
+        "schedule": 1,
+        "controls": 2,
+        "replacement": null
+      },
+      "overlapping_eligible_range_pairs": 1,
+      "portfolio_total": null,
+      "engineering_review": "open"
+    }
+  },
+  "limitations": [
+    "Fictional supplied equipment facts, projections and scenario bounds; not calibrated or authenticated.",
+    "Single explicit lower-bound energy criterion, not a financial or engineering ranking.",
+    "Declared interactions checked; hidden interactions need source review.",
+    "Independent agent interpretation and organization-wide evaluations remain."
+  ],
+  "sha256": {
+    "scripts/energy_projects.py": "81573de9fa1272cb656c4e7ba4ea78f7ee5f0baca0547e71ba131847c10e2268",
+    "scripts/energy_tools.py": "98393ea3235ccd3cf55326df648ce2956ddf21367674e7b4bdc9319c415c6e75",
+    "tests/test_energy_projects.py": "134c217eacda92185094e7c94af04df20a1f8efd085db52c711d4e83887c0063",
+    "skills/energy/prioritize-energy-projects/SKILL.md": "c0368a25d2ee4fe20c0ab7945388540982b625f76e956d4db22141e82689a056",
+    "docs/energy-contract.md": "c57e8bf70d0fb9e1be7dac1f089ce6ff63e212bb3b6bb0dfaed019846947deee",
+    "examples/energy-project-source.md": "171a6d325317e35ccc1c0364c0d4d0b5b2e94db0b5a20fd5561d4c54f3c9f317",
+    "evaluations/sus09-project-screening.json": "d9ba768f10c2f4ed470cd91134e4fe738b939d25fd98ff2e48c55e9ae6c2e1b7"
+  }
+}

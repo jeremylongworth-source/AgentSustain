@@ -1,0 +1,1537 @@
+{
+  "execution_type": "deterministic helper",
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 2,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "second-meter-evidence",
+        "source": {
+          "locator": "fixture:second-meter",
+          "title": "Fictional separate meter",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "MWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "production-evidence",
+        "source": {
+          "locator": "fixture:production",
+          "title": "Fictional same-period production",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-evidence",
+        "source": {
+          "locator": "fixture:examples/energy-project-source.md#scenario",
+          "title": "Fictional projected total energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "low",
+          "completeness": "partial",
+          "fitness_notes": "Supplied fictional projection; not calibrated or validated against equipment/operating data."
+        },
+        "assumption": "Fictional modelled operating scenario; no realized savings.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "fan-operating-note",
+        "source": {
+          "locator": "fixture:examples/energy-project-source.md",
+          "title": "Fictional fan operating and screening record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Supplied fictional equipment/context review",
+          "version": "fixture-1",
+          "source": "fixture:examples/energy-project-source.md"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "qualitative operating record",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "second-meter-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "second-meter",
+            "name": "Fictional separate meter",
+            "value": 0.5,
+            "unit": "MWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "second-meter-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "second-meter-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "production-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "production",
+            "name": "Fictional same-period production",
+            "value": 300,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "production-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "production-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "production-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario",
+            "name": "Fictional projected total energy",
+            "value": 1200,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional modelled operating scenario; no realized savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "project-baseline",
+        "skill": "build-energy-baseline",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "project-baseline-energy",
+            "name": "Delivered final-energy baseline",
+            "value": 1500.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping source quantities converted to target energy unit",
+              "inputs": [
+                "metric-001",
+                "second-meter"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"limits\": \"Source coverage/representativeness is supplied, not authenticated; not weather or production normalized.\", \"metric_ids\": [\"metric-001\", \"second-meter\"], \"target_unit\": \"kWh\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"metric_ids\": [\"metric-001\", \"second-meter\"], \"result_id\": \"project-baseline\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "project-savings",
+        "skill": "estimate-energy-savings",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "project-savings-savings",
+            "name": "Projected energy savings",
+            "value": 300.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Comparable/adjusted baseline energy - scenario/reporting energy in kWh",
+              "inputs": [
+                "project-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "project-savings-savings-percent",
+            "name": "Energy difference relative to baseline",
+            "value": 20.0,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "(baseline - scenario) / baseline * 100",
+              "inputs": [
+                "project-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "scenario-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_SAVINGS_BASIS",
+            "message": "{\"adjustment_method\": \"Supplied scenario; no real M&V.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional two-feed year.\", \"baseline_id\": \"project-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional synthetic equipment scenario.\", \"scenario_conditions\": \"Same service output with a fictional control change.\", \"scenario_id\": \"scenario\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"baseline_id\": \"project-baseline-energy\", \"comparison_review\": {\"adjustment_method\": \"Supplied scenario; no real M&V.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional two-feed year.\", \"baseline_id\": \"project-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional synthetic equipment scenario.\", \"scenario_conditions\": \"Same service output with a fictional control change.\", \"scenario_id\": \"scenario\"}, \"result_id\": \"project-savings\", \"scenario_id\": \"scenario\"}"
+          }
+        ],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [
+      "Fictional modelled operating scenario; no realized savings.",
+      "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+    ],
+    "data_gaps": [],
+    "review_requirements": [
+      {
+        "id": "fan-review",
+        "state": "ENGINEERING_REVIEW_REQUIRED",
+        "reason": "Service and control design need qualified review.",
+        "scope": "fan projects",
+        "reviewer_role": "qualified engineer",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001",
+      "project-baseline",
+      "project-savings"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "parameters": {
+    "result_id": "screening",
+    "projects": [
+      {
+        "id": "schedule",
+        "equipment": "Fictional metered ventilation fan, same selected measurement boundary.",
+        "mechanism": "Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.",
+        "owner": "facility operator",
+        "constraints": "Ventilation/service requirements need engineering review before implementation.",
+        "dependencies": [
+          {
+            "description": "Fictional preliminary operating review supplied.",
+            "satisfied": true
+          }
+        ],
+        "readiness": "ready_for_screening",
+        "evidence_ids": [
+          "fan-operating-note",
+          "scenario-evidence"
+        ],
+        "savings_result_id": "project-savings",
+        "range": {
+          "low": 200,
+          "high": 400,
+          "unit": "kWh",
+          "basis": "Supplied fictional alternative scenario range; not a confidence interval.",
+          "evidence_ids": [
+            "scenario-evidence"
+          ]
+        },
+        "interacts_with": [
+          "controls",
+          "replacement"
+        ]
+      },
+      {
+        "id": "controls",
+        "equipment": "Fictional metered ventilation fan, same selected measurement boundary.",
+        "mechanism": "Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.",
+        "owner": "facility operator",
+        "constraints": "Ventilation/service requirements need engineering review before implementation.",
+        "dependencies": [
+          {
+            "description": "Fictional preliminary operating review supplied.",
+            "satisfied": true
+          }
+        ],
+        "readiness": "ready_for_screening",
+        "evidence_ids": [
+          "fan-operating-note",
+          "scenario-evidence"
+        ],
+        "savings_result_id": "project-savings",
+        "range": {
+          "low": 100,
+          "high": 500,
+          "unit": "kWh",
+          "basis": "Supplied fictional alternative scenario range; not a confidence interval.",
+          "evidence_ids": [
+            "scenario-evidence"
+          ]
+        },
+        "interacts_with": [
+          "schedule",
+          "replacement"
+        ]
+      },
+      {
+        "id": "replacement",
+        "equipment": "Fictional metered ventilation fan, same selected measurement boundary.",
+        "mechanism": "Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.",
+        "owner": null,
+        "constraints": "Ventilation/service requirements need engineering review before implementation.",
+        "dependencies": [
+          {
+            "description": "Fictional preliminary operating review supplied.",
+            "satisfied": true
+          }
+        ],
+        "readiness": "ready_for_screening",
+        "evidence_ids": [
+          "fan-operating-note",
+          "scenario-evidence"
+        ],
+        "savings_result_id": "project-savings",
+        "range": {
+          "low": 50,
+          "high": 600,
+          "unit": "kWh",
+          "basis": "Supplied fictional alternative scenario range; not a confidence interval.",
+          "evidence_ids": [
+            "scenario-evidence"
+          ]
+        },
+        "interacts_with": [
+          "schedule",
+          "controls"
+        ]
+      }
+    ],
+    "decision_review": {
+      "confirmed": true,
+      "question": "Which fictional alternative should receive detailed energy assessment first?",
+      "criterion": "descending_lower_bound_kWh",
+      "eligibility_basis": "Named owner, satisfied preliminary dependencies and positive lower-bound savings.",
+      "rationale": "Energy-only screening before financial and engineering assessment.",
+      "evidence_ids": [
+        "fan-operating-note",
+        "scenario-evidence"
+      ]
+    }
+  },
+  "result": {
+    "id": "screening",
+    "skill": "prioritize-energy-projects",
+    "contract_version": "0.1.0",
+    "status": "partial",
+    "review_states": [
+      "ANALYTICAL",
+      "ENGINEERING_REVIEW_REQUIRED",
+      "EVIDENCE_INCOMPLETE"
+    ],
+    "review_requirements": [
+      {
+        "id": "fan-review",
+        "state": "ENGINEERING_REVIEW_REQUIRED",
+        "reason": "Service and control design need qualified review.",
+        "scope": "fan projects",
+        "reviewer_role": "qualified engineer",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "metrics": [],
+    "evidence_ids": [
+      "ev-001",
+      "fan-operating-note",
+      "scenario-evidence",
+      "second-meter-evidence"
+    ],
+    "assumptions": [
+      "Fictional modelled operating scenario; no realized savings.",
+      "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+    ],
+    "data_gaps": [
+      {
+        "id": "screening-gap-0",
+        "field": "energy_analysis",
+        "reason": "Some candidates lack positive lower-bound benefits, ownership or satisfied prerequisites; retain deferral reasons in the register.",
+        "impact": "Energy coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible measured/modelled energy quantities, source coverage and context review."
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "ENERGY_PROJECT_SCREENING",
+        "message": "{\"boundary_id\": \"boundary-001\", \"decision_review\": {\"confirmed\": true, \"criterion\": \"descending_lower_bound_kWh\", \"eligibility_basis\": \"Named owner, satisfied preliminary dependencies and positive lower-bound savings.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"question\": \"Which fictional alternative should receive detailed energy assessment first?\", \"rationale\": \"Energy-only screening before financial and engineering assessment.\"}, \"limits\": \"Preliminary energy-only screening; supplied feasibility/ranges are not authenticated. Interacting projects require a joint model. No investment or engineering approval.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"portfolio_total\": null, \"projects\": [{\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"deferral_reasons\": [], \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"eligible\": true, \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"estimated_kWh\": 300.0, \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"schedule\", \"interacts_with\": [\"controls\", \"replacement\"], \"lower_bound_kWh\": 200.0, \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 400, \"low\": 200, \"unit\": \"kWh\"}, \"rank\": 1, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\", \"upper_bound_kWh\": 400.0}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"deferral_reasons\": [], \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"eligible\": true, \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"estimated_kWh\": 300.0, \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"controls\", \"interacts_with\": [\"schedule\", \"replacement\"], \"lower_bound_kWh\": 100.0, \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 500, \"low\": 100, \"unit\": \"kWh\"}, \"rank\": 2, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\", \"upper_bound_kWh\": 500.0}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"deferral_reasons\": [\"Owner is unassigned.\"], \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"eligible\": false, \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"estimated_kWh\": 300.0, \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"replacement\", \"interacts_with\": [\"schedule\", \"controls\"], \"lower_bound_kWh\": 50.0, \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": null, \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 600, \"low\": 50, \"unit\": \"kWh\"}, \"rank\": null, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\", \"upper_bound_kWh\": 600.0}], \"sensitivity\": [{\"finding\": \"Supplied ranges overlap; estimated-benefit order can tie or reverse.\", \"projects\": [\"schedule\", \"controls\"]}]}"
+      },
+      {
+        "code": "ENERGY_PROJECT_DEFERRED",
+        "message": "Some candidates lack positive lower-bound benefits, ownership or satisfied prerequisites; retain deferral reasons in the register."
+      },
+      {
+        "code": "ENERGY_INPUTS",
+        "message": "{\"decision_review\": {\"confirmed\": true, \"criterion\": \"descending_lower_bound_kWh\", \"eligibility_basis\": \"Named owner, satisfied preliminary dependencies and positive lower-bound savings.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"question\": \"Which fictional alternative should receive detailed energy assessment first?\", \"rationale\": \"Energy-only screening before financial and engineering assessment.\"}, \"projects\": [{\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"schedule\", \"interacts_with\": [\"controls\", \"replacement\"], \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 400, \"low\": 200, \"unit\": \"kWh\"}, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\"}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"controls\", \"interacts_with\": [\"schedule\", \"replacement\"], \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 500, \"low\": 100, \"unit\": \"kWh\"}, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\"}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"replacement\", \"interacts_with\": [\"schedule\", \"controls\"], \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": null, \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 600, \"low\": 50, \"unit\": \"kWh\"}, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\"}], \"result_id\": \"screening\"}"
+      }
+    ],
+    "next_actions": [
+      "Supply compatible measured/modelled energy quantities, source coverage and context review."
+    ]
+  },
+  "proposal_reason": "Compute evidenced delivered-energy analysis without verification or state writes",
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 3,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "second-meter-evidence",
+        "source": {
+          "locator": "fixture:second-meter",
+          "title": "Fictional separate meter",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "MWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "production-evidence",
+        "source": {
+          "locator": "fixture:production",
+          "title": "Fictional same-period production",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-evidence",
+        "source": {
+          "locator": "fixture:examples/energy-project-source.md#scenario",
+          "title": "Fictional projected total energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "low",
+          "completeness": "partial",
+          "fitness_notes": "Supplied fictional projection; not calibrated or validated against equipment/operating data."
+        },
+        "assumption": "Fictional modelled operating scenario; no realized savings.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "fan-operating-note",
+        "source": {
+          "locator": "fixture:examples/energy-project-source.md",
+          "title": "Fictional fan operating and screening record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Supplied fictional equipment/context review",
+          "version": "fixture-1",
+          "source": "fixture:examples/energy-project-source.md"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "qualitative operating record",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "second-meter-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "second-meter",
+            "name": "Fictional separate meter",
+            "value": 0.5,
+            "unit": "MWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "second-meter-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "second-meter-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "production-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "production",
+            "name": "Fictional same-period production",
+            "value": 300,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "production-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "production-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "production-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario",
+            "name": "Fictional projected total energy",
+            "value": 1200,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional modelled operating scenario; no realized savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "project-baseline",
+        "skill": "build-energy-baseline",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "project-baseline-energy",
+            "name": "Delivered final-energy baseline",
+            "value": 1500.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of nonoverlapping source quantities converted to target energy unit",
+              "inputs": [
+                "metric-001",
+                "second-meter"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_BASELINE",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"limits\": \"Source coverage/representativeness is supplied, not authenticated; not weather or production normalized.\", \"metric_ids\": [\"metric-001\", \"second-meter\"], \"target_unit\": \"kWh\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"coverage_review\": {\"basis\": \"delivered_final_energy\", \"carrier_map\": {\"metric-001\": \"electricity\", \"second-meter\": \"electricity\"}, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"second-meter-evidence\"], \"measurement_boundary\": \"Two fictional independent meter feeds.\", \"nonoverlap_assessment\": \"Separate metered loads, not total plus submeters.\", \"rationale\": \"Fictional coverage assessment only.\", \"representativeness\": \"Full fictional reporting year; no extrapolation.\"}, \"metric_ids\": [\"metric-001\", \"second-meter\"], \"result_id\": \"project-baseline\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "project-savings",
+        "skill": "estimate-energy-savings",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "project-savings-savings",
+            "name": "Projected energy savings",
+            "value": 300.0,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Comparable/adjusted baseline energy - scenario/reporting energy in kWh",
+              "inputs": [
+                "project-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          },
+          {
+            "id": "project-savings-savings-percent",
+            "name": "Energy difference relative to baseline",
+            "value": 20.0,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "scenario-evidence",
+              "second-meter-evidence"
+            ],
+            "method": {
+              "name": "Documented delivered-energy arithmetic",
+              "version": "0.1.0",
+              "source": "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
+            },
+            "assumption": "Projected energy savings from supplied scenario assumptions; not realized or verified savings.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input and operating-condition uncertainty remains unquantified; no verification performed.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "(baseline - scenario) / baseline * 100",
+              "inputs": [
+                "project-baseline-energy",
+                "scenario"
+              ],
+              "conversions": [
+                "Energy converted with the supported unit registry; no inferred fuel heating value or source-energy factor"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "scenario-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "ENERGY_SAVINGS_BASIS",
+            "message": "{\"adjustment_method\": \"Supplied scenario; no real M&V.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional two-feed year.\", \"baseline_id\": \"project-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional synthetic equipment scenario.\", \"scenario_conditions\": \"Same service output with a fictional control change.\", \"scenario_id\": \"scenario\"}"
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"baseline_id\": \"project-baseline-energy\", \"comparison_review\": {\"adjustment_method\": \"Supplied scenario; no real M&V.\", \"analysis_type\": \"projection\", \"baseline_conditions\": \"Fictional two-feed year.\", \"baseline_id\": \"project-baseline-energy\", \"comparison_basis\": \"same_conditions\", \"confirmed\": true, \"evidence_ids\": [\"scenario-evidence\"], \"rationale\": \"Conditional synthetic equipment scenario.\", \"scenario_conditions\": \"Same service output with a fictional control change.\", \"scenario_id\": \"scenario\"}, \"result_id\": \"project-savings\", \"scenario_id\": \"scenario\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "screening",
+        "skill": "prioritize-energy-projects",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "ENGINEERING_REVIEW_REQUIRED",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [
+          {
+            "id": "fan-review",
+            "state": "ENGINEERING_REVIEW_REQUIRED",
+            "reason": "Service and control design need qualified review.",
+            "scope": "fan projects",
+            "reviewer_role": "qualified engineer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "fan-operating-note",
+          "scenario-evidence",
+          "second-meter-evidence"
+        ],
+        "assumptions": [
+          "Fictional modelled operating scenario; no realized savings.",
+          "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+        ],
+        "data_gaps": [
+          {
+            "id": "screening-gap-0",
+            "field": "energy_analysis",
+            "reason": "Some candidates lack positive lower-bound benefits, ownership or satisfied prerequisites; retain deferral reasons in the register.",
+            "impact": "Energy coverage or interpretation is incomplete.",
+            "remedy": "Supply compatible measured/modelled energy quantities, source coverage and context review."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "ENERGY_PROJECT_SCREENING",
+            "message": "{\"boundary_id\": \"boundary-001\", \"decision_review\": {\"confirmed\": true, \"criterion\": \"descending_lower_bound_kWh\", \"eligibility_basis\": \"Named owner, satisfied preliminary dependencies and positive lower-bound savings.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"question\": \"Which fictional alternative should receive detailed energy assessment first?\", \"rationale\": \"Energy-only screening before financial and engineering assessment.\"}, \"limits\": \"Preliminary energy-only screening; supplied feasibility/ranges are not authenticated. Interacting projects require a joint model. No investment or engineering approval.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"portfolio_total\": null, \"projects\": [{\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"deferral_reasons\": [], \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"eligible\": true, \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"estimated_kWh\": 300.0, \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"schedule\", \"interacts_with\": [\"controls\", \"replacement\"], \"lower_bound_kWh\": 200.0, \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 400, \"low\": 200, \"unit\": \"kWh\"}, \"rank\": 1, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\", \"upper_bound_kWh\": 400.0}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"deferral_reasons\": [], \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"eligible\": true, \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"estimated_kWh\": 300.0, \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"controls\", \"interacts_with\": [\"schedule\", \"replacement\"], \"lower_bound_kWh\": 100.0, \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 500, \"low\": 100, \"unit\": \"kWh\"}, \"rank\": 2, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\", \"upper_bound_kWh\": 500.0}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"deferral_reasons\": [\"Owner is unassigned.\"], \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"eligible\": false, \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"estimated_kWh\": 300.0, \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"replacement\", \"interacts_with\": [\"schedule\", \"controls\"], \"lower_bound_kWh\": 50.0, \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": null, \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 600, \"low\": 50, \"unit\": \"kWh\"}, \"rank\": null, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\", \"upper_bound_kWh\": 600.0}], \"sensitivity\": [{\"finding\": \"Supplied ranges overlap; estimated-benefit order can tie or reverse.\", \"projects\": [\"schedule\", \"controls\"]}]}"
+          },
+          {
+            "code": "ENERGY_PROJECT_DEFERRED",
+            "message": "Some candidates lack positive lower-bound benefits, ownership or satisfied prerequisites; retain deferral reasons in the register."
+          },
+          {
+            "code": "ENERGY_INPUTS",
+            "message": "{\"decision_review\": {\"confirmed\": true, \"criterion\": \"descending_lower_bound_kWh\", \"eligibility_basis\": \"Named owner, satisfied preliminary dependencies and positive lower-bound savings.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"question\": \"Which fictional alternative should receive detailed energy assessment first?\", \"rationale\": \"Energy-only screening before financial and engineering assessment.\"}, \"projects\": [{\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"schedule\", \"interacts_with\": [\"controls\", \"replacement\"], \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 400, \"low\": 200, \"unit\": \"kWh\"}, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\"}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"controls\", \"interacts_with\": [\"schedule\", \"replacement\"], \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": \"facility operator\", \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 500, \"low\": 100, \"unit\": \"kWh\"}, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\"}, {\"constraints\": \"Ventilation/service requirements need engineering review before implementation.\", \"dependencies\": [{\"description\": \"Fictional preliminary operating review supplied.\", \"satisfied\": true}], \"equipment\": \"Fictional metered ventilation fan, same selected measurement boundary.\", \"evidence_ids\": [\"fan-operating-note\", \"scenario-evidence\"], \"id\": \"replacement\", \"interacts_with\": [\"schedule\", \"controls\"], \"mechanism\": \"Alternative control/schedule change reduces runtime at preserved service levels; supplied projection only.\", \"owner\": null, \"range\": {\"basis\": \"Supplied fictional alternative scenario range; not a confidence interval.\", \"evidence_ids\": [\"scenario-evidence\"], \"high\": 600, \"low\": 50, \"unit\": \"kWh\"}, \"readiness\": \"ready_for_screening\", \"savings_result_id\": \"project-savings\"}], \"result_id\": \"screening\"}"
+          }
+        ],
+        "next_actions": [
+          "Supply compatible measured/modelled energy quantities, source coverage and context review."
+        ]
+      }
+    ],
+    "assumptions": [
+      "Fictional modelled operating scenario; no realized savings.",
+      "Projected energy savings from supplied scenario assumptions; not realized or verified savings."
+    ],
+    "data_gaps": [
+      {
+        "id": "screening-gap-0",
+        "field": "energy_analysis",
+        "reason": "Some candidates lack positive lower-bound benefits, ownership or satisfied prerequisites; retain deferral reasons in the register.",
+        "impact": "Energy coverage or interpretation is incomplete.",
+        "remedy": "Supply compatible measured/modelled energy quantities, source coverage and context review."
+      }
+    ],
+    "review_requirements": [
+      {
+        "id": "fan-review",
+        "state": "ENGINEERING_REVIEW_REQUIRED",
+        "reason": "Service and control design need qualified review.",
+        "scope": "fan projects",
+        "reviewer_role": "qualified engineer",
+        "status": "open",
+        "resolution": null
+      }
+    ],
+    "energy": [
+      "res-001",
+      "project-baseline",
+      "project-savings",
+      "screening"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  }
+}

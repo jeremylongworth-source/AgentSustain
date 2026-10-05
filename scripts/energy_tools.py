@@ -6,6 +6,7 @@ import json
 from .contract_validation import validate_state
 from .data_tools import baseline, convert, kpi, number, serialize
 from .state_proposal import propose
+from .energy_projects import screen_projects
 
 
 SOURCE = "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0"
@@ -14,6 +15,7 @@ OPERATIONS = {
     "calculate-energy-intensity": {"energy_id", "denominator_id", "denominator_review", "result_id"},
     "estimate-energy-savings": {"baseline_id", "scenario_id", "comparison_review", "result_id"},
     "detect-energy-hotspots": {"baseline_result_id", "coverage_review", "result_id"},
+    "prioritize-energy-projects": {"projects", "decision_review", "result_id"},
 }
 
 
@@ -81,6 +83,7 @@ def run_energy(state, skill, parameters):
               "review_requirements":copy.deepcopy(state["review_requirements"]),"metrics":[],"evidence_ids":[],"assumptions":list(state["assumptions"]),
               "data_gaps":copy.deepcopy(state["data_gaps"]),"diagnostics":[],"next_actions":[]}
     refs = set()
+    analytical_output = False
     known = {e["id"] for e in state["evidence"]}
     def gap(code,message):
         result["data_gaps"].append({"id":f"{ident}-gap-{len(result['data_gaps'])}","field":"energy_analysis","reason":message,
@@ -139,6 +142,11 @@ def run_energy(state, skill, parameters):
                 else:
                     gap("PERCENTAGE_DENOMINATOR_REQUIRED","Zero baseline supports absolute difference, not percentage savings.")
             result["diagnostics"].append({"code":"ENERGY_SAVINGS_BASIS","message":json.dumps(review,sort_keys=True)})
+        elif skill=="prioritize-energy-projects":
+            report,refs,analytical_output = screen_projects(state,parameters,run_energy,_review)
+            result["diagnostics"].append({"code":"ENERGY_PROJECT_SCREENING","message":json.dumps(report,sort_keys=True)})
+            if any(not project["eligible"] for project in report["projects"]):
+                gap("ENERGY_PROJECT_DEFERRED","Some candidates lack positive lower-bound benefits, ownership or satisfied prerequisites; retain deferral reasons in the register.")
         else:
             prior = next((r for r in state["results"] if r["id"]==parameters["baseline_result_id"]),None)
             if prior is None or prior["skill"]!="build-energy-baseline" or prior["status"] not in {"completed","partial"} or len(prior["metrics"])!=1:
@@ -181,7 +189,7 @@ def run_energy(state, skill, parameters):
         result["metrics"] = []
         gap("ENERGY_DATA_REQUIRED",str(error))
     result["evidence_ids"] = sorted(refs)
-    result["status"] = "blocked" if not result["metrics"] else ("partial" if result["data_gaps"] else "completed")
+    result["status"] = "blocked" if not result["metrics"] and not analytical_output else ("partial" if result["data_gaps"] else "completed")
     for review in result["review_requirements"]:
         if review["status"]=="open":
             result["review_states"].append(review["state"])
@@ -190,7 +198,7 @@ def run_energy(state, skill, parameters):
         result["next_actions"] = list(dict.fromkeys(gap["remedy"] for gap in result["data_gaps"]))
     result["review_states"] = list(dict.fromkeys(result["review_states"]))
     proposal = propose(state,result,"Compute evidenced delivered-energy analysis without verification or state writes")
-    if result["metrics"]:
+    if result["metrics"] or analytical_output:
         proposal["state"]["energy"].append(ident)
         validate_state(proposal["state"])
     return {"result":result,"proposal":proposal}
