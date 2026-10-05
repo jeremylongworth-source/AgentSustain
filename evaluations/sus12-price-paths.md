@@ -1,0 +1,9 @@
+# Explicit price-path replay
+
+Recorded 2026-10-04. Four fictional cases use separate energy, resource, carbon shadow-price and conditional carbon-payment scenarios. Each annual path contains independently identified quantities and unit prices with source/version, annual period, applicable service and reviewed real/pre-tax basis. The saved JSON contains inputs, requests, complete results and checked state proposals.
+
+Each case calculates 120 CAD for 2026 (1000 units * 0.12 CAD/unit) and 135 CAD for 2027 (900 units * 0.15 CAD/unit). Units are respectively kWh, m3 and t CO2e. No authentic tariff or carbon-price schedule is represented. Annual quantities are fictional projections, and annual prices are fictional sourced fixtures. No escalation, fixed/demand charge, taxes, rebates, density, heating value, currency conversion or emissions derivation is inferred.
+
+Carbon cases add an open applicability/exclusions obligation for qualified review. Shadow exposure is explicitly noncash. The finance resolver prevents it from becoming cash or an investment-return input, including via descendant lineage. The conditional payment case retains the applicability review and establishes no legal obligation.
+
+Tests check all three arithmetic operations, immutable input state, complete paths, duplicate/missing years, unsupported rate structures, annual period/unit/currency/economic-basis mismatch, unknown/negative values, explicit zero, missing models/provenance, partial coverage, preserved reviews, shadow lineage, priced outflow composition into NPV, source text without approval authority and CLI execution. Full saved proposals are replayed. This is author-led numerical evidence; independent behavioral, authentic source-format, broader tariff and organization-wide evaluation remains outstanding.

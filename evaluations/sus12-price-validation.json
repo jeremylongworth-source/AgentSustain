@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "006c3a0",
+  "checks": {
+    "unittest": {
+      "passed": 223,
+      "seconds": 41.416,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "new_price_tests": 12
+    },
+    "focused_price_tests": {
+      "passed": 12
+    },
+    "changed_skill_packaging": {
+      "passed": 3,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "annual_exposure_CAD": [
+        120,
+        135
+      ],
+      "priced_cashflows_into_npv": "Two annual variable-charge outflows compose and feed NPV with supplied 10 percent discount rate.",
+      "shadow_cashflow": "Direct and descendant inputs withheld; professional applicability review remains open."
+    }
+  },
+  "limitations": [
+    "Fictional projected quantities and sourced price fixtures; no authentic tariff or legal obligation established.",
+    "Supports explicit full-year variable-unit paths only; no inferred escalation, fixed/demand charges, taxes, conversions or factors.",
+    "Carbon applicability and eligibility require qualified review; shadow values remain noncash.",
+    "Author-led known-answer, error and replay cases; independent behavioral and organization-wide evaluation remains."
+  ],
+  "sha256": {
+    "scripts/finance_prices.py": "3cafbaf8f13fa0330d8cf1796c4d2184821066b5caef4a18c104b4034b1fe3fc",
+    "scripts/finance_tools.py": "4652075d06ffaebeda7b0e2398dba631d808af8be0ab725fffbafd5b6989fc72",
+    "tests/test_finance_prices.py": "9e8c11e319037cbf37586c9d4cb9671082d5270a8386c524cfd627b747c55cc7",
+    "docs/finance-contract.md": "5025f0aa2978fed11dd0c56cb4f32bdc0a1a9103a9c17d79afc0cb4af153b3f2",
+    "evaluations/sus12-price-paths.json": "9dc52deb1def8b61dcefbdfeba2f50306e34ef36efcd797f1cfbb38c524d221c",
+    "skills/finance/model-energy-price-scenario/SKILL.md": "3eb2825cb731e2fc908086ea86ba33324f476a3e8dccbb659c4093e5c0402fdd",
+    "skills/finance/model-resource-cost-scenario/SKILL.md": "4c63eb0d56630c860b6b4b71e456932750a288c84be74f663bc1560cb3bf5082",
+    "skills/finance/model-carbon-price-scenario/SKILL.md": "356ea2481c4958d077b39f7f1b0dda3ed77332ccd57aaa0657a75879753b208f"
+  }
+}

@@ -11,6 +11,7 @@ from .data_tools import number, serialize
 from .state_proposal import propose
 from .finance_composition import OPERATIONS as COMPOSITION_OPERATIONS, compose
 from .irr_tools import irr_roots
+from .finance_prices import OPERATIONS as PRICE_OPERATIONS, price_path
 
 
 OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id", "analysis_review", "result_id"},
@@ -18,6 +19,7 @@ OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id",
               "calculate-npv": {"cashflows", "discount_rate_id", "analysis_review", "result_id"}}
 OPERATIONS["calculate-irr"] = {"cashflows", "root_search", "analysis_review", "result_id"}
 OPERATIONS.update(COMPOSITION_OPERATIONS)
+OPERATIONS.update(PRICE_OPERATIONS)
 
 
 def run_finance(state, skill, parameters):
@@ -31,6 +33,7 @@ def run_finance(state, skill, parameters):
               "assumptions": list(state["assumptions"]), "data_gaps": copy.deepcopy(state["data_gaps"]), "diagnostics": [], "next_actions": []}
     known = {e["id"]: e for e in state["evidence"]}
     metrics = {m["id"]: m for r in state["results"] for m in r["metrics"]}
+    metric_results = {m["id"]: r for r in state["results"] for m in r["metrics"]}
     refs = set()
 
     def resolve(key, unit, projected=False):
@@ -39,6 +42,14 @@ def run_finance(state, skill, parameters):
                 or metric["boundary_id"] != state["organizational_boundary"]["id"]):
             raise ValueError("Resolved finite quantity with the declared unit/boundary required; no currency conversion inferred.")
         number(metric["value"]); refs.update(metric["evidence_ids"])
+        pending, seen = [key], set()
+        while pending:
+            source = pending.pop()
+            if source in seen or source not in metrics: continue
+            seen.add(source)
+            if any(d["code"] == "NONCASH_SHADOW_PRICE" for d in metric_results[source]["diagnostics"]):
+                raise ValueError("Internal shadow-price exposure cannot be used as a payment, cash flow or investment return.")
+            pending.extend(metrics[source]["calculation"]["inputs"])
         if projected and (not metric["assumption"] or not any(known[e]["source"]["tier"] == 5 for e in metric["evidence_ids"])):
             raise ValueError("Future/recurring benefits require explicit model assumptions and tier 5 evidence.")
         return metric
@@ -67,10 +78,22 @@ def run_finance(state, skill, parameters):
             raise ValueError("Explicit future analysis horizon beginning on valuation date required.")
         currency = review["currency"]
         inputs = []
+        entries = None
         output_period = horizon
         with localcontext() as context:
             context.prec = 34
-            if skill in COMPOSITION_OPERATIONS:
+            if skill in PRICE_OPERATIONS:
+                entries, complete = price_path(state,skill,parameters,resolve,refs)
+                if not complete:
+                    gap("FINANCIAL_COVERAGE_REQUIRED", "Selected variable-unit price coverage is incomplete; results are conditional exposure subtotals.")
+                if skill == "model-carbon-price-scenario":
+                    record = parameters["scenario_review"]
+                    result["review_requirements"].append({"id": ident+"-applicability-review", "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                        "reason": "Review carbon-price applicability, eligible coverage, exclusions and shadow/payment interpretation.",
+                        "scope": "Carbon-price scenario", "reviewer_role": record["reviewer_role"], "status": "open", "resolution": None})
+                    if record["exposure_basis"] == "internal_shadow":
+                        result["diagnostics"].append({"code": "NONCASH_SHADOW_PRICE", "message": "Internal shadow-price exposure is a noncash analytical value, not a payment obligation or cash saving."})
+            elif skill in COMPOSITION_OPERATIONS:
                 value,unit,inputs,formula,output_period,complete = compose(state,skill,parameters,resolve,refs)
                 if not complete:
                     gap("FINANCIAL_COVERAGE_REQUIRED", "Selected cost/benefit coverage is incomplete; composition is a supported subtotal, not complete project economics.")
@@ -156,11 +179,14 @@ def run_finance(state, skill, parameters):
                         result["diagnostics"].append({"code": "PAYBACK_BEYOND_HORIZON", "message": "Arithmetic payback extends beyond supplied study horizon; no recovery within horizon established."})
         assumption = review["model_assumption"]
         if assumption not in result["assumptions"]: result["assumptions"].append(assumption)
-        result["metrics"] = [{"id": ident+"-value", "name": "Conditional "+skill.replace("calculate-", ""), "value": serialize(value), "unit": unit,
+        if entries is None:
+            entries = [(ident+"-value", value, unit, inputs, formula, output_period)]
+        result["metrics"] = [{"id": metric_id, "name": "Conditional "+skill.replace("calculate-", ""), "value": serialize(value), "unit": unit,
             "period": copy.deepcopy(output_period), "boundary_id": state["organizational_boundary"]["id"], "evidence_ids": sorted(refs),
             "method": {"name": "Explicit supplied project-finance arithmetic", "version": "0.1.0", "source": "docs/finance-contract.md"},
             "assumption": assumption, "uncertainty": {"kind": "unquantified", "description": "Model applicability, inputs and sensitivity are not independently verified.", "value": None, "unit": None},
-            "calculation": {"formula": formula, "inputs": inputs, "conversions": ["No currency, inflation, tax or tariff conversion inferred."], "rounding": "70-digit Decimal root isolation; verified JSON serialization" if skill == "calculate-irr" else "34-digit Decimal arithmetic; JSON serialization"}}]
+            "calculation": {"formula": formula, "inputs": inputs, "conversions": ["No currency, inflation, tax or tariff conversion inferred."], "rounding": "70-digit Decimal root isolation; verified JSON serialization" if skill == "calculate-irr" else "34-digit Decimal arithmetic; JSON serialization"}}
+            for metric_id, value, unit, inputs, formula, output_period in entries]
         result["diagnostics"].append({"code": "FINANCIAL_ANALYSIS_BASIS", "message": json.dumps(parameters, sort_keys=True)})
     except (ValueError, KeyError, TypeError) as error:
         result["metrics"] = []; gap("FINANCIAL_DATA_REQUIRED", str(error))
