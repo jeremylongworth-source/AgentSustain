@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-05",
+  "base_revision": "3a5776f034877fb9fd3a85a599b1be12bc69bfd2",
+  "scope": "Source research register and actual non-executable register rejection; no normative code or schema changes.",
+  "register": {
+    "path": "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json",
+    "sha256": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395",
+    "source_count": 5,
+    "source_references_resolved": true,
+    "metadata_dates_valid": true,
+    "LF_bytes": true,
+    "observed_execution_fit_gaps": 5,
+    "planned_fictional_cases": 11,
+    "planned_cases_executed": false
+  },
+  "focused_tests": {
+    "command": "python -m unittest tests.test_jurisdictions -v",
+    "tests": 15,
+    "duration_seconds": 1.508,
+    "status": "passed"
+  },
+  "actual_cli_probe": {
+    "exit_code": 0,
+    "stderr": "",
+    "duration_seconds": 0.3797971000894904,
+    "status": "blocked",
+    "no_jurisdiction_screen_emitted": true,
+    "complete_helper_cli_equality": true,
+    "request_bytes_unchanged": true,
+    "request_sha256": "2a23647b2acf990ce3604137b38af5e638061a0c0ea31f7a2c8becf8814df96b",
+    "stdout_sha256": "d9c82957df072fa1677d13d873c89bf602bf1b9b5d4f26ec4131975bd79ed4c5",
+    "historical_results_and_open_reviews_preserved": true
+  },
+  "normative_runtime_test_schema_diff_empty": true,
+  "full_suite": {
+    "rerun_for_research_only_change": false,
+    "last_record": "evaluations/sus18-jurisdiction-foundation-validation.json",
+    "last_suite_tests": 520,
+    "reason": "Only research data/documentation added; focused existing checks and actual register rejection verified."
+  },
+  "limits": [
+    "Primary-source parsed pages were read through web tools; exact original source bytes were not archived or hashed.",
+    "Curated source findings and engineering fit assessment are not qualified legal review.",
+    "No real rule pack, emissions factor or GWP data imported.",
+    "Pending foundation review and remaining Canada/organization/rights gates remain open."
+  ],
+  "file_sha256": {
+    "README.md": "2704b80b3832fb9d3fc647a22a414357e10d91d0a9ca9ae579f9037701d33445",
+    "docs/development-status.md": "d0abccf9c4a26ac5489bca70b19f43c8de6a5412a5f0d4ffa241becae0dea2c9",
+    "docs/canada-ghgrp-source-research.md": "9045cdcc45648fcbc3e6aca34348d9b33f6c5adc11da7346bd8b2c48ee839fdb",
+    "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395"
+  }
+}
