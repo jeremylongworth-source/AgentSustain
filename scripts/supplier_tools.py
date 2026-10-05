@@ -19,12 +19,13 @@ OPERATIONS["prioritize-supplier-engagement"]={"assessment_result_ids","engagemen
 OPERATIONS["develop-supplier-improvement-plan"]={"assessment_result_id","plan_review","actions","result_id"}
 OPERATIONS["identify-scope-3-hotspots"]={"mapping_result_ids","hotspot_review","hotspot_threshold_percent","result_id"}
 OPERATIONS["screen-supplier-sustainability-risk"]={"supplier_id","screening_review","risk_model","risks","result_id"}
+OPERATIONS["evaluate-low-carbon-procurement-option"]={"baseline","alternative","comparison_review","cost_review","result_id"}
 
 
 def run_suppliers(state, skill, parameters):
     validate_state(state)
     if skill not in OPERATIONS or not isinstance(parameters,dict) or (set(parameters) != OPERATIONS[skill]
-            and not (skill in {"map-supply-chain-emissions","identify-scope-3-hotspots"} and set(parameters)==OPERATIONS[skill]|{"fixture_mode"})):
+            and not (skill in {"map-supply-chain-emissions","identify-scope-3-hotspots","evaluate-low-carbon-procurement-option"} and set(parameters)==OPERATIONS[skill]|{"fixture_mode"})):
         raise ValueError("Supported supplier operation with exact parameters required.")
     ident=parameters["result_id"]
     if not isinstance(ident,str) or not ident.strip(): raise ValueError("Fresh result ID required.")
@@ -56,6 +57,9 @@ def run_suppliers(state, skill, parameters):
         elif skill=="screen-supplier-sustainability-risk":
             from .supplier_risk import screen
             report=screen(state,parameters,refs,result,gap)
+        elif skill=="evaluate-low-carbon-procurement-option":
+            from .procurement_options import evaluate
+            report=evaluate(state,parameters,refs,result,gap)
         else:
             supplier=next((s for s in state["suppliers"] if s["id"]==parameters["supplier_id"]),None)
             if supplier is None or not supplier["evidence_ids"]:
@@ -148,7 +152,8 @@ def run_suppliers(state, skill, parameters):
                     else: gap("All criteria are excluded; no applicable scoring denominator exists.")
         code={"compare-suppliers":"SUPPLIER_COMPARISON","map-supply-chain-emissions":"SUPPLY_CHAIN_MAPPING",
             "prioritize-supplier-engagement":"SUPPLIER_ENGAGEMENT","develop-supplier-improvement-plan":"SUPPLIER_IMPROVEMENT_PLAN",
-            "identify-scope-3-hotspots":"SUPPLIER_HOTSPOTS","screen-supplier-sustainability-risk":"SUPPLIER_RISK_SCREENING"}.get(skill,"SUPPLIER_ASSESSMENT")
+            "identify-scope-3-hotspots":"SUPPLIER_HOTSPOTS","screen-supplier-sustainability-risk":"SUPPLIER_RISK_SCREENING",
+            "evaluate-low-carbon-procurement-option":"PROCUREMENT_OPTION_COMPARISON"}.get(skill,"SUPPLIER_ASSESSMENT")
         result["diagnostics"].append({"code":code,"message":json.dumps(report,sort_keys=True)})
         result["status"]="partial" if result["data_gaps"] else "completed"
     except (ValueError,TypeError,KeyError) as error:

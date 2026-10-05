@@ -1,0 +1,2784 @@
+{
+  "state": {
+    "contract_version": "0.1.0",
+    "revision": 6,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:material-purchase-line",
+          "title": "Fictional buyer purchase-line material quantity",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional material purchase-record fixture",
+          "version": "fixture-1",
+          "source": "fixture:material-purchase-line"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "factor-evidence",
+        "source": {
+          "locator": "fixture:factor",
+          "title": "Synthetic emission-factor fixture",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg CO2e/kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "purchase-b-record",
+        "source": {
+          "locator": "fixture:purchase-b",
+          "title": "Fictional second material purchase",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional material purchase-record fixture",
+          "version": "fixture-1",
+          "source": "fixture:material-purchase-line"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "base-service-record",
+        "source": {
+          "locator": "fixture:base-service",
+          "title": "Fictional base-service purchase specification or quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional service specification or price quote",
+          "version": "fixture-1",
+          "source": "fixture:base-service"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional selected-option equivalent service or quote only."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "alt-service-record",
+        "source": {
+          "locator": "fixture:alt-service",
+          "title": "Fictional alt-service purchase specification or quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional service specification or price quote",
+          "version": "fixture-1",
+          "source": "fixture:alt-service"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional selected-option equivalent service or quote only."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "base-cost-record",
+        "source": {
+          "locator": "fixture:base-cost",
+          "title": "Fictional base-cost purchase specification or quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional service specification or price quote",
+          "version": "fixture-1",
+          "source": "fixture:base-cost"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional selected-option equivalent service or quote only."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "alt-cost-record",
+        "source": {
+          "locator": "fixture:alt-cost",
+          "title": "Fictional alt-cost purchase specification or quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Fictional service specification or price quote",
+          "version": "fixture-1",
+          "source": "fixture:alt-cost"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Fictional selected-option equivalent service or quote only."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Purchased fixture material",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "material-co2e",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "material-co2e-metric",
+            "name": "Calculated CO2e",
+            "value": 200.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1",
+              "inputs": [
+                "metric-001",
+                "factor-evidence"
+              ],
+              "conversions": [
+                "kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "classification",
+        "skill": "classify-scope-3-emissions",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "SCOPE3_CLASSIFICATION",
+            "message": "{\"limits\": \"Supplied factual assessment, not source authentication or category boundary completeness.\", \"method_source\": \"https://ghgprotocol.org/sites/default/files/standards/Corporate-Value-Chain-Accounting-Reporing-Standard_041613_2.pdf\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}], \"version\": \"2011 with 2013 corrections\"}"
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "mapped-category",
+        "skill": "calculate-scope-3-category",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "mapped-category-metric",
+            "name": "Scope 3 category 1 emissions subtotal",
+            "value": 200.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "method": {
+              "name": "GHG Protocol scope 3 physical-activity component composition",
+              "version": "2011 with 2013 corrections",
+              "source": "https://ghgprotocol.org/sites/default/files/standards/Corporate-Value-Chain-Accounting-Reporing-Standard_041613_2.pdf"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined activity, lifecycle factor and allocation uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of supported, independently covered physical-activity CO2e components",
+              "inputs": [
+                "material-co2e-metric"
+              ],
+              "conversions": [
+                "Components normalized to kg CO2e; allocation already reflected in activity/factor, not reapplied"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "SCOPE3_CATEGORY",
+            "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "second-purchase",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "purchase-b",
+            "name": "Purchased fixture material",
+            "value": 50,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "purchase-b-record"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "purchase-b-record"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "purchase-b-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "purchase-b-emissions",
+        "skill": "calculate-co2e",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "purchase-b-emissions-metric",
+            "name": "Calculated CO2e",
+            "value": 100.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "factor-evidence",
+              "purchase-b-record"
+            ],
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "activity purchase-b * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1",
+              "inputs": [
+                "purchase-b",
+                "factor-evidence"
+              ],
+              "conversions": [
+                "kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "factor-evidence",
+          "purchase-b-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+          },
+          {
+            "code": "FACTOR_BASIS",
+            "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "two-purchases",
+        "skill": "calculate-scope-3-category",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "two-purchases-metric",
+            "name": "Scope 3 category 1 emissions subtotal",
+            "value": 300.0,
+            "unit": "kg CO2e",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "purchase-b-record"
+            ],
+            "method": {
+              "name": "GHG Protocol scope 3 physical-activity component composition",
+              "version": "2011 with 2013 corrections",
+              "source": "https://ghgprotocol.org/sites/default/files/standards/Corporate-Value-Chain-Accounting-Reporing-Standard_041613_2.pdf"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Combined activity, lifecycle factor and allocation uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum of supported, independently covered physical-activity CO2e components",
+              "inputs": [
+                "material-co2e-metric",
+                "purchase-b-emissions-metric"
+              ],
+              "conversions": [
+                "Components normalized to kg CO2e; allocation already reflected in activity/factor, not reapplied"
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "purchase-b-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "SCOPE3_CATEGORY",
+            "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}, {\"activity_id\": \"purchase-b\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"source_id\": \"material-b\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}, {\"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"purchase-b\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material-b\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}, {\"activity_id\": \"purchase-b\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"material-b\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "supply-chain-mapping",
+        "skill": "map-supply-chain-emissions",
+        "contract_version": "0.1.0",
+        "status": "partial",
+        "review_states": [
+          "ANALYTICAL",
+          "EVIDENCE_INCOMPLETE"
+        ],
+        "review_requirements": [],
+        "metrics": [],
+        "evidence_ids": [
+          "ev-001",
+          "factor-evidence",
+          "purchase-b-record"
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "supply-chain-mapping-gap-0",
+            "field": "supplier_evidence",
+            "reason": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions.",
+            "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+            "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+          }
+        ],
+        "diagnostics": [
+          {
+            "code": "SCOPE3_CATEGORY",
+            "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}, {\"activity_id\": \"purchase-b\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"source_id\": \"material-b\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}, {\"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"purchase-b\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material-b\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}, {\"activity_id\": \"purchase-b\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"material-b\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+          },
+          {
+            "code": "SUPPLIER_DATA_REQUIRED",
+            "message": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions."
+          },
+          {
+            "code": "SYNTHETIC_FIXTURE",
+            "message": "Synthetic purchase/category mapping only; not a real supply-chain inventory."
+          },
+          {
+            "code": "SUPPLY_CHAIN_MAPPING",
+            "message": "{\"limits\": \"Selected sourced physical activity/component links only. Supplier identity, product scope and allocation judgments are supplied review, not source authentication. No corporate-total allocation or emissions factor derived.\", \"mapping_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\"}, \"portfolio_total\": null, \"procurement_authorized\": false, \"rows\": [{\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity metric-001 * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"metric-001\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"id\": \"material-co2e-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 200.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"ev-001\"], \"id\": \"material-purchase-link\", \"purchase_metric_id\": \"metric-001\", \"purchase_reference\": \"Fictional PO-001 line 1\", \"source_id\": \"material\", \"supplier_id\": \"material-supplier\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 100}, \"supplier_corporate_emissions_attributed\": false}, {\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity purchase-b * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"purchase-b\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"factor-evidence\", \"purchase-b-record\"], \"id\": \"purchase-b-emissions-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 100.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"purchase-b-record\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b-link\", \"purchase_metric_id\": \"purchase-b\", \"purchase_reference\": \"Fictional PO-002 line 1\", \"source_id\": \"material-b\", \"supplier_id\": \"supplier-b\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"purchase-b-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 50}, \"supplier_corporate_emissions_attributed\": false}]}"
+          },
+          {
+            "code": "SUPPLIER_INPUTS",
+            "message": "{\"fixture_mode\": true, \"links\": [{\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"ev-001\"], \"id\": \"material-purchase-link\", \"purchase_metric_id\": \"metric-001\", \"purchase_reference\": \"Fictional PO-001 line 1\", \"source_id\": \"material\", \"supplier_id\": \"material-supplier\"}, {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"purchase-b-record\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b-link\", \"purchase_metric_id\": \"purchase-b\", \"purchase_reference\": \"Fictional PO-002 line 1\", \"source_id\": \"material-b\", \"supplier_id\": \"supplier-b\"}], \"mapping_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\"}, \"result_id\": \"supply-chain-mapping\"}"
+          }
+        ],
+        "next_actions": [
+          "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+        ]
+      },
+      {
+        "id": "base-service-source",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "base-service",
+            "name": "Fictional base-service",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "base-service-record"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "base-service-record"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "base-service-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "alt-service-source",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "alt-service",
+            "name": "Fictional alt-service",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "alt-service-record"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "alt-service-record"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "alt-service-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "base-cost-source",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "base-cost",
+            "name": "Fictional base-cost",
+            "value": 120,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "base-cost-record"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "base-cost-record"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "base-cost-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "alt-cost-source",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "alt-cost",
+            "name": "Fictional alt-cost",
+            "value": 140,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "alt-cost-record"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "alt-cost-record"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "alt-cost-record"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [
+      "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+      "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+    ],
+    "data_gaps": [
+      {
+        "id": "supply-chain-mapping-gap-0",
+        "field": "supplier_evidence",
+        "reason": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions.",
+        "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+        "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+      }
+    ],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": [
+        "mapped-category",
+        "two-purchases"
+      ]
+    },
+    "suppliers": [
+      {
+        "id": "material-supplier",
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "attributes": {
+          "name": "Fictional material supplier"
+        }
+      },
+      {
+        "id": "supplier-b",
+        "evidence_ids": [
+          "purchase-b-record"
+        ],
+        "attributes": {
+          "name": "Fictional second material supplier"
+        }
+      }
+    ],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": [
+      {
+        "id": "synthetic-factor",
+        "value": 2,
+        "unit": "kg CO2e/kg",
+        "source": {
+          "locator": "fixture:factor",
+          "publisher": "Fictional fixture publisher",
+          "version": "fixture-1",
+          "accessed": "2026-10-04"
+        },
+        "geography": "CA-ON",
+        "vintage_year": 2025,
+        "method": {
+          "name": "Synthetic CO2e calculation",
+          "version": "fixture-1",
+          "source": "fixture:method"
+        },
+        "gwp_basis": "Synthetic fixture basis",
+        "evidence_ids": [
+          "factor-evidence"
+        ],
+        "status": "synthetic"
+      }
+    ]
+  },
+  "parameters": {
+    "baseline": {
+      "id": "base-option",
+      "supplier_id": "material-supplier",
+      "mapping_result_id": "supply-chain-mapping",
+      "link_ids": [
+        "material-purchase-link"
+      ],
+      "functional_metric_id": "base-service",
+      "cost_metric_id": "base-cost"
+    },
+    "alternative": {
+      "id": "alternative-option",
+      "supplier_id": "supplier-b",
+      "mapping_result_id": "supply-chain-mapping",
+      "link_ids": [
+        "purchase-b-link"
+      ],
+      "functional_metric_id": "alt-service",
+      "cost_metric_id": "alt-cost"
+    },
+    "comparison_review": {
+      "boundary_id": "boundary-001",
+      "confirmed": true,
+      "coverage_complete": false,
+      "evidence_ids": [
+        "ev-001"
+      ],
+      "nonoverlap_assessment": "Two distinct already-attributable purchase lines and their separate emissions components.",
+      "period": {
+        "end": "2025-12-31",
+        "start": "2025-01-01"
+      },
+      "rationale": "Two fictional independent purchase lines selected; full supplier population not supplied.",
+      "reviewer_role": "buyer emissions analyst",
+      "scope_boundary": "Selected buyer material purchase, category 1 cradle-to-gate fixture only.",
+      "functional_unit": "100 packaging deliveries meeting the fictional protection specification.",
+      "service_requirements": "Equal documented product protection and delivery service.",
+      "lifetime_basis": "One delivery per packaging unit, same selected service period.",
+      "lifecycle_boundary": "Fictional cradle-to-gate intensity for this material",
+      "allocation_basis": "Physical mass quantity attributable to this organization; no second allocation",
+      "gwp_basis": "Synthetic fixture basis",
+      "scenario_assumptions": "Fictional mutually exclusive material quantity alternatives for equivalent deliveries, not implemented purchases.",
+      "risk_tradeoffs": "Damage, supply capacity and wider social/ecosystem tradeoffs require substantive review."
+    },
+    "cost_review": {
+      "confirmed": true,
+      "evidence_ids": [
+        "base-cost-record",
+        "alt-cost-record"
+      ],
+      "reviewer_role": "fictional procurement analyst",
+      "rationale": "Comparable selected fictional quotes for the same delivery service, not a lifecycle cost or return analysis.",
+      "currency": "CAD",
+      "cost_scope": "Selected purchase quote only; transport/tax/lifecycle operating costs not established.",
+      "valuation_date": "2025-09-01",
+      "dollar_basis": "nominal",
+      "tax_basis": "pre_tax"
+    },
+    "result_id": "procurement-options",
+    "fixture_mode": true
+  },
+  "output": {
+    "result": {
+      "id": "procurement-options",
+      "skill": "evaluate-low-carbon-procurement-option",
+      "contract_version": "0.1.0",
+      "status": "partial",
+      "review_states": [
+        "ANALYTICAL",
+        "PROFESSIONAL_REVIEW_REQUIRED",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "review_requirements": [
+        {
+          "id": "procurement-options-option-review",
+          "state": "PROFESSIONAL_REVIEW_REQUIRED",
+          "reason": "Functional/lifetime/lifecycle equivalence, option uncertainty, tradeoffs and costs require review before claims or procurement decisions.",
+          "scope": "Selected procurement options",
+          "reviewer_role": "procurement and lifecycle assessment reviewer",
+          "status": "open",
+          "resolution": null
+        }
+      ],
+      "metrics": [
+        {
+          "id": "procurement-options-baseline",
+          "name": "Baseline selected procurement emissions",
+          "value": 200.0,
+          "unit": "kg CO2e",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "alt-cost-record",
+            "alt-service-record",
+            "base-cost-record",
+            "base-service-record",
+            "ev-001",
+            "factor-evidence",
+            "purchase-b-record"
+          ],
+          "method": {
+            "name": "Selected procurement option comparison",
+            "version": "0.1.0",
+            "source": "repository:docs/supplier-contract.md"
+          },
+          "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Sum of distinct selected option components",
+            "inputs": [
+              "material-co2e-metric"
+            ],
+            "conversions": [
+              "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        },
+        {
+          "id": "procurement-options-alternative",
+          "name": "Alternative selected procurement emissions",
+          "value": 100.0,
+          "unit": "kg CO2e",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "alt-cost-record",
+            "alt-service-record",
+            "base-cost-record",
+            "base-service-record",
+            "ev-001",
+            "factor-evidence",
+            "purchase-b-record"
+          ],
+          "method": {
+            "name": "Selected procurement option comparison",
+            "version": "0.1.0",
+            "source": "repository:docs/supplier-contract.md"
+          },
+          "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Sum of distinct selected option components",
+            "inputs": [
+              "purchase-b-emissions-metric"
+            ],
+            "conversions": [
+              "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        },
+        {
+          "id": "procurement-options-reduction",
+          "name": "Baseline minus alternative selected emissions",
+          "value": 100.0,
+          "unit": "kg CO2e",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "alt-cost-record",
+            "alt-service-record",
+            "base-cost-record",
+            "base-service-record",
+            "ev-001",
+            "factor-evidence",
+            "purchase-b-record"
+          ],
+          "method": {
+            "name": "Selected procurement option comparison",
+            "version": "0.1.0",
+            "source": "repository:docs/supplier-contract.md"
+          },
+          "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Baseline - alternative selected emissions",
+            "inputs": [
+              "procurement-options-baseline",
+              "procurement-options-alternative"
+            ],
+            "conversions": [
+              "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        },
+        {
+          "id": "procurement-options-reduction-percent",
+          "name": "Conditional selected emissions reduction percent",
+          "value": 50.0,
+          "unit": "%",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "alt-cost-record",
+            "alt-service-record",
+            "base-cost-record",
+            "base-service-record",
+            "ev-001",
+            "factor-evidence",
+            "purchase-b-record"
+          ],
+          "method": {
+            "name": "Selected procurement option comparison",
+            "version": "0.1.0",
+            "source": "repository:docs/supplier-contract.md"
+          },
+          "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "100 * (baseline - alternative) / baseline",
+            "inputs": [
+              "procurement-options-reduction",
+              "procurement-options-baseline"
+            ],
+            "conversions": [
+              "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        },
+        {
+          "id": "procurement-options-cost-premium",
+          "name": "Alternative minus baseline selected cost",
+          "value": 20.0,
+          "unit": "CAD",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "alt-cost-record",
+            "alt-service-record",
+            "base-cost-record",
+            "base-service-record",
+            "ev-001",
+            "factor-evidence",
+            "purchase-b-record"
+          ],
+          "method": {
+            "name": "Selected procurement option comparison",
+            "version": "0.1.0",
+            "source": "repository:docs/supplier-contract.md"
+          },
+          "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Alternative selected cost - baseline selected cost",
+            "inputs": [
+              "base-cost",
+              "alt-cost"
+            ],
+            "conversions": [
+              "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "alt-cost-record",
+        "alt-service-record",
+        "base-cost-record",
+        "base-service-record",
+        "ev-001",
+        "factor-evidence",
+        "purchase-b-record"
+      ],
+      "assumptions": [
+        "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+        "Synthetic fixture scope 3/inventory analysis only; not a real inventory.",
+        "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory."
+      ],
+      "data_gaps": [
+        {
+          "id": "supply-chain-mapping-gap-0",
+          "field": "supplier_evidence",
+          "reason": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions.",
+          "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+          "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+        },
+        {
+          "id": "procurement-options-gap-1",
+          "field": "supplier_evidence",
+          "reason": "Selected mapping coverage is incomplete; comparison does not establish whole-product or full lifecycle superiority.",
+          "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+          "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "SCOPE3_CATEGORY",
+          "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}, {\"activity_id\": \"purchase-b\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"source_id\": \"material-b\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}, {\"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"purchase-b\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material-b\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}, {\"activity_id\": \"purchase-b\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"material-b\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+        },
+        {
+          "code": "SUPPLIER_DATA_REQUIRED",
+          "message": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions."
+        },
+        {
+          "code": "SUPPLIER_DATA_REQUIRED",
+          "message": "Selected mapping coverage is incomplete; comparison does not establish whole-product or full lifecycle superiority."
+        },
+        {
+          "code": "SYNTHETIC_FIXTURE",
+          "message": "Synthetic procurement comparison only; no real lower-carbon product finding."
+        },
+        {
+          "code": "PROCUREMENT_OPTION_COMPARISON",
+          "message": "{\"alternative_has_lower_selected_emissions\": true, \"alternative_metric_id\": \"procurement-options-alternative\", \"baseline_metric_id\": \"procurement-options-baseline\", \"comparison_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"functional_unit\": \"100 packaging deliveries meeting the fictional protection specification.\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"lifetime_basis\": \"One delivery per packaging unit, same selected service period.\", \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"risk_tradeoffs\": \"Damage, supply capacity and wider social/ecosystem tradeoffs require substantive review.\", \"scenario_assumptions\": \"Fictional mutually exclusive material quantity alternatives for equivalent deliveries, not implemented purchases.\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\", \"service_requirements\": \"Equal documented product protection and delivery service.\"}, \"cost_premium_metric_id\": \"procurement-options-cost-premium\", \"cost_review\": {\"confirmed\": true, \"cost_scope\": \"Selected purchase quote only; transport/tax/lifecycle operating costs not established.\", \"currency\": \"CAD\", \"dollar_basis\": \"nominal\", \"evidence_ids\": [\"base-cost-record\", \"alt-cost-record\"], \"rationale\": \"Comparable selected fictional quotes for the same delivery service, not a lifecycle cost or return analysis.\", \"reviewer_role\": \"fictional procurement analyst\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-09-01\"}, \"full_lifecycle_superiority_verified\": false, \"limits\": \"Selected sourced quantities only; functional equivalence and source fitness are supplied review. No realized saving, environmental superiority, whole-footprint inventory reduction, investment return or supplier selection inferred.\", \"options\": [{\"cost\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"base-cost-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"base-cost-record\"], \"id\": \"base-cost\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional base-cost\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"CAD\", \"value\": 120}, \"functional_quantity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"base-service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"base-service-record\"], \"id\": \"base-service\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional base-service\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"mapping_coverage_complete\": false, \"option\": {\"cost_metric_id\": \"base-cost\", \"functional_metric_id\": \"base-service\", \"id\": \"base-option\", \"link_ids\": [\"material-purchase-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"material-supplier\"}, \"rows\": [{\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity metric-001 * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"metric-001\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"id\": \"material-co2e-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 200.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"ev-001\"], \"id\": \"material-purchase-link\", \"purchase_metric_id\": \"metric-001\", \"purchase_reference\": \"Fictional PO-001 line 1\", \"source_id\": \"material\", \"supplier_id\": \"material-supplier\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 100}, \"supplier_corporate_emissions_attributed\": false}]}, {\"cost\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"alt-cost-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"alt-cost-record\"], \"id\": \"alt-cost\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional alt-cost\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"CAD\", \"value\": 140}, \"functional_quantity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"alt-service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"alt-service-record\"], \"id\": \"alt-service\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional alt-service\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"mapping_coverage_complete\": false, \"option\": {\"cost_metric_id\": \"alt-cost\", \"functional_metric_id\": \"alt-service\", \"id\": \"alternative-option\", \"link_ids\": [\"purchase-b-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"supplier-b\"}, \"rows\": [{\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity purchase-b * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"purchase-b\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"factor-evidence\", \"purchase-b-record\"], \"id\": \"purchase-b-emissions-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 100.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"purchase-b-record\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b-link\", \"purchase_metric_id\": \"purchase-b\", \"purchase_reference\": \"Fictional PO-002 line 1\", \"source_id\": \"material-b\", \"supplier_id\": \"supplier-b\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"purchase-b-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 50}, \"supplier_corporate_emissions_attributed\": false}]}], \"procurement_authorized\": false, \"public_claim_authorized\": false, \"reduction_metric_id\": \"procurement-options-reduction\", \"reduction_percent_metric_id\": \"procurement-options-reduction-percent\", \"selected_supplier_id\": null}"
+        },
+        {
+          "code": "SUPPLIER_INPUTS",
+          "message": "{\"alternative\": {\"cost_metric_id\": \"alt-cost\", \"functional_metric_id\": \"alt-service\", \"id\": \"alternative-option\", \"link_ids\": [\"purchase-b-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"supplier-b\"}, \"baseline\": {\"cost_metric_id\": \"base-cost\", \"functional_metric_id\": \"base-service\", \"id\": \"base-option\", \"link_ids\": [\"material-purchase-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"material-supplier\"}, \"comparison_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"functional_unit\": \"100 packaging deliveries meeting the fictional protection specification.\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"lifetime_basis\": \"One delivery per packaging unit, same selected service period.\", \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"risk_tradeoffs\": \"Damage, supply capacity and wider social/ecosystem tradeoffs require substantive review.\", \"scenario_assumptions\": \"Fictional mutually exclusive material quantity alternatives for equivalent deliveries, not implemented purchases.\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\", \"service_requirements\": \"Equal documented product protection and delivery service.\"}, \"cost_review\": {\"confirmed\": true, \"cost_scope\": \"Selected purchase quote only; transport/tax/lifecycle operating costs not established.\", \"currency\": \"CAD\", \"dollar_basis\": \"nominal\", \"evidence_ids\": [\"base-cost-record\", \"alt-cost-record\"], \"rationale\": \"Comparable selected fictional quotes for the same delivery service, not a lifecycle cost or return analysis.\", \"reviewer_role\": \"fictional procurement analyst\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-09-01\"}, \"fixture_mode\": true, \"result_id\": \"procurement-options\"}"
+        }
+      ],
+      "next_actions": [
+        "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+      ]
+    },
+    "proposal": {
+      "base_revision": 6,
+      "reason": "Assess sourced supplier evidence under an explicit buyer rubric without approval or external communication",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 7,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "facility-001",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "operational control (fixture only)",
+          "facility_ids": [
+            "facility-001"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "ev-001",
+            "source": {
+              "locator": "fixture:material-purchase-line",
+              "title": "Fictional buyer purchase-line material quantity",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional material purchase-record fixture",
+              "version": "fixture-1",
+              "source": "fixture:material-purchase-line"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "factor-evidence",
+            "source": {
+              "locator": "fixture:factor",
+              "title": "Synthetic emission-factor fixture",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg CO2e/kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "purchase-b-record",
+            "source": {
+              "locator": "fixture:purchase-b",
+              "title": "Fictional second material purchase",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional material purchase-record fixture",
+              "version": "fixture-1",
+              "source": "fixture:material-purchase-line"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "base-service-record",
+            "source": {
+              "locator": "fixture:base-service",
+              "title": "Fictional base-service purchase specification or quote",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional service specification or price quote",
+              "version": "fixture-1",
+              "source": "fixture:base-service"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional selected-option equivalent service or quote only."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "alt-service-record",
+            "source": {
+              "locator": "fixture:alt-service",
+              "title": "Fictional alt-service purchase specification or quote",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional service specification or price quote",
+              "version": "fixture-1",
+              "source": "fixture:alt-service"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional selected-option equivalent service or quote only."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "base-cost-record",
+            "source": {
+              "locator": "fixture:base-cost",
+              "title": "Fictional base-cost purchase specification or quote",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional service specification or price quote",
+              "version": "fixture-1",
+              "source": "fixture:base-cost"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "CAD",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional selected-option equivalent service or quote only."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "alt-cost-record",
+            "source": {
+              "locator": "fixture:alt-cost",
+              "title": "Fictional alt-cost purchase specification or quote",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Fictional service specification or price quote",
+              "version": "fixture-1",
+              "source": "fixture:alt-cost"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "CAD",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Fictional selected-option equivalent service or quote only."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "res-001",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "metric-001",
+                "name": "Purchased fixture material",
+                "value": 100,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "ev-001"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "material-co2e",
+            "skill": "calculate-co2e",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "material-co2e-metric",
+                "name": "Calculated CO2e",
+                "value": 200.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "activity metric-001 * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1",
+                  "inputs": [
+                    "metric-001",
+                    "factor-evidence"
+                  ],
+                  "conversions": [
+                    "kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                    "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+            ],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+              },
+              {
+                "code": "FACTOR_BASIS",
+                "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "classification",
+            "skill": "classify-scope-3-emissions",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+            ],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "SCOPE3_CLASSIFICATION",
+                "message": "{\"limits\": \"Supplied factual assessment, not source authentication or category boundary completeness.\", \"method_source\": \"https://ghgprotocol.org/sites/default/files/standards/Corporate-Value-Chain-Accounting-Reporing-Standard_041613_2.pdf\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}], \"version\": \"2011 with 2013 corrections\"}"
+              },
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "mapped-category",
+            "skill": "calculate-scope-3-category",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "mapped-category-metric",
+                "name": "Scope 3 category 1 emissions subtotal",
+                "value": 200.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence"
+                ],
+                "method": {
+                  "name": "GHG Protocol scope 3 physical-activity component composition",
+                  "version": "2011 with 2013 corrections",
+                  "source": "https://ghgprotocol.org/sites/default/files/standards/Corporate-Value-Chain-Accounting-Reporing-Standard_041613_2.pdf"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Combined activity, lifecycle factor and allocation uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Sum of supported, independently covered physical-activity CO2e components",
+                  "inputs": [
+                    "material-co2e-metric"
+                  ],
+                  "conversions": [
+                    "Components normalized to kg CO2e; allocation already reflected in activity/factor, not reapplied"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+            ],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "SCOPE3_CATEGORY",
+                "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+              },
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "second-purchase",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "purchase-b",
+                "name": "Purchased fixture material",
+                "value": 50,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "purchase-b-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "purchase-b-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "purchase-b-emissions",
+            "skill": "calculate-co2e",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "purchase-b-emissions-metric",
+                "name": "Calculated CO2e",
+                "value": 100.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Synthetic CO2e calculation",
+                  "version": "fixture-1",
+                  "source": "fixture:method"
+                },
+                "assumption": "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Input uncertainty remains in source evidence; combined uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "activity purchase-b * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1",
+                  "inputs": [
+                    "purchase-b",
+                    "factor-evidence"
+                  ],
+                  "conversions": [
+                    "kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+                    "kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON number serialization, no display rounding"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "factor-evidence",
+              "purchase-b-record"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+            ],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic fixture calculation only; not an emission factor or inventory for real use."
+              },
+              {
+                "code": "FACTOR_BASIS",
+                "message": "Applied synthetic-factor with declared geography, vintage, methodology, GWP basis and supplied source-review record; no source authentication or assurance performed."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "two-purchases",
+            "skill": "calculate-scope-3-category",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "two-purchases-metric",
+                "name": "Scope 3 category 1 emissions subtotal",
+                "value": 300.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001",
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "GHG Protocol scope 3 physical-activity component composition",
+                  "version": "2011 with 2013 corrections",
+                  "source": "https://ghgprotocol.org/sites/default/files/standards/Corporate-Value-Chain-Accounting-Reporing-Standard_041613_2.pdf"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Combined activity, lifecycle factor and allocation uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Sum of supported, independently covered physical-activity CO2e components",
+                  "inputs": [
+                    "material-co2e-metric",
+                    "purchase-b-emissions-metric"
+                  ],
+                  "conversions": [
+                    "Components normalized to kg CO2e; allocation already reflected in activity/factor, not reapplied"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "purchase-b-record"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+            ],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "SCOPE3_CATEGORY",
+                "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}, {\"activity_id\": \"purchase-b\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"source_id\": \"material-b\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}, {\"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"purchase-b\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material-b\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}, {\"activity_id\": \"purchase-b\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"material-b\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+              },
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+              }
+            ],
+            "next_actions": []
+          },
+          {
+            "id": "supply-chain-mapping",
+            "skill": "map-supply-chain-emissions",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [],
+            "metrics": [],
+            "evidence_ids": [
+              "ev-001",
+              "factor-evidence",
+              "purchase-b-record"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "Synthetic fixture scope 3/inventory analysis only; not a real inventory."
+            ],
+            "data_gaps": [
+              {
+                "id": "supply-chain-mapping-gap-0",
+                "field": "supplier_evidence",
+                "reason": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions.",
+                "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+                "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "SCOPE3_CATEGORY",
+                "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}, {\"activity_id\": \"purchase-b\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"source_id\": \"material-b\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}, {\"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"purchase-b\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material-b\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}, {\"activity_id\": \"purchase-b\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"material-b\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+              },
+              {
+                "code": "SUPPLIER_DATA_REQUIRED",
+                "message": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions."
+              },
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic purchase/category mapping only; not a real supply-chain inventory."
+              },
+              {
+                "code": "SUPPLY_CHAIN_MAPPING",
+                "message": "{\"limits\": \"Selected sourced physical activity/component links only. Supplier identity, product scope and allocation judgments are supplied review, not source authentication. No corporate-total allocation or emissions factor derived.\", \"mapping_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\"}, \"portfolio_total\": null, \"procurement_authorized\": false, \"rows\": [{\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity metric-001 * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"metric-001\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"id\": \"material-co2e-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 200.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"ev-001\"], \"id\": \"material-purchase-link\", \"purchase_metric_id\": \"metric-001\", \"purchase_reference\": \"Fictional PO-001 line 1\", \"source_id\": \"material\", \"supplier_id\": \"material-supplier\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 100}, \"supplier_corporate_emissions_attributed\": false}, {\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity purchase-b * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"purchase-b\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"factor-evidence\", \"purchase-b-record\"], \"id\": \"purchase-b-emissions-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 100.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"purchase-b-record\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b-link\", \"purchase_metric_id\": \"purchase-b\", \"purchase_reference\": \"Fictional PO-002 line 1\", \"source_id\": \"material-b\", \"supplier_id\": \"supplier-b\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"purchase-b-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 50}, \"supplier_corporate_emissions_attributed\": false}]}"
+              },
+              {
+                "code": "SUPPLIER_INPUTS",
+                "message": "{\"fixture_mode\": true, \"links\": [{\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"ev-001\"], \"id\": \"material-purchase-link\", \"purchase_metric_id\": \"metric-001\", \"purchase_reference\": \"Fictional PO-001 line 1\", \"source_id\": \"material\", \"supplier_id\": \"material-supplier\"}, {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"purchase-b-record\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b-link\", \"purchase_metric_id\": \"purchase-b\", \"purchase_reference\": \"Fictional PO-002 line 1\", \"source_id\": \"material-b\", \"supplier_id\": \"supplier-b\"}], \"mapping_review\": {\"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\"}, \"result_id\": \"supply-chain-mapping\"}"
+              }
+            ],
+            "next_actions": [
+              "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+            ]
+          },
+          {
+            "id": "base-service-source",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "base-service",
+                "name": "Fictional base-service",
+                "value": 100,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "base-service-record"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "base-service-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "base-service-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "alt-service-source",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "alt-service",
+                "name": "Fictional alt-service",
+                "value": 100,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-service-record"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "alt-service-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "alt-service-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "base-cost-source",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "base-cost",
+                "name": "Fictional base-cost",
+                "value": 120,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "base-cost-record"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "base-cost-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "base-cost-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "alt-cost-source",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "alt-cost",
+                "name": "Fictional alt-cost",
+                "value": 140,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-cost-record"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "alt-cost-record"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "alt-cost-record"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "procurement-options",
+            "skill": "evaluate-low-carbon-procurement-option",
+            "contract_version": "0.1.0",
+            "status": "partial",
+            "review_states": [
+              "ANALYTICAL",
+              "PROFESSIONAL_REVIEW_REQUIRED",
+              "EVIDENCE_INCOMPLETE"
+            ],
+            "review_requirements": [
+              {
+                "id": "procurement-options-option-review",
+                "state": "PROFESSIONAL_REVIEW_REQUIRED",
+                "reason": "Functional/lifetime/lifecycle equivalence, option uncertainty, tradeoffs and costs require review before claims or procurement decisions.",
+                "scope": "Selected procurement options",
+                "reviewer_role": "procurement and lifecycle assessment reviewer",
+                "status": "open",
+                "resolution": null
+              }
+            ],
+            "metrics": [
+              {
+                "id": "procurement-options-baseline",
+                "name": "Baseline selected procurement emissions",
+                "value": 200.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-cost-record",
+                  "alt-service-record",
+                  "base-cost-record",
+                  "base-service-record",
+                  "ev-001",
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Selected procurement option comparison",
+                  "version": "0.1.0",
+                  "source": "repository:docs/supplier-contract.md"
+                },
+                "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Sum of distinct selected option components",
+                  "inputs": [
+                    "material-co2e-metric"
+                  ],
+                  "conversions": [
+                    "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              },
+              {
+                "id": "procurement-options-alternative",
+                "name": "Alternative selected procurement emissions",
+                "value": 100.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-cost-record",
+                  "alt-service-record",
+                  "base-cost-record",
+                  "base-service-record",
+                  "ev-001",
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Selected procurement option comparison",
+                  "version": "0.1.0",
+                  "source": "repository:docs/supplier-contract.md"
+                },
+                "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Sum of distinct selected option components",
+                  "inputs": [
+                    "purchase-b-emissions-metric"
+                  ],
+                  "conversions": [
+                    "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              },
+              {
+                "id": "procurement-options-reduction",
+                "name": "Baseline minus alternative selected emissions",
+                "value": 100.0,
+                "unit": "kg CO2e",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-cost-record",
+                  "alt-service-record",
+                  "base-cost-record",
+                  "base-service-record",
+                  "ev-001",
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Selected procurement option comparison",
+                  "version": "0.1.0",
+                  "source": "repository:docs/supplier-contract.md"
+                },
+                "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Baseline - alternative selected emissions",
+                  "inputs": [
+                    "procurement-options-baseline",
+                    "procurement-options-alternative"
+                  ],
+                  "conversions": [
+                    "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              },
+              {
+                "id": "procurement-options-reduction-percent",
+                "name": "Conditional selected emissions reduction percent",
+                "value": 50.0,
+                "unit": "%",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-cost-record",
+                  "alt-service-record",
+                  "base-cost-record",
+                  "base-service-record",
+                  "ev-001",
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Selected procurement option comparison",
+                  "version": "0.1.0",
+                  "source": "repository:docs/supplier-contract.md"
+                },
+                "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "100 * (baseline - alternative) / baseline",
+                  "inputs": [
+                    "procurement-options-reduction",
+                    "procurement-options-baseline"
+                  ],
+                  "conversions": [
+                    "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              },
+              {
+                "id": "procurement-options-cost-premium",
+                "name": "Alternative minus baseline selected cost",
+                "value": 20.0,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "alt-cost-record",
+                  "alt-service-record",
+                  "base-cost-record",
+                  "base-service-record",
+                  "ev-001",
+                  "factor-evidence",
+                  "purchase-b-record"
+                ],
+                "method": {
+                  "name": "Selected procurement option comparison",
+                  "version": "0.1.0",
+                  "source": "repository:docs/supplier-contract.md"
+                },
+                "assumption": "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory.",
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Source factor/activity, service equivalence, lifetime, coverage and cost uncertainty remains unquantified; point differences are conditional.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Alternative selected cost - baseline selected cost",
+                  "inputs": [
+                    "base-cost",
+                    "alt-cost"
+                  ],
+                  "conversions": [
+                    "Emissions normalized to kg CO2e; equivalent service unit conversion checked; no currency conversion"
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "alt-cost-record",
+              "alt-service-record",
+              "base-cost-record",
+              "base-service-record",
+              "ev-001",
+              "factor-evidence",
+              "purchase-b-record"
+            ],
+            "assumptions": [
+              "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+              "Synthetic fixture scope 3/inventory analysis only; not a real inventory.",
+              "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory."
+            ],
+            "data_gaps": [
+              {
+                "id": "supply-chain-mapping-gap-0",
+                "field": "supplier_evidence",
+                "reason": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions.",
+                "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+                "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+              },
+              {
+                "id": "procurement-options-gap-1",
+                "field": "supplier_evidence",
+                "reason": "Selected mapping coverage is incomplete; comparison does not establish whole-product or full lifecycle superiority.",
+                "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+                "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+              }
+            ],
+            "diagnostics": [
+              {
+                "code": "SCOPE3_CATEGORY",
+                "message": "{\"accepted\": [{\"activity_id\": \"metric-001\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"source_id\": \"material\"}, {\"activity_id\": \"purchase-b\", \"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"source_id\": \"material-b\"}], \"category\": 1, \"components\": [{\"factor_id\": \"synthetic-factor\", \"metric_id\": \"material-co2e-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"metric-001\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material\"}, {\"factor_id\": \"synthetic-factor\", \"metric_id\": \"purchase-b-emissions-metric\", \"policy\": {\"acceptable_vintages\": [2025], \"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"geography\": \"CA-ON\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"scope3_category\": 1, \"source_review\": {\"activity_id\": \"purchase-b\", \"confirmed_unit\": \"kg CO2e/kg\", \"confirmed_value\": 2, \"coverage\": \"Synthetic purchased material lifecycle intensity only\", \"evidence_ids\": [\"factor-evidence\"], \"factor_id\": \"synthetic-factor\", \"rationale\": \"Synthetic factor supplied solely to test arithmetic and provenance, not for real use.\", \"reviewer\": \"Fictional fixture reviewer\", \"source_locator\": \"fixture:factor\", \"source_version\": \"fixture-1\"}}, \"source_id\": \"material-b\"}], \"coverage_review\": {\"category\": 1, \"confirmed\": true, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"exclusions_and_optional_coverage\": \"No exclusions within this single-source fictional category; other categories require screening.\", \"gwp_basis\": \"Synthetic fixture basis\", \"minimum_boundary_assessment\": \"Fictional aggregate cradle-to-gate coverage; not real source validation.\"}, \"limits\": \"Physical-activity composition only; category-specific factor derivation and supplied boundary judgments are not authenticated.\", \"name\": \"Purchased goods and services\", \"sources\": [{\"activity_id\": \"metric-001\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"ev-001\"], \"id\": \"material\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}, {\"activity_id\": \"purchase-b\", \"boundary_id\": \"boundary-001\", \"capital_good\": false, \"category\": 1, \"category_name\": \"Purchased goods and services\", \"emissions_in_scope_1_2\": false, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"material-b\", \"in_value_chain\": true, \"not_other_categories\": true, \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Fictional ordinary purchased material distinct from scope 1/2.\", \"relationship\": \"purchase\"}]}"
+              },
+              {
+                "code": "SUPPLIER_DATA_REQUIRED",
+                "message": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions."
+              },
+              {
+                "code": "SUPPLIER_DATA_REQUIRED",
+                "message": "Selected mapping coverage is incomplete; comparison does not establish whole-product or full lifecycle superiority."
+              },
+              {
+                "code": "SYNTHETIC_FIXTURE",
+                "message": "Synthetic procurement comparison only; no real lower-carbon product finding."
+              },
+              {
+                "code": "PROCUREMENT_OPTION_COMPARISON",
+                "message": "{\"alternative_has_lower_selected_emissions\": true, \"alternative_metric_id\": \"procurement-options-alternative\", \"baseline_metric_id\": \"procurement-options-baseline\", \"comparison_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"functional_unit\": \"100 packaging deliveries meeting the fictional protection specification.\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"lifetime_basis\": \"One delivery per packaging unit, same selected service period.\", \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"risk_tradeoffs\": \"Damage, supply capacity and wider social/ecosystem tradeoffs require substantive review.\", \"scenario_assumptions\": \"Fictional mutually exclusive material quantity alternatives for equivalent deliveries, not implemented purchases.\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\", \"service_requirements\": \"Equal documented product protection and delivery service.\"}, \"cost_premium_metric_id\": \"procurement-options-cost-premium\", \"cost_review\": {\"confirmed\": true, \"cost_scope\": \"Selected purchase quote only; transport/tax/lifecycle operating costs not established.\", \"currency\": \"CAD\", \"dollar_basis\": \"nominal\", \"evidence_ids\": [\"base-cost-record\", \"alt-cost-record\"], \"rationale\": \"Comparable selected fictional quotes for the same delivery service, not a lifecycle cost or return analysis.\", \"reviewer_role\": \"fictional procurement analyst\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-09-01\"}, \"full_lifecycle_superiority_verified\": false, \"limits\": \"Selected sourced quantities only; functional equivalence and source fitness are supplied review. No realized saving, environmental superiority, whole-footprint inventory reduction, investment return or supplier selection inferred.\", \"options\": [{\"cost\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"base-cost-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"base-cost-record\"], \"id\": \"base-cost\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional base-cost\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"CAD\", \"value\": 120}, \"functional_quantity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"base-service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"base-service-record\"], \"id\": \"base-service\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional base-service\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"mapping_coverage_complete\": false, \"option\": {\"cost_metric_id\": \"base-cost\", \"functional_metric_id\": \"base-service\", \"id\": \"base-option\", \"link_ids\": [\"material-purchase-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"material-supplier\"}, \"rows\": [{\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity metric-001 * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"metric-001\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"ev-001\", \"factor-evidence\"], \"id\": \"material-co2e-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 200.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"ev-001\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"ev-001\"], \"id\": \"material-purchase-link\", \"purchase_metric_id\": \"metric-001\", \"purchase_reference\": \"Fictional PO-001 line 1\", \"source_id\": \"material\", \"supplier_id\": \"material-supplier\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"ev-001\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"ev-001\"], \"id\": \"metric-001\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 100}, \"supplier_corporate_emissions_attributed\": false}]}, {\"cost\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"alt-cost-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"alt-cost-record\"], \"id\": \"alt-cost\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional alt-cost\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"CAD\", \"value\": 140}, \"functional_quantity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"alt-service-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"alt-service-record\"], \"id\": \"alt-service\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Fictional alt-service\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"count\", \"value\": 100}, \"mapping_coverage_complete\": false, \"option\": {\"cost_metric_id\": \"alt-cost\", \"functional_metric_id\": \"alt-service\", \"id\": \"alternative-option\", \"link_ids\": [\"purchase-b-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"supplier-b\"}, \"rows\": [{\"allocation_reapplied\": false, \"category\": 1, \"category_result_status\": \"completed\", \"emissions_component\": {\"assumption\": \"Synthetic fixture calculation only; not an emission factor or inventory for real use.\", \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [\"kg -> kg, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\", \"kg CO2e -> kg CO2e, factor 1; https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"], \"formula\": \"activity purchase-b * conversion 1 * factor synthetic-factor (2 kg CO2e/kg) * output conversion 1\", \"inputs\": [\"purchase-b\", \"factor-evidence\"], \"rounding\": \"34-digit Decimal arithmetic; JSON number serialization, no display rounding\"}, \"evidence_ids\": [\"factor-evidence\", \"purchase-b-record\"], \"id\": \"purchase-b-emissions-metric\", \"method\": {\"name\": \"Synthetic CO2e calculation\", \"source\": \"fixture:method\", \"version\": \"fixture-1\"}, \"name\": \"Calculated CO2e\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Input uncertainty remains in source evidence; combined uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg CO2e\", \"value\": 100.0}, \"link\": {\"allocation_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"confirmed\": true, \"evidence_ids\": [\"purchase-b-record\"], \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"product_scope\": \"Selected fictional material bought for this buyer.\", \"rationale\": \"Synthetic attributable purchase quantity already contains allocation; no second allocation.\", \"supplier_relationship\": \"Fictional supplier of this buyer purchase line.\"}, \"category_result_id\": \"two-purchases\", \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b-link\", \"purchase_metric_id\": \"purchase-b\", \"purchase_reference\": \"Fictional PO-002 line 1\", \"source_id\": \"material-b\", \"supplier_id\": \"supplier-b\"}, \"purchase_activity\": {\"assumption\": null, \"boundary_id\": \"boundary-001\", \"calculation\": {\"conversions\": [], \"formula\": \"recorded quantity\", \"inputs\": [\"purchase-b-record\"], \"rounding\": \"none\"}, \"evidence_ids\": [\"purchase-b-record\"], \"id\": \"purchase-b\", \"method\": {\"name\": \"Synthetic meter reading fixture\", \"source\": \"fixture:meter-001\", \"version\": \"fixture-1\"}, \"name\": \"Purchased fixture material\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"uncertainty\": {\"description\": \"Fictional meter uncertainty is not quantified.\", \"kind\": \"unquantified\", \"unit\": null, \"value\": null}, \"unit\": \"kg\", \"value\": 50}, \"supplier_corporate_emissions_attributed\": false}]}], \"procurement_authorized\": false, \"public_claim_authorized\": false, \"reduction_metric_id\": \"procurement-options-reduction\", \"reduction_percent_metric_id\": \"procurement-options-reduction-percent\", \"selected_supplier_id\": null}"
+              },
+              {
+                "code": "SUPPLIER_INPUTS",
+                "message": "{\"alternative\": {\"cost_metric_id\": \"alt-cost\", \"functional_metric_id\": \"alt-service\", \"id\": \"alternative-option\", \"link_ids\": [\"purchase-b-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"supplier-b\"}, \"baseline\": {\"cost_metric_id\": \"base-cost\", \"functional_metric_id\": \"base-service\", \"id\": \"base-option\", \"link_ids\": [\"material-purchase-link\"], \"mapping_result_id\": \"supply-chain-mapping\", \"supplier_id\": \"material-supplier\"}, \"comparison_review\": {\"allocation_basis\": \"Physical mass quantity attributable to this organization; no second allocation\", \"boundary_id\": \"boundary-001\", \"confirmed\": true, \"coverage_complete\": false, \"evidence_ids\": [\"ev-001\"], \"functional_unit\": \"100 packaging deliveries meeting the fictional protection specification.\", \"gwp_basis\": \"Synthetic fixture basis\", \"lifecycle_boundary\": \"Fictional cradle-to-gate intensity for this material\", \"lifetime_basis\": \"One delivery per packaging unit, same selected service period.\", \"nonoverlap_assessment\": \"Two distinct already-attributable purchase lines and their separate emissions components.\", \"period\": {\"end\": \"2025-12-31\", \"start\": \"2025-01-01\"}, \"rationale\": \"Two fictional independent purchase lines selected; full supplier population not supplied.\", \"reviewer_role\": \"buyer emissions analyst\", \"risk_tradeoffs\": \"Damage, supply capacity and wider social/ecosystem tradeoffs require substantive review.\", \"scenario_assumptions\": \"Fictional mutually exclusive material quantity alternatives for equivalent deliveries, not implemented purchases.\", \"scope_boundary\": \"Selected buyer material purchase, category 1 cradle-to-gate fixture only.\", \"service_requirements\": \"Equal documented product protection and delivery service.\"}, \"cost_review\": {\"confirmed\": true, \"cost_scope\": \"Selected purchase quote only; transport/tax/lifecycle operating costs not established.\", \"currency\": \"CAD\", \"dollar_basis\": \"nominal\", \"evidence_ids\": [\"base-cost-record\", \"alt-cost-record\"], \"rationale\": \"Comparable selected fictional quotes for the same delivery service, not a lifecycle cost or return analysis.\", \"reviewer_role\": \"fictional procurement analyst\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-09-01\"}, \"fixture_mode\": true, \"result_id\": \"procurement-options\"}"
+              }
+            ],
+            "next_actions": [
+              "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+            ]
+          }
+        ],
+        "assumptions": [
+          "Synthetic fixture calculation only; not an emission factor or inventory for real use.",
+          "Synthetic fixture scope 3/inventory analysis only; not a real inventory.",
+          "Conditional equivalent-service selected lifecycle comparison; mutually exclusive alternatives are not an additive inventory."
+        ],
+        "data_gaps": [
+          {
+            "id": "supply-chain-mapping-gap-0",
+            "field": "supplier_evidence",
+            "reason": "Selected purchase mapping coverage is incomplete; unmapped purchases are not zero emissions.",
+            "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+            "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+          },
+          {
+            "id": "procurement-options-gap-1",
+            "field": "supplier_evidence",
+            "reason": "Selected mapping coverage is incomplete; comparison does not establish whole-product or full lifecycle superiority.",
+            "impact": "Supplier performance, comparability and procurement readiness remain conditional.",
+            "remedy": "Obtain supplier-specific evidence and a documented buyer assessment; do not substitute zero for unknown."
+          }
+        ],
+        "review_requirements": [
+          {
+            "id": "procurement-options-option-review",
+            "state": "PROFESSIONAL_REVIEW_REQUIRED",
+            "reason": "Functional/lifetime/lifecycle equivalence, option uncertainty, tradeoffs and costs require review before claims or procurement decisions.",
+            "scope": "Selected procurement options",
+            "reviewer_role": "procurement and lifecycle assessment reviewer",
+            "status": "open",
+            "resolution": null
+          }
+        ],
+        "energy": [
+          "res-001"
+        ],
+        "water": [],
+        "materials": [],
+        "waste": [],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": [
+            "mapped-category",
+            "two-purchases"
+          ]
+        },
+        "suppliers": [
+          {
+            "id": "material-supplier",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "attributes": {
+              "name": "Fictional material supplier"
+            }
+          },
+          {
+            "id": "supplier-b",
+            "evidence_ids": [
+              "purchase-b-record"
+            ],
+            "attributes": {
+              "name": "Fictional second material supplier"
+            }
+          }
+        ],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": [
+          {
+            "id": "synthetic-factor",
+            "value": 2,
+            "unit": "kg CO2e/kg",
+            "source": {
+              "locator": "fixture:factor",
+              "publisher": "Fictional fixture publisher",
+              "version": "fixture-1",
+              "accessed": "2026-10-04"
+            },
+            "geography": "CA-ON",
+            "vintage_year": 2025,
+            "method": {
+              "name": "Synthetic CO2e calculation",
+              "version": "fixture-1",
+              "source": "fixture:method"
+            },
+            "gwp_basis": "Synthetic fixture basis",
+            "evidence_ids": [
+              "factor-evidence"
+            ],
+            "status": "synthetic"
+          }
+        ]
+      }
+    }
+  }
+}

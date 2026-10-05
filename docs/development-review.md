@@ -18,3 +18,5 @@ The source-reproduced engagement and improvement-planning helpers were developed
 The later mapped supplier/category hotspot contract also lies beyond the reviewed snapshot and must be included in subsequent specialist/router/release review. Its selected-subtotal calculation retains factor checks and incomplete coverage; it does not establish full Scope 3 coverage. Evidence is in [the hotspot capture](../evaluations/sus14-supplier-hotspots.json).
 
 The subsequent sourced supplier-risk screening contract also requires inclusion in later specialist/router/release review. It records caller-reviewed impacts and ordinal severity while preserving allegations, proxies, uncertainty and due-diligence review. It grants no supplier clearance or legal determination. Evidence is in [the risk capture](../evaluations/sus14-supplier-risk.json).
+
+The subsequent conditional procurement-option contract also requires later specialist/router/release review. Its equivalence/lifetime/source-fitness decisions, selected emissions and cost comparison do not inherit approval from the earlier snapshot. Evidence is in [the option capture](../evaluations/sus14-procurement-options.json).

@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "61c0917",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 322,
+    "duration_seconds": 124.304,
+    "status": "passed"
+  },
+  "focused_procurement_supplier_suites": {
+    "tests": 53,
+    "duration_seconds": 14.251,
+    "status": "passed"
+  },
+  "skill_validation": "evaluate-low-carbon-procurement-option quick_validate.py passed",
+  "cli_validation": "Author-led complete saved output reproduced; independent actual CLI exit 0 with blocked zero-metric result also reproduced by parent",
+  "known_answer": {
+    "baseline_kg_co2e": 200,
+    "alternative_kg_co2e": 100,
+    "conditional_difference_kg_co2e": 100,
+    "conditional_difference_percent": 50,
+    "alternative_quote_premium_cad": 20,
+    "service_each": 100,
+    "service_unit": "count",
+    "mapping_coverage_complete": false
+  },
+  "checks": [
+    "Whole native purchase mapping reproduction and selected supplier/category/lifecycle/GWP equivalence",
+    "Positive equal sourced functional quantities, no emissions/spend as function",
+    "Unique alternative component/activity IDs and signed differences",
+    "Missing factors and fixture permission preserve EMISSION_FACTOR_REQUIRED",
+    "Unknown paired costs withheld; explicit matched currency/valuation/dollar/tax basis",
+    "Finance-derived costs reproduced; altered underlying quote blocked",
+    "Direct and inherited shadow-price cash-cost use rejected",
+    "Zero baseline no percentage; equal/worse alternative not lower selected emissions",
+    "Open professional review, no supplier selection or public/procurement claim",
+    "Unchanged GHG/supplier state, valid metrics/assumptions/lineage and complete proposal replay"
+  ],
+  "source_orientation": [
+    {
+      "url": "https://ghgprotocol.org/product-standard",
+      "scope": "Additional product comparison rules required"
+    },
+    {
+      "url": "https://ghgprotocol.org/sites/default/files/2023-03/18_WP_Comparative-Emissions_final.pdf",
+      "scope": "WRI January 2019 working paper on equivalent function, comparative methodology and separation from corporate inventory accounting; not a formal standard"
+    }
+  ],
+  "independent_case": {
+    "capture": "sus14-independent-options.json",
+    "observed": "Different protected contents despite equal counts; reader withheld comparison confirmation",
+    "execution": "Blocked before mapping reproduction, zero calculated comparison metrics",
+    "parent_replay": "Exact complete executed output reproduced; raw source hash unchanged",
+    "limit": "One refusal scenario, not independent arithmetic/factor or general reliability proof"
+  },
+  "limitations": [
+    "Source fitness and functional/lifetime equivalence are supplied substantive review, not authenticated automatically",
+    "Selected lifecycle quantities, not whole-product/consequential effects or full-scope inventory saving",
+    "Selected purchase costs, not full lifecycle costs, affordability or investment returns",
+    "Broader attribution/product-rule methods, organization evaluation and release gates remain"
+  ],
+  "sha256": {
+    "scripts/procurement_options.py": "4b35ec3681aa11611cc670d35bcba0323a6e9a1a803253b2de78c51349d889c3",
+    "scripts/supplier_tools.py": "f26a862070ae1749c1274e23b287a6dc8c6d2136664b7b77d58ef3d6707a07ae",
+    "tests/test_procurement_options.py": "0508e662fd1f92afbc0a4fb3c227aba9c3a5ab1fbb52f96cb2c0921085d6ca19",
+    "skills/procurement/evaluate-low-carbon-procurement-option/SKILL.md": "0917247825b19f20163386e6572cfc1511c96f7797372c4473474dccd33ad5c7",
+    "docs/supplier-contract.md": "a35791f74e42f7f66f50b7df8c4dd4d2a0f3c56aabba40dff9b6a19af73540de",
+    "evaluations/sus14-procurement-options.json": "3f17b5b3b43748bcc79cd91719aaf42d555869dbff45986b832ed749e792fe12",
+    "evaluations/sus14-independent-options.json": "079d582082354dc55309c5facbb9cacdd47f10cdc7f85133df8f10e27d85641d"
+  }
+}
