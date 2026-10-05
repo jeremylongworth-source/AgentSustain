@@ -1,0 +1,7 @@
+# SUS-12 annual IRR cases
+
+Recorded 2026-10-04 against 3f0b9ab and this increment. Five actual helper requests/results and checked state proposals are saved and rerun. Search bounds and numerical tolerances are explicit fictional fixture inputs, not suggested financial defaults.
+
+Signed annual flows (-1000, 600, 600) have a verified single return of approximately 13.0662386292%. The emitted rate is checked against the original NPV equation after JSON serialization. Flows (-100, 230, -132) produce 10% and 20% bounded candidates, with no scalar return selected. A narrower interval finding only 10% still withholds global uniqueness. The (-100, 220, -121) tangent-root example retains the 10% candidate without pretending one sign crossing occurred. Search bounds excluding the conventional root yield no bounded candidate, while all-zero flows are indeterminate.
+
+Tests also retain negative and zero IRR, reject insufficient iteration budgets and unsupported precision, enforce source/model/timing/currency checks, and preserve professional review and unrelated gaps despite instruction-like text. This is bounded numerical root analysis of supplied annual quantities. It does not establish economic input completeness, engineering savings, investment approval, formal exact global root certification or independent agent reasoning. Dated cash-flow composition, wider financial methods and organization-wide evaluation remain further work.

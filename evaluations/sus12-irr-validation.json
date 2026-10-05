@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "3f0b9ab",
+  "checks": {
+    "unittest": {
+      "passed": 204,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests",
+      "new_irr_tests": 10
+    },
+    "post_metadata_irr_rerun": {
+      "passed": 10,
+      "command": ".venv/Scripts/python.exe -m unittest tests.test_irr"
+    },
+    "changed_skill_packaging": {
+      "passed": 1,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "unique_irr_percent": 13.06623862918075,
+      "multiple_candidates_percent": [
+        10,
+        20
+      ],
+      "tangent_candidate_percent": 10,
+      "no_bounded_candidate": "scalar withheld",
+      "all_zero_flows": "indeterminate"
+    }
+  },
+  "limitations": [
+    "Fictional annual quantities and model judgments are supplied, not authenticated.",
+    "Numerical search covers explicit bounds; nonconventional candidates do not establish global uniqueness.",
+    "Supports annual end-of-year timing and 1..60 future years; irregular-date methods remain.",
+    "Numerical precision is not economic certainty or investment approval; broader economics and independent organization evaluation remain."
+  ],
+  "sha256": {
+    "scripts/irr_tools.py": "e17868e6974831de7312bdb6e1f4d6124ce5a042f7178f8e6b2d24baa0e22576",
+    "scripts/finance_tools.py": "c0c78bee51077e61d30e4c19bffae4aefed22e212bb4c40caa217a7bf0c694cc",
+    "tests/test_irr.py": "611db480e03faedf30329ed48fd37d712f3e3ee8a13de4bbf546bc582f1e4e69",
+    "docs/finance-contract.md": "0daadb765a0fa15bea3c88358a86a1f412979ae73ed2f44eeeecee542d8ad683",
+    "skills/finance/calculate-irr/SKILL.md": "d459da99aff14609f677fc471dd7db407776b88e689bd2e99367a2d81aecc2fd",
+    "evaluations/sus12-irr-cases.json": "be47e6bb4a5e7674f96c9ce020c192c787846df85525ca209139a86fbaf9c5a2"
+  }
+}

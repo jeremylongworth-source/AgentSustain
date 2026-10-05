@@ -10,11 +10,13 @@ from .contract_validation import validate_state
 from .data_tools import number, serialize
 from .state_proposal import propose
 from .finance_composition import OPERATIONS as COMPOSITION_OPERATIONS, compose
+from .irr_tools import irr_roots
 
 
 OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id", "analysis_review", "result_id"},
               "calculate-roi": {"investment_id", "net_benefit_id", "analysis_review", "result_id"},
               "calculate-npv": {"cashflows", "discount_rate_id", "analysis_review", "result_id"}}
+OPERATIONS["calculate-irr"] = {"cashflows", "root_search", "analysis_review", "result_id"}
 OPERATIONS.update(COMPOSITION_OPERATIONS)
 
 
@@ -72,7 +74,7 @@ def run_finance(state, skill, parameters):
                 value,unit,inputs,formula,output_period,complete = compose(state,skill,parameters,resolve,refs)
                 if not complete:
                     gap("FINANCIAL_COVERAGE_REQUIRED", "Selected cost/benefit coverage is incomplete; composition is a supported subtotal, not complete project economics.")
-            elif skill == "calculate-npv":
+            elif skill in {"calculate-npv", "calculate-irr"}:
                 flows = parameters["cashflows"]
                 if (not isinstance(flows, list) or len(flows) < 2 or any(not isinstance(f, dict) or set(f) != {"year", "metric_id"}
                         or isinstance(f["year"], bool) or not isinstance(f["year"], int) for f in flows)
@@ -81,18 +83,19 @@ def run_finance(state, skill, parameters):
                     raise ValueError("Supply year 0 through N once, with Dec 31 valuation and calendar-year-end cash-flow timing.")
                 if horizon["end"] != f"{valuation.year+len(flows)-1}-12-31":
                     raise ValueError("Horizon must match the complete annual cash-flow series.")
-                rate = resolve(parameters["discount_rate_id"], "%")
-                if rate["period"] != state["reporting_period"] or review.get("discount_basis") != review["dollar_basis"]:
-                    raise ValueError("Discount-rate context and real/nominal basis must match the reviewed cash flows.")
-                discount = number(rate["value"])/100
-                if discount <= -1: raise ValueError("Discount rate must exceed -100 percent.")
+                if skill == "calculate-npv":
+                    rate = resolve(parameters["discount_rate_id"], "%")
+                    if rate["period"] != state["reporting_period"] or review.get("discount_basis") != review["dollar_basis"]:
+                        raise ValueError("Discount-rate context and real/nominal basis must match the reviewed cash flows.")
+                    discount = number(rate["value"])/100
+                    if discount <= -1: raise ValueError("Discount rate must exceed -100 percent.")
                 selected, value = [], number(0)
                 for flow in flows:
                     metric = resolve(flow["metric_id"], currency, flow["year"] > 0)
                     expected = state["reporting_period"] if flow["year"] == 0 else {"start": f"{valuation.year+flow['year']}-01-01", "end": f"{valuation.year+flow['year']}-12-31"}
                     if metric["period"] != expected: raise ValueError("Cash-flow metric period must match its explicit year.")
                     selected.append(metric); inputs.append(metric["id"])
-                    value += number(metric["value"])/(1+discount)**flow["year"]
+                    if skill == "calculate-npv": value += number(metric["value"])/(1+discount)**flow["year"]
                 if len(inputs) != len(set(inputs)): raise ValueError("Cash-flow quantities cannot be reused across years.")
                 # Each year is one already-composed net flow, not invoice lines.
                 # Reusing an aggregate and one of its selected components would
@@ -107,9 +110,15 @@ def run_finance(state, skill, parameters):
                         if key in metrics: pending.extend(metrics[key]["calculation"]["inputs"])
                     if (set(inputs)-{metric["id"]}) & seen:
                         raise ValueError("Cash-flow aggregate/component overlap must be reconciled before discounting.")
-                inputs.append(rate["id"])
-                if len(inputs) != len(set(inputs)): raise ValueError("Discount rate cannot also be a cash-flow quantity.")
-                formula, unit = "Sum cashflow(year) / (1 + supplied percent discount rate / 100)^year, including year 0", currency
+                if skill == "calculate-irr":
+                    report, value = irr_roots([m["value"] for m in selected], parameters["root_search"])
+                    result["diagnostics"].append({"code": report["code"], "message": json.dumps(report, sort_keys=True)})
+                    if value is None: raise ValueError(report["message"])
+                    formula, unit = "Verified rate solving sum(CF_t / (1+r)^t)=0; unique positive-x root for one-sign-change annual flows", "%"
+                else:
+                    inputs.append(rate["id"])
+                    if len(inputs) != len(set(inputs)): raise ValueError("Discount rate cannot also be a cash-flow quantity.")
+                    formula, unit = "Sum cashflow(year) / (1 + supplied percent discount rate / 100)^year, including year 0", currency
             else:
                 investment = resolve(parameters["investment_id"], currency)
                 if investment["period"] != state["reporting_period"] or number(investment["value"]) <= 0:
@@ -151,7 +160,7 @@ def run_finance(state, skill, parameters):
             "period": copy.deepcopy(output_period), "boundary_id": state["organizational_boundary"]["id"], "evidence_ids": sorted(refs),
             "method": {"name": "Explicit supplied project-finance arithmetic", "version": "0.1.0", "source": "docs/finance-contract.md"},
             "assumption": assumption, "uncertainty": {"kind": "unquantified", "description": "Model applicability, inputs and sensitivity are not independently verified.", "value": None, "unit": None},
-            "calculation": {"formula": formula, "inputs": inputs, "conversions": ["No currency, inflation, tax or tariff conversion inferred."], "rounding": "34-digit Decimal arithmetic; JSON serialization"}}]
+            "calculation": {"formula": formula, "inputs": inputs, "conversions": ["No currency, inflation, tax or tariff conversion inferred."], "rounding": "70-digit Decimal root isolation; verified JSON serialization" if skill == "calculate-irr" else "34-digit Decimal arithmetic; JSON serialization"}}]
         result["diagnostics"].append({"code": "FINANCIAL_ANALYSIS_BASIS", "message": json.dumps(parameters, sort_keys=True)})
     except (ValueError, KeyError, TypeError) as error:
         result["metrics"] = []; gap("FINANCIAL_DATA_REQUIRED", str(error))
