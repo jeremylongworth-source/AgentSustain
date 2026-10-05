@@ -8,6 +8,8 @@ Intended users include manufacturers, logistics businesses, commercial facilitie
 
 Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9. The ten SUS-05 data skills, shared arithmetic helpers and checked state proposals have initial fictional scenario demonstrations. Broader agent reliability and end-to-end evaluation remain unproven. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
 
+SUS-06 now contains eight GHG foundation skills and a sourced-factor CO2e calculation helper. [Its execution contract](docs/ghg-foundation-contract.md) describes factor applicability, fixture isolation and unsupported methods. Numerical examples are synthetic; no real emission-factor database or complete inventory workflow is provided.
+
 Start with [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Material changes to the approved architecture contracts require renewed review.
 
 ## Validate the architecture pack

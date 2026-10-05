@@ -1,0 +1,45 @@
+{
+  "wave": "SUS-06",
+  "status": "implementation_in_progress",
+  "checked_on": "2026-10-04",
+  "timezone": "America/Toronto",
+  "validation_command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+  "total_test_methods_passed": 62,
+  "ghg_foundation_tests": 11,
+  "skill_packaging_checks_passed": 8,
+  "known_answer": "Synthetic 1000 kWh * supplied 0.5 kg CO2e/kWh = 500 kg CO2e; never a real factor",
+  "checks": [
+    "Missing factor -> EMISSION_FACTOR_REQUIRED and no metric",
+    "Geography, vintage, method and GWP mismatch block",
+    "Incomplete metadata and unsupported gas/unit bases block",
+    "Source-review mismatches block",
+    "Fixture factors cannot be enabled by default or relabeled for ordinary use",
+    "Unknown, negative and mixed-period activity block",
+    "Unit scaling preserves lineage",
+    "Review obligations and unresolved gaps survive",
+    "Common request command emits valid result or structured error"
+  ],
+  "limits": [
+    "No real factor source has been authenticated or included",
+    "Source-review records are supplied attestations, not authenticated reviewer identities",
+    "Boundary, source identification, selection, estimation and quality reasoning still require broader behavioral evaluation",
+    "Scope accounting and the complete v1 workflow remain unimplemented"
+  ],
+  "content_sha256": {
+    "skills/carbon/assess-ghg-data-quality/SKILL.md": "341460cfe38679fa7376997539d1385aa937cb42b30958e14e8d17c434a9d3c4",
+    "skills/carbon/calculate-co2e/SKILL.md": "0c1a7212c517e1a553621cdeecc7737f88b5239a0e2474394980f3bebbd01639",
+    "skills/carbon/define-ghg-inventory-boundary/SKILL.md": "6cb4a380e34413466345b46334e90fe7c1949a79f396386504445cfcb3c91f3f",
+    "skills/carbon/estimate-missing-activity-data/SKILL.md": "33e05a1405cf582794fec4c1212cc09cba47dcccb8e20d1f89e51cd15cfffaeb",
+    "skills/carbon/identify-emission-sources/SKILL.md": "c740d1a3e92d82d1b4e1bb7fb95f6fa5607a0f88a48dbad1ce683eeeb9b5dea5",
+    "skills/carbon/identify-ghg-data-gaps/SKILL.md": "a3ebc6a2301b5f674e3ea97fe368da6e62c7e2417f8a2d15960348e59756ce5e",
+    "skills/carbon/select-emission-factor/SKILL.md": "78ac78091e30fadb1659dd1774155a53789af64dde104cccc8b23aa8f2df06c8",
+    "skills/carbon/validate-emission-factor/SKILL.md": "05cb12ca5fbf2e53e2b83fa2a289da87b08ffe870892fd69052dc62108c87d1a",
+    "scripts/ghg_foundation.py": "633baea0ab102c8f89fab87cb952b6e444715aa3b6288a03296ecd0b44fd9d39",
+    "scripts/run_ghg_calculation.py": "b1cef726a1193d9d884aa2b8864edc08acd2f4c501bf5fbec2fc54f5e7ef4369",
+    "tests/test_ghg_foundation.py": "61775e7ae83249cef13ae3da77064574f04b963f0f40ef8a020b932a8e34c77f",
+    "docs/ghg-foundation-contract.md": "4581c048c294f90ae0ad1d43054a1434f516a4fc43e5e277b6df88a4e3223ec9",
+    "examples/ghg-foundation/factor-required-output.json": "7f82efcbaab865eab1f572425d71f673d63d5e5167628b752999142642c68e3b",
+    "examples/ghg-foundation/synthetic-output.json": "450c69a5b3d8b5ffca0d571c5491f29b7a0986164462c7070f8c2ab0f20302e7",
+    "examples/ghg-foundation/synthetic-request.json": "71a6b7902ae59b2d78c841bfb3722aee2f0bd28d0fbb8591bb3aa361a2c32865"
+  }
+}
