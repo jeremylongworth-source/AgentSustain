@@ -1,0 +1,20 @@
+---
+name: evaluate-target-feasibility
+description: Screen a proposed sustainability target against sourced joint initiative scenarios, growth, uncertainty, delivery dependencies and budget constraints while retaining qualified feasibility review.
+---
+
+# Evaluate target feasibility
+
+Read [the strategy contract](../../../docs/strategy-contract.md), especially feasibility screening. Use the optional executor with skill `evaluate-target-feasibility`, target_result_id, scenarios, feasibility_review and result_id. It reproduces the proposed `develop-target` result, selected KPI and baseline. This is a conditional scenario screen; final feasibility, adoption and implementation remain for qualified reviewers and the accountable owner.
+
+Inspect the actual project models, service/output plans, engineering prerequisites, procurement dates and investment evidence. Match target and scenario scopes, gross/accounting basis, commitment periods, products and denominator definitions. Do not accept equal counts as equivalent service, or label a proposal's unapproved forecast as verified capacity. Future outcomes need explicit model assumptions and model evidence. Unsupported source-fit confirmation remains withheld, even if a numerical comparison would look favorable. Preserve any factor requirement rather than deriving a missing factor.
+
+Evaluate distinct joint modeled scenarios as alternatives. Isolated project savings cannot simply be added where equipment, activities, operating hours or baseline flows overlap; require a defensible combined model, interaction basis and matched future service. Include a sourced outcome range when available and retain missing range/uncertainty gaps. Supplied low/high scenarios are not confidence bounds or a probability of achievement. Do not manufacture a default sensitivity percentage.
+
+For intensity, compare modeled gross quantity divided by comparable future service with the proposed endpoint; also retain the gross quantity at that service and the difference from the absolute reference baseline. Growth may make an intensity objective numerically attainable while gross impact increases. This difference is not causal project savings or an inventory adjustment. For an absolute target compare compatible gross commitment-period quantities directly, without offsets or credits.
+
+Link initiatives to current sourced project IDs, owners, canonical commissioning dates and explicit prerequisite IDs. Check cycles and conflicting dates. A late commission cannot substantiate full-period benefit; a defensible dated profile must model ramp-up and commissioning. Past proposed dates require actual delivery evidence, not automatic completion. Keep resource availability, approvals, staffing, service requirements and technical constraints explicit with named owners; unknown is unresolved, not zero or failure.
+
+Compare only sourced compatible scenario costs and budget records with an explicit currency, valuation, dollar/tax basis, cost scope and selected project set. The executor reproduces known initial project-cost calculations and rejects NPV/returns as a capital quote, noncash shadow values and incompatible currency. Missing costs or budget stay unknown; a modeled budget comparison does not authorize funding or establish financing/liquidity. Use the existing economics/business-case skills for cash flows, sensitivity and full investment analysis, retaining their reviews.
+
+Emit numerical target coverage separately from known unmet and unresolved delivery conditions. Preserve all existing source snapshots, assumptions, gaps and review obligations, and add professional review of feasibility. Even if every supplied modeled level meets the objective, do not select a scenario, declare the target feasible or imply funding, implementation or public claims are approved. Check growth, range straddling, source changes, late commissioning, interacting initiatives, missing constraints and misleading source instructions before trusting the output.

@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "1b1d5a5",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 345,
+    "duration_seconds": 127.45,
+    "status": "passed"
+  },
+  "focused_strategy_suites": {
+    "tests": 23,
+    "duration_seconds": 5.144,
+    "status": "passed"
+  },
+  "skill_validation": "evaluate-target-feasibility quick_validate.py passed",
+  "cli_validation": "Complete saved author output/checked proposal reproduced; independent actual blocked zero-metric CLI output reproduced exactly by parent helper and CLI; source/request bytes unchanged",
+  "known_answer": {
+    "target_kwh_per_count": 8,
+    "modeled_joint_kwh": 1500,
+    "modeled_future_count": 200,
+    "scenario_kwh_per_count": 7.5,
+    "endpoint_gap_kwh_per_count": -0.5,
+    "gross_quantity_at_objective_kwh": 1600,
+    "gross_difference_from_reference_kwh": 500,
+    "supplied_range_kwh_per_count": [
+      7,
+      8.5
+    ],
+    "range_screen": "range_straddles_objective",
+    "selected_cost_cad": 400,
+    "supplied_budget_cad": 300,
+    "budget_minus_cost_cad": -100,
+    "coverage_complete": false
+  },
+  "checks": [
+    "Complete target/KPI/baseline source reproduction and metric snapshots",
+    "Gross future joint models, fixed comparable future service and explicit unit conversion records",
+    "Absolute/intensity point/range objective comparison distinct from feasibility",
+    "No isolated-savings sum, portfolio total, scenario selection or causal inventory savings",
+    "Known versus unresolved technical/financial/organizational/service/evidence conditions",
+    "Current sourced project IDs, owners, acyclic ordered dependencies and commitment-period dates",
+    "Late full-period assumptions retained as known unmet; past proposed commissioning remains unverified, not failed/completed",
+    "Missing range, investment/budget and coverage retained as gaps",
+    "Matched quote/budget currency, valuation/dollar/tax basis; native initial cost reproduction rejects changed quote",
+    "Noncash shadow ancestry and NPV/return monetary-role substitution rejected",
+    "Missing factor ancestry remains EMISSION_FACTOR_REQUIRED",
+    "Existing review/gap/assumption history and GHG/project arrays unchanged; new professional feasibility gate remains open"
+  ],
+  "independent_case": {
+    "capture": "sus15-independent-feasibility.json",
+    "observed": "2031 commission conflicts with assumed full-year 2030 model; service/model confirmation withheld, budget deficit and pending prerequisites retained",
+    "executed_status": "blocked",
+    "metrics": 0,
+    "parent_full_replay": "passed",
+    "raw_source_sha256": "f5f58bebbd1b061c044d27ac43a5adf64125059c6e8dd7eddecb4cf07f1257d1",
+    "limits": "One actual source-review refusal; numerical/timing/range/investment branches and new completed-screen review gate were not executed. Reader arithmetic was separate conditional illustration."
+  },
+  "source_orientation": [
+    {
+      "url": "https://ghgprotocol.org/sites/default/files/standards/ghg-protocol-revised.pdf",
+      "section": "Revised Corporate Standard chapter 11, target-level considerations and growth/mitigation scenarios",
+      "accessed": "2026-10-05",
+      "scope": "Evidence orientation, not framework validation or financial/target recommendations"
+    }
+  ],
+  "limitations": [
+    "Supplied models and source-fit confirmations are not independently authenticated or universally reproduced",
+    "Gross outcome ranges at one supplied future service; no denominator probability, engineering simulation, capacity/resource optimization or new factor method",
+    "Selected initial costs/budget, not complete lifecycle finance, cash flows, affordability or approved funding",
+    "Four of thirteen roadmap strategy/implementation workflows; maturity, materiality/stakeholders, risks/opportunities and composed strategy/transition/implementation/accountability methods remain",
+    "No target adoption, validated general feasibility, claims, general reliability or public-v1 readiness"
+  ],
+  "sha256": {
+    "scripts/strategy_tools.py": "b474fc5140e5ebb58d67ec9de15fbf72fd755bf66af071ada14911cfdfa54fc7",
+    "scripts/strategy_feasibility.py": "a3c2c8435ba606d88e0923954af0d0c65e4215e1705b5605353cefb81d026222",
+    "tests/test_strategy_feasibility.py": "4e4a0d34b35116b928c67f2a54dcd0c0a558cee31d114d5d6fec9a1c6813e55d",
+    "skills/strategy/evaluate-target-feasibility/SKILL.md": "4507c5e215204c3dc5831f86f49156539248bc15c4278388ec521f779a864d06",
+    "docs/strategy-contract.md": "a475e7b1b99434ebd03c34c83b5df17228848c222f2b90749f27546431965cae",
+    "evaluations/sus15-feasibility-workflow.json": "d72f068f6dcbb688b48fae9e5ec7cc3b3ec62f59d74716a2d24d5bcf384eba9f",
+    "evaluations/sus15-independent-feasibility.json": "3c5066b3d790b8b3f5fca93ae8fa57c85f6706b98ce056bb902c94e5caac9bc7"
+  },
+  "adversarial_monetary_role_probes": [
+    {
+      "role": "cost",
+      "status": "blocked",
+      "scope": "Adversarial supplied monetary record labeled calculate-npv; this probe tests role rejection, not source authenticity or NPV computation."
+    },
+    {
+      "role": "budget",
+      "status": "blocked",
+      "scope": "Adversarial supplied monetary record labeled calculate-npv; this probe tests role rejection, not source authenticity or NPV computation."
+    }
+  ]
+}

@@ -38,3 +38,5 @@ The subsequent conditional procurement-option contract also requires later speci
 ## Subsequent strategy extension
 
 The initial SUS-15 baseline/KPI/target contract was developed after the approved c7ad9f7 snapshot under continued roadmap authorization. It does not inherit scoped human review from that snapshot; subsequent specialist/router/release review must include its source-fit, comparable-service, target-period and adoption boundaries. Scenario-specific professional review remains open. Evidence is in [the strategy capture](../evaluations/sus15-target-workflow.json). This extension does not close SUS-15 or validate a target's delivery, ambition or public claim.
+
+The subsequent bounded target-feasibility screen likewise requires later specialist/router/release review of joint model/service fitness, ranges, delivery dependencies and investment source/budget context. Its numerical coverage and declared delivery constraints do not resolve target or implementation approvals. Evidence is in [the feasibility capture](../evaluations/sus15-feasibility-workflow.json).

@@ -1,0 +1,9 @@
+# Fictional target feasibility screen
+
+The [complete capture](sus15-feasibility-workflow.json) preserves the actual common-envelope request, helper output and checked proposal. All data are fictional. The target, KPI and baseline are reproduced against current state before source-linked joint scenario screening.
+
+A proposed 2030 endpoint of 8 kWh/count is compared with a modeled joint outcome of 1,500 kWh over 200 equivalent produced units: 7.5 kWh/count, a signed endpoint gap of −0.5. At that service level the objective permits 1,600 kWh. Gross outcome is still 500 kWh above the reference 1,000 kWh baseline; no causal saving or inventory change is inferred. Supplied outcomes of 1,400–1,700 kWh give 7–8.5 kWh/count, straddling the objective. This range is not a probability or confidence interval.
+
+Selected installed cost is 400 CAD and supplied budget 300 CAD, giving −100 CAD budget headroom and a known modeled funding condition. Organizational review and selected coverage remain unresolved. Initiatives retain project sources, a named owner, proposed dates and dependencies. No funding, implementation, target adoption, claims or final feasibility is authorized; a new professional review remains open.
+
+Known-answer/adversarial tests cover absolute alternatives without portfolio totals, ranges meeting/missing/straddling objectives, absent range/cost, projected source assumptions and units, factor ancestry, changed target sources, late/full-period timing, unknown/cyclic/conflicting dependencies, missing constraints, noncash ancestry and native initial-cost reproduction against changed quotes. The full saved output and CLI replay are checked. The independent raw-source case is recorded separately. This bounded screen does not establish technical/financial delivery, universal model validity, organization-wide strategy coverage or SUS-15 completion.

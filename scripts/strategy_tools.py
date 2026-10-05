@@ -14,8 +14,10 @@ OPERATIONS = {
     "establish-baseline": {"metric_ids", "unit", "baseline_review", "result_id"},
     "define-kpis": {"definitions", "definition_review", "result_id"},
     "develop-target": {"definition_result_id", "kpi_id", "target", "target_review", "result_id"},
+    "evaluate-target-feasibility": {"target_result_id", "scenarios", "feasibility_review", "result_id"},
 }
 CODE = {"establish-baseline": "STRATEGY_BASELINE", "define-kpis": "KPI_DEFINITIONS", "develop-target": "TARGET_PROPOSAL"}
+CODE["evaluate-target-feasibility"] = "TARGET_FEASIBILITY"
 
 
 def _text(value):
@@ -88,14 +90,14 @@ def _fit(state, review, metrics, refs):
             raise ValueError("Each baseline quantity requires the same reviewed gross/accounting basis, including applicable GWP and scope choices.")
 
 
-def _quantity(result, suffix, name, value, unit, when, boundary, refs, inputs, formula, assumption, conversions=()):
+def _quantity(result, suffix, name, value, unit, when, boundary, refs, inputs, formula, assumption, conversions=(), uncertainty_description=None):
     if assumption not in result["assumptions"]:
         result["assumptions"].append(assumption)
     metric = {"id": result["id"] + "-" + suffix, "name": name, "value": serialize(number(value)), "unit": unit,
         "period": copy.deepcopy(when), "boundary_id": boundary, "evidence_ids": sorted(refs),
         "method": {"name": "Reviewed strategy arithmetic", "version": "0.1.0", "source": "repository:docs/strategy-contract.md"},
         "assumption": assumption,
-        "uncertainty": {"kind": "unquantified", "description": "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.", "value": None, "unit": None},
+        "uncertainty": {"kind": "unquantified", "description": uncertainty_description or "Source measurement, coverage and future-delivery uncertainty retained; endpoint is a proposed objective, not a forecast or confidence bound.", "value": None, "unit": None},
         "calculation": {"formula": formula, "inputs": list(dict.fromkeys(inputs)), "conversions": list(conversions), "rounding": "Decimal precision 34; no display rounding"}}
     result["metrics"].append(metric)
     return metric
@@ -130,7 +132,10 @@ def _execute(state, skill, parameters):
     try:
         with localcontext() as context:
             context.prec = 34
-            if skill == "establish-baseline":
+            if skill == "evaluate-target-feasibility":
+                from .strategy_feasibility import evaluate
+                report = evaluate(state, parameters, refs, result, gap)
+            elif skill == "establish-baseline":
                 ids = parameters["metric_ids"]
                 if not isinstance(ids, list) or not ids or any(not _text(i) for i in ids) or len(ids) != len(set(ids)):
                     raise ValueError("Select distinct metric IDs; overlapping quantities require source reconciliation.")
