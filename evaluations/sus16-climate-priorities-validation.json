@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "84f9bbd",
+  "reviewed_prior_snapshot": "b7e1fc714becf1813194240fab5bc91043c35361",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 483,
+    "duration_seconds": 239.075,
+    "status": "passed"
+  },
+  "focused_priority_suite": {
+    "command": "python -m unittest tests.test_climate_priority -v",
+    "tests": 7,
+    "duration_seconds": 22.391,
+    "status": "passed"
+  },
+  "skill_validation": {
+    "prioritize-climate-risks": "quick_validate.py passed"
+  },
+  "parent_verification": {
+    "original_bytes_verified": true,
+    "original_historical_state_preserved": true,
+    "executions": [
+      {
+        "capture": "author",
+        "status": "partial",
+        "fronts": [
+          [
+            "entry-0",
+            "entry-1"
+          ],
+          [
+            "entry-3"
+          ],
+          [
+            "entry-2"
+          ]
+        ],
+        "unassessed_entry_ids": [
+          "entry-4"
+        ],
+        "result_gaps": 48,
+        "result_reviews": 12,
+        "exit_code": 0,
+        "runtime_seconds": 0.646,
+        "request_sha256": "93f3bf8d6ff9deb0a15d1b44f711f900a47f34152ca394c96f9c4e31bff496f7",
+        "request_bytes_preserved": true,
+        "full_helper_and_cli_equal": true,
+        "historical_state_preserved": true,
+        "stderr": ""
+      },
+      {
+        "capture": "independent",
+        "status": "partial",
+        "fronts": [],
+        "unassessed_entry_ids": [
+          "entry-0",
+          "entry-1",
+          "entry-2",
+          "entry-3",
+          "entry-4"
+        ],
+        "result_gaps": 76,
+        "result_reviews": 12,
+        "exit_code": 0,
+        "runtime_seconds": 0.68,
+        "request_sha256": "3756a7f0ba9e512bf593732f568af21d9508e6b6ebd1f8e1eb47e56aba5d9f14",
+        "request_bytes_preserved": true,
+        "full_helper_and_cli_equal": true,
+        "historical_state_preserved": true,
+        "stderr": ""
+      }
+    ]
+  },
+  "original_input_sha256": {
+    "raw-sources.json": "3d90797f2e9947b5fe3ad7493e3ebd837407dce78f15f3119af0ba99e47631e7",
+    "draft-request.json": "a1f8933cd6a0d55bb34ecc8486638ce9c5ea907a554b0a380f724fdfdf4d03fe"
+  },
+  "known_answer_checks": [
+    "Earlier criterion overlap remains unresolved; later criteria cannot override it.",
+    "Exact ties retain equality without identifier tie-breaking.",
+    "Definite precedence fronts preserve partial order; omitted criterion leaves entry-4 unassessed.",
+    "Physical R2/R3 uncertainty and original source snapshots preserved; no new metrics, risk rank or approval."
+  ],
+  "adversarial_checks": [
+    "Missing/null/unfit ratings and contexts remain unassessed, not lowest priority.",
+    "Invalid model ordering, duplicate levels, reversed bounds, direct physical-label substitution, references, duplicate ratings, dates and scope/evidence mismatches are rejected.",
+    "Saved register lineage tampering and missing-factor propagation are checked."
+  ],
+  "independent_result": {
+    "unsupported_intervals_withheld": 9,
+    "unassessed_entries": 5,
+    "unassessed_pairwise_comparisons": 10,
+    "fronts": [],
+    "gaps": 76,
+    "review_requirements": 12,
+    "new_metrics": 0
+  },
+  "limitations": [
+    "Thirteen initial named climate workflows do not complete fourteen workflows or SUS-16.",
+    "Caller fitness review does not authenticate sources or establish model applicability.",
+    "Partial precedence fronts are not ties, complete rankings, comparable risk scores or financial loss.",
+    "Broader prioritization, resilience planning, organization evaluations and professional/router/release gates remain open."
+  ],
+  "sha256": {
+    "scripts/climate_tools.py": "3e56d62d704350a27e08e62d5c938c768ea8fc587c4aada4c6844055f8521d1d",
+    "scripts/climate_priority.py": "3a8760cc7fb073929da35f8b960e795182f599ee4961e3b267884157a098b539",
+    "tests/test_climate_priority.py": "8692e6b04ace3e28cb245c744c17ae504e6a4b0c095b3027f13f931db221f664",
+    "skills/climate-risk/prioritize-climate-risks/SKILL.md": "6a5a3ac842dfdd1682730253bb9547a64e4309d42bf8f4ce7ece0573ebfc1105",
+    "docs/climate-risk-contract.md": "cb2274da1108013e3c6b90d2b9b759344319ae6587477cb30c879d55bf776f28",
+    "evaluations/sus16-climate-priorities.json": "be6fafd1231d03c7fd165c83a038777698264aad63db6d461087db5bfb3b4526",
+    "evaluations/sus16-independent-climate-priorities.json": "9c142dc753ce6fe4e7c2975afa31c3c861a846c93bff71fb9b6934bd7cfa63ff"
+  }
+}

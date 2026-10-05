@@ -24,6 +24,8 @@ OPERATIONS['assess-transition-exposure'] = {'driver_results', 'subjects', 'obser
 CODE['assess-transition-exposure'] = 'TRANSITION_EXPOSURE'
 OPERATIONS['build-climate-risk-register'] = {'physical_results','transition_results','entries','interactions','register_review','result_id'}
 CODE['build-climate-risk-register'] = 'CLIMATE_RISK_REGISTER'
+OPERATIONS['prioritize-climate-risks'] = {'register_result_id','model','ratings','priority_review','result_id'}
+CODE['prioritize-climate-risks'] = 'CLIMATE_RISK_PRIORITIES'
 for _skill, _family in [('identify-policy-risk', 'POLICY'), ('identify-market-risk', 'MARKET'),
         ('identify-technology-risk', 'TECHNOLOGY'), ('identify-reputation-risk', 'REPUTATION')]:
     OPERATIONS[_skill] = {'drivers', 'transition_review', 'result_id'}
@@ -261,7 +263,7 @@ def _execute(state, skill, parameters):
         "evidence_ids": [], "assumptions": list(state["assumptions"]), "data_gaps": copy.deepcopy(state["data_gaps"]),
         "diagnostics": [], "next_actions": []}
     refs = set(); report = None
-    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk', 'assess-transition-exposure', 'build-climate-risk-register'}
+    transition = skill in {'identify-policy-risk', 'identify-market-risk', 'identify-technology-risk', 'identify-reputation-risk', 'assess-transition-exposure', 'build-climate-risk-register', 'prioritize-climate-risks'}
     def gap(message, code="CLIMATE_DATA_REQUIRED"):
         result["data_gaps"].append({"id": result["id"] + "-gap-" + str(len(result["data_gaps"])),
             "field": "climate_screening_basis", "reason": message,
@@ -271,7 +273,10 @@ def _execute(state, skill, parameters):
                 "Inspect scoped versioned hazard and asset sources and obtain qualified climate/site review.")})
         result["diagnostics"].append({"code": code, "message": message})
     try:
-        if skill == 'build-climate-risk-register':
+        if skill == 'prioritize-climate-risks':
+            from .climate_priority import prioritize
+            report = prioritize(state, parameters, refs, result, gap)
+        elif skill == 'build-climate-risk-register':
             from .climate_register import build
             report = build(state, parameters, refs, result, gap)
         elif skill == 'assess-transition-exposure':
@@ -294,7 +299,8 @@ def _execute(state, skill, parameters):
             "scope": report[{"identify-climate-hazards": "hazard_review", "map-assets-to-hazards": "mapping_review",
                 "assess-exposure": "exposure_review", "assess-vulnerability": "vulnerability_review",
                 "score-physical-risk": "risk_review", "identify-adaptation-options": "adaptation_review",
-                "assess-transition-exposure": "exposure_review", "build-climate-risk-register": "register_review"}.get(skill, "transition_review")]["scope"],
+                "assess-transition-exposure": "exposure_review", "build-climate-risk-register": "register_review",
+                "prioritize-climate-risks": "priority_review"}.get(skill, "transition_review")]["scope"],
             "reviewer_role": ("Qualified transition-risk domain specialist and legal/applicability reviewer where relevant, with accountable owner" if transition else
                 "Qualified climate-risk and site/dependency specialist with accountable owner"), "status": "open", "resolution": None})
         result["diagnostics"].append({"code": CODE[skill], "message": json.dumps(report, sort_keys=True)})
