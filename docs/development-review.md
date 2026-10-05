@@ -14,3 +14,5 @@ Validation evidence for the reviewed snapshot is in [the mapping validation reco
 ## Subsequent planning extension
 
 The source-reproduced engagement and improvement-planning helpers were developed after the reviewed 13d4f19 snapshot under the authorized roadmap. They do not inherit scoped human review from that snapshot; later specialist/router/release review must include their changed contract. Continued local development and validation preserve all actual supplier, procurement and professional gates. Evidence is in [the planning capture](../evaluations/sus14-supplier-planning.json).
+
+The later mapped supplier/category hotspot contract also lies beyond the reviewed snapshot and must be included in subsequent specialist/router/release review. Its selected-subtotal calculation retains factor checks and incomplete coverage; it does not establish full Scope 3 coverage. Evidence is in [the hotspot capture](../evaluations/sus14-supplier-hotspots.json).

@@ -17,12 +17,13 @@ OPERATIONS["compare-suppliers"]={"assessment_result_ids","comparison_review","re
 OPERATIONS["map-supply-chain-emissions"]={"links","mapping_review","result_id"}
 OPERATIONS["prioritize-supplier-engagement"]={"assessment_result_ids","engagement_review","priority_rule","result_id"}
 OPERATIONS["develop-supplier-improvement-plan"]={"assessment_result_id","plan_review","actions","result_id"}
+OPERATIONS["identify-scope-3-hotspots"]={"mapping_result_ids","hotspot_review","hotspot_threshold_percent","result_id"}
 
 
 def run_suppliers(state, skill, parameters):
     validate_state(state)
     if skill not in OPERATIONS or not isinstance(parameters,dict) or (set(parameters) != OPERATIONS[skill]
-            and not (skill=="map-supply-chain-emissions" and set(parameters)==OPERATIONS[skill]|{"fixture_mode"})):
+            and not (skill in {"map-supply-chain-emissions","identify-scope-3-hotspots"} and set(parameters)==OPERATIONS[skill]|{"fixture_mode"})):
         raise ValueError("Supported supplier operation with exact parameters required.")
     ident=parameters["result_id"]
     if not isinstance(ident,str) or not ident.strip(): raise ValueError("Fresh result ID required.")
@@ -48,6 +49,9 @@ def run_suppliers(state, skill, parameters):
         elif skill=="develop-supplier-improvement-plan":
             from .supplier_planning import improve
             report=improve(state,parameters,refs,gap)
+        elif skill=="identify-scope-3-hotspots":
+            from .supplier_hotspots import hotspots
+            report=hotspots(state,parameters,refs,result,gap)
         else:
             supplier=next((s for s in state["suppliers"] if s["id"]==parameters["supplier_id"]),None)
             if supplier is None or not supplier["evidence_ids"]:
@@ -139,7 +143,8 @@ def run_suppliers(state, skill, parameters):
                         if unknown_weight==0: report["score"]=serialize(low)
                     else: gap("All criteria are excluded; no applicable scoring denominator exists.")
         code={"compare-suppliers":"SUPPLIER_COMPARISON","map-supply-chain-emissions":"SUPPLY_CHAIN_MAPPING",
-            "prioritize-supplier-engagement":"SUPPLIER_ENGAGEMENT","develop-supplier-improvement-plan":"SUPPLIER_IMPROVEMENT_PLAN"}.get(skill,"SUPPLIER_ASSESSMENT")
+            "prioritize-supplier-engagement":"SUPPLIER_ENGAGEMENT","develop-supplier-improvement-plan":"SUPPLIER_IMPROVEMENT_PLAN",
+            "identify-scope-3-hotspots":"SUPPLIER_HOTSPOTS"}.get(skill,"SUPPLIER_ASSESSMENT")
         result["diagnostics"].append({"code":code,"message":json.dumps(report,sort_keys=True)})
         result["status"]="partial" if result["data_gaps"] else "completed"
     except (ValueError,TypeError,KeyError) as error:

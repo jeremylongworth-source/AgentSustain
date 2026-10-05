@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "27c52c4",
+  "suite": {
+    "command": "python -m unittest discover -s tests",
+    "tests": 304,
+    "duration_seconds": 120.977,
+    "status": "passed"
+  },
+  "focused_supplier_suites": {
+    "tests": 35,
+    "duration_seconds": 8.118,
+    "status": "passed"
+  },
+  "skill_validation": "identify-scope-3-hotspots quick_validate.py passed",
+  "cli_validation": "Final complete saved proposal reproduced via scripts.run_suppliers",
+  "fixture": "sus14-supplier-hotspots.json",
+  "known_answer": {
+    "selected_subtotal_kg_co2e": 300,
+    "supplier_contributions_kg_co2e": [
+      200,
+      100
+    ],
+    "category_1_selected_share_percent": 100,
+    "caller_threshold_percent": 50,
+    "coverage_complete": false
+  },
+  "checks": [
+    "Whole mapping report and native activity-factor reproduction",
+    "Missing factors and omitted fixture opt-in preserve EMISSION_FACTOR_REQUIRED",
+    "Unique component/purchase/line identifiers within selected population",
+    "Separate valid maps with mixed GWP bases rejected",
+    "kg and tonne conversion preserve subtotal",
+    "Explicit selected denominator and alternate nonadditive supplier/category views",
+    "Equal contributions share ranks and threshold includes equality",
+    "Zero subtotal has null shares/ranks and no hotspot",
+    "Downstream review cannot upgrade partial mapping coverage",
+    "One result input record, source warnings and synthetic flag retained",
+    "Unchanged supplier entities/GHG arrays and lineage-valid append-only proposal",
+    "Full saved output and final CLI replay"
+  ],
+  "limitations": [
+    "Author-led synthetic scenario, not independent behavior or authenticated attribution",
+    "Selected mapped purchase population only, not complete Scope 3 footprint",
+    "Point order conditional on unquantified source uncertainty",
+    "Broader supplier risk, impact/materiality/capacity engagement and organization evaluation remain",
+    "No procurement, implementation or release authorization"
+  ],
+  "sha256": {
+    "scripts/supplier_hotspots.py": "b2643686c31a3fdd1c3efd41546b2333cdfb3dd3311d9a188a42735d1fbd6f97",
+    "scripts/supplier_tools.py": "83ad543b7feaaa13abb947d91caa8b1b85a6afae45dd76723bcd3067450e9092",
+    "tests/test_supplier_hotspots.py": "dc9efc7c7c2edc6c79f9916d7c55ada784e30b590ffb3e5318efde8c5ee6ca0a",
+    "skills/supply-chain/identify-scope-3-hotspots/SKILL.md": "84506e20e3cdbd4c92adf461ef7c3a43fb5e7adbb2006ffc8e8255eb72b3e1e9",
+    "docs/supplier-contract.md": "2e0fa7589fddae23622ff41ad0fd2d12aafcb1156b5db658ab42a11a5ba1dc2e",
+    "evaluations/sus14-supplier-hotspots.json": "b24e64995a498f5f6686591b9ddaf7ccf0447851f44510f12d37c7e91bbd1370"
+  }
+}
