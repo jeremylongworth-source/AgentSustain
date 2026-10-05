@@ -6,9 +6,9 @@ Intended users include manufacturers, logistics businesses, commercial facilitie
 
 ## Current status
 
-Foundation architecture draft; no individual skills or production workflows are implemented. [Architecture review](docs/architecture-review.md) is the mandatory gate before SUS-05. An architecture validation pass is not human approval or evidence of domain calculation correctness.
+Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9; no individual skills or production workflows are implemented. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing SUS-05 and subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
 
-Start with [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Proposed conventions in the architecture pack require review.
+Start with [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Material changes to the approved architecture contracts require renewed review.
 
 ## Validate the architecture pack
 

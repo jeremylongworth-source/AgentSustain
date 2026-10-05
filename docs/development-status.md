@@ -11,11 +11,11 @@ Authenticated access verified the intended GitHub repository is private and empt
 | Wave | Deliverable | Current evidence/status |
 |---|---|---|
 | SUS-00 | Research consolidation | Initial official-source orientation recorded; domain research remains incremental |
-| SUS-01 | Domain contract | Draft; human review pending |
-| SUS-02 | Master taxonomy | Draft; all roadmap-listed names included; human review pending |
-| SUS-03 | Evidence/provenance | Draft contract and schema; human review pending |
-| SUS-04 | Common schemas/state | Draft schema pack, examples and architecture tests; human review pending |
-| SUS-05 | Data skills | Not implemented; architecture approval required |
+| SUS-01 | Domain contract | Architecture approved by user on 2026-10-04 at f2d0ac9 |
+| SUS-02 | Master taxonomy | Architecture approved; all roadmap-listed names included |
+| SUS-03 | Evidence/provenance | Contract and schema approved for implementation |
+| SUS-04 | Common schemas/state | Architecture approved; 20 architecture tests passed at review snapshot |
+| SUS-05 | Data skills | Authorized; not implemented |
 | SUS-06 | GHG foundation | Not implemented |
 | SUS-07 | Scope 1/2 | Not implemented |
 | SUS-08 | Scope 3 | Not implemented |
@@ -39,4 +39,4 @@ Authenticated access verified the intended GitHub repository is private and empt
 
 ## Current gate
 
-The concrete pack is indexed in architecture-review.md. Await explicit human approval before generating individual skills. Architecture validation results and their limits are recorded in architecture-validation.md after execution. No wave is claimed approved or v1 ready.
+The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The decision is recorded in architecture-review.md. SUS-05 and subsequent development may proceed in roadmap order. Architecture validation results in architecture-validation.md describe the reviewed snapshot and their limits; they do not establish domain correctness or v1 readiness. Material contract changes reopen architecture review.

@@ -1,6 +1,6 @@
 # SUS-01 through SUS-04 architecture review
 
-Status: PENDING HUMAN REVIEW. No individual skill implementation is authorized yet.
+Status: APPROVED by the user on 2026-10-04 (America/Toronto). Individual skill implementation may proceed in roadmap order, beginning with SUS-05.
 
 The gate is defined in ROADMAP.md sections 23 and 26: "Once this architecture pack passes review, development can proceed into SUS-05 Sustainability Data Skills". The active goal additionally preserves human review. Review this pack as a coherent set; test success alone does not pass the gate.
 
@@ -29,10 +29,10 @@ License choice is needed before public distribution, but does not prevent privat
 
 ## Decision record
 
-- Reviewer: pending
-- Reviewed revision/content snapshot: pending
-- Decision and date: pending
-- Conditions or requested changes: pending
-- Implementation authorization: not granted
+- Reviewer: project owner, via this development chat
+- Reviewed revision/content snapshot: `f2d0ac9b5b34a4eef3f2678173d387d16fe0784c` (SUS-01 through SUS-04 architecture pack)
+- Decision and date: approved on 2026-10-04 (America/Toronto); user instruction: "approve the review"
+- Conditions or requested changes: none stated; existing roadmap, validation, professional-review and publication boundaries remain applicable
+- Implementation authorization: granted for SUS-05 and subsequent development in roadmap order; no publication authorization granted
 
 Record explicit user approval with the reviewed revision and conditions. Material contract changes reopen review. Preserve this record; never substitute an agent's self-review for the required human decision.
