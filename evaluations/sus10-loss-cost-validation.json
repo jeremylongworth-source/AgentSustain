@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "52a5888",
+  "checks": {
+    "unittest": {
+      "passed": 165,
+      "material_balance_tests": 8,
+      "waste_cost_tests": 7,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests"
+    },
+    "changed_skill_packaging": {
+      "passed": 2,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "measured_loss_kg": 100,
+      "positive_residual_kg": 30,
+      "negative_residual_kg": -70,
+      "missing_stock_residual": "withheld",
+      "balanced_residual_kg": 0,
+      "invoice_charges_CAD": 700,
+      "invoice_credits_CAD": 100,
+      "net_recorded_cost_CAD": 600
+    }
+  },
+  "limitations": [
+    "Fictional supplied material roles, stock timing, completeness and accounting definitions are not authenticated.",
+    "Residual is not automatically loss or waste; arithmetic closure is not assurance.",
+    "Invoice subtotal does not model tariffs, FX, tax adjustments, avoided purchase costs or investment returns.",
+    "Classification/opportunity scenarios and independent organization workflows remain."
+  ],
+  "sha256": {
+    "scripts/resource_tools.py": "916b9c71959078d30e06b2f9b808c4b9a18e1355db94347e98c552d1c57a8d04",
+    "tests/test_material_balance.py": "5f3d917c3add276dda234b3ed484c5e8f4a009959f50e9c1dd6b1c65947bc126",
+    "tests/test_waste_cost.py": "59ffc726916a16f02ef537074b87299dd3ca337a6c3222a8857d886f69616040",
+    "docs/waste-resource-contract.md": "d653286307a16a891347cbdaa7b4f86b21d5922f2bcb0b21c2bf88a4792db505",
+    "skills/resources/identify-material-loss/SKILL.md": "7fc9f79b6f78fc919db316e3f1cc810af8239133e5877a82227c97fe37d70806",
+    "skills/waste/analyze-waste-cost/SKILL.md": "5d0043a6ba7f4c4c60edbb69e628cdbdf56b1dce62803508d4fb2201ebcde542",
+    "evaluations/sus10-material-balance.json": "ea1e55c01195754d25b8f61247ba0fc7e007ea2ba32e90932e0b60aa5e6fa4c2",
+    "evaluations/sus10-waste-cost.json": "020b2879fb7581c239d8a87d67677fbbb5f3baf567233668534846d6b042b8fb"
+  }
+}

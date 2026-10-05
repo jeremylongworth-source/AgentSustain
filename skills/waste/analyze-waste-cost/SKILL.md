@@ -9,4 +9,6 @@ Apply the [waste/resource execution contract](../../../docs/waste-resource-contr
 
 Reconcile invoice lines with contracts, mass/collection coverage and the reporting period. Separate haulage, treatment, rental, taxes, surcharges and rebates; identify fixed and variable costs. Prevent duplicated invoice subtotals, allocate shared charges only on a documented basis, and retain currency distinctions. Avoided material purchase costs are a separate scenario, not an observed waste bill reduction. Withhold unsupported totals or per-mass costs rather than inventing rates. Monetary project appraisal uses SUS-12.
 
+Use the analyze-waste-cost runner in `scripts.run_resources` for explicit same-currency recorded lines and the accounting review described in the execution contract. Supply credits as positive amounts marked credit/rebate. Inspect inclusive taxes and shared charges before confirming nonoverlap. The runner provides selected charges, credits and signed net cost; it does not derive allocation, tariffs, FX or accounting approval.
+
 Return the common result and checked proposed state, with period, boundary, evidence, units, assumptions, uncertainty and calculation lineage for quantities. Preserve every unresolved gap and review obligation. Analytical completion does not authorize implementation, certification or external action.

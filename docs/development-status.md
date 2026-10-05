@@ -20,7 +20,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-07 | Scope 1/2 | Five workflows, classification/composition helpers and CLIs, boundary review propagation, allocation/coverage and market checks; 25 helper tests, two synthetic CLI reproductions and an eight-step mixed-source workflow pass; independent behavioral evaluation and thermal-factor derivation remain |
 | SUS-08 | Scope 3 | Five workflows; category, inventory, comparison and hotspot helpers/CLI; synthetic 725 kg partial inventory and -20% comparable partial-account change recorded; specialized methods and independent behavioral evaluation remain |
 | SUS-09 | Energy | Seven workflows, four arithmetic helpers and bounded project screening; fictional arithmetic, interacting project screening and author-led equipment interpretation recorded; engineering methods and independent evaluation remain |
-| SUS-10 | Waste/resources | Ten instruction workflows and five mass helpers; rerunnable selected generation/diversion/hotspot/consumption/intensity fixture recorded; waste costs, material-loss reconciliation, opportunity scenarios and independent evaluation remain |
+| SUS-10 | Waste/resources | Ten workflows and seven helpers; rerunnable selected mass, signed material-balance and recorded invoice cases; classification/opportunity scenarios and independent evaluation remain |
 | SUS-11 | Water | Not implemented |
 | SUS-12 | Economics/business case | Not implemented |
 | SUS-13 | Operations composition | Not implemented |
@@ -33,7 +33,7 @@ Authenticated access verified the intended GitHub repository is private and empt
 | SUS-20 | Claims controls | Not implemented |
 | SUS-21 | Router | Not implemented; interface draft only |
 | SUS-22 | Specialist skillsets | Not implemented |
-| SUS-23 | Evaluation suite | 150 architecture/data/GHG/scope/inventory/energy/resource/analysis/proposal/artifact tests pass; rerunnable carbon, energy, project-screening and selected-mass cases recorded; independent and organization-wide end-to-end suites remain |
+| SUS-23 | Evaluation suite | 165 architecture/data/GHG/scope/inventory/energy/resource/analysis/proposal/artifact tests pass; rerunnable carbon, energy, project-screening, mass, material-balance and invoice cases recorded; independent and organization-wide end-to-end suites remain |
 | SUS-24 | Documentation/examples | Foundation docs, shared data-skill guide and fictional schema fixtures |
 | SUS-25 | Public v1 readiness | Not assessed; no release authorization |
 
@@ -43,6 +43,6 @@ The user approved the architecture pack at revision f2d0ac9 on 2026-10-04. The d
 
 ## Next implementation work
 
-Extend SUS-10 with waste-cost and material-loss calculations and realistic classification/opportunity scenarios, then develop SUS-11 water in roadmap order. Initial mass helpers revalidate selected sources and keep unknown treatment in the diversion denominator. Energy equipment interpretation is an author-led example, not independent behavioral verification or an engineering recommendation. Extend engineering, specialized scope 3 and thermal-factor methods as organization scenarios require; independent behavioral/source-format and organization-wide evaluations remain further work. No general reliability or v1 readiness is claimed.
+Extend SUS-10 with realistic classification/opportunity scenarios, then develop SUS-11 water in roadmap order. Resource helpers now separate measured material losses from signed unexplained residuals and calculate explicit same-currency recorded invoice subtotals. Source completeness, accounting allocation and material-basis judgments remain supplied assessments. Energy equipment interpretation is an author-led example, not independent behavioral verification or an engineering recommendation. Extend engineering, specialized scope 3 and thermal-factor methods as organization scenarios require; independent behavioral/source-format and organization-wide evaluations remain further work. No general reliability or v1 readiness is claimed.
 
 The shared contract validator lives in scripts/contract_validation.py; tests/contract_checks.py remains a compatibility entrypoint. Schema shapes are unchanged. Runtime validation now additionally rejects nonfinite quantities and calculation-lineage cycles. State proposals preserve review obligations, assumptions, gaps and existing source records. Historical architecture hashes continue to identify the reviewed f2d0ac9 snapshot.

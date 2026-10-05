@@ -1,0 +1,2060 @@
+{
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "recycled-evidence",
+        "source": {
+          "locator": "fixture:recycled",
+          "title": "Fictional recycled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "t",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "landfilled-evidence",
+        "source": {
+          "locator": "fixture:landfilled",
+          "title": "Fictional landfilled record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unrouted-evidence",
+        "source": {
+          "locator": "fixture:unrouted",
+          "title": "Fictional unrouted record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "consumed-evidence",
+        "source": {
+          "locator": "fixture:consumed",
+          "title": "Fictional consumed record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kg",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "products-evidence",
+        "source": {
+          "locator": "fixture:products",
+          "title": "Fictional products record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "count",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "haul-charge-evidence",
+        "source": {
+          "locator": "fixture:invoice/haul-charge",
+          "title": "Fictional haul-charge",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "treatment-charge-evidence",
+        "source": {
+          "locator": "fixture:invoice/treatment-charge",
+          "title": "Fictional treatment-charge",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "rebate-credit-evidence",
+        "source": {
+          "locator": "fixture:invoice/rebate-credit",
+          "title": "Fictional rebate-credit",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "recycled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "recycled",
+            "name": "Fictional recycled",
+            "value": 0.6,
+            "unit": "t",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "recycled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "recycled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "landfilled-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "landfilled",
+            "name": "Fictional landfilled",
+            "value": 300,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "landfilled-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "landfilled-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unrouted-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unrouted",
+            "name": "Fictional unrouted",
+            "value": 100,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unrouted-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unrouted-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "consumed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "consumed",
+            "name": "Fictional consumed",
+            "value": 2000,
+            "unit": "kg",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "consumed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "consumed-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "products-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "products",
+            "name": "Fictional products",
+            "value": 100,
+            "unit": "count",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "products-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "products-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "haul-charge-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "haul-charge",
+            "name": "haul-charge",
+            "value": 200,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "haul-charge-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "haul-charge-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "haul-charge-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "treatment-charge-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "treatment-charge",
+            "name": "treatment-charge",
+            "value": 500,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "treatment-charge-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "treatment-charge-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "treatment-charge-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "rebate-credit-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "rebate-credit",
+            "name": "rebate-credit",
+            "value": 100,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "rebate-credit-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "rebate-credit-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "rebate-credit-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "parameters": {
+    "lines": [
+      {
+        "id": "haul-charge",
+        "metric_id": "haul-charge",
+        "kind": "charge",
+        "category": "haul"
+      },
+      {
+        "id": "treatment-charge",
+        "metric_id": "treatment-charge",
+        "kind": "charge",
+        "category": "treatment"
+      },
+      {
+        "id": "rebate-credit",
+        "metric_id": "rebate-credit",
+        "kind": "credit",
+        "category": "rebate"
+      }
+    ],
+    "accounting_review": {
+      "confirmed": true,
+      "currency": "CAD",
+      "basis": "documented_invoice_lines",
+      "tax_basis": "included_as_recorded",
+      "coverage_complete": true,
+      "measurement_boundary": "Selected fictional waste service charges for reporting boundary.",
+      "nonoverlap_assessment": "Independent line quantities, no invoice total repeated.",
+      "coverage": "Three fictional invoice line records.",
+      "allocation_basis": "Whole selected facility charges; no shared allocation inferred.",
+      "rationale": "Supplied recorded amounts only, not scenario tariffs.",
+      "evidence_ids": [
+        "haul-charge-evidence",
+        "treatment-charge-evidence",
+        "rebate-credit-evidence"
+      ]
+    },
+    "result_id": "waste-cost"
+  },
+  "output": {
+    "result": {
+      "id": "waste-cost",
+      "skill": "analyze-waste-cost",
+      "contract_version": "0.1.0",
+      "status": "completed",
+      "review_states": [
+        "ANALYTICAL"
+      ],
+      "review_requirements": [],
+      "metrics": [
+        {
+          "id": "waste-cost-charges",
+          "name": "Selected recorded waste charges",
+          "value": 700.0,
+          "unit": "CAD",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "haul-charge-evidence",
+            "rebate-credit-evidence",
+            "treatment-charge-evidence"
+          ],
+          "method": {
+            "name": "Explicit selected invoice arithmetic",
+            "version": "0.1.0",
+            "source": "docs/waste-resource-contract.md"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Supplied invoice quantities and coverage judgments are not independently verified.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Sum selected charge lines as recorded",
+            "inputs": [
+              "haul-charge",
+              "treatment-charge",
+              "rebate-credit"
+            ],
+            "conversions": [
+              "No currency conversion or inferred tax/tariff adjustment."
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        },
+        {
+          "id": "waste-cost-credits",
+          "name": "Selected recorded waste credits",
+          "value": 100.0,
+          "unit": "CAD",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "haul-charge-evidence",
+            "rebate-credit-evidence",
+            "treatment-charge-evidence"
+          ],
+          "method": {
+            "name": "Explicit selected invoice arithmetic",
+            "version": "0.1.0",
+            "source": "docs/waste-resource-contract.md"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Supplied invoice quantities and coverage judgments are not independently verified.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Sum selected credit lines as recorded",
+            "inputs": [
+              "haul-charge",
+              "treatment-charge",
+              "rebate-credit"
+            ],
+            "conversions": [
+              "No currency conversion or inferred tax/tariff adjustment."
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        },
+        {
+          "id": "waste-cost-net-cost",
+          "name": "Selected recorded net waste cost",
+          "value": 600.0,
+          "unit": "CAD",
+          "period": {
+            "start": "2025-01-01",
+            "end": "2025-12-31"
+          },
+          "boundary_id": "boundary-001",
+          "evidence_ids": [
+            "haul-charge-evidence",
+            "rebate-credit-evidence",
+            "treatment-charge-evidence"
+          ],
+          "method": {
+            "name": "Explicit selected invoice arithmetic",
+            "version": "0.1.0",
+            "source": "docs/waste-resource-contract.md"
+          },
+          "assumption": null,
+          "uncertainty": {
+            "kind": "unquantified",
+            "description": "Supplied invoice quantities and coverage judgments are not independently verified.",
+            "value": null,
+            "unit": null
+          },
+          "calculation": {
+            "formula": "Selected recorded charges - selected recorded credits",
+            "inputs": [
+              "haul-charge",
+              "treatment-charge",
+              "rebate-credit"
+            ],
+            "conversions": [
+              "No currency conversion or inferred tax/tariff adjustment."
+            ],
+            "rounding": "34-digit Decimal arithmetic; JSON serialization"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "haul-charge-evidence",
+        "rebate-credit-evidence",
+        "treatment-charge-evidence"
+      ],
+      "assumptions": [],
+      "data_gaps": [],
+      "diagnostics": [
+        {
+          "code": "WASTE_COST_ACCOUNTING",
+          "message": "{\"accounting_review\": {\"allocation_basis\": \"Whole selected facility charges; no shared allocation inferred.\", \"basis\": \"documented_invoice_lines\", \"confirmed\": true, \"coverage\": \"Three fictional invoice line records.\", \"coverage_complete\": true, \"currency\": \"CAD\", \"evidence_ids\": [\"haul-charge-evidence\", \"treatment-charge-evidence\", \"rebate-credit-evidence\"], \"measurement_boundary\": \"Selected fictional waste service charges for reporting boundary.\", \"nonoverlap_assessment\": \"Independent line quantities, no invoice total repeated.\", \"rationale\": \"Supplied recorded amounts only, not scenario tariffs.\", \"tax_basis\": \"included_as_recorded\"}, \"lines\": [{\"category\": \"haul\", \"id\": \"haul-charge\", \"kind\": \"charge\", \"metric_id\": \"haul-charge\"}, {\"category\": \"treatment\", \"id\": \"treatment-charge\", \"kind\": \"charge\", \"metric_id\": \"treatment-charge\"}, {\"category\": \"rebate\", \"id\": \"rebate-credit\", \"kind\": \"credit\", \"metric_id\": \"rebate-credit\"}], \"result_id\": \"waste-cost\"}"
+        }
+      ],
+      "next_actions": []
+    },
+    "proposal": {
+      "base_revision": 0,
+      "reason": "Compute selected mass analysis with explicit definitions and retained review obligations",
+      "state": {
+        "contract_version": "0.1.0",
+        "revision": 1,
+        "organization": {
+          "id": "org-001",
+          "name": "Fictional Example Company",
+          "sector": "manufacturing"
+        },
+        "facilities": [
+          {
+            "id": "facility-001",
+            "name": "Fictional plant",
+            "jurisdiction": "CA-ON"
+          }
+        ],
+        "jurisdictions": [
+          "CA",
+          "CA-ON"
+        ],
+        "reporting_period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "organizational_boundary": {
+          "id": "boundary-001",
+          "approach": "operational control (fixture only)",
+          "facility_ids": [
+            "facility-001"
+          ],
+          "exclusions": [],
+          "evidence_ids": []
+        },
+        "evidence": [
+          {
+            "id": "ev-001",
+            "source": {
+              "locator": "fixture:meter-001",
+              "title": "Fictional annual electricity record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kWh",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "recycled-evidence",
+            "source": {
+              "locator": "fixture:recycled",
+              "title": "Fictional recycled record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "t",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "landfilled-evidence",
+            "source": {
+              "locator": "fixture:landfilled",
+              "title": "Fictional landfilled record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "unrouted-evidence",
+            "source": {
+              "locator": "fixture:unrouted",
+              "title": "Fictional unrouted record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "consumed-evidence",
+            "source": {
+              "locator": "fixture:consumed",
+              "title": "Fictional consumed record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "kg",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "products-evidence",
+            "source": {
+              "locator": "fixture:products",
+              "title": "Fictional products record",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "count",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "haul-charge-evidence",
+            "source": {
+              "locator": "fixture:invoice/haul-charge",
+              "title": "Fictional haul-charge",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "CAD",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "treatment-charge-evidence",
+            "source": {
+              "locator": "fixture:invoice/treatment-charge",
+              "title": "Fictional treatment-charge",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "CAD",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          },
+          {
+            "id": "rebate-credit-evidence",
+            "source": {
+              "locator": "fixture:invoice/rebate-credit",
+              "title": "Fictional rebate-credit",
+              "publisher": "Fictional Example Company",
+              "accessed": "2026-10-04",
+              "version": "fixture-1",
+              "tier": 1
+            },
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "unit": "CAD",
+            "boundary_id": "boundary-001",
+            "geography": "CA-ON",
+            "quality": {
+              "reliability": "unknown",
+              "completeness": "complete",
+              "fitness_notes": "Synthetic fixture, not independently verified."
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": null
+          }
+        ],
+        "results": [
+          {
+            "id": "res-001",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "metric-001",
+                "name": "Recorded electricity",
+                "value": 1000,
+                "unit": "kWh",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "ev-001"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "ev-001"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "recycled-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "recycled",
+                "name": "Fictional recycled",
+                "value": 0.6,
+                "unit": "t",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "recycled-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "recycled-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "recycled-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "landfilled-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "landfilled",
+                "name": "Fictional landfilled",
+                "value": 300,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "landfilled-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "landfilled-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "landfilled-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "unrouted-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "unrouted",
+                "name": "Fictional unrouted",
+                "value": 100,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "unrouted-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "unrouted-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "unrouted-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "consumed-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "consumed",
+                "name": "Fictional consumed",
+                "value": 2000,
+                "unit": "kg",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "consumed-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "consumed-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "consumed-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "products-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "products",
+                "name": "Fictional products",
+                "value": 100,
+                "unit": "count",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "products-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "products-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "products-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "haul-charge-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "haul-charge",
+                "name": "haul-charge",
+                "value": 200,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "haul-charge-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "haul-charge-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "haul-charge-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "treatment-charge-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "treatment-charge",
+                "name": "treatment-charge",
+                "value": 500,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "treatment-charge-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "treatment-charge-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "treatment-charge-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "rebate-credit-result",
+            "skill": "normalize-sustainability-data",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "rebate-credit",
+                "name": "rebate-credit",
+                "value": 100,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "rebate-credit-evidence"
+                ],
+                "method": {
+                  "name": "Synthetic meter reading fixture",
+                  "version": "fixture-1",
+                  "source": "fixture:meter-001"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Fictional meter uncertainty is not quantified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "recorded quantity",
+                  "inputs": [
+                    "rebate-credit-evidence"
+                  ],
+                  "conversions": [],
+                  "rounding": "none"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "rebate-credit-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [],
+            "next_actions": []
+          },
+          {
+            "id": "waste-cost",
+            "skill": "analyze-waste-cost",
+            "contract_version": "0.1.0",
+            "status": "completed",
+            "review_states": [
+              "ANALYTICAL"
+            ],
+            "review_requirements": [],
+            "metrics": [
+              {
+                "id": "waste-cost-charges",
+                "name": "Selected recorded waste charges",
+                "value": 700.0,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "haul-charge-evidence",
+                  "rebate-credit-evidence",
+                  "treatment-charge-evidence"
+                ],
+                "method": {
+                  "name": "Explicit selected invoice arithmetic",
+                  "version": "0.1.0",
+                  "source": "docs/waste-resource-contract.md"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Supplied invoice quantities and coverage judgments are not independently verified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Sum selected charge lines as recorded",
+                  "inputs": [
+                    "haul-charge",
+                    "treatment-charge",
+                    "rebate-credit"
+                  ],
+                  "conversions": [
+                    "No currency conversion or inferred tax/tariff adjustment."
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              },
+              {
+                "id": "waste-cost-credits",
+                "name": "Selected recorded waste credits",
+                "value": 100.0,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "haul-charge-evidence",
+                  "rebate-credit-evidence",
+                  "treatment-charge-evidence"
+                ],
+                "method": {
+                  "name": "Explicit selected invoice arithmetic",
+                  "version": "0.1.0",
+                  "source": "docs/waste-resource-contract.md"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Supplied invoice quantities and coverage judgments are not independently verified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Sum selected credit lines as recorded",
+                  "inputs": [
+                    "haul-charge",
+                    "treatment-charge",
+                    "rebate-credit"
+                  ],
+                  "conversions": [
+                    "No currency conversion or inferred tax/tariff adjustment."
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              },
+              {
+                "id": "waste-cost-net-cost",
+                "name": "Selected recorded net waste cost",
+                "value": 600.0,
+                "unit": "CAD",
+                "period": {
+                  "start": "2025-01-01",
+                  "end": "2025-12-31"
+                },
+                "boundary_id": "boundary-001",
+                "evidence_ids": [
+                  "haul-charge-evidence",
+                  "rebate-credit-evidence",
+                  "treatment-charge-evidence"
+                ],
+                "method": {
+                  "name": "Explicit selected invoice arithmetic",
+                  "version": "0.1.0",
+                  "source": "docs/waste-resource-contract.md"
+                },
+                "assumption": null,
+                "uncertainty": {
+                  "kind": "unquantified",
+                  "description": "Supplied invoice quantities and coverage judgments are not independently verified.",
+                  "value": null,
+                  "unit": null
+                },
+                "calculation": {
+                  "formula": "Selected recorded charges - selected recorded credits",
+                  "inputs": [
+                    "haul-charge",
+                    "treatment-charge",
+                    "rebate-credit"
+                  ],
+                  "conversions": [
+                    "No currency conversion or inferred tax/tariff adjustment."
+                  ],
+                  "rounding": "34-digit Decimal arithmetic; JSON serialization"
+                }
+              }
+            ],
+            "evidence_ids": [
+              "haul-charge-evidence",
+              "rebate-credit-evidence",
+              "treatment-charge-evidence"
+            ],
+            "assumptions": [],
+            "data_gaps": [],
+            "diagnostics": [
+              {
+                "code": "WASTE_COST_ACCOUNTING",
+                "message": "{\"accounting_review\": {\"allocation_basis\": \"Whole selected facility charges; no shared allocation inferred.\", \"basis\": \"documented_invoice_lines\", \"confirmed\": true, \"coverage\": \"Three fictional invoice line records.\", \"coverage_complete\": true, \"currency\": \"CAD\", \"evidence_ids\": [\"haul-charge-evidence\", \"treatment-charge-evidence\", \"rebate-credit-evidence\"], \"measurement_boundary\": \"Selected fictional waste service charges for reporting boundary.\", \"nonoverlap_assessment\": \"Independent line quantities, no invoice total repeated.\", \"rationale\": \"Supplied recorded amounts only, not scenario tariffs.\", \"tax_basis\": \"included_as_recorded\"}, \"lines\": [{\"category\": \"haul\", \"id\": \"haul-charge\", \"kind\": \"charge\", \"metric_id\": \"haul-charge\"}, {\"category\": \"treatment\", \"id\": \"treatment-charge\", \"kind\": \"charge\", \"metric_id\": \"treatment-charge\"}, {\"category\": \"rebate\", \"id\": \"rebate-credit\", \"kind\": \"credit\", \"metric_id\": \"rebate-credit\"}], \"result_id\": \"waste-cost\"}"
+              }
+            ],
+            "next_actions": []
+          }
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "review_requirements": [],
+        "energy": [
+          "res-001"
+        ],
+        "water": [],
+        "materials": [],
+        "waste": [
+          "waste-cost"
+        ],
+        "ghg": {
+          "scope_1": [],
+          "scope_2": [],
+          "scope_3": []
+        },
+        "suppliers": [],
+        "targets": [],
+        "risks": [],
+        "opportunities": [],
+        "projects": [],
+        "frameworks": [],
+        "emission_factors": []
+      }
+    }
+  }
+}
