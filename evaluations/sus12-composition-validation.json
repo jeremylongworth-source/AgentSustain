@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-04",
+  "base_revision": "4a93f0f",
+  "checks": {
+    "unittest": {
+      "passed": 194,
+      "new_composition_tests": 9,
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests"
+    },
+    "changed_skill_packaging": {
+      "passed": 2,
+      "validator": "skill-creator/scripts/quick_validate.py"
+    },
+    "known_answers": {
+      "initial_net_investment_CAD": 1000,
+      "baseline_annual_cost_CAD": 1300,
+      "scenario_annual_cost_CAD": 800,
+      "projected_net_savings_CAD_per_year": 500,
+      "conditional_simple_payback_years": 2
+    }
+  },
+  "limitations": [
+    "Fictional quotes, capital incentive, service conditions and annual model amounts are supplied, not authenticated.",
+    "Initial-investment composition does not implement lifetime costs; operating comparison is projected, not realized savings.",
+    "No tariffs, FX, tax/allocation adjustments or physical savings model are inferred.",
+    "Dated cash-flow, IRR, price/MAC/comparison/business-case methods and independent organization evaluation remain."
+  ],
+  "sha256": {
+    "scripts/finance_composition.py": "7e42f43b02436f4ddbc26b7b9d9323c9f2600e3337220453fff620a78e7665ee",
+    "scripts/finance_tools.py": "e2420824afb1fbffe1a830db84cc88da37aa6ee39b11cb869c4a271fd7f27069",
+    "tests/test_finance_composition.py": "a056fe11a6192011c9aa42039a3bd5ab2e22ee5377320089c581d2612a677c01",
+    "docs/finance-contract.md": "c8dab630fa60ba1367b387e9ffb8a77916ee6555fafe0f4ebd2e368786dae1ed",
+    "skills/finance/calculate-sustainability-project-cost/SKILL.md": "0c4b17010fe450b2e7ffa1227621d655770f8d35cddd4a2705df1cdd847e164c",
+    "skills/finance/calculate-operating-savings/SKILL.md": "37ef819e0ab5759255130165a69de35572bf0faea214983d759a0f252ff37434",
+    "evaluations/sus12-composed-cost-savings.json": "dc2e1d782ff3c5730100cd7c843041b708a0ed3200d283dc4558e14a92ff7785"
+  }
+}

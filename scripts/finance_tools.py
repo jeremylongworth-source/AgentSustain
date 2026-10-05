@@ -9,11 +9,13 @@ import re
 from .contract_validation import validate_state
 from .data_tools import number, serialize
 from .state_proposal import propose
+from .finance_composition import OPERATIONS as COMPOSITION_OPERATIONS, compose
 
 
 OPERATIONS = {"calculate-simple-payback": {"investment_id", "annual_savings_id", "analysis_review", "result_id"},
               "calculate-roi": {"investment_id", "net_benefit_id", "analysis_review", "result_id"},
               "calculate-npv": {"cashflows", "discount_rate_id", "analysis_review", "result_id"}}
+OPERATIONS.update(COMPOSITION_OPERATIONS)
 
 
 def run_finance(state, skill, parameters):
@@ -40,7 +42,7 @@ def run_finance(state, skill, parameters):
         return metric
 
     def gap(code, reason):
-        result["data_gaps"].append({"id": ident+"-gap", "field": "financial_analysis", "reason": reason,
+        result["data_gaps"].append({"id": ident+"-gap-"+str(len(result["data_gaps"])), "field": "financial_analysis", "reason": reason,
             "impact": "The requested financial measure is unsupported.", "remedy": "Supply sourced monetary quantities, timing, model definitions and economic assumptions."})
         result["diagnostics"].append({"code": code, "message": reason})
 
@@ -63,9 +65,14 @@ def run_finance(state, skill, parameters):
             raise ValueError("Explicit future analysis horizon beginning on valuation date required.")
         currency = review["currency"]
         inputs = []
+        output_period = horizon
         with localcontext() as context:
             context.prec = 34
-            if skill == "calculate-npv":
+            if skill in COMPOSITION_OPERATIONS:
+                value,unit,inputs,formula,output_period,complete = compose(state,skill,parameters,resolve,refs)
+                if not complete:
+                    gap("FINANCIAL_COVERAGE_REQUIRED", "Selected cost/benefit coverage is incomplete; composition is a supported subtotal, not complete project economics.")
+            elif skill == "calculate-npv":
                 flows = parameters["cashflows"]
                 if (not isinstance(flows, list) or len(flows) < 2 or any(not isinstance(f, dict) or set(f) != {"year", "metric_id"}
                         or isinstance(f["year"], bool) or not isinstance(f["year"], int) for f in flows)
@@ -141,7 +148,7 @@ def run_finance(state, skill, parameters):
         assumption = review["model_assumption"]
         if assumption not in result["assumptions"]: result["assumptions"].append(assumption)
         result["metrics"] = [{"id": ident+"-value", "name": "Conditional "+skill.replace("calculate-", ""), "value": serialize(value), "unit": unit,
-            "period": copy.deepcopy(horizon), "boundary_id": state["organizational_boundary"]["id"], "evidence_ids": sorted(refs),
+            "period": copy.deepcopy(output_period), "boundary_id": state["organizational_boundary"]["id"], "evidence_ids": sorted(refs),
             "method": {"name": "Explicit supplied project-finance arithmetic", "version": "0.1.0", "source": "docs/finance-contract.md"},
             "assumption": assumption, "uncertainty": {"kind": "unquantified", "description": "Model applicability, inputs and sensitivity are not independently verified.", "value": None, "unit": None},
             "calculation": {"formula": formula, "inputs": inputs, "conversions": ["No currency, inflation, tax or tariff conversion inferred."], "rounding": "34-digit Decimal arithmetic; JSON serialization"}}]

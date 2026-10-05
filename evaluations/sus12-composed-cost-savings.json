@@ -1,0 +1,3685 @@
+{
+  "initial_state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "investment-evidence",
+        "source": {
+          "locator": "fixture:finance/investment",
+          "title": "Fictional financial investment",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "annual-net-evidence",
+        "source": {
+          "locator": "fixture:finance/annual-net",
+          "title": "Fictional financial annual-net",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "horizon-net-evidence",
+        "source": {
+          "locator": "fixture:finance/horizon-net",
+          "title": "Fictional financial horizon-net",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-12-31",
+          "end": "2027-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "flow-0-evidence",
+        "source": {
+          "locator": "fixture:finance/flow-0",
+          "title": "Fictional financial flow-0",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "flow-1-evidence",
+        "source": {
+          "locator": "fixture:finance/flow-1",
+          "title": "Fictional financial flow-1",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "flow-2-evidence",
+        "source": {
+          "locator": "fixture:finance/flow-2",
+          "title": "Fictional financial flow-2",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2027-01-01",
+          "end": "2027-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "discount-evidence",
+        "source": {
+          "locator": "fixture:finance/discount",
+          "title": "Fictional financial discount",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "%",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "capital-quote-evidence",
+        "source": {
+          "locator": "fixture:composition/capital-quote",
+          "title": "Fictional capital-quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "installation-quote-evidence",
+        "source": {
+          "locator": "fixture:composition/installation-quote",
+          "title": "Fictional installation-quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "incentive-quote-evidence",
+        "source": {
+          "locator": "fixture:composition/incentive-quote",
+          "title": "Fictional incentive-quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "baseline-energy-evidence",
+        "source": {
+          "locator": "fixture:composition/baseline-energy",
+          "title": "Fictional baseline-energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "baseline-maintenance-evidence",
+        "source": {
+          "locator": "fixture:composition/baseline-maintenance",
+          "title": "Fictional baseline-maintenance",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-energy-evidence",
+        "source": {
+          "locator": "fixture:composition/scenario-energy",
+          "title": "Fictional scenario-energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-maintenance-evidence",
+        "source": {
+          "locator": "fixture:composition/scenario-maintenance",
+          "title": "Fictional scenario-maintenance",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unchanged-fixed-evidence",
+        "source": {
+          "locator": "fixture:composition/unchanged-fixed",
+          "title": "Fictional unchanged-fixed",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "investment-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "investment",
+            "name": "investment",
+            "value": 1000,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "investment-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "investment-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "investment-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "annual-net-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "annual-net",
+            "name": "annual-net",
+            "value": 600,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "annual-net-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "horizon-net-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "horizon-net",
+            "name": "horizon-net",
+            "value": 200,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-12-31",
+              "end": "2027-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "horizon-net-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "horizon-net-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "horizon-net-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "flow-0-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "flow-0",
+            "name": "flow-0",
+            "value": -1000,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "flow-0-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "flow-0-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "flow-0-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "flow-1-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "flow-1",
+            "name": "flow-1",
+            "value": 600,
+            "unit": "CAD",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "flow-1-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "flow-1-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "flow-1-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "flow-2-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "flow-2",
+            "name": "flow-2",
+            "value": 600,
+            "unit": "CAD",
+            "period": {
+              "start": "2027-01-01",
+              "end": "2027-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "flow-2-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "flow-2-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "flow-2-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "discount-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "discount",
+            "name": "discount",
+            "value": 10,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "discount-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "discount-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "discount-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "capital-quote-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "capital-quote",
+            "name": "capital-quote",
+            "value": 700,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "capital-quote-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "capital-quote-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "capital-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "installation-quote-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "installation-quote",
+            "name": "installation-quote",
+            "value": 400,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "installation-quote-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "installation-quote-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "installation-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "incentive-quote-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "incentive-quote",
+            "name": "incentive-quote",
+            "value": 100,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "incentive-quote-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "incentive-quote-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "incentive-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "baseline-energy-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "baseline-energy",
+            "name": "baseline-energy",
+            "value": 1000,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "baseline-energy-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "baseline-energy-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "baseline-energy-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "baseline-maintenance-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "baseline-maintenance",
+            "name": "baseline-maintenance",
+            "value": 100,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "baseline-maintenance-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "baseline-maintenance-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "baseline-maintenance-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-energy-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario-energy",
+            "name": "scenario-energy",
+            "value": 400,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-energy-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-energy-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-energy-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-maintenance-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario-maintenance",
+            "name": "scenario-maintenance",
+            "value": 200,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-maintenance-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-maintenance-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-maintenance-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unchanged-fixed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unchanged-fixed",
+            "name": "unchanged-fixed",
+            "value": 200,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unchanged-fixed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unchanged-fixed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unchanged-fixed-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [
+      "Fictional conditional projected financial input.",
+      "Fictional quoted/modelled cost for comparison."
+    ],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "steps": [
+    {
+      "skill": "calculate-sustainability-project-cost",
+      "parameters": {
+        "lines": [
+          {
+            "id": "capital-quote",
+            "metric_id": "capital-quote",
+            "kind": "cost",
+            "category": "capital"
+          },
+          {
+            "id": "installation-quote",
+            "metric_id": "installation-quote",
+            "kind": "cost",
+            "category": "installation"
+          },
+          {
+            "id": "incentive-quote",
+            "metric_id": "incentive-quote",
+            "kind": "credit",
+            "category": "capital_incentive"
+          }
+        ],
+        "composition_review": {
+          "confirmed": true,
+          "basis": "initial_net_investment",
+          "coverage_complete": true,
+          "measurement_boundary": "Selected fictional initial project outlay.",
+          "nonoverlap_assessment": "Distinct quotes and one capital incentive; no operating savings deducted.",
+          "allocation_basis": "Whole selected project.",
+          "tax_treatment": "Supplied pre-tax quote amounts; no tax adjustment.",
+          "rationale": "Fictional supported quote coverage.",
+          "evidence_ids": [
+            "capital-quote-evidence",
+            "installation-quote-evidence",
+            "incentive-quote-evidence"
+          ]
+        },
+        "analysis_review": {
+          "confirmed": true,
+          "currency": "CAD",
+          "valuation_date": "2025-12-31",
+          "horizon": {
+            "start": "2025-12-31",
+            "end": "2027-12-31"
+          },
+          "dollar_basis": "real",
+          "tax_basis": "pre_tax",
+          "definition": "Explicit fixture study measure.",
+          "rationale": "Supplied fictional economics, no default rate or tariff.",
+          "model_assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+          "evidence_ids": [
+            "annual-net-evidence",
+            "discount-evidence"
+          ],
+          "definition_code": "investment_over_constant_annual_net_savings",
+          "annual_savings_period": {
+            "start": "2026-01-01",
+            "end": "2026-12-31"
+          }
+        },
+        "result_id": "composed-cost"
+      },
+      "result": {
+        "id": "composed-cost",
+        "skill": "calculate-sustainability-project-cost",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "composed-cost-value",
+            "name": "Conditional sustainability-project-cost",
+            "value": 1000.0,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence",
+              "capital-quote-evidence",
+              "discount-evidence",
+              "incentive-quote-evidence",
+              "installation-quote-evidence"
+            ],
+            "method": {
+              "name": "Explicit supplied project-finance arithmetic",
+              "version": "0.1.0",
+              "source": "docs/finance-contract.md"
+            },
+            "assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Model applicability, inputs and sensitivity are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum selected initial investment costs - selected capital incentive credits",
+              "inputs": [
+                "capital-quote",
+                "installation-quote",
+                "incentive-quote"
+              ],
+              "conversions": [
+                "No currency, inflation, tax or tariff conversion inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence",
+          "capital-quote-evidence",
+          "discount-evidence",
+          "incentive-quote-evidence",
+          "installation-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input.",
+          "Fictional quoted/modelled cost for comparison.",
+          "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "FINANCIAL_ANALYSIS_BASIS",
+            "message": "{\"analysis_review\": {\"annual_savings_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"definition_code\": \"investment_over_constant_annual_net_savings\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"composition_review\": {\"allocation_basis\": \"Whole selected project.\", \"basis\": \"initial_net_investment\", \"confirmed\": true, \"coverage_complete\": true, \"evidence_ids\": [\"capital-quote-evidence\", \"installation-quote-evidence\", \"incentive-quote-evidence\"], \"measurement_boundary\": \"Selected fictional initial project outlay.\", \"nonoverlap_assessment\": \"Distinct quotes and one capital incentive; no operating savings deducted.\", \"rationale\": \"Fictional supported quote coverage.\", \"tax_treatment\": \"Supplied pre-tax quote amounts; no tax adjustment.\"}, \"lines\": [{\"category\": \"capital\", \"id\": \"capital-quote\", \"kind\": \"cost\", \"metric_id\": \"capital-quote\"}, {\"category\": \"installation\", \"id\": \"installation-quote\", \"kind\": \"cost\", \"metric_id\": \"installation-quote\"}, {\"category\": \"capital_incentive\", \"id\": \"incentive-quote\", \"kind\": \"credit\", \"metric_id\": \"incentive-quote\"}], \"result_id\": \"composed-cost\"}"
+          }
+        ],
+        "next_actions": []
+      }
+    },
+    {
+      "skill": "calculate-operating-savings",
+      "parameters": {
+        "baseline_lines": [
+          {
+            "id": "baseline-energy",
+            "metric_id": "baseline-energy",
+            "kind": "cost",
+            "category": "energy"
+          },
+          {
+            "id": "baseline-maintenance",
+            "metric_id": "baseline-maintenance",
+            "kind": "cost",
+            "category": "maintenance"
+          },
+          {
+            "id": "unchanged-fixed",
+            "metric_id": "unchanged-fixed",
+            "kind": "cost",
+            "category": "fixed"
+          }
+        ],
+        "scenario_lines": [
+          {
+            "id": "scenario-energy",
+            "metric_id": "scenario-energy",
+            "kind": "cost",
+            "category": "energy"
+          },
+          {
+            "id": "scenario-maintenance",
+            "metric_id": "scenario-maintenance",
+            "kind": "cost",
+            "category": "maintenance"
+          },
+          {
+            "id": "unchanged-fixed",
+            "metric_id": "unchanged-fixed",
+            "kind": "cost",
+            "category": "fixed"
+          }
+        ],
+        "comparison_review": {
+          "confirmed": true,
+          "analysis_type": "projection",
+          "comparison_basis": "same_service",
+          "annual_period": {
+            "start": "2026-01-01",
+            "end": "2026-12-31"
+          },
+          "coverage_complete": true,
+          "baseline_conditions": "Supplied fixture output/service maintained.",
+          "scenario_conditions": "Same service with explicit energy and maintenance scenario.",
+          "adjustment_method": "Supplied same-period scenario; no driver adjustments derived.",
+          "nonoverlap_assessment": "Separate cost components within each case.",
+          "fixed_cost_treatment": "Same fixed charge in both cases; no fixed-charge savings assumed.",
+          "rationale": "Net operating costs include changed maintenance.",
+          "evidence_ids": [
+            "baseline-energy-evidence",
+            "scenario-maintenance-evidence"
+          ],
+          "model_evidence_ids": [
+            "scenario-energy-evidence",
+            "scenario-maintenance-evidence"
+          ]
+        },
+        "analysis_review": {
+          "confirmed": true,
+          "currency": "CAD",
+          "valuation_date": "2025-12-31",
+          "horizon": {
+            "start": "2025-12-31",
+            "end": "2027-12-31"
+          },
+          "dollar_basis": "real",
+          "tax_basis": "pre_tax",
+          "definition": "Explicit fixture study measure.",
+          "rationale": "Supplied fictional economics, no default rate or tariff.",
+          "model_assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+          "evidence_ids": [
+            "annual-net-evidence",
+            "discount-evidence"
+          ],
+          "definition_code": "investment_over_constant_annual_net_savings",
+          "annual_savings_period": {
+            "start": "2026-01-01",
+            "end": "2026-12-31"
+          }
+        },
+        "result_id": "composed-savings"
+      },
+      "result": {
+        "id": "composed-savings",
+        "skill": "calculate-operating-savings",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "composed-savings-value",
+            "name": "Conditional operating-savings",
+            "value": 500.0,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence",
+              "baseline-energy-evidence",
+              "baseline-maintenance-evidence",
+              "discount-evidence",
+              "scenario-energy-evidence",
+              "scenario-maintenance-evidence",
+              "unchanged-fixed-evidence"
+            ],
+            "method": {
+              "name": "Explicit supplied project-finance arithmetic",
+              "version": "0.1.0",
+              "source": "docs/finance-contract.md"
+            },
+            "assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Model applicability, inputs and sensitivity are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Comparable selected baseline annual net cost - selected projected scenario annual net cost",
+              "inputs": [
+                "baseline-energy",
+                "baseline-maintenance",
+                "unchanged-fixed",
+                "scenario-energy",
+                "scenario-maintenance"
+              ],
+              "conversions": [
+                "No currency, inflation, tax or tariff conversion inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence",
+          "baseline-energy-evidence",
+          "baseline-maintenance-evidence",
+          "discount-evidence",
+          "scenario-energy-evidence",
+          "scenario-maintenance-evidence",
+          "unchanged-fixed-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input.",
+          "Fictional quoted/modelled cost for comparison.",
+          "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "FINANCIAL_ANALYSIS_BASIS",
+            "message": "{\"analysis_review\": {\"annual_savings_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"definition_code\": \"investment_over_constant_annual_net_savings\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"baseline_lines\": [{\"category\": \"energy\", \"id\": \"baseline-energy\", \"kind\": \"cost\", \"metric_id\": \"baseline-energy\"}, {\"category\": \"maintenance\", \"id\": \"baseline-maintenance\", \"kind\": \"cost\", \"metric_id\": \"baseline-maintenance\"}, {\"category\": \"fixed\", \"id\": \"unchanged-fixed\", \"kind\": \"cost\", \"metric_id\": \"unchanged-fixed\"}], \"comparison_review\": {\"adjustment_method\": \"Supplied same-period scenario; no driver adjustments derived.\", \"analysis_type\": \"projection\", \"annual_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"baseline_conditions\": \"Supplied fixture output/service maintained.\", \"comparison_basis\": \"same_service\", \"confirmed\": true, \"coverage_complete\": true, \"evidence_ids\": [\"baseline-energy-evidence\", \"scenario-maintenance-evidence\"], \"fixed_cost_treatment\": \"Same fixed charge in both cases; no fixed-charge savings assumed.\", \"model_evidence_ids\": [\"scenario-energy-evidence\", \"scenario-maintenance-evidence\"], \"nonoverlap_assessment\": \"Separate cost components within each case.\", \"rationale\": \"Net operating costs include changed maintenance.\", \"scenario_conditions\": \"Same service with explicit energy and maintenance scenario.\"}, \"result_id\": \"composed-savings\", \"scenario_lines\": [{\"category\": \"energy\", \"id\": \"scenario-energy\", \"kind\": \"cost\", \"metric_id\": \"scenario-energy\"}, {\"category\": \"maintenance\", \"id\": \"scenario-maintenance\", \"kind\": \"cost\", \"metric_id\": \"scenario-maintenance\"}, {\"category\": \"fixed\", \"id\": \"unchanged-fixed\", \"kind\": \"cost\", \"metric_id\": \"unchanged-fixed\"}]}"
+          }
+        ],
+        "next_actions": []
+      }
+    },
+    {
+      "skill": "calculate-simple-payback",
+      "parameters": {
+        "investment_id": "composed-cost-value",
+        "annual_savings_id": "composed-savings-value",
+        "analysis_review": {
+          "confirmed": true,
+          "currency": "CAD",
+          "valuation_date": "2025-12-31",
+          "horizon": {
+            "start": "2025-12-31",
+            "end": "2027-12-31"
+          },
+          "dollar_basis": "real",
+          "tax_basis": "pre_tax",
+          "definition": "Explicit fixture study measure.",
+          "rationale": "Supplied fictional economics, no default rate or tariff.",
+          "model_assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+          "evidence_ids": [
+            "annual-net-evidence",
+            "discount-evidence"
+          ],
+          "definition_code": "investment_over_constant_annual_net_savings",
+          "annual_savings_period": {
+            "start": "2026-01-01",
+            "end": "2026-12-31"
+          }
+        },
+        "result_id": "composed-payback"
+      },
+      "result": {
+        "id": "composed-payback",
+        "skill": "calculate-simple-payback",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "composed-payback-value",
+            "name": "Conditional simple-payback",
+            "value": 2.0,
+            "unit": "years",
+            "period": {
+              "start": "2025-12-31",
+              "end": "2027-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence",
+              "baseline-energy-evidence",
+              "baseline-maintenance-evidence",
+              "capital-quote-evidence",
+              "discount-evidence",
+              "incentive-quote-evidence",
+              "installation-quote-evidence",
+              "scenario-energy-evidence",
+              "scenario-maintenance-evidence",
+              "unchanged-fixed-evidence"
+            ],
+            "method": {
+              "name": "Explicit supplied project-finance arithmetic",
+              "version": "0.1.0",
+              "source": "docs/finance-contract.md"
+            },
+            "assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Model applicability, inputs and sensitivity are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Positive investment / supplied constant annual net operating savings; undiscounted",
+              "inputs": [
+                "composed-cost-value",
+                "composed-savings-value"
+              ],
+              "conversions": [
+                "No currency, inflation, tax or tariff conversion inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence",
+          "baseline-energy-evidence",
+          "baseline-maintenance-evidence",
+          "capital-quote-evidence",
+          "discount-evidence",
+          "incentive-quote-evidence",
+          "installation-quote-evidence",
+          "scenario-energy-evidence",
+          "scenario-maintenance-evidence",
+          "unchanged-fixed-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input.",
+          "Fictional quoted/modelled cost for comparison.",
+          "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "FINANCIAL_ANALYSIS_BASIS",
+            "message": "{\"analysis_review\": {\"annual_savings_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"definition_code\": \"investment_over_constant_annual_net_savings\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"annual_savings_id\": \"composed-savings-value\", \"investment_id\": \"composed-cost-value\", \"result_id\": \"composed-payback\"}"
+          }
+        ],
+        "next_actions": []
+      }
+    }
+  ],
+  "final_state": {
+    "contract_version": "0.1.0",
+    "revision": 3,
+    "organization": {
+      "id": "org-001",
+      "name": "Fictional Example Company",
+      "sector": "manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "facility-001",
+        "name": "Fictional plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "boundary-001",
+      "approach": "operational control (fixture only)",
+      "facility_ids": [
+        "facility-001"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [
+      {
+        "id": "ev-001",
+        "source": {
+          "locator": "fixture:meter-001",
+          "title": "Fictional annual electricity record",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "kWh",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "investment-evidence",
+        "source": {
+          "locator": "fixture:finance/investment",
+          "title": "Fictional financial investment",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "annual-net-evidence",
+        "source": {
+          "locator": "fixture:finance/annual-net",
+          "title": "Fictional financial annual-net",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "horizon-net-evidence",
+        "source": {
+          "locator": "fixture:finance/horizon-net",
+          "title": "Fictional financial horizon-net",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-12-31",
+          "end": "2027-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "flow-0-evidence",
+        "source": {
+          "locator": "fixture:finance/flow-0",
+          "title": "Fictional financial flow-0",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 1
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "flow-1-evidence",
+        "source": {
+          "locator": "fixture:finance/flow-1",
+          "title": "Fictional financial flow-1",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "flow-2-evidence",
+        "source": {
+          "locator": "fixture:finance/flow-2",
+          "title": "Fictional financial flow-2",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2027-01-01",
+          "end": "2027-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional conditional projected financial input.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "discount-evidence",
+        "source": {
+          "locator": "fixture:finance/discount",
+          "title": "Fictional financial discount",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 4
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "%",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": null,
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "capital-quote-evidence",
+        "source": {
+          "locator": "fixture:composition/capital-quote",
+          "title": "Fictional capital-quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "installation-quote-evidence",
+        "source": {
+          "locator": "fixture:composition/installation-quote",
+          "title": "Fictional installation-quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "incentive-quote-evidence",
+        "source": {
+          "locator": "fixture:composition/incentive-quote",
+          "title": "Fictional incentive-quote",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "unit": "CAD",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "baseline-energy-evidence",
+        "source": {
+          "locator": "fixture:composition/baseline-energy",
+          "title": "Fictional baseline-energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "baseline-maintenance-evidence",
+        "source": {
+          "locator": "fixture:composition/baseline-maintenance",
+          "title": "Fictional baseline-maintenance",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-energy-evidence",
+        "source": {
+          "locator": "fixture:composition/scenario-energy",
+          "title": "Fictional scenario-energy",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "scenario-maintenance-evidence",
+        "source": {
+          "locator": "fixture:composition/scenario-maintenance",
+          "title": "Fictional scenario-maintenance",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      },
+      {
+        "id": "unchanged-fixed-evidence",
+        "source": {
+          "locator": "fixture:composition/unchanged-fixed",
+          "title": "Fictional unchanged-fixed",
+          "publisher": "Fictional Example Company",
+          "accessed": "2026-10-04",
+          "version": "fixture-1",
+          "tier": 5
+        },
+        "method": {
+          "name": "Synthetic meter reading fixture",
+          "version": "fixture-1",
+          "source": "fixture:meter-001"
+        },
+        "period": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        },
+        "unit": "CAD/year",
+        "boundary_id": "boundary-001",
+        "geography": "CA-ON",
+        "quality": {
+          "reliability": "unknown",
+          "completeness": "complete",
+          "fitness_notes": "Synthetic fixture, not independently verified."
+        },
+        "assumption": "Fictional quoted/modelled cost for comparison.",
+        "uncertainty": {
+          "kind": "unquantified",
+          "description": "Fictional meter uncertainty is not quantified.",
+          "value": null,
+          "unit": null
+        },
+        "calculation": null
+      }
+    ],
+    "results": [
+      {
+        "id": "res-001",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "metric-001",
+            "name": "Recorded electricity",
+            "value": 1000,
+            "unit": "kWh",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "ev-001"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "ev-001"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "ev-001"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "investment-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "investment",
+            "name": "investment",
+            "value": 1000,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "investment-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "investment-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "investment-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "annual-net-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "annual-net",
+            "name": "annual-net",
+            "value": 600,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "annual-net-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "horizon-net-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "horizon-net",
+            "name": "horizon-net",
+            "value": 200,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-12-31",
+              "end": "2027-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "horizon-net-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "horizon-net-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "horizon-net-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "flow-0-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "flow-0",
+            "name": "flow-0",
+            "value": -1000,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "flow-0-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "flow-0-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "flow-0-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "flow-1-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "flow-1",
+            "name": "flow-1",
+            "value": 600,
+            "unit": "CAD",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "flow-1-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "flow-1-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "flow-1-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "flow-2-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "flow-2",
+            "name": "flow-2",
+            "value": 600,
+            "unit": "CAD",
+            "period": {
+              "start": "2027-01-01",
+              "end": "2027-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "flow-2-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional conditional projected financial input.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "flow-2-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "flow-2-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "discount-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "discount",
+            "name": "discount",
+            "value": 10,
+            "unit": "%",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "discount-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": null,
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "discount-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "discount-evidence"
+        ],
+        "assumptions": [],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "capital-quote-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "capital-quote",
+            "name": "capital-quote",
+            "value": 700,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "capital-quote-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "capital-quote-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "capital-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "installation-quote-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "installation-quote",
+            "name": "installation-quote",
+            "value": 400,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "installation-quote-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "installation-quote-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "installation-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "incentive-quote-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "incentive-quote",
+            "name": "incentive-quote",
+            "value": 100,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "incentive-quote-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "incentive-quote-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "incentive-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "baseline-energy-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "baseline-energy",
+            "name": "baseline-energy",
+            "value": 1000,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "baseline-energy-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "baseline-energy-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "baseline-energy-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "baseline-maintenance-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "baseline-maintenance",
+            "name": "baseline-maintenance",
+            "value": 100,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "baseline-maintenance-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "baseline-maintenance-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "baseline-maintenance-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-energy-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario-energy",
+            "name": "scenario-energy",
+            "value": 400,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-energy-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-energy-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-energy-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "scenario-maintenance-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "scenario-maintenance",
+            "name": "scenario-maintenance",
+            "value": 200,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "scenario-maintenance-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "scenario-maintenance-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "scenario-maintenance-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "unchanged-fixed-result",
+        "skill": "normalize-sustainability-data",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "unchanged-fixed",
+            "name": "unchanged-fixed",
+            "value": 200,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "unchanged-fixed-evidence"
+            ],
+            "method": {
+              "name": "Synthetic meter reading fixture",
+              "version": "fixture-1",
+              "source": "fixture:meter-001"
+            },
+            "assumption": "Fictional quoted/modelled cost for comparison.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Fictional meter uncertainty is not quantified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "recorded quantity",
+              "inputs": [
+                "unchanged-fixed-evidence"
+              ],
+              "conversions": [],
+              "rounding": "none"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "unchanged-fixed-evidence"
+        ],
+        "assumptions": [
+          "Fictional quoted/modelled cost for comparison."
+        ],
+        "data_gaps": [],
+        "diagnostics": [],
+        "next_actions": []
+      },
+      {
+        "id": "composed-cost",
+        "skill": "calculate-sustainability-project-cost",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "composed-cost-value",
+            "name": "Conditional sustainability-project-cost",
+            "value": 1000.0,
+            "unit": "CAD",
+            "period": {
+              "start": "2025-01-01",
+              "end": "2025-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence",
+              "capital-quote-evidence",
+              "discount-evidence",
+              "incentive-quote-evidence",
+              "installation-quote-evidence"
+            ],
+            "method": {
+              "name": "Explicit supplied project-finance arithmetic",
+              "version": "0.1.0",
+              "source": "docs/finance-contract.md"
+            },
+            "assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Model applicability, inputs and sensitivity are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Sum selected initial investment costs - selected capital incentive credits",
+              "inputs": [
+                "capital-quote",
+                "installation-quote",
+                "incentive-quote"
+              ],
+              "conversions": [
+                "No currency, inflation, tax or tariff conversion inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence",
+          "capital-quote-evidence",
+          "discount-evidence",
+          "incentive-quote-evidence",
+          "installation-quote-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input.",
+          "Fictional quoted/modelled cost for comparison.",
+          "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "FINANCIAL_ANALYSIS_BASIS",
+            "message": "{\"analysis_review\": {\"annual_savings_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"definition_code\": \"investment_over_constant_annual_net_savings\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"composition_review\": {\"allocation_basis\": \"Whole selected project.\", \"basis\": \"initial_net_investment\", \"confirmed\": true, \"coverage_complete\": true, \"evidence_ids\": [\"capital-quote-evidence\", \"installation-quote-evidence\", \"incentive-quote-evidence\"], \"measurement_boundary\": \"Selected fictional initial project outlay.\", \"nonoverlap_assessment\": \"Distinct quotes and one capital incentive; no operating savings deducted.\", \"rationale\": \"Fictional supported quote coverage.\", \"tax_treatment\": \"Supplied pre-tax quote amounts; no tax adjustment.\"}, \"lines\": [{\"category\": \"capital\", \"id\": \"capital-quote\", \"kind\": \"cost\", \"metric_id\": \"capital-quote\"}, {\"category\": \"installation\", \"id\": \"installation-quote\", \"kind\": \"cost\", \"metric_id\": \"installation-quote\"}, {\"category\": \"capital_incentive\", \"id\": \"incentive-quote\", \"kind\": \"credit\", \"metric_id\": \"incentive-quote\"}], \"result_id\": \"composed-cost\"}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "composed-savings",
+        "skill": "calculate-operating-savings",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "composed-savings-value",
+            "name": "Conditional operating-savings",
+            "value": 500.0,
+            "unit": "CAD/year",
+            "period": {
+              "start": "2026-01-01",
+              "end": "2026-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence",
+              "baseline-energy-evidence",
+              "baseline-maintenance-evidence",
+              "discount-evidence",
+              "scenario-energy-evidence",
+              "scenario-maintenance-evidence",
+              "unchanged-fixed-evidence"
+            ],
+            "method": {
+              "name": "Explicit supplied project-finance arithmetic",
+              "version": "0.1.0",
+              "source": "docs/finance-contract.md"
+            },
+            "assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Model applicability, inputs and sensitivity are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Comparable selected baseline annual net cost - selected projected scenario annual net cost",
+              "inputs": [
+                "baseline-energy",
+                "baseline-maintenance",
+                "unchanged-fixed",
+                "scenario-energy",
+                "scenario-maintenance"
+              ],
+              "conversions": [
+                "No currency, inflation, tax or tariff conversion inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence",
+          "baseline-energy-evidence",
+          "baseline-maintenance-evidence",
+          "discount-evidence",
+          "scenario-energy-evidence",
+          "scenario-maintenance-evidence",
+          "unchanged-fixed-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input.",
+          "Fictional quoted/modelled cost for comparison.",
+          "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "FINANCIAL_ANALYSIS_BASIS",
+            "message": "{\"analysis_review\": {\"annual_savings_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"definition_code\": \"investment_over_constant_annual_net_savings\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"baseline_lines\": [{\"category\": \"energy\", \"id\": \"baseline-energy\", \"kind\": \"cost\", \"metric_id\": \"baseline-energy\"}, {\"category\": \"maintenance\", \"id\": \"baseline-maintenance\", \"kind\": \"cost\", \"metric_id\": \"baseline-maintenance\"}, {\"category\": \"fixed\", \"id\": \"unchanged-fixed\", \"kind\": \"cost\", \"metric_id\": \"unchanged-fixed\"}], \"comparison_review\": {\"adjustment_method\": \"Supplied same-period scenario; no driver adjustments derived.\", \"analysis_type\": \"projection\", \"annual_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"baseline_conditions\": \"Supplied fixture output/service maintained.\", \"comparison_basis\": \"same_service\", \"confirmed\": true, \"coverage_complete\": true, \"evidence_ids\": [\"baseline-energy-evidence\", \"scenario-maintenance-evidence\"], \"fixed_cost_treatment\": \"Same fixed charge in both cases; no fixed-charge savings assumed.\", \"model_evidence_ids\": [\"scenario-energy-evidence\", \"scenario-maintenance-evidence\"], \"nonoverlap_assessment\": \"Separate cost components within each case.\", \"rationale\": \"Net operating costs include changed maintenance.\", \"scenario_conditions\": \"Same service with explicit energy and maintenance scenario.\"}, \"result_id\": \"composed-savings\", \"scenario_lines\": [{\"category\": \"energy\", \"id\": \"scenario-energy\", \"kind\": \"cost\", \"metric_id\": \"scenario-energy\"}, {\"category\": \"maintenance\", \"id\": \"scenario-maintenance\", \"kind\": \"cost\", \"metric_id\": \"scenario-maintenance\"}, {\"category\": \"fixed\", \"id\": \"unchanged-fixed\", \"kind\": \"cost\", \"metric_id\": \"unchanged-fixed\"}]}"
+          }
+        ],
+        "next_actions": []
+      },
+      {
+        "id": "composed-payback",
+        "skill": "calculate-simple-payback",
+        "contract_version": "0.1.0",
+        "status": "completed",
+        "review_states": [
+          "ANALYTICAL"
+        ],
+        "review_requirements": [],
+        "metrics": [
+          {
+            "id": "composed-payback-value",
+            "name": "Conditional simple-payback",
+            "value": 2.0,
+            "unit": "years",
+            "period": {
+              "start": "2025-12-31",
+              "end": "2027-12-31"
+            },
+            "boundary_id": "boundary-001",
+            "evidence_ids": [
+              "annual-net-evidence",
+              "baseline-energy-evidence",
+              "baseline-maintenance-evidence",
+              "capital-quote-evidence",
+              "discount-evidence",
+              "incentive-quote-evidence",
+              "installation-quote-evidence",
+              "scenario-energy-evidence",
+              "scenario-maintenance-evidence",
+              "unchanged-fixed-evidence"
+            ],
+            "method": {
+              "name": "Explicit supplied project-finance arithmetic",
+              "version": "0.1.0",
+              "source": "docs/finance-contract.md"
+            },
+            "assumption": "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.",
+            "uncertainty": {
+              "kind": "unquantified",
+              "description": "Model applicability, inputs and sensitivity are not independently verified.",
+              "value": null,
+              "unit": null
+            },
+            "calculation": {
+              "formula": "Positive investment / supplied constant annual net operating savings; undiscounted",
+              "inputs": [
+                "composed-cost-value",
+                "composed-savings-value"
+              ],
+              "conversions": [
+                "No currency, inflation, tax or tariff conversion inferred."
+              ],
+              "rounding": "34-digit Decimal arithmetic; JSON serialization"
+            }
+          }
+        ],
+        "evidence_ids": [
+          "annual-net-evidence",
+          "baseline-energy-evidence",
+          "baseline-maintenance-evidence",
+          "capital-quote-evidence",
+          "discount-evidence",
+          "incentive-quote-evidence",
+          "installation-quote-evidence",
+          "scenario-energy-evidence",
+          "scenario-maintenance-evidence",
+          "unchanged-fixed-evidence"
+        ],
+        "assumptions": [
+          "Fictional conditional projected financial input.",
+          "Fictional quoted/modelled cost for comparison.",
+          "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+        ],
+        "data_gaps": [],
+        "diagnostics": [
+          {
+            "code": "FINANCIAL_ANALYSIS_BASIS",
+            "message": "{\"analysis_review\": {\"annual_savings_period\": {\"end\": \"2026-12-31\", \"start\": \"2026-01-01\"}, \"confirmed\": true, \"currency\": \"CAD\", \"definition\": \"Explicit fixture study measure.\", \"definition_code\": \"investment_over_constant_annual_net_savings\", \"dollar_basis\": \"real\", \"evidence_ids\": [\"annual-net-evidence\", \"discount-evidence\"], \"horizon\": {\"end\": \"2027-12-31\", \"start\": \"2025-12-31\"}, \"model_assumption\": \"Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied.\", \"rationale\": \"Supplied fictional economics, no default rate or tariff.\", \"tax_basis\": \"pre_tax\", \"valuation_date\": \"2025-12-31\"}, \"annual_savings_id\": \"composed-savings-value\", \"investment_id\": \"composed-cost-value\", \"result_id\": \"composed-payback\"}"
+          }
+        ],
+        "next_actions": []
+      }
+    ],
+    "assumptions": [
+      "Fictional conditional projected financial input.",
+      "Fictional quoted/modelled cost for comparison.",
+      "Two-year fictional case; constant real benefits, no further costs, taxes, financing or residual value supplied."
+    ],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [
+      "res-001"
+    ],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  }
+}
