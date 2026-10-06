@@ -369,3 +369,17 @@ The separate `business-xlsx-ingestion-0.1.0` follows approved 7bad9dd without in
 ## Subsequent selected water-volume reconciliation awaiting scoped review
 
 The separate `water-balance-0.1.0` follows approved 7bad9dd without inheriting scoped approval. Review [the contract](water-balance-contract.md) and [fictional source/CLI evidence](../evaluations/sus11-water-balance.md): distinct inflow/outflow/reuse roles, period-point opening/closing stocks, current source-leaf snapshots/hash views, explicit facility/coverage/nonoverlap/bounds review, signed residual and interval bookkeeping without zero-stock/tolerance/density/consumption/leakage inference. Incomplete/unfit quantities retain supported selected subtotals while withholding the residual. An exact CSV source handoff preserves stock dates and all measurement/source uncertainties. Actual measurement/reference/phase/source coverage, scientific/engineering/rights and independent organization/public-v1 acceptance remain unverified. This and prior later interfaces await scoped review; no roadmap closure follows.
+
+
+## Scoped owner approval through ba42b4e
+
+- Reviewer: project owner via this development chat.
+- User instruction: "approve the review".
+- Reviewed revision/content snapshot: `ba42b4e081a4ed5b84768aae90921f90decbad24`.
+- Decision/date: approved for continued roadmap development on 2026-10-06 (America/Toronto); no additional conditions stated.
+- Scope: the pending development interfaces committed since approved 7bad9dd: historical subject/operator task reconciliation and separate Canada history catalogs; source-supplied fuel-energy conversion; fuel CO2e source/basis bridge; seven-specialist routing and its catalog; literal workbook ingestion; and selected water-volume reconciliation. Evidence, units, boundaries, periods, assumptions, uncertainty, blocked results, source lineage and outstanding reviews remain preserved.
+- Evidence: [water validation](../evaluations/sus11-water-balance-validation.json) and [durable suite witness](../evaluations/sus11-water-balance-suite-run.json) record 807 passing repository tests, nine focused tests, twenty architecture checks, nine balance CLI/helper cases and two raw CSV handoffs. Existing recorded file hashes were checked against the current files for this decision. Tests were not rerun; earlier validation records remain unchanged. The raw water CSV was separately validated and was outside the full-suite initial hash scope.
+
+This decision supersedes pending scoped owner development review for these interfaces through the reviewed revision. Historical records retain their original meaning. It does not extend to uncommitted proposals or subsequent material changes. The specialist router's existing capability pin remains unchanged.
+
+Approval permits continued local roadmap development. Source authenticity, scientific and engineering fitness, Canadian legal applicability and duties, currentness and reuse rights, result/state reviews, native-platform and independent organization acceptance, and public-v1 requirements remain open. This approval does not activate a regulatory pack, authorize filing or a public claim, close roadmap waves, establish v1 readiness, or authorize pushing, merging, publishing, releasing, deploying or third-party contact.
