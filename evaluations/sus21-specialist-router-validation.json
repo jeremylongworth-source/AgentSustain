@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-06",
+  "timezone": "America/Toronto",
+  "base_revision": "5e4c101",
+  "reviewed_capability_revision": "7bad9dd3a07069b7a99979f80fd509ad0eb40486",
+  "execution_contract": "specialist-router-0.1.0",
+  "later_scoped_router_owner_review": "pending",
+  "suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "status": "passed",
+    "returncode": 0,
+    "tests": 787,
+    "duration_seconds": 721.739,
+    "files_unchanged": true
+  },
+  "focused_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_specialist_router -v",
+    "status": "passed",
+    "tests": 12,
+    "duration_seconds": 93.147
+  },
+  "architecture_checks": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_architecture.py -v",
+    "status": "passed",
+    "tests": 20,
+    "duration_seconds": 0.18
+  },
+  "new_actual_cli_helper_cases": 11,
+  "legacy_router_actual_cli_helper_full_output_replays": 7,
+  "unchanged_prior_source_files": 376,
+  "protected_approved_assets_per_role": {
+    "sustainable-operations": 75,
+    "carbon-accounting": 41,
+    "sustainability-manager": 105,
+    "sustainable-procurement": 74,
+    "climate-risk": 67,
+    "sustainability-business-case": 66,
+    "sustainability-reporting": 65
+  },
+  "original_request_only_seven_role_planning_and_explicit_recipe_invocation": "passed",
+  "all_seven_source_results_and_original_state_prefixes_equal_standalone_helpers": true,
+  "forged_approval_catalog_hash_transitive_runtime_drift_changed_source_factor_boundary_and_period_withheld": true,
+  "missing_mixed_negated_or_contradictory_requests_without_invocation": "passed",
+  "selected_new_factor_and_gwp_requirements_without_data_fabrication": "passed",
+  "source_history_review_decisions_input_bytes_exact_source_hash_views_and_atomic_revision_preserved": true,
+  "existing_role_domain_runtime_schemas_skills_data_and_legacy_catalog_unchanged": true,
+  "file_sha256": {
+    "README.md": "0e2c369028d8c1874b9dccacab478d18a0c742f8d3371083ca0206602384d80c",
+    "docs/architecture-review.md": "407ed504e754b4852b5a74cc530fd54827232a13c2ad376923ac80c2f6fe927b",
+    "docs/development-review.md": "490ce5437c2fd6a3a32f9181245ced471fb962245171916049939d532f4195de",
+    "docs/development-status.md": "b5bdac7ba3a6c89e57d6bea0400271476522d7d7d37e94e62245628a360c4cb7",
+    "docs/router-contract.md": "1cada60c402d520b2162f63a15c3fe4d17732bf3929a29ec5c8b8ee61b7b061c",
+    "docs/specialist-router-contract.md": "425ce9a5501363af71f464d5ca405e9ad698167dd3e9d33d7cc3d45d05819cb5",
+    "docs/v1-evidence-audit.md": "d09e93dc8c68de9a5ab7467aa272c36ada7223476a4e8ac50aedebe302cb01ed",
+    "scripts/specialist_router.py": "d503963d6f9f7e94f4559ffaa0470f0b8db90e12f4bae0dc88d418d8a1472797",
+    "scripts/run_specialist_router.py": "fe42bf689c08025486f9872cd682ec9ea0cd5336233163f251b7aa786a89fa8f",
+    "tests/test_specialist_router.py": "1a6f9fbadba22589ca6d98ccd4739ab75d18c1ef18aeca7dec83293df689ab50",
+    "router/specialists-0.1.json": "897b43c55b412ab46da5e2cdd776a3df33d2278af8e1993e702a889e65d2fa6c",
+    "evaluations/sus21-specialist-router.json": "b1bd854e2af2367a5f8090d3a851d9d06af2637838dd23c586d5bf0372ff6755",
+    "evaluations/sus21-specialist-router.md": "b816eac48a860a972746b3f85c91f06f4fa0028e7dd6cec2134c880e695e62b7",
+    "evaluations/sus21-specialist-router-prior-hashes.json": "08ec4a8abb90b9f528da0698c7dec4f5ad376126af9e3a21a3fc8e8a83a2e0e7",
+    "evaluations/sus21-specialist-router-suite-run.json": "3d45560b80f01b3d3f8971ab4171ab1bbb56b46617047b7473f13f2f5f5c1c2d"
+  },
+  "remaining_requirements": [
+    "Scoped owner review of this router and prior later historical-task/fuel interfaces.",
+    "Actual source/scientific/legal/method/input and broader language/semantic/behavioral fitness.",
+    "Third-party installed runtime/host compatibility and independent organization/agent acceptance.",
+    "Complete remaining sector/framework/jurisdiction methods, owner license/contribution/security choices and all public-v1/release proof."
+  ],
+  "full_roadmap_goal": "active; not complete",
+  "push_merge_publish_release_deploy_contact_authorized": false
+}
