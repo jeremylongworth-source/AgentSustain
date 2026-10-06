@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "0cb0525",
+  "source_manifest_runner_inventory": {
+    "carbon-accounting": {
+      "skill_path": "skillsets/carbon-accounting/SKILL.md",
+      "manifest_path": "skillsets/carbon-accounting/manifest.json",
+      "runner": "scripts/run_carbon_workflow.py",
+      "dependency_count": 9
+    },
+    "climate-risk": {
+      "skill_path": "skillsets/climate-risk/SKILL.md",
+      "manifest_path": "skillsets/climate-risk/manifest.json",
+      "runner": "scripts/run_climate_workflow.py",
+      "dependency_count": 14
+    },
+    "sustainability-business-case": {
+      "skill_path": "skillsets/sustainability-business-case/SKILL.md",
+      "manifest_path": "skillsets/sustainability-business-case/manifest.json",
+      "runner": "scripts/run_investment_workflow.py",
+      "dependency_count": 13
+    },
+    "sustainability-manager": {
+      "skill_path": "skillsets/sustainability-manager/SKILL.md",
+      "manifest_path": "skillsets/sustainability-manager/manifest.json",
+      "runner": "scripts/run_manager.py",
+      "dependency_count": 8
+    },
+    "sustainability-reporting": {
+      "skill_path": "skillsets/sustainability-reporting/SKILL.md",
+      "manifest_path": "skillsets/sustainability-reporting/manifest.json",
+      "runner": "scripts/run_reporting_workflow.py",
+      "dependency_count": 11
+    },
+    "sustainable-operations": {
+      "skill_path": "skillsets/sustainable-operations/SKILL.md",
+      "manifest_path": "skillsets/sustainable-operations/manifest.json",
+      "runner": "scripts/run_operations.py",
+      "dependency_count": 28
+    },
+    "sustainable-procurement": {
+      "skill_path": "skillsets/sustainable-procurement/SKILL.md",
+      "manifest_path": "skillsets/sustainable-procurement/manifest.json",
+      "runner": "scripts/run_procurement_workflow.py",
+      "dependency_count": 14
+    }
+  },
+  "local_links_valid": true,
+  "seven_pinned_specialist_asset_checks": {
+    "sustainable-operations": true,
+    "carbon-accounting": true,
+    "sustainability-manager": true,
+    "sustainable-procurement": true,
+    "climate-risk": true,
+    "sustainability-business-case": true,
+    "sustainability-reporting": true
+  },
+  "runtime_skill_instructions_configuration_or_mcp_changes": false,
+  "skills_installed_or_global_setup_performed": false,
+  "host_discovery_or_live_independent_agent_run_verified": false,
+  "installation_authorization": "not requested/inferred; guide is repository-consumption recommendation only",
+  "delegation_authorization": "pending human response",
+  "source_professional_legal_or_release_approval": false,
+  "tests_rerun": "no runtime or skill edits; file/link/manifest/asset validation only",
+  "file_sha256": {
+    "README.md": "b20f8f88e826a92f6903817acd0db258435845a22aa4ee07d6ce267b9d0b4792",
+    "docs/skill-consumption.md": "038152463b3f3604a68c245d1b9c8e29201792ed4ef0612fe842974117e2ad00",
+    "docs/development-status.md": "cf1f55577ed5a2f8bf056af4064bba0423487317c8badca02e9ead1f6f7e6642",
+    "docs/v1-evidence-audit.md": "e352c5cc7588474fafe7bf9d623358dfe015ba3b9720e9cb3e80184568c9eab1"
+  },
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

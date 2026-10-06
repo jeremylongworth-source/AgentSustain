@@ -85,3 +85,6 @@ The later [acceptance input correction](../evaluations/sus23-acceptance-input-co
 
 
 [Canadian byte-custody evidence](canada-source-custody.md) now records privately archived original/amendment response bytes with exact rechecked hashes, supplementing earlier parsed-only readings. Both source responses have declared-UTF-8 decoding anomalies; the supporting index request timed out. These receipts strengthen observed custody while leaving encoding/source/currentness/interpretation/rights and scientific/legal approval unproven. No executable Canadian module or imported factor/table changed, no regulatory activation occurred, and public-v1 readiness remains unestablished.
+
+
+[The consumption guide](skill-consumption.md) now clarifies repository entry points, declared local helper inputs and a focused future host-installation profile, while distinguishing runtime evidence from actual host discovery. It does not claim a host install, configuration change, new MCP access, fresh-agent behavior result or public-v1 readiness. The existing mechanical source/organization/platform evidence remains valid within its recorded limits, and installation/independent/distribution decisions stay open.
