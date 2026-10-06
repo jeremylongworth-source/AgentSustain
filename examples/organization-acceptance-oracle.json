@@ -1,0 +1,55 @@
+{
+  "oracle_version": "organization-acceptance-0.1.0",
+  "authorship": "Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.",
+  "expected_metrics": {
+    "strategy-baseline": {
+      "value": 3000,
+      "unit": "kWh"
+    },
+    "ops-energy": {
+      "value": 3000,
+      "unit": "kWh"
+    },
+    "ops-water": {
+      "value": 30,
+      "unit": "m3"
+    },
+    "ops-waste": {
+      "value": 2000,
+      "unit": "kg"
+    },
+    "ops-materials": {
+      "value": 4000,
+      "unit": "kg"
+    },
+    "operations-inventory": {
+      "value": 1500,
+      "unit": "kg CO2e"
+    },
+    "strategy-target": {
+      "value": 4.8,
+      "unit": "kWh/count"
+    },
+    "ops-finance": {
+      "value": 0,
+      "unit": "CAD"
+    }
+  },
+  "known_answer_basis": [
+    "2400 kWh + 0.6 MWh = 3000 kWh",
+    "20000 L + 10 m3 = 30 m3",
+    "1.2 t + 600 kg + 200 kg = 2000 kg",
+    "Supplied material consumption = 4000 kg",
+    "Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown",
+    "3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count",
+    "-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD"
+  ],
+  "expected_opportunity_count": 4,
+  "expected_manager_stage_count": 8,
+  "expected_target_period": {
+    "start": "2030-01-01",
+    "end": "2030-12-31"
+  },
+  "financial_absolute_tolerance": 1e-09,
+  "ratio_absolute_tolerance": 1e-12
+}

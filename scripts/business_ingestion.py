@@ -5,6 +5,7 @@ from datetime import date
 from decimal import Decimal, InvalidOperation
 import hashlib
 import io
+from itertools import islice
 import json
 import math
 import re
@@ -35,7 +36,9 @@ def _quantity(text):
 
 def ingest_business_csv(state, parameters):
     validate_state(state)
-    if not isinstance(parameters, dict) or set(parameters) != {'file_pin', 'source_metadata', 'fixture_mode', 'result_id', 'document_evidence_id'}:
+    fields = {'file_pin', 'source_metadata', 'fixture_mode', 'result_id', 'document_evidence_id'}
+    classified = isinstance(parameters, dict) and 'source_classification_review' in parameters
+    if not isinstance(parameters, dict) or set(parameters) != fields | ({'source_classification_review'} if classified else set()):
         raise ValueError('Exact CSV ingestion parameters required.')
     ident = parameters['result_id']; document_id = parameters['document_evidence_id']
     if not all(isinstance(v, str) and v.strip() for v in (ident, document_id)) or type(parameters['fixture_mode']) is not bool:
@@ -64,22 +67,46 @@ def ingest_business_csv(state, parameters):
         if not path.is_file() or path.stat().st_size > 1048576: raise ValueError('Existing CSV up to 1 MiB required.')
         raw = path.read_bytes()
         if len(raw) > 1048576 or hashlib.sha256(raw).hexdigest() != pin['sha256']: raise ValueError('CSV bytes differ from the selected pin.')
-        shipped = INPUT_ROOT / 'fictional-organization.csv'
         if not pin['synthetic']:
-            if shipped.is_file() and (not shipped.resolve().is_relative_to(INPUT_ROOT.resolve()) or shipped.stat().st_size > 1048576):
-                raise ValueError('Recognized-fixture lookup must remain bounded inside data/inputs.')
-            if pin['path'] == 'data/inputs/fictional-organization.csv' or shipped.is_file() and raw == shipped.read_bytes():
-                raise ValueError('The recognized fictional export cannot be relabeled ordinary data.')
+            # Repository examples use this reserved prefix. Byte copies retain synthetic status.
+            fixtures = list(islice(INPUT_ROOT.glob('fictional-*.csv'), 65))
+            if len(fixtures) > 64:
+                raise ValueError('Recognized-fixture lookup exceeds its bounded file count.')
+            total = 0
+            for shipped in sorted(fixtures):
+                if not shipped.is_file():
+                    continue
+                size = shipped.stat().st_size
+                total += size
+                if (not shipped.resolve().is_relative_to(INPUT_ROOT.resolve())
+                    or size > 1048576 or total > 8388608):
+                    raise ValueError('Recognized-fixture lookup must remain bounded inside data/inputs.')
+                with shipped.open('rb') as fixture_source:
+                    fixture_bytes = fixture_source.read(1048577)
+                if len(fixture_bytes) > 1048576:
+                    raise ValueError('Recognized-fixture lookup must remain bounded inside data/inputs.')
+                if path.resolve() == shipped.resolve() or raw == fixture_bytes:
+                    raise ValueError('The recognized fictional export cannot be relabeled ordinary data.')
         text = raw.decode('utf-8'); reader = csv.DictReader(io.StringIO(text, newline=''), strict=True)
         if reader.fieldnames != HEADERS: raise ValueError('Exact distinct CSV headers required; no inferred columns or units.')
         rows = []; end_lines = []
         for row in reader:
             rows.append(row); end_lines.append(reader.line_num)
         if not rows or len(rows) > 200: raise ValueError('Between 1 and 200 complete logical records required.')
+        record_tiers = {}
+        if classified:
+            classification = parameters['source_classification_review']
+            if (not isinstance(classification, dict) or set(classification) != {'record_tiers', 'basis', 'rationale', 'reviewer_role'}
+                or not all(isinstance(classification[k], str) and classification[k].strip() for k in ('basis', 'rationale', 'reviewer_role'))
+                or not isinstance(classification['record_tiers'], dict)
+                or set(classification['record_tiers']) != {r['record_id'] for r in rows}
+                or any(type(t) is not int or t not in range(1, 6) for t in classification['record_tiers'].values())):
+                raise ValueError('Explicit complete per-record source tiers and attributed classification review required.')
+            record_tiers = classification['record_tiers']
         known = {e['id'] for e in state['evidence']} | {m['id'] for r in state['results'] for m in r['metrics']}
         if document_id in known: raise ValueError('Document evidence ID must be fresh.')
         known.add(document_id); records = set(); snapshots = []; metrics = []; row_evidence = []
-        locator = 'workspace:' + pin['path']; method = {'name': 'Pinned UTF-8 CSV decimal ingestion without unit conversion', 'version': '0.1.0', 'source': locator}
+        locator = 'workspace:' + pin['path']; method = {'name': 'Pinned UTF-8 CSV decimal ingestion without unit conversion', 'version': '0.2.0' if classified else '0.1.0', 'source': locator}
         source = {**copy.deepcopy(meta), 'locator': locator, 'version': pin['source_version']}
         quality = {'reliability': 'unknown', 'completeness': 'unknown', 'fitness_notes': 'Exact source bytes and supplied row declarations; authenticity and organization coverage remain unverified.'}
         for index, row in enumerate(rows, 1):
@@ -103,7 +130,7 @@ def ingest_business_csv(state, parameters):
             if assumption is not None: result['assumptions'] = list(dict.fromkeys(result['assumptions'] + [assumption]))
             calculation = {'formula': 'Parse the supplied decimal cell; preserve its declared unit, period and boundary',
                            'inputs': [row['evidence_id']], 'conversions': [], 'rounding': 'Literal decimal retained in CSV_ROW_SOURCE; JSON finite-number representation'}
-            evidence = {'id': row['evidence_id'], 'source': {**source, 'locator': locator + '#record=' + str(index)}, 'method': method,
+            evidence = {'id': row['evidence_id'], 'source': {**source, 'tier': record_tiers.get(row['record_id'], meta['tier']), 'locator': locator + '#record=' + str(index)}, 'method': method,
                 'period': when, 'unit': row['unit'], 'boundary_id': row['boundary_id'], 'geography': row['geography'],
                 'quality': quality, 'assumption': assumption, 'uncertainty': uncertainty,
                 'calculation': {'formula': 'Select the complete logical CSV record from the pinned document', 'inputs': [document_id], 'conversions': [], 'rounding': 'No quantity conversion'}}
@@ -128,9 +155,12 @@ def ingest_business_csv(state, parameters):
             'scope': meta['title'], 'reviewer_role': 'Qualified source/data reviewer', 'status': 'open', 'resolution': None})
         result['data_gaps'].append({'id': ident + '-source-gap', 'field': 'business_source_fitness', 'reason': 'Pinned byte/row identity does not authenticate publisher, measurement fitness or organization completeness.',
             'impact': 'Imported records remain qualified source candidates.', 'remedy': 'Obtain independent source and domain review before reliance.'})
-        report = {'execution_contract': 'business-csv-ingestion-0.1.0', 'file_pin': copy.deepcopy(pin), 'source_metadata': copy.deepcopy(meta),
+        report = {'execution_contract': ('business-csv-ingestion-0.2.0' if classified else 'business-csv-ingestion-0.1.0'), 'file_pin': copy.deepcopy(pin), 'source_metadata': copy.deepcopy(meta),
             'raw_byte_count': len(raw), 'rows': snapshots, 'raw_business_data_ingestion_performed': True, 'source_authenticity_verified': False,
             'organization_coverage_authenticated': False, 'emission_factors_created': False, 'publication_authorized': False}
+        if classified:
+            report['source_classification_review'] = copy.deepcopy(classification)
+            report['record_source_tiers_authenticated'] = False
         result['diagnostics'].append({'code': 'CSV_ROW_SOURCE', 'message': json.dumps(report, sort_keys=True)})
     except (ValueError, TypeError, KeyError, OSError, csv.Error, ValidationError) as error:
         result['status'] = 'blocked'; result['metrics'] = []; result['evidence_ids'] = []; additions = []

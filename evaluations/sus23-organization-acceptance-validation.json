@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "b8ec407",
+  "prior_approved_development_revision": "ba42b4e081a4ed5b84768aae90921f90decbad24",
+  "execution_contract": "organization-acceptance-0.1.0",
+  "optional_source_contract": "business-csv-ingestion-0.2.0",
+  "suite": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "tests": 826,
+    "duration_seconds": 751.13,
+    "unittest_reported_seconds": 750.02,
+    "status": "passed",
+    "unchanged_source_data_example_hashes": 398
+  },
+  "focused_suite": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "tests.test_organization_acceptance",
+      "tests.test_business_ingestion",
+      "-v"
+    ],
+    "tests": 18,
+    "duration_seconds": 27.86,
+    "status": "passed"
+  },
+  "supported_requirement_checks": 22,
+  "actual_acceptance_cli_cases": 4,
+  "actual_classified_source_manager_cli_handoffs": 2,
+  "full_saved_default_profile_source_manager_cli_replays": 4,
+  "other_prior_source_files_unchanged": 390,
+  "intentional_runtime_extension": "scripts/business_ingestion.py",
+  "manager_specialist_router_units_schemas_factors_changed": false,
+  "source_classifications_authenticated": false,
+  "independent_expert_agent_organization_acceptance": false,
+  "scientific_financial_legal_engineering_source_or_release_approval": false,
+  "later_scoped_owner_review": "required",
+  "public_v1_readiness": false,
+  "file_sha256": {
+    "scripts/business_ingestion.py": "ebe017066f949d73f3cded87bed25583baac6205dbd1b0b0a0f3b1368562842a",
+    "scripts/organization_acceptance.py": "31c40d4d16ae003306b6f639dade7e4334ed5e5b555ece339eb4ef83e68a7c4e",
+    "scripts/run_organization_acceptance.py": "b50fe0a848584dee6f45b37c537315df64a6ff555c0a7c6209ff3f1a27d77219",
+    "tests/test_organization_acceptance.py": "66f14a7fe5beb9059757d2ac57522e8cd23f66330deb9d5050bc7e3097111fe8",
+    "data/inputs/fictional-acceptance-organization.csv": "f262914dea0fbaecec8674a1f3b2b43af17a811620c903f6cfc12ab7e5c7e172",
+    "data/inputs/fictional-acceptance-missing-water.csv": "4ea8257f5093d63e297eed94379f5e6000451ec2ace531f22c7041e52b8289ba",
+    "examples/organization-acceptance.json": "d7ef6cfd1dec691198fdf6bbb8e086f3d1fb60f244e34ead7f83fe58b09a3b6f",
+    "examples/organization-acceptance-oracle.json": "ea0e86b2baa73c3fa280c9eadb005416b70a1160bee61e483e35995955888ce4",
+    "README.md": "df54a35e47edb91b0d1fe51ea73f4d89e65920d69b39faef47a6b716321813b7",
+    "docs/business-ingestion-contract.md": "f6fcded8058c42dda2c88ab7d7bc166d3e45f26ad5a01f996b1fca0326fc1238",
+    "docs/organization-acceptance.md": "2f6e85d0294cb5161250ba11fab213551f86e4bf3a3d8c2e065306a86bf59e60",
+    "docs/architecture-review.md": "d487629f245c579ce7e267e48d47fd59361af53ed26ccc3f996593d4bc7d975a",
+    "docs/development-review.md": "fe8cb7f72b31126254f9a34c500e18cf2a27bdcd6deac430dabed0b4f53bc8b3",
+    "docs/development-status.md": "051c1ce1ce09df21d3f333e11513de7ab6fe0280229965cb96aff68d5ded3c57",
+    "docs/v1-evidence-audit.md": "209f29726be7f73726e6e64277ef64d897a0f580913fabaa30cb9a88fad47efb",
+    "evaluations/sus23-organization-acceptance.json": "51153bee4ef42c1f00792bd5b6264208f979e4c962c914ff59d39ae65df43e73",
+    "evaluations/sus23-organization-acceptance.md": "7e02d3c6ade2c341d7c87b9e2d2ccbde33c922a43fe894d736a5f5e58bb9a7ee",
+    "evaluations/sus23-organization-acceptance-prior-hashes.json": "a81cfb81c9f368318763cb6dd669187ed21fc70efabf52f626e83f2d29cada62",
+    "evaluations/sus23-organization-acceptance-suite-run.json": "e01d0a843778b4a6ddc4fd099602d46cb23dc18aa754df7dcef473105038536e"
+  },
+  "remaining_requirements": [
+    "Scoped review of source classification/acceptance and earlier thermal interfaces",
+    "Independent expert/agent/organization acceptance",
+    "Actual source/scientific/financial/legal/engineering/currentness/rights and state reviews",
+    "Remaining domain/sector and current framework/jurisdiction methods",
+    "Native Linux/minimum-Python/intended agent-platform evidence",
+    "Owner license/security/contribution decisions and full ROADMAP public-v1 requirements"
+  ],
+  "full_roadmap_goal": "active",
+  "push_merge_publish_release_deploy_dispatch_contact_authorized": false
+}
