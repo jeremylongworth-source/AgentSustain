@@ -57,3 +57,8 @@ Initial helper tests use fictional meters, production and tier 5 scenario quanti
 ## Later source-supplied fuel conversion
 
 The separate [fuel-energy contract](fuel-energy-contract.md) converts explicit mass/reference-volume observations with a supplied calorific metric and exact LHV/HHV/material/reference review. `python -m scripts.run_fuel_energy REQUEST.json` uses the existing baseline skill envelope; no original energy operation, schema, unit registry or factor table changes. Its kWh leaf can feed an explicitly reviewed nonoverlapping baseline, preserving input definitions and all professional/source reviews. It does not supply useful heat, efficiency, emissions, inferred coefficients or scientific authentication. This later interface awaits separate scoped review.
+
+
+## Subsequent conditional equipment thermal performance
+
+[The separate thermal-performance contract](thermal-performance-contract.md) adds observed integrated heat/input ratios with explicit auxiliary/operating/coverage definitions and complete fuel-conversion replay where selected. It preserves LHV/HHV rather than inferring a conversion, distinguishes electrical heating COP from fuel/auxiliary thermal ratios, and retains unknown/zero/above-unity and engineering qualifications. It supplies no certified efficiency, conservation closure, verified saving, factor or emissions inference. This later interface requires scoped review and does not change existing energy helpers or automatically expand specialist/router dispatch.

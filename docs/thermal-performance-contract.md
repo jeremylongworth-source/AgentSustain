@@ -1,0 +1,27 @@
+# Conditional equipment thermal performance
+
+`thermal-performance-0.1.0` implements the existing `analyze-energy-usage` skill through `scripts.thermal_performance.assess_thermal_performance(state, parameters)`. Run `python -m scripts.run_thermal_performance request.json` with the common input envelope. This separate development interface does not change approved energy helpers, specialist manifests or router capability pins. It requires later scoped owner review.
+
+## Source and interpretation
+
+Reviewed on 2026-10-06: [DOE/FEMP equipment definitions](https://www.energy.gov/cmei/femp/incorporate-minimum-efficiency-requirements-heating-and-cooling-products-federal). The COP definition compares heating effect and work input in identical units; AFUE, thermal efficiency and combustion efficiency have different definitions and measurement scopes. Only these distinctions inform this neutral helper. No jurisdictional purchasing limits, rating thresholds, default COP, calorific value or factor is imported. A separate NRCan page retrieval returned HTTP 403; no parsed contents or source archive from that retrieval are claimed.
+
+The helper divides supported integrated delivered thermal energy by supported selected input energy for the same declared equipment and reporting period. `thermal_conversion` includes selected fuel and auxiliary electrical energy. `period_heating_cop` allows electrical inputs only, and is a ratio of period energy totals rather than an average of instantaneous COP values. Neither output is AFUE, HSPF, SEER, a certified/rated efficiency, a conservation balance, verified saving or emissions calculation. Ratios above one remain visible: thermal conversion adds a basis/storage/unselected-heat/meter review gap rather than clamping the result or declaring a physical violation. No loss quantity is inferred.
+
+## Exact parameters
+
+Top-level fields are `quantities`, `performance_review`, `fixture_mode` (explicit boolean) and a fresh `result_id`. Generated input/output/ratio metric IDs must also be fresh.
+
+Each quantity has exactly `metric_id`, `kind` (`electrical_input`, `fuel_input`, `thermal_output`), `source_fragment`, `evidence_fit` and `fuel_result_id`. The last field is null for direct observations, or the exact existing fuel-conversion result ID for a fuel input. Each metric is selected once. Repeated evidence plus the same source fragment is rejected; hidden overlaps still require review. Unsupported/missing/unfit selections remain gaps. Their supported counterparts retain qualified selected subtotals; the ratio is withheld.
+
+The review has exactly `boundary_id`, `facility_id`, `equipment_id`, `period`, `as_of_date`, `mode`, `measurement_boundary`, `output_definition`, `auxiliary_scope`, `operating_conditions`, `input_coverage_complete`, `output_coverage_complete`, `same_operating_period`, `fuel_heating_basis`, `nonoverlap_assessment`, `evidence_ids`, `evidence_fit`, `rationale` and `reviewer_role`. Narrative fields must describe substantive supplied judgments. Equipment identity, net heat delivery/quality, meter coverage, standby/fans/pumps/controls and operating conditions are source-attributed declarations, not authenticated facts. Both coverage flags and same-period flag must be true for the ratio. Facility/boundary/period must match current state; review cannot precede the period end. Fuel selections require one explicit LHV/HHV convention; electrical-only selections require null. No LHV/HHV, enthalpy, density, reference-temperature or performance correction is calculated.
+
+## Evidence and arithmetic
+
+Direct inputs must be current nonblocked source-leaf metrics with finite nonnegative energy, matching period/boundary, supported energy units and source units, no assumptions, and versioned full-period nonfuture observed evidence. Projected tier-5 inputs are rejected. Fictional locators and known synthetic ingestion/fuel ancestry require fixture mode.
+
+Derived fuel input must reproduce its complete current `fuel-energy-0.1.0` metric, calorific/basis/source report and evidence roster under a fresh checking identity. Its heating convention and review date must match this assessment. Reproduction does not append a child result or erase source/professional reviews. Arbitrary derived quantities cannot replace this supported conversion path.
+
+Arithmetic uses existing sourced unit conversions and 34-digit Decimal operations. Unknown input is distinct from zero. Zero denominator retains supported totals but leaves ratio undefined; zero delivery with positive input yields zero. Unsupported JSON numeric ranges withhold the whole aggregate. Fatal input/basis/source errors return a blocked result with no metrics; qualified source views and gaps remain. Partial results append a single atomic state revision with all previous results, evidence, factors, assumptions, source uncertainty and review history preserved. Source views retain complete original metric uncertainty and current result hashes; output uncertainty remains unquantified without a manufactured interval.
+
+`THERMAL_PERFORMANCE` and `THERMAL_PERFORMANCE_INPUTS` retain the report and exact request parameters. Source authentication, actual coverage, certified rating, conservation, engineering acceptance, saving, emissions and external authorization stay false. Engineering review remains open. No updated specialist/router coverage, roadmap closure or public-v1 readiness follows.

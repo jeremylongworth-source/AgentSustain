@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "1ad9ca9",
+  "prior_approved_development_revision": "ba42b4e081a4ed5b84768aae90921f90decbad24",
+  "execution_contract": "thermal-performance-0.1.0",
+  "suite": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "tests": 817,
+    "duration_seconds": 730.426,
+    "status": "passed",
+    "witness": "evaluations/sus09-thermal-performance-suite-run.json",
+    "unchanged_source_hashes": 391
+  },
+  "focused_suite": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "tests.test_thermal_performance",
+      "-v"
+    ],
+    "tests": 10,
+    "duration_seconds": 2.463,
+    "status": "passed"
+  },
+  "new_actual_cli_helper_cases": 9,
+  "raw_csv_fuel_and_meter_actual_cli_handoffs": 3,
+  "full_prior_fuel_carbon_actual_cli_saved_output_replays": 18,
+  "prior_source_files_unchanged": 388,
+  "existing_helpers_units_schemas_factors_router_and_specialist_assets_changed": false,
+  "author_led_fictional_evaluation": true,
+  "independent_organization_acceptance": false,
+  "source_scientific_engineering_or_certified_rating_approval": false,
+  "later_scoped_owner_review": "required",
+  "primary_source_reading": {
+    "url": "https://www.energy.gov/cmei/femp/incorporate-minimum-efficiency-requirements-heating-and-cooling-products-federal",
+    "date": "2026-10-06",
+    "use": "Parsed distinctions between COP and named standardized equipment metrics; no ratings, limits, coefficients or archived source bytes imported."
+  },
+  "file_sha256": {
+    "scripts/thermal_performance.py": "d0e5f91a0ae3fe38a7476d2e568e173dd696ab53d5b7c8c1f544a4ce8f8a3cb4",
+    "scripts/run_thermal_performance.py": "22c60051dc5bd8607d6b4a4f82fb51cc90a3d649adc02ab567f69a6fa1ce58c6",
+    "tests/test_thermal_performance.py": "47f19a6d2c1aa833e09dc5dc08901ee92d510c8a8fdf2de5421f6335066f2730",
+    "docs/thermal-performance-contract.md": "68d7e79af0f4e9b39336de46eef360909aa25a6d57e7b97ef35a0dda7ef2ebb1",
+    "docs/energy-contract.md": "35d9fbfc9bc8f83c9896ec3b623ec88d135d01f7bd96da49ef686cfc2c15dca9",
+    "docs/architecture-review.md": "48cccd07cd3e933ebe101e9cf7cab50e8de1c3401e61322eb50584272e25e6f7",
+    "docs/development-review.md": "80d167e20aef12c007a05cf042cd84c3caaa0e1a186b5dcef76c8e1dd3d5f8cf",
+    "docs/development-status.md": "04dc719c4c60ee748040d4a95faf25b68115300c28626d4f84cbb0eb35612775",
+    "docs/v1-evidence-audit.md": "9fd3cc168ea9c4f59608a3216a057c3c32b6eb05f410ac6877065bd5e47a2dc8",
+    "evaluations/sus09-thermal-performance.md": "c693439fa8fb8b070771d94d6e79badb152696c89c8885b7c34e1260682f07e3",
+    "evaluations/sus09-thermal-performance.json": "2bc89959bdf32aa5787d99f238a4686389028bfee520e6d471fd75226909f5aa",
+    "evaluations/sus09-thermal-performance-prior-hashes.json": "6231d55558b5727e650bd3a200fe46ca25241fc86421b63e7dcba7dcc8386083",
+    "evaluations/sus09-thermal-performance-suite-run.json": "d7d0b2b8f6dfb91b29ed89111e9252b297b37a87bc3e6d5761b11f7dac323aca"
+  },
+  "full_roadmap_goal": "active",
+  "remaining_requirements": [
+    "Scoped owner review of thermal interface",
+    "Actual source/heat-quality/meter/equipment/auxiliary/operating/scientific/engineering/currentness/rights and state review",
+    "Broader thermal, steam/enthalpy/service, domain/sector/framework/jurisdiction methods",
+    "Native Linux/minimum-Python/agent-platform and independent organization/behavioral acceptance",
+    "All ROADMAP public-v1 and release requirements"
+  ],
+  "push_merge_publish_release_deploy_contact_authorized": false
+}
