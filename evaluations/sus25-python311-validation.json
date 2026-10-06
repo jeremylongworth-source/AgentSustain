@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-06",
+  "tested_revision": "f5a82ac89b2e6804cdaa283eb866409e38ced216",
+  "python": "Python 3.11.17",
+  "suite_tests": 833,
+  "duration_seconds": 722.56,
+  "tracked_file_count": 843,
+  "all_tracked_files_unchanged": true,
+  "checkout_clean": true,
+  "publisher_archive_digest_match": true,
+  "minimum_minor_family_execution_verified_on_tested_windows_build": true,
+  "actual_organization_cli_22_checks_and_full_saved_output_equality": true,
+  "runtime_source_data_or_requirements_changes": false,
+  "system_python_or_global_settings_changes": false,
+  "older_patches_other_distributions_linux_or_independent_acceptance_verified": false,
+  "runtime_redistribution_authorized": false,
+  "file_sha256": {
+    "docs/platform-validation.md": "edaf9725af3e222b95316fa013cd3ef2288a2121640dc06f9c0bfdc7073cfbe7",
+    "docs/development-status.md": "de9c2f5f0770e06f7c7a30ddc254f08857562fbc1037b7304859907011940f0c",
+    "docs/v1-evidence-audit.md": "a90674ecfa51546af2a62c8a54593e0e5ccdf58f3a8c3598304c6c586383e085",
+    "evaluations/sus25-python311-runtime-provenance.json": "339def588e1253cc7da9f7c3fb7fb233ab1620d98910c8bf5632abb7084205cc",
+    "evaluations/sus25-python311-organization-cli.json": "08db0ccdbf35f2bafae6e1ee42e922e755b14cd0c226d1287ccdc1b821c8c591",
+    "evaluations/sus25-clean-python311-validation.json": "5248243453cce7bfcdd434b6ea7e178f6817ee5f86df76e71e48bb012964c9dc",
+    "evaluations/sus25-python311.md": "a7178f8cf947430989db8c699b6f28626510b8240283456f768ef47cde0bc589"
+  },
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

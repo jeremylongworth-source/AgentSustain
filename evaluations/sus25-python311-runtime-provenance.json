@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-06",
+  "release_url": "https://github.com/astral-sh/python-build-standalone/releases/tag/20261003",
+  "release_tag": "20261003",
+  "published_at": "2026-10-03T14:56:28Z",
+  "asset_name": "cpython-3.11.17+20261003-x86_64-pc-windows-msvc-install_only.tar.gz",
+  "asset_url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.11.17%2B20261003-x86_64-pc-windows-msvc-install_only.tar.gz",
+  "published_sha256": "0f7defa7a0ed99b61e0df0bba5027474711521f1307cc3830c2f456401beeed5",
+  "downloaded_sha256": "0f7defa7a0ed99b61e0df0bba5027474711521f1307cc3830c2f456401beeed5",
+  "publisher_size_bytes": 48217207,
+  "downloaded_size_bytes": 48217207,
+  "sha256_matches_publisher": true,
+  "archive_members": 3969,
+  "expanded_bytes": 152318119,
+  "extraction_boundaries_checked": true,
+  "python_reported_version": "Python 3.11.17",
+  "project_local_only": true,
+  "global_settings_changed": false,
+  "binary_independent_audit_claimed": false,
+  "runtime_redistribution_authorized": false
+}
