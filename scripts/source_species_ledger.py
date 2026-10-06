@@ -16,7 +16,7 @@ def load_matrix(pin, fixture_mode):
     p=read_pinned_pack(pin)
     _fields(p, {'id','version','execution_contract','synthetic','gases','basis','time_horizon_years','treatments','source','scope','limitations'},
         ('id','version','execution_contract','basis','scope','limitations'))
-    if p['execution_contract']!='source-species-ledger-0.2.0' or type(p['synthetic']) is not bool or p['synthetic'] and not fixture_mode:
+    if p['execution_contract'] not in {'source-species-ledger-0.2.0','source-species-ledger-0.3.0'} or type(p['synthetic']) is not bool or p['synthetic'] and not fixture_mode:
         raise ValueError('Explicit matrix contract and per-request synthetic opt-in required.')
     if not isinstance(p['gases'],list) or not p['gases'] or any(not _text(g) for g in p['gases']) or len(set(p['gases']))!=len(p['gases']):
         raise ValueError('Distinct explicit profile species required.')
@@ -58,8 +58,8 @@ def build_source_species_ledger(state,p):
     for slot in p['slots']:
         _fields(slot,{'source_id','gas','status','result_id','metric_id','evidence_ids','evidence_fit','rationale','gwp','gwp_review'},('source_id','gas','status','rationale'))
         key=(slot['source_id'],slot['gas'])
-        if key not in pairs or key in selected or slot['status'] not in {'converted','measured_zero','unknown'} or slot['evidence_fit'] not in {'reviewed_supporting','unverified','irrelevant'}:raise ValueError('Distinct actual source/species slots and explicit quantity status required.')
-        if slot['status']!='measured_zero' and (slot['gwp'] is not None or slot['gwp_review'] is not None):raise ValueError('Only direct zero slots select a separate supplied GWP.')
+        if key not in pairs or key in selected or slot['status'] not in ({'converted','measured_zero','unknown','measured_mass'} if profile['execution_contract']=='source-species-ledger-0.3.0' else {'converted','measured_zero','unknown'}) or slot['evidence_fit'] not in {'reviewed_supporting','unverified','irrelevant'}:raise ValueError('Distinct actual source/species slots and explicit quantity status required.')
+        if slot['status'] not in {'measured_zero','measured_mass'} and (slot['gwp'] is not None or slot['gwp_review'] is not None):raise ValueError('Only direct zero slots select a separate supplied GWP.')
         if slot['status']=='unknown' and (slot['result_id'] is not None or slot['metric_id'] is not None):raise ValueError('Unknown slot cannot carry a quantity selector.')
         selected[key]=slot
     rows=[];total=number(0);used=set();evidence_gases=set();included=[];complete=fit and review['source_inventory_complete']
@@ -107,12 +107,12 @@ def build_source_species_ledger(state,p):
                     refs.update(owner['evidence_ids']);identity_evidence=activity['evidence_ids']
                 else:
                     metric=next((m for m in owner['metrics'] if m['id']==slot['metric_id']),None)
-                    if metric is None or metric['value'] is None or number(metric['value'])!=0 or metric['unit']!='kg '+key[1] or metric['period']!=review['period'] or _date(metric['period']['end'])>when or metric['boundary_id']!=review['boundary_id'] or not set(metric['evidence_ids'])<=set(source['record']['evidence_ids']) or not supported(metric['evidence_ids'],metric['unit'],metric['period']):raise ValueError('Explicit sourced zero kilogram species metric with exact period/boundary required; absence prose is insufficient.')
-                    row['source_quantity_snapshot']={'zero_metric_snapshot':copy.deepcopy(metric),'gwp_snapshot':copy.deepcopy(slot['gwp'])}
+                    if metric is None or metric['value'] is None or (number(metric['value'])!=0 if slot['status']=='measured_zero' else number(metric['value'])<0) or metric['unit']!='kg '+key[1] or metric['period']!=review['period'] or _date(metric['period']['end'])>when or metric['boundary_id']!=review['boundary_id'] or not set(metric['evidence_ids'])<=set(source['record']['evidence_ids']) or not supported(metric['evidence_ids'],metric['unit'],metric['period']):raise ValueError('Explicit sourced zero kilogram species metric with exact period/boundary required; absence prose is insufficient.' if slot['status']=='measured_zero' else 'Explicit nonnegative sourced kilogram species measurement with exact past period/boundary required.')
+                    row['source_quantity_snapshot']={('zero_metric_snapshot' if slot['status']=='measured_zero' else 'measured_metric_snapshot'):copy.deepcopy(metric),'gwp_snapshot':copy.deepcopy(slot['gwp'])}
                     gwp=slot['gwp'];sr=slot['gwp_review']
                     if gwp is None or sr is None:
-                        gap('/'.join(key)+': no defensible species GWP supplied for the zero observation.','GWP_REQUIRED')
-                        raise ValueError('Zero observations do not bypass supplied GWP provenance.')
+                        gap('/'.join(key)+(': no defensible species GWP supplied for the zero observation.' if slot['status']=='measured_zero' else ': no defensible species GWP supplied for the measured mass.'),'GWP_REQUIRED')
+                        raise ValueError('Zero observations do not bypass supplied GWP provenance.' if slot['status']=='measured_zero' else 'Measured mass does not bypass supplied GWP provenance.')
                     _fields(gwp,{'id','gas','value','unit','basis','time_horizon_years','source','status','evidence_ids'},('id','gas','unit','basis','status'))
                     _fields(gwp['source'],{'locator','publisher','version','accessed'},('locator','publisher','version','accessed'))
                     ratio=number(gwp['value'])
@@ -128,7 +128,7 @@ def build_source_species_ledger(state,p):
                     if not supported(gwp['evidence_ids'],gwp['unit']) or not any(e['source']['locator']==gwp['source']['locator'] and e['source']['version']==gwp['source']['version'] for e in ge) or not p['fixture_mode'] and not gwp['source']['locator'].startswith('https://'):raise ValueError('Current versioned GWP evidence must match its source and ratio units.')
                     row['source_quantity_snapshot']['gwp_source_snapshots']=copy.deepcopy(ge)
                     row['source_quantity_snapshot']['gwp_review']=copy.deepcopy(sr)
-                    row['mass_kg']=0;row['co2e_kg']=serialize(number(metric['value'])*ratio);identity_evidence=metric['evidence_ids']
+                    row['mass_kg']=0 if slot['status']=='measured_zero' else serialize(number(metric['value']));row['co2e_kg']=serialize(number(metric['value'])*ratio);identity_evidence=metric['evidence_ids']
                     refs.update(owner['evidence_ids'])
                 keys={(e,key[1]) for e in identity_evidence}
                 if keys & evidence_gases:raise ValueError('Shared quantity evidence/species requires explicit non-overlapping source partitions.')
@@ -149,13 +149,13 @@ def build_source_species_ledger(state,p):
     if included:
         template=next(m for r in state['results'] for m in r['metrics'] if m['id']==included[0]);metric=copy.deepcopy(template)
         metric.update(id=result['id']+'-metric',name='Selected source/species included CO2e subtotal',value=serialize(total),unit='kg CO2e',period=copy.deepcopy(review['period']),boundary_id=review['boundary_id'],evidence_ids=sorted(refs),
-            method={'name':'Explicit source/species treatment subtotal','version':'source-species-ledger-0.2.0','source':profile['source']['locator']},
+            method={'name':'Explicit source/species treatment subtotal','version':profile['execution_contract'],'source':profile['source']['locator']},
             assumption='Selected declared sources and treatment only; no authenticated statutory quantity.',
             uncertainty={'kind':'unquantified','description':'Full parent/source uncertainty preserved; no combined interval or confidence inferred.','value':None,'unit':None},
-            calculation={'formula':'sum distinct supported included source/species CO2e contributions; excluded quantities remain separate','inputs':included,'conversions':[json.dumps({'from': 'kg '+r['gas'], 'to':'kg CO2e', 'factor':r['input']['gwp']['value'], 'evidence_ids':r['input']['gwp']['evidence_ids']},sort_keys=True) for r in rows if r['included'] and r['input']['status']=='measured_zero'],'rounding':'34-digit Decimal sum; final JSON number only'})
+            calculation={'formula':'sum distinct supported included source/species CO2e contributions; excluded quantities remain separate','inputs':included,'conversions':[json.dumps({'from': 'kg '+r['gas'], 'to':'kg CO2e', 'factor':r['input']['gwp']['value'], 'evidence_ids':r['input']['gwp']['evidence_ids']},sort_keys=True) for r in rows if r['included'] and r['input']['status'] in {'measured_zero','measured_mass'}],'rounding':'34-digit Decimal sum; final JSON number only'})
         result['metrics']=[metric];result['assumptions']=list(dict.fromkeys(result['assumptions']+[metric['assumption']]))
     elif not any(r['resolved'] for r in rows):result['status']='blocked'
-    report={'execution_contract':'source-species-ledger-0.2.0','profile':profile,'profile_pin':copy.deepcopy(p['profile_pin']),'coverage_review':copy.deepcopy(review),'sources':sources,'rows':rows,
+    report={'execution_contract':profile['execution_contract'],'profile':profile,'profile_pin':copy.deepcopy(p['profile_pin']),'coverage_review':copy.deepcopy(review),'sources':sources,'rows':rows,
         'known_included_co2e_kg':serialize(total) if included else None,'declared_source_species_coverage_reproduced':complete,
         'source_authenticity_verified':False,'source_attribution_authenticated':False,'regulatory_method_verified':False,'regulatory_quantity_verified':False,'statutory_threshold_authorized':False,'legal_exclusion_verified':False,'publication_authorized':False}
     result['diagnostics'].extend([{'code':'SOURCE_SPECIES_LEDGER','message':json.dumps(report,sort_keys=True)}, {'code':'SOURCE_SPECIES_INPUTS','message':json.dumps(p,sort_keys=True)}])
