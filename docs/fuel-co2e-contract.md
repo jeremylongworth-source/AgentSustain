@@ -1,0 +1,31 @@
+# Fuel-energy to sourced CO2e bridge
+
+`fuel-co2e-0.1.0` composes a reproduced [fuel calorific-energy result](fuel-energy-contract.md) with the unchanged sourced-factor CO2e calculator. Use `python -m scripts.run_fuel_co2e REQUEST.json` with the existing `calculate-co2e` common envelope. Existing factors, formulas, unit registry, schemas, dispatch and skill instructions are unchanged. No factor, GWP, density, heating value or basis correction is inferred.
+
+The primary method reference is [2006 IPCC Guidelines Volume 2 Chapter 2](https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf), parsed on 2026-10-06. Factor table headings identify net-calorific energy bases, and section 2.3.3 discusses combusted fuel activity. This motivates explicit energy-basis and combustion review. It imports no default factor/gas table or normative wording and supplies no regulatory obligation, source-byte archive, scientific approval or reuse authorization.
+
+## Inputs and source reproduction
+
+Exact parameters are `fuel_result_id`, `factor_id`, `factor_policy`, `factor_basis_review`, `fixture_mode`, `result_id`. Fixture mode is an explicit boolean. Aggregate and generated `result_id-calculation` identities must be fresh. The selected fuel result is a successful partial `build-energy-baseline` result with one metric and exactly one complete `FUEL_ENERGY_INPUTS` and `FUEL_ENERGY_CONVERSION` diagnostic. A general energy baseline cannot substitute.
+
+The bridge reruns the exact original fuel parameters against current normalized state under a fresh checker identity. It compares the entire fuel report, source metric/evidence snapshots, source-result hashes, metric calculation/units/basis/uncertainty and evidence roster. Only the checker metric ID is aligned for comparison. Stale fuel/calorific quantities, edited converted values or altered reports withhold the calculation. Normalized source reproduction does not authenticate original measurements or independently reread every underlying source document. Synthetic upstream fuel conversion cannot enter ordinary mode.
+
+`factor_policy` remains the existing explicit source/geography/vintage/method/GWP applicability policy, including the exact factor value/unit/source/version/activity review. It is forwarded unchanged to the core calculator. A missing/unresolved factor still returns `EMISSION_FACTOR_REQUIRED`, including for zero fuel energy; a calorific value never becomes an emission factor.
+
+## Explicit factor-basis review
+
+When a factor resolves, `factor_basis_review` is exactly `fuel_result_id`, `factor_id`, `boundary_id`, `period`, `as_of_date`, `factor_heating_basis`, `fuel_basis`, `combustion_activity`, `activity_definition`, `evidence_ids`, `evidence_fit`, `rationale`, `reviewer_role`.
+
+Current fuel/factor IDs, boundary, full reporting period and original fuel assessment date must match. `factor_heating_basis` is explicitly LHV or HHV and equals the reproduced fuel basis. `fuel_basis` exactly matches the original fuel identity/definition/material/reference-conditions record; no dry/received, density or reference-condition adjustment is made. `combustion_activity` must be literal true, supported by the stated activity definition and evidence; purchased/delivered quantities, stock changes or unknown combustion cannot silently supply combusted activity. This is declared qualified-review support, not independent combustion verification.
+
+Review fitness is `reviewed_supporting`. The evidence list includes every selected factor evidence ID, plus any explicit basis/activity review evidence. Sources are versioned, nonfuture and cover the reporting period. At least one factor source has the exact selected factor locator/version and compound factor unit. Factor access is nonfuture relative to assessment. The original core eligibility checks still apply. Incompatible/unknown/unfit basis/activity/source review returns `EMISSION_FACTOR_REQUIRED` before arithmetic, retaining the factor and review context. No gross/net default percentage correction is applied.
+
+## Candidate results and downstream accounts
+
+A supported factor invokes the unchanged core calculator once. Its complete result is appended under `result_id-calculation`, preserving exact quantity/formula/unit/rounding/GWP and uncertainty. The aggregate adds no metric, avoiding duplicate emissions quantities. It retains exact hash views of the fuel and calculation results, factor snapshot and full basis review/source context in `FUEL_CO2E_SOURCE_BRIDGE`; `FUEL_CO2E_INPUTS` retains the request. If basis review fails before arithmetic there is no generated calculation result. Core factor-policy failures retain a blocked calculation and its missing-factor diagnostics. The final proposal is atomic at original revision plus one and performs no state-file write or external action.
+
+All original source/evidence/factor/history/assumption/gap/review records survive. The aggregate adds an open qualified GHG/energy-professional review. Source authenticity, actual combustion, regulated quantity, full inventory coverage, engineering/assurance approval and external-action flags remain false. Scientific fuel/technology/gas/GWP/source fitness, biogenic treatment, combustion coverage and actual review authority remain unverified; this is a conditional CO2e method, not a legal or whole-inventory finding.
+
+The existing scope-accounting helper can select the one core emissions metric with an explicit source/classification/gas/allocation/coverage record. Preserve the aggregate's new review in shared state before downstream composition. The [raw CSV-to-partial-Scope-1 evidence](../evaluations/sus06-fuel-co2e.md) retains an unresolved additional source/gas record, producing a qualified selected contribution rather than claiming complete organizational coverage. Neither account arithmetic nor declared gas labels establish actual source or gas completeness.
+
+This later interface follows approved 7bad9dd and requires separate scoped owner/source/method review alongside the prior historical-task and fuel-energy extensions. Broader sampling/sector/gas/thermal methods, active framework/jurisdiction coverage, independent organization acceptance and all public-v1/release requirements remain open. No roadmap wave or full-goal closure follows.

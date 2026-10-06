@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-06",
+  "timezone": "America/Toronto",
+  "base_revision": "8c97090",
+  "prior_approved_development_revision": "7bad9dd3a07069b7a99979f80fd509ad0eb40486",
+  "execution_contract": "fuel-co2e-0.1.0",
+  "later_scoped_owner_source_method_review": "pending",
+  "suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "status": "passed",
+    "returncode": 0,
+    "tests": 775,
+    "duration_seconds": 633.102,
+    "files_unchanged": true
+  },
+  "focused_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_fuel_co2e -v",
+    "status": "passed",
+    "tests": 9,
+    "duration_seconds": 3.471
+  },
+  "architecture_checks": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_architecture.py -v",
+    "status": "passed",
+    "tests": 20,
+    "duration_seconds": 0.179
+  },
+  "new_actual_cli_helper_cases": 14,
+  "prior_actual_cli_helper_full_output_replays": 13,
+  "unchanged_prior_source_files": 372,
+  "no_existing_runtime_test_schema_factor_unit_registry_router_skill_or_data_changes": true,
+  "full_current_normalized_fuel_calorific_metric_report_and_evidence_reproduction": "passed",
+  "factor_heating_material_reference_combustion_and_source_fit_withholding": "passed",
+  "missing_factor_including_zero_energy_retains_EMISSION_FACTOR_REQUIRED": "passed",
+  "unchanged_core_calculation_full_result_equality": "passed",
+  "raw_csv_to_partial_scope1_selected_kgCO2e": 2500,
+  "unresolved_source_gases_and_all_professional_reviews_preserved": true,
+  "original_history_factors_uncertainty_source_hash_views_request_bytes_and_atomic_revision_preserved": true,
+  "source_reading": "Parsed official 2006 IPCC Volume 2 Chapter 2 net-calorific factor basis and combustion-activity discussion; no default factor/GWP/density values or original response bytes imported.",
+  "file_sha256": {
+    "README.md": "4c39dd2b5d8d4b83353cef95c9211e97d882d39ba0c4fb9bb60f7465bbe0dbf4",
+    "docs/architecture-review.md": "6374b75ebd4d6acbbdc404c5038ff7876ad39db1d8cf5486efc2c435efc7453e",
+    "docs/development-review.md": "a757984a98df8830f71104cbedc23685b1fd783060b68105b5e9b994830344d2",
+    "docs/development-status.md": "2184413c6e3aca71f3fda5ac8e3053af38e26f7bef2f371824d93c535052b8bf",
+    "docs/fuel-energy-contract.md": "318d3d36285a6acc8d238213e4752955193b4b944e0a03b32130abadddb6a46f",
+    "docs/fuel-co2e-contract.md": "fa036a20544634495eb2c744fb235ee7199cf508d92fa638ec42dc36047fe883",
+    "docs/v1-evidence-audit.md": "86b4a043c7beb38a2fe6b23f6d5a6eb43c999a38bdfc7ca8b3c0b633aa6116be",
+    "scripts/fuel_co2e.py": "fc2abb55bf37fafcf0ca2fde4f62da110d2704414a461ab3d0e2188d5d7345aa",
+    "scripts/run_fuel_co2e.py": "8cee7f639b947f9d591d5fba4aa01b1ce1142baafb143379fbf4d5509e75003b",
+    "tests/test_fuel_co2e.py": "42c1db9abcee36a0e38aeb67b6849f10a9557f62357b5dbf96dcf7c8669cc3a1",
+    "evaluations/sus06-fuel-co2e.json": "23d1749d44f07ee012be4c327479308191c7d7307a50fbf6cc2a1a0a0af30836",
+    "evaluations/sus06-fuel-co2e.md": "7ea469fb66c6d2d5ad75a0b75198149c41d05887625612b3b8b87e5501356083",
+    "evaluations/sus06-fuel-co2e-prior-hashes.json": "4acbeaefcdeed3c7cd750a10193c6f2ca08b96790abd23a019284dd4153e7e64",
+    "evaluations/sus06-fuel-co2e-suite-run.json": "497ddff8e3cd289989349003ca95da1c04771f02c28c7adeaf923a47ecd7b272"
+  },
+  "remaining_requirements": [
+    "Scoped owner review of this interface and prior historical-task/fuel-energy extensions.",
+    "Actual source/combustion/fuel/technology/gas/heating/scientific/engineering/regulatory/rights and assurance fitness.",
+    "Broader thermal/sector/framework/jurisdiction methods and independent agent/organization acceptance.",
+    "Owner license/contribution/security decisions, complete public-v1 proof and explicit release authority."
+  ],
+  "full_roadmap_goal": "active; not complete",
+  "push_merge_publish_release_deploy_contact_authorized": false
+}
