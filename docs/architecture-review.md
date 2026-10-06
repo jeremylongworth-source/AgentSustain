@@ -252,3 +252,16 @@ The optional `business-csv-ingestion-0.2.0` and `organization-acceptance-0.1.0` 
 ## Acceptance input validation correction awaiting scoped review
 
 The later acceptance checker correction rejects unsupported case/request/oracle versions and malformed or unbounded answer keys before ingestion. Review [the controls](organization-acceptance.md) and [regression evidence](../evaluations/sus23-acceptance-input-controls.md): two reproduced false passes (wrong NPV with infinite tolerance; ignored future oracle version), finite typed/unit-bearing oracle values, complete supported metric roster, bounded counts, canonical ordered periods and versioned tolerance ceilings that may be tightened but not widened. Four existing supported/refusal CLI outputs remain exact; no domain/source calculation or professional decision is changed. This correction joins the pending source/classification/thermal development scope and supplies no source/scientific/financial/legal/engineering, independent organization or public-v1 approval.
+
+## Scoped owner approval through da4ddb3
+
+- Reviewer: project owner via this development chat.
+- User instruction: "approve the review".
+- Reviewed revision/content snapshot: `da4ddb3827931589b1fbf1f95cfef13fcac4075e`.
+- Decision/date: approved for continued local roadmap development on 2026-10-06 (America/Toronto); no additional conditions stated.
+- Scope: the pending conditional thermal-performance interface, optional CSV 0.2 source-classification and organization-acceptance interface, and acceptance input-validation correction committed after ba42b4e through this snapshot. Supporting committed platform, source-custody, skill-consumption, material-inventory, roadmap-audit and initial food-source preparation records are included as development evidence, retaining their stated limitations.
+- Evidence: the recorded suites passed 817 tests for thermal performance, 826 for classification/organization acceptance and 833 for acceptance input controls. Current hashes were compared with those witnesses: the later committed classification and input-control changes explain the two earlier runtime differences; the latest witness's remaining differences are subsequent documentation updates. A full run completed before recording this decision with 835 passing tests and unchanged input hashes; its two new food-case tests and uncommitted food-case artifacts are excluded from this approval scope. Existing historical validation records are unchanged.
+
+This decision supersedes pending scoped owner-development-review descriptions for the named committed interfaces through this exact revision. It does not approve uncommitted food-case work or later material changes, alter capability pins, or authorize separate-agent delegation.
+
+Approval permits continued local roadmap development. Source authenticity, scientific/financial/engineering/legal fitness, currentness and reuse rights, result/state reviews, independent expert/agent/organization acceptance, license and release decisions, and public-v1 requirements remain open. No roadmap wave closure, regulatory activation, filing, funding, implementation, public claim, push, merge, publication, release, deployment or third-party contact is authorized. The full roadmap goal remains active.

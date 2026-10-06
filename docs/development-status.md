@@ -1,6 +1,8 @@
 # Development status
 
-ROADMAP.md is authoritative. Snapshot: 2026-10-06, America/Toronto. Latest scoped owner approval: `cd0c991a18909459f27eb6abd10843963345b748`; see [development-review.md](development-review.md).
+ROADMAP.md is authoritative. Snapshot: 2026-10-06, America/Toronto. Latest scoped owner approval: `da4ddb3827931589b1fbf1f95cfef13fcac4075e`; see [the decision ledger](architecture-review.md#scoped-owner-approval-through-da4ddb3) and [current review index](current-review-status.md).
+
+The owner approved the pending thermal-performance, CSV 0.2 classification/organization-acceptance and acceptance input-control interfaces through this committed snapshot. Uncommitted food-case work is excluded. Professional/source/state reviews, independent acceptance, license and public-v1/release decisions remain open; no external action or separate-agent delegation is authorized. The full roadmap goal remains active.
 
 ## Repository
 
