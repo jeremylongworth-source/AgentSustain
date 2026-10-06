@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "f591048",
+  "execution_contract": "organization-acceptance-0.1.0",
+  "suite": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "tests": 833,
+    "duration_seconds": 759.477,
+    "status": "passed",
+    "hashes_unchanged": 839
+  },
+  "focused_suite": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "tests.test_acceptance_inputs",
+      "tests.test_organization_acceptance",
+      "-v"
+    ],
+    "tests": 16,
+    "duration_seconds": 29.586,
+    "status": "passed"
+  },
+  "invalid_input_actual_cli_rejections": 7,
+  "full_saved_supported_refusal_cli_output_replays": 4,
+  "prior_false_passes_reproduced": true,
+  "domain_source_oracle_manager_specialist_schema_factor_changes": false,
+  "existing_runtime_modified": "scripts/organization_acceptance.py",
+  "file_sha256": {
+    "scripts/organization_acceptance.py": "f199485bea580699d9492729aa41da029922bfbcba77c2758ba84f182476fd96",
+    "tests/test_acceptance_inputs.py": "3c5a246813ae4a1a070d3fa09a9a1235774df30355778b80399ee4946bccc190",
+    "docs/organization-acceptance.md": "5377cf507a79777275493aedd47e6493e8607057954112b86feb3e88979a40c6",
+    "docs/architecture-review.md": "454819f43598d74d93453691923016f0548276ef92266c2c4c5ac354b2b0b3b5",
+    "docs/development-review.md": "0798da15e06c87183cfbb4a15ceaa625ac8240102f769f0f8ab7f677bc9ccab3",
+    "docs/development-status.md": "960e2322718fc728750a4fdaa69826fff466c0ca1206a31f13f15643cb4545f1",
+    "docs/v1-evidence-audit.md": "910416648366960238bb33000825b8ca82ae866693fc62c07caafefbc52a7fee",
+    "evaluations/sus23-acceptance-input-controls.json": "8c98f03f9125d3766060e88d19a6ff2cbbb249e7cb650abd9f49cd8bf1a6e032",
+    "evaluations/sus23-acceptance-input-controls.md": "43a1a448f28cc4b6b72f53f629586b3835310af8a6f1a48537cceb3ef8fde648",
+    "evaluations/sus23-acceptance-input-suite-run.json": "ca9a8230e0151e6f677da4d3a80727f19cf391c436efbb3fa6e6589ce7ea6918"
+  },
+  "scoped_development_review": "pending",
+  "independent_organization_acceptance": false,
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

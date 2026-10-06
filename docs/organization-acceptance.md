@@ -54,3 +54,14 @@ Given an absent selected factor, emissions must remain withheld with `EMISSION_F
 The answer key is declared separately from computed output, but its author is the same development agent. Agreement cannot establish independent expert/agent acceptance, actual source fitness, organization completeness, standardized reporting conformity or reliable behavior on another platform. Successful selected arithmetic does not settle the roadmap's twenty public-v1 checks. Other optional evidence includes alternate platform/interpreter runs, independent reviewer notes and richer source-format scenarios; their absence is not hidden by this controlled report.
 
 The current manager/specialist contracts and capability pin remain unchanged. The optional `business-csv-ingestion-0.2.0` classification extension and this later evaluation interface require scoped owner review. Whole-release data/rights checks, active framework/jurisdiction methods, scientific/legal/engineering reviews, independent organization acceptance, license/security/contribution decisions and public-v1 requirements remain open. No push, publication, dispatch, filing, release or third-party communication is authorized.
+
+
+## Case and answer-key input controls
+
+Before opening the source through the importer, the evaluator now requires the exact case fields and version `0.1.0`, validates the common ingestion request envelope, and requires answer-key version `organization-acceptance-0.1.0`. Unknown/missing/extra fields, unsupported versions and malformed metadata are invalid inputs rather than successful comparisons.
+
+The answer key must contain all eight supported metric IDs with their declared canonical units and finite JSON numeric values; booleans are not quantities. Physical expected values cannot be negative; the monetary comparison can be signed. Expected counts are integers from 0 through 100. Basis/authorship descriptions are nonblank, and the target period has exactly two ordered canonical ISO dates.
+
+Versioned comparison ceilings are `1e-9` absolute for CAD and `1e-12` absolute for other supported quantities. A caller can tighten a tolerance, including to zero, but cannot widen it. Infinity, NaN, negative, boolean, unsupported numeric range and nonnumeric tolerances are rejected. These are test-comparison limits, not measurement accuracy, monetary materiality or professional acceptance thresholds. New comparison semantics need an explicit future evaluator/oracle version; they cannot be silently introduced by changing an existing answer key.
+
+This fixes two reproduced false passes: a wrong NPV answer with infinite tolerance and an ignored future oracle version. A finite correctly formed wrong answer yields a failed check; invalid input yields CLI exit 2. Existing supported and expected-refusal captures remain exactly reproducible. No source, domain calculation, uncertainty, review decision, source authentication or release authority is changed.

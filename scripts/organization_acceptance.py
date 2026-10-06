@@ -2,14 +2,74 @@
 import copy
 import hashlib
 import math
+from datetime import date
 from pathlib import Path
 from .business_ingestion import ingest_business_csv
-from .contract_validation import ROOT, validate_state
+from .contract_validation import ROOT, validate_shape, validate_state
 from .jurisdiction_tasks import _diagnostic
 from .manager_workflow import run_manager
 
 
+EXPECTED_UNITS = {'strategy-baseline':'kWh', 'ops-energy':'kWh', 'ops-water':'m3',
+                  'ops-waste':'kg', 'ops-materials':'kg', 'operations-inventory':'kg CO2e',
+                  'strategy-target':'kWh/count', 'ops-finance':'CAD'}
+TOLERANCE_LIMITS = {'financial_absolute_tolerance':1e-9, 'ratio_absolute_tolerance':1e-12}
+
+
+def _finite_number(value):
+    if type(value) not in (int, float):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
+def _validate_inputs(case, oracle):
+    if (not isinstance(case, dict) or set(case) != {'contract_version', 'ingestion_request', 'manager_parameters'}
+        or case['contract_version'] != '0.1.0' or not isinstance(case['manager_parameters'], dict)):
+        raise ValueError('Supported exact organization case version and fields required.')
+    validate_shape('input.schema.json', case['ingestion_request'])
+    fields = {'oracle_version', 'authorship', 'expected_metrics', 'known_answer_basis',
+              'expected_opportunity_count', 'expected_manager_stage_count', 'expected_target_period',
+              'financial_absolute_tolerance', 'ratio_absolute_tolerance'}
+    if (not isinstance(oracle, dict) or set(oracle) != fields
+        or oracle['oracle_version'] != 'organization-acceptance-0.1.0'
+        or not isinstance(oracle['authorship'], str) or not oracle['authorship'].strip()):
+        raise ValueError('Supported exact answer-key version, fields and authorship description required.')
+    for name, limit in TOLERANCE_LIMITS.items():
+        value = oracle[name]
+        if not _finite_number(value) or not 0 <= value <= limit:
+            raise ValueError('Finite nonnegative answer-key tolerance within the versioned comparison limit required.')
+    metrics = oracle['expected_metrics']
+    if not isinstance(metrics, dict) or set(metrics) != set(EXPECTED_UNITS):
+        raise ValueError('Complete supported answer-key metric roster required.')
+    for ident, unit in EXPECTED_UNITS.items():
+        metric = metrics[ident]
+        if (not isinstance(metric, dict) or set(metric) != {'value', 'unit'} or metric['unit'] != unit
+            or not _finite_number(metric['value'])
+            or ident != 'ops-finance' and metric['value'] < 0):
+            raise ValueError('Finite correctly typed/unit-bearing answer-key quantities required.')
+    for key in ('expected_opportunity_count', 'expected_manager_stage_count'):
+        if type(oracle[key]) is not int or not 0 <= oracle[key] <= 100:
+            raise ValueError('Bounded integer expected counts required.')
+    basis = oracle['known_answer_basis']
+    if (not isinstance(basis, list) or not 1 <= len(basis) <= 100
+        or any(not isinstance(text, str) or not text.strip() for text in basis)):
+        raise ValueError('Explicit nonempty answer-key basis descriptions required.')
+    period = oracle['expected_target_period']
+    if not isinstance(period, dict) or set(period) != {'start', 'end'}:
+        raise ValueError('Exact target-period fields required.')
+    for key in ('start', 'end'):
+        value = period[key]
+        if not isinstance(value, str) or len(value) != 10 or date.fromisoformat(value).isoformat() != value:
+            raise ValueError('Canonical ISO answer-key target dates required.')
+    if period['start'] > period['end']:
+        raise ValueError('Ordered answer-key target period required.')
+
+
 def evaluate_organization_acceptance(case, oracle):
+    _validate_inputs(case, oracle)
     request = case['ingestion_request']; p = request['parameters']; initial = request['state']
     if request['skill'] != 'ingest-business-records' or p['fixture_mode'] is not True or p['file_pin']['synthetic'] is not True:
         raise ValueError('This acceptance scenario requires explicit fictional-source mode.')

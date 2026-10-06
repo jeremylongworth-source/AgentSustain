@@ -73,3 +73,6 @@ The later [organization acceptance map](organization-acceptance.md) now covers a
 
 
 [Fresh Python 3.12 evidence](../evaluations/sus25-clean-python312-validation.json) now records all 826 repository tests passing against revision 6670800 on the same Windows host, with every tracked file unchanged. [The organization CLI](../evaluations/sus25-python312-organization-cli.json) reproduces the complete saved Python 3.14 output and twenty-two controlled checks. This strengthens interpreter/install reproducibility; it does not establish Python 3.11, native Linux, independent organization/agent acceptance, source/domain fitness or public-v1 readiness. Existing owner/scoped/professional/release boundaries remain open.
+
+
+The later [acceptance input correction](../evaluations/sus23-acceptance-input-controls.md) closes two verified misleading-pass paths while preserving all four existing controlled/refusal outputs. Version/shape, finite quantity, count/date and bounded-tolerance checks run before source ingestion. All 833 repository tests pass on the corrected evaluator. This strengthens mechanical acceptance evidence without resolving independent agent/expert/organization, source/domain, platform, pending scoped or public-v1/release requirements.

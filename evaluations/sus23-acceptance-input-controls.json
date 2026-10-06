@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "f591048",
+  "execution_contract": "organization-acceptance-0.1.0",
+  "reproduced_before_fix": {
+    "wrong_npv_9999_with_infinite_tolerance": "incorrectly passed",
+    "unsupported_oracle_version": "incorrectly passed",
+    "source_financial_or_release_authority_was_granted": false
+  },
+  "invalid_input_actual_cli_rejections": [
+    {
+      "name": "infinite-tolerance-wrong-npv",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValueError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"organization-acceptance-0.1.0\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"m3\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 9999, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": Infinity, \"ratio_absolute_tolerance\": 1e-12}"
+    },
+    {
+      "name": "nan-tolerance",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValueError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"organization-acceptance-0.1.0\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"m3\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 0, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": 1e-09, \"ratio_absolute_tolerance\": NaN}"
+    },
+    {
+      "name": "widened-tolerance",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValueError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"organization-acceptance-0.1.0\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"m3\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 0, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": 1, \"ratio_absolute_tolerance\": 1e-12}"
+    },
+    {
+      "name": "future-case",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValueError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"organization-acceptance-0.1.0\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"m3\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 0, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": 1e-09, \"ratio_absolute_tolerance\": 1e-12}"
+    },
+    {
+      "name": "future-request",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValidationError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"organization-acceptance-0.1.0\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"m3\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 0, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": 1e-09, \"ratio_absolute_tolerance\": 1e-12}"
+    },
+    {
+      "name": "future-oracle",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValueError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"future\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"m3\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 0, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": 1e-09, \"ratio_absolute_tolerance\": 1e-12}"
+    },
+    {
+      "name": "wrong-unit",
+      "returncode": 2,
+      "output": {
+        "error": "INVALID_ACCEPTANCE_INPUT",
+        "kind": "ValueError"
+      },
+      "case_and_oracle_bytes_unchanged": true,
+      "invalid_oracle_json_text": "{\"oracle_version\": \"organization-acceptance-0.1.0\", \"authorship\": \"Author-led fictional answer key, declared separately from actual workflow output; not independent expert acceptance.\", \"expected_metrics\": {\"strategy-baseline\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-energy\": {\"value\": 3000, \"unit\": \"kWh\"}, \"ops-water\": {\"value\": 30, \"unit\": \"L\"}, \"ops-waste\": {\"value\": 2000, \"unit\": \"kg\"}, \"ops-materials\": {\"value\": 4000, \"unit\": \"kg\"}, \"operations-inventory\": {\"value\": 1500, \"unit\": \"kg CO2e\"}, \"strategy-target\": {\"value\": 4.8, \"unit\": \"kWh/count\"}, \"ops-finance\": {\"value\": 0, \"unit\": \"CAD\"}}, \"known_answer_basis\": [\"2400 kWh + 0.6 MWh = 3000 kWh\", \"20000 L + 10 m3 = 30 m3\", \"1.2 t + 600 kg + 200 kg = 2000 kg\", \"Supplied material consumption = 4000 kg\", \"Explicit fictional 0.5 kg CO2e/kWh factor gives 1500 kg CO2e; incomplete other scopes remain unknown\", \"3000 kWh / 500 equivalent service units = 6 kWh/count; proposed 20% reduction gives 4.8 kWh/count\", \"-2000 + 1100/1.1 + 1210/(1.1^2) = 0 CAD\"], \"expected_opportunity_count\": 4, \"expected_manager_stage_count\": 8, \"expected_target_period\": {\"start\": \"2030-01-01\", \"end\": \"2030-12-31\"}, \"financial_absolute_tolerance\": 1e-09, \"ratio_absolute_tolerance\": 1e-12}"
+    }
+  ],
+  "prior_actual_cli_full_saved_output_replays": [
+    {
+      "name": "supported",
+      "full_saved_output_equal": true,
+      "returncode_unchanged": true,
+      "input_bytes_unchanged": true
+    },
+    {
+      "name": "missing-factors",
+      "full_saved_output_equal": true,
+      "returncode_unchanged": true,
+      "input_bytes_unchanged": true
+    },
+    {
+      "name": "unknown-water",
+      "full_saved_output_equal": true,
+      "returncode_unchanged": true,
+      "input_bytes_unchanged": true
+    },
+    {
+      "name": "invalid-source-pin",
+      "full_saved_output_equal": true,
+      "returncode_unchanged": true,
+      "input_bytes_unchanged": true
+    }
+  ],
+  "finite_valid_wrong_npv_comparison": {
+    "scenario_status": "failed",
+    "check": {
+      "id": "ORG-07",
+      "requirement": "Explicit modeled monetary cash flows reproduce the separate declared NPV",
+      "passed": false,
+      "observed": null
+    }
+  },
+  "domain_calculations_changed": false,
+  "source_data_or_oracle_changed": false,
+  "public_v1_readiness": false,
+  "independent_organization_acceptance": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

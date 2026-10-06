@@ -1,0 +1,11 @@
+# Acceptance checker input regression
+
+Two false passes were reproduced before the correction: an incorrect 9,999 CAD NPV answer passed with infinite tolerance, and an unsupported oracle version passed. Neither supplied professional or release approval, but both made the controlled acceptance result misleading.
+
+[Actual rejection/replay evidence](sus23-acceptance-input-controls.json) now records seven invalid-input CLI cases rejected with exit 2, unchanged case/oracle bytes, four complete saved supported/refusal output replays, and a correctly formed finite wrong answer yielding a failed NPV check. Nonstandard numeric payloads are retained as source text inside valid JSON evidence rather than nonfinite artifact numbers.
+
+[The input controls](../docs/organization-acceptance.md) require exact supported versions/fields and the common request schema, finite typed canonical metric answers, bounded integer counts, explicit basis/authorship, ordered canonical dates, and finite nonnegative comparison tolerances capped at the versioned defaults. Tighter tolerances, including zero, remain supported. The finite-number guard also rejects oversized integers without allowing numeric overflow to reach ingestion.
+
+Sixteen final focused checks passed in 29.586 seconds of captured execution (unittest reported 28.908 seconds). The final full repository suite passed 833 tests in 759.477 seconds. [The durable witness](sus23-acceptance-input-suite-run.json) records terminal success and 839 unchanged hashes spanning every previously tracked file and the new test. Documentation updates below were made only after that frozen run; [final package validation](sus23-acceptance-input-validation.json) separately pins their bytes.
+
+Only the existing acceptance evaluator and a new test file changed; source data, oracle fixtures, manager/specialist methods, schemas, factors and domain calculations remain unchanged. This is author-led controlled evidence. It does not establish independent organization acceptance, source/scientific/financial/legal/engineering fitness, Python 3.11/Linux behavior, pending scoped approval or public-v1 readiness. The full roadmap goal remains active; no external action is authorized.
