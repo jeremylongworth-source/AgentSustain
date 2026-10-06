@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "01bde9b",
+  "tracked_files_pattern_scanned": 856,
+  "material_files_hashed": 68,
+  "package_xml_parts_scanned": 8,
+  "credential_shape_matches": 0,
+  "tracked_private_data_files": 0,
+  "tracked_license_files": 0,
+  "fixture_source_runtime_or_instruction_changes": false,
+  "confidentiality_fictionality_rights_or_security_approval": false,
+  "inventory_review_categories": {
+    "version-control metadata; not a source dataset": 5,
+    "declared_example_or_fixture; requires release data review": 30,
+    "unit/framework/jurisdiction/reference/research material; source and rights review required": 33
+  },
+  "owner_release_data_license_security_contribution_decisions": "open",
+  "delegated_agent_evaluation": "pending human authorization; unperformed",
+  "file_sha256": {
+    "evaluations/sus25-release-material-inventory.json": "31ac08328b3e1970d330d85558bbeec4b02a0a48d01dfe2a905e298ded269215",
+    "docs/release-material-review.md": "d45993b9541c253e0ffed142fe2213acec5db024ba44126e1ae5719e48c2cc99",
+    "docs/development-status.md": "5b698e97d6a696e95905c1a578bcc83faf2dfd114feb52b92df564e030bd0b97",
+    "docs/v1-evidence-audit.md": "a6eb37f2453e5ce53846685c9191b1ba01546fc843d2533bbaa5af83457c87f3"
+  },
+  "tests_rerun": "not required for inventory/documentation with no runtime changes",
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

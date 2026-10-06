@@ -1,0 +1,1213 @@
+{
+  "record_type": "release_material_inventory_and_bounded_pattern_scan",
+  "date": "2026-10-06",
+  "base_revision": "01bde9b3dd4f6a4c90613c7cb235e01ee3c6c889",
+  "tracked_file_count": 856,
+  "material_inventory": [
+    {
+      "path": "data/inputs/.gitattributes",
+      "sha256": "2fbae2e6f6ef03ccd63d0b652c4a449f6eb6213303875c67695c5a43b8738e8f",
+      "bytes": 19,
+      "review_category": "version-control metadata; not a source dataset",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "data/inputs/fictional-acceptance-missing-water.csv",
+      "sha256": "4ea8257f5093d63e297eed94379f5e6000451ec2ace531f22c7041e52b8289ba",
+      "bytes": 6819,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "data/inputs/fictional-acceptance-organization.csv",
+      "sha256": "f262914dea0fbaecec8674a1f3b2b43af17a811620c903f6cfc12ab7e5c7e172",
+      "bytes": 6825,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "data/inputs/fictional-business-records.xlsx",
+      "sha256": "216f483289a5aef30882f983cf7c7a3a635ab31465dde5253badd719ca721786",
+      "bytes": 5646,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": false,
+      "fictional_marker_scope": "compressed raw bytes earlier; XML-package marker separately recorded"
+    },
+    {
+      "path": "data/inputs/fictional-fuel-energy.csv",
+      "sha256": "5662a6c64d577aeb59a6c760a7878ac7525db61f584a107411decec83e2e7b1d",
+      "bytes": 945,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "data/inputs/fictional-organization.csv",
+      "sha256": "746666b138910884407f72a5747fe7a02dedf2d9b5f5df8cd1d7c8cc2f814a2c",
+      "bytes": 5203,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "data/inputs/fictional-water-balance.csv",
+      "sha256": "13038d5185fa96a0c9abc6f082ccf5c895bea4edfcbebc10b42381846d977a9f",
+      "bytes": 1810,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "70f2983b0cff79d49b12c5bc5299fde698b97d809e0868696d0d8b5ad1d22778",
+      "bytes": 571,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/architecture-state.json",
+      "sha256": "a8ba8113174eaeb47bbf7baaf70fc5a2bbdcde776dd6c1b156660aaa21afc81b",
+      "bytes": 3566,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "contract_version",
+        "revision",
+        "organization",
+        "facilities",
+        "jurisdictions",
+        "reporting_period",
+        "organizational_boundary",
+        "evidence",
+        "results",
+        "assumptions",
+        "data_gaps",
+        "review_requirements",
+        "energy",
+        "water",
+        "materials",
+        "waste",
+        "ghg",
+        "suppliers",
+        "targets",
+        "risks"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/energy-project-source.md",
+      "sha256": "171a6d325317e35ccc1c0364c0d4d0b5b2e94db0b5a20fd5561d4c54f3c9f317",
+      "bytes": 2143,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/factor-required-result.json",
+      "sha256": "b882554811ea23dc39089a8650ace4d8662df1758a93650e40cfe486f01b58c8",
+      "bytes": 831,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": "blocked",
+      "top_level_keys": [
+        "id",
+        "skill",
+        "contract_version",
+        "status",
+        "review_states",
+        "review_requirements",
+        "metrics",
+        "evidence_ids",
+        "assumptions",
+        "data_gaps",
+        "diagnostics",
+        "next_actions"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "examples/ghg-foundation/README.md",
+      "sha256": "45099b2719729e41ea9e54d308047f417b9db92a758069ba97dd46a6f571975f",
+      "bytes": 1046,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/ghg-foundation/factor-required-output.json",
+      "sha256": "7f82efcbaab865eab1f572425d71f673d63d5e5167628b752999142642c68e3b",
+      "bytes": 8686,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "result",
+        "proposal"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/ghg-foundation/synthetic-output.json",
+      "sha256": "450c69a5b3d8b5ffca0d571c5491f29b7a0986164462c7070f8c2ab0f20302e7",
+      "bytes": 11818,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "result",
+        "proposal"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/ghg-foundation/synthetic-request.json",
+      "sha256": "71a6b7902ae59b2d78c841bfb3722aee2f0bd28d0fbb8591bb3aa361a2c32865",
+      "bytes": 6765,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "contract_version",
+        "skill",
+        "state",
+        "parameters"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/organization-acceptance-oracle.json",
+      "sha256": "ea0e86b2baa73c3fa280c9eadb005416b70a1160bee61e483e35995955888ce4",
+      "bytes": 1526,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "oracle_version",
+        "authorship",
+        "expected_metrics",
+        "known_answer_basis",
+        "expected_opportunity_count",
+        "expected_manager_stage_count",
+        "expected_target_period",
+        "financial_absolute_tolerance",
+        "ratio_absolute_tolerance"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/organization-acceptance.json",
+      "sha256": "d7ef6cfd1dec691198fdf6bbb8e086f3d1fb60f244e34ead7f83fe58b09a3b6f",
+      "bytes": 53887,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "contract_version",
+        "ingestion_request",
+        "manager_parameters"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/scope-accounting/README.md",
+      "sha256": "75bdade5c956226b664733ced7055879597729c3cf55b10ae3c71f0d4160eed1",
+      "bytes": 1149,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/scope-accounting/location-output.json",
+      "sha256": "616e3ace78bd03f2ee0ae23b8764e899b46ee109aa6ca9c86c721a4359990870",
+      "bytes": 18628,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "result",
+        "proposal"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/scope-accounting/location-request.json",
+      "sha256": "377c596edc60293f130e19bfe00f7f797bddce7101ac0b832d83ce3ea225a62c",
+      "bytes": 11112,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "contract_version",
+        "skill",
+        "state",
+        "parameters"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/scope-accounting/market-output.json",
+      "sha256": "5cefc481368963dd0c2504a7f11cb3bd95f80aa0116c9d5d0ec58f57d53b8b56",
+      "bytes": 43558,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "result",
+        "proposal"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/scope-accounting/market-request.json",
+      "sha256": "491b7e2bfd1d78ee8a3c24b7840c4000ad46378bf5889ace1edc4e9cdc5d0a63",
+      "bytes": 28027,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "contract_version",
+        "skill",
+        "state",
+        "parameters"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/waste-opportunity-source.md",
+      "sha256": "f99553969e6ae7fd8795aa0871144f9eead49a2556aa349d3846203b9fabe434",
+      "bytes": 1647,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "examples/water-dependency-source.md",
+      "sha256": "d246717b42a15d34e8c1482ceeeb0f9ec983fb18b53bec3204bb8503dad51dab",
+      "bytes": 1192,
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/.gitattributes",
+      "sha256": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+      "bytes": 19,
+      "review_category": "version-control metadata; not a source dataset",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/claims/materials/fictional-change-causal.json",
+      "sha256": "d48dd42b8fd8685f18cbdb7ca1a7ea02a7150895501e23166d44cb666f6c5238",
+      "bytes": 338,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-change-conflict.json",
+      "sha256": "8e11217fb85b11a2d18d9ad4b64528ba9770f809b9a3c55d212bb6287b77676a",
+      "bytes": 363,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-change-decrease.json",
+      "sha256": "dcf404ddcd06d5ae32ccb39fdd3567caafbc7ab6e2f0a5bdcebd235be3d95892",
+      "bytes": 364,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-change-percent.json",
+      "sha256": "2b40d0f13ab4ac68526999ce4ac23d5da18ea9a4598a8c2efe92829297bb10e5",
+      "bytes": 354,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-change.json",
+      "sha256": "8a578613129fed84f8d44c1670b58ac458e3e32f2cda3cc86a322bb8106837ba",
+      "bytes": 345,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-conflict.json",
+      "sha256": "124f1510880c3cdec0001cb584798cec7ae614c3d049a3ae0c5f2c8d43347daa",
+      "bytes": 308,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-future-conflict.json",
+      "sha256": "f2d788917c62afab0096c4945daba3393bd423df7f7ecb4e1eb420cc9c501a02",
+      "bytes": 388,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-future-goal.json",
+      "sha256": "9c9b122c8e3182404e964d66b24dd369d0f2329e2f320a83dee06064a2483ee4",
+      "bytes": 380,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-future-guarantee.json",
+      "sha256": "7bd636ec9cb91603a8a519cc993cd89e754f663f9bfe324b8a873f796f52b94d",
+      "bytes": 392,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-future-other-year.json",
+      "sha256": "65d2ef5496a7a485be6d30b14f82f2f19a2dc6db2831dc827ce43ca3e237a71a",
+      "bytes": 392,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-future-year-token.json",
+      "sha256": "92d22e41636b5458330895d6eca45ca901d267c2cb48727a02088bab30f57f9e",
+      "bytes": 393,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-inventory-conflict.json",
+      "sha256": "bbd44d14e38b4f31e39c09111e7baf686c0f073139324646d54e9303ca1feca9",
+      "bytes": 358,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-inventory.json",
+      "sha256": "af0827f86bc84014859f09502ff7c2080a910fe56db9a83662e78de3c3cb0026",
+      "bytes": 340,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-neutrality.json",
+      "sha256": "e7efad0154d74486996c3f4069c334dd9112ee0b37d6b27225590a6e9b60316a",
+      "bytes": 317,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-partial-inventory.json",
+      "sha256": "7169812a63fef03fbd72e8e0fdfa182eb56a65bd15b36beb2075dea5da65c424",
+      "bytes": 364,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/claims/materials/fictional-selected.json",
+      "sha256": "7b863066fd50e806493b293263d6b0e9219c082cc80c411c44baa2564a6f3b16",
+      "bytes": 310,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "format",
+        "text"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/frameworks/.gitattributes",
+      "sha256": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+      "bytes": 19,
+      "review_category": "version-control metadata; not a source dataset",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004-amend2013.json",
+      "sha256": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400",
+      "bytes": 4865,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "framework",
+        "version",
+        "mapping_revision",
+        "publication_status",
+        "source_verified",
+        "jurisdiction",
+        "source",
+        "retrieved",
+        "effective_interval",
+        "license",
+        "review_status",
+        "coverage",
+        "required_gases",
+        "requirements",
+        "amendment_source",
+        "amendment_effective_basis"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004.json",
+      "sha256": "f4dc25a7e91fb190f372f32b023faf950d686fc629b78d103e32f7328e6e8b24",
+      "bytes": 4042,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "framework",
+        "version",
+        "mapping_revision",
+        "publication_status",
+        "source_verified",
+        "jurisdiction",
+        "source",
+        "retrieved",
+        "effective_interval",
+        "license",
+        "review_status",
+        "coverage",
+        "required_gases",
+        "requirements"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/frameworks/tnfd-2023-ghg-referral.json",
+      "sha256": "31e0254cda834199f19e50dfb1de3a561ecbbe1960575bac7606b6b9425ac9e2",
+      "bytes": 1491,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "framework",
+        "version",
+        "mapping_revision",
+        "publication_status",
+        "source_verified",
+        "jurisdiction",
+        "source",
+        "retrieved",
+        "effective_interval",
+        "license",
+        "review_status",
+        "coverage",
+        "required_gases",
+        "requirements"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/.gitattributes",
+      "sha256": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+      "bytes": 19,
+      "review_category": "version-control metadata; not a source dataset",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/.gitattributes",
+      "sha256": "5c0ccd4346d40a9a257042b8a485544d843749688aee93ed1bcf52679a9a2441",
+      "bytes": 19,
+      "review_category": "version-control metadata; not a source dataset",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/notice-2023-amended2025.json",
+      "sha256": "2438d429e6be408cf516125d40327e98f806a5dd725be5e33926eb664ec6042e",
+      "bytes": 12167,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "execution_contract",
+        "jurisdiction_attribute",
+        "attributes",
+        "rules",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/notice-2023.json",
+      "sha256": "0815bf14c5d8cc42664d248865038f78bf45c27087a09d8672690ddc109bf6b6",
+      "bytes": 11633,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "execution_contract",
+        "jurisdiction_attribute",
+        "attributes",
+        "rules",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/schedule1-gwp-transcription-1.json",
+      "sha256": "da4f6dbddaa39e7a3d8ac3c82a82d1735ade2f0409b59d7bf42f363ddaeb1f91",
+      "bytes": 1546,
+      "json_valid": true,
+      "declared_record_type": "source_gwp_transcription",
+      "declared_status": null,
+      "top_level_keys": [
+        "record_type",
+        "id",
+        "version",
+        "basis",
+        "time_horizon_years",
+        "values_kg_co2e_per_kg_species",
+        "source",
+        "amendment",
+        "retrieval_method",
+        "cas_identifiers_imported",
+        "emission_factors_imported",
+        "owner_scientific_legal_currentness_reuse_review",
+        "limits"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/source-chain.json",
+      "sha256": "eea24fa1abd221a4ff1e1b0a97f41f057208efda4cee86baf00018bdbed20b08",
+      "bytes": 2257,
+      "json_valid": true,
+      "declared_record_type": "source_chain_reading_evidence",
+      "declared_status": "parsed_primary_reading_not_legal_or_reuse_approval",
+      "top_level_keys": [
+        "record_type",
+        "date",
+        "status",
+        "sources",
+        "retrieval_method",
+        "raw_source_retrieval_attempt",
+        "source_bytes_archived_or_redistributed",
+        "raw_source_sha256",
+        "interpretation_links",
+        "external_semantic_scientific_legal_currentness_and_reuse_review",
+        "no_gwp_factors_or_cas_tables_imported",
+        "limits"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-1.json",
+      "sha256": "d52ead31de8ce8333b5be2ac786279a39b43c61a9ba381647c0fb8c202b0c6ef",
+      "bytes": 4414,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "screen_pack_pin",
+        "rule_ids",
+        "tasks",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-history-1.json",
+      "sha256": "02bc2bdbc6607b7b411ac07b99db55034717b6d49f6a3a2e57afda8f8787bf7b",
+      "bytes": 4631,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "screen_pack_pin",
+        "rule_ids",
+        "tasks",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-1.json",
+      "sha256": "7646a79fd108d093c198c290a282dd3aa4fc33f9f083c872d379ecb6353725a2",
+      "bytes": 4271,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "screen_pack_pin",
+        "rule_ids",
+        "tasks",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-history-1.json",
+      "sha256": "9b60cca30b9925ba3f6c20635517a3a254ea27f255ca602cdebe5e8bd980bafe",
+      "bytes": 4488,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "screen_pack_pin",
+        "rule_ids",
+        "tasks",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/threshold-species-profile-1.json",
+      "sha256": "f6b37433b212801276d96ad5a2cc7a65e1db278378638736cca1c1a521c521e2",
+      "bytes": 3283,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "gases",
+        "basis",
+        "time_horizon_years",
+        "treatments",
+        "source",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json",
+      "sha256": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+      "bytes": 14591,
+      "json_valid": true,
+      "declared_record_type": "environmental_claims_source_research",
+      "declared_status": "research_only_not_executable_or_legally_approved",
+      "top_level_keys": [
+        "record_type",
+        "id",
+        "revision",
+        "jurisdiction",
+        "status",
+        "retrieved",
+        "base_revision",
+        "sources",
+        "findings",
+        "edition_comparison",
+        "runtime_fit_gaps",
+        "planned_fictional_cases",
+        "roadmap_claim_states",
+        "primary_source_reading_record",
+        "legal_or_claim_approval_granted",
+        "claims_engine_implemented",
+        "installed_or_active_canadian_module",
+        "outstanding_reviews"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json",
+      "sha256": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395",
+      "bytes": 12698,
+      "json_valid": true,
+      "declared_record_type": "source_research_register",
+      "declared_status": "research_only_not_executable_or_legally_approved",
+      "top_level_keys": [
+        "record_type",
+        "id",
+        "revision",
+        "jurisdiction",
+        "status",
+        "retrieved",
+        "retrieval_method",
+        "sources",
+        "notice_findings",
+        "guidance_findings",
+        "engineering_fit_assessment",
+        "planned_fictional_acceptance_cases",
+        "rights_and_authority",
+        "open_work"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-quantification-v7-fit-register.json",
+      "sha256": "84eac55554d53c16cae58a11cd6393be1705e07423f48724eb8f11c0fb952202",
+      "bytes": 13529,
+      "json_valid": true,
+      "declared_record_type": "quantification_source_fit_register",
+      "declared_status": "research_only_not_executable_or_legally_approved",
+      "top_level_keys": [
+        "record_type",
+        "id",
+        "revision",
+        "jurisdiction",
+        "status",
+        "retrieved",
+        "base_revision",
+        "sources",
+        "findings",
+        "observed_representation_discrepancies",
+        "visual_reading",
+        "runtime_fit_gaps",
+        "planned_acceptance_cases",
+        "executed_fit_probes",
+        "full_regulatory_account_implemented",
+        "primary_source_retrieval_is_professional_approval",
+        "legal_commencement_date_inferred",
+        "actual_emission_factors_or_gwp_values_imported",
+        "qualified_review_and_rights_approval"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-required-submission-calendar.json",
+      "sha256": "9171250e7941561f9e09458d242ae58b8f8422ecc510a1d53d45365ab1556b88",
+      "bytes": 3240,
+      "json_valid": true,
+      "declared_record_type": "source_calendar_research",
+      "declared_status": "research_only_not_executable_or_legally_approved",
+      "top_level_keys": [
+        "record_type",
+        "id",
+        "revision",
+        "status",
+        "retrieved",
+        "retrieval_method",
+        "sources",
+        "anchor_basis",
+        "retention_duration_years",
+        "rows",
+        "calculation",
+        "other_notice_conditions",
+        "legal_commencement_date_inferred",
+        "actual_applicability_or_compliance_determined",
+        "qualified_legal_and_current_source_review",
+        "installed_or_active_jurisdiction_pack",
+        "contains_emission_factors_gwps_or_cas_values"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json",
+      "sha256": "2ff3fe81ea9fa97a2de18f47d2cb3cff71a60df76096f24494ace791ddb97956",
+      "bytes": 4313,
+      "json_valid": true,
+      "declared_record_type": "source_byte_custody_receipts",
+      "declared_status": null,
+      "top_level_keys": [
+        "record_type",
+        "revision",
+        "assessment_date",
+        "sources",
+        "raw_source_archives_publicly_redistributed",
+        "normative_tables_or_factors_imported_into_runtime",
+        "source_semantics_currentness_or_legal_applicability_authenticated",
+        "reuse_rights_review",
+        "regulatory_pack_activated",
+        "runtime_or_canonical_modules_modified",
+        "no_external_contact_filing_or_publication",
+        "full_roadmap_goal",
+        "limits"
+      ],
+      "review_category": "unit/framework/jurisdiction/reference/research material; source and rights review required",
+      "fictional_marker_present": false
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-1.json",
+      "sha256": "6b7ac545854a43250b8dc50c0a65584877d01af2e6ef9eb584837962840a50ca",
+      "bytes": 5458,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "jurisdiction_attribute",
+        "attributes",
+        "rules",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-gas-ledger-1.json",
+      "sha256": "b75ef72ecb1cf2d93500f93ebf4a8a5165b84324e99c6d1b1f2879ce3d698b58",
+      "bytes": 560,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "gases",
+        "basis",
+        "time_horizon_years",
+        "source",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-source-species-1.json",
+      "sha256": "31a4b083787b33c3b2d42a389bfa2f1f96ac5c59583d875394fe0d9de5c970c7",
+      "bytes": 819,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "gases",
+        "basis",
+        "time_horizon_years",
+        "treatments",
+        "source",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-source-species-2.json",
+      "sha256": "7bcb8254d755bbafd02a02248842fe4bfd91f7cf6693b2890a86e62be4783963",
+      "bytes": 844,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "gases",
+        "basis",
+        "time_horizon_years",
+        "treatments",
+        "source",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-subject-1.json",
+      "sha256": "84f8ac2c36c5c76e8d7d09a6c599f7e1ab742b5780a23e1e3d62d376328e177b",
+      "bytes": 3449,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "synthetic",
+        "jurisdiction_attribute",
+        "attributes",
+        "rules",
+        "scope",
+        "limitations",
+        "execution_contract"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-tasks-1.json",
+      "sha256": "400bc5c2a23ac5460aa62f802e41c06f6d1dbdd92d3ad2d433c330136096d594",
+      "bytes": 2822,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "screen_pack_pin",
+        "rule_ids",
+        "tasks",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    },
+    {
+      "path": "standards/jurisdictions/fixtures/fictional-tasks-anchor-2.json",
+      "sha256": "4dd9cb6974a87e1a1e88e555e37b42ac98c8be4f5d4ba3e78cf23edaa0ad5b6e",
+      "bytes": 3178,
+      "json_valid": true,
+      "declared_record_type": null,
+      "declared_status": null,
+      "top_level_keys": [
+        "id",
+        "version",
+        "execution_contract",
+        "synthetic",
+        "screen_pack_pin",
+        "rule_ids",
+        "tasks",
+        "scope",
+        "limitations"
+      ],
+      "review_category": "declared_example_or_fixture; requires release data review",
+      "fictional_marker_present": true
+    }
+  ],
+  "credential_shape_findings": [],
+  "scan_rule_names": [
+    "private_key",
+    "aws_access_key_shape",
+    "github_token_shape",
+    "openai_token_shape"
+  ],
+  "scan_scope": "All Git-tracked file bytes; token-shaped patterns only, not a comprehensive secret/confidentiality detector; bounded uncompressed XML/relationship parts of the one XLSX also inspected",
+  "other_binary_files": [],
+  "workbook_package_checks": [
+    {
+      "path": "data/inputs/fictional-business-records.xlsx",
+      "package_parts": 8,
+      "core_properties_part_present": false,
+      "external_relationship_parts": [],
+      "metadata_values_not_recorded": true,
+      "xml_parts_scanned": 8,
+      "expanded_bytes": 28807,
+      "fictional_marker_present_in_xml": true,
+      "credential_shape_findings_in_xml": []
+    }
+  ],
+  "private_data_tracked": [],
+  "license_files_tracked": [],
+  "absence_of_pattern_hits_proves_confidentiality_or_rights": false,
+  "fictional_markers_prove_all_data_fictional": false,
+  "source_rights_review": "open",
+  "owner_release_data_review": "required",
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false,
+  "credential_shape_findings_in_workbook_xml": [],
+  "material_category_counts": {
+    "version-control metadata; not a source dataset": 5,
+    "declared_example_or_fixture; requires release data review": 30,
+    "unit/framework/jurisdiction/reference/research material; source and rights review required": 33
+  },
+  "file_extension_counts": {
+    "(no extension)": 5,
+    ".csv": 5,
+    ".xlsx": 1,
+    ".md": 6,
+    ".json": 51
+  }
+}

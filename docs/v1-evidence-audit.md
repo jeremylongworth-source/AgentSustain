@@ -88,3 +88,6 @@ The later [acceptance input correction](../evaluations/sus23-acceptance-input-co
 
 
 [The consumption guide](skill-consumption.md) now clarifies repository entry points, declared local helper inputs and a focused future host-installation profile, while distinguishing runtime evidence from actual host discovery. It does not claim a host install, configuration change, new MCP access, fresh-agent behavior result or public-v1 readiness. The existing mechanical source/organization/platform evidence remains valid within its recorded limits, and installation/independent/distribution decisions stay open.
+
+
+[The release material inventory](release-material-review.md) now prepares the public-example/source/rights gate with snapshot hashes, declared material categories, bounded workbook-part inspection and four limited token-pattern checks. No pattern matches or tracked private archives were observed, and no license file exists. These observations narrow the reviewer's work but do not prove all contents are nonconfidential/fictional or authorized for reuse. The public-example/rights, license/security/contribution and remaining independent/source/domain/scoped/release gates remain open.
