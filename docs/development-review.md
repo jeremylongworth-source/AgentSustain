@@ -332,3 +332,16 @@ The `canada-quantity-screen-0.1.0` bridge and primary-linked 24-species/GWP/trea
 ## Subsequent conditional Canada task workflow awaiting scoped review
 
 The `canada-task-workflow-0.1.0` composition and source-linked original/amended task catalogs follow approved cd0c991 without inheriting scoped approval. Review [the contract](canada-task-workflow.md) and [fictional evidence](../evaluations/sus19-canada-tasks.md): fresh quantity/screen/task reproduction, exact edition/branch/date/ID selection, separate report/notification/certification/required-submission retention, preserved supported historical retention, conditional storage/parent-address contexts, no source/history/quantity fallback, exact source views and atomic review custody. Actual duties, receipts, operator changes, authorized signatory, storage/completion, source/method/currentness/legal/reuse and independent acceptance remain open; no external action or pack activation is granted. This and other later interfaces await scoped owner review; no public-v1 or roadmap closure follows.
+
+## Scoped owner approval through 7bad9dd
+
+- Reviewer: project owner via this development chat.
+- User instruction: "approve the review".
+- Reviewed revision/content snapshot: `7bad9dd3a07069b7a99979f80fd509ad0eb40486`.
+- Decision/date: approved for continued roadmap development on 2026-10-06 (America/Toronto); no additional conditions stated.
+- Scope: the pending development interfaces committed since approved cd0c991: investment and reporting specialists, Canada GHGRP predicate screening, neutral source/species matrix and direct species-mass extension, Canada quantity bridge, and conditional Canada task workflow with original/amended catalogs. This includes explicit versions, evidence-bound quantities and uncertainty, separate conditional outputs, exact source-result views, blocked and independent branches, and preserved state/history/review custody.
+- Evidence: [Canada task validation](../evaluations/sus19-canada-tasks-validation.json) and [durable suite witness](../evaluations/sus19-canada-tasks-suite-run.json) record 747 passing repository tests, eight focused tests, twenty architecture checks and six actual CLI/helper cases. These are existing reviewed-snapshot results, not tests rerun for this approval. Earlier increment validation remains unchanged.
+
+This decision supersedes pending scoped-owner-development-review descriptions for these interfaces through the reviewed revision. Historical records and draft labels retain their original meaning. Subsequent material changes require separate scoped review; no uncommitted or proposed extension is included.
+
+Approval permits continued local roadmap development. Actual source authenticity/custody, scientific and sector-method fitness, Canadian legal applicability, duties, operator/signatory/receipt/storage verification, currentness and reuse rights, result/state reviews, independent organization acceptance and public-v1 requirements remain open. This approval does not activate a regulatory pack, approve an actual filing or public claim, close roadmap waves, establish v1 readiness, or authorize pushing, merging, publishing, releasing, deploying or third-party contact.
