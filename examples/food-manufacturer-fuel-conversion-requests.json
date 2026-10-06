@@ -1,0 +1,197 @@
+{
+  "initial_ingestion_request": "examples/food-manufacturer-ingestion-v2.json",
+  "steps": [
+    {
+      "quantity_id": "food-north-gas",
+      "calorific_value_id": "food-north-gas-cv",
+      "quantity_basis": {
+        "fuel_id": "fictional-north-gas",
+        "fuel_definition": "Explicit fictional gas stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "calorific_value_basis": {
+        "fuel_id": "fictional-north-gas",
+        "fuel_definition": "Explicit fictional gas stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "heating_basis": "LHV",
+      "conversion_review": {
+        "quantity_id": "food-north-gas",
+        "calorific_value_id": "food-north-gas-cv",
+        "boundary_id": "food-boundary",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "as_of_date": "2026-10-06",
+        "heating_basis": "LHV",
+        "evidence_ids": [
+          "food-north-gas-evidence",
+          "food-north-gas-cv-evidence"
+        ],
+        "evidence_fit": "reviewed_supporting",
+        "representativeness": "Supplied fictional full-year plant-specific quantity and CV on the same reference/material/heating basis.",
+        "rationale": "Fictional applicable conversion review only; actual source/scientific/engineering fitness remains open.",
+        "reviewer_role": "Fictional qualified energy reviewer; no actual professional approval"
+      },
+      "fixture_mode": true,
+      "result_id": "food-north-gas-conversion"
+    },
+    {
+      "quantity_id": "food-north-diesel",
+      "calorific_value_id": "food-north-diesel-cv",
+      "quantity_basis": {
+        "fuel_id": "fictional-north-diesel",
+        "fuel_definition": "Explicit fictional diesel stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "calorific_value_basis": {
+        "fuel_id": "fictional-north-diesel",
+        "fuel_definition": "Explicit fictional diesel stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "heating_basis": "LHV",
+      "conversion_review": {
+        "quantity_id": "food-north-diesel",
+        "calorific_value_id": "food-north-diesel-cv",
+        "boundary_id": "food-boundary",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "as_of_date": "2026-10-06",
+        "heating_basis": "LHV",
+        "evidence_ids": [
+          "food-north-diesel-evidence",
+          "food-north-diesel-cv-evidence"
+        ],
+        "evidence_fit": "reviewed_supporting",
+        "representativeness": "Supplied fictional full-year plant-specific quantity and CV on the same reference/material/heating basis.",
+        "rationale": "Fictional applicable conversion review only; actual source/scientific/engineering fitness remains open.",
+        "reviewer_role": "Fictional qualified energy reviewer; no actual professional approval"
+      },
+      "fixture_mode": true,
+      "result_id": "food-north-diesel-conversion"
+    },
+    {
+      "quantity_id": "food-south-gas",
+      "calorific_value_id": "food-south-gas-cv",
+      "quantity_basis": {
+        "fuel_id": "fictional-south-gas",
+        "fuel_definition": "Explicit fictional gas stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "calorific_value_basis": {
+        "fuel_id": "fictional-south-gas",
+        "fuel_definition": "Explicit fictional gas stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "heating_basis": "LHV",
+      "conversion_review": {
+        "quantity_id": "food-south-gas",
+        "calorific_value_id": "food-south-gas-cv",
+        "boundary_id": "food-boundary",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "as_of_date": "2026-10-06",
+        "heating_basis": "LHV",
+        "evidence_ids": [
+          "food-south-gas-evidence",
+          "food-south-gas-cv-evidence"
+        ],
+        "evidence_fit": "reviewed_supporting",
+        "representativeness": "Supplied fictional full-year plant-specific quantity and CV on the same reference/material/heating basis.",
+        "rationale": "Fictional applicable conversion review only; actual source/scientific/engineering fitness remains open.",
+        "reviewer_role": "Fictional qualified energy reviewer; no actual professional approval"
+      },
+      "fixture_mode": true,
+      "result_id": "food-south-gas-conversion"
+    },
+    {
+      "quantity_id": "food-south-diesel",
+      "calorific_value_id": "food-south-diesel-cv",
+      "quantity_basis": {
+        "fuel_id": "fictional-south-diesel",
+        "fuel_definition": "Explicit fictional diesel stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "calorific_value_basis": {
+        "fuel_id": "fictional-south-diesel",
+        "fuel_definition": "Explicit fictional diesel stream at this food plant; not a real fuel factor/default.",
+        "material_basis": "declared_composition",
+        "reference_conditions": {
+          "temperature_K": 288.15,
+          "pressure_kPa": 101.325,
+          "compressibility": 1,
+          "definition": "Explicit fictional matched reference-volume conditions, no correction or density inferred."
+        }
+      },
+      "heating_basis": "LHV",
+      "conversion_review": {
+        "quantity_id": "food-south-diesel",
+        "calorific_value_id": "food-south-diesel-cv",
+        "boundary_id": "food-boundary",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "as_of_date": "2026-10-06",
+        "heating_basis": "LHV",
+        "evidence_ids": [
+          "food-south-diesel-evidence",
+          "food-south-diesel-cv-evidence"
+        ],
+        "evidence_fit": "reviewed_supporting",
+        "representativeness": "Supplied fictional full-year plant-specific quantity and CV on the same reference/material/heating basis.",
+        "rationale": "Fictional applicable conversion review only; actual source/scientific/engineering fitness remains open.",
+        "reviewer_role": "Fictional qualified energy reviewer; no actual professional approval"
+      },
+      "fixture_mode": true,
+      "result_id": "food-south-diesel-conversion"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "contract_version": "0.1.0",
+  "skill": "ingest-business-records",
+  "state": {
+    "contract_version": "0.1.0",
+    "revision": 0,
+    "organization": {
+      "id": "fictional-food-org",
+      "name": "Fictional Maple Foods Example",
+      "sector": "food manufacturing"
+    },
+    "facilities": [
+      {
+        "id": "food-north",
+        "name": "Fictional North Food Plant",
+        "jurisdiction": "CA-ON"
+      },
+      {
+        "id": "food-south",
+        "name": "Fictional South Food Plant",
+        "jurisdiction": "CA-ON"
+      }
+    ],
+    "jurisdictions": [
+      "CA",
+      "CA-ON"
+    ],
+    "reporting_period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "organizational_boundary": {
+      "id": "food-boundary",
+      "approach": "Operational control declared for both fictional food plants; not verified legal control.",
+      "facility_ids": [
+        "food-north",
+        "food-south"
+      ],
+      "exclusions": [],
+      "evidence_ids": []
+    },
+    "evidence": [],
+    "results": [],
+    "assumptions": [],
+    "data_gaps": [],
+    "review_requirements": [],
+    "energy": [],
+    "water": [],
+    "materials": [],
+    "waste": [],
+    "ghg": {
+      "scope_1": [],
+      "scope_2": [],
+      "scope_3": []
+    },
+    "suppliers": [],
+    "targets": [],
+    "risks": [],
+    "opportunities": [],
+    "projects": [],
+    "frameworks": [],
+    "emission_factors": []
+  },
+  "parameters": {
+    "file_pin": {
+      "path": "data/inputs/fictional-food-manufacturer-v2.csv",
+      "sha256": "e0e478b9bb8ea3bb27883daa73acf5fdddf89f2d733cb43340b7b0eedcca3abe",
+      "source_version": "fictional-food-source-2",
+      "synthetic": true
+    },
+    "source_metadata": {
+      "title": "Fictional two-facility Canadian food manufacturer source export",
+      "publisher": "Fictional Maple Foods Example",
+      "accessed": "2026-10-06",
+      "tier": 1
+    },
+    "fixture_mode": true,
+    "result_id": "food-source-normalized",
+    "document_evidence_id": "food-source-document",
+    "source_classification_review": {
+      "record_tiers": {
+        "food-employees": 1,
+        "food-north-electricity": 1,
+        "food-north-gas": 1,
+        "food-north-diesel": 1,
+        "food-north-refrigerant": 1,
+        "food-north-packaging": 1,
+        "food-north-ingredients": 1,
+        "food-north-water": 1,
+        "food-north-recycled": 1,
+        "food-north-landfilled": 1,
+        "food-north-unrouted": 1,
+        "food-north-freight": 1,
+        "food-north-travel": 1,
+        "food-north-production": 1,
+        "food-north-gas-cv": 1,
+        "food-north-diesel-cv": 1,
+        "food-south-electricity": 1,
+        "food-south-gas": 1,
+        "food-south-diesel": 1,
+        "food-south-refrigerant": 1,
+        "food-south-packaging": 1,
+        "food-south-ingredients": 1,
+        "food-south-water": 1,
+        "food-south-recycled": 1,
+        "food-south-landfilled": 1,
+        "food-south-unrouted": 1,
+        "food-south-freight": 1,
+        "food-south-travel": 1,
+        "food-south-production": 1,
+        "food-south-gas-cv": 1,
+        "food-south-diesel-cv": 1,
+        "food-finance-outlay": 5,
+        "food-finance-year1": 5,
+        "food-finance-year2": 5,
+        "food-finance-discount": 5,
+        "food-north-packaging-consumed": 1,
+        "food-north-ingredients-consumed": 1,
+        "food-south-packaging-consumed": 1,
+        "food-south-ingredients-consumed": 1,
+        "food-production-total": 1,
+        "food-energy-scenario": 5
+      },
+      "basis": "Explicit fictional source declarations distinguish meter/log observations, unknown refrigerant record and separate model cash flows.",
+      "rationale": "Fictional supplied row classifications; purchases, separately declared consumption, consolidated service count and modeled energy stay distinct.",
+      "reviewer_role": "Fictional source reviewer; actual professional review remains open"
+    }
+  }
+}

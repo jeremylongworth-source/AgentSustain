@@ -4,6 +4,8 @@ ROADMAP.md is authoritative. Snapshot: 2026-10-06, America/Toronto. Latest scope
 
 The owner approved the pending thermal-performance, CSV 0.2 classification/organization-acceptance and acceptance input-control interfaces through this committed snapshot. Uncommitted food-case work is excluded. Professional/source/state reviews, independent acceptance, license and public-v1/release decisions remain open; no external action or separate-agent delegation is authorized. The full roadmap goal remains active.
 
+Subsequent [required food-case execution](food-manufacturer-workflow.md) now composes 41 fictional records for 150 employees and two facilities through all eight existing manager stages. [Recorded validation](../evaluations/sus23-food-composition-validation.json) includes 835 passing repository tests and seven actual CLI/helper comparisons, with preserved source/state/review custody and a missing-factor control. Physical and modeled answers remain conditional; the electricity-only synthetic inventory is partial, with thirteen factor-required results and unknown refrigerant still unresolved. These later case artifacts are outside approval through da4ddb3. Independent/source/professional/release requirements remain open; no wave or public-v1 closure follows.
+
 ## Repository
 
 Authenticated access verified the intended GitHub repository is private and empty. Local Git was initialized on `main` with the supplied URL as `origin`; no content has been pushed. The original roadmap was preserved.

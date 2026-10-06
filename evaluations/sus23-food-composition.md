@@ -1,0 +1,11 @@
+# SUS-23 required food-case evidence
+
+Date: 2026-10-06. Source/runtime base: da4ddb3; owner approval subsequently recorded in 4847929 excludes these then-uncommitted case artifacts.
+
+The [required organization workflow](../docs/food-manufacturer-workflow.md) uses 41 fictional records, 150 employees and two facilities. [Actual execution](sus23-food-composition.json) records six CLI/helper outputs matching in full with request/source bytes intact. Eight manager stages execute with partial qualifications; supported physical, monetary and proposed-target answers match the declared checks. Purchases remain distinct from consumption, consolidated production is selected once, future cash-flow periods remain explicit, and unknown refrigerant/treatment quantities are not silently replaced with zero.
+
+Two integration tests passed before the full run. The [durable full-suite witness](sus23-food-composition-suite-run.json) records **835 tests passing in 787.910 seconds**, return code 0 and unchanged initial file hashes. The initial hash scope covers all tracked files at launch plus the new source, requests, preparation/main captures and integration test. Later documentation and the separately captured negative CLI case are outside that initial scope; [final file validation](sus23-food-composition-validation.json) records their separate hashes.
+
+The [negative CLI case](sus23-food-missing-selected-factor-cli.json) matches its complete helper output, preserves request bytes, blocks inventory and dependent mapping, and retains physical/finance/target branches. The principal case retains fourteen blocked source emissions steps, including thirteen explicit factor-required results. Only the existing supplied synthetic electricity factor supports the partial 75,000 kg CO2e inventory.
+
+No existing runtime, schema, factor registry, specialist/router asset or original food-source fixture was changed. No independent evaluator was dispatched. This evidence proves selected controlled composition and refusal behavior, not authenticated source coverage, scientific/professional acceptance, complete emissions, operational implementation, public-v1 readiness or release approval. The complete roadmap goal remains active.
