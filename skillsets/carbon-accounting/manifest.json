@@ -1,0 +1,78 @@
+{
+  "name": "carbon-accounting",
+  "contract_version": "0.1.0",
+  "status": "draft_pending_scoped_owner_review",
+  "runner": "scripts/run_carbon_workflow.py",
+  "execution_contract": "carbon-accounting-workflow-0.1.0",
+  "dependencies": [
+    {
+      "name": "build-ghg-inventory",
+      "path": "skills/carbon/build-ghg-inventory/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "8bb3d5f469512fff392b6bfa0424e2524d0575af6341435e1e4150c64ab7eac1"
+    },
+    {
+      "name": "calculate-co2e",
+      "path": "skills/carbon/calculate-co2e/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "d0b1c79f60aeda966f9c444eba7cc3abb8dac37164e14c7995ef9f5448e3ea58"
+    },
+    {
+      "name": "calculate-location-based-scope-2",
+      "path": "skills/carbon/calculate-location-based-scope-2/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "1a0843fe71443a8897977f70193656c01d1bab551063d79e8be1a00c64236c6e"
+    },
+    {
+      "name": "calculate-market-based-scope-2",
+      "path": "skills/carbon/calculate-market-based-scope-2/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "41b00766a803cdcd67f17c5a1ff202fb70748efdc2ee8b8d74af7147651bf517"
+    },
+    {
+      "name": "calculate-scope-1",
+      "path": "skills/carbon/calculate-scope-1/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "4260796966bc8106621acf19cb7e09b0f8d1148d6cf262c0976d14a228a6e751"
+    },
+    {
+      "name": "calculate-scope-3-category",
+      "path": "skills/carbon/calculate-scope-3-category/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "e5bdc0704674166cc88b69922d27e2e58d14c1169fed919982442c46f032679f"
+    },
+    {
+      "name": "classify-scope-3-emissions",
+      "path": "skills/carbon/classify-scope-3-emissions/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "9565633b7126b46ebaadd9417d65b6f45f0b328211cca685626e16fe1897b435"
+    },
+    {
+      "name": "compare-ghg-inventories",
+      "path": "skills/carbon/compare-ghg-inventories/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "cda5db1e105ffe468c07f3dd9e15ca8364c59e3aebbe334ea96a528d126691f8"
+    },
+    {
+      "name": "identify-emission-hotspots",
+      "path": "skills/carbon/identify-emission-hotspots/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "301832a662acc1e2407083d41def3722193882fee0fe6ef50a9c217c6ed0a3d0"
+    }
+  ],
+  "review_record": "docs/development-review.md",
+  "review_boundaries": [
+    "Development capability approval does not approve this subsequent specialist interface.",
+    "Actual source fitness, external scope/category completeness and assurance remain unverified.",
+    "No statutory total, project reduction, publication, independent organization reliability or v1 readiness is supplied."
+  ]
+}
