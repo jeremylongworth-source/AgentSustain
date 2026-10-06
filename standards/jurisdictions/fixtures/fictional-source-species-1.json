@@ -1,0 +1,32 @@
+{
+  "id": "fictional-source-species",
+  "version": "fictional-matrix-1",
+  "execution_contract": "source-species-ledger-0.2.0",
+  "synthetic": true,
+  "gases": [
+    "CO2",
+    "CH4",
+    "N2O"
+  ],
+  "basis": "Invented demonstration basis",
+  "time_horizon_years": 100,
+  "treatments": {
+    "ordinary": {
+      "CO2": "include",
+      "CH4": "include",
+      "N2O": "include"
+    },
+    "biomass_demo": {
+      "CO2": "exclude",
+      "CH4": "include",
+      "N2O": "include"
+    }
+  },
+  "source": {
+    "locator": "fixture:fictional-source-species-profile",
+    "version": "fictional-matrix-1",
+    "accessed": "2026-10-05"
+  },
+  "scope": "Fictional source/gas presence, explicit measured zero and source-specific exclusions only.",
+  "limitations": "No actual factor, GWP, legal profile or statutory quantity."
+}
