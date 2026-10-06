@@ -1,0 +1,100 @@
+{
+  "name": "sustainability-business-case",
+  "contract_version": "0.1.0",
+  "execution_contract": "investment-workflow-0.1.0",
+  "status": "draft_pending_scoped_owner_review",
+  "runner": "scripts/run_investment_workflow.py",
+  "dependencies": [
+    {
+      "name": "build-sustainability-business-case",
+      "path": "skills/finance/build-sustainability-business-case/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "02967754a2b289eecd35205cb2aa5d96d0998acbd02929a173ee2207f85e6b04"
+    },
+    {
+      "name": "calculate-irr",
+      "path": "skills/finance/calculate-irr/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "1a58f5c85edeb909a97cf1ff6e39e5513de4e8170edeabca93bdfdb23d6be7a7"
+    },
+    {
+      "name": "calculate-marginal-abatement-cost",
+      "path": "skills/finance/calculate-marginal-abatement-cost/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "00daf7626fd61c0d31e9e0e4eabb7bfd1ec85e88bce3f8ae6e408d1f12c7d5c1"
+    },
+    {
+      "name": "calculate-npv",
+      "path": "skills/finance/calculate-npv/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "ecd9cc00261951690ed87e1c178d931d4367fcc25c261b84be3f2ad7053c9f9f"
+    },
+    {
+      "name": "calculate-operating-savings",
+      "path": "skills/finance/calculate-operating-savings/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "6c4d0b905ce953a8573d5775c42e129c9c97c2659392c7f878449a39df353a3b"
+    },
+    {
+      "name": "calculate-roi",
+      "path": "skills/finance/calculate-roi/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "49bab3611ab49f6683e3085cff23e5448fc225c7affcbab50f5d3a2b49d99395"
+    },
+    {
+      "name": "calculate-simple-payback",
+      "path": "skills/finance/calculate-simple-payback/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "973073d0ced7437edd9c0c5f4d81652c5fcd27222668eef417fe9c9dcdf28aa2"
+    },
+    {
+      "name": "calculate-sustainability-project-cost",
+      "path": "skills/finance/calculate-sustainability-project-cost/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "a2bcf70d424106c5681c2110527565aa34602e2a129e8f5268f971b4e55bc56c"
+    },
+    {
+      "name": "compare-sustainability-projects",
+      "path": "skills/finance/compare-sustainability-projects/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "4373264ece69733eafa1f039ec48ae419f6331073bcc27fb6cde41d394b431a6"
+    },
+    {
+      "name": "model-carbon-price-scenario",
+      "path": "skills/finance/model-carbon-price-scenario/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "2b630f44bb3db15a1a81f17ae6ce65f327c0ed9e5c630fd513aed916d09e87dd"
+    },
+    {
+      "name": "model-energy-price-scenario",
+      "path": "skills/finance/model-energy-price-scenario/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "b0b3f1d3620b0be760878e48af49c78002865a47bfcbbeba04f05eb7135b5ab1"
+    },
+    {
+      "name": "model-resource-cost-scenario",
+      "path": "skills/finance/model-resource-cost-scenario/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "2e6eb090297868a35e784a3e823f85f30d4b4fb335e44d1b131edca351a71b66"
+    },
+    {
+      "name": "rank-sustainability-investments",
+      "path": "skills/finance/rank-sustainability-investments/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "cd0c991a18909459f27eb6abd10843963345b748",
+      "sha256_utf8_lf": "49ab53533e2496e7dfe840041cca6f88e3c1d32334cb7b8345e111e736531e39"
+    }
+  ]
+}
