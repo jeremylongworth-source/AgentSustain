@@ -1,0 +1,246 @@
+{
+  "id": "development-router",
+  "version": "0.1.0",
+  "status": "draft_router_not_release_approved",
+  "capabilities": {
+    "baseline": {
+      "operation": "build-sustainability-baseline",
+      "kind": "skill",
+      "path": "skills/metrics/build-sustainability-baseline/SKILL.md",
+      "sha256_utf8_lf": "a95306507637c3a8128e7635556e0609a02c9faaf0cd4eede012c5dc981f0ddf",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "inventory": {
+      "operation": "build-ghg-inventory",
+      "kind": "skill",
+      "path": "skills/carbon/build-ghg-inventory/SKILL.md",
+      "sha256_utf8_lf": "8bb3d5f469512fff392b6bfa0424e2524d0575af6341435e1e4150c64ab7eac1",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "hotspots": {
+      "operation": "identify-emission-hotspots",
+      "kind": "skill",
+      "path": "skills/carbon/identify-emission-hotspots/SKILL.md",
+      "sha256_utf8_lf": "301832a662acc1e2407083d41def3722193882fee0fe6ef50a9c217c6ed0a3d0",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "operations": {
+      "operation": "sustainable-operations",
+      "kind": "skillset",
+      "path": "skillsets/sustainable-operations/SKILL.md",
+      "sha256_utf8_lf": "b97a047150a6e0b32986756d8464ab4a403e8590bf91ca665be95accf1b7fdaf",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "business-case": {
+      "operation": "build-sustainability-business-case",
+      "kind": "skill",
+      "path": "skills/finance/build-sustainability-business-case/SKILL.md",
+      "sha256_utf8_lf": "02967754a2b289eecd35205cb2aa5d96d0998acbd02929a173ee2207f85e6b04",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "ranking": {
+      "operation": "rank-sustainability-investments",
+      "kind": "skill",
+      "path": "skills/finance/rank-sustainability-investments/SKILL.md",
+      "sha256_utf8_lf": "49ab53533e2496e7dfe840041cca6f88e3c1d32334cb7b8345e111e736531e39",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "roadmap": {
+      "operation": "build-implementation-roadmap",
+      "kind": "skill",
+      "path": "skills/implementation/build-implementation-roadmap/SKILL.md",
+      "sha256_utf8_lf": "0c31575a24468b403f439721055ecf775b3bb0a514621eb8df9b36c9e96dee46",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "jurisdiction": {
+      "operation": "screen-jurisdiction-applicability",
+      "kind": "helper",
+      "path": "scripts/jurisdiction_tools.py",
+      "sha256_utf8_lf": "bc2f605cc724242a7bcb2477512e15fe6a83ec11284f3f1cb5e575e0d37481ea",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "claims": {
+      "operation": "assess-claim-evidence",
+      "kind": "helper",
+      "path": "scripts/claims_review.py",
+      "sha256_utf8_lf": "b8752fd46a3cce99ef93126c233b2091816f13df7345db54ec63c0e102b9efa7",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "energy-baseline": {
+      "operation": "build-energy-baseline",
+      "kind": "skill",
+      "path": "skills/energy/build-energy-baseline/SKILL.md",
+      "sha256_utf8_lf": "7897a43e1370cdd14c6c872c313977dd99a241affe612174bb78d6baae576c65",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    },
+    "energy-hotspots": {
+      "operation": "detect-energy-hotspots",
+      "kind": "skill",
+      "path": "skills/energy/detect-energy-hotspots/SKILL.md",
+      "sha256_utf8_lf": "ea161ba144a9100c82947c4ea98e5a4719b21cf21902e4e85755c5c95fa9365a",
+      "reviewed_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "approval_scope": "development_only"
+    }
+  },
+  "routes": {
+    "operations": {
+      "review_states": [
+        "PROFESSIONAL_REVIEW_REQUIRED"
+      ],
+      "steps": [
+        {
+          "id": "baseline",
+          "capability": "baseline",
+          "depends_on": [],
+          "required_inputs": [
+            "activity_data",
+            "evidence_fit"
+          ]
+        },
+        {
+          "id": "inventory",
+          "capability": "inventory",
+          "depends_on": [
+            "baseline"
+          ],
+          "required_inputs": [
+            "scope_accounts",
+            "emission_factors",
+            "scope_2_method",
+            "gwp_basis"
+          ]
+        },
+        {
+          "id": "energy-baseline",
+          "capability": "energy-baseline",
+          "depends_on": [
+            "baseline"
+          ],
+          "required_inputs": [
+            "energy_quantities",
+            "energy_method_review"
+          ]
+        },
+        {
+          "id": "hotspots",
+          "capability": "hotspots",
+          "depends_on": [
+            "inventory"
+          ],
+          "required_inputs": [
+            "coverage_review"
+          ]
+        },
+        {
+          "id": "energy-hotspots",
+          "capability": "energy-hotspots",
+          "depends_on": [
+            "energy-baseline"
+          ],
+          "required_inputs": [
+            "energy_coverage_review"
+          ]
+        },
+        {
+          "id": "operations",
+          "capability": "operations",
+          "depends_on": [
+            "hotspots",
+            "energy-hotspots"
+          ],
+          "required_inputs": [
+            "opportunity_evidence",
+            "engineering_review"
+          ]
+        },
+        {
+          "id": "business-case",
+          "capability": "business-case",
+          "depends_on": [
+            "operations"
+          ],
+          "required_inputs": [
+            "costs",
+            "cash_flows",
+            "financial_review"
+          ]
+        },
+        {
+          "id": "ranking",
+          "capability": "ranking",
+          "depends_on": [
+            "business-case"
+          ],
+          "required_inputs": [
+            "ranking_criteria"
+          ]
+        },
+        {
+          "id": "roadmap",
+          "capability": "roadmap",
+          "depends_on": [
+            "ranking"
+          ],
+          "required_inputs": [
+            "transition_plan",
+            "owners",
+            "resource_conditions"
+          ]
+        }
+      ]
+    },
+    "regulatory": {
+      "review_states": [
+        "LEGAL_REVIEW_REQUIRED"
+      ],
+      "steps": [
+        {
+          "id": "jurisdiction",
+          "capability": "jurisdiction",
+          "depends_on": [],
+          "required_inputs": [
+            "jurisdiction",
+            "jurisdiction_version",
+            "framework",
+            "framework_version",
+            "source_pinned_rule_pack",
+            "company_attributes",
+            "source_fitness_review"
+          ]
+        }
+      ]
+    },
+    "claims": {
+      "review_states": [
+        "PROFESSIONAL_REVIEW_REQUIRED",
+        "LEGAL_REVIEW_REQUIRED"
+      ],
+      "steps": [
+        {
+          "id": "claims",
+          "capability": "claims",
+          "depends_on": [],
+          "required_inputs": [
+            "original_claim",
+            "classification_review",
+            "evidence_dossier",
+            "methodology",
+            "qualifications",
+            "general_impression_review",
+            "jurisdiction_review"
+          ]
+        }
+      ]
+    }
+  }
+}
