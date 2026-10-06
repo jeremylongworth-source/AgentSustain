@@ -53,3 +53,7 @@ An unassigned owner, unsatisfied prerequisite, deferred readiness or nonpositive
 The [fictional fan source pack](../examples/energy-project-source.md) and saved project-screening fixture demonstrate this narrow decision rule. They do not establish general equipment reasoning or source authenticity.
 
 Initial helper tests use fictional meters, production and tier 5 scenario quantities. They establish bounded arithmetic and blocking behavior, not certified M&V, independent agent reasoning or complete energy workflow reliability. Broader operational scenarios and engineering methods remain evaluation/development work.
+
+## Later source-supplied fuel conversion
+
+The separate [fuel-energy contract](fuel-energy-contract.md) converts explicit mass/reference-volume observations with a supplied calorific metric and exact LHV/HHV/material/reference review. `python -m scripts.run_fuel_energy REQUEST.json` uses the existing baseline skill envelope; no original energy operation, schema, unit registry or factor table changes. Its kWh leaf can feed an explicitly reviewed nonoverlapping baseline, preserving input definitions and all professional/source reviews. It does not supply useful heat, efficiency, emissions, inferred coefficients or scientific authentication. This later interface awaits separate scoped review.

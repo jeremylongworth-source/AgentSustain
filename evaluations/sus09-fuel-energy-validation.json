@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-06",
+  "timezone": "America/Toronto",
+  "base_revision": "ec15034",
+  "prior_approved_development_revision": "7bad9dd3a07069b7a99979f80fd509ad0eb40486",
+  "execution_contract": "fuel-energy-0.1.0",
+  "later_scoped_owner_source_method_review": "pending",
+  "suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "status": "passed",
+    "returncode": 0,
+    "tests": 766,
+    "duration_seconds": 626.301,
+    "files_unchanged": true
+  },
+  "focused_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_fuel_energy -v",
+    "status": "passed",
+    "tests": 11,
+    "duration_seconds": 1.205
+  },
+  "architecture_checks": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_architecture.py -v",
+    "status": "passed",
+    "tests": 20,
+    "duration_seconds": 0.177
+  },
+  "actual_cli_helper_cases": 14,
+  "original_energy_cli_helper_replays": 5,
+  "legacy_saved_evidence": "Four sequential complete results/reasons and one project complete result/state/reason remain exact; all full current CLI/helper outputs agree.",
+  "unchanged_prior_source_files": 368,
+  "all_existing_runtime_test_schema_standard_router_skills_and_data_unchanged": true,
+  "raw_csv_exact_bytes_original_review_history_and_unit_lineage_preserved": true,
+  "known_synthetic_csv_ordinary_use_relabel_blocked": true,
+  "calorific_value_not_an_emission_factor": "Actual downstream CLI remains blocked with EMISSION_FACTOR_REQUIRED and no emissions metric.",
+  "preliminary_run_excluded_from_final_validation": "evaluations/sus09-fuel-energy-preliminary-suite-run.json; 765 tests, source hashes changed after final CSV guard addition.",
+  "source_basis": "Parsed official 2006 IPCC Volume 2 Chapter 1 section 1.4.1.2 net/gross method definitions; no calorific/emission/density defaults or raw-source bytes imported.",
+  "file_sha256": {
+    "README.md": "dbbdc1d30e01448d37a7daa5c71f812b20f491c1544e30362bf21c2bb0e90729",
+    "docs/architecture-review.md": "02b0bad34046840a05c513f44fd985337601f703e3ce0a563b68a85374102736",
+    "docs/development-review.md": "2650fcb1935576c40d7ab1e62585629c8ef495ebf512e9f79750153e91bb2bfc",
+    "docs/development-status.md": "d6738c00c89f02840743ac712f698ef30dd63e019a5634716c20750bcb66f7be",
+    "docs/energy-contract.md": "037ac28d85003ae65ad65497c1437473fa5031eb4e4515450b96ff4eb48ae4a8",
+    "docs/fuel-energy-contract.md": "2c65366c01a682fef41ebee12f8b2cf666677955aedc09f88095f40bbeb36ca2",
+    "docs/v1-evidence-audit.md": "9ac9ed4ffa62d0536eab88027a1a6cf214ccd8710962ae5fa2c220de5e224bf1",
+    "scripts/fuel_energy.py": "bd5cd7d2d4506c526b5a953bc7d29a298826e8670a88c45c48a6f123db99cb8b",
+    "scripts/run_fuel_energy.py": "093120e5a8376c513c8e1dc7814c3508398395fa408c03a20e92067bf1b061f0",
+    "tests/test_fuel_energy.py": "3d68541b9349177c0b02941370406fa5e35814442da6257429156847890b2f77",
+    "data/inputs/fictional-fuel-energy.csv": "5662a6c64d577aeb59a6c760a7878ac7525db61f584a107411decec83e2e7b1d",
+    "evaluations/sus09-fuel-energy.json": "d591b1f0bbd86754f704a0a83b6627d37ad4233e10f30cc412b332cc805a1cc4",
+    "evaluations/sus09-fuel-energy.md": "33b78d698fdd6efd07bf53bd2e783313b769976ac007a9e636d9910ee1e46d0b",
+    "evaluations/sus09-fuel-energy-prior-hashes.json": "62d5b578f2c452dc54aa2a4397f62e3561b2a70e0f05413a483d5dcfb76d2f68",
+    "evaluations/sus09-fuel-energy-preliminary-suite-run.json": "7837d3a78059271320a143f8602d4944591bff0397604af9d3c944140bcfa9a7",
+    "evaluations/sus09-fuel-energy-suite-run.json": "920a116efd0a086cba09e981267380de636c720160d70ce61d8912b354418c69"
+  },
+  "remaining_requirements": [
+    "Scoped owner review of this fuel interface and prior historical-task extension.",
+    "Actual source/measurement/calorific identity, sampling/full-year representativeness, scientific/engineering and source-currentness/reuse review.",
+    "Broader thermal/reference/density/efficiency/sector/framework methods and independent agent/organization acceptance.",
+    "Owner license/contribution/security decisions, complete public-v1 proof and explicit release authority."
+  ],
+  "full_roadmap_goal": "active; not complete",
+  "push_merge_publish_release_deploy_contact_authorized": false
+}
