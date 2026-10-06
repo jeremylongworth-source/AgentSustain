@@ -103,3 +103,5 @@ The draft [intent router](docs/router-contract.md) proposes prerequisites from o
 The draft [carbon-accounting specialist](docs/carbon-workflow-contract.md) executes existing helpers with explicit prerequisites and separate account outputs. [Fictional evidence](evaluations/sus22-carbon-accounting.md) retains missing factors, partial inventories and open assurance review without combined totals or publication authority.
 
 The draft [sustainability manager](docs/manager-workflow-contract.md) connects one pre-normalized organization through operational analysis, prospective targets/roadmap and qualified disclosure mapping. [Coherent fictional evidence](evaluations/sus22-organization-manager.md) preserves separate source definitions and all outstanding review requirements.
+
+The draft [business CSV importer](docs/business-ingestion-contract.md) records exact file/row custody and declared values without unit conversion or factor inference. [Raw-source workflow evidence](evaluations/sus23-business-source-workflow.md) links the imported candidate to the existing manager while retaining source review and incomplete coverage.
