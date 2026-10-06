@@ -91,3 +91,6 @@ The later [acceptance input correction](../evaluations/sus23-acceptance-input-co
 
 
 [The release material inventory](release-material-review.md) now prepares the public-example/source/rights gate with snapshot hashes, declared material categories, bounded workbook-part inspection and four limited token-pattern checks. No pattern matches or tracked private archives were observed, and no license file exists. These observations narrow the reviewer's work but do not prove all contents are nonconfidential/fictional or authorized for reuse. The public-example/rights, license/security/contribution and remaining independent/source/domain/scoped/release gates remain open.
+
+
+[The current completion audit](roadmap-completion-audit.md) now explicitly checks the approved evaluation layer's missing 150-person/two-facility food-manufacturer scenario. [Source ingestion](../evaluations/sus23-food-source-ingestion.json) is prepared with thirty-five records/all ten groups and no inferred factors, but its complete pipeline has not run. Existing one-facility mechanical evidence does not satisfy that required scenario. Optional full coverage of every framework listed as "may cover" is distinguished from required adapter/source/review behavior. Public-v1 completion remains unproven, with exact current criteria and next technical work recorded.

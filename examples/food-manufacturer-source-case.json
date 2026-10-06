@@ -1,0 +1,222 @@
+{
+  "record_type": "required_end_to_end_source_case",
+  "revision": "0.1.0",
+  "authority": "docs/evaluation-requirements.md, end-to-end acceptance layer; approved architecture source f2d0ac9",
+  "organization": "Fictional Canadian food manufacturer",
+  "employee_metric_id": "food-employees",
+  "declared_employees": 150,
+  "employee_definition": "Fictional year-end headcount; not an annual average/legal threshold fact",
+  "facility_ids": [
+    "food-north",
+    "food-south"
+  ],
+  "required_input_categories": [
+    "electricity",
+    "gas",
+    "diesel",
+    "refrigerants",
+    "packaging",
+    "ingredients",
+    "water",
+    "waste",
+    "freight",
+    "travel"
+  ],
+  "input_record_count": 35,
+  "record_map": {
+    "food-employees": {
+      "category": "employees",
+      "facility_id": null,
+      "definition": "Year-end fictional headcount, not annual average or a legal applicability determination."
+    },
+    "food-north-electricity": {
+      "category": "electricity",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-gas": {
+      "category": "gas",
+      "facility_id": "food-north",
+      "definition": "Fictional gas stream; matched declared LHV reference volume requires supplied calorific conversion, not a default factor."
+    },
+    "food-north-diesel": {
+      "category": "diesel",
+      "facility_id": "food-north",
+      "definition": "Fictional delivered/consumed diesel quantity; no density, heating value or emission factor inferred."
+    },
+    "food-north-refrigerant": {
+      "category": "refrigerant",
+      "facility_id": "food-north",
+      "definition": "Fictional HFC-134a loss for north; south loss/species unresolved. No GWP/emission factor or zero-loss assumption supplied."
+    },
+    "food-north-packaging": {
+      "category": "packaging",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-ingredients": {
+      "category": "ingredients",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-water": {
+      "category": "water",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-recycled": {
+      "category": "waste",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-landfilled": {
+      "category": "waste",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-unrouted": {
+      "category": "waste",
+      "facility_id": "food-north",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-north-freight": {
+      "category": "freight",
+      "facility_id": "food-north",
+      "definition": "Fictional purchased third-party outbound freight service; separate from owned-site diesel. Scope/category and factor review required."
+    },
+    "food-north-travel": {
+      "category": "travel",
+      "facility_id": "food-north",
+      "definition": "Fictional third-party business passenger travel; no flight/radiative-forcing or emission factor inference."
+    },
+    "food-north-production": {
+      "category": "production",
+      "facility_id": "food-north",
+      "definition": "Fictional completed-equivalent food service units, distinct from employee count and purchased material mass."
+    },
+    "food-north-gas-cv": {
+      "category": "gas_calorific_value",
+      "facility_id": "food-north",
+      "definition": "Fictional supplied LHV at explicitly declared 288.15 K, 101.325 kPa, compressibility 1; not a real fuel default."
+    },
+    "food-north-diesel-cv": {
+      "category": "diesel_calorific_value",
+      "facility_id": "food-north",
+      "definition": "Fictional supplied liquid LHV at declared 288.15 K, 101.325 kPa, compressibility 1; no real density or fuel factor supplied."
+    },
+    "food-south-electricity": {
+      "category": "electricity",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-gas": {
+      "category": "gas",
+      "facility_id": "food-south",
+      "definition": "Fictional gas stream; matched declared LHV reference volume requires supplied calorific conversion, not a default factor."
+    },
+    "food-south-diesel": {
+      "category": "diesel",
+      "facility_id": "food-south",
+      "definition": "Fictional delivered/consumed diesel quantity; no density, heating value or emission factor inferred."
+    },
+    "food-south-refrigerant": {
+      "category": "refrigerant",
+      "facility_id": "food-south",
+      "definition": "Fictional HFC-134a loss for north; south loss/species unresolved. No GWP/emission factor or zero-loss assumption supplied."
+    },
+    "food-south-packaging": {
+      "category": "packaging",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-ingredients": {
+      "category": "ingredients",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-water": {
+      "category": "water",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-recycled": {
+      "category": "waste",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-landfilled": {
+      "category": "waste",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-unrouted": {
+      "category": "waste",
+      "facility_id": "food-south",
+      "definition": "Fictional distinct external feed/log at this plant; intersite transfers and overlap require source review."
+    },
+    "food-south-freight": {
+      "category": "freight",
+      "facility_id": "food-south",
+      "definition": "Fictional purchased third-party outbound freight service; separate from owned-site diesel. Scope/category and factor review required."
+    },
+    "food-south-travel": {
+      "category": "travel",
+      "facility_id": "food-south",
+      "definition": "Fictional third-party business passenger travel; no flight/radiative-forcing or emission factor inference."
+    },
+    "food-south-production": {
+      "category": "production",
+      "facility_id": "food-south",
+      "definition": "Fictional completed-equivalent food service units, distinct from employee count and purchased material mass."
+    },
+    "food-south-gas-cv": {
+      "category": "gas_calorific_value",
+      "facility_id": "food-south",
+      "definition": "Fictional supplied LHV at explicitly declared 288.15 K, 101.325 kPa, compressibility 1; not a real fuel default."
+    },
+    "food-south-diesel-cv": {
+      "category": "diesel_calorific_value",
+      "facility_id": "food-south",
+      "definition": "Fictional supplied liquid LHV at declared 288.15 K, 101.325 kPa, compressibility 1; no real density or fuel factor supplied."
+    },
+    "food-finance-outlay": {
+      "category": "finance",
+      "facility_id": null,
+      "definition": "Fictional two-year separate monetary model; benefit attribution to physical operations is unverified."
+    },
+    "food-finance-year1": {
+      "category": "finance",
+      "facility_id": null,
+      "definition": "Fictional two-year separate monetary model; benefit attribution to physical operations is unverified."
+    },
+    "food-finance-year2": {
+      "category": "finance",
+      "facility_id": null,
+      "definition": "Fictional two-year separate monetary model; benefit attribution to physical operations is unverified."
+    },
+    "food-finance-discount": {
+      "category": "finance",
+      "facility_id": null,
+      "definition": "Fictional two-year separate monetary model; benefit attribution to physical operations is unverified."
+    }
+  },
+  "all_data_fictional": true,
+  "source_classifications_authenticated": false,
+  "emission_factors_or_gwp_supplied": false,
+  "required_blocking": "EMISSION_FACTOR_REQUIRED or applicable GWP/source/unknown controls until defensible selected factors/profiles are explicitly supplied; unknown south refrigerant never becomes zero",
+  "end_to_end_execution_status": "source ingestion prepared; full source-to-disclosure case not yet executed",
+  "known_physical_checks": {
+    "purchased_electricity_kWh": 150000,
+    "fuel_calorific_energy_kWh_conditional": 280000,
+    "selected_final_energy_kWh_conditional": 430000,
+    "water_m3": 3200,
+    "purchased_packaging_ingredients_kg": 227000,
+    "waste_kg": 3400,
+    "equivalent_food_service_units": 28000,
+    "freight_t_km": 90000,
+    "business_travel_passenger_km": 7000
+  },
+  "limits": "Conditional totals require actual nonoverlap/source/service and conversion reviews; transport units are declared, no invented conversion or factor. Monetary model, proposed targets/roadmap and disclosure evidence remain to compose. No v1 acceptance or release approval.",
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

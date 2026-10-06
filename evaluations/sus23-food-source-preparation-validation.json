@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "586f946",
+  "required_approved_case_employee_count": 150,
+  "required_case_facility_count": 2,
+  "required_case_input_categories": 10,
+  "normalized_source_records": 35,
+  "actual_ingestion_cli_full_helper_equality": true,
+  "initial_state_and_csv_bytes_unchanged": true,
+  "unknown_refrigerant_not_zero": true,
+  "factor_registry_empty_no_inference": true,
+  "full_food_case_pipeline_executed": false,
+  "focused_source_regressions": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "unittest",
+      "tests.test_business_ingestion",
+      "-v"
+    ],
+    "tests": 9,
+    "duration_seconds": 9.069,
+    "status": "passed"
+  },
+  "exact_roadmap_gate_count": 20,
+  "gate_evidence_refs_valid": true,
+  "runtime_schema_factor_or_instruction_changes": false,
+  "file_sha256": {
+    "data/inputs/fictional-food-manufacturer.csv": "d76bfc420bf9e2489d05bd6a86ba2ce33354306af2bdd74a8018c9cc347e5855",
+    "examples/food-manufacturer-ingestion.json": "84dba31e6a8782243d8f42456ce2430dd02cc16f4754dff48a1b040fa138c303",
+    "examples/food-manufacturer-source-case.json": "9777282501fb6ad1f7daf07f5189ec20d91075fb9ba341063446642433151f7f",
+    "evaluations/sus23-food-source-ingestion.json": "90cfbaee8fcddd34cd4a5bbca596b0966b66f1ba6d498843419f57cee15873af",
+    "evaluations/roadmap-completion-audit-2026-10-06.json": "4c5cd712b6d9ed807fc3b4c36f9ccf4edcdfc40c63ef00cbf1b0bd4accc2a04a",
+    "docs/roadmap-completion-audit.md": "235accaffd3531c0c2345ea4bb01a2e118136b7edd186b636b054cf952971d96",
+    "docs/development-status.md": "cffb9209920fadcd8ffbfc000360776f5f68a4bf3a98bae7c1cac970738955c3",
+    "docs/v1-evidence-audit.md": "7d55cb9523ba424e171412d7db1a8895683e9084cfd9cf06eb31c5f129f6e516"
+  },
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

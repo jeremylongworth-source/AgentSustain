@@ -1,0 +1,251 @@
+{
+  "record_type": "roadmap_completion_audit",
+  "date": "2026-10-06",
+  "base_revision": "586f946",
+  "scope": "Full ROADMAP SUS-00 through SUS-25; section 24 sequence and exact twenty section-25 criteria, with approved evaluation requirements",
+  "criteria": [
+    {
+      "id": "V1-01",
+      "roadmap_criterion": "Domain contract is stable and documented.",
+      "observed_state": "documented_with_pending_changes",
+      "evidence": [
+        "docs/domain-contract.md",
+        "docs/current-review-status.md"
+      ],
+      "observation": "Original architecture is approved; later thermal/source/acceptance scopes still need their scoped decision.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-02",
+      "roadmap_criterion": "Master taxonomy is stable.",
+      "observed_state": "reviewed_naming_with_release_stability_open",
+      "evidence": [
+        "docs/taxonomy.md",
+        "docs/naming-conventions.md"
+      ],
+      "observation": "Original naming coverage and current assets exist; this is not a final release stability decision.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-03",
+      "roadmap_criterion": "Evidence and provenance schema is enforced.",
+      "observed_state": "controlled_enforcement_evidence",
+      "evidence": [
+        "schemas/evidence.schema.json",
+        "scripts/contract_validation.py",
+        "evaluations/sus25-clean-python311-validation.json"
+      ],
+      "observation": "Schema/reference and source controls pass; actual source authenticity/fitness is separate.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-04",
+      "roadmap_criterion": "Common state and I/O contracts are documented.",
+      "observed_state": "documented",
+      "evidence": [
+        "schemas/state.schema.json",
+        "schemas/input.schema.json",
+        "docs/architecture.md"
+      ],
+      "observation": "Common I/O/state are documented; no new shared schema was introduced by recent helpers.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-05",
+      "roadmap_criterion": "Core data skills pass evaluations.",
+      "observed_state": "controlled_evaluation_evidence",
+      "evidence": [
+        "evaluations/sus25-clean-python311-validation.json",
+        "docs/business-ingestion-contract.md"
+      ],
+      "observation": "Literal CSV/workbook and adversarial checks exist; actual agent/source behavior has narrower evidence.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-06",
+      "roadmap_criterion": "Scope 1 and Scope 2 calculations pass known-answer tests.",
+      "observed_state": "known_answer_evidence",
+      "evidence": [
+        "docs/scope-1-2-contract.md",
+        "evaluations/sus25-clean-python311-validation.json"
+      ],
+      "observation": "Controlled scope calculations pass; synthetic factors cannot qualify a real inventory.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-07",
+      "roadmap_criterion": "Scope 3 handling includes evidence and uncertainty controls.",
+      "observed_state": "controlled_evidence_uncertainty_controls",
+      "evidence": [
+        "docs/scope-3-inventory-contract.md"
+      ],
+      "observation": "Selected source/category/coverage/uncertainty controls exist; required food-case freight/travel branches remain to compose.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-08",
+      "roadmap_criterion": "Energy, waste, water, and resource-efficiency workflows are functional.",
+      "observed_state": "controlled_physical_workflows",
+      "evidence": [
+        "docs/energy-contract.md",
+        "docs/water-contract.md",
+        "docs/waste-resource-contract.md"
+      ],
+      "observation": "Selected physical analyses are functional in controlled inputs; required two-facility food-case workflow is not yet executed.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-09",
+      "roadmap_criterion": "Business-case analysis is testable and traceable.",
+      "observed_state": "controlled_traceable_models",
+      "evidence": [
+        "docs/manager-workflow-contract.md",
+        "examples/organization-acceptance-oracle.json"
+      ],
+      "observation": "Explicit cash-flow arithmetic is traceable; benefit attribution and professional decisions are not verified.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-10",
+      "roadmap_criterion": "Router behavior is scenario tested.",
+      "observed_state": "controlled_router_scenarios",
+      "evidence": [
+        "docs/specialist-router-contract.md",
+        "evaluations/sus24-review-discovery-validation.json"
+      ],
+      "observation": "Seven existing asset checks and fixture routing exist; independent instruction-following run remains pending.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-11",
+      "roadmap_criterion": "Framework adapters are versioned.",
+      "observed_state": "versioned_selected_candidates",
+      "evidence": [
+        "docs/framework-registry.md",
+        "docs/framework-adapter-contract.md"
+      ],
+      "observation": "Initial adapter list is optional (may cover); do not require every named licensed framework merely to inflate scope. Selected candidate mappings retain source/currentness/rights limits.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-12",
+      "roadmap_criterion": "Jurisdiction modules are isolated from core skills.",
+      "observed_state": "isolated_modules_with_review_open",
+      "evidence": [
+        "docs/jurisdiction-model.md"
+      ],
+      "observation": "Core and jurisdiction modules are separated; screening remains distinct from legal determination.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-13",
+      "roadmap_criterion": "Canadian reference pack has source and version controls.",
+      "observed_state": "source_version_controls_with_fit_open",
+      "evidence": [
+        "docs/canada-source-custody.md",
+        "docs/canada-ghgrp-draft-screen.md"
+      ],
+      "observation": "Canonical module pins and private byte receipts exist; encoding/index/source/sector/legal/rights review is unresolved.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-14",
+      "roadmap_criterion": "Environmental claims guardrails are tested.",
+      "observed_state": "controlled_guardrail_evidence",
+      "evidence": [
+        "docs/domain-contract.md",
+        "evaluations/sus25-clean-python311-validation.json"
+      ],
+      "observation": "Controlled claim/injection/refusal tests exist; actual reviewer/source/publication authority is not inferred.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-15",
+      "roadmap_criterion": "Professional-review states propagate through composed workflows.",
+      "observed_state": "controlled_review_custody_evidence",
+      "evidence": [
+        "docs/organization-acceptance.md",
+        "evaluations/sus23-organization-acceptance.json"
+      ],
+      "observation": "Complete prior decisions survive controlled source/manager composition; real reviewer authority remains separate.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-16",
+      "roadmap_criterion": "Example workflows are reproducible.",
+      "observed_state": "windows_reproduction_evidence",
+      "evidence": [
+        "docs/platform-validation.md",
+        "evaluations/sus25-python311-organization-cli.json"
+      ],
+      "observation": "Windows 3.11/3.12/3.14 evidence exists for recorded snapshots; native Linux/other host discovery is unverified.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-17",
+      "roadmap_criterion": "Documentation explains limitations and intended use.",
+      "observed_state": "documented_limits_with_usage_review_open",
+      "evidence": [
+        "README.md",
+        "docs/skill-consumption.md"
+      ],
+      "observation": "Limits and consumption guidance exist; documentation alone does not prove live host usability.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-18",
+      "roadmap_criterion": "Security and contribution guidance is present.",
+      "observed_state": "guidance_present_owner_decisions_open",
+      "evidence": [
+        "SECURITY.md",
+        "CONTRIBUTING.md"
+      ],
+      "observation": "Files exist; license/public contribution terms and private reporting channel are explicit unresolved owner decisions.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-19",
+      "roadmap_criterion": "Public examples contain no confidential or proprietary data.",
+      "observed_state": "inventory_not_confidentiality_or_rights_approval",
+      "evidence": [
+        "docs/release-material-review.md"
+      ],
+      "observation": "Limited pattern/package inventory narrows review; no blanket absence-of-private/proprietary-data conclusion follows.",
+      "full_gate_closed": false
+    },
+    {
+      "id": "V1-20",
+      "roadmap_criterion": "v1 acceptance scenarios pass.",
+      "observed_state": "required_full_case_unexecuted",
+      "evidence": [
+        "docs/evaluation-requirements.md",
+        "examples/food-manufacturer-source-case.json",
+        "evaluations/sus23-food-source-ingestion.json"
+      ],
+      "observation": "Approved evaluation layer explicitly requires a 150-employee, two-facility food manufacturer with ten input categories. New source ingestion is prepared; complete pipeline and behavioral acceptance remain unproven.",
+      "full_gate_closed": false
+    }
+  ],
+  "required_case_source_prepared": {
+    "employees": 150,
+    "facilities": 2,
+    "records": 35,
+    "categories": 10,
+    "full_pipeline_executed": false,
+    "emission_factors_or_gwp_inferred": false
+  },
+  "next_technical_work": "Compose the required food-manufacturer source through selected fuel/direct emissions, purchased energy, materials/water/waste, freight/travel, finance/targets/roadmap/KPIs/disclosure with exact source/state and refusal controls; keep unknown refrigerant and unsupported factors explicit.",
+  "owner_inputs_pending": [
+    "Scoped review of newer thermal/classification/acceptance interfaces",
+    "License/security/contribution decisions",
+    "Explicit authorization for prepared separate-agent evaluation"
+  ],
+  "optional_scope_not_mandated": [
+    "Every named framework: roadmap says initial adapters may cover them",
+    "Arbitrary additional thermal/sector helpers beyond required supported workflow"
+  ],
+  "completion_proven": false,
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}
