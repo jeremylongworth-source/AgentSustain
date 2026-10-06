@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "e4cdd7b",
+  "latest_recorded_owner_reviewed_revision": "ba42b4e081a4ed5b84768aae90921f90decbad24",
+  "current_review_index_is_new_approval": false,
+  "historical_instruction_wording_overridden_only_by_recorded_scoped_decisions": true,
+  "local_document_links_and_commit_references_valid": true,
+  "runtime_skill_source_or_router_asset_changes": false,
+  "seven_existing_specialist_asset_checks_passed": {
+    "sustainable-operations": true,
+    "carbon-accounting": true,
+    "sustainability-manager": true,
+    "sustainable-procurement": true,
+    "climate-risk": true,
+    "sustainability-business-case": true,
+    "sustainability-reporting": true
+  },
+  "catalog_pin": {
+    "path": "router/specialists-0.1.json",
+    "sha256": "897b43c55b412ab46da5e2cdd776a3df33d2278af8e1993e702a889e65d2fa6c"
+  },
+  "live_independent_agent_dispatched": false,
+  "delegation_authorization": "requested; pending human response",
+  "license_decision": "pending; no choice inferred",
+  "new_tests_or_full_suite_rerun": "not needed for documentation-only discovery/protocol change; prior runtime evidence retained",
+  "file_sha256": {
+    "README.md": "e04a18241951e68370979b93a01470e060edf9a6d7bf42b7a59a38999db7364a",
+    "docs/current-review-status.md": "4155a3406930a762d33bcef5833a7cbbfd7f10e992c703b14ad044049b7f0f21",
+    "docs/development-status.md": "1fd12ec987f477e2b7af6776d2f7f3face84fb0719558e547bd43ae4af92c8f0",
+    "docs/v1-evidence-audit.md": "5d76b7e831f327f232646417769d9ac7eaf22d2831bf172705327fc051a870da",
+    "evaluations/agent-workflow-forward-test-plan.md": "766f25c5082066502a1c8cc6be5d2051cec60ef3bf0295f85896bfb804e87bb9"
+  },
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}
