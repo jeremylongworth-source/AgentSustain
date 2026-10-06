@@ -105,3 +105,5 @@ The draft [carbon-accounting specialist](docs/carbon-workflow-contract.md) execu
 The draft [sustainability manager](docs/manager-workflow-contract.md) connects one pre-normalized organization through operational analysis, prospective targets/roadmap and qualified disclosure mapping. [Coherent fictional evidence](evaluations/sus22-organization-manager.md) preserves separate source definitions and all outstanding review requirements.
 
 The draft [business CSV importer](docs/business-ingestion-contract.md) records exact file/row custody and declared values without unit conversion or factor inference. [Raw-source workflow evidence](evaluations/sus23-business-source-workflow.md) links the imported candidate to the existing manager while retaining source review and incomplete coverage.
+
+The draft [sustainable-procurement specialist](docs/procurement-workflow-contract.md) connects buyer assessments, sourced physical purchase mapping and conditional options with explicit prerequisites. [Fictional evidence](evaluations/sus22-procurement-workflow.md) preserves unknowns and source views without supplier selection, external engagement or purchasing authority.

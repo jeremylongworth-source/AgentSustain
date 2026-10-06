@@ -1,0 +1,113 @@
+{
+  "name": "sustainable-procurement",
+  "contract_version": "0.1.0",
+  "execution_contract": "procurement-workflow-0.1.0",
+  "status": "draft_pending_scoped_owner_review",
+  "runner": "scripts/run_procurement_workflow.py",
+  "dependencies": [
+    {
+      "name": "build-supplier-questionnaire",
+      "path": "skills/procurement/build-supplier-questionnaire/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "14d7ca8ef67d86fca4d791cda82757be6cdcb062568c49f5d3cf7dd5f8629151"
+    },
+    {
+      "name": "calculate-co2e",
+      "path": "skills/carbon/calculate-co2e/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "d0b1c79f60aeda966f9c444eba7cc3abb8dac37164e14c7995ef9f5448e3ea58"
+    },
+    {
+      "name": "calculate-scope-3-category",
+      "path": "skills/carbon/calculate-scope-3-category/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "e5bdc0704674166cc88b69922d27e2e58d14c1169fed919982442c46f032679f"
+    },
+    {
+      "name": "classify-scope-3-emissions",
+      "path": "skills/carbon/classify-scope-3-emissions/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "9565633b7126b46ebaadd9417d65b6f45f0b328211cca685626e16fe1897b435"
+    },
+    {
+      "name": "compare-suppliers",
+      "path": "skills/procurement/compare-suppliers/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "2ac3839031f36acf67929c40d4223d53a6c6a92673e88a1ae81858f2b465978d"
+    },
+    {
+      "name": "develop-supplier-improvement-plan",
+      "path": "skills/procurement/develop-supplier-improvement-plan/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "f214743bc0121a7c48878559c277596577b53b0bcefed496b2b0b90d21f403a4"
+    },
+    {
+      "name": "evaluate-low-carbon-procurement-option",
+      "path": "skills/procurement/evaluate-low-carbon-procurement-option/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "5a5237dea19cf9cdb00e00ae2bb2ae3cf2dc842f0cb52cabb573deaa31d6b11c"
+    },
+    {
+      "name": "evaluate-supplier-response",
+      "path": "skills/procurement/evaluate-supplier-response/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "df2175139da83c3adb4bfb294ff01fccd599270235e1185c99f2c7197ac0881e"
+    },
+    {
+      "name": "identify-scope-3-hotspots",
+      "path": "skills/supply-chain/identify-scope-3-hotspots/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "cdf5529cfdac18dbd4b057c9e23f49b7dce4aef5f3e8c4441f04277280ae01e3"
+    },
+    {
+      "name": "identify-supplier-data-gaps",
+      "path": "skills/procurement/identify-supplier-data-gaps/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "9a4433f9fefd1d7ced8054f438dee190674e8bd679e1ac159deb693628286a60"
+    },
+    {
+      "name": "map-supply-chain-emissions",
+      "path": "skills/supply-chain/map-supply-chain-emissions/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "bb87fb413368e5bbdf008397b9e734a48ede0cfdac11cfb25562337e4571a975"
+    },
+    {
+      "name": "prioritize-supplier-engagement",
+      "path": "skills/supply-chain/prioritize-supplier-engagement/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "e809c7d761606f4b73bac63ba8ee2d88531528af182220d6f4044d8f112b70f7"
+    },
+    {
+      "name": "score-supplier-sustainability",
+      "path": "skills/procurement/score-supplier-sustainability/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "d3e364ba98d403f5ffa1c35b4223f64d1b41bcacef528f5157079efbd9fd3633"
+    },
+    {
+      "name": "screen-supplier-sustainability-risk",
+      "path": "skills/procurement/screen-supplier-sustainability-risk/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "3df27588188a312f5b26b0f071a3ba8239772d521af8bcf6a7fdb3d599279987"
+    }
+  ],
+  "review_record": "docs/development-review.md",
+  "limits": [
+    "Buyer ratings, source allegations and conditional option estimates remain distinct from authenticated environmental performance.",
+    "No supplier selection, purchase, engagement message, implemented benefit or publication authority.",
+    "New interface and prior pending contracts require scoped owner review; independent organization and release gates remain open."
+  ]
+}
