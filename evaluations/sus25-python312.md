@@ -1,0 +1,9 @@
+# Fresh Python 3.12 compatibility evidence
+
+The existing bundled Python 3.12.14 was discovered through the local runtime inventory and checked for venv/ensurepip availability. A new independent-object, full-history local clone of `6670800e7ae3789b9f1729c0c0f5e1bb3a642831` uses a fresh virtual environment with the declared requirements. Bundled runtime files and global settings were not modified; temporary checkout/environment/logs remain ignored under `private-data/`.
+
+[The durable full-suite witness](sus25-clean-python312-validation.json) records 826 tests passing in 770.492 seconds of captured execution; unittest reported 767.336 seconds. All 834 Git-tracked file hashes are unchanged after the run, and the checkout remains clean. This scope includes code/tests, datasets, scenarios, prior evaluation oracles, workflows and documentation. Resolved packages include jsonschema 4.26.0 and the interpreter-specific transitive dependencies listed in the witness. No dependency requirement or runtime code was changed.
+
+[The actual organization CLI comparison](sus25-python312-organization-cli.json) passes all twenty-two controlled workflow/custody checks, preserves both input files, and equals the complete saved Python 3.14 output rather than selected numeric fields. This supplies direct second-interpreter evidence for the current fictional source-to-disclosure path.
+
+The same Windows host and author-led controlled examples are used. This does not prove minimum Python 3.11, native Linux, another agent platform, independent organization acceptance, source/financial/scientific/legal/engineering fitness or public-v1 readiness. No GitHub workflow was dispatched and no source/state files, licenses, accounts or production systems changed. Pending scoped reviews and all remaining roadmap/release requirements persist; the full development goal remains active.

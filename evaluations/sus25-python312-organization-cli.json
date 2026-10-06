@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-06",
+  "source_revision": "6670800e7ae3789b9f1729c0c0f5e1bb3a642831",
+  "python": "Python 3.12.14",
+  "command": [
+    "python",
+    "-m",
+    "scripts.run_organization_acceptance",
+    "examples/organization-acceptance.json",
+    "examples/organization-acceptance-oracle.json"
+  ],
+  "returncode": 0,
+  "scenario_status": "passed",
+  "all_22_checks_passed": true,
+  "full_output_equal_to_saved_python314_case": true,
+  "input_bytes_unchanged": true,
+  "source_and_oracle_sha256": {
+    "examples\\organization-acceptance.json": "d7ef6cfd1dec691198fdf6bbb8e086f3d1fb60f244e34ead7f83fe58b09a3b6f",
+    "examples\\organization-acceptance-oracle.json": "ea0e86b2baa73c3fa280c9eadb005416b70a1160bee61e483e35995955888ce4"
+  },
+  "independent_organization_acceptance": false,
+  "public_v1_readiness": false,
+  "publication_authorized": false
+}
