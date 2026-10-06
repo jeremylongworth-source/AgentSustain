@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-06",
+  "source": "Equivalent fictional CSV and literal workbook records",
+  "normalized_metric_semantics_equal": true,
+  "normalized_metric_count": 18,
+  "manager_metric_id_name_value_unit_period_boundary_equal": true,
+  "manager_metric_count": 30,
+  "source_methods_locators_literal_cell_provenance_remain_distinct": true,
+  "actual_source_fitness_or_independent_organization_acceptance": false
+}

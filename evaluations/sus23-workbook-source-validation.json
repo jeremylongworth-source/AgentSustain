@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-06",
+  "timezone": "America/Toronto",
+  "base_revision": "162dad7",
+  "prior_approved_development_revision": "7bad9dd3a07069b7a99979f80fd509ad0eb40486",
+  "execution_contract": "business-xlsx-ingestion-0.1.0",
+  "later_scoped_source_interface_owner_review": "pending",
+  "suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "status": "passed",
+    "returncode": 0,
+    "tests": 798,
+    "duration_seconds": 720.352,
+    "files_unchanged": true
+  },
+  "focused_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_workbook_ingestion -v",
+    "status": "passed",
+    "tests": 11,
+    "duration_seconds": 2.447
+  },
+  "architecture_checks": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_architecture.py -v",
+    "status": "passed",
+    "tests": 20,
+    "duration_seconds": 0.179
+  },
+  "new_actual_cli_helper_cases": 6,
+  "prior_csv_manager_actual_cli_helper_full_output_replays": 4,
+  "unchanged_prior_source_files": 380,
+  "normalized_record_semantics_equal_csv_count": 18,
+  "manager_metric_semantics_equal_csv_count": 30,
+  "source_methods_locators_cell_and_row_provenance_remain_format_specific": true,
+  "workbook_authoring_and_visual_qa": {
+    "tool": "Bundled @oai/artifact-tool",
+    "operation_marker_successful": true,
+    "exported_source_and_first_last_value_context_ranges_reviewed": true,
+    "formula_error_matches": 0,
+    "source_bytes_unchanged_after_read_only_preview": true,
+    "native_excel_behavior_claimed": false
+  },
+  "bounded_package_sheet_cells_without_formula_external_active_date_unit_or_locale_inference": "passed",
+  "model_measurement_assumptions_uncertainty_blank_zero_signed_values_and_whole_source_rollback": "passed",
+  "raw_source_to_routed_manager_exact_handoff_and_review_custody": "passed",
+  "no_existing_csv_runtime_helper_schema_router_factor_unit_registry_skill_or_data_changes": true,
+  "source_format_references": [
+    "https://learn.microsoft.com/en-us/office/open-xml/spreadsheet/structure-of-a-spreadsheetml-document",
+    "https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.cell"
+  ],
+  "file_sha256": {
+    "README.md": "913a574563a4947052961e5fb4bd1f25538035c454f33fd1dc83317ae75b327e",
+    "docs/architecture-review.md": "735f367a946003fd04dc50b38c9b6421483e4bd2400753a0f70d231b35729a64",
+    "docs/business-ingestion-contract.md": "52d7a19d01e278a4b92d6c64a12c173eb509f5d4c6dc3f923d416e41d8470615",
+    "docs/development-review.md": "01b21d774396f0e869e22dc54045b32aec06ad1f2e05fcd1b022993935adbd53",
+    "docs/development-status.md": "023b4c42d5d587e7cbef117c5ac774a1d0658ea26c132c828771510bbc5c8a39",
+    "docs/workbook-ingestion-contract.md": "eb8dc6046a1dc713316802db794889b23e8760f0cd086fd399d0e11b1dd6597e",
+    "docs/v1-evidence-audit.md": "763b4271c72a9a3a0679a217a81a77c64fce6a20329bdd78ab0b3bd6b750527f",
+    "scripts/workbook_ingestion.py": "137963d02cb32051bb13ee2b614b3ef7e36e442957c0206d2a142f34e5e7050d",
+    "scripts/run_workbook_ingestion.py": "b5b28807712d658beec0de8c4b10a79ac72e0844f530a15632572a611a9c1e16",
+    "tests/test_workbook_ingestion.py": "78992fb36df6c4e0a77f5f3423a112905aa9c9912b9d9bf57534397d9eaf13da",
+    "data/inputs/fictional-business-records.xlsx": "216f483289a5aef30882f983cf7c7a3a635ab31465dde5253badd719ca721786",
+    "evaluations/sus23-workbook-source.json": "722586c66f7ad84f53885cdc5895ee4553577a8a3bbd75a209a4932f5de51a84",
+    "evaluations/sus23-workbook-source.md": "d329a82c8967f63f8ef11db16a4e0212a453801a41245aff61140232e28f2273",
+    "evaluations/sus23-workbook-source-oracle.json": "b5e2e1c714e91e15e23ed00f4b86e51cc3fd324ba6d825c5f5efcab13a1be1d6",
+    "evaluations/sus23-workbook-source-prior-hashes.json": "59adcaf4e603ea59fdab17937b24080016a81ba66abff2cf5549652140230f2d",
+    "evaluations/sus23-workbook-source-suite-run.json": "9407956976e40feff3e701c081ed9f7034673acd5fc8058adfd8a5cdb5999b1d"
+  },
+  "remaining_requirements": [
+    "Scoped owner/source interface review and earlier later history/fuel/router interfaces.",
+    "Actual source/publisher/measurement/model/scientific/legal/rights and domain completeness review.",
+    "Arbitrary layouts/formulas/other raw formats, native application/platform/library and independent agent/organization acceptance.",
+    "Complete remaining source/sector/framework/jurisdiction methods, owner license/contribution/security choices and all public-v1/release proof."
+  ],
+  "full_roadmap_goal": "active; not complete",
+  "push_merge_publish_release_deploy_contact_authorized": false
+}
