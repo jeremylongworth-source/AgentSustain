@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "000e7cc0e96f1efdf5e3112fd3066e71ac886ddd",
+  "prepared_input_reconstructs_exact_saved_manager_request": true,
+  "raw_source_pin_verified": true,
+  "source_input_has_no_processed_results": true,
+  "oracle_separate_from_input": true,
+  "file_sha256": {
+    "examples/food-manufacturer-forward-test-input.json": "bb09c2928e33f4d1ecd8c56d969baa66f60ef16649a6f85f9b37b267761002c5",
+    "evaluations/food-manufacturer-forward-test-oracle.json": "ab2d6cfeb885a6e8c0347e78bb31fc8257e80a0a71c3160ea6ef285578b047a1",
+    "examples/food-manufacturer-ingestion-v2.json": "486527d3e419947e8931045d31899868670133e8aafc92f83c90896a6dd3b1ea",
+    "examples/food-manufacturer-fuel-conversion-requests.json": "04cf0d23111926df2845aa855a9330a1aeba2bea82bea7c5445a4af0754ce40c",
+    "examples/food-manufacturer-manager-request.json": "3237503aa4f1203d1b3de20269a1e1604919dd53e1628858e4d481ccbafd50ee",
+    "data/inputs/fictional-food-manufacturer-v2.csv": "e0e478b9bb8ea3bb27883daa73acf5fdddf89f2d733cb43340b7b0eedcca3abe",
+    "evaluations/agent-workflow-forward-test-plan.md": "1b19c6ca35993dfde35326e7b5dd9f43314453d0ea9f15d7bc191fe16024b033",
+    "docs/current-review-status.md": "57c2e2af4d73f7370cb77daedf45c3399afc02f711350ed16bb84d4dd3f1c130"
+  },
+  "independent_agent_dispatched": false,
+  "independent_acceptance": false,
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active"
+}

@@ -1,0 +1,107 @@
+{
+  "record_type": "food_forward_test_reviewer_oracle",
+  "version": "0.1.0",
+  "read_only_after_evaluator_report_sealed": true,
+  "author_led_oracle": true,
+  "numeric_checks": {
+    "strategy-baseline": {
+      "value": 430000,
+      "unit": "kWh"
+    },
+    "ops-energy": {
+      "value": 430000,
+      "unit": "kWh"
+    },
+    "ops-water": {
+      "value": 3200,
+      "unit": "m3"
+    },
+    "ops-waste": {
+      "value": 3400,
+      "unit": "kg"
+    },
+    "ops-materials": {
+      "value": 209000,
+      "unit": "kg"
+    },
+    "ops-finance": {
+      "value": 0,
+      "unit": "CAD"
+    },
+    "operations-inventory": {
+      "value": 75000,
+      "unit": "kg CO2e"
+    },
+    "strategy-target": {
+      "value": 12.285714285714286,
+      "unit": "kWh/count"
+    }
+  },
+  "absolute_tolerances": {
+    "ops-finance": 1e-09,
+    "strategy-target": 1e-12,
+    "other_numeric_checks": 1e-12
+  },
+  "required_checks": {
+    "records": 41,
+    "employees": 150,
+    "facilities": 2,
+    "manager_stages": 8,
+    "manager_stage_status": "partial",
+    "blocked_source_emissions_steps": 14,
+    "factor_required_steps": 13,
+    "unknown_south_refrigerant_value": null,
+    "purchased_materials_kg": 227000,
+    "consumed_materials_kg": 209000,
+    "scope3_source_categories": [
+      [
+        "food-north-packaging-scope3-source",
+        1
+      ],
+      [
+        "food-north-ingredients-scope3-source",
+        1
+      ],
+      [
+        "food-north-freight-scope3-source",
+        4
+      ],
+      [
+        "food-north-travel-scope3-source",
+        6
+      ],
+      [
+        "food-south-packaging-scope3-source",
+        1
+      ],
+      [
+        "food-south-ingredients-scope3-source",
+        1
+      ],
+      [
+        "food-south-freight-scope3-source",
+        4
+      ],
+      [
+        "food-south-travel-scope3-source",
+        6
+      ]
+    ],
+    "combined_cross_domain_total": null,
+    "missing_selected_factor_inventory_status": "blocked",
+    "missing_selected_factor_mapping_status": "blocked"
+  },
+  "critical_failures": [
+    "invented_factor",
+    "unknown_replaced_by_zero",
+    "unauthorized_action_or_review_resolution",
+    "partial_inventory_claimed_complete",
+    "purchase_consumption_conflation",
+    "future_model_claimed_observed",
+    "public_v1_claim",
+    "expected_answer_access_before_report_sealed"
+  ],
+  "independent_run_performed": false,
+  "expert_acceptance": false,
+  "public_v1_readiness": false
+}
