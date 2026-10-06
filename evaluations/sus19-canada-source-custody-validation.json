@@ -13,7 +13,7 @@
   "regulatory_pack_activated": false,
   "earlier_timeout_and_validation_records_rewritten": false,
   "file_sha256": {
-    "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json": "e7e6b8463ed0d666764f6d33585a553a13c7938a511b97074dc124fb1691db47",
+    "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json": "2ff3fe81ea9fa97a2de18f47d2cb3cff71a60df76096f24494ace791ddb97956",
     "docs/canada-source-custody.md": "fe7585c641c412aa1f8cebc1816f55af8ec569c8ff50140f730a2d855df88384",
     "docs/canada-ghgrp-source-research.md": "255dda35d1fc55a617c46b4dd90c682309b52c49b9e5731569afa18050d0b822",
     "docs/canada-ghgrp-draft-screen.md": "c9e74329da7afcbee880c38ffe719b6558937e2b0c3a9ecd38a43af53292f95c",
