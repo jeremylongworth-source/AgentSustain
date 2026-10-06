@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-06",
+  "validator": "PyYAML 6.0.3 BaseLoader in ignored temporary tooling directory; not a project dependency",
+  "workflow_sha256": "8fe8c45cecf7f358e3e8e78cebe5a441ef103381ed3320cbbecec409e978a38c",
+  "yaml_parse_passed": true,
+  "reviewed_matrix": {
+    "os": [
+      "ubuntu-24.04",
+      "windows-2025"
+    ],
+    "python": [
+      "3.11",
+      "3.14"
+    ]
+  },
+  "manual_only": true,
+  "contents_read_only": true,
+  "full_git_history": true,
+  "credentials_not_persisted": true,
+  "pinned_actions": {
+    "Check out complete approval history": "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+    "Set up Python": "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1"
+  },
+  "action_pin_verification": "Official GitHub API refs/tags/v6 returned these commit objects; pinned action.yml inputs also inspected on 2026-10-06",
+  "configured_commands": [
+    "python -m pip install -r requirements-dev.txt",
+    "git rev-parse HEAD",
+    "python -m pip list",
+    "python -m unittest discover -s tests -v"
+  ],
+  "github_execution_verified": false,
+  "github_service_schema_validation_verified": false,
+  "linux_execution_verified": false
+}

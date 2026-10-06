@@ -38,6 +38,10 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
+For a POSIX shell, create the environment with `python3 -m venv .venv`, install dependencies with `.venv/bin/python -m pip install -r requirements-dev.txt`, and run `.venv/bin/python -m unittest discover -s tests -v`. Use a complete Git checkout: router integrity checks read historical approved objects, so a shallow clone or a source-only archive is insufficient.
+
+[Repository validation](.github/workflows/validation.yml) prepares manual checks on Windows and Ubuntu with Python 3.11 and 3.14. It uses read-only repository permissions, pinned action revisions and full Git history. It has no push, schedule, publication or deployment trigger. The matrix is a proposed validation environment, not evidence that those environments pass. Publishing or running it requires separate authorization; native Linux results remain unverified until an actual run succeeds. See [platform validation](docs/platform-validation.md) for the available local evidence and its limits.
+
 Schemas use JSON Schema Draft 2020-12. The same test command runs architecture, data, GHG, scope-composition and saved-artifact checks. Examples are fictional fixtures, not emission factors or advice for a real organization. No license has been chosen yet; public release is gated on the owner's licensing decision.
 
 ## Data skills

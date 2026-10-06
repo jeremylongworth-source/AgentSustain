@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "22515f4ceedcae1bbb864595e679c217626974c1",
+  "owner_approved_runtime_revision": "ba42b4e081a4ed5b84768aae90921f90decbad24",
+  "runtime_test_domain_changes": false,
+  "clean_windows_suite_witness": "evaluations/sus25-clean-windows-validation.json",
+  "yaml_configuration_witness": "evaluations/sus25-platform-workflow-validation.json",
+  "documentation_link_targets_exist": true,
+  "file_sha256": {
+    ".github/workflows/validation.yml": "8fe8c45cecf7f358e3e8e78cebe5a441ef103381ed3320cbbecec409e978a38c",
+    "README.md": "38989084cb8e07631e861a5efc514a4f81bcd398a780ea93658b8aa0f074805b",
+    "docs/platform-validation.md": "65a26da873cb4e4c48d60fc13b98956522426d20bf61d35d0f3eabbc01bc3108",
+    "docs/development-status.md": "492eb3690100e03ed233a6be228c88c581b0d2dda67e2d7ae9a21ec658fd1a69",
+    "docs/v1-evidence-audit.md": "e374d17dd819cf29338e4ba5acf680272f4cd4ac6d44587ae730702e8fb6aebe",
+    "evaluations/sus25-clean-windows-validation.json": "ea4923defefd7e851d4998e649a2869d0dca1b072c6c9298c50ee242a010b89a",
+    "evaluations/sus25-platform-workflow-validation.json": "101f9590fcbb86cbd51099b811b855ea20d4d33c0b16448bd059fbfc4bf7934c"
+  },
+  "full_roadmap_goal": "active",
+  "remaining_requirements": [
+    "Actual Linux and Python 3.11 execution",
+    "GitHub service/workflow execution",
+    "Other intended agent-platform installation acceptance",
+    "Independent organization and behavioral acceptance",
+    "Broader domain/method/framework/jurisdiction coverage",
+    "Source/scientific/engineering/legal/currentness/rights/state reviews",
+    "Owner release/security/contribution/license decisions and all ROADMAP public-v1 requirements"
+  ],
+  "push_merge_publish_release_deploy_dispatch_contact_authorized": false
+}
