@@ -145,3 +145,16 @@ The draft `procurement-workflow-0.1.0` and specialist/manifest follow approved 7
 ## Subsequent climate-risk specialist awaiting scoped review
 
 The draft `climate-workflow-0.1.0` and specialist/manifest follow approved 7fff776 without inheriting scoped approval. Review [the contract](climate-workflow-contract.md) and [coherent fictional evidence](../evaluations/sus22-climate-workflow.md): unchanged climate helpers, exact source/result identities, acyclic typed producer dependencies, full standalone/hash equality, conditional scenario/horizon/source/stock/service definitions, ordinal uncertainty and proposed adaptation/plan conditions, blocked/independent branch handling and atomic original-revision history/review custody. No source/model authentication, probability/loss/safety/legal finding, portfolio total, actual effectiveness, implementation or publication is granted. This and prior pending interfaces require scoped owner review; broader methods, two remaining specialists, independent organization acceptance and v1/release requirements remain open. No wave closure follows.
+
+## Scoped owner approval through cd0c991
+
+- Reviewer: project owner via this development chat.
+- User instruction: "approve the review".
+- Reviewed revision/content snapshot: `cd0c991a18909459f27eb6abd10843963345b748`; the validated climate-risk review package was saved locally before recording this decision.
+- Decision/date: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Scope: the pending development interfaces through this snapshot: future-goal claims, intent router/catalog, carbon-accounting specialist, organization-manager recipe, pinned business CSV ingestion, sustainable-procurement specialist, climate-risk specialist and public-v1 evidence audit. This includes typed dependencies, blocked and independent branches, exact source-result views, separate conditional outputs, atomic state composition and preserved evidence, units, periods, uncertainty, assumptions and outstanding reviews.
+- Evidence: [climate validation](../evaluations/sus22-climate-workflow-validation.json) and [durable suite witness](../evaluations/sus22-climate-suite-run.json) record 691 passing repository tests, seven focused tests, twenty architecture checks and four actual CLI/helper cases. These checks were completed before this approval; they were not rerun for the decision. Earlier increment validation remains unchanged.
+
+This decision supersedes pending scoped-owner-development-review descriptions for the interfaces committed through this revision. Historical records and draft labels describe their original state; approval does not rewrite them or extend to later material changes.
+
+Approval permits continued local roadmap development. It does not authenticate sources, validate climate probabilities or losses, establish legal applicability, organization safety, adaptation effectiveness, implementation or independent organization acceptance; resolve result/state/source/professional/legal reviews; close roadmap waves; establish v1 readiness; or authorize pushing, merging, publishing, releasing, deploying, filing or third-party contact. Two named specialists and the remaining source, method, independent acceptance and public-v1 requirements remain open.
