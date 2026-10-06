@@ -101,3 +101,5 @@ The draft [future-goal claims bridge](docs/future-goal-claim-method.md) checks o
 The draft [intent router](docs/router-contract.md) proposes prerequisites from original requests without executing workflows or approving inputs. [Fictional routing evidence](evaluations/sus21-router.md) covers missing inputs, ambiguity, approved capability content, blocked dependencies and independent branches.
 
 The draft [carbon-accounting specialist](docs/carbon-workflow-contract.md) executes existing helpers with explicit prerequisites and separate account outputs. [Fictional evidence](evaluations/sus22-carbon-accounting.md) retains missing factors, partial inventories and open assurance review without combined totals or publication authority.
+
+The draft [sustainability manager](docs/manager-workflow-contract.md) connects one pre-normalized organization through operational analysis, prospective targets/roadmap and qualified disclosure mapping. [Coherent fictional evidence](evaluations/sus22-organization-manager.md) preserves separate source definitions and all outstanding review requirements.

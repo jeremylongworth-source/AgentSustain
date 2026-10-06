@@ -1,0 +1,80 @@
+{
+  "name": "sustainability-manager",
+  "contract_version": "0.1.0",
+  "execution_contract": "organization-manager-0.1.0",
+  "status": "draft_pending_scoped_owner_review",
+  "runner": "scripts/run_manager.py",
+  "dependencies": [
+    {
+      "name": "establish-baseline",
+      "kind": "skill",
+      "path": "skills/strategy/establish-baseline/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "01045c2c5067484aab0a67f0394497e56dbf3455495a09e9dbd8deb94f0fcd05"
+    },
+    {
+      "name": "define-kpis",
+      "kind": "skill",
+      "path": "skills/strategy/define-kpis/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "947eccc638371dc8190ab49581627bd29ebfee50cc34e6d251651381839e6c10"
+    },
+    {
+      "name": "develop-target",
+      "kind": "skill",
+      "path": "skills/strategy/develop-target/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "092dbef25060888431bae8fe3036d602a5ee23335c18da228b801b2416c30e04"
+    },
+    {
+      "name": "build-sustainability-strategy",
+      "kind": "skill",
+      "path": "skills/strategy/build-sustainability-strategy/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "707319fb42488a1c273754b458166bbea8a293410ccd8e8a1d6262cdb918d532"
+    },
+    {
+      "name": "build-transition-plan",
+      "kind": "skill",
+      "path": "skills/strategy/build-transition-plan/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "317b53d8bcc17de49cdcd643f657aebd45e31ff61eb24da075ee544471cba683"
+    },
+    {
+      "name": "build-implementation-roadmap",
+      "kind": "skill",
+      "path": "skills/implementation/build-implementation-roadmap/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "0c31575a24468b403f439721055ecf775b3bb0a514621eb8df9b36c9e96dee46"
+    },
+    {
+      "name": "map-framework-disclosures",
+      "kind": "skill",
+      "path": "skills/frameworks/map-framework-disclosures/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "568a4ea5d3066ef41732b916338f54862b9cd2d24b31302b1e4c43046992f337"
+    },
+    {
+      "name": "sustainable-operations",
+      "kind": "skillset",
+      "path": "skillsets/sustainable-operations/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "b97a047150a6e0b32986756d8464ab4a403e8590bf91ca665be95accf1b7fdaf"
+    }
+  ],
+  "nested_operations_manifest": "skillsets/sustainable-operations/manifest.json",
+  "review_record": "docs/development-review.md",
+  "limits": [
+    "Requires pre-normalized common source state; no raw business-data ingestion or authentication.",
+    "Actual organization completeness, finance applicability, target feasibility, implementation and framework conformity remain unverified.",
+    "This new interface does not inherit approval from existing capabilities; router activation, independent evaluation and v1/release gates remain open."
+  ]
+}
