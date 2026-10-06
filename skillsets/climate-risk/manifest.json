@@ -1,0 +1,113 @@
+{
+  "name": "climate-risk",
+  "contract_version": "0.1.0",
+  "execution_contract": "climate-workflow-0.1.0",
+  "status": "draft_pending_scoped_owner_review",
+  "runner": "scripts/run_climate_workflow.py",
+  "dependencies": [
+    {
+      "name": "assess-exposure",
+      "path": "skills/climate-risk/assess-exposure/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "80275967480197ff7e2e1b81141370b9216f4ff481206314091dddff99e137de"
+    },
+    {
+      "name": "assess-transition-exposure",
+      "path": "skills/climate-risk/assess-transition-exposure/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "c690effe05aca6daee4c12666a0c2715bbae81d0c3a603758de72ea30cee6255"
+    },
+    {
+      "name": "assess-vulnerability",
+      "path": "skills/climate-risk/assess-vulnerability/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "b71d942ecdf0f953737bd2d8539192967aa7d0095f210c6efe8d51aaf52edc87"
+    },
+    {
+      "name": "build-climate-risk-register",
+      "path": "skills/climate-risk/build-climate-risk-register/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "6a8256f8ef4f15fe0a4180892d00af9f388aa16697fbc4159b134ec844c5bbbb"
+    },
+    {
+      "name": "develop-climate-resilience-plan",
+      "path": "skills/climate-risk/develop-climate-resilience-plan/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "757f5ce86f6b5dc97e55db0b22a7601480f4b034552148ff88d9230cff0524d9"
+    },
+    {
+      "name": "identify-adaptation-options",
+      "path": "skills/climate-risk/identify-adaptation-options/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "0892f8c499a03f4c881632100de6f9a0fd185d1a945b75215e7e00faa66c9e1c"
+    },
+    {
+      "name": "identify-climate-hazards",
+      "path": "skills/climate-risk/identify-climate-hazards/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "0b8f081cf4f51b65ea13af5192dfc863881e2de57528c2a09c6a013ba88bd43b"
+    },
+    {
+      "name": "identify-market-risk",
+      "path": "skills/climate-risk/identify-market-risk/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "c875c9605dee7056ee61f91b9baeb78f0a02daeb95adb42c7a7aefb501b744ed"
+    },
+    {
+      "name": "identify-policy-risk",
+      "path": "skills/climate-risk/identify-policy-risk/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "20dbf904efeddefbb61edca235cbacf4ed80ed207a96ea5920f67f73d69531b7"
+    },
+    {
+      "name": "identify-reputation-risk",
+      "path": "skills/climate-risk/identify-reputation-risk/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "7a959f8c2e180de15cac3033af4d642fea0a12cb53d6e28603c228a149824b0c"
+    },
+    {
+      "name": "identify-technology-risk",
+      "path": "skills/climate-risk/identify-technology-risk/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "d0b7d8cadfeedd27c5e2f1de4c9c00fc7d04d0feee853e3236ae664da4765cb2"
+    },
+    {
+      "name": "map-assets-to-hazards",
+      "path": "skills/climate-risk/map-assets-to-hazards/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "d989b768e9986faa5bb510bab4bd3165b4bd37e18032b9b52bb36085708a3d78"
+    },
+    {
+      "name": "prioritize-climate-risks",
+      "path": "skills/climate-risk/prioritize-climate-risks/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "d6b4774d55e1b0550936b00d521665ac4eb2ab7bc2af247d4b95ac0a7cbe8da2"
+    },
+    {
+      "name": "score-physical-risk",
+      "path": "skills/climate-risk/score-physical-risk/SKILL.md",
+      "contract_version": "0.1.0",
+      "reviewed_capability_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+      "sha256_utf8_lf": "a1dba857a671f40b5d2400ddb8c76626c9d0a49ad6ccd2b24897561bdd7ba8ee"
+    }
+  ],
+  "review_record": "docs/development-review.md",
+  "limits": [
+    "Declared physical/transition screening, ordinal bounds and prospective resilience are not validated probability, loss, safety or legal determinations.",
+    "Source/scenario/site fitness, effectiveness, implementation and full organization coverage remain unverified.",
+    "This subsequent interface does not inherit entrypoint approval; scoped/independent organization and public-v1 gates remain open."
+  ]
+}
