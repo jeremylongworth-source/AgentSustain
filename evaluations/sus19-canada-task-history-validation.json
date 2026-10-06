@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-06",
+  "timezone": "America/Toronto",
+  "base_revision": "b151a43",
+  "prior_approved_development_revision": "7bad9dd3a07069b7a99979f80fd509ad0eb40486",
+  "execution_contract": "jurisdiction-tasks-0.3.0",
+  "later_scoped_source_method_legal_currentness_reuse_review": "pending",
+  "suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "status": "passed",
+    "returncode": 0,
+    "tests": 755,
+    "duration_seconds": 631.844,
+    "files_unchanged": true
+  },
+  "focused_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_canada_task_history -v",
+    "tests": 8,
+    "duration_seconds": 38.179,
+    "status": "passed"
+  },
+  "architecture_checks": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_architecture.py -v",
+    "tests": 20,
+    "duration_seconds": 0.178,
+    "status": "passed"
+  },
+  "new_actual_cli_helper_cases": 7,
+  "old_canada_actual_cli_full_output_replays": 6,
+  "old_neutral_task_actual_cli_full_output_replays": 3,
+  "preserved_other_prior_source_files": 260,
+  "intentionally_modified_runtime": [
+    "scripts/jurisdiction_tasks.py",
+    "scripts/canada_task_workflow.py"
+  ],
+  "both_catalogs_preserve_original_source_pins_tasks_dates_and_rules": true,
+  "historical_operator_identity_preserved": true,
+  "negative_unknown_unfit_missing_or_wrong_reconciliation_withheld_or_blocked": true,
+  "older_uncovered_year_date_unknown": true,
+  "actual_legal_or_identity_authentication_or_external_action_granted": false,
+  "source_reading": "Parsed original Gazette opening facility-history notification paragraphs and Schedule 3(4) operator responsibility on 2026-10-06; no raw bytes/archive/authenticity claim.",
+  "file_sha256": {
+    "docs/architecture-review.md": "d5903d931f912994559761d809bcf3819a55d4732712f3496c08dfa905cc2cd1",
+    "docs/development-review.md": "597792dfba831c8c1e712c256790bb4fd0c8443c4ed3a08dcaaf425dbce05b87",
+    "docs/development-status.md": "26bbfae9b07e6c7d9fc9be7fc9a4906d88a5f7e2fddfe8f1e931414ae8c92663",
+    "docs/jurisdiction-model.md": "2a359de2e48aba02b2ae2a505bc42a1ac2be0dbc35d81e21705865f4f88c2ceb",
+    "docs/canada-task-workflow.md": "05c8bdacbff6e196f983a6e4a4f935561e0f208ebb9b6abbc463253ff71cc42b",
+    "docs/v1-evidence-audit.md": "504cf56692d3df75b118a9b1ed65f676630c015d5b3fd24fd14cd228a9172a95",
+    "scripts/jurisdiction_tasks.py": "b2c2bf3bd1697600d8c213a7fccf39062e38cb92c07a15b6438d31cf346fb042",
+    "scripts/canada_task_workflow.py": "32edd6bd16ca88f4239736d4980c95fdc8636c2479d2fd9a2410b8ac108408b2",
+    "tests/test_canada_task_history.py": "992b5301f88bf22efd805f8dcf79b835dd046501decbfb0baaa26d3fa8bf6b03",
+    "standards/jurisdictions/canada/ghgrp/tasks-notice2023-history-1.json": "9b60cca30b9925ba3f6c20635517a3a254ea27f255ca602cdebe5e8bd980bafe",
+    "standards/jurisdictions/canada/ghgrp/tasks-amended2025-history-1.json": "02bc2bdbc6607b7b411ac07b99db55034717b6d49f6a3a2e57afda8f8787bf7b",
+    "evaluations/sus19-canada-task-history.json": "09c07187526e0a93a304b287e36b80153988c70f1f02f04eb730e23dac5cdb48",
+    "evaluations/sus19-canada-task-history.md": "9886ab43c1f3326403821a9627b39e67220915e28b87968ab648192c3009c074",
+    "evaluations/sus19-canada-task-history-prior-hashes.json": "26d4deaaa2a89e3c4267afc568f06e123d82da651514a407cc9c4409286fc371",
+    "evaluations/sus19-canada-task-history-suite-run.json": "03064d9e0d9a356a9d3305a1731cdff6a65726b3c954c6095fd92ef0c3d11cb0"
+  },
+  "remaining_requirements": [
+    "Later scoped owner review of the new interface.",
+    "Source custody/authenticity, actual statutory subject continuity, operator/legal successor/retention duty and method/legal/currentness/reuse review.",
+    "Complete reporting/sector/framework methods, broader raw inputs/routing and independent organization/agent acceptance.",
+    "Owner license/contribution/security decisions and all full-roadmap public-v1 and release requirements."
+  ],
+  "full_roadmap_goal": "active; not complete",
+  "push_merge_publish_release_deploy_contact_authorized": false
+}

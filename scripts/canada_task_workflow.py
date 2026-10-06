@@ -10,7 +10,8 @@ from .manager_workflow import _empty
 from .state_proposal import propose
 
 
-CATALOGS={'canada/ghgrp/tasks-notice2023-1.json','canada/ghgrp/tasks-amended2025-1.json'}
+CATALOGS={'canada/ghgrp/tasks-notice2023-1.json','canada/ghgrp/tasks-amended2025-1.json',
+          'canada/ghgrp/tasks-notice2023-history-1.json','canada/ghgrp/tasks-amended2025-history-1.json'}
 
 
 def run_canada_tasks(state,p):

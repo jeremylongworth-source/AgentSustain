@@ -12,6 +12,7 @@ from .state_proposal import propose
 
 CONTRACT = 'jurisdiction-tasks-0.1.0'
 ANCHOR_CONTRACT = 'jurisdiction-tasks-0.2.0'
+HISTORY_CONTRACT = 'jurisdiction-tasks-0.3.0'
 
 
 def _retention_date(anchor, years):
@@ -34,7 +35,7 @@ def load_task_catalog(pin, fixture_mode):
     _fields(catalog, {'id', 'version', 'execution_contract', 'synthetic', 'screen_pack_pin',
                      'rule_ids', 'tasks', 'scope', 'limitations'},
             ('id', 'version', 'execution_contract', 'scope', 'limitations'))
-    if catalog['execution_contract'] not in {CONTRACT, ANCHOR_CONTRACT} or not isinstance(catalog['synthetic'], bool):
+    if catalog['execution_contract'] not in {CONTRACT, ANCHOR_CONTRACT, HISTORY_CONTRACT} or not isinstance(catalog['synthetic'], bool):
         raise ValueError('Explicit task execution contract and synthetic flag required.')
     if catalog['synthetic'] and not fixture_mode:
         raise ValueError('Fictional task catalogs require explicit fixture mode.')
@@ -47,13 +48,13 @@ def load_task_catalog(pin, fixture_mode):
     seen = set()
     for task in catalog['tasks']:
         fields = {'id', 'kind', 'trigger', 'deadlines', 'retention_years', 'source', 'uncertainty'}
-        if catalog['execution_contract'] == ANCHOR_CONTRACT:
+        if catalog['execution_contract'] in {ANCHOR_CONTRACT, HISTORY_CONTRACT}:
             fields |= {'retention_anchor_basis', 'retention_anchor_task_id'}
         _fields(task, fields,
                 ('id', 'kind', 'trigger', 'uncertainty'))
         expected = {'report': 'reporting_condition', 'notify': 'prior_report_no_current_condition',
                     'certify': 'reporting_condition', 'retain': 'current_submission'}
-        if catalog['execution_contract'] == ANCHOR_CONTRACT:
+        if catalog['execution_contract'] in {ANCHOR_CONTRACT, HISTORY_CONTRACT}:
             basis = task['retention_anchor_basis']; ident = task['retention_anchor_task_id']
             if task['kind'] == 'retain':
                 if basis not in {'actual_submission', 'required_submission'}:
@@ -93,7 +94,7 @@ def load_task_catalog(pin, fixture_mode):
         if not catalog['synthetic'] and not source['locator'].startswith('https://'):
             raise ValueError('Real task sources require primary HTTPS locators.')
         _date(source['retrieved'])
-    if catalog['execution_contract'] == ANCHOR_CONTRACT:
+    if catalog['execution_contract'] in {ANCHOR_CONTRACT, HISTORY_CONTRACT}:
         tasks = {t['id']: t for t in catalog['tasks']}
         for task in tasks.values():
             if task['kind'] == 'retain' and task['retention_anchor_basis'] == 'required_submission':
@@ -105,8 +106,11 @@ def load_task_catalog(pin, fixture_mode):
 
 def prepare_jurisdiction_tasks(state, parameters):
     validate_state(state)
-    _fields(parameters, {'screen_result_id', 'task_catalog_pin', 'history', 'task_reviews',
-                         'planning_review', 'fixture_mode', 'result_id'}, ('screen_result_id', 'result_id'))
+    parameter_fields = {'screen_result_id', 'task_catalog_pin', 'history', 'task_reviews',
+                        'planning_review', 'fixture_mode', 'result_id'}
+    if 'history_operator_reviews' in parameters:
+        parameter_fields.add('history_operator_reviews')
+    _fields(parameters, parameter_fields, ('screen_result_id', 'result_id'))
     if type(parameters['fixture_mode']) is not bool or any(r['id'] == parameters['result_id'] for r in state['results']):
         raise ValueError('Explicit fixture mode and unused result ID required.')
     result = {'id': parameters['result_id'], 'skill': 'prepare-jurisdiction-task-register',
@@ -147,6 +151,9 @@ def prepare_jurisdiction_tasks(state, parameters):
             raise ValueError('Refresh screening for the task review date; no stale currency inference.')
         refs.update(owner['evidence_ids'])
         catalog = load_task_catalog(parameters['task_catalog_pin'], parameters['fixture_mode'])
+        extended_history = catalog['execution_contract'] == HISTORY_CONTRACT
+        if extended_history != ('history_operator_reviews' in parameters):
+            raise ValueError('History reconciliation requires explicit 0.3 catalog and review list; older contracts remain unchanged.')
         pin = catalog['screen_pack_pin']
         if pin not in screen['pins']:
             raise ValueError('Task catalog must select the exact screened rule pack bytes.')
@@ -158,25 +165,62 @@ def prepare_jurisdiction_tasks(state, parameters):
             raise ValueError('Task years must be covered by every selected screening branch in this edition.')
         subjects = screen['subjects']; year = int(review['period']['start'][:4])
         history = {}
+        operator_reviews = {}
+        if extended_history:
+            if not isinstance(parameters['history_operator_reviews'], list):
+                raise ValueError('Explicit history operator review list required.')
+            for item in parameters['history_operator_reviews']:
+                _fields(item, {'subject_id', 'reporting_year', 'historical_operator_id', 'candidate_operator_id',
+                              'same_statutory_subject', 'boundary_id', 'period', 'as_of_date',
+                              'evidence_ids', 'evidence_fit', 'rationale', 'reviewer_role'},
+                        ('subject_id', 'historical_operator_id', 'candidate_operator_id', 'rationale', 'reviewer_role'))
+                if type(item['reporting_year']) is not int or not 1 <= item['reporting_year'] <= year:
+                    raise ValueError('Nonfuture canonical historical reporting year required.')
+                key = (item['subject_id'], item['reporting_year'])
+                if key in operator_reviews or item['subject_id'] not in subjects:
+                    raise ValueError('Distinct selected subject/year operator review required.')
+                if (item['candidate_operator_id'] != subjects[item['subject_id']]['record']['candidate_operator_id']
+                    or item['boundary_id'] != review['boundary_id'] or item['period'] != review['period']
+                    or item['as_of_date'] != review['as_of_date'] or item['evidence_fit'] not in FIT
+                    or item['same_statutory_subject'] is not None and type(item['same_statutory_subject']) is not bool):
+                    raise ValueError('Matched subject/operator/boundary/period/date and explicit identity fitness required.')
+                sources = _sources(state, item['evidence_ids'], refs)
+                fit = (planning_fit and subjects[item['subject_id']]['supported'] and bool(sources)
+                    and item['same_statutory_subject'] is True and item['evidence_fit'] == 'reviewed_supporting'
+                    and all(e['boundary_id'] == review['boundary_id'] and e['source']['version'] is not None
+                        and _date(e['source']['accessed']) <= as_of
+                        and _date(e['period']['start']) <= as_of <= _date(e['period']['end']) for e in sources))
+                operator_reviews[key] = {'review': copy.deepcopy(item), 'sources': sources, 'supported': fit,
+                                         'identity_authenticated': False, 'legal_successor_determined': False}
         if not isinstance(parameters['history'], list) or not isinstance(parameters['task_reviews'], list):
             raise ValueError('Explicit history and task review lists required.')
         for h in parameters['history']:
             _fields(h, {'subject_id', 'operator_id', 'reporting_year', 'submitted', 'submitted_date', 'observed_date',
                         'evidence_ids', 'evidence_fit', 'rationale'}, ('subject_id', 'operator_id', 'rationale'))
             key = (h['subject_id'], h['reporting_year'])
-            if h['subject_id'] not in subjects or type(h['reporting_year']) is not int or h['reporting_year'] not in {year-1, year} or key in history or h['evidence_fit'] not in FIT or h['submitted'] is not None and type(h['submitted']) is not bool:
+            if h['subject_id'] not in subjects or type(h['reporting_year']) is not int or not (1 <= h['reporting_year'] <= year if extended_history else h['reporting_year'] in {year-1, year}) or key in history or h['evidence_fit'] not in FIT or h['submitted'] is not None and type(h['submitted']) is not bool:
                 raise ValueError('Distinct selected subject/current-or-prior-year history required.')
             observed = _date(h['observed_date']) if h['observed_date'] is not None else None
             submitted = _date(h['submitted_date']) if h['submitted_date'] is not None else None
             if observed and observed > as_of or submitted and (h['submitted'] is not True or not observed or submitted > observed or submitted.year < h['reporting_year']):
                 raise ValueError('Supported nonfuture history chronology required; no invented submissions.')
             sources = _sources(state, h['evidence_ids'], refs)
+            reconciliation = operator_reviews.get(key)
+            if reconciliation and reconciliation['review']['historical_operator_id'] != h['operator_id']:
+                raise ValueError('Operator review must preserve the exact historical operator identity.')
+            operator_fit = h['operator_id'] == subjects[h['subject_id']]['record']['candidate_operator_id']
+            if reconciliation:
+                operator_fit = reconciliation['supported']
             supported = (planning_fit and bool(sources) and h['evidence_fit'] == 'reviewed_supporting' and observed is not None
-                and h['operator_id'] == subjects[h['subject_id']]['record']['candidate_operator_id']
+                and operator_fit
                 and all(e['boundary_id'] == review['boundary_id'] and e['source']['version'] is not None
                     and _date(e['source']['accessed']) <= as_of and _date(e['period']['start']) <= observed <= _date(e['period']['end'])
                     and (submitted is None or _date(e['period']['start']) <= submitted <= _date(e['period']['end'])) for e in sources))
             history[key] = {'record': copy.deepcopy(h), 'sources': sources, 'supported': supported}
+            if extended_history:
+                history[key]['operator_reconciliation'] = copy.deepcopy(reconciliation)
+        if set(operator_reviews) - set(history):
+            raise ValueError('Operator reconciliation cannot borrow an absent historical record.')
         task_reviews = {}
         for item in parameters['task_reviews']:
             _fields(item, {'task_id', 'checked_as_of', 'evidence_ids', 'evidence_fit', 'rationale'}, ('task_id', 'rationale'))
@@ -202,11 +246,11 @@ def prepare_jurisdiction_tasks(state, parameters):
                     trigger = False if prior is False or current_condition is True else True if prior is True and current_condition is False else None
                 elif task['kind'] == 'retain':
                     trigger = prior
-                    if catalog['execution_contract'] == ANCHOR_CONTRACT and task['retention_anchor_basis'] == 'required_submission':
+                    if catalog['execution_contract'] in {ANCHOR_CONTRACT, HISTORY_CONTRACT} and task['retention_anchor_basis'] == 'required_submission':
                         trigger = current_condition
                 covered = str(year) in task['deadlines']
                 anchor_detail = None
-                if catalog['execution_contract'] == ANCHOR_CONTRACT and task['kind'] == 'retain':
+                if catalog['execution_contract'] in {ANCHOR_CONTRACT, HISTORY_CONTRACT} and task['kind'] == 'retain':
                     anchor_detail = {'basis': task['retention_anchor_basis'], 'report_task': None,
                                      'source_review': None, 'source_snapshots': [], 'source_fit': None}
                     if task['retention_anchor_basis'] == 'required_submission':
@@ -245,7 +289,7 @@ def prepare_jurisdiction_tasks(state, parameters):
                     'trigger': trigger, 'candidate_status': status, 'candidate_date': due, 'retention_anchor': anchor,
                     'candidate_date_precedes_assessment': due is not None and _date(due) < as_of,
                     'legal_obligation_determined': False, 'completion_verified': False, 'filing_authorized': False})
-                if catalog['execution_contract'] == ANCHOR_CONTRACT:
+                if catalog['execution_contract'] in {ANCHOR_CONTRACT, HISTORY_CONTRACT}:
                     rows[-1]['retention_anchor_selection'] = anchor_detail
         report = {'execution_contract': catalog['execution_contract'], 'catalog': catalog, 'catalog_pin': copy.deepcopy(parameters['task_catalog_pin']),
                   'screen_result_id': owner['id'], 'screen_snapshot': screen, 'history': list(history.values()),
