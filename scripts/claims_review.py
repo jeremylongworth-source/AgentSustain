@@ -1,5 +1,6 @@
 """Evidence-linked claim review candidates, never legal or publication approval."""
 import copy
+import hashlib
 import json
 
 from .climate_tools import _date, _fields, _sources, _text
@@ -92,6 +93,9 @@ def assess_claim(state, parameters, inventory_sources=None):
         if not isinstance(parameters['criteria'],list):raise ValueError('Explicit criterion review list required.')
         required=BASE|EXTRA.get(claim['kind'],set())
         if inventory_sources is not None and claim['scope']=='whole_subject':required=required|{'inventory'}
+        comparison_ids={i for i,v in (inventory_sources or {}).items() if v.get('execution_contract')=='claim-comparison-0.1.0'}
+        if comparison_ids:
+            required=required|{'quantity'}
         seen=set();rows=[];cache={}
         for criterion in parameters['criteria']:
             _fields(criterion, {'id','assertion','boundary_id','period','unit','evidence_ids','source_result_ids','evidence_fit',
@@ -104,6 +108,8 @@ def assess_claim(state, parameters, inventory_sources=None):
             if type(criterion['qualification_visible']) is not bool or not isinstance(criterion['qualifications'],list) or any(not _text(q) for q in criterion['qualifications']):
                 raise ValueError('Explicit qualification prominence and original qualification strings required.')
             fit=context_fit and current(evidence) and criterion['evidence_fit']=='reviewed_supporting' and criterion['boundary_id']==claim['boundary_id'] and criterion['period']==claim['period']
+            if comparison_ids and criterion['id'] in {'quantity','baseline','comparability','inventory'}:
+                fit=fit and len(criterion['source_result_ids'])==1 and criterion['source_result_ids'][0] in comparison_ids
             if not parameters['fixture_mode'] and any(e['source']['locator'].startswith('fixture:') for e in evidence):fit=False
             sources=[]
             for ident in criterion['source_result_ids']:
@@ -111,14 +117,14 @@ def assess_claim(state, parameters, inventory_sources=None):
                 if owner is None:raise ValueError('Every selected claim source result must resolve.')
                 refs.update(owner['evidence_ids'])
                 if ident not in cache:
-                    cache[ident]=(inventory_sources.get(ident) if inventory_sources is not None and owner['skill']=='build-ghg-inventory'
+                    cache[ident]=(inventory_sources.get(ident) if inventory_sources is not None and owner['skill'] in {'build-ghg-inventory','compare-ghg-inventories'}
                                   else _reproduce(state,owner,result['id']))
                 record=cache[ident];sources.append({'result':copy.deepcopy(owner),'reproduced_report':copy.deepcopy(record)})
                 if record is None or owner['status']=='blocked':
                     fit=False
                     if any(d['code']=='EMISSION_FACTOR_REQUIRED' for d in owner['diagnostics']):gap('Selected claim source has no defensible factor.','EMISSION_FACTOR_REQUIRED')
                 elif any(m['period']!=claim['period'] or m['boundary_id']!=claim['boundary_id'] for m in owner['metrics']):fit=False
-                if record and owner['skill']=='build-ghg-inventory':
+                if record and owner['skill'] in {'build-ghg-inventory','compare-ghg-inventories'}:
                     fit=fit and record['source_fit'] and claim['subject_kind']=='organization' and claim['subject_id']==state['organization']['id']
                     fit=fit and record['claim_inventory_review']['as_of_date']==review['as_of_date']
                     if claim['scope']=='whole_subject':fit=fit and record['declared_scope_coverage_reproduced']
@@ -130,9 +136,9 @@ def assess_claim(state, parameters, inventory_sources=None):
                 if record and owner['skill']=='build-facility-gas-ledger':
                     if (claim['subject_kind']!='facility' or record['ledger_review']['facility_id']!=claim['subject_id']
                         or claim['scope']!='selected_sources' or not record['declared_coverage_reproduced']):fit=False
-                elif record and owner['skill']!='build-ghg-inventory' and (claim['subject_kind']!='organization' or claim['scope']!='selected_sources'):
+                elif record and owner['skill'] not in {'build-ghg-inventory','compare-ghg-inventories'} and (claim['subject_kind']!='organization' or claim['scope']!='selected_sources'):
                     fit=False  # Raw gas results have organization-bound activity, not a product/facility attribution bridge.
-                if record and owner['skill']!='build-ghg-inventory' and not parameters['fixture_mode']:
+                if record and owner['skill'] not in {'build-ghg-inventory','compare-ghg-inventories'} and not parameters['fixture_mode']:
                     inputs_code=REPLAY[owner['skill']][1]
                     if _diagnostic(owner,inputs_code)['fixture_mode']:fit=False
             if criterion['source_result_ids']:
@@ -148,11 +154,15 @@ def assess_claim(state, parameters, inventory_sources=None):
                 if len(selected_metrics)!=1 or criterion['quantity']['expected_value'] is None:fit=False
                 else:
                     expected_value=number(criterion['quantity']['expected_value'])
+                    if any(s['reproduced_report'] and s['reproduced_report'].get('quantity_interpretation')=='decrease_magnitude'
+                           and any(m['id']==criterion['quantity']['metric_id'] for m in s['result']['metrics']) for s in sources):
+                        if expected_value<0:fit=False
+                        expected_value=-expected_value  # Explicit supplied direction, never a text-derived polarity guess.
                     quantity_mismatch=expected_value!=number(selected_metrics[0]['value'])
                     fit=fit and selected_metrics[0]['unit']==criterion['unit']
             elif criterion['id']=='quantity':fit=False
             if criterion['id']=='inventory':
-                fit=fit and inventory_sources is not None and len(sources)==1 and sources[0]['result']['skill']=='build-ghg-inventory' and bool(sources[0]['reproduced_report']) and sources[0]['reproduced_report']['declared_scope_coverage_reproduced']
+                fit=fit and inventory_sources is not None and len(sources)==1 and sources[0]['result']['skill'] in {'build-ghg-inventory','compare-ghg-inventories'} and bool(sources[0]['reproduced_report']) and sources[0]['reproduced_report']['declared_scope_coverage_reproduced']
             if inventory_sources is not None and criterion['id'] in {'reductions','credits','residuals'}:
                 fit=False  # Inventory arithmetic supplies none of these distinct substantiation methods.
             if criterion['id']=='jurisdiction':fit=False  # Core assessment never determines legal applicability.
@@ -162,7 +172,13 @@ def assess_claim(state, parameters, inventory_sources=None):
             elif fit and criterion['verdict']=='supports':state_name='SUPPORTED'
             elif fit and criterion['verdict']=='qualified' and criterion['qualifications'] and criterion['qualification_visible'] and set(criterion['qualifications'])<=set(claim['qualifications']):state_name='SUPPORTED_WITH_QUALIFICATION'
             if state_name=='INSUFFICIENT_EVIDENCE':gap(criterion['id']+': evidence/context/method or visible qualification is insufficient; no support inferred.')
-            rows.append({'criterion':copy.deepcopy(criterion),'source_snapshots':evidence,'source_results':sources,'assessment_state':state_name,'source_fit':fit,'quantity_mismatch':quantity_mismatch})
+            recorded_sources=copy.deepcopy(sources)
+            for s in recorded_sources:
+                proof=s['reproduced_report']
+                if proof and proof.get('execution_contract')=='claim-comparison-0.1.0':
+                    s['reproduced_report']={'execution_contract':'claim-comparison-0.1.0','source_result_id':s['result']['id'],
+                        'diagnostic_code':'CLAIM_COMPARISON_SOURCE_CHECK','sha256':hashlib.sha256(json.dumps(proof,sort_keys=True).encode('utf-8')).hexdigest()}
+            rows.append({'criterion':copy.deepcopy(criterion),'source_snapshots':evidence,'source_results':recorded_sources,'assessment_state':state_name,'source_fit':fit,'quantity_mismatch':quantity_mismatch})
         for ident in sorted(required-seen):
             gap(ident+': required criterion was not assessed.');rows.append({'criterion':{'id':ident},'source_snapshots':[],'source_results':[],'assessment_state':'INSUFFICIENT_EVIDENCE','source_fit':False})
         states=[r['assessment_state'] for r in rows]

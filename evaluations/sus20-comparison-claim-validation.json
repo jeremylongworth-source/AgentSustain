@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-05",
+  "timezone": "America/Toronto",
+  "base_revision": "8f4bd4e",
+  "prior_approved_snapshot": "d99a70b72448c8e847ceef8d3bae03445daa841d",
+  "scoped_comparison_and_prior_source_bridge_approval": "pending; subsequent interfaces do not inherit scoped approval",
+  "suite": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+    "tests": 632,
+    "duration_seconds": 413.967,
+    "status": "passed",
+    "includes_repository_architecture_validation": true,
+    "runtime_test_and_material_hashes_unchanged_throughout_final_run": true
+  },
+  "focused_suite": {
+    "command": ".\\.venv\\Scripts\\python.exe -m unittest tests.test_claim_comparison tests.test_claim_inventory tests.test_claim_material tests.test_claims_review",
+    "tests": 35,
+    "duration_seconds": 80.829,
+    "status": "passed"
+  },
+  "earlier_suite_results": [
+    {
+      "tests": 632,
+      "duration_seconds": 405.8,
+      "status": "passed_before_single_proof_references"
+    },
+    {
+      "tests": 632,
+      "duration_seconds": 405.868,
+      "status": "passed_before_final_comparison_criterion_source_binding"
+    }
+  ],
+  "file_sha256": {
+    "README.md": "ca9b612dfb10bbf769be822368a924ab8a2b4c3d07ad1626a437512848898cfc",
+    "docs/architecture-review.md": "356939656990827e7042683b99d34764cf04222336c2c683e81889838b1fed82",
+    "docs/development-review.md": "86eb177530ca11c0eff902721d9b6cc660ae88376482d547f3c1e43fdc0464c3",
+    "docs/development-status.md": "c40ea5231479990438d9246bda108f03abddf96b489f5a44ccd1222b8f34c3f2",
+    "docs/comparison-claim-method.md": "1667e4a16e5b857baf21985de4e3f8d5987995b74e973f243de1642f880719ac",
+    "scripts/claim_comparison.py": "5e4b7a980abd280b3c92f06ba46d018fdb959b20eedd653b89b48625cef7319f",
+    "scripts/claims_review.py": "b8752fd46a3cce99ef93126c233b2091816f13df7345db54ec63c0e102b9efa7",
+    "scripts/run_claims.py": "68576ec34ee576aa6376b517414b0aa61d63cac4dfec20cda76eb9fd9fdae152",
+    "tests/test_claim_comparison.py": "1067e429c90ebda2bd98589814bd2bfc804fe34f2ee38337469a34e80d10a49a",
+    "evaluations/sus20-comparison-claim.json": "1ff415e5dacd8b6393a40434c0ac3141950bd6596cf617ee71bcee26d128c979",
+    "evaluations/sus20-comparison-claim.md": "901eae41d5161b6029dbf29ea80aee55057ada5403391abdbce2aa273fb05470",
+    "standards/claims/materials/fictional-change.json": "8a578613129fed84f8d44c1670b58ac458e3e32f2cda3cc86a322bb8106837ba",
+    "standards/claims/materials/fictional-change-conflict.json": "8e11217fb85b11a2d18d9ad4b64528ba9770f809b9a3c55d212bb6287b77676a",
+    "standards/claims/materials/fictional-change-percent.json": "2b40d0f13ab4ac68526999ce4ac23d5da18ea9a4598a8c2efe92829297bb10e5",
+    "standards/claims/materials/fictional-change-causal.json": "d48dd42b8fd8685f18cbdb7ca1a7ea02a7150895501e23166d44cb666f6c5238",
+    "standards/claims/materials/fictional-change-decrease.json": "dcf404ddcd06d5ae32ccb39fdd3567caafbc7ab6e2f0a5bdcebd235be3d95892"
+  },
+  "new_sequential_helper_cli_cases": 6,
+  "independent_zero_baseline_helper_cli_probes": 1,
+  "historical_complete_saved_helper_cli_replays": 29,
+  "exact_sequential_state_handoff": true,
+  "history_evidence_factor_gap_review_preservation_verified": true,
+  "single_full_proof_and_criterion_hash_references_verified": true,
+  "final_all_new_capture_request_stdout_hashes_verified": true,
+  "material_checkout_integrity": {
+    "standards/claims/materials/fictional-change-causal.json": {
+      "sha256": "d48dd42b8fd8685f18cbdb7ca1a7ea02a7150895501e23166d44cb666f6c5238",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-change-conflict.json": {
+      "sha256": "8e11217fb85b11a2d18d9ad4b64528ba9770f809b9a3c55d212bb6287b77676a",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-change-decrease.json": {
+      "sha256": "dcf404ddcd06d5ae32ccb39fdd3567caafbc7ab6e2f0a5bdcebd235be3d95892",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-change-percent.json": {
+      "sha256": "2b40d0f13ab4ac68526999ce4ac23d5da18ea9a4598a8c2efe92829297bb10e5",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    },
+    "standards/claims/materials/fictional-change.json": {
+      "sha256": "8a578613129fed84f8d44c1670b58ac458e3e32f2cda3cc86a322bb8106837ba",
+      "raw_lf": true,
+      "git_filter_hash_equals_raw_hash": true
+    }
+  },
+  "unchanged_file_sha256": {
+    "schemas/common.schema.json": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+    "schemas/emission-factor.schema.json": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+    "schemas/evidence.schema.json": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+    "schemas/input.schema.json": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+    "schemas/result.schema.json": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+    "schemas/state.schema.json": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637",
+    "scripts/gas_mass.py": "85e8e9c8bc6d4a5c85a8d10fc8e53a8d312ca5c895768c76148285caa38c1dcc",
+    "scripts/gas_conversion.py": "a442f8885aceb189c75e1029591eb28857fe8d756f47d7f1875095a661330b71",
+    "scripts/gas_ledger.py": "99eed9b9678da90624c06743399161e3b1dae98058e11c8d507ccd26a4935d1f",
+    "scripts/jurisdiction_tasks.py": "583607a466d25e72aaf5bc09c2561068d2d45b04f7e769f99c2087c40c7a62e7",
+    "evaluations/sus19-gas-ledger.json": "2eaed34d74831082f8376c9f5a2707f54550864b6c966733ac21dac874e34df0",
+    "evaluations/sus19-gas-conversion.json": "068ec30055b2dbb862cb664037a4bd10160f7326d713a8916f0367156ddeca8d",
+    "evaluations/sus19-gas-mass.json": "9898f20473b7092af4c622bffed00c35e51c1e661432caeb9a8da9b569fccb87",
+    "evaluations/sus19-claims-source-reading.json": "f8735a3aefe0d5f9fadea5e6c08e1858d7db3ee41c4ec8e821db74717b141d83",
+    "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+    "tests/test_claims_review.py": "525eb9f2c87c0c3f0715f4be70be63ea962c2d203fafc5642ec78942adeeb037",
+    "evaluations/sus20-claim-evidence.json": "74edb8b6b46766b195d491d3bf44f85af81cb1a0b107c1878d57cfcd81133f7d",
+    "evaluations/sus20-bound-claim.json": "70b731025be118f0ed1f61650a9a5fdf660297be6dc38ac23fcdcfd226282336",
+    "tests/test_claim_material.py": "fdbd6d3df0e42e63333c9a4de248106c724a5fc9a5c486b0a53563805132ad93",
+    "standards/claims/materials/fictional-selected.json": "7b863066fd50e806493b293263d6b0e9219c082cc80c411c44baa2564a6f3b16",
+    "standards/claims/materials/fictional-conflict.json": "124f1510880c3cdec0001cb584798cec7ae614c3d049a3ae0c5f2c8d43347daa",
+    "evaluations/sus20-inventory-claim.json": "27b01bee9914949f58317a869949eabf188b7455d30f017a3fb5a84b3d50060f",
+    "scripts/claim_inventory.py": "39eaa856464a4878290ebbf8373013019af83157a30cc78cce68ea4d2377bc4d",
+    "tests/test_claim_inventory.py": "e68919365aecfc90d98df60f38c9aab28965713f54564d6a6bf220eba056c7e5"
+  },
+  "core_calculation_integrity": {
+    "scripts/ghg_foundation.py": {
+      "sha256": "633baea0ab102c8f89fab87cb952b6e444715aa3b6288a03296ecd0b44fd9d39",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/ghg_inventory.py": {
+      "sha256": "f60e5abc10e275f34e5cd2dc1b89d3b2d978d357a4720e5e4676d1b3bb93259e",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/scope_accounting.py": {
+      "sha256": "d542b6eb287b7dceeda778e817fb6272986ba8edaa578604431cb3e0b22f848d",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/scope3_accounting.py": {
+      "sha256": "6e7fb8c2338992879fd758726f76b32c00beac21e7245dc71f3e984f11cb3ded",
+      "git_content_unchanged_with_line_endings_normalized": true
+    },
+    "scripts/inventory_analysis.py": {
+      "sha256": "beaa5ea4d7d6a6a4ecf0b6a2ad4a34f9a85f52bb418fc0b949a916773832aaab",
+      "git_content_unchanged_with_line_endings_normalized": true
+    }
+  },
+  "implementation_change_scope": "Separately invoked paired-inventory source context and explicit signed/decrease interpretation; source-bound comparison criteria reference one complete proof by hash. Legacy operation outputs replay unchanged; shared schemas and core calculations are unchanged.",
+  "validation_type": "Author-led fictional observed-change/source replay and supplied semantic interpretation; no authenticated independent scientific/source/legal/organization evaluation.",
+  "remaining_requirements": [
+    "Scoped owner review of subsequent comparison/material/inventory interfaces.",
+    "Independent original-material semantic classification, numerical direction, general impression and visual-prominence review.",
+    "Actual source completeness, archived provenance, rights and qualified scientific/legal/owner decisions.",
+    "Adjusted baselines, normalization/intensity and project counterfactual/avoided-emission/reduction attribution methods.",
+    "Broader product/test/neutrality/future-plan and actual jurisdiction methods.",
+    "Independent end-to-end organization evaluation, individual skill interfaces, routing/specialist skillsets and full public-v1 readiness."
+  ],
+  "goal_status": "active; complete ROADMAP scope retained",
+  "push_publication_or_external_action": false
+}
