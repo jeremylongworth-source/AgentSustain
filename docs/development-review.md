@@ -250,3 +250,16 @@ The separate `claim-inventory-0.1.0` bridge and `claim-evidence-0.3.0` report fo
 ## Subsequent comparison-claim source bridge awaiting scoped review
 
 The `claim-comparison-0.1.0` bridge and `claim-evidence-0.4.0` report follow approved d99a70b without inheriting scoped approval. Review [the contract](comparison-claim-method.md) and [complete fictional evidence](../evaluations/sus20-comparison-claim.md), including explicit retained prior state, both full inventory/account/leaf replays, exact comparison metadata/uncertainty/lineage, compatible periods/boundaries/coverage, signed versus decrease-magnitude interpretation, zero-baseline percentage withholding, source/gap/review retention and observed-versus-causal limits. Existing operations/captures and core calculations are preserved. Semantic interpretation, actual source completeness/authenticity, qualified scientific/legal/owner review, independent organization evaluation and release gates remain open. No project attribution, actual legal/public claim, state-review resolution, wave closure or v1 readiness is approved.
+
+## Scoped owner approval through 7fff776
+
+- Reviewer: project owner via this development chat.
+- User instruction: "approve the review".
+- Reviewed revision/content snapshot: `7fff776d2f2406adefe4eb45a75ae6ffeb05c838`.
+- Decision/date: approved for continued roadmap development on 2026-10-05 (America/Toronto); no additional conditions stated.
+- Scope: the committed snapshot through the comparison-claims bridge, including exact material binding, reproduced inventory/account/leaf source context, declared versus external completeness, signed/decrease-magnitude interpretation, explicit paired periods and retained prior state, selected-comparison criterion binding, single-proof hash references, zero-baseline percentage withholding and observed-versus-causal boundaries.
+- Evidence: [final comparison validation record](../evaluations/sus20-comparison-claim-validation.json), recording 632 repository tests, 35 focused claims tests, six sequential CLI cases, one independent zero-baseline CLI probe and twenty-nine historical full-output replays. These are existing reviewed-snapshot results, not tests rerun for this approval.
+
+This decision supersedes pending scoped-owner-review descriptions for the material, inventory and comparison interfaces committed through 7fff776. Earlier approvals and historical validation artifacts remain unchanged. The unfinished future-goal helper and its uncommitted claims/CLI integration are outside the reviewed snapshot and remain unapproved and unvalidated. Subsequent material changes reopen scoped review.
+
+Approval authorizes continued development under ROADMAP.md. It does not authenticate sources, professional judgments, semantics, organization completeness or actual publication; resolve state/source/legal/owner reviews; establish project causation, neutrality, conformity or v1 readiness; close roadmap waves; or authorize pushing, publishing, merging, releasing, deploying or contacting third parties.
