@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-06",
+  "base_revision": "e867e67",
+  "successful_private_source_archives": 2,
+  "failed_requests": 1,
+  "raw_archive_byte_hashes_rechecked": true,
+  "strict_utf8_decoding_anomalies": 2,
+  "encoding_guessed_repaired_or_lossily_normalized": false,
+  "expected_ascii_notice_markers_confirmed": true,
+  "canonical_source_modules_helpers_schemas_factors_or_tables_changed": false,
+  "raw_source_or_cas_content_publicly_redistributed": false,
+  "source_scientific_legal_currentness_or_reuse_approval": false,
+  "regulatory_pack_activated": false,
+  "earlier_timeout_and_validation_records_rewritten": false,
+  "file_sha256": {
+    "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json": "e7e6b8463ed0d666764f6d33585a553a13c7938a511b97074dc124fb1691db47",
+    "docs/canada-source-custody.md": "fe7585c641c412aa1f8cebc1816f55af8ec569c8ff50140f730a2d855df88384",
+    "docs/canada-ghgrp-source-research.md": "255dda35d1fc55a617c46b4dd90c682309b52c49b9e5731569afa18050d0b822",
+    "docs/canada-ghgrp-draft-screen.md": "c9e74329da7afcbee880c38ffe719b6558937e2b0c3a9ecd38a43af53292f95c",
+    "docs/development-status.md": "34bb8c71812169e2f5c9e9f672ee12621de17e94791372b8446f4ab3a2ae8664",
+    "docs/v1-evidence-audit.md": "730ff0bcd5970589fb886a6ea3931187ff48468d11081f9c99faa966ed99da66"
+  },
+  "tests_rerun": "not required for research/custody documentation with no runtime changes; prior validation retained",
+  "independent_agent_delegation": "pending human authorization; not dispatched",
+  "public_v1_readiness": false,
+  "full_roadmap_goal": "active",
+  "external_action_authorized": false
+}

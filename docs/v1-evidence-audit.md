@@ -82,3 +82,6 @@ The later [acceptance input correction](../evaluations/sus23-acceptance-input-co
 
 
 [Current review discovery](current-review-status.md) now distinguishes the actual owner-approved revision from historical pending sentences in byte-pinned skill assets. A [prepared fresh-context agent forward-test](../evaluations/agent-workflow-forward-test-plan.md) has a sealed-report/afterward-oracle protocol and predeclared safety rubric. It has not run, and delegation requires explicit human authorization under current agent instructions. Preparation is not independent agent/expert/organization acceptance or public-v1 evidence.
+
+
+[Canadian byte-custody evidence](canada-source-custody.md) now records privately archived original/amendment response bytes with exact rechecked hashes, supplementing earlier parsed-only readings. Both source responses have declared-UTF-8 decoding anomalies; the supporting index request timed out. These receipts strengthen observed custody while leaving encoding/source/currentness/interpretation/rights and scientific/legal approval unproven. No executable Canadian module or imported factor/table changed, no regulatory activation occurred, and public-v1 readiness remains unestablished.
