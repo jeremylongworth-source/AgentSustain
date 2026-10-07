@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-07",
+  "reviewer": "Jeremy Longworth via direct development-chat instruction",
+  "checklist_revision": "c05564609ecfcb7bc49faefdc86ab5ebc76602ce",
+  "reviewed_source_revision": "cbafe96c9ca91c1dafccfda499dc6e463b29d14d",
+  "user_instruction": "lets record a1 approve, a2 confirm, a3 approve, a4 hold for now - we will change repo visibility to public when it is ready, a5 keep pending for now, but will be Github reporting",
+  "decisions": {
+    "A1": {
+      "decision": "approved",
+      "scope": "continued local fictional-runner development",
+      "review_set_sha256": "694e5654f4afc6d7e4ef8715cb327d5c55874391e27278223ee0410503ff2657"
+    },
+    "A2": {
+      "decision": "confirmed_by_owner",
+      "scope": "selected 40-file preview distribution permission/confidentiality",
+      "archive_sha256": "398dee8f84733254f55a29f4e83ddb3082808d020da72a69a99757c7d0b62f7a",
+      "automated_legal_clearance": false,
+      "full_repository_history_rights_confirmed": false
+    },
+    "A3": {
+      "decision": "approved",
+      "scope": "exact preview README/limitations and six wiki pages",
+      "archive_sha256": "398dee8f84733254f55a29f4e83ddb3082808d020da72a69a99757c7d0b62f7a",
+      "wiki_set_sha256": "442ba11d37cf2f2552bf61130b4710095fefbfd4f9eb5750f28db1749831af65"
+    },
+    "A4": {
+      "decision": "hold",
+      "future_intent": "change existing repository visibility to public when ready",
+      "current_visibility_change_authorized": false,
+      "clean_export_destination_selected": false
+    },
+    "A5": {
+      "decision": "pending",
+      "selected_route": "GitHub private vulnerability reporting",
+      "enablement_authorized": false
+    }
+  },
+  "approved_artifacts_unchanged": true,
+  "tests_rerun": false,
+  "push_authorized": false,
+  "publication_authorized": false,
+  "security_setting_change_authorized": false,
+  "additional_agents_authorized": false,
+  "professional_state_reviews_resolved": false,
+  "public_v1_readiness": false,
+  "decision_document_sha256": "918d0a9ba10c03a3f4c411da8b4f3f2441fd80013707654136c885437bbf31ab"
+}

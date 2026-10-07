@@ -1,5 +1,7 @@
 # Development status
 
+Latest specific owner decisions: [A1 approved, A2 confirmed, A3 approved, A4 held and A5 pending](preview-owner-decisions-2026-10-07.md), recorded on 2026-10-07 against exact cbafe96 runner/preview/wiki hashes. Continued fixture-runner development and selected preview/copy scope are approved; publication/visibility remains held until the existing repository is ready, and GitHub reporting enablement remains pending. No full-repository/history rights, professional/state, broader acceptance or public-v1 gate is inferred.
+
 ROADMAP.md is authoritative. Snapshot: 2026-10-06, America/Toronto. Latest scoped owner approval: `da4ddb3827931589b1fbf1f95cfef13fcac4075e`; see [the decision ledger](architecture-review.md#scoped-owner-approval-through-da4ddb3) and [current review index](current-review-status.md).
 
 The owner approved the pending thermal-performance, CSV 0.2 classification/organization-acceptance and acceptance input-control interfaces through this committed snapshot. Then-uncommitted food-case work is excluded. Professional/source/state reviews, independent acceptance, license and public-v1/release decisions remain open. That development decision authorized no external action or separate-agent delegation; the later permission for one local evaluation is recorded below. The full roadmap scope remains intact.

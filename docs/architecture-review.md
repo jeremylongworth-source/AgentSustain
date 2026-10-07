@@ -269,3 +269,11 @@ Approval permits continued local roadmap development. Source authenticity, scien
 ## Subsequent fictional workflow runner awaiting scoped review
 
 The `workflow-example-0.1.0` reconstruction interface follows approval through da4ddb3. [Its contract](workflow-example-contract.md) covers bounded exact fixture input, unchanged ingestion/fuel/manager calls, caller/source preservation, explicit supplied-factor omission, qualified or blocked outputs and false acceptance/publication flags. It accepts no oracle and grants no review, source/domain or public-v1 decision. This is a later interface for scoped owner development review; existing approvals and specialist capability pins remain unchanged. The owner's later instruction to push and continue authorizes private-repository synchronization, not professional approval, public visibility, wiki publication or release.
+
+## Scoped owner approval of the fictional runner at cbafe96
+
+On 2026-10-07 Jeremy explicitly recorded **A1 approve** against the c055646 checklist. Reviewed source: `cbafe96c9ca91c1dafccfda499dc6e463b29d14d`; runner review-set SHA-256: `694e5654f4afc6d7e4ef8715cb327d5c55874391e27278223ee0410503ff2657`. [The complete decision record](preview-owner-decisions-2026-10-07.md) retains his direct instruction, reviewed hashes and A2–A5 limits.
+
+This approves continued local development of `workflow-example-0.1.0` under its fixture-only contract and supersedes its preceding pending scoped-review description through that exact source/set. Existing calculation/source/factor/schema/specialist pins and professional/state reviews are unchanged. Existing 842-test/full and final 70-test/subset evidence retain their recorded scopes; the approved file hashes were rechecked, without rerunning tests. Later material changes require separate review.
+
+A2 owner confirmation applies only to the selected preview contents, and A3 to the exact preview/wiki copy. A4 holds publication/visibility until ready; A5 leaves GitHub reporting enablement pending. No professional, source/legal, full repository/history rights, independent/domain, roadmap-wave or public-v1 approval follows, and no external action or extra delegation is granted.
