@@ -4,6 +4,8 @@ Current audit: local committed base `fd146a7`, 2026-10-06, America/Toronto. Owne
 
 Decision: **public-v1 readiness is not established**. Confidence is high that material gates remain open because current source-of-truth documents explicitly identify them. This is an internal evidence/hold-point assessment, not a legal, scientific, source-authenticity or release-owner approval. No publication, push, merge, package distribution, global skill installation or production rollout is authorized.
 
+Subsequent to the preparation at this audit base, one authorized [fresh-context agent evaluation](../evaluations/sus23-food-independent-agent-review.md) completed the required food-case source-to-manager and missing-factor branches. Forty-one reviewer checks and full tracked-file custody passed. Incidental answer clues qualify blindness; supplied-recipe execution does not prove broader reliability, independent domain expertise or release readiness. Earlier not-dispatched descriptions are historical and do not override this later evidence.
+
 | ROADMAP public-v1 check | Observed evidence | Remaining proof / assessment |
 |---|---|---|
 | Domain contract stable and documented | [Domain contract](domain-contract.md), [architecture review](architecture-review.md); original f2d0ac9 approval | Named development interfaces through da4ddb3 have owner approval; final released-contract stability remains unproven |

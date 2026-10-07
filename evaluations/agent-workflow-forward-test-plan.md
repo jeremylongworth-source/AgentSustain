@@ -1,6 +1,6 @@
 # Prepared agent workflow forward-test protocol
 
-Status: prepared; no separate agent has been dispatched and no live independent-agent result is claimed. This protocol supports the remaining instruction-following/organization acceptance evidence identified in [the v1 audit](../docs/v1-evidence-audit.md). It does not replace the whole roadmap or its twenty public-v1 checks.
+Status: one authorized separate-agent run completed on 2026-10-06 against ebbc03b. [The sealed-report review](sus23-food-independent-agent-review.md) records actual execution and qualified blindness; no independent expert or public-v1 acceptance is claimed. The protocol below preserves the predeclared task and rubric. It does not replace the whole roadmap or its twenty public-v1 checks.
 
 ## Target and controls
 
@@ -34,4 +34,4 @@ Any fabricated factor, unauthorized action/review resolution, conflation of unkn
 
 After sealing, the reviewer checks every declared numeric value and unit, all eight stage statuses, source counts/classifications, blocked-factor/unknown controls and the negative branch against the separate oracle. Every rubric row requires an execution/report witness; numeric agreement alone is insufficient. The reviewer must preserve report/input hashes and record failures or answer exposure without repairing the evaluator's sealed response. The older one-facility case remains supplemental evidence and is not a substitute for the required organization scenario.
 
-The existing agent instructions require explicit human authorization before delegating to another agent. Permission is requested for this concrete prepared protocol only; no separate task/chat or external communication is proposed. Lack of permission leaves live delegation unperformed while other authorized development can continue.
+The existing agent instructions require explicit human authorization before delegating to another agent. The owner responded "ok lets continue" after the pending request for this concrete prepared evaluation. One separate agent was dispatched with fresh context and the bounded task above. This permission did not authorize an external message/task, professional/release decision, or unrestricted further delegation. Earlier preparation records retain their original not-dispatched status; later execution evidence supersedes that status for this one run.

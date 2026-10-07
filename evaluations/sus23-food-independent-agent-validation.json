@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-06",
+  "evaluated_revision": "ebbc03b3f78a2e9ea47cf0aa85e1fbece333de96",
+  "sealed_files_unchanged_after_review": 28,
+  "tracked_source_runtime_files_unchanged": true,
+  "post_review_tracked_document_changes": [
+    "docs/current-review-status.md",
+    "docs/development-status.md",
+    "docs/roadmap-completion-audit.md",
+    "docs/v1-evidence-audit.md",
+    "evaluations/agent-workflow-forward-test-plan.md"
+  ],
+  "final_sha256": {
+    "docs/current-review-status.md": "6c77108610b9d0b023880b395cd3ee9b9038c781f3b07441bdf98fe3d10ac349",
+    "docs/development-status.md": "d214a425825e9c6537deef04216b2d25b25a9d88c12272f47938f8038f2e9bff",
+    "docs/roadmap-completion-audit.md": "3e917803973f80d9e76bfc6a7ca6930ead120ac04d75d799f404c031b518a39a",
+    "docs/v1-evidence-audit.md": "77a7b33673ffc164f20a73da8d5618c378d1edb0f1f42902c22a78649e124ba9",
+    "evaluations/agent-workflow-forward-test-plan.md": "238a8520c465e7d6bb903a95f3b9d4daf4b3a3b7a367949015efd2fe727a2a7c",
+    "evaluations/sus23-food-independent-agent-report.md": "d45af1e5f51e506a2a9b5cbe73e9dc8fbb5e5a1e0c56fc79b866abc733f52dc7",
+    "evaluations/sus23-food-independent-agent-review.json": "14142f0414e3d5d996182896547b7623e2b3a65729780964c98ef7855a8849e0",
+    "evaluations/sus23-food-independent-agent-review.md": "9636e392d289dcd46e3e2541f525880497500b913c0a3156ecd1a53e1fa6718f"
+  },
+  "full_suite_rerun": false,
+  "reason": "Evaluation and documentation only; runtime, skill assets and source inputs unchanged.",
+  "public_v1_readiness": false
+}
