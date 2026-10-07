@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-06",
+  "prepared_source_revision": "cbafe96c9ca91c1dafccfda499dc6e463b29d14d",
+  "preview_version": "0.1.0-draft",
+  "archive": "private-data/public-preview/cbafe96/AgentSustain-preview-0.1.0-draft.zip",
+  "archive_sha256": "398dee8f84733254f55a29f4e83ddb3082808d020da72a69a99757c7d0b62f7a",
+  "archive_bytes": 70099,
+  "files": 40,
+  "packaged_source_files": 19,
+  "packaged_schemas": 6,
+  "wiki_pages": 6,
+  "manifest_sha256": "bea61e3b62f86297b25bd011abce1e6c041259b65d673456b23f3a4056a9e516",
+  "manifest_file_pins_verified": 39,
+  "local_markdown_links_verified": 9,
+  "archive_paths_and_exclusions_verified": true,
+  "actual_extracted_package_executions": [
+    {
+      "arguments": [
+        "-c",
+        "import scripts.run_energy, scripts.run_water, scripts.run_resources, scripts.run_finance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "-m",
+        "scripts.data_tools",
+        "examples/preview-conversion.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"value\": 2000.0,\n  \"unit\": \"kWh\",\n  \"factor\": 1000.0,\n  \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "-m",
+        "scripts.data_tools",
+        "D:\\AgentSustain\\private-data\\public-preview\\cbafe96\\invalid-unit.json"
+      ],
+      "returncode": 2,
+      "stdout": "{\"error\": \"INVALID_INPUT\", \"reason\": \"ValueError\"}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "-m",
+        "scripts.data_tools",
+        "D:\\AgentSustain\\private-data\\public-preview\\cbafe96\\unknown-quantity.json"
+      ],
+      "returncode": 2,
+      "stdout": "{\"error\": \"INVALID_INPUT\", \"reason\": \"ValueError\"}\n",
+      "stderr": ""
+    }
+  ],
+  "example_input_bytes_unchanged": true,
+  "limited_credential_patterns": {
+    "private_key": 0,
+    "aws_access_key": 0,
+    "github_token": 0,
+    "openai_token": 0
+  },
+  "scan_limit": "Four credential shapes; not comprehensive security/confidentiality/rights approval.",
+  "project_license": "MIT",
+  "copyright": "Copyright (c) 2026 Jeremy Longworth",
+  "license_normalized_sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+  "license_selected": true,
+  "security_reporting_route": "GitHub private vulnerability reporting",
+  "security_reporting_route_selected": true,
+  "security_reporting_enabled_status": "unverified",
+  "agentsustain_setting_read_http_status": 404,
+  "security_setting_changed": false,
+  "test_report_sent": false,
+  "full_suite_tests": 842,
+  "full_suite_witness": "evaluations/sus24-workflow-example-suite-run.json",
+  "final_subset_tests": 70,
+  "final_subset_witness": "evaluations/sus25-licensed-preview-test-run.json",
+  "validation_scope": "Full suite before MIT-exporter/package-test updates; final 70-test subset and this archive execution cover later changes.",
+  "dependencies_bundled": false,
+  "third_party_material_relicensed": false,
+  "source_rights_approved": false,
+  "owner_preview_approval": false,
+  "publication_authorized": false,
+  "further_push_authorized": false,
+  "public_v1_readiness": false,
+  "original_full_roadmap_scope_preserved": true,
+  "additional_agents_dispatched": false
+}
