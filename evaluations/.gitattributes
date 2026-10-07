@@ -1,0 +1,2 @@
+# Retain the evaluator's exact sealed prose bytes, including original CRLF.
+sus23-food-independent-agent-report.md -text whitespace=cr-at-eol

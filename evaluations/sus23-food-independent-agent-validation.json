@@ -18,9 +18,12 @@
     "evaluations/agent-workflow-forward-test-plan.md": "238a8520c465e7d6bb903a95f3b9d4daf4b3a3b7a367949015efd2fe727a2a7c",
     "evaluations/sus23-food-independent-agent-report.md": "d45af1e5f51e506a2a9b5cbe73e9dc8fbb5e5a1e0c56fc79b866abc733f52dc7",
     "evaluations/sus23-food-independent-agent-review.json": "14142f0414e3d5d996182896547b7623e2b3a65729780964c98ef7855a8849e0",
-    "evaluations/sus23-food-independent-agent-review.md": "9636e392d289dcd46e3e2541f525880497500b913c0a3156ecd1a53e1fa6718f"
+    "evaluations/sus23-food-independent-agent-review.md": "e8b9c0269a963b632e667d68b945d8ce20fc7d619cbba4a247526ee5d5f30421",
+    "evaluations/.gitattributes": "7f2364cb0808899e33e766943fedd78df584d36290fe731a9017aa777ca2eeef"
   },
   "full_suite_rerun": false,
   "reason": "Evaluation and documentation only; runtime, skill assets and source inputs unchanged.",
-  "public_v1_readiness": false
+  "public_v1_readiness": false,
+  "git_index_sealed_prose_sha256": "d45af1e5f51e506a2a9b5cbe73e9dc8fbb5e5a1e0c56fc79b866abc733f52dc7",
+  "line_ending_correction": "3237b72 normalized the copied report; the exact sealed CRLF bytes are restored with a file-specific -text attribute. Private report/seals unchanged."
 }
