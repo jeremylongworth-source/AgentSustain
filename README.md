@@ -6,6 +6,8 @@ Intended users include manufacturers, logistics businesses, commercial facilitie
 
 ## Current status
 
+A [limited public-preview draft](docs/public-preview.md) and [local wiki pages](wiki/Home.md) are being prepared for owner review. The preview excludes unresolved framework/jurisdiction distribution material and does not establish v1 readiness. No license or public release has been approved. See [distribution status](docs/preview-distribution-status.md).
+
 Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9. The ten SUS-05 data skills, shared arithmetic helpers and checked state proposals have initial fictional scenario demonstrations. Broader agent reliability and end-to-end evaluation remain unproven. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
 
 SUS-06 now contains eight GHG foundation skills and a sourced-factor CO2e calculation helper. [Its execution contract](docs/ghg-foundation-contract.md) describes factor applicability, fixture isolation and unsupported methods. Numerical examples are synthetic; no real emission-factor database or complete inventory workflow is provided.

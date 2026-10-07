@@ -1,0 +1,6 @@
+{
+  "operation": "convert",
+  "value": 2,
+  "source_unit": "MWh",
+  "target_unit": "kWh"
+}
