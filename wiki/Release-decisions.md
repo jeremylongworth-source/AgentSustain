@@ -1,7 +1,7 @@
 # Owner decisions before sharing
 
-1. Choose the project distribution license and contributor terms. None is inferred by preparation.
-2. Choose a private security-reporting contact and maintainership process. No external contact is configured here.
+1. The owner selected the collection's MIT project license. Retain the license/copyright and review contributor/third-party provenance; MIT does not relicense external source material. No separate CLA or ownership transfer is introduced.
+2. The owner selected GitHub private vulnerability reporting. Setting/form/delivery verification remains open: AgentSustain's authenticated API read returned 404. No enablement change or test report is authorized by this draft.
 3. Review authorship, confidentiality and rights for the exact proposed preview. Excluded framework/jurisdiction material remains unresolved in the full repository.
 4. Approve the exact archive/revision, public-facing README and wiki pages, and the preview's limitations.
 5. Authorize each consequential publication action separately, including GitHub push, visibility change, wiki publication or release.

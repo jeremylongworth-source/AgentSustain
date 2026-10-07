@@ -1,6 +1,6 @@
 # Getting started
 
-This is a local documentation draft. Publication and distribution license are pending.
+This is a local documentation draft. Original project material is MIT licensed; publication and selected-content rights review remain pending.
 
 For the prepared helper archive, read its README and DISTRIBUTION-STATUS first. Create a Python 3.11+ environment, install `requirements.txt`, and run `python -m scripts.data_tools examples/preview-conversion.json`. The fictional example should report 2,000 kWh from 2 MWh. A successful conversion is not an emissions or savings assessment.
 

@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-06",
+  "source_revision_before_implementation": "56de36e08ec99e847dc9f308a492c6d05e6d82b9",
+  "actual_cli_cases": [
+    {
+      "name": "supported",
+      "arguments": [],
+      "returncode": 0,
+      "request_bytes_unchanged": true,
+      "request_sha256": "bb09c2928e33f4d1ecd8c56d969baa66f60ef16649a6f85f9b37b267761002c5",
+      "output_sha256": "e5a6dbc75c36a9bfe5126a33def8f70dca26e616d884220f4f3d26f1cca8ba78"
+    },
+    {
+      "name": "missing-electricity-factor",
+      "arguments": [
+        "--omit-factor",
+        "synthetic-factor"
+      ],
+      "returncode": 0,
+      "request_bytes_unchanged": true,
+      "request_sha256": "bb09c2928e33f4d1ecd8c56d969baa66f60ef16649a6f85f9b37b267761002c5",
+      "output_sha256": "3b8881d89143a9ea9e302c4e0cec4aa42802bd5a5ab0c0378ec238227119caf3"
+    },
+    {
+      "name": "future-version",
+      "arguments": [],
+      "returncode": 2,
+      "request_bytes_unchanged": true,
+      "request_sha256": "340defa8d04dbeafed753df8ede4cc4685ab2f02d3b1f936b2777d7a6abf0b85",
+      "output_sha256": "9884dd032dd5e253c7c5c6aa7233cdabd8af407cd8681944a081894d36c2c5af"
+    },
+    {
+      "name": "not-supplied-factor",
+      "arguments": [
+        "--omit-factor",
+        "not-supplied"
+      ],
+      "returncode": 2,
+      "request_bytes_unchanged": true,
+      "request_sha256": "bb09c2928e33f4d1ecd8c56d969baa66f60ef16649a6f85f9b37b267761002c5",
+      "output_sha256": "9884dd032dd5e253c7c5c6aa7233cdabd8af407cd8681944a081894d36c2c5af"
+    }
+  ],
+  "supported_manager_full_output_matches_previous": true,
+  "missing_factor_manager_full_output_matches_sealed_agent_execution": true,
+  "bundle_bytes_unchanged": true,
+  "no_accepted_oracle_or_professional_decision": true,
+  "publication_authorized": false,
+  "public_v1_readiness": false
+}

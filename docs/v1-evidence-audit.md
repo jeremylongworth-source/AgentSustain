@@ -8,6 +8,8 @@ Subsequent to the preparation at this audit base, one authorized [fresh-context 
 
 A later [filtered preview proposal](../evaluations/sus25-public-preview-preparation.md) packages selected original helpers/schemas and wiki drafts while excluding unresolved third-party catalogs/research and private/history material. Sixty-six selected checks and exact artifact validation support owner review, not publication or public-v1 readiness. It does not grant a license, settle full-repository source rights or authorize a visibility/wiki/site change. Full roadmap scope and professional/state review boundaries remain unchanged.
 
+Later explicit owner choices select the [collection-matching MIT license and GitHub private-reporting route](collection-license-security-decision.md). Seven primary repository snapshots have identical license bytes; AgentSustain reporting enablement remains unverified after an API 404. A revised licensed/policy preview supersedes the earlier unlicensed proposal, preserving exclusions and approval holds. The [raw-input runner](../evaluations/sus24-workflow-example.md) adds reproducibility; 842 full tests and the later final 70-test subset retain distinct scopes. Source/rights, professional/state, broader acceptance, reporting availability and exact public-surface decisions remain open. No new public-v1 gate is inferred from licensing.
+
 | ROADMAP public-v1 check | Observed evidence | Remaining proof / assessment |
 |---|---|---|
 | Domain contract stable and documented | [Domain contract](domain-contract.md), [architecture review](architecture-review.md); original f2d0ac9 approval | Named development interfaces through da4ddb3 have owner approval; final released-contract stability remains unproven |

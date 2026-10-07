@@ -4,6 +4,8 @@ This controlled SUS-23 case implements the organization scenario in [evaluation 
 
 ## Inputs and reproduction
 
+For a single-command reconstruction from raw inputs, use `python -m scripts.run_workflow_example examples/food-manufacturer-forward-test-input.json`. Add `--omit-factor synthetic-factor` to reproduce the unavailable-electricity-factor branch. [The runner contract](workflow-example-contract.md) explains fixture-only scope, input bounds, candidate-state custody, output and exit semantics. It uses no answer key or saved manager output.
+
 The [version 2 source definition](../examples/food-manufacturer-source-case-v2.json) describes the [41-record CSV](../data/inputs/fictional-food-manufacturer-v2.csv). The original 35-record source and its captures remain historical. Version 2 adds four measured material-consumption rows, a consolidated equivalent-production observation and a projected same-service energy scenario; it also gives modeled future cash flows their respective 2026/2027 periods.
 
 Run the [ingestion request](../examples/food-manufacturer-ingestion-v2.json) with `python -m scripts.run_business_ingestion examples/food-manufacturer-ingestion-v2.json`. The [fuel requests](../examples/food-manufacturer-fuel-conversion-requests.json) supply four sequential helper parameter sets against the evolving imported state. The [manager request](../examples/food-manufacturer-manager-request.json) contains the exact imported/conversion state plus the explicitly supplied existing synthetic electricity factor and its evidence. Run it with `python -m scripts.run_manager examples/food-manufacturer-manager-request.json`. Run the integration checks with `python -m unittest tests.test_food_manufacturer -v`.

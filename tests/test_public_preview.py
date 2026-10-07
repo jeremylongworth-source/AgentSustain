@@ -31,7 +31,11 @@ class PublicPreviewTests(unittest.TestCase):
                     self.assertEqual(package.read(name), (tree / name).read_bytes())
             manifest = json.loads((tree / 'PREVIEW-MANIFEST.json').read_text())
             self.assertFalse(manifest['publication_authorized'])
-            self.assertFalse(manifest['license_selected'])
+            self.assertTrue(manifest['license_selected'])
+            self.assertEqual(manifest['project_license'], 'MIT')
+            self.assertFalse(manifest['security_reporting_enabled_verified'])
+            self.assertTrue({'LICENSE','SECURITY.md','CONTRIBUTING.md','THIRD_PARTY_NOTICES.md'} <= set(names))
+            self.assertIn('Copyright (c) 2026 Jeremy Longworth', (tree/'LICENSE').read_text())
             self.assertFalse(manifest['public_v1_readiness'])
             for name, pin in manifest['files'].items():
                 self.assertEqual(hashlib.sha256((tree / name).read_bytes()).hexdigest(), pin['sha256'])

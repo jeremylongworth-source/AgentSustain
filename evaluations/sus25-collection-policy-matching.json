@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-06",
+  "owner_license_direction": "match collection",
+  "project_license": "MIT",
+  "copyright": "Copyright (c) 2026 Jeremy Longworth",
+  "matched_license_sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+  "reference_repositories": [
+    {
+      "repository": "jeremylongworth-source/AgentSkills",
+      "revision": "45f314d2a3d3201dd5a0304a3a4f3a5f23a905a2",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/AgentSkills/blob/45f314d2a3d3201dd5a0304a3a4f3a5f23a905a2/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/AgentSkills/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "f3a9ac02ffc1bb47f1c213818ed4cffc70fcf54a33a7272b21e9a0847e0202bd",
+          "bytes": 1722,
+          "html_url": "https://github.com/jeremylongworth-source/AgentSkills/blob/45f314d2a3d3201dd5a0304a3a4f3a5f23a905a2/CONTRIBUTING.md",
+          "github_blob_sha": "9cbadcedb532a201fa2ed3bcbee8d2c4cf41aa60",
+          "local_archive": "private-data/collection-policy-reading/AgentSkills/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "57735264cf5047129ecc2e412fae550a46be89732a7a6a93dc10638b45dd2a22",
+          "bytes": 1478,
+          "html_url": "https://github.com/jeremylongworth-source/AgentSkills/blob/45f314d2a3d3201dd5a0304a3a4f3a5f23a905a2/SECURITY.md",
+          "github_blob_sha": "61545924add308ab25b007ac6059a5d3d0decff1",
+          "local_archive": "private-data/collection-policy-reading/AgentSkills/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": false
+        }
+      }
+    },
+    {
+      "repository": "jeremylongworth-source/AgentCADCAM",
+      "revision": "2fd5f918dede5802716aa7965ec21dc8149d578c",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/AgentCADCAM/blob/2fd5f918dede5802716aa7965ec21dc8149d578c/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/AgentCADCAM/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "77515199d4bfcabf0e8cf4ece0a9cbfeac5c9c6d172f06cb0aa67a9e46e9ab3a",
+          "bytes": 1792,
+          "html_url": "https://github.com/jeremylongworth-source/AgentCADCAM/blob/2fd5f918dede5802716aa7965ec21dc8149d578c/CONTRIBUTING.md",
+          "github_blob_sha": "c77f719eb65b1537d4660ddb58ffe1ea0475bf25",
+          "local_archive": "private-data/collection-policy-reading/AgentCADCAM/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "a42c10699054527b3e6dccf821190f35c04ae30c3794d59b3b6528993b134345",
+          "bytes": 2324,
+          "html_url": "https://github.com/jeremylongworth-source/AgentCADCAM/blob/2fd5f918dede5802716aa7965ec21dc8149d578c/SECURITY.md",
+          "github_blob_sha": "4143712c8f96124e32ccbe824d750c38ff845ea2",
+          "local_archive": "private-data/collection-policy-reading/AgentCADCAM/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "repository": "jeremylongworth-source/AgentLogistics",
+      "revision": "a88cf9af690de4e9ebc10ec8db0e892d961d107a",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/AgentLogistics/blob/a88cf9af690de4e9ebc10ec8db0e892d961d107a/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/AgentLogistics/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "a16d7f9b9771b6a1806ee0faa544a1bb0acdca64f1223d5d5c3e8ac0686d6e7d",
+          "bytes": 4783,
+          "html_url": "https://github.com/jeremylongworth-source/AgentLogistics/blob/a88cf9af690de4e9ebc10ec8db0e892d961d107a/CONTRIBUTING.md",
+          "github_blob_sha": "8546a01a9fa780f2b39863faca13ffd6d30eea4d",
+          "local_archive": "private-data/collection-policy-reading/AgentLogistics/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "f0767d61ea93170c00c76593eb2232dcc7228a38040663107cf09e74bb7db88c",
+          "bytes": 1167,
+          "html_url": "https://github.com/jeremylongworth-source/AgentLogistics/blob/a88cf9af690de4e9ebc10ec8db0e892d961d107a/SECURITY.md",
+          "github_blob_sha": "a1fb69c65c0957b303bc876d13033a9e64305b11",
+          "local_archive": "private-data/collection-policy-reading/AgentLogistics/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": false
+        }
+      }
+    },
+    {
+      "repository": "jeremylongworth-source/ChefSkills",
+      "revision": "5bdb66a84f593b7b47c2ca450079c91e7161307d",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/ChefSkills/blob/5bdb66a84f593b7b47c2ca450079c91e7161307d/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/ChefSkills/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "5813149afc60a4d69a065bbe47cb8395565c719db288657dbbebe0dd0fa93eec",
+          "bytes": 2033,
+          "html_url": "https://github.com/jeremylongworth-source/ChefSkills/blob/5bdb66a84f593b7b47c2ca450079c91e7161307d/CONTRIBUTING.md",
+          "github_blob_sha": "4a564db878a89035aa3165c4d34ddc3d8173c875",
+          "local_archive": "private-data/collection-policy-reading/ChefSkills/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "a40173c9d06cb26675ab4498d339e037d4feb994db6e48709618194ab5eb3b40",
+          "bytes": 991,
+          "html_url": "https://github.com/jeremylongworth-source/ChefSkills/blob/5bdb66a84f593b7b47c2ca450079c91e7161307d/SECURITY.md",
+          "github_blob_sha": "2821f756fda144843b102e3eb86f32ba7bada94a",
+          "local_archive": "private-data/collection-policy-reading/ChefSkills/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": false
+        }
+      }
+    },
+    {
+      "repository": "jeremylongworth-source/AgentManufacturing",
+      "revision": "c50a41a75f2ead9226ba5f0eb6b5d87b70cb9de5",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/AgentManufacturing/blob/c50a41a75f2ead9226ba5f0eb6b5d87b70cb9de5/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/AgentManufacturing/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "e2fdaaa8f5d448d200c998da72d0dca11b248a2171c3150fc292eae6658e9b80",
+          "bytes": 2519,
+          "html_url": "https://github.com/jeremylongworth-source/AgentManufacturing/blob/c50a41a75f2ead9226ba5f0eb6b5d87b70cb9de5/CONTRIBUTING.md",
+          "github_blob_sha": "1b03cbcfb23cc2957f3d720dd19742628cfb79dc",
+          "local_archive": "private-data/collection-policy-reading/AgentManufacturing/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "ddb99d47f3fbb79884771657b38a0a7d3ded68a17f92b57f96795127181ca8f5",
+          "bytes": 2182,
+          "html_url": "https://github.com/jeremylongworth-source/AgentManufacturing/blob/c50a41a75f2ead9226ba5f0eb6b5d87b70cb9de5/SECURITY.md",
+          "github_blob_sha": "62186b11d11dd07f7ad4679f0ba4c78c646b25be",
+          "local_archive": "private-data/collection-policy-reading/AgentManufacturing/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "repository": "jeremylongworth-source/AgentInvestigate",
+      "revision": "424d4928d0e742678329b96ab518001c403dc856",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/AgentInvestigate/blob/424d4928d0e742678329b96ab518001c403dc856/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/AgentInvestigate/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "c65e65f27284fed4258c4729f668ac7931747c0370f0bbaa0d655f83e3d336e4",
+          "bytes": 923,
+          "html_url": "https://github.com/jeremylongworth-source/AgentInvestigate/blob/424d4928d0e742678329b96ab518001c403dc856/CONTRIBUTING.md",
+          "github_blob_sha": "08d308661e594bce290d265a0c6ac04820431f6c",
+          "local_archive": "private-data/collection-policy-reading/AgentInvestigate/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "50579c489732e933e10722e344f2f1071ed78aac0e8df866cba12f515c637df7",
+          "bytes": 657,
+          "html_url": "https://github.com/jeremylongworth-source/AgentInvestigate/blob/424d4928d0e742678329b96ab518001c403dc856/SECURITY.md",
+          "github_blob_sha": "a584f7d335c5a9aa7a1ab7775299900bd2768fd2",
+          "local_archive": "private-data/collection-policy-reading/AgentInvestigate/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": false
+        }
+      }
+    },
+    {
+      "repository": "jeremylongworth-source/AgentCannabis",
+      "revision": "ed444dde84f1b43e078fabad79eb2b871322c322",
+      "private": false,
+      "files": {
+        "LICENSE": {
+          "available": true,
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073,
+          "html_url": "https://github.com/jeremylongworth-source/AgentCannabis/blob/ed444dde84f1b43e078fabad79eb2b871322c322/LICENSE",
+          "github_blob_sha": "909e2a88fa66600f35260a0c452897438c25c05b",
+          "local_archive": "private-data/collection-policy-reading/AgentCannabis/LICENSE"
+        },
+        "CONTRIBUTING.md": {
+          "available": true,
+          "sha256": "a5002badb8677ee6c264700aa1e43b4071a3997bef86ae0170bc7df45228f5db",
+          "bytes": 1671,
+          "html_url": "https://github.com/jeremylongworth-source/AgentCannabis/blob/ed444dde84f1b43e078fabad79eb2b871322c322/CONTRIBUTING.md",
+          "github_blob_sha": "aea49bb022be22b9ba9d4b5636a901e973b5d4e7",
+          "local_archive": "private-data/collection-policy-reading/AgentCannabis/CONTRIBUTING.md"
+        },
+        "SECURITY.md": {
+          "available": true,
+          "sha256": "4f95f01f2d540399bacb44b80136ef2ee0834d7f16b57df451d45fea5d1e22d9",
+          "bytes": 1252,
+          "html_url": "https://github.com/jeremylongworth-source/AgentCannabis/blob/ed444dde84f1b43e078fabad79eb2b871322c322/SECURITY.md",
+          "github_blob_sha": "1f26844ef65829934dbdc68865ad96c71a0d1de5",
+          "local_archive": "private-data/collection-policy-reading/AgentCannabis/SECURITY.md"
+        },
+        ".github/SECURITY.md": {
+          "available": false
+        }
+      },
+      "private_vulnerability_reporting_read": {
+        "available": true,
+        "data": {
+          "enabled": false
+        }
+      }
+    }
+  ],
+  "agentsustain_reporting_read": {
+    "http_status": 404,
+    "enabled_status": "unverified"
+  },
+  "security_reporting_route": "GitHub private vulnerability reporting",
+  "security_setting_changed": false,
+  "test_report_sent": false,
+  "third_party_terms_accepted": false,
+  "third_party_material_relicensed": false,
+  "file_sha256": {
+    "LICENSE": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+    "SECURITY.md": "40918cc90560d7ab613bdb40393e6328b2b19eb974d3966a99cbd65c6bcf7bcd",
+    "CONTRIBUTING.md": "92aad8072094bbc46ad4287d7f07b89fdff8be2ff41d9d4a703c888ba616ec41",
+    "THIRD_PARTY_NOTICES.md": "342f455316a1cfe0d15956f3048fe3c9ed6010c9a4250b6d3394c0e8858cf184",
+    "docs/collection-license-security-decision.md": "6232377753181b94c064b65d4109d0b8a968ee5067170e2f0a78b48e2e58952f"
+  },
+  "further_push_authorized": false,
+  "publication_authorized": false,
+  "public_v1_readiness": false
+}

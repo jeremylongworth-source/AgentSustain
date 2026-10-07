@@ -10,6 +10,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 ENTRY_POINTS = ('scripts/data_tools.py', 'scripts/run_energy.py',
                 'scripts/run_water.py', 'scripts/run_resources.py', 'scripts/run_finance.py')
+LICENSE_SHA256 = '11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3'
 
 
 def source_closure():
@@ -39,15 +40,20 @@ def prepare(output):
         raise ValueError('Output must stay under ignored private-data/public-preview')
     if output.exists():
         raise ValueError('Use a fresh output directory; existing artifacts are preserved')
+    license_raw = (ROOT / 'LICENSE').read_bytes()
+    if hashlib.sha256(license_raw.replace(b'\r\n', b'\n')).hexdigest() != LICENSE_SHA256:
+        raise ValueError('Reviewed collection-matching MIT license required')
     selected = source_closure()
     selected += sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / 'schemas').glob('*.schema.json'))
     selected += sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / 'wiki').glob('*.md'))
     selected += ['requirements-dev.txt', 'docs/public-preview.md', 'docs/preview-distribution-status.md',
-                 'examples/preview-conversion.json']
+                 'examples/preview-conversion.json', 'LICENSE', 'SECURITY.md', 'CONTRIBUTING.md', 'THIRD_PARTY_NOTICES.md']
     # Explicit surface: no standards, research, historical captures, customer data,
     # Git history, funding/account metadata, virtual environments or private archives.
     allowed = ('scripts/', 'schemas/', 'wiki/', 'docs/', 'examples/')
-    assert all(n == 'requirements-dev.txt' or n.startswith(allowed) for n in selected)
+    root_files = {'requirements-dev.txt', 'LICENSE', 'SECURITY.md', 'CONTRIBUTING.md', 'THIRD_PARTY_NOTICES.md'}
+    if not all(n in root_files or n.startswith(allowed) for n in selected):
+        raise ValueError('Unsupported preview surface')
     files = {}
     for name in selected:
         path = (ROOT / name).resolve()
@@ -63,7 +69,10 @@ def prepare(output):
         files[target] = raw
     revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     manifest = {'preview_version': '0.1.0-draft', 'source_revision': revision,
-                'publication_authorized': False, 'license_selected': False,
+                'publication_authorized': False, 'license_selected': True, 'project_license': 'MIT',
+                'license_normalized_sha256': LICENSE_SHA256,
+                'security_reporting_route': 'GitHub private vulnerability reporting',
+                'security_reporting_enabled_verified': False,
                 'public_v1_readiness': False, 'scope': 'Selected original neutral arithmetic helpers and shared schemas; no standards/jurisdiction catalogs or agent skill installation',
                 'entry_points': list(ENTRY_POINTS),
                 'excluded': ['standards/**', 'evaluations/**', 'data/**', 'private-data/**', '.git/**', '.github/**', 'skills/**', 'skillsets/**', 'router/**'],
@@ -82,7 +91,8 @@ def prepare(output):
             package.writestr(info, raw)
     receipt = {'archive': archive.relative_to(ROOT).as_posix(), 'sha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
                'files': len(files), 'source_revision': revision, 'publication_authorized': False,
-               'license_selected': False, 'public_v1_readiness': False}
+               'license_selected': True, 'project_license': 'MIT',
+               'security_reporting_enabled_verified': False, 'public_v1_readiness': False}
     (output / 'receipt.json').write_text(json.dumps(receipt, indent=2) + '\n', encoding='utf-8')
     return receipt
 

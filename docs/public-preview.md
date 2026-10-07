@@ -1,6 +1,6 @@
 # AgentSustain — draft public preview
 
-**Prepared for owner review. Not published, not v1, and no distribution license has been selected.**
+**Prepared for owner review. Not published and not v1. Original project material is MIT licensed; third-party rights and publication approval remain separate.**
 
 AgentSustain is an evidence-driven sustainability agent-skill project. The full repository follows SUS-00 through SUS-25. This limited preview packages selected original, vendor-neutral arithmetic helpers and shared schemas so reviewers can inspect a small runnable surface while source, professional and public-v1 gates remain open.
 
@@ -28,6 +28,6 @@ The state-based entry points are `scripts.run_energy`, `scripts.run_water`, `scr
 
 ## Review and distribution
 
-Read [distribution status](preview-distribution-status.md) before sharing or reusing the package. A pending license is not an open-source license or a permission grant. Jeremy must choose a license and security contact, review the exact package and authorize publication separately.
+Read [distribution status](preview-distribution-status.md) before sharing or reusing the package. Jeremy selected the collection's MIT license and GitHub private vulnerability reporting. The archive includes the license and policy notices. MIT does not relicense third-party material; selected-content rights, the private-reporting setting and publication approval remain separate.
 
 Start the [wiki](../wiki/Home.md) for scope, setup, evidence and remaining decisions. Full roadmap capability and public-v1 acceptance remain separate from this preview. The intended repository is [AgentSustain](https://github.com/jeremylongworth-source/AgentSustain); its visibility/content is not changed by this preparation.

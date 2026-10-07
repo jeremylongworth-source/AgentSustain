@@ -6,7 +6,9 @@ Intended users include manufacturers, logistics businesses, commercial facilitie
 
 ## Current status
 
-A [limited public-preview draft](docs/public-preview.md) and [local wiki pages](wiki/Home.md) are being prepared for owner review. The preview excludes unresolved framework/jurisdiction distribution material and does not establish v1 readiness. No license or public release has been approved. See [distribution status](docs/preview-distribution-status.md).
+A [limited public-preview draft](docs/public-preview.md) and [local wiki pages](wiki/Home.md) are prepared for owner review. The original project uses the owner's collection-matching [MIT license](LICENSE); [third-party rights](THIRD_PARTY_NOTICES.md) and public release remain separate. [GitHub private vulnerability reporting](SECURITY.md) is the selected route, with enablement unverified. The preview excludes unresolved framework/jurisdiction distribution material and does not establish v1 readiness. See [distribution status](docs/preview-distribution-status.md).
+
+The required fictional two-facility food-manufacturer case has a [single-command raw-input runner](docs/workflow-example-contract.md): `python -m scripts.run_workflow_example examples/food-manufacturer-forward-test-input.json`. Its qualified outputs preserve missing factors and open reviews; successful execution is not an acceptance decision. This full-checkout example is separate from the limited preview archive.
 
 Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9. The ten SUS-05 data skills, shared arithmetic helpers and checked state proposals have initial fictional scenario demonstrations. Broader agent reliability and end-to-end evaluation remain unproven. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
 
@@ -44,7 +46,7 @@ For a POSIX shell, create the environment with `python3 -m venv .venv`, install 
 
 [Repository validation](.github/workflows/validation.yml) prepares manual checks on Windows and Ubuntu with Python 3.11 and 3.14. It uses read-only repository permissions, pinned action revisions and full Git history. It has no push, schedule, publication or deployment trigger. The matrix is a proposed validation environment, not evidence that those environments pass. Publishing or running it requires separate authorization; native Linux results remain unverified until an actual run succeeds. See [platform validation](docs/platform-validation.md) for the available local evidence and its limits.
 
-Schemas use JSON Schema Draft 2020-12. The same test command runs architecture, data, GHG, scope-composition and saved-artifact checks. Examples are fictional fixtures, not emission factors or advice for a real organization. No license has been chosen yet; public release is gated on the owner's licensing decision.
+Schemas use JSON Schema Draft 2020-12. The same test command runs architecture, data, GHG, scope-composition and saved-artifact checks. Examples are fictional fixtures, not emission factors or advice for a real organization. Original project material uses the owner's collection-matching MIT license; third-party rights and explicit public-release approval remain separate gates.
 
 ## Data skills
 

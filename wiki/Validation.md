@@ -1,6 +1,6 @@
 # Validation and limits
 
-The full development repository's latest recorded suite passed 835 tests. That witness covers its recorded snapshot, not every future change or this preview's entire distribution surface. Controlled fixtures and arithmetic tests cannot establish professional fitness or general agent reliability.
+The full development repository's latest recorded suite passed 842 tests. That witness covers its recorded snapshot, not every future change or this preview's entire distribution surface. Final license/security export changes have their own package checks. Controlled fixtures and arithmetic tests cannot establish professional fitness or general agent reliability.
 
 One fresh-context agent reconstructed the required 150-employee, two-facility fictional manufacturer's source/conversion/manager workflow and a missing-factor branch. Seven actual runs and 41 reviewer checks supported execution, with tracked-file and sealed-artifact custody retained. Source-data answer clues qualified blindness. This is not an independent expert sign-off, a statistical reliability result or public-v1 acceptance.
 

@@ -1,0 +1,9 @@
+# Raw-input fictional workflow runner evidence
+
+Date: 2026-10-06. [The runner contract](../docs/workflow-example-contract.md) adds a single-command reconstruction of the existing required food fixture without an oracle, saved manager state, source writes or new calculation methods. Supported and omitted-electricity-factor runs retain qualified outputs and outstanding review.
+
+Four focused tests passed before the repository run. [Four actual CLI cases](sus24-workflow-example-cli.json) reproduce the complete prior normal-manager and sealed missing-factor outputs, preserve bundle bytes and reject future versions/unsupplied omission IDs. The later final subset reruns all four tests with the final license/policy preview checks.
+
+[The full suite witness](sus24-workflow-example-suite-run.json) records **842 tests passing in 848.018 seconds**, return code 0 and unchanged frozen code/test/schema/source/asset hashes. After that run the preview exporter and its package test were updated for the explicit MIT/security owner decision; they are outside a claim of a final full rerun. [The final 70-test witness](sus25-licensed-preview-test-run.json) covers those changes plus runner/data/state/physical/finance regressions. No domain helper, source data, shared schema, factor or specialist asset changed.
+
+The initial explicit push synchronized main through 56de36e to the private intended repository and verified the remote revision. The later license/security instruction limits further work to local preparation, so this new runner and policy/archive updates are not pushed under that instruction. No public visibility, wiki publication, release/deployment, private-reporting enablement or additional evaluator occurred. This later interface awaits scoped owner development review and supplies no professional, source-rights, independent-acceptance or public-v1 decision.
