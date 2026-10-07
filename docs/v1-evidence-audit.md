@@ -6,6 +6,8 @@ Decision: **public-v1 readiness is not established**. Confidence is high that ma
 
 Subsequent to the preparation at this audit base, one authorized [fresh-context agent evaluation](../evaluations/sus23-food-independent-agent-review.md) completed the required food-case source-to-manager and missing-factor branches. Forty-one reviewer checks and full tracked-file custody passed. Incidental answer clues qualify blindness; supplied-recipe execution does not prove broader reliability, independent domain expertise or release readiness. Earlier not-dispatched descriptions are historical and do not override this later evidence.
 
+A later [filtered preview proposal](../evaluations/sus25-public-preview-preparation.md) packages selected original helpers/schemas and wiki drafts while excluding unresolved third-party catalogs/research and private/history material. Sixty-six selected checks and exact artifact validation support owner review, not publication or public-v1 readiness. It does not grant a license, settle full-repository source rights or authorize a visibility/wiki/site change. Full roadmap scope and professional/state review boundaries remain unchanged.
+
 | ROADMAP public-v1 check | Observed evidence | Remaining proof / assessment |
 |---|---|---|
 | Domain contract stable and documented | [Domain contract](domain-contract.md), [architecture review](architecture-review.md); original f2d0ac9 approval | Named development interfaces through da4ddb3 have owner approval; final released-contract stability remains unproven |

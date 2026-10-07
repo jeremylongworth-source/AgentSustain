@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-06",
+  "prepared_source_revision": "8cf5e454a86e8ff49522b43517980ebdbf80706c",
+  "preview_version": "0.1.0-draft",
+  "archive": "private-data/public-preview/8cf5e45/AgentSustain-preview-0.1.0-draft.zip",
+  "archive_sha256": "6df10779b59a4119e7aa6c68611fcd1ff6e4e19b96958ed221f0c56959f773cf",
+  "archive_bytes": 65424,
+  "files": 36,
+  "packaged_source_files": 19,
+  "packaged_schemas": 6,
+  "wiki_pages": 6,
+  "manifest_sha256": "38655b628280871c985fd3a5b352356ae381f87305dbefc2bab07bc10474228c",
+  "manifest_file_pins_verified": 35,
+  "local_markdown_links_verified": 7,
+  "archive_paths_and_exclusions_verified": true,
+  "actual_extracted_package_executions": [
+    {
+      "arguments": [
+        "-c",
+        "import scripts.run_energy, scripts.run_water, scripts.run_resources, scripts.run_finance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "-m",
+        "scripts.data_tools",
+        "examples/preview-conversion.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"value\": 2000.0,\n  \"unit\": \"kWh\",\n  \"factor\": 1000.0,\n  \"source\": \"https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "-m",
+        "scripts.data_tools",
+        "D:\\AgentSustain\\private-data\\public-preview\\8cf5e45\\invalid-unit.json"
+      ],
+      "returncode": 2,
+      "stdout": "{\"error\": \"INVALID_INPUT\", \"reason\": \"ValueError\"}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "-m",
+        "scripts.data_tools",
+        "D:\\AgentSustain\\private-data\\public-preview\\8cf5e45\\unknown-quantity.json"
+      ],
+      "returncode": 2,
+      "stdout": "{\"error\": \"INVALID_INPUT\", \"reason\": \"ValueError\"}\n",
+      "stderr": ""
+    }
+  ],
+  "example_input_bytes_unchanged": true,
+  "limited_credential_patterns": {
+    "private_key": 0,
+    "aws_access_key": 0,
+    "github_token": 0,
+    "openai_token": 0
+  },
+  "scan_limit": "Four credential shapes only; not a comprehensive security, confidentiality or rights determination.",
+  "test_run": "evaluations/sus25-public-preview-test-run.json",
+  "selected_tests_passed": 66,
+  "full_suite_rerun": false,
+  "dependencies_bundled": false,
+  "license_selected": false,
+  "security_contact_selected": false,
+  "source_rights_approved": false,
+  "owner_preview_approval": false,
+  "publication_authorized": false,
+  "public_v1_readiness": false,
+  "original_full_roadmap_scope_preserved": true,
+  "additional_agents_dispatched": false
+}
