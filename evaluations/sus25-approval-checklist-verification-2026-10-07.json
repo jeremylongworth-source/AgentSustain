@@ -1,0 +1,220 @@
+{
+  "date": "2026-10-07",
+  "local_review_revision": "90f0273c4195fe3ff0898eb76cfc038fae0ee1e4",
+  "prepared_source_revision": "cbafe96c9ca91c1dafccfda499dc6e463b29d14d",
+  "archive_sha256": "398dee8f84733254f55a29f4e83ddb3082808d020da72a69a99757c7d0b62f7a",
+  "archive": "private-data/public-preview/cbafe96/AgentSustain-preview-0.1.0-draft.zip",
+  "archive_bytes": 70099,
+  "files": 40,
+  "payload_pins_verified": 39,
+  "manifest_sha256": "bea61e3b62f86297b25bd011abce1e6c041259b65d673456b23f3a4056a9e516",
+  "wiki_sha256": {
+    "wiki/Evidence-and-review.md": "89975c6893dfc1057ed194bc7bd46ce5e87ac984f0998de3a34f0943ac6f7078",
+    "wiki/Getting-started.md": "622b899f537125aab5c2213c69d3644776d3d46e09d81d4b746afc5c69d763cf",
+    "wiki/Home.md": "8840d5aa4f2ddb852bb53a9693e551f960f8eb4173d52528b981ec601ef1ce9c",
+    "wiki/Preview-scope.md": "e725be4103095d4474012bbe97cef053d0e7028110b791f0c82cdf97c033574c",
+    "wiki/Release-decisions.md": "f578f536d6b233c48ec4cc5378f809eb5cd5036ac51a222bbca3f1ae07acf43a",
+    "wiki/Validation.md": "48a8576857ccf24d9cd31d608e6274702096dc9f668e043d5aeaebab02add17a"
+  },
+  "wiki_worktree_matches_archive": true,
+  "runner_file_sha256": {
+    "scripts/workflow_example.py": "0f4284e209384947d6305eea9ff88fd90648c8ee53f0c2bc433f4cfa9b32948b",
+    "scripts/run_workflow_example.py": "a32d8d3285011c718571198b631da2546e8a6e253cec09f6c70333a976630626",
+    "docs/workflow-example-contract.md": "67e5f23b1476a8b4213d1a80c650fcafc4e240d35848a30e20c7fa6f1673ce6a",
+    "tests/test_workflow_example.py": "eb1066c137620b8246fac78a2b52c584ae8597c9fb1a2ee324dd2e1097c1a8e3",
+    "examples/food-manufacturer-forward-test-input.json": "bb09c2928e33f4d1ecd8c56d969baa66f60ef16649a6f85f9b37b267761002c5",
+    "evaluations/sus24-workflow-example-cli.json": "97607c7204d3ff8a9acaa3d8d12c8b3847a37b1ac37fa5f6d7bd4a405987f23a",
+    "evaluations/sus24-workflow-example-suite-run.json": "f3a391566f5221f150cce799ae3a01cc1b344bcea356528ab65d0389013f4ea8"
+  },
+  "packaged_code_schema_lineage": [
+    {
+      "path": "schemas/common.schema.json",
+      "sha256": "3c3434fec4935d2e588d5557e1f1975fe80dc99b9610417ce5d6b2bc6ff7f282",
+      "first_recorded_commit": "f2d0ac9b5b34a4eef3f2678173d387d16fe0784c|Jeremy Longworth|2026-10-04T20:33:53-04:00|Draft sustainability architecture contracts and validation"
+    },
+    {
+      "path": "schemas/emission-factor.schema.json",
+      "sha256": "976a7ae5a988a192777f8f1163552109b98047f655428cbb4b922be5d0a2da8c",
+      "first_recorded_commit": "f2d0ac9b5b34a4eef3f2678173d387d16fe0784c|Jeremy Longworth|2026-10-04T20:33:53-04:00|Draft sustainability architecture contracts and validation"
+    },
+    {
+      "path": "schemas/evidence.schema.json",
+      "sha256": "67585d7286827dc05de33c3845641983c80d444176b93a96b5b5d4c739506377",
+      "first_recorded_commit": "f2d0ac9b5b34a4eef3f2678173d387d16fe0784c|Jeremy Longworth|2026-10-04T20:33:53-04:00|Draft sustainability architecture contracts and validation"
+    },
+    {
+      "path": "schemas/input.schema.json",
+      "sha256": "73c06c77db883d766ec604dc4dc9e1ec0d7488a8bf8419473ba32662a0f18e6a",
+      "first_recorded_commit": "f2d0ac9b5b34a4eef3f2678173d387d16fe0784c|Jeremy Longworth|2026-10-04T20:33:53-04:00|Draft sustainability architecture contracts and validation"
+    },
+    {
+      "path": "schemas/result.schema.json",
+      "sha256": "b23f9ed152c99e32ab3a71dfd69ca344eb21f42553bce8e4d9ba4d2ae7d821a9",
+      "first_recorded_commit": "f2d0ac9b5b34a4eef3f2678173d387d16fe0784c|Jeremy Longworth|2026-10-04T20:33:53-04:00|Draft sustainability architecture contracts and validation"
+    },
+    {
+      "path": "schemas/state.schema.json",
+      "sha256": "e305965601a02ce17243c090774908091c595393bda79ad91ca7b413112b7637",
+      "first_recorded_commit": "f2d0ac9b5b34a4eef3f2678173d387d16fe0784c|Jeremy Longworth|2026-10-04T20:33:53-04:00|Draft sustainability architecture contracts and validation"
+    },
+    {
+      "path": "scripts/contract_validation.py",
+      "sha256": "7d10b157efbbc3a6fd6e044b5937085bb3827d3e41491014bcb0247321319f4a",
+      "first_recorded_commit": "a6028186856317c301287ed4c71121c9e783b4fb|Jeremy Longworth|2026-10-04T20:58:33-04:00|Add sustainability data skills and tested calculation helpers"
+    },
+    {
+      "path": "scripts/data_tools.py",
+      "sha256": "e9d7c970b90ace9d7b7ef0db3803b95534ded65cc76f45db41018293d625b2e3",
+      "first_recorded_commit": "a6028186856317c301287ed4c71121c9e783b4fb|Jeremy Longworth|2026-10-04T20:58:33-04:00|Add sustainability data skills and tested calculation helpers"
+    },
+    {
+      "path": "scripts/energy_projects.py",
+      "sha256": "81573de9fa1272cb656c4e7ba4ea78f7ee5f0baca0547e71ba131847c10e2268",
+      "first_recorded_commit": "40fa7044bfccd0a3c063998512a656a7234eb232|Jeremy Longworth|2026-10-04T22:45:50-04:00|Add evidence-backed preliminary energy project screening"
+    },
+    {
+      "path": "scripts/energy_tools.py",
+      "sha256": "98393ea3235ccd3cf55326df648ce2956ddf21367674e7b4bdc9319c415c6e75",
+      "first_recorded_commit": "6219254af0dc327f2f44940cf58a3db66560c67c|Jeremy Longworth|2026-10-04T22:39:32-04:00|Add initial energy workflows and evidence-backed arithmetic"
+    },
+    {
+      "path": "scripts/finance_abatement.py",
+      "sha256": "49ab5104c7f600fdce3f8ea7bbef1654b8ea7eb54aada0a0ea5922b31c7a3812",
+      "first_recorded_commit": "a267e9c26a958574248a7f68ee081d692ade5471|Jeremy Longworth|2026-10-05T00:04:36-04:00|Calculate reviewed project cost per positive horizon abatement"
+    },
+    {
+      "path": "scripts/finance_business_case.py",
+      "sha256": "037eace9a831d5a9eeef993c6b3adb68ff63d1a525f21bcdcf42a6f24df8dd72",
+      "first_recorded_commit": "f253efca3be410c6956789876a803bb559b8274d|Jeremy Longworth|2026-10-05T00:32:47-04:00|Compose evidence-linked alternative business cases with pending review"
+    },
+    {
+      "path": "scripts/finance_cashflow.py",
+      "sha256": "f976a186aae211942af532f04ec2eb1f88b83dd8a67d13e6ef6aa98b16bfa19e",
+      "first_recorded_commit": "006c3a0c5a4aad69ef418e24fc6f03c7ad77fa35|Jeremy Longworth|2026-10-04T23:46:21-04:00|Compose sourced annual project cash flows for NPV and IRR"
+    },
+    {
+      "path": "scripts/finance_composition.py",
+      "sha256": "3ae71074287556febc3397e998b13d670f39e13f1d2a185235851f044ee5b16e",
+      "first_recorded_commit": "3f0b9ab40bef8090284a8f00507c59391028ccd4|Jeremy Longworth|2026-10-04T23:30:41-04:00|Compose sourced initial investment and projected operating savings"
+    },
+    {
+      "path": "scripts/finance_prices.py",
+      "sha256": "3cafbaf8f13fa0330d8cf1796c4d2184821066b5caef4a18c104b4034b1fe3fc",
+      "first_recorded_commit": "2f838e69156fa1235ac1d2b5a51388653843fa10|Jeremy Longworth|2026-10-04T23:55:00-04:00|Model sourced annual price paths with carbon shadow cash safeguards"
+    },
+    {
+      "path": "scripts/finance_projects.py",
+      "sha256": "322e88ffbce3fdab6b29974fabd1b598b9505f6bc21a090fb05e8c8998b0055a",
+      "first_recorded_commit": "f045b4cc08c15110503beed460e43fc506a67ce6|Jeremy Longworth|2026-10-05T00:18:29-04:00|Compare sourced projects and rank explicit screening priorities"
+    },
+    {
+      "path": "scripts/finance_tools.py",
+      "sha256": "404403c17aca64012d292546c98b23640b895c8e56d5d334a45d944f840bcff1",
+      "first_recorded_commit": "4a93f0f72d7631e906c5228fe4d3281885f2f49d|Jeremy Longworth|2026-10-04T23:23:48-04:00|Add conditional project finance calculations and water dependency scenario"
+    },
+    {
+      "path": "scripts/irr_tools.py",
+      "sha256": "e17868e6974831de7312bdb6e1f4d6124ce5a042f7178f8e6b2d24baa0e22576",
+      "first_recorded_commit": "2eb0d9a569ad13b0b2533b9886c3f64d569f7447|Jeremy Longworth|2026-10-04T23:38:09-04:00|Add verified bounded annual IRR analysis with ambiguous root handling"
+    },
+    {
+      "path": "scripts/resource_tools.py",
+      "sha256": "916b9c71959078d30e06b2f9b808c4b9a18e1355db94347e98c552d1c57a8d04",
+      "first_recorded_commit": "52a5888d2818e4e1d902d0abcdf4fe185b900143|Jeremy Longworth|2026-10-04T22:57:40-04:00|Add waste and material mass workflows with explicit diversion policy"
+    },
+    {
+      "path": "scripts/run_energy.py",
+      "sha256": "8e51521f8993566ffe32f5497e0a9988708a0a26dcd4c07def291d931c51b2ef",
+      "first_recorded_commit": "6219254af0dc327f2f44940cf58a3db66560c67c|Jeremy Longworth|2026-10-04T22:39:32-04:00|Add initial energy workflows and evidence-backed arithmetic"
+    },
+    {
+      "path": "scripts/run_finance.py",
+      "sha256": "c049f2be1165db7080923a8ed52cc532d8f45d39cb82d7de4ab4c8619d450b34",
+      "first_recorded_commit": "4a93f0f72d7631e906c5228fe4d3281885f2f49d|Jeremy Longworth|2026-10-04T23:23:48-04:00|Add conditional project finance calculations and water dependency scenario"
+    },
+    {
+      "path": "scripts/run_resources.py",
+      "sha256": "1c4bdd10bcc473f5df98f31025a935e8a3927fd1553193eb522c96c182d3e1b0",
+      "first_recorded_commit": "52a5888d2818e4e1d902d0abcdf4fe185b900143|Jeremy Longworth|2026-10-04T22:57:40-04:00|Add waste and material mass workflows with explicit diversion policy"
+    },
+    {
+      "path": "scripts/run_water.py",
+      "sha256": "027ca839f9d899c0ccaa49f22b7d3e3872e244f5784454e1f4aa3c499950d76b",
+      "first_recorded_commit": "06eee964559d1e5374ae1b18c00bb5acf344d116|Jeremy Longworth|2026-10-04T23:13:59-04:00|Add water volume workflows and bounded waste opportunity scenario"
+    },
+    {
+      "path": "scripts/state_proposal.py",
+      "sha256": "1a4375ae9e6c798f803716ea48af03e25ac3588a2a53cbdd99cde559294d8440",
+      "first_recorded_commit": "77ad5dd644cf1d80b97cc1ce10fefbd366c77202|Jeremy Longworth|2026-10-04T21:10:07-04:00|Evaluate data skills and support reconciled invoice line coverage"
+    },
+    {
+      "path": "scripts/water_tools.py",
+      "sha256": "11f79435fcd53abe9f66a6bf67ddcc930a376338905fc5d5e9d245a2615ae570",
+      "first_recorded_commit": "06eee964559d1e5374ae1b18c00bb5acf344d116|Jeremy Longworth|2026-10-04T23:13:59-04:00|Add water volume workflows and bounded waste opportunity scenario"
+    }
+  ],
+  "packaged_code_schema_matches_prepared_git_revision": true,
+  "source_citation_locators": [
+    "https://agentsustain.example/schemas/common.schema.json",
+    "https://agentsustain.example/schemas/emission-factor.schema.json",
+    "https://agentsustain.example/schemas/evidence.schema.json",
+    "https://agentsustain.example/schemas/input.schema.json",
+    "https://agentsustain.example/schemas/result.schema.json",
+    "https://agentsustain.example/schemas/state.schema.json",
+    "https://json-schema.org/draft/2020-12/schema",
+    "https://www.energy.gov/cmei/femp/articles/mv-guidelines-measurement-and-verification-performance-based-contracts-version-0",
+    "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+  ],
+  "synthetic_example_exactly_verified": true,
+  "excluded_material_absent": true,
+  "final_test_source_files_rechecked": 430,
+  "provenance_limits": "Git metadata/byte agreement and declared source locators do not prove originality, ownership, permission, confidential-data absence or scientific/legal fitness. No exhaustive manual line-by-line provenance judgment or legal clearance is claimed.",
+  "github_reporting_read": {
+    "command": [
+      "gh",
+      "api",
+      "repos/jeremylongworth-source/AgentSustain/private-vulnerability-reporting"
+    ],
+    "returncode": 1,
+    "response": {
+      "message": "Not Found",
+      "documentation_url": "https://docs.github.com/rest",
+      "status": "404"
+    },
+    "enabled_status": "unverified",
+    "signed_in_form_verified": false,
+    "delivery_verified": false,
+    "setting_changed": false,
+    "test_report_sent": false
+  },
+  "origin_main_observed": "56de36e08ec99e847dc9f308a492c6d05e6d82b9\trefs/heads/main",
+  "publication_authorized": false,
+  "push_performed": false,
+  "public_v1_readiness": false,
+  "additional_agents_dispatched": false,
+  "current_archive_tree_matches_payload_pins": true,
+  "2026_10_07_actual_smoke": {
+    "command": [
+      "D:\\AgentSustain\\.venv\\Scripts\\python.exe",
+      "-m",
+      "scripts.data_tools",
+      "examples/preview-conversion.json"
+    ],
+    "returncode": 0,
+    "output": {
+      "value": 2000.0,
+      "unit": "kWh",
+      "factor": 1000.0,
+      "source": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8"
+    },
+    "request_bytes_unchanged": true
+  },
+  "full_suite_rerun": false,
+  "validation_limit": "Byte/pin/history/declared-content review and one current arithmetic smoke execution only; existing 842 full and final 70 subset witnesses retain their original scopes.",
+  "wiki_set_sha256": "442ba11d37cf2f2552bf61130b4710095fefbfd4f9eb5750f28db1749831af65",
+  "runner_review_set_sha256": "694e5654f4afc6d7e4ef8715cb327d5c55874391e27278223ee0410503ff2657",
+  "set_hash_method": "SHA-256 of UTF-8 JSON path-to-file-SHA map, sorted keys, separators comma/colon without whitespace",
+  "checklist_sha256": "170fed95d27e8498e34fd4a04e883feaf5032efa71b9dad16c0fe6c2815bbf24",
+  "checklist_local_links_verified": 9,
+  "checklist_preparation_is_not_approval": true
+}
