@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-09",
+  "reviewed_base_revision": "737d183da4e11bbee02a6893c7aa7d6597d09038",
+  "original_tracked_files_hash_verified": 921,
+  "archive_hash_verified": true,
+  "wiki_file_hashes_verified": 6,
+  "runner_review_file_hashes_verified": 7,
+  "local_document_links_verified": 7,
+  "canonical_candidate_hashes_verified": 16,
+  "current_embedded_snapshot_candidates": 15,
+  "historical_marker_candidate_blobs": 165,
+  "runtime_changes": false,
+  "tests_rerun": false,
+  "test_scope_note": "Documentation and inventory only; no runtime suite rerun. Hash checks verify originals remained unchanged.",
+  "source_remediation_executed": false,
+  "history_rewritten": false,
+  "publication_clearance": false
+}

@@ -1,0 +1,1200 @@
+{
+  "date": "2026-10-09",
+  "base_revision": "737d183da4e11bbee02a6893c7aa7d6597d09038",
+  "owner_instruction": "Prepare a removal/replacement plan",
+  "execution_authorized": false,
+  "canonical_source_candidates": [
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004.json",
+      "sha256": "f4dc25a7e91fb190f372f32b023faf950d686fc629b78d103e32f7328e6e8b24"
+    },
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004-amend2013.json",
+      "sha256": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/notice-2023-amended2025.json",
+      "sha256": "2438d429e6be408cf516125d40327e98f806a5dd725be5e33926eb664ec6042e"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/notice-2023.json",
+      "sha256": "0815bf14c5d8cc42664d248865038f78bf45c27087a09d8672690ddc109bf6b6"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/schedule1-gwp-transcription-1.json",
+      "sha256": "da4f6dbddaa39e7a3d8ac3c82a82d1735ade2f0409b59d7bf42f363ddaeb1f91"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/source-chain.json",
+      "sha256": "eea24fa1abd221a4ff1e1b0a97f41f057208efda4cee86baf00018bdbed20b08"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-1.json",
+      "sha256": "d52ead31de8ce8333b5be2ac786279a39b43c61a9ba381647c0fb8c202b0c6ef"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-history-1.json",
+      "sha256": "02bc2bdbc6607b7b411ac07b99db55034717b6d49f6a3a2e57afda8f8787bf7b"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-1.json",
+      "sha256": "7646a79fd108d093c198c290a282dd3aa4fc33f9f083c872d379ecb6353725a2"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-history-1.json",
+      "sha256": "9b60cca30b9925ba3f6c20635517a3a254ea27f255ca602cdebe5e8bd980bafe"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/threshold-species-profile-1.json",
+      "sha256": "f6b37433b212801276d96ad5a2cc7a65e1db278378638736cca1c1a521c521e2"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json",
+      "sha256": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json",
+      "sha256": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-quantification-v7-fit-register.json",
+      "sha256": "84eac55554d53c16cae58a11cd6393be1705e07423f48724eb8f11c0fb952202"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-required-submission-calendar.json",
+      "sha256": "9171250e7941561f9e09458d242ae58b8f8422ecc510a1d53d45365ab1556b88"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json",
+      "sha256": "2ff3fe81ea9fa97a2de18f47d2cb3cff71a60df76096f24494ace791ddb97956"
+    }
+  ],
+  "current_embedded_snapshot_candidates": [
+    "evaluations/sus17-canonical-catalog-replay.json",
+    "evaluations/sus17-framework-mapping.json",
+    "evaluations/sus17-independent-framework-mapping.json",
+    "evaluations/sus19-canada-draft-screen.json",
+    "evaluations/sus19-canada-quantity-bridge.json",
+    "evaluations/sus19-canada-task-history.json",
+    "evaluations/sus19-canada-tasks.json",
+    "evaluations/sus21-specialist-router.json",
+    "evaluations/sus22-organization-manager.json",
+    "evaluations/sus22-reporting-workflow.json",
+    "evaluations/sus23-business-source-workflow.json",
+    "evaluations/sus23-food-composition.json",
+    "evaluations/sus23-food-manager-preliminary.json",
+    "evaluations/sus23-organization-acceptance.json",
+    "evaluations/sus23-workbook-source.json"
+  ],
+  "current_reference_dependency_candidates": [
+    "docs/canada-environmental-claims-research.md",
+    "docs/canada-ghgrp-draft-screen.md",
+    "docs/canada-ghgrp-quantification-research.md",
+    "docs/canada-ghgrp-source-research.md",
+    "docs/canada-quantity-bridge.md",
+    "docs/canada-source-custody.md",
+    "docs/canada-task-workflow.md",
+    "docs/development-status.md",
+    "docs/framework-registry.md",
+    "docs/retention-anchor-method.md",
+    "evaluations/sus06-fuel-co2e-prior-hashes.json",
+    "evaluations/sus06-fuel-co2e-suite-run.json",
+    "evaluations/sus09-fuel-energy-preliminary-suite-run.json",
+    "evaluations/sus09-fuel-energy-prior-hashes.json",
+    "evaluations/sus09-fuel-energy-suite-run.json",
+    "evaluations/sus09-thermal-performance-prior-hashes.json",
+    "evaluations/sus09-thermal-performance-suite-run.json",
+    "evaluations/sus11-water-balance-prior-hashes.json",
+    "evaluations/sus11-water-balance-suite-run.json",
+    "evaluations/sus17-canonical-catalog-validation.json",
+    "evaluations/sus17-framework-mapping-validation.json",
+    "evaluations/sus18-jurisdiction-subjects-validation.json",
+    "evaluations/sus18-jurisdiction-subjects.json",
+    "evaluations/sus18-jurisdiction-tasks-validation.json",
+    "evaluations/sus18-jurisdiction-tasks.json",
+    "evaluations/sus19-canada-draft-screen-validation.json",
+    "evaluations/sus19-canada-draft-screen.md",
+    "evaluations/sus19-canada-draft-suite-run.json",
+    "evaluations/sus19-canada-quantity-bridge-validation.json",
+    "evaluations/sus19-canada-quantity-suite-run.json",
+    "evaluations/sus19-canada-source-custody-validation.json",
+    "evaluations/sus19-canada-task-history-prior-hashes.json",
+    "evaluations/sus19-canada-task-history-suite-run.json",
+    "evaluations/sus19-canada-task-history-validation.json",
+    "evaluations/sus19-canada-tasks-suite-run.json",
+    "evaluations/sus19-canada-tasks-validation.json",
+    "evaluations/sus19-claims-research-checks.json",
+    "evaluations/sus19-claims-research-validation.json",
+    "evaluations/sus19-direct-species-mass-validation.json",
+    "evaluations/sus19-direct-species-mass.json",
+    "evaluations/sus19-gas-conversion-validation.json",
+    "evaluations/sus19-gas-conversion.json",
+    "evaluations/sus19-gas-ledger-validation.json",
+    "evaluations/sus19-gas-ledger.json",
+    "evaluations/sus19-gas-mass-validation.json",
+    "evaluations/sus19-gas-mass.json",
+    "evaluations/sus19-ghgrp-quantification-validation.json",
+    "evaluations/sus19-ghgrp-source-research-validation.json",
+    "evaluations/sus19-retention-anchors-validation.json",
+    "evaluations/sus19-retention-anchors.json",
+    "evaluations/sus19-retention-anchors.md",
+    "evaluations/sus19-source-species-ledger-validation.json",
+    "evaluations/sus19-source-species-ledger.json",
+    "evaluations/sus20-bound-claim-validation.json",
+    "evaluations/sus20-bound-claim.json",
+    "evaluations/sus20-claim-evidence-validation.json",
+    "evaluations/sus20-claim-evidence.json",
+    "evaluations/sus20-comparison-claim-validation.json",
+    "evaluations/sus20-comparison-claim.json",
+    "evaluations/sus20-future-goal-claim-validation.json",
+    "evaluations/sus20-future-goal-claim.json",
+    "evaluations/sus20-inventory-claim-validation.json",
+    "evaluations/sus20-inventory-claim.json",
+    "evaluations/sus21-router-validation.json",
+    "evaluations/sus21-router.json",
+    "evaluations/sus21-specialist-router-prior-hashes.json",
+    "evaluations/sus21-specialist-router-suite-run.json",
+    "evaluations/sus22-carbon-accounting-validation.json",
+    "evaluations/sus22-carbon-accounting.json",
+    "evaluations/sus22-climate-workflow-validation.json",
+    "evaluations/sus22-climate-workflow.json",
+    "evaluations/sus22-investment-workflow-validation.json",
+    "evaluations/sus22-investment-workflow.json",
+    "evaluations/sus22-organization-manager-validation.json",
+    "evaluations/sus22-procurement-workflow-validation.json",
+    "evaluations/sus22-procurement-workflow.json",
+    "evaluations/sus22-reporting-workflow-validation.json",
+    "evaluations/sus23-acceptance-input-suite-run.json",
+    "evaluations/sus23-business-source-validation.json",
+    "evaluations/sus23-food-composition-suite-run.json",
+    "evaluations/sus23-food-missing-selected-factor-cli.json",
+    "evaluations/sus23-organization-acceptance-prior-hashes.json",
+    "evaluations/sus23-organization-acceptance-suite-run.json",
+    "evaluations/sus23-workbook-source-prior-hashes.json",
+    "evaluations/sus23-workbook-source-suite-run.json",
+    "evaluations/sus24-workflow-example-suite-run.json",
+    "evaluations/sus25-clean-python311-validation.json",
+    "evaluations/sus25-clean-python312-validation.json",
+    "evaluations/sus25-clean-windows-validation.json",
+    "evaluations/sus25-licensed-preview-test-run.json",
+    "evaluations/sus25-public-preview-test-run.json",
+    "evaluations/sus25-release-material-inventory.json",
+    "examples/food-manufacturer-forward-test-input.json",
+    "examples/food-manufacturer-manager-request.json",
+    "examples/organization-acceptance.json",
+    "scripts/canada_ghgrp.py",
+    "scripts/canada_task_workflow.py",
+    "scripts/framework_tools.py",
+    "tests/reporting_workflow_fixture.py",
+    "tests/test_canada_tasks.py",
+    "tests/test_frameworks.py",
+    "tests/test_jurisdictions.py",
+    "tests/test_reporting_workflow.py"
+  ],
+  "reachable_history_candidates": [
+    {
+      "git_blob": "93b003cb7e18f4aac0398f795f920f5400c9c57d",
+      "representative_path": "docs/canada-environmental-claims-research.md",
+      "sha256": "833aaef13cae6d2c270a04ccd25c7431b31c9acffa8a9914fda254954ca216fd",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8a2e421bc996c9d2b1aea36057ee320a1ca11615",
+      "representative_path": "docs/canada-ghgrp-draft-screen.md",
+      "sha256": "a2a6e0f69c0157f5aaa47ea91bae1449ca10910dc014c77f38d3154bf3716de4",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "cad9a51b9c8b27492af148a51a26f52ab8f7c600",
+      "representative_path": "docs/canada-ghgrp-quantification-research.md",
+      "sha256": "f148001c22631c6e6d0282a8afa9210523a19befc7274e5fb3c8a6a67bc58153",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "6843cd972cbf716086d74f08d3335fecdc17fe84",
+      "representative_path": "docs/canada-ghgrp-source-research.md",
+      "sha256": "255dda35d1fc55a617c46b4dd90c682309b52c49b9e5731569afa18050d0b822",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "a95bb0e6d9e6381f90f9d0802b2113f97a9f098c",
+      "representative_path": "docs/canada-quantity-bridge.md",
+      "sha256": "7dd5306da8a0a8c5cbd57b3155ad50c1a71a7f5c7950b5fc56d9b1089556628f",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "d0f9d57b4803dc8af61c0b174ae08abf488304a4",
+      "representative_path": "docs/canada-source-custody.md",
+      "sha256": "fe7585c641c412aa1f8cebc1816f55af8ec569c8ff50140f730a2d855df88384",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "619f338f1d72ee5d951d11b8337bfd0a48b83f51",
+      "representative_path": "docs/canada-task-workflow.md",
+      "sha256": "05c8bdacbff6e196f983a6e4a4f935561e0f208ebb9b6abbc463253ff71cc42b",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "7d1939bd8ffd7b3ede095a4b2be221f4f6da54b0",
+      "representative_path": "docs/development-status.md",
+      "sha256": "fbb680ee5c07f71be1021939f8eca194c853d88f2b5f2970e1ea380fafbfd2e7",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "75703a52b76d4a86f1f793a49c880a2d349fd01c",
+      "representative_path": "docs/framework-registry.md",
+      "sha256": "d35a33229c720b3f7efb79db06e84a69b6a96009a52f20bfe65d5aee018be9d0",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "fcad198f7410013d59a45d1b2d388ff329f1213b",
+      "representative_path": "docs/retention-anchor-method.md",
+      "sha256": "bad3166372fade64e7a5c247200eff57110549f4f2db540a0a3760e66381d856",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "10487f3a542eb0fef1921fe57e4e2c5957edd47c",
+      "representative_path": "evaluations/sus06-fuel-co2e-prior-hashes.json",
+      "sha256": "4acbeaefcdeed3c7cd750a10193c6f2ca08b96790abd23a019284dd4153e7e64",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "c33c00d5220aef7ddc42998dc7c9ff628b44b530",
+      "representative_path": "evaluations/sus06-fuel-co2e-suite-run.json",
+      "sha256": "497ddff8e3cd289989349003ca95da1c04771f02c28c7adeaf923a47ecd7b272",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "f69d941c055f7b37a9a1280036638a8b63ac399d",
+      "representative_path": "evaluations/sus09-fuel-energy-preliminary-suite-run.json",
+      "sha256": "7837d3a78059271320a143f8602d4944591bff0397604af9d3c944140bcfa9a7",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "d3c3df7702bf1c02cdee43ac94b76f2d7c4f8635",
+      "representative_path": "evaluations/sus09-fuel-energy-prior-hashes.json",
+      "sha256": "62d5b578f2c452dc54aa2a4397f62e3561b2a70e0f05413a483d5dcfb76d2f68",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "55df14b44668605798bc92c13abc8f5b608a9e3c",
+      "representative_path": "evaluations/sus09-fuel-energy-suite-run.json",
+      "sha256": "920a116efd0a086cba09e981267380de636c720160d70ce61d8912b354418c69",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "c3356e93828aae273ee7aac5e859e68d5aaf557c",
+      "representative_path": "evaluations/sus09-thermal-performance-prior-hashes.json",
+      "sha256": "dd70881e73959ceb0193633cdf6c1ff48b027e21d4cd382f0879d365e9a084c4",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "d9d5583203182100055d6e00dc31f20e1be93021",
+      "representative_path": "evaluations/sus09-thermal-performance-suite-run.json",
+      "sha256": "3a59b1e286f973d47bd315c2ca2c28f35299a54b0e70a6255981ce6f303ed2b3",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "fab93466b12e8a538bfb83a6f4f196ba9010b7ca",
+      "representative_path": "evaluations/sus11-water-balance-prior-hashes.json",
+      "sha256": "52c71be313eb7ac575b13c43b423e82477a8b23825b2389c6d1b376fb523881a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "0f0632bc3f9d5ca03ddce7b618cc0ac33801224c",
+      "representative_path": "evaluations/sus11-water-balance-suite-run.json",
+      "sha256": "8c5a3686a504d6d94289b8ecf2fb312e3dfbb3b39b56a8a52b009ea2ba62f634",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "d5f306e112b89b4c73f15824560e6ab120261dbd",
+      "representative_path": "evaluations/sus17-canonical-catalog-replay.json",
+      "sha256": "8841774de10b81d28e0657007d0c79591a4ae50d55990c54aa1033711bd8107a",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "8a45237cd92337b2ea1ecbe9e39e153f5cc03a85",
+      "representative_path": "evaluations/sus17-canonical-catalog-validation.json",
+      "sha256": "6db577867e494b0a5b188a6f0d4002d8e8c0ba2f8cd62be18fbd7d899aeeb47f",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "3822ce05a43477acb5ea024165d63a1183599309",
+      "representative_path": "evaluations/sus17-framework-mapping-validation.json",
+      "sha256": "903d471d66299b7f538f85481eddb394bd57f4587541114f274e4e2470828362",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "6713f54d5f98e92921c73f00c256343e9f74c75e",
+      "representative_path": "evaluations/sus17-framework-mapping.json",
+      "sha256": "7105604461fc5ea6c1347c1f263b3a54b0f3d4a47320379c3e6b499ff7c2b6ae",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "4748cbea8310bdb4fbc1be2384058326237660fe",
+      "representative_path": "evaluations/sus17-independent-framework-mapping.json",
+      "sha256": "c9c79a5591621fdeb78a628fdab8ca3bbc77d1bf524a3fdc6dd3a8d35043d263",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "1154485c75674113ff0a7775d1abd7a4041e4f22",
+      "representative_path": "evaluations/sus18-jurisdiction-subjects-validation.json",
+      "sha256": "b9669dc1cdc3364ccf74501741bdcc2e5959cf1077f66d92be335d943dff8c36",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "4cb57dc55140b81bdb9c15948e97b5c65bfd7f1a",
+      "representative_path": "evaluations/sus18-jurisdiction-subjects.json",
+      "sha256": "9401d5a1446b50d5ca9ca5e805f4dfd4ae9f8926690e1e83ded98b645d1ad379",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "1f2d85be8eaa014c5e4a481873b8f52faf1b2437",
+      "representative_path": "evaluations/sus18-jurisdiction-tasks-validation.json",
+      "sha256": "56081bc75c60bdadde098e19a7c67708ac92774a789ff5503e099ff8c4d90d05",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "4c69bc758b9b527be373ea5341dbbb1c9053c642",
+      "representative_path": "evaluations/sus18-jurisdiction-tasks.json",
+      "sha256": "0c003b8d311968dd373be3e12e3efa4ab52eabec9ccfb5590b4d7c8abf1949d4",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "db340a6fa003dc1089333b368cd14c333fcd88a1",
+      "representative_path": "evaluations/sus19-canada-draft-screen-validation.json",
+      "sha256": "68cb57c8dfb8f55f420ecaa4156b92c6e074f7c6bf9da8f0143ab37da28e204b",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8bf7042aabe230773b576f32a23c49cec45f45dc",
+      "representative_path": "evaluations/sus19-canada-draft-screen.json",
+      "sha256": "893437ef706540cdb538eadcbf6a9e7619e534a8b06d102d9e92707874b3f794",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "1a86a972f670dfd51573893bcb76965667df1778",
+      "representative_path": "evaluations/sus19-canada-draft-screen.md",
+      "sha256": "c63cb2685a4ef28d7e9e14988082933dbe4f02587f5ac7853651f4e19c2a4fed",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8cbd06fd2f13588afa97f01c454b995d6a40998c",
+      "representative_path": "evaluations/sus19-canada-draft-suite-run.json",
+      "sha256": "a7070ffc93bb604946a0bc0c88cb5c4aa2b1688b91a1b6430ad30a6715ca66e2",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "0744ef6cb4ebe63da25e3bc014fd632993e9d7a0",
+      "representative_path": "evaluations/sus19-canada-quantity-bridge-validation.json",
+      "sha256": "a052b1014a2e9b1d320976b798ad7e844d72691c942993154fc2403772b0b204",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "bc6abb20f1892dc1cc1a4ce0e92eb0d5c853c041",
+      "representative_path": "evaluations/sus19-canada-quantity-bridge.json",
+      "sha256": "316dcfcc46319ebf9ff4aa21cee367f384dbedb2e19cb7c21e6b6d44507352f4",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "7da6346ce45880c129387a59caf3b9cd66475d3c",
+      "representative_path": "evaluations/sus19-canada-quantity-suite-run.json",
+      "sha256": "106593f2f06bbab43f794c777e2868cbd6f3d5d8b4997706a6de28691b4b5a4c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "734b4712ea2fb29f91c9fa661b14845f420595a0",
+      "representative_path": "evaluations/sus19-canada-source-custody-validation.json",
+      "sha256": "0d52ab3aeb1ac3d339886e3503225d3a94b1bf60259f6afeda089a0dabc07f05",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "121991a0056248b065e06da297f25eb429d57627",
+      "representative_path": "evaluations/sus19-canada-task-history-prior-hashes.json",
+      "sha256": "26d4deaaa2a89e3c4267afc568f06e123d82da651514a407cc9c4409286fc371",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "faa577c6aea2fe9359692bce66f1007715cf1623",
+      "representative_path": "evaluations/sus19-canada-task-history-suite-run.json",
+      "sha256": "03064d9e0d9a356a9d3305a1731cdff6a65726b3c954c6095fd92ef0c3d11cb0",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "2e0f908d3847c858e6216b98c52652a3998c3082",
+      "representative_path": "evaluations/sus19-canada-task-history-validation.json",
+      "sha256": "3c3a91cfe614d560cf2041911108b89279129939f76f781736b22da63393d1f2",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "5600186fcc691d7da51e104d63a0ea098be28b0b",
+      "representative_path": "evaluations/sus19-canada-task-history.json",
+      "sha256": "09c07187526e0a93a304b287e36b80153988c70f1f02f04eb730e23dac5cdb48",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "e1a7207375b84ca1b20f678c2dc919b30ec5bd98",
+      "representative_path": "evaluations/sus19-canada-tasks-suite-run.json",
+      "sha256": "de1b3846b321ff97013ed8c7b2b3db032c5fb2dc6f29892881692608d9340ee1",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "b09d6dba7f993b797a044ee6cc9fd7cf4f1f989c",
+      "representative_path": "evaluations/sus19-canada-tasks-validation.json",
+      "sha256": "dff43988c2a04e48c25035e54f8d54e96c5e157e4ae1b6ab2234381d724cb9ee",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "ae77dadd78b3ffa5b12912c28557f9d4e0086c58",
+      "representative_path": "evaluations/sus19-canada-tasks.json",
+      "sha256": "e38100f1a6b404e8316b1cc9298290f635f031994304b4747917c54cf59ee8a7",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "6c055d71b99bf34c9237a3a683c3475120b04209",
+      "representative_path": "evaluations/sus19-claims-research-checks.json",
+      "sha256": "d3e6dad99fcb32a6eecdff134b25bdcfd7166fdb44d861d18b90214e8b3f5d67",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "63cea556d9da2eae24219455a82b42375a765cd5",
+      "representative_path": "evaluations/sus19-claims-research-validation.json",
+      "sha256": "ab40358de95d07f9f2a339c0febfd936ce58f0ed2235e9e8aa9635ca4aab09d2",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "e790828a72176a1d938202b80c8ba6dbca493a22",
+      "representative_path": "evaluations/sus19-direct-species-mass-validation.json",
+      "sha256": "07d4ebcf2f49c07c0811bdf0b0f81509ee9654c8cc05f85c9123729345de7174",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "28a54a4742bfdfc5a69cda86d03bb038a295000f",
+      "representative_path": "evaluations/sus19-direct-species-mass.json",
+      "sha256": "30fee4a803c624201d7a525e092d7e6d9d2cdb3385cee62b8d80c0803169448c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "58a52c4f75a6632a9108c7793956a1bb1506822d",
+      "representative_path": "evaluations/sus19-gas-conversion-validation.json",
+      "sha256": "75a4cc700fe0e29d118b5416512f4452aedf48a7be44181662c333006937556f",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "3a8bd4bb194a9c6e5391bb3fb27ba89ecd9379d9",
+      "representative_path": "evaluations/sus19-gas-conversion.json",
+      "sha256": "068ec30055b2dbb862cb664037a4bd10160f7326d713a8916f0367156ddeca8d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "a117240eed6db92a0e28b167162d0650a56bd751",
+      "representative_path": "evaluations/sus19-gas-ledger-validation.json",
+      "sha256": "28419b7fabd7ac4bfbe05c4a31157bd3d7b3eaa6454f91f42aa5f3771882404e",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "71bdd8f77af49358d38cefc7d3caccb32f390ea2",
+      "representative_path": "evaluations/sus19-gas-ledger.json",
+      "sha256": "2eaed34d74831082f8376c9f5a2707f54550864b6c966733ac21dac874e34df0",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "79241b64a31e5b1846f8e63de1b9178e6b7eddd3",
+      "representative_path": "evaluations/sus19-gas-mass-validation.json",
+      "sha256": "d35642b0b0ac10313510f9379cd18de2ea050421d2efe487b69de14cd2e82131",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "f5e302a518e8244a2c68da34618d7a8e7689582c",
+      "representative_path": "evaluations/sus19-gas-mass.json",
+      "sha256": "9898f20473b7092af4c622bffed00c35e51c1e661432caeb9a8da9b569fccb87",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "139ce1ad1f9d32f0579e41866aa4d785e742cf59",
+      "representative_path": "evaluations/sus19-ghgrp-quantification-validation.json",
+      "sha256": "2362b16c1d4d214eb644a1847066e68652ed6cdca340d779e19d239a61f9dc2b",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "75c5815a67fd72ef7d4a81cab7c8876c2f401181",
+      "representative_path": "evaluations/sus19-ghgrp-source-research-validation.json",
+      "sha256": "f047eda52a864bbe6abc827301cb113dc1a3496482e7b05f665ee1a488b68c61",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "c0b0f56c1baa38478bad864235aa511c203fa753",
+      "representative_path": "evaluations/sus19-retention-anchors-validation.json",
+      "sha256": "aaf892246e551826b74405b9fbd1ed3d3095b410db8d3c09126e9a30478aea5a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "b29f79ae71778150de45094bc3609eaeb9865f1f",
+      "representative_path": "evaluations/sus19-retention-anchors.json",
+      "sha256": "d73101543767e451a6df4ba2e633daac5aee27041b992ad66c76ef38a77bf7bc",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "488d6637c739c49e93ecbf1442d08c7de4740503",
+      "representative_path": "evaluations/sus19-retention-anchors.md",
+      "sha256": "187f162b57c8354df0c5594defcf5a7b0e05a79f7e81ee8e16f2cd5252f5df2e",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "99fd6f78f78fbf204cdbe3fb04a09453cf418e52",
+      "representative_path": "evaluations/sus19-source-species-ledger-validation.json",
+      "sha256": "56dab41fb60cc4a943cfa1b25fb43e1bb387236e412a0664349ee7a29f3acb67",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "1a55a5c3c005fb769ccea3dcf37b4d56950dd0aa",
+      "representative_path": "evaluations/sus19-source-species-ledger.json",
+      "sha256": "53a84d7a2312231aa1c6f9e46104679d118dc3f567bbbfb2b4a1e5ed479f0df7",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "889c650b26a9cbae1fbe2272f15b08004b2d93f8",
+      "representative_path": "evaluations/sus20-bound-claim-validation.json",
+      "sha256": "573f0f54f1597f448865704ec8f1afdfe74dee3b8d9febd92cb999c420fcadb8",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "066cfee97a5733227965b9e03c4b4d280ef261f8",
+      "representative_path": "evaluations/sus20-bound-claim.json",
+      "sha256": "70b731025be118f0ed1f61650a9a5fdf660297be6dc38ac23fcdcfd226282336",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "7d3dbf80ad7d0203876f519d8b241157d3f51455",
+      "representative_path": "evaluations/sus20-claim-evidence-validation.json",
+      "sha256": "c2f388f1a7997269f0d4b17c573f5304af47171bf17e8c49f2d108047cd26963",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "1429b03e3b431e2f753925722a8d1610660bd361",
+      "representative_path": "evaluations/sus20-claim-evidence.json",
+      "sha256": "74edb8b6b46766b195d491d3bf44f85af81cb1a0b107c1878d57cfcd81133f7d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "a94d6348b00a8a207b7303f6412bae9e16c60a2f",
+      "representative_path": "evaluations/sus20-comparison-claim-validation.json",
+      "sha256": "72b81de90067536848505ec83216a71c4c1f6651d2174d165d300534f747381a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "3f7db7fff3237f6e167327d716344759c189607e",
+      "representative_path": "evaluations/sus20-comparison-claim.json",
+      "sha256": "1ff415e5dacd8b6393a40434c0ac3141950bd6596cf617ee71bcee26d128c979",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "05375d1cee13d035f17a941b2de2e3e77dc829ad",
+      "representative_path": "evaluations/sus20-future-goal-claim-validation.json",
+      "sha256": "4d9c34d88dbc82a07cc0d023bfa1b5ea2a87d31458210a9edde173546a935adb",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "43b360acf8e307267c792c0e45cef85eb6f30ad8",
+      "representative_path": "evaluations/sus20-future-goal-claim.json",
+      "sha256": "aa44f13ca2791b139350c338c155449cb94bd7f3f64277ad128fcf1125310496",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "4044e32e5eff9aedec5ebf19448451ac80c8a2e7",
+      "representative_path": "evaluations/sus20-inventory-claim-validation.json",
+      "sha256": "900206316efd0348dcaf1937d96cbcb5733a3ab3c9afe2397d61cf16cd2e6d61",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "294b0d64653368baba4486cff15f5e78a50a0ace",
+      "representative_path": "evaluations/sus20-inventory-claim.json",
+      "sha256": "27b01bee9914949f58317a869949eabf188b7455d30f017a3fb5a84b3d50060f",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "b02e70db63585f13799154a3eda4dafa5a1a2b65",
+      "representative_path": "evaluations/sus21-router-validation.json",
+      "sha256": "5ea6c43d4cd74392e1b3548de4ea2d2ee9af23f0051321637de82242a60b0399",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "ae4825198c3cba7458405843c9bd59ab114e8d5f",
+      "representative_path": "evaluations/sus21-router.json",
+      "sha256": "5bd4ad4deeef5a40f1cac2ee6bf9315d749ab8527e2e3b0bd231d20c9d7668bc",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "2b757a0a5fdc511baaa2be8e7d74431474721ec9",
+      "representative_path": "evaluations/sus21-specialist-router-prior-hashes.json",
+      "sha256": "08ec4a8abb90b9f528da0698c7dec4f5ad376126af9e3a21a3fc8e8a83a2e0e7",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "3da8b461d152208a6e54d902e8408a32162e6daa",
+      "representative_path": "evaluations/sus21-specialist-router-suite-run.json",
+      "sha256": "3d45560b80f01b3d3f8971ab4171ab1bbb56b46617047b7473f13f2f5f5c1c2d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "b55b127e3c2ef8db488564615662a31311a5b5b4",
+      "representative_path": "evaluations/sus21-specialist-router.json",
+      "sha256": "b1bd854e2af2367a5f8090d3a851d9d06af2637838dd23c586d5bf0372ff6755",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "6466a7903f9af7bb5dd1912b86a2e9a11cbdf8b9",
+      "representative_path": "evaluations/sus22-carbon-accounting-validation.json",
+      "sha256": "790ef727316283a29535796d0cbc9feea68019293adaf0f68033f61f21130b32",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "65e9d5eba9f07bdd33daebee0871addf9fcfc6aa",
+      "representative_path": "evaluations/sus22-carbon-accounting.json",
+      "sha256": "7e5cafb36fb7c3b8520f593609796c20bb96a008090505296869e10d11f76476",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "68be3a35909aac0cee53df9569e3dacedeabb893",
+      "representative_path": "evaluations/sus22-climate-workflow-validation.json",
+      "sha256": "a9925b6e625c68b3ce562e6b058f0df2d3485a1f9a8db333866fb1aac4e1cdfe",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "deef3fa2ddb19a59dafe08336a5969404cba2ac6",
+      "representative_path": "evaluations/sus22-climate-workflow.json",
+      "sha256": "7158d310716b1cd0fc9eb0cd68499c63f6fe4347b73d757617647bed1b0fb732",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "bdb316f8d835fdeacbf9ae5c16aee667c05e3761",
+      "representative_path": "evaluations/sus22-investment-workflow-validation.json",
+      "sha256": "11a3f3b2db003ad7da6ffdcbe616d052c124da5485c60a10ec0e70749cbfb391",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "7162c9d7c88b5a47eb9b930b18c3a185a6ebf638",
+      "representative_path": "evaluations/sus22-investment-workflow.json",
+      "sha256": "fbc33a54abf8dd8ce606e06d79fcff278907e066ed78e82e4ccb2f361610a19a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8e9d2b2d57e61a0e0fd819a74f7e9bace7ac2d2d",
+      "representative_path": "evaluations/sus22-organization-manager-validation.json",
+      "sha256": "62be63cf90f0fcf57fc157a667082ae0f321996678f1b350b1eafd342a661873",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8b47720510b9ce24609239b50aa2180a98e6daf4",
+      "representative_path": "evaluations/sus22-organization-manager.json",
+      "sha256": "7de259fe6b69c08824a01b5b05c6428297f3d3c6a72afd71584eec7cf34ffff4",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "02589d319e965fc6271fc6ba17e78dc5b101adff",
+      "representative_path": "evaluations/sus22-procurement-workflow-validation.json",
+      "sha256": "38e366a3b83970dac249beebe5116c3921dc2b248841d341d556128e0e466e43",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "6ab5fd3afa7af5b30a86861f5030ad4f0856d394",
+      "representative_path": "evaluations/sus22-procurement-workflow.json",
+      "sha256": "78cb868ac513c16248164c31de238f68e652c76a4459ff0b1a64d91b54aed9f9",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "135a7f023537e460f27989d69615c880749eccba",
+      "representative_path": "evaluations/sus22-reporting-workflow-validation.json",
+      "sha256": "77ffe136069f66cf219fc135cb4fd9886839c92fef7f93e6c2642ddd6282f871",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "ae1f8dc7d2c31badf820890c69bad4470e0f344f",
+      "representative_path": "evaluations/sus22-reporting-workflow.json",
+      "sha256": "262b5a2bd25861786636396f90fac460b537b0b72380a31b83fa069fd09fb800",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "3447e3cbdb17c091850504c99230b65423360fd9",
+      "representative_path": "evaluations/sus23-acceptance-input-suite-run.json",
+      "sha256": "5ea99de2b0e88f6ca2e1f6eb75ff52fbb48ee0413d86d331c27d812f5c1b7291",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "5a03294e5e2c28dc9b0562379301b43924cb5ea2",
+      "representative_path": "evaluations/sus23-business-source-validation.json",
+      "sha256": "274bde2f3ca604d15bdb1262ef82c1f8cfac4b15a29dc89119e06f4e56e3a1aa",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "57736a525bd96fe538f953385003716f930da1e6",
+      "representative_path": "evaluations/sus23-business-source-workflow.json",
+      "sha256": "fec794904529903916550c2b47bbeccfb9b43e31e92f2dcb5e7b815ca8842d1e",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "05bfa03ab7073094e36141707fb89d5fd48e2104",
+      "representative_path": "evaluations/sus23-food-composition-suite-run.json",
+      "sha256": "afb4bb6575271c4a3997a700619c52f852eb0d87fc48975a503ad352ca407059",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "25a70669a07ae2435715eba4c760a3946e32583f",
+      "representative_path": "evaluations/sus23-food-composition.json",
+      "sha256": "5f6dc6e82f4fcd73d8ed3d105baddace243af4aa06e0fec7ddc0eeabcbe92f00",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "0391ab873fe4f08eac0e7e7f73eb63187ca00d6f",
+      "representative_path": "evaluations/sus23-food-manager-preliminary.json",
+      "sha256": "650cf56be6b2e8cf01554d5a86428560632d9f4e58431219211e232b23910d54",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "f01a700049ef1554e474767c029b436773716f18",
+      "representative_path": "evaluations/sus23-food-missing-selected-factor-cli.json",
+      "sha256": "be38afcc4d3619bc9fbc44c26067c1086f67839064f01a45fd26771cda5ff85d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "e5a34f934dbd42c444daa561c0291f40b93ee0f9",
+      "representative_path": "evaluations/sus23-organization-acceptance-prior-hashes.json",
+      "sha256": "bc32649247262ecfb8026b3b3748805f9ec658695f611c7d40892185af093b4e",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "2ae8d09970d6c473855f190366332293f03b91d5",
+      "representative_path": "evaluations/sus23-organization-acceptance-suite-run.json",
+      "sha256": "a6cce81cc1ef1612ec3b3e1190844b6b9ef8eb59e4ccb2290ba3b5a3cd410374",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "e07ac6fd64a981829c7a54373e20066a69fe74b7",
+      "representative_path": "evaluations/sus23-organization-acceptance.json",
+      "sha256": "5aaed54854943d94df58f551e329169a7b0f775c6871a25318ef75dcd3398d57",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "157110dcfd0730f8ae71a99e136cbebc2b4b508d",
+      "representative_path": "evaluations/sus23-workbook-source-prior-hashes.json",
+      "sha256": "59adcaf4e603ea59fdab17937b24080016a81ba66abff2cf5549652140230f2d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "848334e24f2e617803bfa1205ed2ee4f2cb26e73",
+      "representative_path": "evaluations/sus23-workbook-source-suite-run.json",
+      "sha256": "9407956976e40feff3e701c081ed9f7034673acd5fc8058adfd8a5cdb5999b1d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "50f01cfb564f46d1151fb5435fae5a07f0dae56c",
+      "representative_path": "evaluations/sus23-workbook-source.json",
+      "sha256": "722586c66f7ad84f53885cdc5895ee4553577a8a3bbd75a209a4932f5de51a84",
+      "classification": "embedded_snapshot_candidate"
+    },
+    {
+      "git_blob": "26ecc83e4ef0ed35bfab70fe60fcf964381b10e3",
+      "representative_path": "evaluations/sus24-workflow-example-suite-run.json",
+      "sha256": "3a389eba2b51fa32ee03bb640ffce489a4a525332e502babca50fc67482e8a3c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8337cd4d9507ba15be2f9f164ddb51be1c5277a3",
+      "representative_path": "evaluations/sus25-clean-python311-validation.json",
+      "sha256": "52f7dd660f0f167e1d6471d110ed72b4ee9550f3173843de8950f54331aefe41",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "12044466e824614aa3cab1581153b8dd78303c67",
+      "representative_path": "evaluations/sus25-clean-python312-validation.json",
+      "sha256": "9744872456a8c758190605bb017ec882179212df2f521696116b3a1f3bd1d63d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "a9772afda54dfc63e43c36995a99a5b8930de786",
+      "representative_path": "evaluations/sus25-clean-windows-validation.json",
+      "sha256": "26636d98086c1375af0c3b4ba4839871656d1293bc8b4906678a020ad7828142",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "e523a361e2f88c969fe1ffd06656ec24d0a44843",
+      "representative_path": "evaluations/sus25-licensed-preview-test-run.json",
+      "sha256": "cf89ca9eb7772ea346f4dfeb910efb091eea8b4232304eec0c8e9637db81c66e",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "5b53c979ef4c0d62397019f7103d9a826d70d1e2",
+      "representative_path": "evaluations/sus25-public-preview-test-run.json",
+      "sha256": "746dbc086ebbc9751f1d403d861e68a46fa597e1d7dbbbe35982cc3f0a949cbb",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "05d47fb42c6b842689c00eb838f4bb7b166dc5d3",
+      "representative_path": "evaluations/sus25-release-material-inventory.json",
+      "sha256": "31ac08328b3e1970d330d85558bbeec4b02a0a48d01dfe2a905e298ded269215",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "605cd6709e4edfdcb071ed78f86f88532787283b",
+      "representative_path": "examples/food-manufacturer-forward-test-input.json",
+      "sha256": "6cf9d59b42a6774bb018c0cf9fff9d3c34f3d619b86b9d6daa65fe1daea55bc4",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "d0700ff5bc02b1495f7c72a7e4a5a0eaa06509f2",
+      "representative_path": "examples/food-manufacturer-manager-request.json",
+      "sha256": "c495a270141da38745b467088b420899071ed3511e27fba0cbbfa85b6dfc585d",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "92910979c1bcfec7e6b0d4a9ef29070e84ac4868",
+      "representative_path": "examples/organization-acceptance.json",
+      "sha256": "f4343249dee2fcd617fd6bb2c40ff36e9f9c6b5e515d18bb3e21da58f83b937f",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "0d9efc2c719a7dc676fa9b764b2820a0b5608fdc",
+      "representative_path": "scripts/canada_ghgrp.py",
+      "sha256": "5c415ab8728845f76bbe542c82fb020bd01d2cc515ff1da6c646f30276efe491",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "9eaa3b241d8b1d368d248ac0c617ae07f6854619",
+      "representative_path": "scripts/canada_task_workflow.py",
+      "sha256": "32edd6bd16ca88f4239736d4980c95fdc8636c2479d2fd9a2410b8ac108408b2",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "db63c3520b1f4febb8e71291ab6dd1bd2243f9f7",
+      "representative_path": "scripts/framework_tools.py",
+      "sha256": "7191c7f8c32167b2dbe4cedd0501cce90b457e80384c52911aed0c714710d8dd",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "78278e99528d41a7eea689d29c76bbb1428aa097",
+      "representative_path": "standards/frameworks/ghgp-corporate-2004-amend2013.json",
+      "sha256": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "ee7450a4b32a57af4605fd9e4a450d23b0724c83",
+      "representative_path": "standards/frameworks/ghgp-corporate-2004.json",
+      "sha256": "f4dc25a7e91fb190f372f32b023faf950d686fc629b78d103e32f7328e6e8b24",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "cc65594f1fb02ecbe886d8cd2f3ad82f3563b51a",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/notice-2023-amended2025.json",
+      "sha256": "2438d429e6be408cf516125d40327e98f806a5dd725be5e33926eb664ec6042e",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "0d1d61f42773e543b3b8a73539bbac7a98756897",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/notice-2023.json",
+      "sha256": "0815bf14c5d8cc42664d248865038f78bf45c27087a09d8672690ddc109bf6b6",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "6362f33380a6d3e9be8c6c0ea6cf08aa507e3f03",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/schedule1-gwp-transcription-1.json",
+      "sha256": "da4f6dbddaa39e7a3d8ac3c82a82d1735ade2f0409b59d7bf42f363ddaeb1f91",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "044a1907973115897bcf02fe3e6b99d0a3da11a9",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/source-chain.json",
+      "sha256": "eea24fa1abd221a4ff1e1b0a97f41f057208efda4cee86baf00018bdbed20b08",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "117a4ac7c1599d573cb8dd06bec6aeb97a6c0753",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-1.json",
+      "sha256": "d52ead31de8ce8333b5be2ac786279a39b43c61a9ba381647c0fb8c202b0c6ef",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "4c0b5e97db8bf704d5b001c4a450ef51b51f7227",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-history-1.json",
+      "sha256": "02bc2bdbc6607b7b411ac07b99db55034717b6d49f6a3a2e57afda8f8787bf7b",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "97fc1ea778dc2f26cee8a143e69183b17258f1bb",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-1.json",
+      "sha256": "7646a79fd108d093c198c290a282dd3aa4fc33f9f083c872d379ecb6353725a2",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "bf30e22739f65814125755fa63dd9a128780b4f7",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-history-1.json",
+      "sha256": "9b60cca30b9925ba3f6c20635517a3a254ea27f255ca602cdebe5e8bd980bafe",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "621f8be168bf7f6a3b13835b2edcfb8f6b4c9cd1",
+      "representative_path": "standards/jurisdictions/canada/ghgrp/threshold-species-profile-1.json",
+      "sha256": "f6b37433b212801276d96ad5a2cc7a65e1db278378638736cca1c1a521c521e2",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "2941ce477a6a20ca18b620976265d00b801a8e9e",
+      "representative_path": "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json",
+      "sha256": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "4b7753cb0b891358dca3efff558b3114527df872",
+      "representative_path": "standards/jurisdictions/canada/research/ghgrp-quantification-v7-fit-register.json",
+      "sha256": "84eac55554d53c16cae58a11cd6393be1705e07423f48724eb8f11c0fb952202",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "70f22a0a7a161d17a3f9bc5511bc8cda17a084d1",
+      "representative_path": "standards/jurisdictions/canada/research/ghgrp-required-submission-calendar.json",
+      "sha256": "9171250e7941561f9e09458d242ae58b8f8422ecc510a1d53d45365ab1556b88",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "1e5e9937ccd974ddc52526deb42d2cfe2436cfa3",
+      "representative_path": "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json",
+      "sha256": "2ff3fe81ea9fa97a2de18f47d2cb3cff71a60df76096f24494ace791ddb97956",
+      "classification": "canonical_source_candidate"
+    },
+    {
+      "git_blob": "55169848ba207919715046d5a072c1caf1d12bbe",
+      "representative_path": "tests/reporting_workflow_fixture.py",
+      "sha256": "e97578b854ce2162d834a682194d535380c43b6ffdce5f2111412dfe635dab53",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "938f2a1e45179f04dbac21a1e2fe958d95f445d1",
+      "representative_path": "tests/test_canada_tasks.py",
+      "sha256": "a6e7bead00ab96b14860270949a6ae04d98efd28631c3f42a0f8bbf1ff361961",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "920fcd7f54f2e7168f3c8cbcfcb132c6682df7cd",
+      "representative_path": "tests/test_frameworks.py",
+      "sha256": "96391604dedfd8d4c0681e1e9c9e695e5a84503ed5b4077d5a64537f598bbaf2",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "5e0bcf1c59d332aadb7a5f54839abdb7033d6b28",
+      "representative_path": "tests/test_jurisdictions.py",
+      "sha256": "a66dba03c2020f233208c67ef6aa61abbd1064715fec858b3a8c54589d7e655a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "9c453036581708690b3f8b612c472be1c1227b41",
+      "representative_path": "tests/test_reporting_workflow.py",
+      "sha256": "bb7bca6a35f5b95b8f9a398190bfdfa37aae59aeb94269d2544bd8be93a9791c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "48c5a25ec2c3d8b33b5123ae6eccd477d42abc31",
+      "representative_path": "README.md",
+      "sha256": "a55e745321af8767e2107a366095b87aa9ff802fb85fa6dffbfc868e24ca0969",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "1ffa880463b33df7a6caa96c075c9c0dbf795bae",
+      "representative_path": "docs/development-status.md",
+      "sha256": "0562309163942227d4c9d620c6f060fad9695c473a137868c2d7f4ae553e2cd6",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "0f04dafef0653ad3ea8ea825a787b8ac36cbaf44",
+      "representative_path": "docs/development-status.md",
+      "sha256": "438e9c060cfb7e82dbcf41529fae80195473b91b02e1f74a71b2ed73c9b79059",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "86452660bf04d2c76148140d7317fade32acffcb",
+      "representative_path": "README.md",
+      "sha256": "17f6504673f06edac7555589f84994fd85a1efbc52736a1a93b0c824df40e97c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "8f49155db849e7ce2cc64c746b848537c662b26b",
+      "representative_path": "docs/development-status.md",
+      "sha256": "771b2e1a13ea4a48ce7f6b2e8624a142b4983e5da6c548f34c9a2d8c51a784e4",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "bb860fa2124ac3c64699811afeff965420e7dce7",
+      "representative_path": "docs/development-status.md",
+      "sha256": "d214a425825e9c6537deef04216b2d25b25a9d88c12272f47938f8038f2e9bff",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "fae85af7a6a0e6db819d8280e825d0d18a582b44",
+      "representative_path": "README.md",
+      "sha256": "b20f8f88e826a92f6903817acd0db258435845a22aa4ee07d6ce267b9d0b4792",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "718a72ccd9dd140099b602d929f0c9bf1cc24330",
+      "representative_path": "docs/development-status.md",
+      "sha256": "1a33c8e235c085b4a00475be075008d53b971e6709ab5c89511a42a578b13b56",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "4e28b6e892458a5e720e5c5e42c675f01d4644e0",
+      "representative_path": "docs/development-status.md",
+      "sha256": "b7daecc476b7b3ef225f7d60360df2a39a51bc419770bbd269ac3abe18918d86",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "aaf1c6b7d0b82c25beaaa3ff00a973772e0e66d2",
+      "representative_path": "docs/development-status.md",
+      "sha256": "fb1af2232fc448e345a031a896354034a3217c9872e200848e2258cd68d6230a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "fb2bcb2ad997a585d715c7f0c6dee03492fc6a3b",
+      "representative_path": "docs/development-status.md",
+      "sha256": "cffb9209920fadcd8ffbfc000360776f5f68a4bf3a98bae7c1cac970738955c3",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "24ac2408c097c6191d6eaf719bd571a224e7dcdd",
+      "representative_path": "docs/development-status.md",
+      "sha256": "5b698e97d6a696e95905c1a578bcc83faf2dfd114feb52b92df564e030bd0b97",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "da0f4b7a65c0ff38449fe9ddb9d1ed78107a6068",
+      "representative_path": "docs/development-status.md",
+      "sha256": "cf1f55577ed5a2f8bf056af4064bba0423487317c8badca02e9ead1f6f7e6642",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "f4de9ac0182c52d96d6b537051f7831fbba205fb",
+      "representative_path": "README.md",
+      "sha256": "e04a18241951e68370979b93a01470e060edf9a6d7bf42b7a59a38999db7364a",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "9e657039f330473e8aebf9a2fcba58de785a408d",
+      "representative_path": "docs/development-status.md",
+      "sha256": "34bb8c71812169e2f5c9e9f672ee12621de17e94791372b8446f4ab3a2ae8664",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "7edb8cf73d888945d2eb7064a634cfa2455f04f4",
+      "representative_path": "evaluations/sus19-canada-source-custody-validation.json",
+      "sha256": "4a2ab8083c7f17b55e5b9776352250cdbd70a1a66c4228e0d111966727e90481",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "62f2f88d894fc6dca7d8bcfa2540eeb1edbd1dff",
+      "representative_path": "docs/canada-ghgrp-draft-screen.md",
+      "sha256": "7685099cb4bcc9a71e1a8dcd8bc8cb52a246e7577f53ff334ac6c00071c5a213",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "c939aef837526b886e113bfe79eb9e32d8469801",
+      "representative_path": "docs/canada-ghgrp-source-research.md",
+      "sha256": "9045cdcc45648fcbc3e6aca34348d9b33f6c5adc11da7346bd8b2c48ee839fdb",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "e8c622fb6a4fc482434e400c34b35b0b22f901c5",
+      "representative_path": "README.md",
+      "sha256": "df54a35e47edb91b0d1fe51ea73f4d89e65920d69b39faef47a6b716321813b7",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "bec93f7bcfa51853eafbe37c37f44a51d030c912",
+      "representative_path": "README.md",
+      "sha256": "38989084cb8e07631e861a5efc514a4f81bcd398a780ea93658b8aa0f074805b",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "b29e65e80c2e8fc36c6541c2f26868fdb65ac92b",
+      "representative_path": "README.md",
+      "sha256": "055b125d7ed942c06b2f2f7be6338b4f5669130c2fa321ca9fedf243818ea46c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "2f1ead9d905b7e02c5a7372be8b423fcbfaebc5c",
+      "representative_path": "README.md",
+      "sha256": "913a574563a4947052961e5fb4bd1f25538035c454f33fd1dc83317ae75b327e",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "b95270a6f6cf6e2ef1dbbdff9cf44f053ae9302b",
+      "representative_path": "README.md",
+      "sha256": "0e2c369028d8c1874b9dccacab478d18a0c742f8d3371083ca0206602384d80c",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "e181fd644fbce5dbe1d2b6cc99f49edbf8b7501d",
+      "representative_path": "README.md",
+      "sha256": "4c39dd2b5d8d4b83353cef95c9211e97d882d39ba0c4fb9bb60f7465bbe0dbf4",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "17b1e51d29b6e297e8b35e162b08457cb471c246",
+      "representative_path": "README.md",
+      "sha256": "dbbdc1d30e01448d37a7daa5c71f812b20f491c1544e30362bf21c2bb0e90729",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "1ee60395d15a2b7000cf3f1a615417736b3769c4",
+      "representative_path": "README.md",
+      "sha256": "6b457078828936f5d23310abc57c841b4b95ad024177b4dd23a2b115e31efbf9",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "0d8f6de0cea73e25121055e98dc090305ad82f17",
+      "representative_path": "docs/canada-task-workflow.md",
+      "sha256": "7c4fdec1d5038663aeca6285d999e30cb37e48409058466d4af9fa86d0968ba2",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "da030e48da79d8e1db396f110c4cb56ab4c725ba",
+      "representative_path": "scripts/canada_task_workflow.py",
+      "sha256": "6aec80e964e720a6ea6566494b761d7064e82e452d27a9ca5adc3fc823628b7e",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "84f4994b4902876c14ae52730ffc3fbc65425c2e",
+      "representative_path": "README.md",
+      "sha256": "13544198e933bf6bed06dd9cdda8a3f7c65055b796d2f343eaf67244e73de6a7",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "36b5cbc6c1ac5139242e43e82786ba4fb99e2613",
+      "representative_path": "README.md",
+      "sha256": "f9544fe469a90e27bdad411bfebe14d445896121423db045caa09f76e041feca",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "742511e08d7e54488d95fcde792bb99c4572aaca",
+      "representative_path": "README.md",
+      "sha256": "6b49acfcde7548f956426d125a0d800d89e9213144dc0ec2e2c9440b0e1f2318",
+      "classification": "reference_or_dependency_candidate"
+    },
+    {
+      "git_blob": "9b81616b0ecf544eed01eb70881987f948e3701b",
+      "representative_path": "README.md",
+      "sha256": "813ea05741fc266df9e21babce3c21b0d559e8b25902645215943b99201033e0",
+      "classification": "reference_or_dependency_candidate"
+    }
+  ],
+  "history_detection_limit": "All reachable objects checked for listed byte markers. Paths are Git representative paths, not every occurrence; exact removal occurrences require commit/tree enumeration before execution. Marker-free derivatives require manual review.",
+  "unparsed_candidates": [],
+  "classification_limit": "Structural/text candidate detection, not a legal or exhaustive content determination. Reference-only matches must not be deleted merely for citing a source; textual summaries need item-level review.",
+  "history_scope": "Locate every historical version containing target data or protected expressions; deleting only current paths is insufficient.",
+  "historical_integrity_dependencies": [
+    "scripts/intent_router.py",
+    "scripts/specialist_router.py",
+    "router/catalog.json",
+    "router/specialists-0.1.json"
+  ],
+  "approved_artifact_mutation_authorized": false,
+  "history_rewrite_authorized": false,
+  "additional_agents_authorized": false,
+  "publication_authorized": false
+}
