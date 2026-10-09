@@ -42,23 +42,26 @@ class FrameworkCatalogBytesTests(unittest.TestCase):
                         self.assertEqual((checkout / relative).read_bytes(), expected)
 
     def test_canonical_capture_replays_and_preserves_original_source_state(self):
-        capture = json.loads((ROOT / 'evaluations/sus17-canonical-catalog-replay.json').read_text())
+        capture = json.loads((ROOT / 'evaluations/sus25-fictional-framework-replay.json').read_text())
         for execution in capture['executions']:
             request = execution['request']
             self.assertEqual(run_framework(request['state'], request['skill'], request['parameters']),
                              execution['output'])
-        author = json.loads((ROOT / 'evaluations/sus17-framework-mapping.json').read_text())
-        independent = json.loads((ROOT / 'evaluations/sus17-independent-framework-mapping.json').read_text())
-        runs = capture['executions']
-        self.assertEqual(runs[0]['request']['state'], author['executions'][0]['request']['state'])
-        self.assertEqual(runs[1]['request']['state'], runs[0]['output']['proposal']['state'])
-        self.assertEqual(runs[2]['request']['state'], independent['request']['state'])
+        self.assertFalse(capture['independent_acceptance'])
+        for execution in capture['executions']:
+            original=execution['request']['state']
+            final=execution['output']['proposal']['state']
+            self.assertEqual(final['results'][:len(original['results'])],original['results'])
         for migration in capture['catalog_pin_migration']:
             path = ROOT / migration['path']
             self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), migration['canonical_lf_sha256'])
 
     def test_historical_crlf_pin_is_rejected_instead_of_silently_normalized(self):
-        capture = json.loads((ROOT / 'evaluations/sus17-framework-mapping.json').read_text())
-        request = capture['executions'][0]['request']
+        from tests.test_frameworks import framework_fixture
+        state,parameters=framework_fixture()
+        selected=parameters['adapters'][0]
+        raw=(ROOT/'standards/frameworks'/(selected['adapter_id']+'.json')).read_bytes()
+        selected['catalog_sha256']=hashlib.sha256(raw.replace(b'\n',b'\r\n')).hexdigest()
+        request={'state':state,'skill':'map-framework-disclosures','parameters':parameters}
         output = run_framework(request['state'], request['skill'], request['parameters'])
         self.assertEqual(output['result']['status'], 'blocked')

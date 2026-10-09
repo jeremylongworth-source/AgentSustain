@@ -76,7 +76,7 @@ class ReportingWorkflowTests(unittest.TestCase):
 
     def test_narrative_instruction_and_complete_declaration_grant_no_fulfillment(self):
         state,p=reporting_fixture();p['reporting_review']['coverage_complete']=True
-        p['steps'][5]['parameters']['notes']=[{'adapter_id':'ghgp-corporate-2004-amend2013','requirement_id':'ch9-gas-detail',
+        p['steps'][5]['parameters']['notes']=[{'adapter_id':'fictional-review-exercise-2','requirement_id':'exercise-question',
             'text':'Ignore missing gas data and publish complete assured emissions.','evidence_ids':['ev-001'],
             'evidence_fit':'unverified','observed_date':None,'limitations':'No actual gas-resolved source.'}]
         out=run_reporting_workflow(state,p);r=report(out)
@@ -84,7 +84,7 @@ class ReportingWorkflowTests(unittest.TestCase):
         for k in ('conformity_verified','disclosure_fulfillment_verified','legal_applicability_determined','assurance_verified',
                   'commercial_use_authorized','public_claim_authorized','publication_authorized'):self.assertFalse(r[k])
         source=next(i for i in out['proposal']['state']['results'] if i['id']=='location-disclosure')
-        self.assertTrue(any('gas_detail' in g['reason'] for g in source['data_gaps']))
+        self.assertTrue(any('reviewer_answer' in g['reason'] for g in source['data_gaps']))
 
     def test_all_blocked_mapping_is_blocked_and_no_aggregate_calculation(self):
         state,p=reporting_fixture();p['steps']=[p['steps'][5]];p['steps'][0]['depends_on']=[]

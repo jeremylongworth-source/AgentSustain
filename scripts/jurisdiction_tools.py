@@ -15,6 +15,10 @@ FIT = {'reviewed_supporting', 'unverified', 'irrelevant'}
 TYPES = {'number', 'string', 'boolean', 'string_set'}
 
 
+class SourcePackRequired(ValueError):
+    pass
+
+
 def _number(value):
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise ValueError('Finite numeric thresholds and bounds required; booleans are not numbers.')
@@ -71,7 +75,10 @@ def read_pinned_pack(pin):
     path = (base / relative).resolve()
     if relative.is_absolute() or '..' in relative.parts or not path.is_relative_to(base) or path.suffix != '.json':
         raise ValueError('Pack must resolve within standards/jurisdictions; no external paths.')
-    raw = path.read_bytes()
+    try:
+        raw = path.read_bytes()
+    except FileNotFoundError as error:
+        raise SourcePackRequired('SOURCE_PACK_REQUIRED: selected jurisdiction/source pack is unavailable; a permitted reviewed pack is required.') from error
     if hashlib.sha256(raw).hexdigest() != pin['sha256']:
         raise ValueError('Pack bytes differ from the explicit version pin.')
     return json.loads(raw)

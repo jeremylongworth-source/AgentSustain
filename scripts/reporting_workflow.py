@@ -36,7 +36,7 @@ def _plan(state, p):
         if not isinstance(step, dict) or set(step) != {'skill', 'parameters', 'depends_on'} or step['skill'] not in set(OPERATIONS) | CARBON:
             raise ValueError('Allowlisted framework/carbon steps and explicit dependencies required.')
         skill = step['skill']; params = step['parameters']; required = CARBON_PARAMETERS[skill] if skill in CARBON else OPERATIONS[skill]
-        optional = {'fixture_mode'} if skill in CARBON else set()
+        optional = {'fixture_mode'} if skill in CARBON or skill=='compare-framework-mappings' else set()
         if not isinstance(params, dict) or not required <= set(params) or set(params) - required - optional:
             raise ValueError('Exact existing helper fields required.')
         if 'fixture_mode' in params and type(params['fixture_mode']) is not bool: raise ValueError('Per-step fixture mode must be boolean.')

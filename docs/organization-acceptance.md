@@ -18,7 +18,7 @@ The command reads inputs and prints a report; it writes no shared state or sourc
 
 ## Required checks
 
-Given the declared fictional case, when the source-to-manager pipeline runs, the following results must be observable. Evidence is the complete output plus its labeled check results in [the actual CLI captures](../evaluations/sus23-organization-acceptance.json).
+Given the declared fictional case, when the source-to-manager pipeline runs, the following results must be observable. Evidence is the complete output plus its labeled check results in [the actual CLI captures (original archived)](../evaluations/sus25-source-remediation-tree-manifest.json).
 
 | ID | Required behavior / pass evidence |
 |---|---|

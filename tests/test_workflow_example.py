@@ -18,7 +18,7 @@ class WorkflowExampleTests(unittest.TestCase):
     def test_reconstruction_matches_recorded_manager_and_preserves_inputs(self):
         request=bundle();original=copy.deepcopy(request)
         output=run_workflow_example(request)
-        recorded=json.loads((ROOT/'evaluations/sus23-food-manager-preliminary.json').read_text())['output']
+        recorded=json.loads((ROOT/'evaluations/sus25-fictional-food-workflow.json').read_text())['output']
         self.assertEqual(output['manager_output'],recorded)
         self.assertEqual(request,original)
         self.assertEqual(len(output['preparation_result_ids']),5)

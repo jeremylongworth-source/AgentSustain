@@ -13,15 +13,31 @@ from .scope3_accounting import calculate_category
 from .state_proposal import propose
 
 
-CATALOGS={'ghgp-corporate-2004','ghgp-corporate-2004-amend2013','tnfd-2023-ghg-referral'}
+CATALOGS={'tnfd-2023-ghg-referral'}
+FICTIONAL_CATALOGS={'fictional-review-exercise-1','fictional-review-exercise-2'}
+OMITTED_CATALOGS={'ghgp-corporate-2004','ghgp-corporate-2004-amend2013'}
 
 
-def catalog(ident, digest):
-    if ident not in CATALOGS: raise ValueError('Supported exact framework/version identifier required.')
-    raw=(ROOT/'standards'/'frameworks'/(ident+'.json')).read_bytes()
+class SourcePackRequired(ValueError):
+    pass
+
+
+def catalog(ident, digest, fixture_mode=False):
+    if ident in OMITTED_CATALOGS:
+        raise SourcePackRequired('Requested real framework pack is omitted pending exact source rights/review; no replacement standard is inferred.')
+    if ident not in CATALOGS | FICTIONAL_CATALOGS: raise ValueError('Supported exact framework/version identifier required.')
+    try:
+        raw=(ROOT/'standards'/'frameworks'/(ident+'.json')).read_bytes()
+    except FileNotFoundError as error:
+        raise SourcePackRequired('Selected pinned framework pack is unavailable; provide a permitted reviewed edition.') from error
     if hashlib.sha256(raw).hexdigest()!=digest: raise ValueError('Pinned mapping bytes changed; select a reviewed mapping revision explicitly.')
     value=json.loads(raw)
-    if value['id']!=ident or not value['source_verified'] or value['publication_status']!='issued':
+    if ident in FICTIONAL_CATALOGS:
+        if (fixture_mode is not True or value['id']!=ident or value.get('synthetic') is not True
+                or value['source_verified'] is not False or value['publication_status']!='fictional'):
+            raise ValueError('Original fictional catalogs require explicit fixture mode and fictional/unverified labels.')
+        return value
+    if value['id']!=ident or not value['source_verified'] or value['publication_status']!='issued' or value.get('synthetic',False):
         raise ValueError('Unverified/draft standard cannot support an issued-version mapping.')
     return value
 
@@ -73,7 +89,9 @@ class FactorRequired(ValueError):
 def run_framework(state, skill, parameters):
     validate_state(state)
     required={'inventory_result_id','adapters','notes','mapping_review','fixture_mode','result_id'} if skill=='map-framework-disclosures' else {'before','after','mapping_review','result_id'}
-    if skill not in {'map-framework-disclosures','compare-framework-mappings'} or not isinstance(parameters,dict) or set(parameters)!=required or not _text(parameters['result_id']):
+    optional={'fixture_mode'} if skill=='compare-framework-mappings' else set()
+    if (skill not in {'map-framework-disclosures','compare-framework-mappings'} or not isinstance(parameters,dict)
+            or not required <= set(parameters) or set(parameters)-required-optional or not _text(parameters['result_id'])):
         raise ValueError('Supported framework operation with exact parameters required.')
     result={'id':parameters['result_id'],'skill':skill,'contract_version':'0.1.0','status':'partial','review_states':['ADVISORY'],
         'review_requirements':copy.deepcopy(state['review_requirements']),'metrics':[],'evidence_ids':[],
@@ -85,6 +103,8 @@ def run_framework(state, skill, parameters):
             'remedy':'Inspect scoped source/version and obtain qualified reporting, rights and accountable-owner review.'})
         result['diagnostics'].append({'code':code,'message':message})
     try:
+        if 'fixture_mode' in parameters and type(parameters['fixture_mode']) is not bool:
+            raise ValueError('Explicit boolean fixture mode required.')
         review=parameters['mapping_review']
         _fields(review, {'boundary_id','period','as_of_date','scope','evidence_ids','evidence_fit','rationale','reviewer_role'}, ('scope','rationale','reviewer_role'))
         _sources(state,review['evidence_ids'],refs)
@@ -98,8 +118,11 @@ def run_framework(state, skill, parameters):
             versions=[]
             for key in ['before','after']:
                 pin=parameters[key]; _fields(pin, {'adapter_id','catalog_sha256'}, ('adapter_id','catalog_sha256'))
-                versions.append(catalog(pin['adapter_id'],pin['catalog_sha256']))
+                versions.append(catalog(pin['adapter_id'],pin['catalog_sha256'],parameters.get('fixture_mode',False)))
             a,b=versions
+            if any(v.get('synthetic') for v in versions):
+                gap('Fictional worksheet version comparison only; not an external standard change.','FICTIONAL_FRAMEWORK_ONLY')
+                result['assumptions'].append('Original fictional review exercise; not an externally issued framework.')
             if any(_date(v['retrieved'])>as_of for v in versions):
                 raise ValueError('Version-diff review cannot predate either source retrieval.')
             if a['framework']!=b['framework'] or a['id']==b['id']: raise ValueError('Distinct versions of the same framework required for mapping diff.')
@@ -128,7 +151,10 @@ def run_framework(state, skill, parameters):
             for requested in adapters:
                 _fields(requested, {'adapter_id','catalog_sha256','version_rationale','evidence_ids','evidence_fit','requested_requirement_ids'}, ('adapter_id','catalog_sha256','version_rationale'))
                 if requested['adapter_id'] in ids: raise ValueError('Distinct selected adapter versions required.')
-                ids.add(requested['adapter_id']); definition=catalog(requested['adapter_id'],requested['catalog_sha256'])
+                ids.add(requested['adapter_id']); definition=catalog(requested['adapter_id'],requested['catalog_sha256'],parameters['fixture_mode'])
+                if definition.get('synthetic'):
+                    result['assumptions']=list(dict.fromkeys(result['assumptions']+['Original fictional review exercise; not an externally issued framework.']))
+                    gap('Fictional worksheet mapping only; external-framework conformity cannot be inferred.','FICTIONAL_FRAMEWORK_ONLY')
                 if _date(definition['retrieved'])>as_of: raise ValueError('Mapping cannot predate pinned source retrieval.')
                 _sources(state,requested['evidence_ids'],refs)
                 if requested['evidence_fit'] not in {'reviewed_supporting','unverified','irrelevant'}: raise ValueError('Explicit edition applicability fitness required.')
@@ -183,7 +209,7 @@ def run_framework(state, skill, parameters):
             'scope':review['scope'],'reviewer_role':review['reviewer_role'],'status':'open','resolution':None})
         result['diagnostics'].append({'code':'FRAMEWORK_DISCLOSURE_MAP' if skill=='map-framework-disclosures' else 'FRAMEWORK_MAPPING_DIFF','message':json.dumps(report,sort_keys=True)})
     except (ValueError,TypeError,KeyError) as error:
-        result['status']='blocked'; gap(str(error),'EMISSION_FACTOR_REQUIRED' if isinstance(error,FactorRequired) else 'DISCLOSURE_DATA_REQUIRED')
+        result['status']='blocked'; gap(str(error),'EMISSION_FACTOR_REQUIRED' if isinstance(error,FactorRequired) else 'SOURCE_PACK_REQUIRED' if isinstance(error,SourcePackRequired) else 'DISCLOSURE_DATA_REQUIRED')
     result['evidence_ids']=sorted(refs)
     result['diagnostics'].append({'code':'FRAMEWORK_INPUTS','message':json.dumps(parameters,sort_keys=True)})
     result['review_states']=list(dict.fromkeys(result['review_states']+[r['state'] for r in result['review_requirements'] if r['status']=='open']+(['EVIDENCE_INCOMPLETE'] if result['data_gaps'] else [])))

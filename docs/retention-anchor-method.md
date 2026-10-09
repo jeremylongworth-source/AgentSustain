@@ -4,7 +4,7 @@ The draft task contract `jurisdiction-tasks-0.2.0` adds explicit retention ancho
 
 ## Primary-source motivation
 
-The [2023 primary notice](https://gazette.gc.ca/rp-pr/p1/2023/2023-12-09/html/sup1-eng.html), opening retention paragraph, uses required submission as the three-year anchor. Its [2025 amendment](https://gazette.gc.ca/rp-pr/p1/2025/2025-12-06/html/notice-avis-eng.html), Schedule item 2, supplies reporting-year dates. [The separate research calendar](../standards/jurisdictions/canada/research/ghgrp-required-submission-calendar.json) records those source dates and calculated anniversary candidates:
+The [2023 primary notice](https://gazette.gc.ca/rp-pr/p1/2023/2023-12-09/html/sup1-eng.html), opening retention paragraph, uses required submission as the three-year anchor. Its [2025 amendment](https://gazette.gc.ca/rp-pr/p1/2025/2025-12-06/html/notice-avis-eng.html), Schedule item 2, supplies reporting-year dates. [The separate research calendar (original archived)](../evaluations/sus25-source-remediation-tree-manifest.json) records those source dates and calculated anniversary candidates:
 
 | Reporting year | Selected required date | Three-year candidate anniversary |
 |---|---|---|

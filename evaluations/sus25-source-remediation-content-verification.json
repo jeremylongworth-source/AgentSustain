@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-09",
+  "original_921_file_hashes_verified": true,
+  "original_approved_preview_wiki_runner_pins_verified": true,
+  "candidate_omissions_verified": 38,
+  "source_dependent_test_modules_archived": 4,
+  "source_dependent_test_cases_archived": 32,
+  "local_links_checked": 83,
+  "broken_links": [],
+  "fictional_input_pins_verified": true,
+  "fictional_workbook_zip_integrity_verified": true,
+  "history_filtered": false,
+  "publication_clearance": false,
+  "validation_scope": "Structural content, links, original integrity and fixture pins. Full runtime suite results recorded separately."
+}

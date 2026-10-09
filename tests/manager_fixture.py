@@ -56,7 +56,8 @@ def manager_fixture():
         task.update(resource_demands=None, preconditions=None, evidence_ids=['ev-001'], evidence_fit='unverified')
     roadmap['implementation_review'].update(evidence_ids=['ev-001'],
         resource_basis='Resource and capacity evidence not supplied; no zero demand or staffing reservation inferred.')
-    disclosure = copy.deepcopy(_load('sus17-canonical-catalog-replay.json')['executions'][0]['request']['parameters'])
+    from tests.test_frameworks import framework_fixture
+    disclosure = copy.deepcopy(framework_fixture()[1])
     disclosure['inventory_result_id'] = inventory_id
     manager_review = {'boundary_id': state['organizational_boundary']['id'], 'period': copy.deepcopy(state['reporting_period']),
         'scope': 'Selected fictional facility workflow; partial inventory and one prospective electricity-intensity objective.',

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-09",
+  "original_revision": "d525ecd57044945bb77ae2ecd239f6327c6f760e",
+  "bundle_sha256": "a731a4b9d1e8a4acb6c84cb45db54bd9c609568d62772767adc2b353dd0857db",
+  "working_evidence_sha256": "9e518e2ac3111eccf9a483d4c08327768f6114b3e6ef2ece8129873f85f2bef0",
+  "working_evidence_files_verified": 928,
+  "bundle_verified": true,
+  "candidate_cloned_from_bundle": true,
+  "publication_authorized": false,
+  "history_rewrite_authorized": false
+}

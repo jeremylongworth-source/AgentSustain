@@ -1,0 +1,319 @@
+{
+  "base_revision": "d525ecd57044945bb77ae2ecd239f6327c6f760e",
+  "dispositions": [
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004.json",
+      "old_sha256": "f4dc25a7e91fb190f372f32b023faf950d686fc629b78d103e32f7328e6e8b24",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/frameworks/ghgp-corporate-2004-amend2013.json",
+      "old_sha256": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/notice-2023-amended2025.json",
+      "old_sha256": "2438d429e6be408cf516125d40327e98f806a5dd725be5e33926eb664ec6042e",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/notice-2023.json",
+      "old_sha256": "0815bf14c5d8cc42664d248865038f78bf45c27087a09d8672690ddc109bf6b6",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/schedule1-gwp-transcription-1.json",
+      "old_sha256": "da4f6dbddaa39e7a3d8ac3c82a82d1735ade2f0409b59d7bf42f363ddaeb1f91",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/source-chain.json",
+      "old_sha256": "eea24fa1abd221a4ff1e1b0a97f41f057208efda4cee86baf00018bdbed20b08",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-1.json",
+      "old_sha256": "d52ead31de8ce8333b5be2ac786279a39b43c61a9ba381647c0fb8c202b0c6ef",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-amended2025-history-1.json",
+      "old_sha256": "02bc2bdbc6607b7b411ac07b99db55034717b6d49f6a3a2e57afda8f8787bf7b",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-1.json",
+      "old_sha256": "7646a79fd108d093c198c290a282dd3aa4fc33f9f083c872d379ecb6353725a2",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/tasks-notice2023-history-1.json",
+      "old_sha256": "9b60cca30b9925ba3f6c20635517a3a254ea27f255ca602cdebe5e8bd980bafe",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/ghgrp/threshold-species-profile-1.json",
+      "old_sha256": "f6b37433b212801276d96ad5a2cc7a65e1db278378638736cca1c1a521c521e2",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/environmental-claims-2024-2026-source-register.json",
+      "old_sha256": "f38b77ece3dfff252c5ade49e47a3321fd8ee60677de9024140e278447c4a115",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-2024-2026-source-register.json",
+      "old_sha256": "c46fa1c11430cf61122520fa9f4378b0ce71e605f16cb9290951423c89268395",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-quantification-v7-fit-register.json",
+      "old_sha256": "84eac55554d53c16cae58a11cd6393be1705e07423f48724eb8f11c0fb952202",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-required-submission-calendar.json",
+      "old_sha256": "9171250e7941561f9e09458d242ae58b8f8422ecc510a1d53d45365ab1556b88",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "standards/jurisdictions/canada/research/ghgrp-source-byte-custody-2026-10-06.json",
+      "old_sha256": "2ff3fe81ea9fa97a2de18f47d2cb3cff71a60df76096f24494ace791ddb97956",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Unresolved source record; preserved in private backup"
+    },
+    {
+      "path": "evaluations/sus17-canonical-catalog-replay.json",
+      "old_sha256": "8841774de10b81d28e0657007d0c79591a4ae50d55990c54aa1033711bd8107a",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus17-framework-mapping.json",
+      "old_sha256": "7105604461fc5ea6c1347c1f263b3a54b0f3d4a47320379c3e6b499ff7c2b6ae",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus17-independent-framework-mapping.json",
+      "old_sha256": "c9c79a5591621fdeb78a628fdab8ca3bbc77d1bf524a3fdc6dd3a8d35043d263",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus19-canada-draft-screen.json",
+      "old_sha256": "893437ef706540cdb538eadcbf6a9e7619e534a8b06d102d9e92707874b3f794",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus19-canada-quantity-bridge.json",
+      "old_sha256": "316dcfcc46319ebf9ff4aa21cee367f384dbedb2e19cb7c21e6b6d44507352f4",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus19-canada-task-history.json",
+      "old_sha256": "09c07187526e0a93a304b287e36b80153988c70f1f02f04eb730e23dac5cdb48",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus19-canada-tasks.json",
+      "old_sha256": "e38100f1a6b404e8316b1cc9298290f635f031994304b4747917c54cf59ee8a7",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus21-specialist-router.json",
+      "old_sha256": "b1bd854e2af2367a5f8090d3a851d9d06af2637838dd23c586d5bf0372ff6755",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus22-organization-manager.json",
+      "old_sha256": "7de259fe6b69c08824a01b5b05c6428297f3d3c6a72afd71584eec7cf34ffff4",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus22-reporting-workflow.json",
+      "old_sha256": "262b5a2bd25861786636396f90fac460b537b0b72380a31b83fa069fd09fb800",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus23-business-source-workflow.json",
+      "old_sha256": "fec794904529903916550c2b47bbeccfb9b43e31e92f2dcb5e7b815ca8842d1e",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus23-food-composition.json",
+      "old_sha256": "5f6dc6e82f4fcd73d8ed3d105baddace243af4aa06e0fec7ddc0eeabcbe92f00",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus23-food-manager-preliminary.json",
+      "old_sha256": "650cf56be6b2e8cf01554d5a86428560632d9f4e58431219211e232b23910d54",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus23-organization-acceptance.json",
+      "old_sha256": "5aaed54854943d94df58f551e329169a7b0f775c6871a25318ef75dcd3398d57",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "evaluations/sus23-workbook-source.json",
+      "old_sha256": "722586c66f7ad84f53885cdc5895ee4553577a8a3bbd75a209a4932f5de51a84",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Embedded source snapshot; original historical evidence preserved privately"
+    },
+    {
+      "path": "tests/canada_task_fixture.py",
+      "old_sha256": "c4c5d2fadf3080294869e7973b9a9677dfd7895691237ec38bfb7e9fbc0fddc6",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "tests/canada_quantity_fixture.py",
+      "old_sha256": "74cce06195ae8964d205cf847b01dcd6087c3c112c08299c7f929ef72bbaa5f3",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "tests/canada_ghgrp_fixture.py",
+      "old_sha256": "c4d4bace6b81c87c1ebb88b9ae25f6f84582eaf9a63987d9b6b16f289204a0c5",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "tests/test_canada_task_history.py",
+      "old_sha256": "992b5301f88bf22efd805f8dcf79b835dd046501decbfb0baaa26d3fa8bf6b03",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "tests/test_canada_tasks.py",
+      "old_sha256": "a6e7bead00ab96b14860270949a6ae04d98efd28631c3f42a0f8bbf1ff361961",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "tests/test_canada_quantity_bridge.py",
+      "old_sha256": "6a0882b87bb4ac8bdc52827e7d216176ca5cf23adb285bde277aec7e39b13b1a",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "tests/test_canada_ghgrp.py",
+      "old_sha256": "4f53a10a5080982bde38e1df6aba906daf672a2f6010f4bd1d1caf82bc728d55",
+      "disposition": "omit_from_candidate_tree",
+      "reason": "Tests and fixtures for omitted real-source pack; neutral jurisdiction/gas tests remain and unavailable-pack checks replace public pack coverage"
+    },
+    {
+      "path": "docs/canada-environmental-claims-research.md",
+      "old_sha256": "833aaef13cae6d2c270a04ccd25c7431b31c9acffa8a9914fda254954ca216fd",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "docs/canada-ghgrp-draft-screen.md",
+      "old_sha256": "a2a6e0f69c0157f5aaa47ea91bae1449ca10910dc014c77f38d3154bf3716de4",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "docs/canada-ghgrp-quantification-research.md",
+      "old_sha256": "f148001c22631c6e6d0282a8afa9210523a19befc7274e5fb3c8a6a67bc58153",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "docs/canada-ghgrp-source-research.md",
+      "old_sha256": "255dda35d1fc55a617c46b4dd90c682309b52c49b9e5731569afa18050d0b822",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "docs/canada-quantity-bridge.md",
+      "old_sha256": "7dd5306da8a0a8c5cbd57b3155ad50c1a71a7f5c7950b5fc56d9b1089556628f",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "docs/canada-source-custody.md",
+      "old_sha256": "fe7585c641c412aa1f8cebc1816f55af8ec569c8ff50140f730a2d855df88384",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "docs/canada-task-workflow.md",
+      "old_sha256": "05c8bdacbff6e196f983a6e4a4f935561e0f208ebb9b6abbc463253ff71cc42b",
+      "disposition": "replace_source_research_with_availability_notice",
+      "reason": "Unresolved source-linked research retained privately"
+    },
+    {
+      "path": "evaluations/sus17-framework-mapping.md",
+      "old_sha256": "8b08a67da36a4751e2932e1be6e763ede47baf8e85c91e0e0875689b9e058a25",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    },
+    {
+      "path": "evaluations/sus17-independent-framework-mapping.md",
+      "old_sha256": "a0948c970f58c88548e7dc6ab25cf649c59fd0c6774964036c8971da7b3928e0",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    },
+    {
+      "path": "evaluations/sus19-canada-draft-screen.md",
+      "old_sha256": "c63cb2685a4ef28d7e9e14988082933dbe4f02587f5ac7853651f4e19c2a4fed",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    },
+    {
+      "path": "evaluations/sus19-canada-quantity-bridge.md",
+      "old_sha256": "406ab48e5838a1efff6f43e690cb4f2443ae6746de4ddd3c5e0a15951ec8712c",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    },
+    {
+      "path": "evaluations/sus19-canada-task-history.md",
+      "old_sha256": "9886ab43c1f3326403821a9627b39e67220915e28b87968ab648192c3009c074",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    },
+    {
+      "path": "evaluations/sus19-canada-tasks.md",
+      "old_sha256": "f533880cfdc603781b04c6aabb48381eaef2b20f204952e35b85a768535cea00",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    },
+    {
+      "path": "evaluations/sus19-retention-anchors.md",
+      "old_sha256": "187f162b57c8354df0c5594defcf5a7b0e05a79f7e81ee8e16f2cd5252f5df2e",
+      "disposition": "replace_source_evaluation_with_archive_notice",
+      "reason": "Source-derived evaluation narrative retained privately; does not validate replacement edition"
+    }
+  ],
+  "history_filtered": false,
+  "scope": "Current-tree omissions only. Historical occurrence manifest and rewrite approval remain separate."
+}

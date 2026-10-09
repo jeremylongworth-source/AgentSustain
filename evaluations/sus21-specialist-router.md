@@ -1,6 +1,6 @@
 # Seven-specialist routing evaluation
 
-All entities, input quantities, factor/GWP/review facts, scenario conditions and recipes are controlled fictional examples. [Complete actual CLI requests and outputs](sus21-specialist-router.json) include seven invoked specialist roles and four adversarial/planning cases. Request bytes remain unchanged and full CLI/helper outputs agree.
+All entities, input quantities, factor/GWP/review facts, scenario conditions and recipes are controlled fictional examples. [Complete actual CLI requests and outputs (original archived)](sus25-source-remediation-tree-manifest.json) include seven invoked specialist roles and four adversarial/planning cases. Request bytes remain unchanged and full CLI/helper outputs agree.
 
 | Case | Expected behavior |
 | --- | --- |

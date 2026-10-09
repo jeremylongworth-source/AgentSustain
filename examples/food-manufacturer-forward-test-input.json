@@ -2457,9 +2457,9 @@
       "inventory_result_id": "operations-inventory",
       "adapters": [
         {
-          "adapter_id": "ghgp-corporate-2004-amend2013",
-          "catalog_sha256": "b505a8677a9ef4c42dba35384931f5a7b455470afa6adcac96a21d510616c400",
-          "version_rationale": "Fictional selected source edition only; later guidance, license and current applicability require review.",
+          "adapter_id": "fictional-review-exercise-2",
+          "catalog_sha256": "7f72cddb2ca3f328a854977904941fa0f8a9f50ad9a575a60e5ebcd993f8854e",
+          "version_rationale": "Original fictional worksheet version for demonstration; no external standard selected.",
           "evidence_ids": [
             "food-north-electricity-evidence"
           ],

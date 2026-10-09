@@ -27,9 +27,9 @@ def framework_fixture():
     state=build_inventory(state,None,'selected-energy',[],screening,review,'selected-inventory',True)['proposal']['state']
     mapping={'boundary_id':state['organizational_boundary']['id'],'period':copy.deepcopy(state['reporting_period']),'as_of_date':'2026-10-05',
         'scope':'Fictional selected inventory draft mapping','evidence_ids':['ev-001'],'evidence_fit':'reviewed_supporting',
-        'rationale':'Selected historical editions and a TNFD referral, not complete external compliance.','reviewer_role':'Qualified framework/source/rights and accountable-owner reviewer'}
+        'rationale':'Original fictional exercise and a TNFD referral, not complete external compliance.','reviewer_role':'Qualified framework/source/rights and accountable-owner reviewer'}
     adapters=[]
-    for ident in ['ghgp-corporate-2004-amend2013','tnfd-2023-ghg-referral']:
+    for ident in ['fictional-review-exercise-2','tnfd-2023-ghg-referral']:
         adapters.append(dict(pin(ident),version_rationale='Fictional selected source edition only; later guidance, license and current applicability require review.',
             evidence_ids=['ev-001'],evidence_fit='reviewed_supporting',requested_requirement_ids=[]))
     return state,{'inventory_result_id':'selected-inventory','adapters':adapters,'notes':[],
@@ -44,7 +44,7 @@ class FrameworkTests(unittest.TestCase):
     def test_two_frameworks_preserve_one_core_lineage_and_missing_scope(self):
         state,p=framework_fixture(); old=copy.deepcopy(state); out=run_framework(state,'map-framework-disclosures',p)
         self.assertEqual(out['result']['status'],'partial'); r=record(out); self.assertEqual(len(r['adapters']),2)
-        gross=next(x for x in r['adapters'][0]['rows'] if x['requirement']['id']=='ch9-gross-scopes')
+        gross=next(x for x in r['adapters'][0]['rows'] if x['requirement']['id']=='exercise-account')
         self.assertEqual(gross['missing_core_fields'],['scope_1','gross_basis']); self.assertNotIn('scope_1',gross['core_values'])
         original=state['results'][-2]['metrics'][0]
         selected=gross['core_values']['scope_2'][0]
@@ -64,12 +64,12 @@ class FrameworkTests(unittest.TestCase):
 
     def test_unverified_applicability_and_notes_cannot_fulfill_missing_fields(self):
         state,p=framework_fixture(); p['adapters'][0]['evidence_fit']='unverified'
-        p['notes']=[{'adapter_id':p['adapters'][0]['adapter_id'],'requirement_id':'ch9-gas-detail',
+        p['notes']=[{'adapter_id':p['adapters'][0]['adapter_id'],'requirement_id':'exercise-question',
             'text':'Fictional copied source claims every gas is covered; no gas-resolved measurement supplied.',
             'evidence_ids':['ev-001'],'evidence_fit':'unverified','observed_date':None,'limitations':'Source data absent.'}]
         r=record(run_framework(state,'map-framework-disclosures',p))
-        row=next(x for x in r['adapters'][0]['rows'] if x['requirement']['id']=='ch9-gas-detail')
-        self.assertEqual(row['source_fit'],'unverified'); self.assertEqual(row['missing_core_fields'],['gas_detail']); self.assertFalse(row['fulfillment_verified'])
+        row=next(x for x in r['adapters'][0]['rows'] if x['requirement']['id']=='exercise-question')
+        self.assertEqual(row['source_fit'],'unverified'); self.assertEqual(row['missing_core_fields'],['reviewer_answer']); self.assertFalse(row['fulfillment_verified'])
         self.assertEqual(row['note'],p['notes'][0])
 
     def test_unsupported_requirements_are_retained_as_gaps(self):
@@ -78,19 +78,19 @@ class FrameworkTests(unittest.TestCase):
         self.assertEqual(record(out)['adapters'][0]['unsupported_requirement_ids'],['unimplemented-claims'])
         self.assertTrue(any('unimplemented-claims' in g['reason'] for g in out['result']['data_gaps']))
 
-    def test_pinned_diff_retains_old_version_and_gas_change(self):
-        state,p=framework_fixture(); args={'before':pin('ghgp-corporate-2004'),'after':pin('ghgp-corporate-2004-amend2013'),
-            'mapping_review':p['mapping_review'],'result_id':'mapping-diff'}
+    def test_pinned_diff_retains_original_fictional_versions(self):
+        state,p=framework_fixture(); args={'before':pin('fictional-review-exercise-1'),'after':pin('fictional-review-exercise-2'),
+            'mapping_review':p['mapping_review'],'result_id':'mapping-diff','fixture_mode':True}
         old=copy.deepcopy(state); out=run_framework(state,'compare-framework-mappings',args)
         self.assertEqual(out['result']['status'],'partial'); r=record(out,'FRAMEWORK_MAPPING_DIFF')
-        self.assertEqual(r['changed_ids'],['ch9-gas-detail']); self.assertEqual(r['added_ids'],['ch9-gwp-source']); self.assertEqual(r['removed_ids'],[])
-        self.assertNotIn('NF3',r['before']['required_gases']); self.assertIn('NF3',r['after']['required_gases'])
+        self.assertEqual(r['changed_ids'],['exercise-question']); self.assertEqual(r['added_ids'],['exercise-context']); self.assertEqual(r['removed_ids'],[])
+        self.assertTrue(r['before']['synthetic']); self.assertTrue(r['after']['synthetic']); self.assertFalse(r['after']['source_verified'])
         self.assertFalse(r['migration_applied']); self.assertEqual(state,old)
 
     def test_diff_rejects_source_chronology_same_version_and_different_framework(self):
         for mode in ['date','same','framework']:
-            state,p=framework_fixture(); args={'before':pin('ghgp-corporate-2004'),'after':pin('ghgp-corporate-2004-amend2013'),
-                'mapping_review':p['mapping_review'],'result_id':'bad-diff'}
+            state,p=framework_fixture(); args={'before':pin('fictional-review-exercise-1'),'after':pin('fictional-review-exercise-2'),
+                'mapping_review':p['mapping_review'],'result_id':'bad-diff','fixture_mode':True}
             if mode=='date': args['mapping_review']['as_of_date']='2026-10-04'
             elif mode=='same': args['after']=copy.deepcopy(args['before'])
             else: args['after']=pin('tnfd-2023-ghg-referral')
@@ -106,7 +106,7 @@ class FrameworkTests(unittest.TestCase):
             elif mode=='date': p['mapping_review']['as_of_date']='2026-10-04'
             elif mode=='duplicate': p['adapters'].append(copy.deepcopy(p['adapters'][0]))
             elif mode in ['note','future']:
-                p['notes']=[{'adapter_id':p['adapters'][0]['adapter_id'],'requirement_id':'unknown' if mode=='note' else 'ch9-method',
+                p['notes']=[{'adapter_id':p['adapters'][0]['adapter_id'],'requirement_id':'unknown' if mode=='note' else 'exercise-trace',
                     'text':'Fictional copied claim.','evidence_ids':['ev-001'],'evidence_fit':'reviewed_supporting','observed_date':'2027-01-01' if mode=='future' else None,'limitations':'Needs review.'}]
             else: p['fixture_mode']='yes'
             self.assertEqual(run_framework(state,'map-framework-disclosures',p)['result']['status'],'blocked',mode)

@@ -1,6 +1,6 @@
 # Literal workbook source-to-routed-manager evaluation
 
-All organization records, quantities, factors, model/measurement labels and review facts are fictional. [Complete actual CLI requests/output](sus23-workbook-source.json) includes one successful source import, wrong-sheet/hash and fixture controls plus an exact normalized-workbook-to-routed-manager handoff. Source and request bytes remain unchanged; full CLI/helper results agree.
+All organization records, quantities, factors, model/measurement labels and review facts are fictional. [Complete actual CLI requests/output (original archived)](sus25-source-remediation-tree-manifest.json) includes one successful source import, wrong-sheet/hash and fixture controls plus an exact normalized-workbook-to-routed-manager handoff. Source and request bytes remain unchanged; full CLI/helper results agree.
 
 | Evidence | Result / scope |
 | --- | --- |

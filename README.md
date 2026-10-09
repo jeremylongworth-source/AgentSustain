@@ -1,5 +1,7 @@
 # AgentSustain
 
+**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Original history is still present and publication is held. Changed specialist assets await scoped review. See [the candidate review](docs/source-remediation-candidate-review.md). Historical status below describes the private development record.
+
 **Evidence-driven sustainability analysis for AI agents.**
 
 AgentSustain provides reusable agent skills and Python helpers for understanding environmental performance, evaluating improvement opportunities, and preparing sustainability plans. It connects business data, carbon accounting, operational analysis, financial models, targets, and reporting while keeping the evidence and review requirements visible.
@@ -115,12 +117,12 @@ One [independent agent workflow evaluation](evaluations/sus23-food-independent-a
 
 ## Documentation and roadmap
 
-- [Wiki home](wiki/Home.md) — locally prepared project and preview guides.
-- [Architecture](docs/architecture.md) — shared contracts and repository design.
-- [Development status](docs/development-status.md) — implementation and evidence history.
-- [Roadmap](ROADMAP.md) — authoritative SUS-00 through SUS-25 scope and sequence.
-- [Readiness audit](docs/v1-evidence-audit.md) — remaining full-v1 requirements.
-- [Approval checklist](docs/preview-approval-checklist.md) and [owner decisions](docs/preview-owner-decisions-2026-10-07.md) — exact reviewed surfaces and publication holds.
+- [Wiki home](wiki/Home.md) â€” locally prepared project and preview guides.
+- [Architecture](docs/architecture.md) â€” shared contracts and repository design.
+- [Development status](docs/development-status.md) â€” implementation and evidence history.
+- [Roadmap](ROADMAP.md) â€” authoritative SUS-00 through SUS-25 scope and sequence.
+- [Readiness audit](docs/v1-evidence-audit.md) â€” remaining full-v1 requirements.
+- [Approval checklist](docs/preview-approval-checklist.md) and [owner decisions](docs/preview-owner-decisions-2026-10-07.md) â€” exact reviewed surfaces and publication holds.
 
 ## Contributing
 

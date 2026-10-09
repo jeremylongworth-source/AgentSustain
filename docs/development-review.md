@@ -205,7 +205,7 @@ The two initial SUS-17 inventory mapping/diff workflows follow the approved b7e1
 
 ## Subsequent catalog byte portability correction
 
-The LF checkout rule and explicit historical-to-canonical pin replay follow the approved 39c7a96 snapshot. Only byte representation changes; catalog JSON, versions, requirements and source/rights metadata remain unchanged. Original captures and approvals are preserved. Later review must include canonical pin migration, rejected historical mismatches and exact composed-state replay. Evidence is in [the canonical capture](../evaluations/sus17-canonical-catalog-replay.json). Git checkout modes on Windows do not establish native Linux runtime support, source rights, conformity or release readiness.
+The LF checkout rule and explicit historical-to-canonical pin replay follow the approved 39c7a96 snapshot. Only byte representation changes; catalog JSON, versions, requirements and source/rights metadata remain unchanged. Original captures and approvals are preserved. Later review must include canonical pin migration, rejected historical mismatches and exact composed-state replay. Evidence is in [the canonical capture (original archived)](../evaluations/sus25-source-remediation-tree-manifest.json). Git checkout modes on Windows do not establish native Linux runtime support, source rights, conformity or release readiness.
 
 ## Subsequent initial jurisdiction execution foundation
 

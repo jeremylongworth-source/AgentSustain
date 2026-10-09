@@ -1,0 +1,66 @@
+{
+  "framework": "AgentSustain fictional review exercise",
+  "mapping_revision": "0.1.0",
+  "publication_status": "fictional",
+  "source_verified": false,
+  "synthetic": true,
+  "jurisdiction": "Fictional exercise; no external framework or jurisdiction",
+  "source": "fixture:agentsustain-original-review-exercise",
+  "retrieved": "2026-10-05",
+  "effective_interval": {
+    "start": null,
+    "end": null,
+    "basis": "Fictional example revision selection only"
+  },
+  "license": {
+    "basis": "Original AgentSustain fictional exercise under project MIT",
+    "commercial_or_public_use_authorized": true
+  },
+  "review_status": "fictional_exercise",
+  "coverage": "Original invented worksheet prompts; not an issued sustainability standard",
+  "requirements": [
+    {
+      "id": "exercise-account",
+      "clause": "Original worksheet prompt A",
+      "description": "Compare selected source accounts with the stated whole-account claim",
+      "required_core_fields": [
+        "scope_1",
+        "scope_2",
+        "gross_basis"
+      ],
+      "external_requirement_pending": false
+    },
+    {
+      "id": "exercise-question",
+      "clause": "Original worksheet prompt B",
+      "description": "Retain the unanswered question and the reviewer response context",
+      "required_core_fields": [
+        "reviewer_answer"
+      ],
+      "external_requirement_pending": false
+    },
+    {
+      "id": "exercise-trace",
+      "clause": "Original worksheet prompt C",
+      "description": "Show how supplied measurements reached the selected result",
+      "required_core_fields": [
+        "method"
+      ],
+      "external_requirement_pending": false
+    },
+    {
+      "id": "exercise-context",
+      "clause": "Original worksheet prompt D",
+      "description": "Attach the time window and entity boundary used for the exercise",
+      "required_core_fields": [
+        "reporting_period",
+        "organizational_boundary"
+      ],
+      "external_requirement_pending": false
+    }
+  ],
+  "id": "fictional-review-exercise-2",
+  "version": "fictional-2",
+  "authored_on": "2026-10-09",
+  "fixture_date_basis": "retrieved is an invented exercise-timeline date, not an external publication retrieval receipt"
+}

@@ -1,5 +1,7 @@
 # Current development review status
 
+**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Original history is still present and publication is held. Changed specialist assets await scoped review. See [the candidate review](source-remediation-candidate-review.md). Historical status below describes the private development record.
+
 This is a discovery index, not a new approval. [The owner decision ledger](architecture-review.md) is authoritative. Latest explicit owner development approval covers content snapshot `da4ddb3827931589b1fbf1f95cfef13fcac4075e`, recorded on 2026-10-06. Original architecture approval covers `f2d0ac9b5b34a4eef3f2678173d387d16fe0784c`.
 
 ## How to interpret frozen instructions
