@@ -1,7 +1,5 @@
 # AgentSustain
 
-**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Local source/metadata history is rewritten and capability migration is owner approved; fresh-clone validation and remote/publication gates remain separate. See [the candidate review](docs/source-remediation-candidate-review.md). Historical status below describes the private development record.
-
 **Evidence-driven sustainability analysis for AI agents.**
 
 AgentSustain provides reusable agent skills and Python helpers for understanding environmental performance, evaluating improvement opportunities, and preparing sustainability plans. It connects business data, carbon accounting, operational analysis, financial models, targets, and reporting while keeping the evidence and review requirements visible.
@@ -13,6 +11,8 @@ The project is designed for developers, sustainability teams, and consultants wo
 AgentSustain is a **development-stage library**, licensed under [MIT](LICENSE) for its original project material. Public availability remains on hold, and full v1 readiness has not been established.
 
 A limited helper preview and six wiki pages have owner content approval. That preview excludes unresolved framework/jurisdiction material and is smaller than the full development repository. Approval of the preview does not clear the full repository or its history for publication. See the [preview overview](docs/public-preview.md), [recorded owner decisions](docs/preview-owner-decisions-2026-10-07.md), and [current review status](docs/current-review-status.md).
+
+GHG Protocol and Canadian jurisdiction packs are currently unavailable. Framework demonstrations use fictional catalogs and a TNFD referral. See [edition scope and review history](docs/source-remediation-candidate-review.md) for details.
 
 ## Capabilities
 
