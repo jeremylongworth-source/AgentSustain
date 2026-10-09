@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-09",
+  "owner_approval": "ok i approve this",
+  "approved_original_source_revision": "15e333db5e257db3296127891790d207cacf9715",
+  "transformed_source_revision": "161a504af5710cf1250efaf3f992f8f29b8ec39b",
+  "original_intent_revision": "7fff776d2f2406adefe4eb45a75ae6ffeb05c838",
+  "transformed_intent_revision": "903a089e3993cbab3c950ad5e11defbf76a4de73",
+  "previous_specialist_revision": "7bad9dd3a07069b7a99979f80fd509ad0eb40486",
+  "transformed_previous_specialist_revision": "76efdcd0ce99f82bda4b9d2d88afc022a5b1d039",
+  "intent_capability_bytes_verified": 11,
+  "specialist_role_assets_verified": {
+    "sustainable-operations": 75,
+    "carbon-accounting": 41,
+    "sustainability-manager": 105,
+    "sustainable-procurement": 74,
+    "climate-risk": 67,
+    "sustainability-business-case": 66,
+    "sustainability-reporting": 65
+  },
+  "specialist_catalog_activated": true,
+  "integrity_checks_bypassed": false,
+  "external_action_performed": false,
+  "publication_clearance": false
+}

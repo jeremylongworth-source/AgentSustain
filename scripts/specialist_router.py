@@ -12,7 +12,7 @@ from .contract_validation import ROOT, validate_state
 from .manager_workflow import _empty
 from .state_proposal import propose
 
-REVISION='7bad9dd3a07069b7a99979f80fd509ad0eb40486'
+REVISION='161a504af5710cf1250efaf3f992f8f29b8ec39b'
 CATALOG_PATH='router/specialists-0.1.json'
 ENDPOINTS={
     'sustainable-operations':('operations_tools','run_operations'),

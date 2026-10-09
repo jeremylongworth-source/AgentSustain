@@ -26,11 +26,6 @@ FACTORIES={'carbon-accounting':carbon_workflow_fixture,'sustainability-manager':
     'sustainable-procurement':procurement_fixture,'climate-risk':climate_workflow_fixture,
     'sustainability-business-case':investment_fixture,'sustainability-reporting':reporting_fixture}
 
-# Changed transitive assets await scoped review; preserve the original Git gate.
-AWAITING_REPLACEMENT_REVIEW={'sustainability-manager','sustainable-procurement','climate-risk',
-                            'sustainability-business-case','sustainability-reporting'}
-
-
 def router_fixture(role='carbon-accounting',execute=False):
     if role=='sustainable-operations':
         state,manager=manager_fixture();recipe=manager['operations']
@@ -47,7 +42,7 @@ class SpecialistRouterTests(unittest.TestCase):
     def test_all_seven_original_intents_select_approved_roles_without_inventing_recipes(self):
         for role in ENDPOINTS:
             state,p=router_fixture(role);out=run_specialist_route(state,p);r=report(out)
-            self.assertEqual(r['selected_role'],role);self.assertEqual(r['reviewed_runtime_available'],role not in AWAITING_REPLACEMENT_REVIEW);self.assertFalse(r['helper_invoked'])
+            self.assertEqual(r['selected_role'],role);self.assertTrue(r['reviewed_runtime_available']);self.assertFalse(r['helper_invoked'])
             self.assertFalse(r['recipe_inferred']);self.assertFalse(r['input_fitness_verified']);self.assertEqual(out['result']['metrics'],[])
 
     def test_all_seven_actual_helper_invocations_equal_standalone_results_and_preserve_state(self):
@@ -55,13 +50,6 @@ class SpecialistRouterTests(unittest.TestCase):
             state,p=router_fixture(role,True);saved=copy.deepcopy(state)
             standalone=getattr(importlib.import_module('scripts.'+module),function)(state,p['recipe'])
             out=run_specialist_route(state,p);r=report(out)
-            if role in AWAITING_REPLACEMENT_REVIEW:
-                self.assertFalse(r['helper_invoked'],role)
-                self.assertFalse(r['reviewed_runtime_available'],role)
-                self.assertEqual(out['result']['status'],'blocked',role)
-                self.assertEqual(out['proposal']['state']['results'][:-1],state['results'])
-                self.assertEqual(state,saved)
-                continue
             self.assertTrue(r['helper_invoked'],role)
             self.assertEqual(out['result']['status'],'partial',role);view=r['source_result_view']
             source=next(s for s in out['proposal']['state']['results'] if s['id']==view['result_id'])

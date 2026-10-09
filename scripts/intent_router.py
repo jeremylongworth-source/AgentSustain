@@ -11,7 +11,7 @@ from .state_proposal import propose
 
 
 CATALOG = ROOT / 'router/catalog.json'
-APPROVED_REVISION = '7fff776d2f2406adefe4eb45a75ae6ffeb05c838'
+APPROVED_REVISION = '903a089e3993cbab3c950ad5e11defbf76a4de73'
 PATTERNS = {
     'operations': r'\b(cut|reduce|lower|improve|efficiency)\b.*\b(carbon|footprint|energy|water|waste|factory|operations)\b',
     'regulatory': r'\b(csrd|regulation|regulatory|legal|reporting obligation|mandatory reporting|apply to my company)\b',
