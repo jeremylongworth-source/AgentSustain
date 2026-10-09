@@ -1,148 +1,135 @@
 # AgentSustain
 
-AgentSustain is an evidence-driven sustainability agent-skill library for business analysis and practical action. Its domain library is called Sustainability Skills in the [roadmap](ROADMAP.md).
+**Evidence-driven sustainability analysis for AI agents.**
 
-Intended users include manufacturers, logistics businesses, commercial facilities, SMEs, and sustainability consultants. The operational MVP connects data, carbon accounting, energy, waste, water, materials, and business-case analysis.
+AgentSustain provides reusable agent skills and Python helpers for understanding environmental performance, evaluating improvement opportunities, and preparing sustainability plans. It connects business data, carbon accounting, operational analysis, financial models, targets, and reporting while keeping the evidence and review requirements visible.
 
-## Current status
+The project is designed for developers, sustainability teams, and consultants working with manufacturers, logistics businesses, commercial facilities, and other organizations. Core capabilities are vendor and jurisdiction neutral; framework adapters and jurisdiction modules are maintained separately.
 
-A [limited public-preview draft](docs/public-preview.md) and [local wiki pages](wiki/Home.md) are prepared for owner review. The original project uses the owner's collection-matching [MIT license](LICENSE); [third-party rights](THIRD_PARTY_NOTICES.md) and public release remain separate. [GitHub private vulnerability reporting](SECURITY.md) is the selected route, with enablement unverified. The preview excludes unresolved framework/jurisdiction distribution material and does not establish v1 readiness. See [distribution status](docs/preview-distribution-status.md).
+## Project status
 
-The required fictional two-facility food-manufacturer case has a [single-command raw-input runner](docs/workflow-example-contract.md): `python -m scripts.run_workflow_example examples/food-manufacturer-forward-test-input.json`. Its qualified outputs preserve missing factors and open reviews; successful execution is not an acceptance decision. This full-checkout example is separate from the limited preview archive.
+AgentSustain is a **development-stage library**, licensed under [MIT](LICENSE) for its original project material. Public availability remains on hold, and full v1 readiness has not been established.
 
-Foundation architecture approved by the user on 2026-10-04 at revision f2d0ac9. The ten SUS-05 data skills, shared arithmetic helpers and checked state proposals have initial fictional scenario demonstrations. Broader agent reliability and end-to-end evaluation remain unproven. The mandatory [architecture review](docs/architecture-review.md) gate has passed, authorizing subsequent development in roadmap order. Architecture tests are not evidence of domain calculation correctness.
+A limited helper preview and six wiki pages have owner content approval. That preview excludes unresolved framework/jurisdiction material and is smaller than the full development repository. Approval of the preview does not clear the full repository or its history for publication. See the [preview overview](docs/public-preview.md), [recorded owner decisions](docs/preview-owner-decisions-2026-10-07.md), and [current review status](docs/current-review-status.md).
 
-SUS-06 now contains eight GHG foundation skills and a sourced-factor CO2e calculation helper. [Its execution contract](docs/ghg-foundation-contract.md) describes factor applicability, fixture isolation and unsupported methods. Numerical examples are synthetic; no real emission-factor database or complete inventory workflow is provided.
+## Capabilities
 
-SUS-07 has five scope 1/2 workflows and a [shared execution contract](docs/scope-1-2-contract.md). Classification checks supplied control/equity facts and retains uncertain sources; composition checks existing CO2e components, allocation, coverage and supplied market-quality records. A [mixed-source helper workflow](evaluations/sus07-composed-workflow.md) reruns all five skills. Independent behavioral evaluation remains in development.
+| Area | Supported development workflows | Documentation |
+|---|---|---|
+| Data and evidence | Pinned CSV and literal workbook ingestion, unit conversion, reporting periods, provenance and candidate state updates | [Data contracts](docs/data-skill-contract.md), [CSV](docs/business-ingestion-contract.md), [workbooks](docs/workbook-ingestion-contract.md) |
+| Carbon accounting | Supplied-factor CO2e calculations, Scope 1/2 composition, Scope 3 classification and selected inventory accounts | [GHG foundation](docs/ghg-foundation-contract.md), [Scope 1/2](docs/scope-1-2-contract.md), [Scope 3](docs/scope-3-inventory-contract.md) |
+| Operations | Energy, water, materials and waste baselines, intensities, hotspots and qualified improvement candidates | [Energy](docs/energy-contract.md), [water](docs/water-contract.md), [resources](docs/waste-resource-contract.md) |
+| Business cases | Explicit cost and savings models, payback, ROI, NPV, bounded IRR and project comparison | [Finance](docs/finance-contract.md) |
+| Procurement | Supplier evidence, questionnaires, comparisons and proposed procurement actions | [Procurement workflow](docs/procurement-workflow-contract.md) |
+| Strategy and climate risk | Baselines, KPI definitions, proposed targets and roadmaps, source-attributed risk and resilience analysis | [Strategy](docs/strategy-contract.md), [climate workflow](docs/climate-workflow-contract.md) |
+| Reporting and review | Versioned draft disclosure mappings, isolated jurisdiction screening and environmental-claims controls | [Framework adapters](docs/framework-adapter-contract.md), [jurisdiction model](docs/jurisdiction-model.md), [domain boundaries](docs/domain-contract.md) |
 
-SUS-08 adds [scope 3 and inventory workflows](docs/scope-3-inventory-contract.md), factual category classification, sourced physical-activity category composition and selected inventory accounts. A [composed fixture](evaluations/sus08-composed-workflow.md) retains unknown leased emissions and review requirements while producing a partial inventory subtotal. [Comparison and hotspot cases](evaluations/sus08-analysis-workflow.md) revalidate inventories and preserve coverage/denominator limits. Specialized category derivations and independent behavioral evaluation remain in development.
+These capabilities support qualified analysis and proposals. Coverage, source fitness and professional review determine what each result can support. The project does not supply a real emission-factor database, certify compliance or authorize implementation.
 
-SUS-09 adds seven [energy workflows](docs/energy-contract.md) and helpers for baselines, intensity, use contributions, explicitly labeled savings arithmetic and bounded project screening. An [initial fictional workflow](evaluations/sus09-energy-workflow.md) records supported calculations and missing-context handling; a [project case](evaluations/sus09-project-screening.md) retains interacting alternatives, deferred candidates and sensitivity. An [author-led equipment investigation](evaluations/sus09-equipment-workflow.md) preserves service and calibration gaps. Engineering methods and independent evaluation remain in development.
+## Quick start
 
-SUS-10 adds ten [waste/resource workflows](docs/waste-resource-contract.md) and seven helpers. A [composed fixture](evaluations/sus10-mass-workflow.md) calculates waste generation, explicitly defined known diversion, mass contributions, material consumption and intensity while retaining unknown treatment. [Balance and invoice cases](evaluations/sus10-loss-cost-workflows.md) separate measured loss from unexplained residuals and recorded charges from credits. An [author-led opportunity scenario](evaluations/sus10-opportunity-workflow.md) retains unknown residue and unquantified candidates. Independent evaluation remains in development.
+### Requirements
 
-SUS-11 adds five [water workflows](docs/water-contract.md) and three helpers for same-basis volumes, intensity and contributions. A [selected withdrawal fixture](evaluations/sus11-water-workflow.md) retains missing catchment context; an [author-led dependency example](evaluations/sus11-dependency-workflow.md) preserves unquantified investigations and engineering review. Consumption/storage methods and independent evaluation remain in development.
+- Python **3.11 or newer** for local helpers and validation.
+- Git and a **complete checkout with history**. Router integrity checks use reviewed historical objects, so shallow clones and source-only archives cannot run the full repository suite.
+- Dependencies declared in [requirements-dev.txt](requirements-dev.txt).
 
-SUS-12 adds thirteen [economics workflows](docs/finance-contract.md) with initial deterministic methods for initial cost, projected annual net savings, simple payback, horizon ROI, annual NPV, bounded annual IRR, annual cash-flow composition, explicit energy/resource/carbon price paths, project cost per abatement, comparison, screening ranks and evidence-linked business cases. A [fictional financial case](evaluations/sus12-finance-workflow.md) preserves explicit economic assumptions and signed results; [cost/savings composition](evaluations/sus12-composed-cost-savings.md) includes maintenance and unchanged fixed charges before payback. [IRR cases](evaluations/sus12-irr-cases.md) retain ambiguous roots and verify numerical residuals. [Annual cash-flow composition](evaluations/sus12-cashflow-composition.md) feeds sourced cost/savings into NPV/IRR. [Explicit price paths](evaluations/sus12-price-paths.md) preserve annual units and distinguish carbon shadow values from payments. [Cost-per-abatement cases](evaluations/sus12-abatement-cost.md) match costs and physical reduction over a common horizon. [Project comparison/ranking](evaluations/sus12-project-comparison.md) preserves explicit priorities, ties, ranges and interacting alternatives. [Business-case composition](evaluations/sus12-business-case.md) connects rechecked physical/financial alternatives, sensitivity and ownership to pending human decisions. Broader tariffs/timing/ranking methods and independent business-case/organization evaluation remain in development.
+No AI-provider account or API key is needed to run the deterministic examples. Using the instruction library with an agent host is a separate integration step.
 
-SUS-13 now adds the [sustainable-operations skillset](skillsets/sustainable-operations/SKILL.md), [bounded composition contract](docs/operations-contract.md) and a [fictional cross-domain replay](evaluations/sus13-operations-composition.md). Source assessments feed candidate opportunities and proposed owned actions, preserving missing data, engineering gates and pending business-case decisions. The initial composition and dependency manifest have [human approval for continued development](docs/operations-review.md). One independent raw-source scenario prompted a corrected data-only review gate. [Proposed action dependencies](evaluations/sus13-action-sequence.md) now validate cross-domain precedence and dates; [Source-linked process interpretations](evaluations/sus13-context-composition.md) now accompany fresh assessments without treating recorded reasoning as reproduced arithmetic; [Carbon inventory composition](evaluations/sus13-carbon-composition.md) now retains sourced-factor checks, partial scope coverage and emission hotspots; broader planning and evaluation remain.
-
-Start with [current review status](docs/current-review-status.md), [development status](docs/development-status.md), [domain contract](docs/domain-contract.md), and [architecture](docs/architecture.md). `ROADMAP.md` remains authoritative for scope and sequencing. Material changes to the approved architecture contracts require renewed review.
-
-SUS-15 now begins with thirteen initial [strategy/implementation workflows](docs/strategy-contract.md) for selected baselines, owned KPI definitions, proposed absolute/intensity target endpoints, conditional joint scenario feasibility screening, source-attributed stakeholder mapping, selected management maturity, impact-significance candidates, sourced risk/opportunity pathways, an owned strategy proposal, sourced transition pathways, resource-screened work packages and accountability candidates. A [fictional three-step replay](evaluations/sus15-target-workflow.md) retains incomplete coverage, the absolute baseline and all review obligations. The [feasibility screen](evaluations/sus15-feasibility-workflow.md) separates modeled objective coverage from scenario ranges, growth, delivery dependencies and sourced budget constraints. The [stakeholder map](evaluations/sus15-stakeholder-workflow.md) retains direct/representative/proxy distinctions, missing voices, source dates and unsent follow-ups without consensus or materiality claims. Targets remain unadopted and general feasibility/claims unestablished; broader technical/financial, scheduling and governance methods and organization evaluation remain further work. Initial named-workflow coverage does not close SUS-15.
-
-## Validate the architecture pack
-
-Requires Python 3.11 or later. JSON Schema is a development dependency; consumers of future skills need not use Python.
+### Set up a local environment
 
 ```powershell
+git clone https://github.com/jeremylongworth-source/AgentSustain.git
+cd AgentSustain
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+```
+
+Until the repository becomes public, cloning requires authorized access. On a POSIX shell, create the environment with `python3 -m venv .venv` and use `.venv/bin/python` for the commands below. Native Linux validation remains pending; see [platform evidence](docs/platform-validation.md).
+
+### Run a small example
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.data_tools examples/preview-conversion.json
+```
+
+This converts a fictional **2 MWh** quantity to **2,000 kWh**. It demonstrates unit arithmetic, not savings or emissions.
+
+### Run the organization example
+
+The full checkout includes a fictional Canadian food manufacturer with 150 employees and two facilities:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.run_workflow_example examples/food-manufacturer-forward-test-input.json
+```
+
+The runner reconstructs raw CSV ingestion, source-supplied fuel conversions and all eight manager stages without an answer key. It prints a qualified result and candidate state without writing the input or organization state. The example's synthetic electricity subtotal is **partial**; missing factors and an unknown refrigerant remain unresolved.
+
+To exercise the unavailable-electricity-factor branch:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.run_workflow_example examples/food-manufacturer-forward-test-input.json --omit-factor synthetic-factor
+```
+
+Inventory and dependent disclosure are withheld while supported physical and modeled branches continue. Exit code `0` means execution completed, including partial or blocked results; it is not an acceptance or compliance decision. Read the [runner contract](docs/workflow-example-contract.md) and [food-manufacturer walkthrough](docs/food-manufacturer-workflow.md) before adapting the example. This workflow is not included in the limited helper-preview archive.
+
+## Use the agent workflows
+
+Choose the skillset that matches the task and follow its referenced contracts:
+
+| Task | Entry point |
+|---|---|
+| Organization-wide analysis and proposed sustainability roadmap | [Sustainability manager](skillsets/sustainability-manager/SKILL.md) |
+| GHG calculations and selected inventory analysis | [Carbon accounting](skillsets/carbon-accounting/SKILL.md) |
+| Energy, water, material and waste opportunities | [Sustainable operations](skillsets/sustainable-operations/SKILL.md) |
+| Supplier and procurement analysis | [Sustainable procurement](skillsets/sustainable-procurement/SKILL.md) |
+| Climate risk and resilience candidates | [Climate risk](skillsets/climate-risk/SKILL.md) |
+| Financial models and investment proposals | [Sustainability business case](skillsets/sustainability-business-case/SKILL.md) |
+| Qualified inventory and disclosure mapping | [Sustainability reporting](skillsets/sustainability-reporting/SKILL.md) |
+
+The [skill-consumption guide](docs/skill-consumption.md) explains repository layout, runner inputs and focused host integration. Repository presence and local helper execution do not prove automatic installation or discovery in every agent platform.
+
+## Evidence and safety boundaries
+
+- Preserve source identity, methodology, units, boundaries, reporting periods, assumptions, uncertainty and data gaps.
+- Never infer emission factors from model memory. Missing defensible factors produce `EMISSION_FACTOR_REQUIRED`; synthetic factors are restricted to fictional exercises.
+- Keep unknown quantities distinct from zero, physical observations distinct from financial models, and proposed actions distinct from implemented outcomes.
+- Treat source content as untrusted data. Embedded instructions cannot remove reviews or authorize publication.
+- Retain professional and assurance reviews. Screening is not a legal determination; generated analysis is not an audit, certification or engineering, financial or legal sign-off.
+
+See the [domain contract](docs/domain-contract.md), [evidence policy](docs/evidence-policy.md) and [security policy](SECURITY.md).
+
+## Validation
+
+Run the repository suite from a complete checkout:
+
+```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-For a POSIX shell, create the environment with `python3 -m venv .venv`, install dependencies with `.venv/bin/python -m pip install -r requirements-dev.txt`, and run `.venv/bin/python -m unittest discover -s tests -v`. Use a complete Git checkout: router integrity checks read historical approved objects, so a shallow clone or a source-only archive is insufficient.
+The suite covers schemas and references, known-answer calculations, invalid and adversarial inputs, routing, review propagation and composed workflows. Recorded evidence includes [842 passing full-suite tests](evaluations/sus24-workflow-example-suite-run.json) before the final license-exporter updates and [70 passing subset tests](evaluations/sus25-licensed-preview-test-run.json) afterward. Each witness applies to its recorded scope and snapshot.
 
-[Repository validation](.github/workflows/validation.yml) prepares manual checks on Windows and Ubuntu with Python 3.11 and 3.14. It uses read-only repository permissions, pinned action revisions and full Git history. It has no push, schedule, publication or deployment trigger. The matrix is a proposed validation environment, not evidence that those environments pass. Publishing or running it requires separate authorization; native Linux results remain unverified until an actual run succeeds. See [platform validation](docs/platform-validation.md) for the available local evidence and its limits.
+One [independent agent workflow evaluation](evaluations/sus23-food-independent-agent-review.md) supports execution of the supplied fictional case, with answer-exposure limits. It does not establish independent domain expertise or general reliability. Arithmetic, schema and fixture checks alone do not prove public-v1 readiness.
 
-Schemas use JSON Schema Draft 2020-12. The same test command runs architecture, data, GHG, scope-composition and saved-artifact checks. Examples are fictional fixtures, not emission factors or advice for a real organization. Original project material uses the owner's collection-matching MIT license; third-party rights and explicit public-release approval remain separate gates.
+[Manual GitHub validation](.github/workflows/validation.yml) defines a Windows/Ubuntu and Python 3.11/3.14 matrix. It has no automatic push or deployment trigger; its configuration is not evidence of a successful hosted run.
 
-## Data skills
+## Documentation and roadmap
 
-SUS-05 covers data normalization/validation, evidence quality, gaps, units, reporting periods, organizational boundaries, baselines, KPIs and period comparisons. Skill entrypoints live under `skills/metrics/`; each links to the [shared execution contract](docs/data-skill-contract.md). They are repository artifacts, not installed into a user's agent configuration. For focused repository-local use and the distinction between installed files and host discovery, see [skill consumption](docs/skill-consumption.md). Helpers are portable Python and require no network access. They provide primitives; skills must wrap results with provenance and validate proposed shared state.
+- [Wiki home](wiki/Home.md) — locally prepared project and preview guides.
+- [Architecture](docs/architecture.md) — shared contracts and repository design.
+- [Development status](docs/development-status.md) — implementation and evidence history.
+- [Roadmap](ROADMAP.md) — authoritative SUS-00 through SUS-25 scope and sequence.
+- [Readiness audit](docs/v1-evidence-audit.md) — remaining full-v1 requirements.
+- [Approval checklist](docs/preview-approval-checklist.md) and [owner decisions](docs/preview-owner-decisions-2026-10-07.md) — exact reviewed surfaces and publication holds.
 
-SUS-14 now provides eleven procurement/supply-chain skill workflows and eleven bounded [supplier evidence helpers](docs/supplier-contract.md), with a [fictional rubric assessment](evaluations/sus14-supplier-assessment.md). Missing ratings remain unknown, questionnaires stay unsent and supplier/purchase approval stays false. [Reproduced supplier comparison](evaluations/sus14-supplier-comparison.md) now retains score-bound overlap and ties without selecting a supplier. [Selected purchase-to-category mapping](evaluations/sus14-supply-chain-mapping.md) now reproduces source components without applying allocation again. [Supplier evidence engagement and improvement plans](evaluations/sus14-supplier-planning.md) now reproduce source assessments, preserve tied priorities and retain owned proposed actions with checked dependencies. [Mapped supplier/category contributions](evaluations/sus14-supplier-hotspots.md) now expose selected-subtotal shares, ties and coverage limits after source reproduction. [Supplier adverse-impact screening](evaluations/sus14-supplier-risk.md) now separates supported impacts from allegations/proxies and retains ordinal severity, likelihood, buyer relationship and owned review needs. [Conditional procurement-option comparison](evaluations/sus14-procurement-options.md) now reproduces selected mapped emissions and finance-derived costs, checks equivalent sourced service, and preserves signed outcomes and review gates. Broader due-diligence/response methods, emissions/materiality engagement, attribution and decision rules remain further work.
+## Contributing
 
-Selected maturity profiles use an explicit sourced cumulative rubric; [the fictional capture](evaluations/sus15-maturity-workflow.md) retains plans, unknown practices and professional review without certification or performance inference.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) before proposing changes. Keep contributions bounded, use fictional fixtures, include relevant validation and preserve existing evidence and review requirements. Do not contribute confidential data or source material you lack permission to distribute.
 
-[The fictional material-issue capture](evaluations/sus15-materiality-workflow.md) retains severe low-likelihood impact candidates and stakeholder gaps without netting positive benefits or approving final materiality.
+## Security
 
-[The fictional risk/opportunity chain](evaluations/sus15-risk-opportunity-workflow.md) retains source-reproduced impact pathways, unquantified effects, unmet prerequisites and unassessed trade-offs without risk acceptance or realized benefit.
+GitHub private vulnerability reporting is the selected route. Its enablement and report delivery remain unverified; follow [SECURITY.md](SECURITY.md) for the current route and fallback. Do not disclose secrets, private records or sensitive exploit details in public issues or pull requests.
 
-[The fictional two-pillar strategy proposal](evaluations/sus15-strategy-composition.md) connects source-reproduced scheduling issues and electricity targets, retaining funding, timing and monitoring gaps without strategy adoption or aggregate reductions.
+## License
 
-[The fictional transition pathway](evaluations/sus15-transition-workflow.md) preserves separately sourced interim/final endpoints, modeled growth, investment deficits, dated milestone proposals and governance gaps without interpolation or funded delivery.
-
-[The fictional implementation roadmap](evaluations/sus15-implementation-workflow.md) decomposes selected milestones into dated work packages, preserves upstream decision gates and exposes concurrent daily demand exceeding supplied capacity alongside missing later availability.
-
-[The fictional accountability register](evaluations/sus15-accountability-workflow.md) preserves scoped acceptance/mandate candidates, unresolved owners, authority and independence conditions, and unsent escalation routes without adopted assignments or review resolution.
-
-SUS-16 has fourteen initial [physical, transition, register, priority and resilience workflows](docs/climate-risk-contract.md). The [fictional screening capture](evaluations/sus16-physical-screening.md) retains source versions, climate scenarios/horizons, location resolution and operating-window uncertainty. Bounding-box overlap yields an investigation candidate; outside a selected extent does not establish safety. [Selected exposure-stock shares and vulnerability conditions](evaluations/sus16-exposure-vulnerability.md) retain comparable source populations, historical/future stock distinctions, sensitivity, coping and adaptive-capacity gaps. [Supplied ordinal risk ranges and adaptation proposals](evaluations/sus16-risk-adaptation.md) retain exact possible classes, unknown conditions, prerequisites, unmet constraints, side effects and residual-risk uncertainty without a selected risk class or authorized action. [Separate policy, market, technology and reputation drivers](evaluations/sus16-transition-drivers.md) retain source-described status, segment/service/group fitness and uncertainty without obligations, organization exposure or predicted loss. [Source-linked transition exposure](evaluations/sus16-transition-exposure.md) reproduces current drivers and retains separate subject/link fitness, exact scenarios, activity periods and omitted-pair coverage without quantified effects or verified exposure. [The source-linked climate-risk register](evaluations/sus16-climate-register.md) retains distinct characterization bases, proposed owners/follow-ups and non-additive shared sources without accepted or mitigated risk. [Supplied interval investigation priorities](evaluations/sus16-climate-priorities.md) retain unresolved earlier-criterion overlap, exact ties and unassessed entries without common risk scores or approved ranks. Broader methods, resilience and organization evaluation remain to implement.
-
-[The fictional resilience proposal](evaluations/sus16-climate-resilience.md) connects current register priorities and exact physical adaptation options to owned action proposals, source timing, dependencies, resource conditions and monitoring gaps. Overlapping/unassessed priorities, unmet engineering prerequisites, unknown capacity/funding and residual-risk uncertainty remain explicit. Proposed dependency layers do not establish a feasible schedule, approved action or verified resilience. Broader methods and independent organization evaluation remain open despite initial coverage of the fourteen named climate workflows.
-
-SUS-17 now has two initial [version-pinned reporting workflows](docs/framework-adapter-contract.md). [The fictional mapping and version diff](evaluations/sus17-framework-mapping.md) retain one core inventory lineage, missing scopes/gas detail, unsupported requirements and review obligations. GHG Protocol mappings remain historical candidates; TNFD greenhouse-gas information is an external-standard referral with the inventory retained as context only. Full framework/domain mappings, source applicability, rights and organization evaluation remain open; drafts do not establish conformity or public claims.
-
-Reporting catalog JSON has [scoped LF checkout enforcement and explicit historical pin replay](evaluations/sus17-canonical-catalog-replay.md). Original captures remain unchanged; current canonical replay preserves their quantities, source records and review obligations. Git checkout modes are tested on Windows; native Linux execution remains unverified.
-
-SUS-18 begins with an [executable jurisdiction-screening contract](docs/jurisdiction-model.md), pinned fictional rule pack and [three author-led CLI scenarios](evaluations/sus18-jurisdiction-foundation.md). It retains threshold uncertainty, rule-effective periods, exceptions, overlapping jurisdictions and open legal review without changing shared schemas or making legal determinations. Scoped contract review, real Canadian primary-source rules, independent organization evaluation and routing remain open.
-
-[Initial Canadian GHGRP source research](docs/canada-ghgrp-source-research.md) records the notice/amendment chain and facility/operator, timing and regulatory-quantity gaps that must be addressed before evaluating a real module. The source register is non-executable; foundation review and the broader Canada pack remain open.
-
-The pending jurisdiction foundation also has a [draft subject/year extension](docs/jurisdiction-model.md) and [fictional event-date scenarios](evaluations/sus18-jurisdiction-subjects.md). It distinguishes subject-bound annual quantities from candidate operator observations, retains unknown cessation/presence and covered reporting years, and preserves old company captures unchanged. It creates no aggregate or regulated emission totals and grants no legal or operator authority; scoped review and real Canadian implementation remain open.
-
-The draft conditional jurisdiction task register separates reporting, prior-report notification, retention and certification candidates after reproducing the screened subjects and sources. [Contract and limits](docs/jurisdiction-model.md) and [fictional scenario evidence](evaluations/sus18-jurisdiction-tasks.md) preserve unknown history, all trigger branches and open reviews. It supplies no real Canadian obligations or filing authority; scoped review and regulated-quantity/source-method work remain open.
-
-[Canadian quantification fit research](docs/canada-ghgrp-quantification-research.md) records verified source representations and current-engine probes. Gas-specific mass/conversion, regulated source-ledger coverage and actual Canadian retention anchors remain unimplemented; no factor or GWP table was imported.
-
-The draft [species-mass helper](docs/gas-mass-method.md) calculates raw individual gas mass from explicitly reviewed quantity/factor records, retaining species units and missing-factor blocking. [Fictional workflow evidence](evaluations/sus19-gas-mass.md) preserves all earlier quantities and reviews. GWP conversion, regulated facility accounting, actual Canadian methods and scoped review remain open.
-
-The draft [explicit gas-to-CO2e converter](docs/gas-conversion-method.md) reproduces raw species results and applies only a supplied, source-reviewed GWP with a selected basis and time horizon. [Fictional composition evidence](evaluations/sus19-gas-conversion.md) preserves original quantities and reviews. No GWP defaults/table, scope account or real Canadian method is supplied; regulated coverage and scoped review remain open.
-
-The draft [facility/source gas ledger](docs/gas-ledger-method.md) reproduces species conversions into a marked selected-source subtotal with explicit missing/unfit slots and non-overlap guards. [Fictional workflow evidence](evaluations/sus19-gas-ledger.md) preserves raw history and open reviews. Statutory quantities, actual Canadian profiles and scoped review remain open.
-
-The draft [explicit retention-anchor contract](docs/retention-anchor-method.md) selects sourced required dates or supported actual dates without fallback or v1 migration. Fictional v2 checks and a separate non-executable Canadian research calendar preserve legal review; dates authorize no filing or record removal.
-
-[Canadian environmental-claims research](docs/canada-environmental-claims-research.md) separates historical/current primary sections from mixed-era regulator guidance and records requirements for the future neutral claims engine. It supplies no executable legal rules, substantiation score or claim/publication approval.
-
-The draft [claim-evidence reviewer](docs/claim-evidence-method.md) preserves original dossiers and supplied observations, reproduces selected gas-source quantities, and retains insufficient or conflicting evidence without strengthening claims. [Fictional workflow evidence](evaluations/sus20-claim-evidence.md) authorizes no publication or legal conclusion; original-material reading, broader substantiation methods and scoped review remain open.
-
-The draft [plain-text material binding](docs/claim-material-binding.md) checks original wording, qualifiers and explicit quantities against exact pinned source bytes before claim review. [Sequential fictional evidence](evaluations/sus20-bound-claim.md) preserves blocked invented interpretations and conflicts with reproduced quantities. Source authenticity, semantics, visibility, legal judgment and publication authority remain unverified; this subsequent interface requires scoped review.
-
-The draft [inventory claims bridge](docs/inventory-claim-method.md) reproduces selected scope/category accounts and accepted CO2e leaves before checking original organization statements. [Fictional claims evidence](evaluations/sus20-inventory-claim.md) distinguishes declared coverage from partial subtotals and keeps neutrality insufficient without separate reduction, credit and residual methods. External completeness, source authenticity, current legal judgment and publication authority remain unverified; subsequent scoped review is required.
-
-The draft [comparison claims bridge](docs/comparison-claim-method.md) reproduces paired prior/current inventories and signed absolute/percentage changes before checking original statements. Explicit signed-change versus decrease-magnitude interpretation preserves original wording. [Fictional evidence](evaluations/sus20-comparison-claim.md) keeps project causation, undefined percentages and partial whole-subject claims unresolved. Source/professional/legal/publication and scoped review remain open.
-
-The draft [future-goal claims bridge](docs/future-goal-claim-method.md) checks original annual target wording against reproduced target/transition/implementation proposals. [Fictional evidence](evaluations/sus20-future-goal-claim.md) retains intensity units, unmet delivery conditions and missing progress. A proposed plan supplies no commitment, guarantee, funding, implementation, absolute-emissions reduction or publication authority; subsequent scoped review remains open.
-
-The draft [intent router](docs/router-contract.md) proposes prerequisites from original requests without executing workflows or approving inputs. [Fictional routing evidence](evaluations/sus21-router.md) covers missing inputs, ambiguity, approved capability content, blocked dependencies and independent branches.
-
-The draft [carbon-accounting specialist](docs/carbon-workflow-contract.md) executes existing helpers with explicit prerequisites and separate account outputs. [Fictional evidence](evaluations/sus22-carbon-accounting.md) retains missing factors, partial inventories and open assurance review without combined totals or publication authority.
-
-The draft [sustainability manager](docs/manager-workflow-contract.md) connects one pre-normalized organization through operational analysis, prospective targets/roadmap and qualified disclosure mapping. [Coherent fictional evidence](evaluations/sus22-organization-manager.md) preserves separate source definitions and all outstanding review requirements.
-
-The draft [business CSV importer](docs/business-ingestion-contract.md) records exact file/row custody and declared values without unit conversion or factor inference. [Raw-source workflow evidence](evaluations/sus23-business-source-workflow.md) links the imported candidate to the existing manager while retaining source review and incomplete coverage.
-
-The draft [sustainable-procurement specialist](docs/procurement-workflow-contract.md) connects buyer assessments, sourced physical purchase mapping and conditional options with explicit prerequisites. [Fictional evidence](evaluations/sus22-procurement-workflow.md) preserves unknowns and source views without supplier selection, external engagement or purchasing authority.
-
-The draft [climate-risk specialist](docs/climate-workflow-contract.md) connects conditional physical/transition screening to source-linked registers, ordinal priorities and prospective resilience plans. [Fictional evidence](evaluations/sus22-climate-workflow.md) preserves scenario/horizon/uncertainty and review context without a risk total, safety finding or implementation authority.
-
-The draft [sustainability investment specialist](docs/investment-workflow-contract.md) connects sourced financial models, comparable alternatives, sensitivity and physical case contexts with explicit prerequisites and pending funding decisions. It preserves source outputs and open reviews without a portfolio total or verified realized benefit. Run `python -m scripts.run_investment_workflow REQUEST.json` against a common input envelope; use [the skillset](skillsets/sustainability-business-case/SKILL.md) for request and review boundaries.
-
-The draft [sustainability reporting specialist](docs/reporting-workflow-contract.md) connects sourced calculations and separate inventory accounts to exact-edition draft mappings and version differences. [Fictional evidence](evaluations/sus22-reporting-workflow.md) retains missing factors/gas fields, source/rights limits and open professional/owner review. Use `python -m scripts.run_reporting_workflow REQUEST.json` with [the skillset](skillsets/sustainability-reporting/SKILL.md); a valid candidate supplies no conformity, assurance, commercial reuse or publication authority.
-
-The [draft Canada GHGRP predicate module](docs/canada-ghgrp-draft-screen.md) screens explicit selected facility/group/year/operator facts against pinned original/amended editions. It preserves uncertain quantities and source/legal reviews without activating a regulatory pack or proving statutory totals. Use `python -m scripts.run_canada_ghgrp REQUEST.json`; [source reading evidence](standards/jurisdictions/canada/ghgrp/source-chain.json) documents parsed readings and the failed raw-source download.
-
-The [source/species treatment ledger](docs/source-species-ledger-contract.md) distinguishes supplied measured-zero/GWP evidence from unknown quantities and keeps excluded source quantities visible. Use `python -m scripts.run_source_species_ledger REQUEST.json` with an explicit new matrix profile; original ledger profiles are not silently migrated. This qualified infrastructure does not verify statutory totals or activate Canada threshold screening.
-
-The explicit [0.3 source/species extension](docs/source-species-ledger-contract.md) supports supplied nonzero direct mass observations with separately sourced GWP, preserving included/excluded quantities and uncertainty. Select its new profile deliberately; 0.2 profiles retain their original behavior. Direct observations do not create source authentication, verified statutory totals or publication authority.
-
-The [Canada quantity bridge](docs/canada-quantity-bridge.md) checks a full primary-linked species/GWP profile and separately evidenced uncertainty bounds before proposing a numeric threshold fact. Missing data never falls back to a subtotal or original caller amount; independent activity branches remain separate. Use `python -m scripts.run_canada_quantity_bridge REQUEST.json`. Arithmetic reproduction and declared bounds do not establish source authenticity, actual regulatory quantities, legal duties or pack activation.
-
-The [conditional Canada task workflow](docs/canada-task-workflow.md) connects full-profile quantity/bounds screening to source-pinned report, notification, certification and required-submission retention candidates. Historical retention/storage/address contexts remain separate and qualified. Use `python -m scripts.run_canada_tasks REQUEST.json`; no external action, actual obligation, verified filing/certification/storage or pack activation is granted.
-
-The later [fuel calorific-energy helper](docs/fuel-energy-contract.md) converts explicit supplied fuel mass/reference-volume quantities and heating values into qualified kWh on a preserved LHV/HHV basis. Use `python -m scripts.run_fuel_energy REQUEST.json` with the existing baseline skill envelope. Its result can feed the unchanged energy baseline under explicit carrier/coverage review; no defaults, useful heat, efficiency, emissions or engineering approval are inferred. [Fictional source-to-baseline evidence](evaluations/sus09-fuel-energy.md) retains all review obligations.
-
-The later [fuel CO2e bridge](docs/fuel-co2e-contract.md) reproduces a fuel-energy source result and requires explicit matching factor heating/material/reference basis and combusted-activity review before invoking the unchanged carbon calculator. Use `python -m scripts.run_fuel_co2e REQUEST.json` with the existing CO2e envelope. [Raw CSV-to-partial-Scope-1 evidence](evaluations/sus06-fuel-co2e.md) preserves unresolved source/gas coverage and all professional reviews. No factor, actual combustion, complete inventory, regulatory quantity or assurance is inferred.
-
-The later [seven-specialist router](docs/specialist-router-contract.md) selects approved operations, carbon, manager, procurement, climate, investment or reporting capabilities from original user intent and an exact Git-backed catalog. Supply an explicit helper recipe to `python -m scripts.run_specialist_router REQUEST.json`; null recipes return qualified plans. Entry/manifests/schemas/local runtime bytes are checked before and after invocation, while source/factor/boundary/history and all reviews survive. [Actual fictional routing evidence](evaluations/sus21-specialist-router.md) does not grant broad semantic, scientific, organization or release acceptance.
-
-The later [literal workbook source reader](docs/workbook-ingestion-contract.md) reads exact pinned `.xlsx` bytes and one named source sheet into qualified business-record evidence. Use `python -m scripts.run_workbook_ingestion REQUEST.json`; selected formulas/caches, active/external content, ambiguous layouts, numeric date serials and guessed units are blocked. [Workbook-to-routed-manager evidence](evaluations/sus23-workbook-source.md) preserves source cells, model/measurement meaning, quantities and all reviews without actual source or organization authentication.
-
-The later [water-volume reconciliation helper](docs/water-balance-contract.md) keeps selected inflow/outflow, dated opening/closing stocks and internal reuse distinct. Use `python -m scripts.run_water_balance REQUEST.json`. It retains signed unexplained residuals and supplied uncertainty envelopes while withholding incomplete coverage/stocks and all actual consumption/leakage/closure/engineering claims. [Fictional raw-source evidence](evaluations/sus11-water-balance.md) preserves all review obligations.
-
-
-## Controlled organization acceptance
-
-[The organization acceptance scenario](docs/organization-acceptance.md) maps the roadmap's complete source-to-disclosure sequence to twelve workflow checks and ten custody checks. Run `python -m scripts.run_organization_acceptance examples/organization-acceptance.json examples/organization-acceptance-oracle.json` in the validation environment. It uses a second fictional dataset, explicit observation/model classifications and a separately declared answer key. The command prints its report and writes no input or shared-state files. A passing controlled scenario does not establish independent agent/organization acceptance or public-v1 readiness. Missing factors, unknown source quantities and unapproved actions stay explicit.
+Original AgentSustain project material is licensed under [MIT](LICENSE), Copyright (c) 2026 Jeremy Longworth. Third-party standards, publications, data and dependencies retain their own terms; the project license does not relicense them. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the [preview distribution status](docs/preview-distribution-status.md).
