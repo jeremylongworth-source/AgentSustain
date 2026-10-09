@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-09",
+  "reviewed_revision": "1cf952bca7bb31d1cc7cd3050925dc7c9770a435",
+  "scope": "Every object in the fresh protocol clone, including unreachable objects, plus expanded binary workbook parts. Commit/tree/blob bytes scanned for declared privacy/credential rules.",
+  "all_objects_scanned": 2498,
+  "blobs_scanned": 1487,
+  "blob_bytes_scanned": 170451599,
+  "credential_rule_count": 11,
+  "credential_privacy_findings": [],
+  "source_payload_candidates": [],
+  "json_like_unparsed_objects": [],
+  "archives_inspected": [
+    {
+      "git_blob": "437e24f17eca9bc8038dca4e11f00f23cce7faf3",
+      "parts": 8,
+      "expanded_bytes": 28807
+    }
+  ],
+  "personal_commit_emails_remaining": false,
+  "objects_skipped": 0,
+  "source_detection_limit": "Canonical source identities/payload keys and serialized JSON, not a blanket legal or original-work provenance determination.",
+  "remote_action_performed": false,
+  "publication_clearance": false
+}

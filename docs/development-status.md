@@ -1,6 +1,6 @@
 # Development status
 
-**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Original history is still present and publication is held. Changed specialist assets await scoped review. See [the candidate review](source-remediation-candidate-review.md). Historical status below describes the private development record.
+**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Local source/metadata history is rewritten and capability migration is owner approved; fresh-clone validation and remote/publication gates remain separate. See [the candidate review](source-remediation-candidate-review.md). Historical status below describes the private development record.
 
 Latest specific owner decisions: [A1 approved, A2 confirmed, A3 approved, A4 held and A5 pending](preview-owner-decisions-2026-10-07.md), recorded on 2026-10-07 against exact cbafe96 runner/preview/wiki hashes. Continued fixture-runner development and selected preview/copy scope are approved; publication/visibility remains held until the existing repository is ready, and GitHub reporting enablement remains pending. No full-repository/history rights, professional/state, broader acceptance or public-v1 gate is inferred.
 

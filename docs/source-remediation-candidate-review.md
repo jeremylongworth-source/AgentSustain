@@ -1,6 +1,6 @@
 # Local source-remediation candidate
 
-This isolated candidate implements the owner-approved removal/replacement plan. The original repository, approved preview, wiki and runner edition remain preserved privately. This candidate has **not** undergone history filtering and is not approved for publication.
+This isolated candidate implements the owner-approved removal/replacement plan. The original repository, approved preview, wiki and runner edition remain preserved privately. **Latest continuation:** the owner approved the local rewrite and capability migration; see [the transformation result](local-history-transformation-result.md). Preparation evidence below describes the previously reviewed snapshot. Publication remains held.
 
 Two new independently authored fictional worksheet catalogs demonstrate mapping and version comparison without posing as issued external standards. They require explicit fixture mode. The real GHGP catalogs and Canadian source records are omitted; requesting them produces `SOURCE_PACK_REQUIRED`. Existing original fictional jurisdiction fixtures demonstrate the neutral rule engine. No fictional rule or factor is substituted for a real obligation or inventory.
 

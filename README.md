@@ -1,6 +1,6 @@
 # AgentSustain
 
-**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Original history is still present and publication is held. Changed specialist assets await scoped review. See [the candidate review](docs/source-remediation-candidate-review.md). Historical status below describes the private development record.
+**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Local source/metadata history is rewritten and capability migration is owner approved; fresh-clone validation and remote/publication gates remain separate. See [the candidate review](docs/source-remediation-candidate-review.md). Historical status below describes the private development record.
 
 **Evidence-driven sustainability analysis for AI agents.**
 
