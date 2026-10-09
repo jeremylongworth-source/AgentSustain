@@ -1,6 +1,6 @@
 # Current development review status
 
-**Local source-remediation candidate:** real GHGP and Canadian source packs are omitted; fictional demonstrations and the TNFD referral remain. Local source/metadata history is rewritten and capability migration is owner approved; fresh-clone validation and remote/publication gates remain separate. See [the candidate review](source-remediation-candidate-review.md). Historical status below describes the private development record.
+**Public clean edition (October 9, 2026):** the cleaned repository is public, the six-page [GitHub wiki](https://github.com/jeremylongworth-source/AgentSustain/wiki) is published, and GitHub sponsorship metadata is configured. The original history archive remains private and archived. Real GHGP and Canadian source packs remain omitted; fictional demonstrations and the TNFD referral remain. See [the publication decision](publication-owner-decision-2026-10-09.md) and [candidate review](source-remediation-candidate-review.md). Historical records below retain their original scope; their earlier publication hold is superseded for this clean edition. Full v1 readiness and A5 security-reporting enablement remain open.
 
 This is a discovery index, not a new approval. [The owner decision ledger](architecture-review.md) is authoritative. Latest explicit owner development approval covers content snapshot `da4ddb3827931589b1fbf1f95cfef13fcac4075e`, recorded on 2026-10-06. Original architecture approval covers `f2d0ac9b5b34a4eef3f2678173d387d16fe0784c`.
 
