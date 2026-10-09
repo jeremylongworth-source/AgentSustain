@@ -8,9 +8,9 @@ The project is designed for developers, sustainability teams, and consultants wo
 
 ## Project status
 
-AgentSustain is a **development-stage library**, licensed under [MIT](LICENSE) for its original project material. Public availability remains on hold, and full v1 readiness has not been established.
+AgentSustain is a **development-stage library**, licensed under [MIT](LICENSE) for its original project material. The repository is publicly available; full v1 readiness has not been established.
 
-A limited helper preview and six wiki pages have owner content approval. That preview excludes unresolved framework/jurisdiction material and is smaller than the full development repository. Approval of the preview does not clear the full repository or its history for publication. See the [preview overview](docs/public-preview.md), [recorded owner decisions](docs/preview-owner-decisions-2026-10-07.md), and [current review status](docs/current-review-status.md).
+A limited helper preview is a separate, smaller package with its own reviewed scope. The public repository uses the cleaned history and retains its domain and review limitations. See the [preview overview](docs/public-preview.md), [publication decision](docs/publication-owner-decision-2026-10-09.md), and [current review status](docs/current-review-status.md).
 
 GHG Protocol and Canadian jurisdiction packs are currently unavailable. Framework demonstrations use fictional catalogs and a TNFD referral. See [edition scope and review history](docs/source-remediation-candidate-review.md) for details.
 
@@ -47,7 +47,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 ```
 
-Until the repository becomes public, cloning requires authorized access. On a POSIX shell, create the environment with `python3 -m venv .venv` and use `.venv/bin/python` for the commands below. Native Linux validation remains pending; see [platform evidence](docs/platform-validation.md).
+On a POSIX shell, create the environment with `python3 -m venv .venv` and use `.venv/bin/python` for the commands below. Native Linux validation remains pending; see [platform evidence](docs/platform-validation.md).
 
 ### Run a small example
 
@@ -117,7 +117,7 @@ One [independent agent workflow evaluation](evaluations/sus23-food-independent-a
 
 ## Documentation and roadmap
 
-- [Wiki home](wiki/Home.md): locally prepared project and preview guides.
+- [Wiki home](https://github.com/jeremylongworth-source/AgentSustain/wiki): setup, scope, evidence and validation guides.
 - [Architecture](docs/architecture.md): shared contracts and repository design.
 - [Development status](docs/development-status.md): implementation and evidence history.
 - [Roadmap](ROADMAP.md): authoritative SUS-00 through SUS-25 scope and sequence.

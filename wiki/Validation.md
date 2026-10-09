@@ -1,7 +1,17 @@
 # Validation and limits
 
-The full development repository's latest recorded suite passed 842 tests. That witness covers its recorded snapshot, not every future change or this preview's entire distribution surface. Final license/security export changes have their own package checks. Controlled fixtures and arithmetic tests cannot establish professional fitness or general agent reliability.
+The cleaned development edition passed **818 full-suite tests in 741.912 seconds** in a fresh protocol clone on Windows with Python 3.14. The [validation receipt](https://github.com/jeremylongworth-source/AgentSustain/blob/main/evaluations/sus25-rewritten-candidate-validation.json) records the exact runtime revision, commands and scope. A fresh clone from the new GitHub repository subsequently passed **19 focused runtime/history/workflow tests**, including all seven specialist invocations and missing-factor controls.
 
-One fresh-context agent reconstructed the required 150-employee, two-facility fictional manufacturer's source/conversion/manager workflow and a missing-factor branch. Seven actual runs and 41 reviewer checks supported execution, with tracked-file and sealed-artifact custody retained. Source-data answer clues qualified blindness. This is not an independent expert sign-off, a statistical reliability result or public-v1 acceptance.
+Four test modules containing 32 cases for the omitted real-source Canadian pack remain privately archived. They are not counted as passing public-edition checks. Original 842-test and later subset witnesses belong to their recorded historical snapshots; they do not silently transfer to changed code or excluded packs.
 
-Preview preparation checks its dependency closure, excluded material, ZIP paths/hashes, the fictional conversion, invalid requests, importability and local Markdown links. The release-preparation receipt records the exact source revision and archive hashes. These checks do not choose a license, approve source rights, certify confidential-data absence or authorize publication. Native Linux and broad agent-host discovery remain unverified.
+The stored-object audit covers Git objects and expanded workbook parts under declared credential/privacy patterns and structured source-payload screening. Missing original source objects and repository-context 404 checks support the clean-copy verification; they are not a blanket legal or provenance determination. See [remote verification](https://github.com/jeremylongworth-source/AgentSustain/blob/main/docs/private-remote-verification-2026-10-09.md).
+
+Controlled arithmetic, schema and fictional-workflow checks do not establish professional fitness, independent domain expertise or general agent reliability. The earlier independent food-workflow evaluation retained answer-exposure limits. Source, organization, professional and public-v1 acceptance remain separate.
+
+To run the repository suite:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+The repository defines a manual Windows/Ubuntu, Python 3.11/3.14 [GitHub workflow](https://github.com/jeremylongworth-source/AgentSustain/blob/main/.github/workflows/validation.yml). Configuration is not evidence of a successful hosted run. Native Linux execution and broad agent-host discovery remain unverified.

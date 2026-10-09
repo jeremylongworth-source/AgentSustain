@@ -1,13 +1,13 @@
-# AgentSustain wiki — local draft
+# AgentSustain wiki
 
-AgentSustain connects evidence to qualified sustainability analysis and proposed business action. These pages are prepared locally for a possible public preview; they have not been published to GitHub Wiki.
+AgentSustain provides evidence-driven sustainability skills and Python helpers for AI agents. It connects business data, environmental measurements, improvement opportunities, financial models and proposed sustainability actions while preserving evidence and review requirements.
 
-The original project uses the collection-matching MIT license, Copyright (c) 2026 Jeremy Longworth. GitHub private vulnerability reporting is the selected security route; AgentSustain setting enablement remains unverified. License/security choice does not approve third-party rights or public-v1 readiness.
+The repository is public and its original project material is MIT licensed. AgentSustain is a development-stage library; public availability does not establish full v1 readiness or professional certification.
 
-- [Getting started](Getting-started.md)
-- [Preview scope](Preview-scope.md)
-- [Evidence and review](Evidence-and-review.md)
-- [Validation](Validation.md)
-- [Release decisions](Release-decisions.md)
+- [Getting started](Getting-started.md): installation and runnable fictional examples.
+- [Preview scope](Preview-scope.md): available capabilities and excluded source packs.
+- [Evidence and review](Evidence-and-review.md): provenance, uncertainty and human review.
+- [Validation](Validation.md): recorded checks and their limits.
+- [Release decisions](Release-decisions.md): publication history and remaining gates.
 
-The preview is a selected helper package. The full roadmap remains SUS-00 through SUS-25, including source-backed organization workflows, framework/jurisdiction modules, professional boundaries and public-v1 acceptance. Preview publication would not declare those gates complete.
+For the complete development sequence, read the [roadmap](https://github.com/jeremylongworth-source/AgentSustain/blob/main/ROADMAP.md). The [README](https://github.com/jeremylongworth-source/AgentSustain#readme) covers the seven specialist entry points and links to their contracts. GHG Protocol and Canadian jurisdiction packs are unavailable in this edition; fictional demonstrations do not substitute for real standards or laws.

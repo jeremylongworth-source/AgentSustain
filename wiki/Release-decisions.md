@@ -1,11 +1,11 @@
-# Owner decisions before sharing
+# Publication and remaining decisions
 
-1. The owner selected the collection's MIT project license. Retain the license/copyright and review contributor/third-party provenance; MIT does not relicense external source material. No separate CLA or ownership transfer is introduced.
-2. The owner selected GitHub private vulnerability reporting. Setting/form/delivery verification remains open: AgentSustain's authenticated API read returned 404. No enablement change or test report is authorized by this draft.
-3. Review authorship, confidentiality and rights for the exact proposed preview. Excluded framework/jurisdiction material remains unresolved in the full repository.
-4. Approve the exact archive/revision, public-facing README and wiki pages, and the preview's limitations.
-5. Authorize each consequential publication action separately, including GitHub push, visibility change, wiki publication or release.
+On October 9, 2026 the owner authorized making the clean AgentSustain repository public and publishing this wiki. The original source/history repository remains in a private, read-only archive. The current public edition uses rewritten history and migrated reviewed capability pins; original private backups are not distribution artifacts.
 
-Review the proposed publication surface. A visibility change on the existing full repository would expose its files and Git history, including material excluded from the preview archive. Approval of the filtered archive is not approval to make that full repository public. A separately approved clean export/publication path is required if the full repository's rights remain unresolved.
+Original project material is licensed under the collection-matching MIT license, Copyright (c) 2026 Jeremy Longworth. External publications and data retain their own terms. MIT does not relicense third-party material, and citations do not grant missing distribution rights.
 
-Full v1 has a separate roadmap gate covering the complete organization workflow, source/version controls, tests, review propagation, examples and acceptance. A preview decision does not grant legal/engineering/financial/assurance approval or clear any organization result's review ledger. Additional separate evaluation agents require explicit authorization under the current agent instructions.
+The earlier October 7 approval covered a selected helper preview and six wiki drafts. The later local rewrite, clean-copy acceptance, private archive/remote replacement and current public repository/wiki authorization are separate recorded decisions. Historical holds describe those earlier snapshots; public availability does not imply approval of an organization result.
+
+Remaining work includes full-roadmap methods and source packs, broader independent organization acceptance, professional review and full v1 readiness. GitHub private vulnerability reporting is selected, while its separate enablement/form/delivery decision remains pending. No security settings or test report were changed by wiki publication.
+
+See the [roadmap](https://github.com/jeremylongworth-source/AgentSustain/blob/main/ROADMAP.md), [readiness audit](https://github.com/jeremylongworth-source/AgentSustain/blob/main/docs/v1-evidence-audit.md), [publication decision](https://github.com/jeremylongworth-source/AgentSustain/blob/main/docs/publication-owner-decision-2026-10-09.md) and [security policy](https://github.com/jeremylongworth-source/AgentSustain/blob/main/SECURITY.md). No legal, engineering, financial or assurance sign-off follows from a repository or wiki publication.
