@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-09",
+  "runtime_source_revision": "1cf952bca7bb31d1cc7cd3050925dc7c9770a435",
+  "transformed_reviewed_capability_source": "161a504af5710cf1250efaf3f992f8f29b8ec39b",
+  "full_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "environment": "Fresh protocol clone of rewritten history with repository-defined dependencies; Windows, Python 3.14",
+    "tests": 818,
+    "seconds": 741.912,
+    "exit_code": 0,
+    "result": "OK"
+  },
+  "focused_migrated_router_suite": {
+    "tests": 20,
+    "seconds": 101.064,
+    "exit_code": 0,
+    "result": "OK",
+    "all_seven_specialists_available_and_standalone_equal": true,
+    "runtime_drift_and_forged_catalog_refusals_preserved": true
+  },
+  "focused_clean_history_suite": {
+    "tests": 3,
+    "seconds": 2.254,
+    "exit_code": 0,
+    "result": "OK",
+    "original_source_dependent_blob_objects_absent": true,
+    "runtime_review_pins_resolve": true,
+    "original_personal_commit_email_absent": true
+  },
+  "architecture_suite": {
+    "tests": 20,
+    "seconds": 0.173,
+    "exit_code": 0,
+    "result": "OK"
+  },
+  "local_document_links_checked": 67,
+  "broken_links_in_checked_scope": 0,
+  "omitted_real_source_canadian_test_cases_not_counted_as_passing": 32,
+  "history_rewritten_locally": true,
+  "metadata_redacted_locally": true,
+  "capability_catalog_activated_with_git_byte_checks": true,
+  "source_or_professional_acceptance_inferred": false,
+  "remote_modified": false,
+  "publication_authorized": false,
+  "public_v1_readiness_verified": false
+}
