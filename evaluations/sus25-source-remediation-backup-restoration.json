@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-09",
+  "bundle_sha256": "a731a4b9d1e8a4acb6c84cb45db54bd9c609568d62772767adc2b353dd0857db",
+  "mirror_restored_ref_count": 4,
+  "restored_refs_equal_bundle_refs": true,
+  "all_bundle_ref_commits_covered_by_history_manifest": true,
+  "original_commits_inspected": 127,
+  "restored_ref_object_types": {
+    "refs/codex/turn-diffs/captures/1791538582574/14f912c3-1522-4d6f-b264-d1dbfc18b4aa/base": "tree",
+    "refs/codex/turn-diffs/checkpoints/d5e49240a6b5ac06c69dd58789268f8c/2b1c2d2ab7ab06b9e9bfbbce9a41bb6b/1791538519578/a97c772c-e55b-49e8-a54e-a325e93fc0f9": "tree",
+    "refs/heads/main": "commit",
+    "refs/remotes/origin/main": "commit"
+  },
+  "tree_only_private_refs": {
+    "refs/codex/turn-diffs/captures/1791538582574/14f912c3-1522-4d6f-b264-d1dbfc18b4aa/base": "2034498fde582db3d0359b649ad67ebf67fb2767",
+    "refs/codex/turn-diffs/checkpoints/d5e49240a6b5ac06c69dd58789268f8c/2b1c2d2ab7ab06b9e9bfbbce9a41bb6b/1791538519578/a97c772c-e55b-49e8-a54e-a325e93fc0f9": "2034498fde582db3d0359b649ad67ebf67fb2767"
+  },
+  "tree_only_ref_policy": "Keep restored original trees private. Omit private refs/codex/* from any future public candidate; source/blob custody exists in private backup. These tree refs are not commits and are not claimed as covered by commit occurrence enumeration.",
+  "signed_original_commits": [],
+  "personal_email_commit_message_candidates": [],
+  "personal_author_committer_field_occurrences": 254,
+  "history_rewritten": false,
+  "external_action_performed": false,
+  "limit": "Original backup refs/commits only. Final candidate commits and any new refs require the same identity/message/signature review before approved transformation."
+}

@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-09",
+  "source_revision": "15e333db5e257db3296127891790d207cacf9715",
+  "full_candidate_suite": {
+    "command": "D:/AgentSustain/.venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "tests": 815,
+    "seconds": 722.425,
+    "exit_code": 0,
+    "result": "OK",
+    "scope": "Complete candidate test discovery, including neutral domain, jurisdiction, routing, manager, missing-factor and source-pack refusal checks; omitted real-source Canadian pack is excluded explicitly."
+  },
+  "fresh_clone_suite": {
+    "command": "candidate/.venv/Scripts/python.exe -m unittest tests.test_frameworks tests.test_source_pack_availability tests.test_workflow_example -q",
+    "source": "Independent local clone of the committed candidate, without private inputs or backup refs",
+    "tests": 19,
+    "seconds": 33.350,
+    "exit_code": 0,
+    "result": "OK"
+  },
+  "architecture_suite": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_architecture.py -q",
+    "tests": 20,
+    "seconds": 0.176,
+    "exit_code": 0,
+    "result": "OK"
+  },
+  "earlier_corrected_runs": [
+    {
+      "tests": 814,
+      "seconds": 700.445,
+      "failures": 4,
+      "errors": 1,
+      "result": "FAILED",
+      "resolution": "Interim source changes invalidated capture comparisons and old all-role availability expectations. Captures were regenerated, changed-role refusal checks retained, and the isolated environment was created for the investment CLI. Final frozen candidate discovery passes."
+    },
+    {
+      "tests": 13,
+      "errors": 1,
+      "result": "FAILED",
+      "resolution": "Module-style architecture invocation does not provide its existing contract_checks import path. Used the supported discovery invocation, which passes; other selected checks also pass in final discovery."
+    }
+  ],
+  "candidate_source_pack_omissions": 16,
+  "embedded_source_capture_files_archived": 15,
+  "real_source_canadian_test_modules_archived": 4,
+  "real_source_canadian_test_cases_archived": 32,
+  "original_tracked_file_hashes_verified": 921,
+  "original_approved_preview_wiki_runner_pins_verified": true,
+  "candidate_local_document_links_checked": 89,
+  "broken_links_in_checked_scope": 0,
+  "current_tree_structurally_detected_omitted_source_payloads": 0,
+  "source_payload_detection_limit": "Recursive canonical-ID/payload and serialized-JSON screening; not an exhaustive legal determination. Original payloads still exist in unfiltered reachable history.",
+  "prepared_source_history_occurrences": 2465,
+  "prepared_source_history_paths": 54,
+  "prepared_source_history_unique_blobs": 61,
+  "metadata_matching_unique_blobs": 20,
+  "metadata_prefix_matches_in_unique_blobs": 189,
+  "metadata_retained_commit_path_occurrences": 1418,
+  "metadata_proposed_json_parse_failures": 0,
+  "backup_restored_refs_verified": 4,
+  "private_tree_snapshot_refs": 2,
+  "history_rewritten": false,
+  "metadata_redaction_executed": false,
+  "new_capability_catalog_activated": false,
+  "remote_action_performed": false,
+  "publication_clearance": false,
+  "v1_readiness_verified": false
+}
