@@ -117,12 +117,12 @@ One [independent agent workflow evaluation](evaluations/sus23-food-independent-a
 
 ## Documentation and roadmap
 
-- [Wiki home](wiki/Home.md) â€” locally prepared project and preview guides.
-- [Architecture](docs/architecture.md) â€” shared contracts and repository design.
-- [Development status](docs/development-status.md) â€” implementation and evidence history.
-- [Roadmap](ROADMAP.md) â€” authoritative SUS-00 through SUS-25 scope and sequence.
-- [Readiness audit](docs/v1-evidence-audit.md) â€” remaining full-v1 requirements.
-- [Approval checklist](docs/preview-approval-checklist.md) and [owner decisions](docs/preview-owner-decisions-2026-10-07.md) â€” exact reviewed surfaces and publication holds.
+- [Wiki home](wiki/Home.md): locally prepared project and preview guides.
+- [Architecture](docs/architecture.md): shared contracts and repository design.
+- [Development status](docs/development-status.md): implementation and evidence history.
+- [Roadmap](ROADMAP.md): authoritative SUS-00 through SUS-25 scope and sequence.
+- [Readiness audit](docs/v1-evidence-audit.md): remaining full-v1 requirements.
+- [Approval checklist](docs/preview-approval-checklist.md) and [owner decisions](docs/preview-owner-decisions-2026-10-07.md): exact reviewed surfaces and publication holds.
 
 ## Contributing
 
