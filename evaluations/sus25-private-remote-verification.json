@@ -1,0 +1,334 @@
+{
+  "date": "2026-10-09",
+  "owner_instruction": "ok lets approve this archive and plan so we can push the clean copy",
+  "private_original_archive": {
+    "id": 1404938419,
+    "name": "AgentSustain-private-history-2026-10-09",
+    "private": true,
+    "archived": true
+  },
+  "new_private_repository": {
+    "id": 1411711753,
+    "name": "AgentSustain",
+    "private": true,
+    "fork": false,
+    "default_branch": "main"
+  },
+  "pushed_revision": "38fc0373ebb452474d07678776c722db4302b1a2",
+  "remote_main_matches_local_head": true,
+  "independent_github_clone_matches": true,
+  "original_commit_api_status": 404,
+  "omitted_source_blob_api_checks": [
+    {
+      "kind": "omitted_blob",
+      "git_object": "0391ab873fe4f08eac0e7e7f73eb63187ca00d6f",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "03b6a12b9128cca3aa5de87587ea8f6fe5905f04",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "044a1907973115897bcf02fe3e6b99d0a3da11a9",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "0d1d61f42773e543b3b8a73539bbac7a98756897",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "0d8f6de0cea73e25121055e98dc090305ad82f17",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "117a4ac7c1599d573cb8dd06bec6aeb97a6c0753",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "1907336e136c9355c0e95e3e384843c13c4123dc",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "1a86a972f670dfd51573893bcb76965667df1778",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "1e5e9937ccd974ddc52526deb42d2cfe2436cfa3",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "25a70669a07ae2435715eba4c760a3946e32583f",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "2941ce477a6a20ca18b620976265d00b801a8e9e",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "2b06622e596f65f093ea8618ec5c894be717daac",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "397643ce10b772df91e8cac6882f5e84f9cffa2c",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "423e6aacf654e5e0d49e8800eb701e9a8519911c",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "4748cbea8310bdb4fbc1be2384058326237660fe",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "477149389c8c9f023eba3017b3a39b9bafa4f622",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "488d6637c739c49e93ecbf1442d08c7de4740503",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "4b7753cb0b891358dca3efff558b3114527df872",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "4c0b5e97db8bf704d5b001c4a450ef51b51f7227",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "4d9f7cc3238c377e30990f3ec2df0616395ed279",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "50f01cfb564f46d1151fb5435fae5a07f0dae56c",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "5600186fcc691d7da51e104d63a0ea098be28b0b",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "57736a525bd96fe538f953385003716f930da1e6",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "619f338f1d72ee5d951d11b8337bfd0a48b83f51",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "621f8be168bf7f6a3b13835b2edcfb8f6b4c9cd1",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "62f2f88d894fc6dca7d8bcfa2540eeb1edbd1dff",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "6362f33380a6d3e9be8c6c0ea6cf08aa507e3f03",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "6713f54d5f98e92921c73f00c256343e9f74c75e",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "6843cd972cbf716086d74f08d3335fecdc17fe84",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "6c202d5995d7908db9675e6822747c7f3df5d462",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "70f22a0a7a161d17a3f9bc5511bc8cda17a084d1",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "75703a52b76d4a86f1f793a49c880a2d349fd01c",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "76bbb4944b6c12ee04891b32de76fa31d733795c",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "78278e99528d41a7eea689d29c76bbb1428aa097",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "79036c65a7bfd95bba98f3de377e58225d081b0d",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "84b3ecc68583a63f21dc25627775efb5ca26e622",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "8a2e421bc996c9d2b1aea36057ee320a1ca11615",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "8b47720510b9ce24609239b50aa2180a98e6daf4",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "8bf7042aabe230773b576f32a23c49cec45f45dc",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "938f2a1e45179f04dbac21a1e2fe958d95f445d1",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "93b003cb7e18f4aac0398f795f920f5400c9c57d",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "97fc1ea778dc2f26cee8a143e69183b17258f1bb",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "a0e15d2118d6d6e3c3857c99946872a3dbfd85e6",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "a159b1be0cd58fa9afecd2b1bd3072c428955a66",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "a95bb0e6d9e6381f90f9d0802b2113f97a9f098c",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "ae1f8dc7d2c31badf820890c69bad4470e0f344f",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "ae77dadd78b3ffa5b12912c28557f9d4e0086c58",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "af331a0feedb46cae1ba81f0a8d5d52b151132e8",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "b55b127e3c2ef8db488564615662a31311a5b5b4",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "b5ea0c42b5042204bcece0cdaccd471793492472",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "bc6abb20f1892dc1cc1a4ce0e92eb0d5c853c041",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "bf30e22739f65814125755fa63dd9a128780b4f7",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "c939aef837526b886e113bfe79eb9e32d8469801",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "cad9a51b9c8b27492af148a51a26f52ab8f7c600",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "cc65594f1fb02ecbe886d8cd2f3ad82f3563b51a",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "d0f9d57b4803dc8af61c0b174ae08abf488304a4",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "d5f306e112b89b4c73f15824560e6ab120261dbd",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "e07ac6fd64a981829c7a54373e20066a69fe74b7",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "ee7450a4b32a57af4605fd9e4a450d23b0724c83",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "f14eab7538038948db37a70a50de95330f6422b9",
+      "status": 404
+    },
+    {
+      "kind": "omitted_blob",
+      "git_object": "feb8db678c1f567059f205820980fa993f5726f9",
+      "status": 404
+    }
+  ],
+  "known_source_blob_checks": 61,
+  "all_omitted_objects_http_404": true,
+  "visibility_changed_to_public": false,
+  "reporting_enabled": false,
+  "professional_or_v1_acceptance_inferred": false,
+  "limit": "Exact authenticated repository-context checks and fresh Git clone; not a guarantee of all server internals, other copies or legal rights."
+}

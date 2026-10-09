@@ -1,5 +1,7 @@
 # Remaining GitHub publication decision
 
+**Later executed decision:** the owner approved the private archive/fresh-remote plan. [Private push and verification](private-remote-verification-2026-10-09.md) records the new repository, preserved private archive and actual checks. The proposal below is historical; public visibility and release decisions remain separate.
+
 The approved local source/metadata transformation does not authorize a GitHub change. Read-only checks on October 9, 2026 found repository ID `1404938419`, private visibility, default branch `main`, zero forks and zero pull requests. The advertised remote still points to `56de36e08ec99e847dc9f308a492c6d05e6d82b9`, containing the original history. No remote content or setting has changed.
 
 ## Proposed clean remote arrangement
